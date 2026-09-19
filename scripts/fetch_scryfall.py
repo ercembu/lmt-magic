@@ -35,6 +35,7 @@ def fetch_set(code):
     return cards
 
 if __name__ == "__main__":
+    os.makedirs(OUT, exist_ok=True)      # first run / CI cache miss has no data/cards
     want = sys.argv[1:] or list(SETS)
     for exp in want:
         sf = SETS[exp]

@@ -7,7 +7,10 @@ import features, textfeat, context
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 MIN_GAMES = 400          # below this the win rate is mostly noise
 
-_sample = json.load(open(f"{ROOT}/data/cards/FRA.json"))[0]
+_sample_path = f"{ROOT}/data/cards/FRA.json"
+if not os.path.exists(_sample_path):
+    raise SystemExit("No card data yet — run scripts/fetch_scryfall.py first.")
+_sample = json.load(open(_sample_path))[0]
 BASE_KEYS = sorted(features.extract(_sample))
 # Set-context and per-colour-context features were built and tested (context.py).
 # Neither survived: set context gave +0.002 spearman (p=0.36), and per-colour

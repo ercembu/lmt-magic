@@ -447,18 +447,27 @@ It then works with no connection at all, which matters — game store wifi is un
 the whole point is to use this while building a sealed pool. The app shell and the last
 card data you loaded are both cached on the device.
 
-**Refresh** pulls newly published grades. The heavy work cannot run on a phone: retraining
-is LightGBM over 8,276 cards and ~2,600 features across 31 sets, so the pipeline stays on a
-real machine and the phone only fetches its output. The flow is:
+### Refreshing without touching a computer
 
-```bash
-./scripts/refresh_fra.sh     # scrape review -> retrain -> regrade -> build docs/ -> push
-```
+Retraining is LightGBM over 8,273 cards and ~2,600 features across 31 sets, so it cannot
+run on the phone, and the Refresh button in the app deliberately does not try: it only
+pulls already-published grades. Triggering a build would need a GitHub token, and a public
+static page cannot hold a secret without leaking it.
 
-then hit Refresh on the phone. If there is no connection it says so and keeps showing the
-last data it saved, rather than going blank.
+So the pipeline runs in GitHub Actions instead (`.github/workflows/refresh.yml`), which
+means no PC is involved at all:
 
-To rebuild the published site without retraining: `./scripts/build_pwa.sh FRA`.
+* **daily** — checks whether a set review has been published; retrains only if something
+  actually changed, so most days cost seconds
+* **from your phone** — GitHub mobile app → Actions → *Refresh grades* → *Run workflow*.
+  That is the phone-triggered full retrain. Takes ~6 minutes, then hit Refresh in the app.
+* **on push** — rebuilds the published site when the front end changes
+
+Card data is cached rather than committed (57MB, regenerable), so a cache miss just
+re-fetches it from Scryfall.
+
+Locally, `./scripts/refresh_fra.sh` does the same thing, and `./scripts/build_pwa.sh FRA`
+rebuilds the published site without retraining.
 
 ## Running it
 
