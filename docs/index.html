@@ -197,6 +197,8 @@ main{max-width:1680px;margin:0 auto;padding:20px 20px 80px}
 .row.warn .h{color:var(--warn);font-weight:600}
 .arch{display:inline-block;padding:2px 7px;border:1px solid var(--edge);border-radius:2px;margin:0 4px 4px 0;font-size:12px;color:var(--text-2)}
 .arch.key{border-color:var(--gA);color:var(--gA)}
+.chips{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:4px}
+.sub{font-family:Spectral,serif;font-size:11.5px;color:var(--text-3);margin:0 0 5px}
 
 /* ---------- pips ---------- */
 .pip{
@@ -408,11 +410,21 @@ function openCard(name){
     }
   }
   if((c.archetypes||[]).length){
-    h += `<div class="sect">Fits these decks</div><div>`;
-    for(const a of c.archetypes.slice(0,5)){
-      h += `<span class="arch ${a.key_card?'key':''}">${a.pair} ${a.name}${a.key_card?' &#9733;':''}</span>`;
+    const sup = c.archetypes.filter(a=>a.supports);
+    const rest = c.archetypes.filter(a=>!a.supports);
+    h += `<div class="sect">Where it plays</div>`;
+    if(sup.length){
+      h += `<div class="chips">` + sup.map(a=>
+        `<span class="arch ${a.key_card?'key':''}">${a.pair} ${a.name}${a.key_card?' &#9733;':''}</span>`
+      ).join('') + `</div>`;
     }
-    h += `</div>`;
+    if(rest.length){
+      const label = sup.length
+        ? 'Castable in, without helping the plan'
+        : 'No particular synergy — just a good card in any of these';
+      h += `<p class="sub" style="margin:2px 0 6px">${label}</p><div class="chips">` +
+        rest.map(a=>`<span class="arch">${a.pair} ${a.name}</span>`).join('') + `</div>`;
+    }
   }
   if(c.scryfall_uri) h += `<div class="sect"><a href="${c.scryfall_uri}" target="_blank" rel="noopener">Open on Scryfall</a></div>`;
 

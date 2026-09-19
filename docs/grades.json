@@ -42,7 +42,8 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -86,16 +87,32 @@
   "flags": [],
   "archetypes": [
    {
-    "pair": "WB",
-    "name": "Liliana's Attrition",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -137,16 +154,32 @@
   "flags": [],
   "archetypes": [
    {
-    "pair": "RG",
-    "name": "Konstrari Mana Ramp",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -227,7 +260,8 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -292,7 +326,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -332,7 +388,36 @@
   "novelty": 3.21607688436323,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Ingris Stingerquill",
@@ -390,7 +475,8 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -430,7 +516,36 @@
   "novelty": 2.968875240353113,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Lyra, Tolarian Archangel",
@@ -468,7 +583,36 @@
   "novelty": 3.475014899044514,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Craftwork Crusher",
@@ -535,7 +679,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Aerid Konstrari",
@@ -598,7 +750,8 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -656,13 +809,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -722,22 +891,32 @@
   ],
   "archetypes": [
    {
-    "pair": "RG",
-    "name": "Konstrari Mana Ramp",
-    "signals": 2,
-    "key_card": false
-   },
-   {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 2,
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -809,7 +988,36 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Sanctum Lurker",
@@ -879,16 +1087,32 @@
   ],
   "archetypes": [
    {
-    "pair": "BR",
-    "name": "Stingerquill Face Burn",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -953,7 +1177,8 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -1009,7 +1234,29 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1051,16 +1298,32 @@
   "flags": [],
   "archetypes": [
    {
-    "pair": "WU",
-    "name": "Fatehold Surveil Aggro",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1112,7 +1375,8 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -1159,7 +1423,8 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -1199,7 +1464,36 @@
   "novelty": 3.2921740307521015,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Fblthp, Knows the Way",
@@ -1242,7 +1536,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1305,7 +1621,29 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1374,7 +1712,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1449,13 +1809,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1500,7 +1876,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1543,22 +1941,74 @@
   "flags": [],
   "archetypes": [
    {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
-    "pair": "BG",
-    "name": "Garruk's Bestiary",
-    "signals": 1,
-    "key_card": false
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1603,13 +2053,29 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1649,7 +2115,36 @@
   "novelty": 4.049390087407431,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Verdant Kraken",
@@ -1692,7 +2187,29 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1737,13 +2254,29 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1788,13 +2321,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1841,13 +2390,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1894,13 +2459,29 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -1967,7 +2548,8 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -2020,16 +2602,32 @@
   ],
   "archetypes": [
    {
-    "pair": "RG",
-    "name": "Konstrari Mana Ramp",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -2096,8 +2694,8 @@
   "raw_score": 0.8478571428571429,
   "base_z": 1.1080108204698564,
   "z": 1.1080108204698564,
-  "grade": "B",
-  "base_grade": "B",
+  "grade": "B+",
+  "base_grade": "B+",
   "confidence": "high",
   "trust": {
    "band": 3,
@@ -2116,7 +2714,29 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -2158,7 +2778,15 @@
   "novelty": 2.855738710204278,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Liliana the Repentant",
@@ -2214,13 +2842,29 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -2269,7 +2913,8 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -2334,7 +2979,8 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -2388,7 +3034,8 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    }
   ]
  },
@@ -2448,7 +3095,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -2506,7 +3175,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -2549,7 +3240,29 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -2594,13 +3307,29 @@
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -2642,7 +3371,15 @@
   "novelty": 3.200624734618156,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Mind Meanderer",
@@ -2707,7 +3444,8 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    }
   ]
  },
@@ -2764,7 +3502,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Theorist's Proxy",
@@ -2837,13 +3583,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -2892,7 +3654,8 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -2932,7 +3695,36 @@
   "novelty": 4.121867177362315,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Refute Destiny",
@@ -2999,7 +3791,29 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -3059,7 +3873,36 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Pia, Determined Rebuilder",
@@ -3097,7 +3940,36 @@
   "novelty": 3.0436461457216897,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Bloombrute",
@@ -3147,7 +4019,8 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    }
   ]
  },
@@ -3212,7 +4085,8 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    }
   ]
  },
@@ -3237,8 +4111,8 @@
   "raw_score": 0.7696428571428571,
   "base_z": 0.8101444793537337,
   "z": 0.8101444793537337,
-  "grade": "B-",
-  "base_grade": "B-",
+  "grade": "B",
+  "base_grade": "B",
   "confidence": "medium",
   "trust": {
    "band": 5,
@@ -3293,7 +4167,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -3343,7 +4239,8 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -3368,8 +4265,8 @@
   "raw_score": 0.7664285714285715,
   "base_z": 0.7855300527942329,
   "z": 0.7855300527942329,
-  "grade": "B-",
-  "base_grade": "B-",
+  "grade": "B",
+  "base_grade": "B",
   "confidence": "high",
   "trust": {
    "band": 2,
@@ -3388,13 +4285,29 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -3439,7 +4352,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -3530,13 +4465,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    },
    {
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -3581,13 +4532,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -3643,7 +4610,29 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -3706,7 +4695,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -3760,7 +4771,8 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -3805,13 +4817,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -3876,7 +4904,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -3941,7 +4991,8 @@
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    }
   ]
  },
@@ -3983,7 +5034,36 @@
   "novelty": 4.074554537448806,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Memory Trap",
@@ -4028,7 +5108,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Awaken the Inferno",
@@ -4091,13 +5200,29 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -4137,7 +5262,36 @@
   "novelty": 3.621982175612651,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Variable Chaser // Arc of Fortune",
@@ -4191,7 +5345,29 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -4234,7 +5410,71 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -4274,7 +5514,36 @@
   "novelty": 3.111549281529782,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Heartwood Crafter // Soul Tether",
@@ -4346,7 +5615,8 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -4393,7 +5663,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Fatehold Chronologist // Peer Review",
@@ -4461,7 +5760,8 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -4508,7 +5808,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Your Fate Ends Here",
@@ -4575,7 +5904,29 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": true
+    "key_card": true,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -4600,8 +5951,8 @@
   "raw_score": 0.6849999999999999,
   "base_z": 0.5398714122010615,
   "z": 0.5398714122010615,
-  "grade": "C+",
-  "base_grade": "C+",
+  "grade": "B-",
+  "base_grade": "B-",
   "confidence": "high",
   "trust": {
    "band": 3,
@@ -4633,13 +5984,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -4717,10 +6084,32 @@
   ],
   "archetypes": [
    {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   },
+   {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -4795,7 +6184,8 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -4853,7 +6243,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -4893,7 +6305,36 @@
   "novelty": 3.3830593255162187,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Vigorbloom Vanguard // Seed Suture",
@@ -4954,7 +6395,8 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -5009,7 +6451,36 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Ajani's Anguish",
@@ -5049,7 +6520,36 @@
   "novelty": 2.9563333276627337,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Solitary Cell",
@@ -5091,7 +6591,15 @@
   "novelty": 3.2406151052345735,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Divining Duelist",
@@ -5131,7 +6639,36 @@
   "novelty": 2.7671043047923236,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Pia, Aether Ascetic",
@@ -5174,7 +6711,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -5234,7 +6793,36 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Last Gasp",
@@ -5279,7 +6867,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Vindictive Triumph",
@@ -5334,7 +6951,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Yoshimaru, Scrappy Stray",
@@ -5381,16 +7006,32 @@
   "flags": [],
   "archetypes": [
    {
-    "pair": "WG",
-    "name": "Vigorbloom Life Gain",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -5450,7 +7091,36 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Rank Rat",
@@ -5490,10 +7160,32 @@
   "flags": [],
   "archetypes": [
    {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   },
+   {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -5538,13 +7230,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -5606,7 +7314,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Surveillance Phantasm",
@@ -5654,7 +7370,29 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -5714,7 +7452,36 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Break Under Pressure",
@@ -5777,7 +7544,29 @@
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -5852,13 +7641,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -5903,7 +7708,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -5959,7 +7786,29 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -5999,7 +7848,36 @@
   "novelty": 4.237737808650773,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Twisted Fates",
@@ -6041,7 +7919,15 @@
   "novelty": 2.9446794040959814,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Vraska's Final Mercy",
@@ -6111,7 +7997,36 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Academic Ascent",
@@ -6181,16 +8096,32 @@
   ],
   "archetypes": [
    {
-    "pair": "WU",
-    "name": "Fatehold Surveil Aggro",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -6253,7 +8184,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -6298,7 +8251,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -6379,13 +8354,29 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -6425,7 +8416,36 @@
   "novelty": 3.5611507228276627,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Hapatra, the Desert Fang",
@@ -6450,8 +8470,8 @@
   "raw_score": 0.592857142857143,
   "base_z": 0.22111871299757055,
   "z": 0.22111871299757055,
-  "grade": "C",
-  "base_grade": "C",
+  "grade": "C+",
+  "base_grade": "C+",
   "confidence": "high",
   "trust": {
    "band": 3,
@@ -6475,7 +8495,8 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    }
   ]
  },
@@ -6550,13 +8571,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -6608,7 +8645,8 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -6683,25 +8721,71 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
-   },
-   {
-    "pair": "WU",
-    "name": "Fatehold Surveil Aggro",
-    "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -6743,7 +8827,15 @@
   "novelty": 3.0073645714296733,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Sureshot Sower",
@@ -6788,7 +8880,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Countersculpt",
@@ -6886,13 +9007,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 4,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    },
    {
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -6937,7 +9074,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -6999,16 +9158,32 @@
   ],
   "archetypes": [
    {
-    "pair": "WB",
-    "name": "Liliana's Attrition",
-    "signals": 1,
-    "key_card": false
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
    },
    {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -7055,7 +9230,8 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -7100,7 +9276,29 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -7165,7 +9363,29 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -7230,7 +9450,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -7280,7 +9522,29 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -7320,7 +9584,36 @@
   "novelty": 4.005176106307312,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Ruric Thar, Magecrusher",
@@ -7363,7 +9656,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -7410,7 +9725,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Emergency Phytomedic // Seed Suture",
@@ -7471,7 +9815,8 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -7516,7 +9861,29 @@
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -7600,16 +9967,32 @@
   ],
   "archetypes": [
    {
-    "pair": "WU",
-    "name": "Fatehold Surveil Aggro",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -7667,13 +10050,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -7725,7 +10124,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -7765,7 +10186,36 @@
   "novelty": 4.401134629060624,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Puppet Crafting",
@@ -7803,7 +10253,36 @@
   "novelty": 3.713187062364144,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Semester Foreseer // Peer Review",
@@ -7870,7 +10349,8 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -7958,7 +10438,36 @@
   "novelty": 2.945073432806009,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Vinelasher Adept",
@@ -8006,19 +10515,29 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": true
-   },
-   {
-    "pair": "WG",
-    "name": "Vigorbloom Life Gain",
-    "signals": 1,
-    "key_card": false
+    "key_card": true,
+    "supports": true
    },
    {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -8065,7 +10584,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Titanbones, Towering Heart",
@@ -8113,7 +10661,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -8153,7 +10723,36 @@
   "novelty": 3.229521183689129,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Primal Witchstalker",
@@ -8203,7 +10802,8 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    }
   ]
  },
@@ -8284,7 +10884,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -8346,7 +10968,8 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -8394,7 +11017,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Face Yourself",
@@ -8455,7 +11107,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -8536,7 +11210,8 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -8576,7 +11251,36 @@
   "novelty": 2.6177441930006067,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Silence the Echo",
@@ -8639,7 +11343,29 @@
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -8666,8 +11392,8 @@
   "raw_score": 0.45999999999999996,
   "base_z": -0.13017424406598177,
   "z": -0.13017424406598177,
-  "grade": "C-",
-  "base_grade": "C-",
+  "grade": "C",
+  "base_grade": "C",
   "confidence": "high",
   "trust": {
    "band": 2,
@@ -8691,7 +11417,8 @@
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -8772,13 +11499,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -8853,13 +11596,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -8938,19 +11697,29 @@
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": true
-   },
-   {
-    "pair": "WU",
-    "name": "Fatehold Surveil Aggro",
-    "signals": 1,
-    "key_card": false
+    "key_card": true,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -8992,16 +11761,32 @@
   "flags": [],
   "archetypes": [
    {
-    "pair": "BR",
-    "name": "Stingerquill Face Burn",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -9046,13 +11831,29 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -9121,7 +11922,29 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -9161,7 +11984,36 @@
   "novelty": 2.705322388582857,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Jiang Yanggu, Never Alone",
@@ -9204,7 +12056,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -9281,13 +12155,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -9337,7 +12227,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -9382,13 +12294,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -9428,16 +12356,74 @@
   "flags": [],
   "archetypes": [
    {
-    "pair": "WG",
-    "name": "Vigorbloom Life Gain",
-    "signals": 1,
-    "key_card": false
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
    },
    {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -9512,7 +12498,8 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -9570,7 +12557,8 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -9620,7 +12608,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -9659,7 +12669,15 @@
   "novelty": 3.039654423427844,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Deserted Beach",
@@ -9696,7 +12714,15 @@
   "novelty": 3.039654423427844,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Overgrown Farmland",
@@ -9733,7 +12759,15 @@
   "novelty": 3.039654423427844,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Rockfall Vale",
@@ -9775,7 +12809,8 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -9814,7 +12849,15 @@
   "novelty": 3.039654423427844,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Saheeli, Jewel of Avishkar",
@@ -9864,7 +12907,8 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    }
   ]
  },
@@ -9914,7 +12958,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -9963,7 +13029,8 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -10003,7 +13070,36 @@
   "novelty": 2.946490658430767,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Theorist's Sanctum",
@@ -10081,7 +13177,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -10131,7 +13249,29 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -10171,7 +13311,36 @@
   "novelty": 2.914648761678774,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Yargle, Glutton of Urborg",
@@ -10209,7 +13378,36 @@
   "novelty": 0.0,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Proft, Consulting Detective",
@@ -10232,8 +13430,8 @@
   "raw_score": 0.3357142857142857,
   "base_z": -0.39982459482787625,
   "z": -0.39982459482787625,
-  "grade": "D+",
-  "base_grade": "D+",
+  "grade": "C-",
+  "base_grade": "C-",
   "confidence": "high",
   "trust": {
    "band": 3,
@@ -10257,7 +13455,29 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": true
+    "key_card": true,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -10297,7 +13517,36 @@
   "novelty": 2.76949589365333,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Tetsuko Umezawa, Pursuer",
@@ -10347,7 +13596,29 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -10390,22 +13661,74 @@
   "flags": [],
   "archetypes": [
    {
-    "pair": "WG",
-    "name": "Vigorbloom Life Gain",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -10452,7 +13775,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Tethermage's Advantage",
@@ -10490,7 +13842,36 @@
   "novelty": 3.0164632557726145,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Cruel Calculations",
@@ -10528,7 +13909,36 @@
   "novelty": 3.3907336139027184,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Predictive Preparations",
@@ -10573,22 +13983,32 @@
   "flags": [],
   "archetypes": [
    {
-    "pair": "WG",
-    "name": "Vigorbloom Life Gain",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -10663,7 +14083,8 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -10707,7 +14128,15 @@
   "novelty": 3.3970547969111724,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Mabel, Valley Hero",
@@ -10757,7 +14186,8 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    }
   ]
  },
@@ -10802,7 +14232,29 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -10865,7 +14317,8 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -10966,7 +14419,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -11024,7 +14499,29 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -11079,7 +14576,36 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Tomik, Izzet Sparkmage",
@@ -11127,7 +14653,29 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -11172,13 +14720,29 @@
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -11220,7 +14784,36 @@
   "novelty": 3.8107244874917825,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Loot, the Nexus",
@@ -11258,7 +14851,36 @@
   "novelty": 3.707239458796143,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Way of the Paradox",
@@ -11335,19 +14957,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
-   },
-   {
-    "pair": "WG",
-    "name": "Vigorbloom Life Gain",
-    "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -11423,7 +15055,36 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Fateshaper Aspirant",
@@ -11468,22 +15129,32 @@
   "flags": [],
   "archetypes": [
    {
-    "pair": "WG",
-    "name": "Vigorbloom Life Gain",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -11523,7 +15194,36 @@
   "novelty": 3.029026698344443,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Hallway Heckler // Vicious Verse",
@@ -11578,7 +15278,8 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -11603,8 +15304,8 @@
   "raw_score": 0.2564285714285714,
   "base_z": -0.6688809414639829,
   "z": -0.6688809414639829,
-  "grade": "D",
-  "base_grade": "D",
+  "grade": "D+",
+  "base_grade": "D+",
   "confidence": "high",
   "trust": {
    "band": 3,
@@ -11628,7 +15329,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -11673,7 +15396,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -11748,13 +15493,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -11801,7 +15562,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Entrust the Spark",
@@ -11859,7 +15649,8 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -11899,7 +15690,36 @@
   "novelty": 3.225860452556079,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Rewrite Regrets",
@@ -11969,16 +15789,32 @@
   ],
   "archetypes": [
    {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   },
+   {
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -12041,7 +15877,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": true
+    "key_card": true,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -12081,7 +15939,36 @@
   "novelty": 2.7384160490928573,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Greenhouse Propagator",
@@ -12124,13 +16011,29 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -12205,13 +16108,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -12251,7 +16170,36 @@
   "novelty": 3.5640815222650213,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Formidable Commons",
@@ -12301,7 +16249,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Dedicated Commons",
@@ -12351,7 +16307,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Fatehold Annex",
@@ -12401,7 +16365,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Meticulous Commons",
@@ -12451,7 +16423,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Konstrari Annex",
@@ -12506,7 +16486,8 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -12558,7 +16539,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Vigorbloom Annex",
@@ -12608,7 +16597,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Theorix Annex",
@@ -12658,7 +16655,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Transformative Commons",
@@ -12713,7 +16718,8 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -12765,7 +16771,15 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Danitha, Sword of Hope",
@@ -12803,7 +16817,36 @@
   "novelty": 3.6591512469263616,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Way of the Pyromancer",
@@ -12876,13 +16919,29 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -12924,7 +16983,15 @@
   "novelty": 4.061937809585283,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": true,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Traxos, Scourge Eternal",
@@ -12965,7 +17032,71 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -13006,13 +17137,71 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -13052,7 +17241,36 @@
   "novelty": 3.8365966099232622,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Way of the Mind Sculptor",
@@ -13125,13 +17343,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -13156,8 +17390,8 @@
   "raw_score": 0.17285714285714285,
   "base_z": -1.0441228151303865,
   "z": -1.0441228151303865,
-  "grade": "D-",
-  "base_grade": "D-",
+  "grade": "D",
+  "base_grade": "D",
   "confidence": "high",
   "trust": {
    "band": 1,
@@ -13171,7 +17405,36 @@
   "novelty": 2.5670846105527767,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Charge the Sanctum",
@@ -13216,7 +17479,8 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -13290,7 +17554,8 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -13330,7 +17595,36 @@
   "novelty": 3.2606818717177886,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Hexhaven Dueling Arena",
@@ -13380,7 +17674,71 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -13425,7 +17783,29 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -13472,22 +17852,32 @@
   "flags": [],
   "archetypes": [
    {
-    "pair": "WG",
-    "name": "Vigorbloom Life Gain",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -13534,13 +17924,29 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -13576,7 +17982,78 @@
   "novelty": 4.404425374988115,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Way of the Mentor",
@@ -13646,16 +18123,32 @@
   ],
   "archetypes": [
    {
-    "pair": "WU",
-    "name": "Fatehold Surveil Aggro",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -13730,7 +18223,8 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -13770,7 +18264,36 @@
   "novelty": 2.8262323758448944,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Budding Insurgent",
@@ -13815,7 +18338,36 @@
    }
   ],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Arni, Renowned Champion",
@@ -13853,7 +18405,36 @@
   "novelty": 2.6703657968804535,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Inspired Tethermage",
@@ -13926,13 +18507,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -13984,7 +18581,8 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -14024,7 +18622,36 @@
   "novelty": 4.446617806970495,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Traxos, Academy Guardian",
@@ -14072,7 +18699,29 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14117,7 +18766,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14162,13 +18833,29 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14209,7 +18896,71 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14262,7 +19013,36 @@
     ]
    }
   ],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Yuriko, Blade of the Mighty",
@@ -14305,7 +19085,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14345,7 +19147,36 @@
   "novelty": 0.0,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Ghalta the Immovable",
@@ -14383,7 +19214,36 @@
   "novelty": 3.973790540040759,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Edgar, Moonlit Sovereign",
@@ -14426,7 +19286,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14471,7 +19353,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14511,7 +19415,36 @@
   "novelty": 3.2690002344389595,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Hall of Echoes",
@@ -14530,8 +19463,8 @@
   "raw_score": 0.065,
   "base_z": -1.6624201003674497,
   "z": -1.6624201003674497,
-  "grade": "F",
-  "base_grade": "F",
+  "grade": "D-",
+  "base_grade": "D-",
   "confidence": "high",
   "trust": {
    "band": 2,
@@ -14550,7 +19483,71 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14608,7 +19605,8 @@
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    }
   ]
  },
@@ -14683,7 +19681,29 @@
     "pair": "BG",
     "name": "Garruk's Bestiary",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14734,16 +19754,74 @@
   ],
   "archetypes": [
    {
-    "pair": "WB",
-    "name": "Liliana's Attrition",
-    "signals": 1,
-    "key_card": false
-   },
-   {
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14788,7 +19866,29 @@
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14824,7 +19924,78 @@
   "novelty": 2.8582079444317112,
   "adjustments": [],
   "flags": [],
-  "archetypes": []
+  "archetypes": [
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   }
+  ]
  },
  {
   "name": "Codie, Ravenous Codex",
@@ -14945,13 +20116,29 @@
     "pair": "UB",
     "name": "Theorix Graveyard Math",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -14996,13 +20183,29 @@
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 2,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BR",
+    "name": "Stingerquill Face Burn",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -15052,19 +20255,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": true
+    "key_card": true,
+    "supports": true
    },
    {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -15109,13 +20322,29 @@
     "pair": "WG",
     "name": "Vigorbloom Life Gain",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WR",
     "name": "Ajani's Army",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WB",
+    "name": "Liliana's Attrition",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -15194,19 +20423,29 @@
     "pair": "UG",
     "name": "Jace's Mastery",
     "signals": 3,
-    "key_card": false
-   },
-   {
-    "pair": "WU",
-    "name": "Fatehold Surveil Aggro",
-    "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "UR",
     "name": "Chandra's Prowess",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WU",
+    "name": "Fatehold Surveil Aggro",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -15265,31 +20504,71 @@
     "pair": "WU",
     "name": "Fatehold Surveil Aggro",
     "signals": 2,
-    "key_card": false
-   },
-   {
-    "pair": "UB",
-    "name": "Theorix Graveyard Math",
-    "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "BR",
     "name": "Stingerquill Face Burn",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
-    "pair": "WG",
-    "name": "Vigorbloom Life Gain",
+    "pair": "UB",
+    "name": "Theorix Graveyard Math",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
    },
    {
     "pair": "WB",
     "name": "Liliana's Attrition",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 1,
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "RG",
+    "name": "Konstrari Mana Ramp",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UR",
+    "name": "Chandra's Prowess",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WR",
+    "name": "Ajani's Army",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  },
@@ -15334,7 +20613,29 @@
     "pair": "RG",
     "name": "Konstrari Mana Ramp",
     "signals": 1,
-    "key_card": false
+    "key_card": false,
+    "supports": true
+   },
+   {
+    "pair": "BG",
+    "name": "Garruk's Bestiary",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "UG",
+    "name": "Jace's Mastery",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
+   },
+   {
+    "pair": "WG",
+    "name": "Vigorbloom Life Gain",
+    "signals": 0,
+    "key_card": false,
+    "supports": false
    }
   ]
  }

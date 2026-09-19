@@ -51,7 +51,7 @@
    "cards": 62,
    "mono": 40,
    "a_tier": 7,
-   "b_or_better": 22,
+   "b_or_better": 21,
    "top15_mean_z": 1.4082340307085428,
    "rank": 2
   },
@@ -2094,7 +2094,7 @@
     },
     {
      "name": "Charge the Sanctum",
-     "grade": "D",
+     "grade": "D-",
      "z": -1.0596898668082535,
      "rarity": "common",
      "mana_cost": "{2}{R/W}",
@@ -3370,7 +3370,7 @@
     },
     {
      "name": "No Admittance",
-     "grade": "B-",
+     "grade": "C+",
      "z": 0.5295433634059201,
      "rarity": "common",
      "mana_cost": "{1}{R}",
@@ -4113,7 +4113,7 @@
     },
     {
      "name": "Whiplash Wordsmith // Vicious Verse",
-     "grade": "D-",
+     "grade": "F",
      "z": -1.6991776601112984,
      "rarity": "common",
      "mana_cost": "{3}{B/R}",
@@ -4251,7 +4251,7 @@
     },
     {
      "name": "Whiplash Wordsmith // Vicious Verse",
-     "grade": "D-",
+     "grade": "F",
      "z": -1.6991776601112984,
      "rarity": "common",
      "mana_cost": "{3}{B/R}",

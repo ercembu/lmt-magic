@@ -119,34 +119,46 @@ def mechanics_used(card, setcode):
 
 
 def archetype_fit(card, setcode):
-    """Which two-colour archetypes this card actively supports."""
+    """Every archetype the card can actually be played in, and which it helps.
+
+    These are two different questions and conflating them was wrong: a mono-blue
+    bomb is castable in all four blue pairs while supporting none of their
+    mechanical themes, and listing nothing for it made it invisible to the
+    archetype filter. `castable` answers "can this go in that deck"; `supports`
+    answers "does it do what that deck is trying to do".
+    """
     info = load_setinfo(setcode)
     t = card_text(card)
-    ci = set(card.get("color_identity", []))
+    # Colour IDENTITY, not mana cost. Cost looks tempting -- Codie is {3} so
+    # anyone can cast it -- but it is wrong for the cases that matter: a dual
+    # land has no mana cost at all and would land in all ten archetypes, and a
+    # prepare card's spell half ({U/B} on a {1}{B} creature) is the reason you
+    # play it. Identity is right for 28 of the 29 cards where the two differ;
+    # the exception is Codie, whose five-colour ability you cannot use in a
+    # two-colour deck anyway -- which is part of why it grades F.
+    ci = set(card.get("color_identity") or [])
+    defined = list(info["archetypes"]) if info else list(ARCHETYPE_SIGNALS)
     fits = []
-    # Not every set ships ten archetypes -- HOB, SOS, TMT and ECL have five -- so
-    # only consider pairs this set actually defines.
-    defined = set(info["archetypes"]) if info else set(ARCHETYPE_SIGNALS)
-    for pair, pats in ARCHETYPE_SIGNALS.items():
-        if pair not in defined:
-            continue
-        pc = set(pair)
-        # castable in that archetype: its colours must fit inside the pair
-        if ci and not ci <= pc:
-            continue
+    for pair in defined:
+        if not ci <= set(pair):
+            continue                        # can't cast it there
+        pats = ARCHETYPE_SIGNALS.get(pair, [])
         n = sum(1 for p in pats if re.search(p, t))
-        if n:
-            entry = info["archetypes"][pair] if info else None
-            name = entry["name"] if entry else pair
-            key = bool(entry and card["name"] in entry["key_cards"])
-            fits.append({"pair": pair, "name": name, "signals": n, "key_card": key})
-    return sorted(fits, key=lambda f: (-f["key_card"], -f["signals"]))
+        entry = info["archetypes"][pair] if info else None
+        fits.append({
+            "pair": pair,
+            "name": entry["name"] if entry else pair,
+            "signals": n,
+            "key_card": bool(entry and card["name"] in entry["key_cards"]),
+            "supports": bool(n),
+        })
+    return sorted(fits, key=lambda f: (-f["key_card"], -f["signals"], f["pair"]))
 
 
-# Measured on held-out released sets (guard_ablation.py): the numeric nudges below
-# changed mean grade error by -0.000 to +0.027 steps and spearman by -0.003 to +0.001
-# across MKM, FIN and EOE. That is nothing, and on two of three it was slightly worse.
-# So they are computed and shown as context, but do not move the grade by default.
+# Measured on held-out released sets (guard_ablation.py): across 11 sets with
+# validated setinfo the numeric nudges changed spearman by +0.0005 (p=0.54) and
+# mean grade error by -0.0015 (p=0.81) -- helped 3, hurt 2, no change on 6. So
+# they are computed and shown as context, but do not move the grade by default.
 # Flip to True to re-enable, and re-run guard_ablation.py before believing it.
 APPLY_ADJUSTMENTS = False
 
@@ -162,7 +174,7 @@ def apply(card, setcode, base_z, apply_adjustments=None):
     adj, flags = [], []
     delta = 0.0
 
-    fits = archetype_fit(card, setcode)
+    fits = [f for f in archetype_fit(card, setcode) if f["supports"]]
     key_for = [f for f in fits if f["key_card"]]
     if key_for:
         d = 0.25
