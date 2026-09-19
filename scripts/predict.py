@@ -161,8 +161,16 @@ def grade_set(setcode, model_path=None, exclude_unplayable=True):
                         "within_1": b["within_1"], "within_2": b["within_2"]}
         return None
 
+    # Ship the validated interaction classification rather than letting the page
+    # re-derive it: a quick client-side regex missed most of blue, whose answers
+    # are bounce and counterspells rather than "destroy target creature".
+    INTERACT = ("e_removal_any", "e_bounce", "e_counter", "e_artifact_removal",
+                "e_counter_removal", "e_hand_disruption")
+
     out = []
     for c, rz, rp, letter, nv in zip(cards, base_z, raw, letters, nov):
+        _f = features.extract(c)
+        _kinds = [k[2:] for k in INTERACT if _f.get(k)]
         adj_z, adjustments, flags, conf = guards.apply(c, setcode, rz)
         fits = guards.archetype_fit(c, setcode)
         fr = c["card_faces"][0] if "card_faces" in c else c
@@ -188,6 +196,8 @@ def grade_set(setcode, model_path=None, exclude_unplayable=True):
             "base_grade": letter,
             "confidence": conf,
             "trust": band_for(nv),
+            "interaction": _kinds,
+            "interacts": bool(_kinds),
             "novelty": float(nv),
             "adjustments": adjustments,
             "flags": flags,

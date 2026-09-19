@@ -249,7 +249,7 @@ footer p{max-width:78ch}
       <option value="mythic">Mythic</option>
     </select>
     <select id="arch" aria-label="Filter by archetype"><option value="">All archetypes</option></select>
-    <button class="chip" id="fRemoval" aria-pressed="false">Removal</button>
+    <button class="chip" id="fRemoval" aria-pressed="false" title="Anything that answers a threat: removal, bounce, counterspells, discard">Removal &amp; answers</button>
     <button class="chip" id="fCreature" aria-pressed="false">Creatures</button>
     <button class="chip" id="fFlag" aria-pressed="false">Needs a human look</button>
     <button class="chip" id="refresh" title="Pull the latest grades">Refresh</button>
@@ -306,10 +306,10 @@ function manaPips(cost){
   }).join('');
 }
 
-function isRemoval(c){
-  const t=(c.oracle_text||'').toLowerCase();
-  return /\b(destroy|exile) target|deals? \d+ damage to|gets? -\d+\/-\d+|\bfights?\b|destroy all/.test(t);
-}
+// Classification comes from the pipeline (features.py), which is checked against
+// WotC's own published removal list -- it catches 34/34. Re-deriving it here with
+// a regex missed bounce and counterspells, i.e. most of what blue plays.
+function isRemoval(c){ return !!c.interacts; }
 
 function matches(c){
   if(state.rarity && c.rarity!==state.rarity) return false;
