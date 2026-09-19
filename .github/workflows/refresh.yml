@@ -84,5 +84,7 @@ jobs:
             echo "Nothing changed."
           else
             git commit -m "Refresh grades ($(date -u +%Y-%m-%d))"
+            # another push may have landed while this job was running
+            git pull --rebase -X ours origin main || true
             git push
           fi

@@ -18,7 +18,8 @@ cp "data/setinfo/$TARGET.json" docs/setinfo.json 2>/dev/null || true
 
 # Pages serves this as a plain static dir; the .nojekyll stops Jekyll eating files
 touch docs/.nojekyll
-printf '{"set":"%s","built":"%s"}\n' "$TARGET" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > docs/version.json
+DATA_HASH=$(cat docs/grades.json docs/signals.json | sha1sum | cut -c1-12)
+printf '{"set":"%s","data":"%s"}\n' "$TARGET" "$DATA_HASH" > docs/version.json
 
 echo "docs/ built for $TARGET:"
 du -sh docs; ls docs
