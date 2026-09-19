@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reality Fracture — What to Commit To</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#191527">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#191527; --ink-2:#211c33; --ink-3:#2b2442; --edge:#372e52;
+  --text:#ece8f6; --text-2:#a49cc0; --text-3:#736b8f;
+  --w:#e8dfc0; --u:#6fa8dc; --b:#a98fc4; --r:#e08268; --g:#7fbf92;
+  --gA:#ff5fa8; --gB:#c77dff; --gC:#7f93cc; --gD:#6b6580; --gF:#4c4660;
+  --warn:#e8a33d;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:
+    radial-gradient(1100px 460px at 75% -8%, rgba(214,76,154,.10), transparent 60%),
+    radial-gradient(900px 400px at 5% 0%, rgba(111,168,220,.07), transparent 60%),
+    var(--ink);
+  color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:14px;line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+header{padding:32px 0 0}
+nav{display:flex;gap:16px;margin-bottom:22px;font-size:13px}
+nav a{color:var(--text-3);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent}
+nav a:hover{color:var(--text-2)}
+nav a[aria-current=page]{color:var(--text);border-bottom-color:var(--gA)}
+h1{font-family:Spectral,Georgia,serif;font-weight:700;font-size:clamp(28px,4.2vw,46px);
+   line-height:1.04;letter-spacing:-.018em;margin:0}
+h1 em{font-style:italic;font-weight:400;color:var(--text-2)}
+.lede{margin:11px 0 0;max-width:64ch;color:var(--text-2);font-size:15px;line-height:1.62}
+.lede b{color:var(--text);font-weight:600}
+
+h2{font-family:Spectral,serif;font-weight:600;font-size:23px;letter-spacing:-.01em;
+   margin:52px 0 4px}
+.note{color:var(--text-3);font-size:13px;margin:0 0 18px;max-width:70ch;line-height:1.6}
+.note b{color:var(--text-2)}
+.warnbox{border-left:2px solid var(--warn);padding:9px 0 9px 13px;margin-bottom:12px;
+         background:linear-gradient(90deg,rgba(232,163,61,.05),transparent)}
+.warnbox b{color:var(--warn)}
+
+/* ---------- colour ladder ---------- */
+.ladder{border:1px solid var(--edge);border-radius:4px;overflow:hidden}
+.rung{display:grid;grid-template-columns:26px 22px minmax(0,1fr) 268px;gap:12px;align-items:center;
+      padding:13px 15px;border-bottom:1px solid var(--edge);background:var(--ink-2)}
+.rung:last-child{border-bottom:0}
+.rung .pos{font-family:Spectral,serif;font-size:15px;color:var(--text-3);text-align:right}
+.rung .nm{font-family:Spectral,serif;font-size:17px;font-weight:600}
+.rung .bar{height:9px;border-radius:5px;background:var(--ink);overflow:hidden;position:relative}
+.rung .bar i{display:block;height:100%;border-radius:5px}
+.rung .stat{font-size:12.5px;color:var(--text-2);text-align:right;white-space:nowrap}
+.rung .stat b{color:var(--text);font-weight:600}
+.dot{width:13px;height:13px;border-radius:50%;display:inline-block}
+.W{background:var(--w)} .U{background:var(--u)} .B{background:var(--b)}
+.R{background:var(--r)} .G{background:var(--g)}
+.barW{background:var(--w)} .barU{background:var(--u)} .barB{background:var(--b)}
+.barR{background:var(--r)} .barG{background:var(--g)}
+
+/* ---------- pull columns ---------- */
+.pulls{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:start}
+.col{border:1px solid var(--edge);border-radius:4px;background:var(--ink-2);min-width:0}
+.col h3{margin:0;padding:10px 12px;font-family:Spectral,serif;font-size:15px;font-weight:600;
+        border-bottom:1px solid var(--edge);display:flex;align-items:center;gap:8px}
+.col ol{list-style:none;margin:0;padding:6px}
+.card{display:grid;grid-template-columns:30px 1fr auto;gap:7px;align-items:center;
+      padding:5px 6px;border-radius:2px;border-left:2px solid var(--gD);margin-bottom:3px;
+      background:var(--ink)}
+.card .gr{font-family:Spectral,serif;font-weight:700;font-size:13px;text-align:center}
+.card .nm{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.card a{text-decoration:none}
+.card[data-t=A]{border-left-color:var(--gA)} .card[data-t=A] .gr{color:var(--gA)}
+.card[data-t=B]{border-left-color:var(--gB)} .card[data-t=B] .gr{color:var(--gB)}
+.card[data-t=C]{border-left-color:var(--gC)} .card[data-t=C] .gr{color:var(--gC)}
+.card[data-t=D]{border-left-color:var(--gD)} .card[data-t=D] .gr{color:var(--gD)}
+.card[data-t=F]{border-left-color:var(--gF)} .card[data-t=F] .gr{color:var(--gF)}
+.rar{width:6px;height:6px;border-radius:50%;flex:none}
+.rar.common{background:#6f6a85} .rar.uncommon{background:#b9c2cf}
+.rar.rare{background:#d9bd6a} .rar.mythic{background:#e0452c}
+
+/* ---------- pairs ---------- */
+.pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.pair{border:1px solid var(--edge);border-radius:4px;background:var(--ink-2);padding:14px 15px}
+.pair .hd{display:flex;align-items:baseline;gap:9px;margin-bottom:3px}
+.pair .pos{font-family:Spectral,serif;font-size:14px;color:var(--text-3)}
+.pair .nm{font-family:Spectral,serif;font-size:17px;font-weight:600}
+.pips{display:inline-flex;gap:3px;margin-right:3px}
+.pair .bar{height:7px;border-radius:4px;background:var(--ink);overflow:hidden;margin:9px 0 13px}
+.pair .bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--gC),var(--gA))}
+.sub{font-size:11.5px;color:var(--text-3);margin:0 0 6px;font-family:Spectral,serif}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:11px}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border:1px solid var(--edge);
+      border-radius:3px;font-size:12px;background:var(--ink);text-decoration:none;color:var(--text-2)}
+.chip b{font-family:Spectral,serif;font-size:12px}
+.chip.A b{color:var(--gA)} .chip.B b{color:var(--gB)} .chip.C b{color:var(--gC)}
+.chip.D b{color:var(--gD)} .chip.F b{color:var(--gF)}
+.caveat{font-size:12px;color:var(--warn);opacity:.9;margin:0 0 11px;line-height:1.5}
+
+footer{padding:50px 0 70px;color:var(--text-3);font-size:12.5px;line-height:1.65}
+footer p{max-width:78ch}
+
+@media (max-width:980px){
+  .pulls{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .pairs{grid-template-columns:1fr}
+  .rung{grid-template-columns:22px 20px 1fr;row-gap:6px}
+  .rung .stat{grid-column:1/-1;text-align:left}
+}
+@media (max-width:520px){ .pulls{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <nav>
+    <a href="./">All 280 cards</a>
+    <a href="signals.html" aria-current="page">What to commit to</a>
+    <button id="refresh" style="margin-left:auto;background:var(--ink-2);border:1px solid var(--edge);
+      color:var(--text-2);border-radius:3px;padding:4px 10px;font:inherit;font-size:12.5px;cursor:pointer">Refresh</button>
+  </nav>
+  <p id="stamp" style="margin:-14px 0 16px;color:var(--text-3);font-size:12px"></p>
+  <h1>Open this, <em>play this colour</em></h1>
+  <p class="lede">Sealed is mostly one decision: pick two colours, then play the best 23 cards
+  in them. The part of that decision this tool is actually good at is <b>which individual cards
+  are worth committing for</b>. The colour and pair rankings below were tested against 21
+  released sets and came out weak — each section says how weak, and you should read them in
+  that order.</p>
+</header>
+
+<h2>What the model thinks of each colour</h2>
+<p class="note warnbox"><b>Tested, and it is weak.</b> Across 31 released sets this ordering
+matched the real one at a rank correlation of <b>0.22</b>. It named the actual deepest colour
+9 times in 31 and the actual shallowest 8 times in 31, against 6 by chance. The reason it
+stays poor is measurable: the real gap between colours in a set is about 0.20, and our error
+on a colour's score is about 0.18 — the difference we are trying to see is nearly the size of
+our mistake. <b>Worth a glance, not worth a decision.</b></p>
+<p class="note" id="depthNote"></p>
+<div class="ladder" id="ladder"></div>
+
+<h2>Cards that decide a colour on their own</h2>
+<p class="note"><b>The most reliable thing here.</b> These come straight from the card grades,
+and the model is at its best on a set's top cards — on held-out sets its top 10 landed at the
+91st–95th percentile of what actually happened. Single-coloured cards only. A mono-coloured bomb commits one colour and leaves
+the other open, which is exactly what you want from your first pack. Gold cards commit both at
+once, so they live further down with their pairs.</p>
+<div class="pulls" id="pulls"></div>
+
+<h2>The ten pairs, ranked</h2>
+<p class="note" id="pairNote"></p>
+<p class="note">WotC's listed payoffs often grade poorly here, and that is the model's known
+blind spot rather than a disagreement worth having: it reads every card on its own and cannot
+see that a card is good <em>because</em> the rest of the archetype is in your deck. Where that
+happens the card is marked below. Trust WotC on those.</p>
+<div class="pairs" id="pairs"></div>
+
+<footer>
+  <p id="foot"></p>
+</footer>
+</div>
+
+<script>
+const tier = g => g[0];
+const pip = c => `<span class="dot ${c}"></span>`;
+
+function cardRow(c){
+  return `<li class="card" data-t="${tier(c.grade)}">
+    <span class="gr">${c.grade}</span>
+    <a class="nm" href="${c.scryfall_uri}" target="_blank" rel="noopener"
+       title="${c.name.replace(/"/g,'&quot;')} — ${c.mana_cost}">${c.name}</a>
+    <span class="rar ${c.rarity}" title="${c.rarity}"></span>
+  </li>`;
+}
+function chip(c){
+  return `<a class="chip ${tier(c.grade)}" href="${c.scryfall_uri}" target="_blank"
+    rel="noopener" title="${c.type_line}"><b>${c.grade}</b> ${c.name}</a>`;
+}
+
+fetch('signals.json').then(r=>r.json()).then(d=>{
+  const depth = Object.values(d.depth).sort((a,b)=>a.rank-b.rank);
+  const maxZ = Math.max(...depth.map(x=>x.top15_mean_z));
+  const deepest = depth[0], thinnest = depth[depth.length-1];
+
+  document.getElementById('depthNote').textContent =
+    `Ordered by the average grade of each colour's best 15 cards. The model puts ${deepest.name} `
+    + `first (${deepest.a_tier} bombs, ${deepest.b_or_better} graded B- or better) and `
+    + `${thinnest.name} last, but see above: that ordering is about as accurate as guessing. `
+    + `The bomb counts are worth more than the ordering — they come from individual grades.`;
+
+  document.getElementById('ladder').innerHTML = depth.map(x=>`
+    <div class="rung">
+      <span class="pos">${x.rank}</span>
+      <span>${pip(x.color)}</span>
+      <div>
+        <div class="nm">${x.name}</div>
+        <div class="bar"><i class="bar${x.color}" style="width:${x.top15_mean_z/maxZ*100}%"></i></div>
+      </div>
+      <div class="stat"><b>${x.top15_mean_z.toFixed(2)}</b> avg top-15 ·
+        <b>${x.b_or_better}</b> playable · <b>${x.a_tier}</b> bomb${x.a_tier===1?'':'s'}</div>
+    </div>`).join('');
+
+  document.getElementById('pulls').innerHTML = d.colors.map(col=>`
+    <section class="col">
+      <h3>${pip(col)} ${d.color_names[col]}</h3>
+      <ol>${d.pulls[col].slice(0,8).map(cardRow).join('')}</ol>
+    </section>`).join('');
+
+  const pairs = Object.values(d.pairs).sort((a,b)=>a.rank-b.rank);
+  const lo = Math.min(...pairs.map(p=>p.deck_mean_z));
+  const hi = Math.max(...pairs.map(p=>p.deck_mean_z));
+  document.getElementById('pairNote').innerHTML =
+    `Ranked by the quality of the best 23 cards castable in each pair — the format's prior, not `
+    + `your pool. <b>This holds up better than the colour ladder, but not well:</b> rank `
+    + `correlation 0.34 across 21 released sets, and the pair it called best was inside the real `
+    + `top three 10 times in 21 (chance is 6). ${pairs[0].name} tops it here. A single bomb in `
+    + `your packs still outweighs the whole ordering.`;
+
+  document.getElementById('pairs').innerHTML = pairs.map(p=>{
+    const width = 12 + (p.deck_mean_z - lo) / Math.max(hi - lo, 1e-6) * 88;
+    const weakKeys = p.key_cards.filter(c=>'CDF'.includes(tier(c.grade))).length;
+    return `<section class="pair">
+      <div class="hd">
+        <span class="pos">${p.rank}</span>
+        <span class="pips">${p.pair.split('').map(pip).join('')}</span>
+        <span class="nm">${p.name}</span>
+      </div>
+      <div class="bar"><i style="width:${width}%"></i></div>
+      ${p.gold.length?`<p class="sub">Signposts — only castable here</p>
+        <div class="chips">${p.gold.map(chip).join('')}</div>`:''}
+      ${p.key_cards.length?`<p class="sub">What WotC says the deck wants</p>
+        <div class="chips">${p.key_cards.map(chip).join('')}</div>
+        ${weakKeys>=Math.ceil(p.key_cards.length/2)
+          ? `<p class="caveat">${weakKeys} of ${p.key_cards.length} graded C or lower —
+             synergy the model can't see.</p>` : ''}`:''}
+    </section>`;
+  }).join('');
+
+  document.getElementById('foot').innerHTML =
+    `Everything here is built from the same predicted grades as the main page, which landed
+     within one grade step of the truth 46% of the time across 31 released sets. Aggregating
+     those grades into colour and pair rankings does <b>not</b> make them more reliable — the
+     errors are correlated rather than independent, so they do not cancel, and what is left is
+     the same size as the real differences between colours. That is why the two rankings on this
+     page carry their measured accuracy next to them and the card lists do not.
+     Run <code>scripts/validate_signals.py</code> to reproduce those numbers.`;
+});
+</script>
+<script src="pwa.js"></script>
+<script>FRA.mountRefresh(document.getElementById('refresh'), document.getElementById('stamp'));</script>
+</body>
+</html>

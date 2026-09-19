@@ -1,0 +1,119 @@
+{
+ "set": "HOB",
+ "removal": [
+  "Magnificent End",
+  "Stone by Sunlight",
+  "Thorin's Last Stand",
+  "Confusticate and Bebother",
+  "Enchanted River's Grasp",
+  "Sound the Trumpets",
+  "Thranduil's Decree",
+  "Uneasy Partings",
+  "Bilbo's Deadly Slice",
+  "Crude Bent Blade",
+  "Gnashing of Teeth",
+  "Stir Up Trouble",
+  "Burn, Burn, Tree and Fern",
+  "Gandalf, Spark Starter",
+  "Gl\u00f3in the Mighty",
+  "Pinecone Strike",
+  "Smaug, the Great Calamity",
+  "Quarrel",
+  "Troll Negotiations",
+  "Warg Tactics",
+  "Smaug, the Magnificent",
+  "Tom, Bert, and William"
+ ],
+ "archetypes": {
+  "WU": {
+   "name": "Humans",
+   "hook": "",
+   "key_cards": [
+    "Bard the Bowman",
+    "Bolg of the North",
+    "Celebrate the Mountain-king",
+    "Esgaroth Garrison",
+    "Front Porch Sentries",
+    "Long Lake Nuisance",
+    "Misty Mountains Raider",
+    "Snowslope Hunter",
+    "Stir Up Trouble",
+    "Thorin's Last Stand"
+   ]
+  },
+  "BR": {
+   "name": "Goblins",
+   "hook": "",
+   "key_cards": [
+    "Bard the Bowman",
+    "Bilbo Baggins, Burglar",
+    "Bilbo's Deadly Slice",
+    "Bilbo, Luckwearer",
+    "Bolg of the North",
+    "Burn, Burn, Tree and Fern",
+    "Confusticate and Bebother",
+    "Crude Bent Blade",
+    "Enchanted River's Grasp",
+    "Gandalf, Spark Starter",
+    "Gl\u00f3in the Mighty",
+    "Gnashing of Teeth",
+    "Magnificent End",
+    "Most Decrepit Old Bird",
+    "Pinecone Strike",
+    "Quarrel",
+    "Settle the Wreckage",
+    "Silvan Reveler",
+    "Smaug, the Great Calamity",
+    "Smaug, the Magnificent",
+    "Sound the Trumpets",
+    "Stir Up Trouble",
+    "Stone by Sunlight",
+    "Stone by Sunlight,",
+    "Stone-Giant of High Pass",
+    "The Chief Warg",
+    "Thorin Oakenshield",
+    "Thorin's Last Stand",
+    "Thranduil's Decree",
+    "Tom, Bert, and William",
+    "Troll Negotiations",
+    "Uneasy Partings",
+    "Velvetwing Butterflies",
+    "Warg Tactics"
+   ]
+  },
+  "BG": {
+   "name": "Wolves",
+   "hook": "",
+   "key_cards": [
+    "Beorn, Reluctant Host",
+    "Gollum, Silent Slinker",
+    "Long-Bodied Grey Dog",
+    "Nighthowl Pursuer",
+    "Ordinary Bear",
+    "The Chief Warg"
+   ]
+  },
+  "WR": {
+   "name": "Dwarves",
+   "hook": "",
+   "key_cards": [
+    "Bombur, Gentle Dreamer",
+    "Dori, Bearer of Friends",
+    "Iron Hills Blacksmith",
+    "Thorin Oakenshield"
+   ]
+  },
+  "UG": {
+   "name": "Elves",
+   "hook": "",
+   "key_cards": [
+    "Elven Raft-Steerer",
+    "Mirkwood Pathmaker",
+    "Silvan Reveler",
+    "Thranduil, Sindarin Liege",
+    "Wood Elves",
+    "Woodland Weavemaster"
+   ]
+  }
+ }
+}

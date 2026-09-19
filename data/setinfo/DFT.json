@@ -1,0 +1,90 @@
+{
+ "set": "DFT",
+ "removal": [],
+ "archetypes": {
+  "WU": {
+   "name": "Artifact Value",
+   "hook": "",
+   "key_cards": [
+    "Gearseeker Serpent",
+    "Guidelight Pathmaker",
+    "Voyage Home"
+   ]
+  },
+  "UB": {
+   "name": "Artifact Bleeder",
+   "hook": "",
+   "key_cards": [
+    "Haunt the Network",
+    "Haunted Hellride"
+   ]
+  },
+  "BR": {
+   "name": "Max Speed Aggro",
+   "hook": "",
+   "key_cards": [
+    "Apocalypse Runner",
+    "Gastal Thrillseaker",
+    "Gastal Thrillseeker"
+   ]
+  },
+  "RG": {
+   "name": "Exhaust Midrange",
+   "hook": "",
+   "key_cards": [
+    "Boom Scholar",
+    "Rocketeer Boostbuggy"
+   ]
+  },
+  "WG": {
+   "name": "Vehicles and Mounts Midrange",
+   "hook": "",
+   "key_cards": [
+    "Lagorin, Soul of Alacria",
+    "Veteran Beastrider"
+   ]
+  },
+  "WB": {
+   "name": "Max Speed Attrition",
+   "hook": "",
+   "key_cards": [
+    "Dune Drifter",
+    "Embalmed Ascendant"
+   ]
+  },
+  "UR": {
+   "name": "Discard Aggro",
+   "hook": "",
+   "key_cards": [
+    "Boosted Sloop",
+    "Broadside Barrage"
+   ]
+  },
+  "BG": {
+   "name": "Graveyard",
+   "hook": "",
+   "key_cards": [
+    "Broodheart Engine",
+    "Thundering Broodwagon"
+   ]
+  },
+  "WR": {
+   "name": "Vehicles and Mounts Aggro",
+   "hook": "",
+   "key_cards": [
+    "Cloudspire Coordinator",
+    "Cloudspire Skycycle",
+    "Spotcycle Scouter"
+   ]
+  },
+  "UG": {
+   "name": "Exhaust Ramp",
+   "hook": "",
+   "key_cards": [
+    "Rangers' Aetherhive",
+    "Skyserpent Seeker",
+    "Veloheart Bike"
+   ]
+  }
+ }
+}

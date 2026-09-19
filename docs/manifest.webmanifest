@@ -1,0 +1,16 @@
+{
+  "name": "Reality Fracture Limited Grades",
+  "short_name": "FRA Grades",
+  "description": "Card grades for Reality Fracture, predicted before release.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#191527",
+  "theme_color": "#191527",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

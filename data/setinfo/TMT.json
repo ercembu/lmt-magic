@@ -1,0 +1,86 @@
+{
+ "set": "TMT",
+ "removal": [
+  "Death in the Family",
+  "Dimensional Exile",
+  "Grounded for Life",
+  "Make Your Move",
+  "Uneasy Alliance",
+  "Bespoke B\u014d",
+  "Metalhead",
+  "Ooze Spill",
+  "Retro-Mutation",
+  "Anchovy & Banana Pizza",
+  "Shredder's Technique",
+  "Stomped by the Foot",
+  "Bot Bashing Time",
+  "General Traag, Heart of Stone",
+  "Jennika's Technique",
+  "Manhole Missile",
+  "Rock Soldiers",
+  "Spicy Oatmeal Pizza",
+  "Mutant Chain Reaction",
+  "Novel Nunchaku",
+  "Tenderize"
+ ],
+ "archetypes": {
+  "WB": {
+   "name": "Sneaky Ninjas",
+   "hook": "",
+   "key_cards": [
+    "Dream Beavers",
+    "Featherbrained Filcher",
+    "Karai, Future of the Foot"
+   ]
+  },
+  "UR": {
+   "name": "Machines",
+   "hook": "",
+   "key_cards": [
+    "Baxter Stockman"
+   ]
+  },
+  "BG": {
+   "name": "Disappear",
+   "hook": "",
+   "key_cards": [
+    "Genghis Frog",
+    "Mighty Mutanimals",
+    "Pizza Face, Gastromancer",
+    "Tainted Treats",
+    "The Neutrinos"
+   ]
+  },
+  "WR": {
+   "name": "Alliance",
+   "hook": "",
+   "key_cards": [
+    "Anchovy & Banana Pizza",
+    "Bespoke B\u014d",
+    "Bot Bashing Time",
+    "Death in the Family",
+    "General Traag, Heart of Stone",
+    "Jennika's Technique",
+    "Manhole Missile",
+    "Metalhead",
+    "Mutant Chain Reaction",
+    "Novel Nunchaku",
+    "Ooze Spill",
+    "Retro-Mutation",
+    "Rock Soldiers",
+    "Shredder's Technique",
+    "Spicy Oatmeal Pizza",
+    "Stomped by the Foot",
+    "Tenderize"
+   ]
+  },
+  "UG": {
+   "name": "Mutagen",
+   "hook": "",
+   "key_cards": [
+    "Crustacean Commando",
+    "Donatello, Way with Machines"
+   ]
+  }
+ }
+}

@@ -1,0 +1,102 @@
+{
+ "set": "EOE",
+ "removal": [],
+ "archetypes": {
+  "WU": {
+   "name": "Second Spell",
+   "hook": "",
+   "key_cards": [
+    "Starport Security",
+    "Sunstar Lightsmith",
+    "Uthros Psionicist"
+   ]
+  },
+  "UB": {
+   "name": "Artifact Control",
+   "hook": "",
+   "key_cards": [
+    "Alpharael, Dreaming Acolyte",
+    "Dubious Delicacy",
+    "Embrace Oblivion"
+   ]
+  },
+  "BR": {
+   "name": "Void",
+   "hook": "",
+   "key_cards": [
+    "Interceptor Mechan",
+    "Temporal Intervention"
+   ]
+  },
+  "RG": {
+   "name": "Landers and Landfall",
+   "hook": "",
+   "key_cards": [
+    "Galactic Wayfarer",
+    "Ragost, Deft Gastronaut",
+    "Tannuk, Memorial Ensign"
+   ]
+  },
+  "WG": {
+   "name": "+1/+1 Counters",
+   "hook": "",
+   "key_cards": [
+    "Haliya, Ascendant Cadet",
+    "Rescue Skiff",
+    "Scout for Survivors"
+   ]
+  },
+  "WB": {
+   "name": "Go Wide",
+   "hook": "",
+   "key_cards": [
+    "Dual-Sun Adepts",
+    "Syr Vondam, the Lucent"
+   ]
+  },
+  "UR": {
+   "name": "Artifact Aggro",
+   "hook": "",
+   "key_cards": [
+    "Mechan Navigator",
+    "Mm'menon, Uthros Exile"
+   ]
+  },
+  "BG": {
+   "name": "Graveyard",
+   "hook": "",
+   "key_cards": [
+    "Pinnacle Kill-Ship",
+    "Scrounge for Eternity",
+    "Seedship Broodtender",
+    "Thawbringer"
+   ]
+  },
+  "WR": {
+   "name": "Space Stations",
+   "hook": "",
+   "key_cards": [
+    "All-Fates Scroll",
+    "Biomechan Engineer",
+    "Fungal Colossus",
+    "Sami",
+    "Sami, Ship's Engineer",
+    "Survey Mechan",
+    "Wedgelight Rammer"
+   ]
+  },
+  "UG": {
+   "name": "Ramp",
+   "hook": "",
+   "key_cards": [
+    "Alpharael, Stonechosen",
+    "Close Encounter",
+    "Diplomatic Relations",
+    "Knight Luminary",
+    "Meltstrider's Resolve",
+    "Seedship Impact",
+    "Shattered Wings"
+   ]
+  }
+ }
+}

@@ -216,3 +216,11 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- lmt-magic data caches (large / regenerable) ---
+.venv/
+data/raw/
+data/cards/
+data/reviews/
+data/guides/
+data/embeddings.npz

@@ -1,0 +1,86 @@
+{
+ "set": "BLB",
+ "removal": [],
+ "archetypes": {
+  "WU": {
+   "name": "Birdfolk",
+   "hook": "",
+   "key_cards": [
+    "Knightfisher",
+    "Pileated Provisioner"
+   ]
+  },
+  "UB": {
+   "name": "Ratfolk",
+   "hook": "",
+   "key_cards": [
+    "Shoreline Looter",
+    "Thornplate Intimidator"
+   ]
+  },
+  "BR": {
+   "name": "Lizardfolk",
+   "hook": "",
+   "key_cards": [
+    "Flamecache Gecko",
+    "Ravine Raider"
+   ]
+  },
+  "RG": {
+   "name": "Raccoonfolk",
+   "hook": "",
+   "key_cards": [
+    "Brazen Collector",
+    "Rust-Shield Rampager"
+   ]
+  },
+  "WG": {
+   "name": "Rabbitfolk",
+   "hook": "",
+   "key_cards": [
+    "Burrowguard Mentor",
+    "Warren Elder"
+   ]
+  },
+  "WB": {
+   "name": "Batfolk",
+   "hook": "",
+   "key_cards": [
+    "Starlit Soothsayer",
+    "Wax-Wane Witness"
+   ]
+  },
+  "UR": {
+   "name": "Otterfolk",
+   "hook": "",
+   "key_cards": [
+    "Daring Waverider",
+    "Harnesser of Storms"
+   ]
+  },
+  "BG": {
+   "name": "Squirrelfolk",
+   "hook": "",
+   "key_cards": [
+    "Daggerfang Duo",
+    "Treetop Sentries"
+   ]
+  },
+  "WR": {
+   "name": "Mousefolk",
+   "hook": "",
+   "key_cards": [
+    "Flowerfoot Swordmaster",
+    "Heartfire Hero"
+   ]
+  },
+  "UG": {
+   "name": "Frogfolk",
+   "hook": "",
+   "key_cards": [
+    "Long River Lurker",
+    "Sunshower Druid"
+   ]
+  }
+ }
+}

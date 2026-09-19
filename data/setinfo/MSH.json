@@ -1,0 +1,139 @@
+{
+ "set": "MSH",
+ "removal": [
+  "Helicarrier Strike",
+  "Murdock's Crusade",
+  "Super Villain Lockup",
+  "Web Up",
+  "Atlantis Attacks",
+  "Frozen in Ice",
+  "Justice, Vance Astrovik",
+  "Trickster's Stratagem",
+  "We Say Thee Nay!",
+  "Cruel Alliance",
+  "Dark Deed",
+  "Hour of Defeat",
+  "Ronin, Shadow Stalker",
+  "Widow's Bite",
+  "Death to Our Enemies",
+  "HULK SMASH!",
+  "Iron Fist, Living Weapon",
+  "Lightning Strike",
+  "Photon Blast Barrage",
+  "Repulsor Blast",
+  "Truck Toss",
+  "Go Nuts!",
+  "Punishing Punch",
+  "She-Hulk, Jade Defender",
+  "Thor, God of Thunder",
+  "Mj\u00f6lnir, Hammer of Thor"
+ ],
+ "archetypes": {
+  "WU": {
+   "name": "Teamwork",
+   "hook": "",
+   "key_cards": [
+    "Borough Backup",
+    "Captain America, Living Legend",
+    "S.H.I.E.L.D. Deployment Drone",
+    "Spider-Woman, Secret Agent"
+   ]
+  },
+  "UB": {
+   "name": "Draw Second Card",
+   "hook": "",
+   "key_cards": [
+    "Ghost, Spectral Saboteur",
+    "Kang, Temporal Tyrant",
+    "Thirst for Knowledge",
+    "Visions of Villainy"
+   ]
+  },
+  "BR": {
+   "name": "Villains Matter",
+   "hook": "",
+   "key_cards": [
+    "Bullseye, Death Dealer",
+    "Doom Reigns Supreme",
+    "Madame Hydra",
+    "The Masters of Evil"
+   ]
+  },
+  "RG": {
+   "name": "Power-Up",
+   "hook": "",
+   "key_cards": [
+    "Abomination, Terrifying Titan",
+    "Hulk, Gamma Goliath",
+    "Wonder Man, Hollywood Hero"
+   ]
+  },
+  "WG": {
+   "name": "Heroes Matter",
+   "hook": "",
+   "key_cards": [
+    "Black Panther, Vanguard",
+    "Spider-Man, To the Rescue",
+    "Training Regimen",
+    "Wakandan Royal Guard",
+    "White Widow, Free Agent"
+   ]
+  },
+  "WB": {
+   "name": "Attack Alone",
+   "hook": "",
+   "key_cards": [
+    "Black Widow, Double Agent",
+    "Crowd of True Believers",
+    "Luke Cage, Power Man",
+    "S.H.I.E.L.D. Spy Kit",
+    "U.S.Agent, John Walker",
+    "Voltaic Whip"
+   ]
+  },
+  "UR": {
+   "name": "Artifacts",
+   "hook": "",
+   "key_cards": [
+    "HYDRA Assault Robot",
+    "Iron Lad, Diverging Destiny",
+    "Iron Man, Master of Machines",
+    "Speedball, New Warrior"
+   ]
+  },
+  "BG": {
+   "name": "Creatures in Graveyard",
+   "hook": "",
+   "key_cards": [
+    "Arnim Zola, Bio-Fanatic",
+    "Killmonger, Scourge of Wakanda",
+    "Roxxon Brutes",
+    "Titania, Rugged Rumbler"
+   ]
+  },
+  "WR": {
+   "name": "Noncreature Spells",
+   "hook": "",
+   "key_cards": [
+    "Agent of Atlas",
+    "Crimson Operative",
+    "Panther Pounce",
+    "Super Speed",
+    "Thor Odinson",
+    "Vibranium Energy Daggers",
+    "War Machine, Legacy of Iron"
+   ]
+  },
+  "UG": {
+   "name": "+1/+1 Counters",
+   "hook": "",
+   "key_cards": [
+    "Ant-Man, Colony Commander",
+    "Beast, Erudite Aerialist",
+    "Claim the Kingdom",
+    "Kid Loki",
+    "Stature, Size Shifter"
+   ]
+  }
+ }
+}

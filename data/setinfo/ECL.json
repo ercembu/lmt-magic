@@ -1,0 +1,85 @@
+{
+ "set": "ECL",
+ "removal": [
+  "Swat Away",
+  "Crib Swap",
+  "Keep Out",
+  "Liminal Hold",
+  "Protective Response",
+  "Pyrrhic Strike",
+  "Spiral into Solitude",
+  "Blossombind",
+  "Run Away Together",
+  "Temporal Cleansing",
+  "Wanderwine Farewell",
+  "Auntie's Sentence",
+  "Blight Rot",
+  "Bogslither's Embrace",
+  "Nameless Inversion",
+  "Requiting Hex",
+  "Boulder Dash",
+  "Cinder Strike",
+  "Explosive Prodigy",
+  "Feed the Flames",
+  "Sear",
+  "Tweeze",
+  "Assert Perfection",
+  "Chomping Changeling",
+  "Pitiless Fists",
+  "Unforgiving Aim",
+  "Vinebred Brawler"
+ ],
+ "archetypes": {
+  "WU": {
+   "name": "Merfolk",
+   "hook": "",
+   "key_cards": [
+    "Deepchannel Duelist",
+    "Silvergill Peddler",
+    "Wanderwine Distracter",
+    "Wanderwine Farewell"
+   ]
+  },
+  "BR": {
+   "name": "Goblins",
+   "hook": "",
+   "key_cards": [
+    "Boggart Cursecrafter",
+    "Mudbutton Cursetosser",
+    "Stoic Grove-Guide"
+   ]
+  },
+  "WG": {
+   "name": "Kithkin",
+   "hook": "",
+   "key_cards": [
+    "Clachan Festival",
+    "Darkness Descends",
+    "Dundoolin Weaver",
+    "Mistmeadow Council",
+    "Thoughtweft Lieutenant",
+    "Timid Shieldbearer"
+   ]
+  },
+  "UR": {
+   "name": "Elementals",
+   "hook": "",
+   "key_cards": [
+    "Flamebraider",
+    "Twinflame Travelers"
+   ]
+  },
+  "BG": {
+   "name": "Elves",
+   "hook": "",
+   "key_cards": [
+    "Lys Alana Informant",
+    "Maralen, Fae Ascendant",
+    "Moon-Vigil Adherents",
+    "Morcant's Eyes",
+    "Morcant's Loyalist",
+    "Scarblade Scout"
+   ]
+  }
+ }
+}

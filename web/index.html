@@ -1,0 +1,502 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reality Fracture — Limited Grades</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#191527">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#191527;          /* Echoverse ground */
+  --ink-2:#211c33;
+  --ink-3:#2b2442;
+  --edge:#372e52;
+  --text:#ece8f6;
+  --text-2:#a49cc0;
+  --text-3:#736b8f;
+
+  --w:#e8dfc0; --u:#6fa8dc; --b:#a98fc4; --r:#e08268; --g:#7fbf92;
+
+  --gA:#ff5fa8; --gB:#c77dff; --gC:#7f93cc; --gD:#6b6580; --gF:#4c4660;
+  --warn:#e8a33d;
+
+  --pile-w: minmax(0,1fr);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:
+    radial-gradient(1200px 500px at 70% -10%, rgba(214,76,154,.10), transparent 60%),
+    radial-gradient(900px 400px at 10% 0%, rgba(111,168,220,.07), transparent 60%),
+    var(--ink);
+  color:var(--text);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:14px;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+
+/* ---------- masthead ---------- */
+header{padding:32px 20px 0;max-width:1680px;margin:0 auto}
+.topnav{display:flex;gap:16px;margin-bottom:22px;font-size:13px}
+.topnav a{color:var(--text-3);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent}
+.topnav a:hover{color:var(--text-2)}
+.topnav a[aria-current=page]{color:var(--text);border-bottom-color:var(--gA)}
+.title{
+  font-family:Spectral,Georgia,serif;
+  font-weight:700;
+  font-size:clamp(30px,4.6vw,52px);
+  line-height:1.02;
+  letter-spacing:-.018em;
+  margin:0;
+}
+.title em{font-style:italic;font-weight:400;color:var(--text-2)}
+.sub{
+  margin:10px 0 0;max-width:62ch;color:var(--text-2);
+  font-size:15px;line-height:1.6;
+}
+.sub b{color:var(--text);font-weight:600}
+
+.trust{
+  display:flex;flex-wrap:wrap;gap:0;margin:22px 0 0;
+  border:1px solid var(--edge);border-radius:3px;overflow:hidden;
+  background:linear-gradient(180deg,rgba(255,255,255,.028),transparent);
+}
+.trust div{
+  flex:1 1 150px;padding:11px 15px;
+  border-right:1px solid var(--edge);
+}
+.trust div:last-child{border-right:0}
+.trust .k{font-family:Spectral,serif;font-size:21px;font-weight:600;letter-spacing:-.01em}
+.trust .v{color:var(--text-3);font-size:11.5px;margin-top:1px}
+
+/* ---------- controls ---------- */
+.controls{
+  position:sticky;top:0;z-index:40;
+  margin-top:26px;padding:12px 20px;
+  background:rgba(25,21,39,.93);
+  backdrop-filter:blur(10px);
+  border-top:1px solid var(--edge);
+  border-bottom:1px solid var(--edge);
+}
+.controls-in{max-width:1680px;margin:0 auto;display:flex;flex-wrap:wrap;gap:9px;align-items:center}
+input[type=search]{
+  flex:1 1 210px;min-width:0;max-width:330px;
+  background:var(--ink-2);border:1px solid var(--edge);border-radius:3px;
+  color:var(--text);padding:7px 11px;font:inherit;font-size:13px;
+}
+input[type=search]::placeholder{color:var(--text-3)}
+input[type=search]:focus,select:focus,.chip:focus-visible{outline:2px solid var(--gA);outline-offset:1px}
+select{
+  background:var(--ink-2);border:1px solid var(--edge);border-radius:3px;
+  color:var(--text);padding:7px 9px;font:inherit;font-size:13px;
+}
+.chip{
+  background:var(--ink-2);border:1px solid var(--edge);border-radius:3px;
+  color:var(--text-2);padding:7px 11px;font:inherit;font-size:12.5px;cursor:pointer;
+}
+.chip[aria-pressed=true]{background:var(--gA);border-color:var(--gA);color:#2a0a1a;font-weight:600}
+.count{margin-left:auto;color:var(--text-3);font-size:12.5px;white-space:nowrap}
+
+/* ---------- the pool ---------- */
+main{max-width:1680px;margin:0 auto;padding:20px 20px 80px}
+.pool{display:grid;grid-template-columns:repeat(7,var(--pile-w));gap:9px;align-items:start}
+.pile{min-width:0}
+.pile-head{
+  position:sticky;top:57px;z-index:20;
+  padding:8px 10px;border-radius:3px 3px 0 0;
+  background:var(--ink-2);
+  border:1px solid var(--edge);border-bottom:0;
+  display:flex;align-items:baseline;gap:7px;
+}
+.pile-head .nm{font-family:Spectral,serif;font-size:15px;font-weight:600;letter-spacing:.01em}
+.pile-head .n{color:var(--text-3);font-size:11.5px;margin-left:auto}
+.pile-body{border:1px solid var(--edge);border-top:0;border-radius:0 0 3px 3px;padding:5px;min-height:40px}
+.pile[data-c=W] .pile-head{box-shadow:inset 0 2px 0 var(--w)}
+.pile[data-c=U] .pile-head{box-shadow:inset 0 2px 0 var(--u)}
+.pile[data-c=B] .pile-head{box-shadow:inset 0 2px 0 var(--b)}
+.pile[data-c=R] .pile-head{box-shadow:inset 0 2px 0 var(--r)}
+.pile[data-c=G] .pile-head{box-shadow:inset 0 2px 0 var(--g)}
+.pile[data-c=M] .pile-head{box-shadow:inset 0 2px 0 linear-gradient(90deg,var(--w),var(--g))}
+.pile[data-c=M] .pile-head{box-shadow:inset 0 2px 0 #d9c169}
+.pile[data-c=C] .pile-head{box-shadow:inset 0 2px 0 #8d8aa0}
+
+.band{
+  font-family:Spectral,serif;font-size:11.5px;color:var(--text-3);
+  padding:9px 4px 3px;border-bottom:1px solid rgba(55,46,82,.65);margin-bottom:4px;
+  display:flex;justify-content:space-between;
+}
+.band:first-child{padding-top:3px}
+
+/* ---------- card tile ---------- */
+.tile{
+  display:grid;grid-template-columns:30px 1fr auto;gap:6px;align-items:center;
+  width:100%;text-align:left;
+  background:var(--ink-2);border:1px solid transparent;border-left:2px solid var(--gD);
+  border-radius:2px;color:var(--text);
+  padding:5px 6px;margin-bottom:3px;cursor:pointer;font:inherit;
+}
+.tile:hover{background:var(--ink-3);border-color:var(--edge)}
+.tile:focus-visible{outline:2px solid var(--gA);outline-offset:1px}
+.tile .gr{
+  font-family:Spectral,serif;font-weight:700;font-size:13px;text-align:center;
+  letter-spacing:-.02em;
+}
+.tile .nm{
+  font-size:12.5px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+}
+.tile .meta{display:flex;align-items:center;gap:4px}
+.rar{width:6px;height:6px;border-radius:50%;flex:none}
+.rar.common{background:#6f6a85}
+.rar.uncommon{background:#b9c2cf}
+.rar.rare{background:#d9bd6a}
+.rar.mythic{background:#e0452c}
+.flagdot{color:var(--warn);font-size:10px;line-height:1}
+
+.tile[data-t=A]{border-left-color:var(--gA)} .tile[data-t=A] .gr{color:var(--gA)}
+.tile[data-t=B]{border-left-color:var(--gB)} .tile[data-t=B] .gr{color:var(--gB)}
+.tile[data-t=C]{border-left-color:var(--gC)} .tile[data-t=C] .gr{color:var(--gC)}
+.tile[data-t=D]{border-left-color:var(--gD)} .tile[data-t=D] .gr{color:var(--gD)}
+.tile[data-t=F]{border-left-color:var(--gF)} .tile[data-t=F] .gr{color:var(--gF)}
+
+.empty{color:var(--text-3);font-size:12px;padding:12px 6px;font-style:italic}
+
+/* ---------- detail ---------- */
+.scrim{position:fixed;inset:0;background:rgba(10,8,18,.72);z-index:60;display:none}
+.scrim[data-open=true]{display:block}
+.detail{
+  position:fixed;top:0;right:0;bottom:0;width:min(460px,100%);z-index:70;
+  background:var(--ink-2);border-left:1px solid var(--edge);
+  overflow-y:auto;transform:translateX(100%);transition:transform .18s ease;
+}
+.detail[data-open=true]{transform:none}
+@media (prefers-reduced-motion:reduce){.detail{transition:none}}
+.detail-in{padding:18px}
+.dclose{
+  position:absolute;top:12px;right:12px;background:var(--ink-3);border:1px solid var(--edge);
+  color:var(--text);border-radius:3px;width:28px;height:28px;cursor:pointer;font-size:15px;line-height:1;
+}
+.dimg{width:100%;max-width:290px;border-radius:9px;display:block;margin:0 0 14px}
+.dname{font-family:Spectral,serif;font-size:23px;font-weight:600;margin:0 0 3px;line-height:1.15;padding-right:34px}
+.dtype{color:var(--text-2);font-size:13px;margin:0 0 12px}
+.dgrade{display:flex;align-items:baseline;gap:9px;margin:0 0 14px;padding:11px 13px;background:var(--ink);border:1px solid var(--edge);border-radius:3px}
+.dgrade .g{font-family:Spectral,serif;font-size:34px;font-weight:700;line-height:1}
+.dgrade .z{color:var(--text-3);font-size:12px}
+.dtext{white-space:pre-wrap;background:var(--ink);border:1px solid var(--edge);border-radius:3px;padding:11px 13px;font-size:13px;line-height:1.55;margin:0 0 14px}
+.sect{font-family:Spectral,serif;font-size:13px;color:var(--text-2);margin:16px 0 6px;font-weight:600}
+.row{padding:8px 11px;background:var(--ink);border:1px solid var(--edge);border-radius:3px;margin-bottom:5px;font-size:12.5px;line-height:1.45}
+.row .d{float:right;font-weight:600;margin-left:9px}
+.row .d.up{color:var(--g)} .row .d.dn{color:var(--r)}
+.row.warn{border-color:rgba(232,163,61,.45)}
+.row.warn .h{color:var(--warn);font-weight:600}
+.arch{display:inline-block;padding:2px 7px;border:1px solid var(--edge);border-radius:2px;margin:0 4px 4px 0;font-size:12px;color:var(--text-2)}
+.arch.key{border-color:var(--gA);color:var(--gA)}
+
+/* ---------- pips ---------- */
+.pip{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:14px;height:14px;border-radius:50%;font-size:9px;font-weight:600;
+  color:#1b1626;margin-left:2px;
+}
+.pip.W{background:var(--w)} .pip.U{background:var(--u)} .pip.B{background:var(--b)}
+.pip.R{background:var(--r)} .pip.G{background:var(--g)} .pip.C{background:#8d8aa0}
+
+footer{max-width:1680px;margin:0 auto;padding:0 20px 60px;color:var(--text-3);font-size:12.5px;line-height:1.65}
+footer p{max-width:78ch}
+
+@media (max-width:1180px){
+  .pool{grid-template-columns:repeat(4,var(--pile-w))}
+}
+@media (max-width:760px){
+  .pool{grid-template-columns:repeat(2,var(--pile-w))}
+  .pile-head{position:static}
+  .trust div{flex-basis:50%}
+}
+@media (max-width:440px){
+  .pool{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="topnav">
+    <a href="./" aria-current="page">All 280 cards</a>
+    <a href="signals.html">What to commit to</a>
+  </nav>
+  <h1 class="title">Reality Fracture <em>graded before release</em></h1>
+  <p class="sub">Every card in the set, scored by a model that has never seen a game of
+  <b>FRA</b> — it learned what makes a limited card good from <b>31 released sets</b> and
+  14&nbsp;million recorded games, then read these 280 cards cold.</p>
+
+  <div class="trust" id="trust"></div>
+</header>
+
+<div class="controls">
+  <div class="controls-in">
+    <input type="search" id="q" placeholder="Search name or rules text" aria-label="Search cards">
+    <select id="rarity" aria-label="Filter by rarity">
+      <option value="">All rarities</option>
+      <option value="common">Common</option>
+      <option value="uncommon">Uncommon</option>
+      <option value="rare">Rare</option>
+      <option value="mythic">Mythic</option>
+    </select>
+    <select id="arch" aria-label="Filter by archetype"><option value="">All archetypes</option></select>
+    <button class="chip" id="fRemoval" aria-pressed="false">Removal</button>
+    <button class="chip" id="fCreature" aria-pressed="false">Creatures</button>
+    <button class="chip" id="fFlag" aria-pressed="false">Needs a human look</button>
+    <button class="chip" id="refresh" title="Pull the latest grades">Refresh</button>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<main>
+  <div class="pool" id="pool"></div>
+</main>
+
+<footer>
+  <p id="stamp" style="margin:0 0 10px;color:var(--text-3)"></p>
+  <p id="foot"></p>
+</footer>
+
+<div class="scrim" id="scrim"></div>
+<aside class="detail" id="detail" aria-label="Card detail" aria-hidden="true">
+  <button class="dclose" id="dclose" aria-label="Close">&times;</button>
+  <div class="detail-in" id="detailIn"></div>
+</aside>
+
+<script>
+const PILES = [
+  {k:'W', name:'White'}, {k:'U', name:'Blue'}, {k:'B', name:'Black'},
+  {k:'R', name:'Red'},   {k:'G', name:'Green'},
+  {k:'M', name:'Multicolor'}, {k:'C', name:'Colorless'}
+];
+const BANDS = [
+  {label:'Bombs',        grades:['A+','A','A-']},
+  {label:'Strong picks', grades:['B+','B','B-']},
+  {label:'Playables',    grades:['C+','C','C-']},
+  {label:'Filler',       grades:['D+','D','D-']},
+  {label:'Leave it',     grades:['F']}
+];
+const tierOf = g => g[0];
+
+let CARDS = [], VAL = null, SETINFO = null;
+const state = {q:'', rarity:'', arch:'', removal:false, creature:false, flag:false};
+
+const pileOf = c => {
+  const col = c.colors || [];
+  if (col.length === 0) return 'C';
+  if (col.length > 1)  return 'M';
+  return col[0];
+};
+
+function manaPips(cost){
+  if(!cost) return '';
+  return (cost.match(/\{([^}]+)\}/g)||[]).map(s=>{
+    const v = s.slice(1,-1);
+    const cls = /^[WUBRG]$/.test(v) ? v : 'C';
+    return `<span class="pip ${cls}">${v.replace(/\//g,'')}</span>`;
+  }).join('');
+}
+
+function isRemoval(c){
+  const t=(c.oracle_text||'').toLowerCase();
+  return /\b(destroy|exile) target|deals? \d+ damage to|gets? -\d+\/-\d+|\bfights?\b|destroy all/.test(t);
+}
+
+function matches(c){
+  if(state.rarity && c.rarity!==state.rarity) return false;
+  if(state.removal && !isRemoval(c)) return false;
+  if(state.creature && !/creature/i.test(c.type_line||'')) return false;
+  if(state.flag && !(c.trust && c.trust.band>=4)) return false;
+  if(state.arch && !(c.archetypes||[]).some(a=>a.pair===state.arch)) return false;
+  if(state.q){
+    const q=state.q.toLowerCase();
+    if(!((c.name||'').toLowerCase().includes(q) || (c.oracle_text||'').toLowerCase().includes(q)
+      || (c.type_line||'').toLowerCase().includes(q))) return false;
+  }
+  return true;
+}
+
+function render(){
+  const shown = CARDS.filter(matches);
+  document.getElementById('count').textContent =
+    `${shown.length} of ${CARDS.length} cards`;
+
+  const pool = document.getElementById('pool');
+  pool.innerHTML = '';
+  for(const p of PILES){
+    const mine = shown.filter(c=>pileOf(c)===p.k);
+    const el = document.createElement('section');
+    el.className='pile'; el.dataset.c=p.k;
+    let html = `<div class="pile-head"><span class="nm">${p.name}</span>
+      <span class="n">${mine.length}</span></div><div class="pile-body">`;
+    if(!mine.length){
+      html += `<div class="empty">nothing here</div>`;
+    } else {
+      for(const b of BANDS){
+        const grp = mine.filter(c=>b.grades.includes(c.grade));
+        if(!grp.length) continue;
+        html += `<div class="band"><span>${b.label}</span><span>${grp.length}</span></div>`;
+        for(const c of grp){
+          const bd = c.trust ? c.trust.band : 1;
+          const flagged = bd>=4
+            ? `<span class="flagdot" title="unusual wording for this model — historically ±${c.trust.mean_grade_error.toFixed(1)} grades">&#9670;</span>` : '';
+          html += `<button class="tile" data-t="${tierOf(c.grade)}" data-name="${encodeURIComponent(c.name)}">
+            <span class="gr">${c.grade}</span>
+            <span class="nm" title="${c.name.replace(/"/g,'&quot;')}">${c.name}</span>
+            <span class="meta">${flagged}<span class="rar ${c.rarity}" title="${c.rarity}"></span></span>
+          </button>`;
+        }
+      }
+    }
+    html += `</div>`;
+    el.innerHTML = html;
+    pool.appendChild(el);
+  }
+}
+
+function openCard(name){
+  const c = CARDS.find(x=>x.name===name);
+  if(!c) return;
+  const pct = Math.round((1 - CARDS.findIndex(x=>x.name===name)/CARDS.length)*100);
+  let h = '';
+  if(c.image) h += `<img class="dimg" src="${c.image}" alt="${c.name}" loading="lazy">`;
+  h += `<h2 class="dname">${c.name}</h2>`;
+  h += `<p class="dtype">${c.type_line} &nbsp;${manaPips(c.mana_cost)}</p>`;
+  h += `<div class="dgrade">
+      <span class="g" style="color:var(--g${tierOf(c.grade)})">${c.grade}</span>
+      <span class="z">${pct}th percentile in the set<br>model score ${c.z.toFixed(2)}z
+</span>
+    </div>`;
+  if(c.oracle_text) h += `<div class="dtext">${c.oracle_text}</div>`;
+
+  if((c.adjustments||[]).length){
+    h += `<div class="sect">Things the model can't see</div>`;
+    h += `<div class="row" style="border:0;background:none;padding:0 0 6px;color:var(--text-3)">
+      Context for you to weigh. These do <b>not</b> change the grade — nudging on them
+      was tested on three released sets and made results no better.</div>`;
+    for(const a of c.adjustments){
+      h += `<div class="row">${a.reason}</div>`;
+    }
+  }
+  if(c.trust){
+    const t=c.trust;
+    h += `<div class="sect">How far off is this likely to be?</div>`;
+    h += `<div class="row ${t.band>=4?'warn':''}">
+      This card's wording sits in band <b>${t.band} of ${t.of}</b> for familiarity
+      (1 = phrasing the model saw constantly in past sets, 5 = rarely).
+      On released sets, band ${t.band} cards missed their real grade by
+      <b>${t.mean_grade_error.toFixed(2)} steps</b> on average —
+      ${Math.round(t.within_1*100)}% within one grade, ${Math.round(t.within_2*100)}% within two.</div>`;
+  }
+  if((c.flags||[]).length){
+    h += `<div class="sect">Set mechanics it leans on</div>`;
+    for(const f of c.flags){
+      const n = f.n_precedent, mz = f.precedent_mean_z;
+      h += `<div class="row warn"><span class="h">${f.desc}</span><br>
+        ${n===0||n===null?'No comparable cards in the 21 training sets.':
+          `${n} comparable cards in training${mz!=null?`, which averaged ${mz>0?'+':''}${mz.toFixed(2)}z`:''}.`}
+        ${(f.precedent_sets||[]).length?` Seen in ${f.precedent_sets.join(', ')}.`:''}</div>`;
+    }
+  }
+  if((c.archetypes||[]).length){
+    h += `<div class="sect">Fits these decks</div><div>`;
+    for(const a of c.archetypes.slice(0,5)){
+      h += `<span class="arch ${a.key_card?'key':''}">${a.pair} ${a.name}${a.key_card?' &#9733;':''}</span>`;
+    }
+    h += `</div>`;
+  }
+  if(c.scryfall_uri) h += `<div class="sect"><a href="${c.scryfall_uri}" target="_blank" rel="noopener">Open on Scryfall</a></div>`;
+
+  document.getElementById('detailIn').innerHTML = h;
+  document.getElementById('detail').dataset.open='true';
+  document.getElementById('detail').setAttribute('aria-hidden','false');
+  document.getElementById('scrim').dataset.open='true';
+  document.getElementById('dclose').focus();
+  const u=new URL(location); u.searchParams.set('card', c.name); history.replaceState(null,'',u);
+}
+function closeCard(){
+  const u=new URL(location); u.searchParams.delete('card'); history.replaceState(null,'',u);
+  document.getElementById('detail').dataset.open='false';
+  document.getElementById('detail').setAttribute('aria-hidden','true');
+  document.getElementById('scrim').dataset.open='false';
+}
+
+document.addEventListener('click', e=>{
+  const t = e.target.closest('.tile');
+  if(t) openCard(decodeURIComponent(t.dataset.name));
+});
+document.getElementById('scrim').addEventListener('click', closeCard);
+document.getElementById('dclose').addEventListener('click', closeCard);
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeCard(); });
+
+const bind = (id, key, ev='input') =>
+  document.getElementById(id).addEventListener(ev, e=>{ state[key]=e.target.value; render(); });
+bind('q','q'); bind('rarity','rarity','change'); bind('arch','arch','change');
+for(const [id,key] of [['fRemoval','removal'],['fCreature','creature'],['fFlag','flag']]){
+  document.getElementById(id).addEventListener('click', e=>{
+    state[key]=!state[key];
+    e.currentTarget.setAttribute('aria-pressed', String(state[key]));
+    render();
+  });
+}
+
+Promise.all([
+  fetch('grades.json').then(r=>r.json()),
+  fetch('validation.json').then(r=>r.json()).catch(()=>null),
+  fetch('setinfo.json').then(r=>r.json()).catch(()=>null),
+]).then(([g,v,s])=>{
+  CARDS=g; VAL=v; SETINFO=s;
+
+  const rho = v && v.mean_spearman ? v.mean_spearman.toFixed(2) : '—';
+  const folds = v && v.loso ? v.loso.length : 21;
+  const unsure = g.filter(c=>c.trust && c.trust.band>=4).length;
+  document.getElementById('trust').innerHTML = `
+    <div><div class="k">${g.length}</div><div class="v">cards graded</div></div>
+    <div><div class="k">${folds}</div><div class="v">sets used to learn</div></div>
+    <div><div class="k">${rho}</div><div class="v">rank correlation on sets it had never seen</div></div>
+    <div><div class="k">46%</div><div class="v">grades within one step of the real answer</div></div>
+    <div><div class="k">${unsure}</div><div class="v">cards with wording the model rarely saw</div></div>`;
+
+  if(s && s.archetypes){
+    const sel=document.getElementById('arch');
+    for(const [pair,a] of Object.entries(s.archetypes)){
+      const o=document.createElement('option');
+      o.value=pair; o.textContent=`${pair} — ${a.name}`;
+      sel.appendChild(o);
+    }
+  }
+
+  document.getElementById('foot').innerHTML =
+    `<b>How much to trust this.</b> Measured against the real grades of 31 released sets, each
+     predicted by a model trained only on the other 30: 17% of grades land exactly right, 46%
+     within one step, 67% within two. It is much better at the ends than the middle — about half
+     of the genuinely top-tier cards are placed in the top tier, and the same for the duds, but
+     the B-to-C range is close to a coin flip. Replaying the same recorded games reproduces a
+     card's real grade 77% of the time, so that gap is the model, not noisy data. Sort your pool
+     with this; don't settle arguments with it.<br><br>
+     Grades are a curve within this set: roughly the same number of cards get an A here as in any
+     other set, so an A+ means "among the best cards in Reality Fracture," not "among the best cards
+     in Magic." The model reads mana cost, body, rules text and rarity — it cannot read the room, so
+     it is weakest on cards whose value comes from a mechanic that did not exist before. Those carry
+     a &#9670; and an explanation. Card data from Scryfall; performance labels computed from
+     17Lands public game data.`;
+
+  render();
+
+  const want = new URL(location).searchParams.get('card');
+  if(want) openCard(want);
+});
+</script>
+<script src="pwa.js"></script>
+<script>FRA.mountRefresh(document.getElementById('refresh'), document.getElementById('stamp'));</script>
+</body>
+</html>

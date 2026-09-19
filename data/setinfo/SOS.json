@@ -1,0 +1,82 @@
+{
+ "set": "SOS",
+ "removal": [
+  "Heated Argument",
+  "Ajani's Response",
+  "Harsh Annotation",
+  "Rapier Wit",
+  "Shattered Acolyte",
+  "Stand Up for Yourself",
+  "Banishing Betrayal",
+  "Brush Off",
+  "Deluge Virtuoso",
+  "Essence Scatter",
+  "Procrastinate",
+  "Dissection Practice",
+  "End of the Hunt",
+  "Foolish Fate",
+  "Last Gasp",
+  "Wander Off",
+  "Artistic Process",
+  "Duel Tactics",
+  "Impractical Joke",
+  "Tome Blast",
+  "Burrog Barrage",
+  "Chelonian Tackle",
+  "Glorious Decay"
+ ],
+ "archetypes": {
+  "WB": {
+   "name": "Silverquill Repartee Aggro",
+   "hook": "",
+   "key_cards": [
+    "Abigale, Poet Laureate",
+    "Interjection",
+    "Scathing Shadelock",
+    "Snooping Page"
+   ]
+  },
+  "UR": {
+   "name": "Prismari Opus Spellcasting",
+   "hook": "",
+   "key_cards": [
+    "Abstract Paintmage",
+    "Rapturous Moment",
+    "Sanar, Unfinished Genius",
+    "Spectacular Skywhale"
+   ]
+  },
+  "BG": {
+   "name": "Witherbloom Lifegain Swarm",
+   "hook": "",
+   "key_cards": [
+    "Lluwen, Exchange Student",
+    "Old-Growth Educator",
+    "Pestbrood Sloth"
+   ]
+  },
+  "WR": {
+   "name": "Lorehold Flashback Excavation",
+   "hook": "",
+   "key_cards": [
+    "Duel Tactics",
+    "Garrison Excavator",
+    "Kirol, History Buff",
+    "Molten Note",
+    "Owlin Historian",
+    "Pursue the Past"
+   ]
+  },
+  "UG": {
+   "name": "Quandrix Incremental Value",
+   "hook": "",
+   "key_cards": [
+    "Cuboid Colony",
+    "Emil, Vastlands Roamer",
+    "Encouraging Aviator",
+    "Fractal Tender",
+    "Tam, Observant Sequencer"
+   ]
+  }
+ }
+}

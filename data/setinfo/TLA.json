@@ -1,0 +1,93 @@
+{
+ "set": "TLA",
+ "removal": [],
+ "archetypes": {
+  "WU": {
+   "name": "Flyers",
+   "hook": "",
+   "key_cards": [
+    "Air Nomad Legacy",
+    "First-Time Flyer"
+   ]
+  },
+  "UB": {
+   "name": "Draw Two",
+   "hook": "",
+   "key_cards": [
+    "Foggy Swamp Spirit Keeper",
+    "Giant Koi"
+   ]
+  },
+  "BR": {
+   "name": "Fire Nation Aggro",
+   "hook": "",
+   "key_cards": [
+    "Combustion Technique",
+    "Cruel Administrator",
+    "Fire Nation Attacks",
+    "Lightning Strike"
+   ]
+  },
+  "RG": {
+   "name": "Earth Rumble Ramp",
+   "hook": "",
+   "key_cards": [
+    "Bitter Work",
+    "The Boulder, Ready to Rumble"
+   ]
+  },
+  "WG": {
+   "name": "Allies",
+   "hook": "",
+   "key_cards": [
+    "Kyoshi Warriors",
+    "White Lotus Reinforcements"
+   ]
+  },
+  "WB": {
+   "name": "Sacrifice",
+   "hook": "",
+   "key_cards": [
+    "Curious Farm Animals",
+    "Pretending Poxbearers",
+    "Tolls of War"
+   ]
+  },
+  "UR": {
+   "name": "Combat Lessons",
+   "hook": "",
+   "key_cards": [
+    "Abandon Attachments",
+    "Dragonfly Swarm"
+   ]
+  },
+  "BG": {
+   "name": "+1/+1 Counters",
+   "hook": "",
+   "key_cards": [
+    "Badgermole",
+    "Dai Li Agents",
+    "Toph, the Blind Bandit"
+   ]
+  },
+  "WR": {
+   "name": "Go-Wide Aggro",
+   "hook": "",
+   "key_cards": [
+    "Enter the Avatar State",
+    "Sun Warriors"
+   ]
+  },
+  "UG": {
+   "name": "Ramp and Lessons",
+   "hook": "",
+   "key_cards": [
+    "Cycle of Renewal",
+    "Giant Koi",
+    "Hermitic Herbalist",
+    "Shared Roots",
+    "Sokka's Haiku"
+   ]
+  }
+ }
+}

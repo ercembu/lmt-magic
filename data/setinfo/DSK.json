@@ -1,0 +1,85 @@
+{
+ "set": "DSK",
+ "removal": [],
+ "archetypes": {
+  "WU": {
+   "name": "Eerie Tempo",
+   "hook": "",
+   "key_cards": []
+  },
+  "UB": {
+   "name": "Eerie Control",
+   "hook": "",
+   "key_cards": [
+    "Fear of Infinity",
+    "Skullsnap Nuisance"
+   ]
+  },
+  "BR": {
+   "name": "Sacrifice",
+   "hook": "",
+   "key_cards": [
+    "Disturbing Mirth",
+    "Sawblade Skinripper"
+   ]
+  },
+  "RG": {
+   "name": "Delirium Stompy",
+   "hook": "",
+   "key_cards": [
+    "Beastie Beatdown",
+    "Wildfire Wickerfolk"
+   ]
+  },
+  "WG": {
+   "name": "Survival",
+   "hook": "",
+   "key_cards": [
+    "Baseball Bat",
+    "Shrewd Storyteller"
+   ]
+  },
+  "WB": {
+   "name": "Reanimator",
+   "hook": "",
+   "key_cards": [
+    "Intruding Soulrager",
+    "Rite of the Moth",
+    "Shroudstomper",
+    "Smoky Lounge"
+   ]
+  },
+  "UR": {
+   "name": "Rooms",
+   "hook": "",
+   "key_cards": [
+    "Gremlin Tamer",
+    "Inquisitive Glimmer"
+   ]
+  },
+  "BG": {
+   "name": "Delirium Grind",
+   "hook": "",
+   "key_cards": [
+    "Broodspinner",
+    "Drag to the Roots"
+   ]
+  },
+  "WR": {
+   "name": "Aggro",
+   "hook": "",
+   "key_cards": [
+    "Arabella, Abandoned Doll",
+    "Midnight Mayhem"
+   ]
+  },
+  "UG": {
+   "name": "Manifest Dread",
+   "hook": "",
+   "key_cards": [
+    "Growing Dread",
+    "Oblivious Bookworm"
+   ]
+  }
+ }
+}

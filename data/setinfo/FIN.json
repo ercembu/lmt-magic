@@ -1,0 +1,86 @@
+{
+ "set": "FIN",
+ "removal": [],
+ "archetypes": {
+  "WU": {
+   "name": "Artifacts",
+   "hook": "",
+   "key_cards": [
+    "Cid, Timeless Artificer",
+    "Tidus, Blitzball Star"
+   ]
+  },
+  "UB": {
+   "name": "Control",
+   "hook": "",
+   "key_cards": [
+    "0247a_MTGFIN_Main: Ultimecia, Time Sorceress",
+    "Locke Cole"
+   ]
+  },
+  "BR": {
+   "name": "Black Mage Aggro",
+   "hook": "",
+   "key_cards": [
+    "0221a_MTGFIN_Main: Garland, Knight of Cornelia",
+    "Black Waltz No. 3"
+   ]
+  },
+  "RG": {
+   "name": "Landfall Aggro",
+   "hook": "",
+   "key_cards": [
+    "Gladiolus Amicitia",
+    "Rydia, Summoner of Mist"
+   ]
+  },
+  "WG": {
+   "name": "Go Wide",
+   "hook": "",
+   "key_cards": [
+    "Garnet, Princess of Alexandria",
+    "Rinoa Heartilly"
+   ]
+  },
+  "WB": {
+   "name": "Sacrifice",
+   "hook": "",
+   "key_cards": [
+    "Judge Magister Gabranth",
+    "Rufus Shinra"
+   ]
+  },
+  "UR": {
+   "name": "Big Noncreatures",
+   "hook": "",
+   "key_cards": [
+    "0219a_MTGFIN_Main: The Emperor of Palamecia",
+    "Shantotto, Tactician Magician"
+   ]
+  },
+  "BG": {
+   "name": "Graveyard Value",
+   "hook": "",
+   "key_cards": [
+    "0220a_MTGFIN_Main: Exdeath, Void Warlock",
+    "Cloud of Darkness"
+   ]
+  },
+  "WR": {
+   "name": "Equipment Aggro",
+   "hook": "",
+   "key_cards": [
+    "Giott, King of the Dwarves",
+    "Zidane, Tantalus Thief"
+   ]
+  },
+  "UG": {
+   "name": "Town Ramp",
+   "hook": "",
+   "key_cards": [
+    "Ignis Scientia",
+    "Omega, Heartless Evolution"
+   ]
+  }
+ }
+}
