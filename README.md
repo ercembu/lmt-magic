@@ -432,6 +432,34 @@ and cannot see that a card is good *because* the rest of the archetype is in the
 Where most of a pair's payoffs grade poorly, the page says so and tells you to trust
 WotC over the grade.
 
+## On your phone
+
+The grader installs as a PWA — an app icon, offline, no store or APK needed. GitHub Pages
+hosts it, which also gives the HTTPS that service workers require.
+
+**One-time setup:** in the repo on GitHub, Settings → Pages → Source: *Deploy from a
+branch*, branch `main`, folder `/docs`. After a minute it is live at
+`https://ercembu.github.io/lmt-magic/`.
+
+**Install it:** open that URL in Chrome on the phone → menu → *Add to Home screen*.
+
+It then works with no connection at all, which matters — game store wifi is unreliable and
+the whole point is to use this while building a sealed pool. The app shell and the last
+card data you loaded are both cached on the device.
+
+**Refresh** pulls newly published grades. The heavy work cannot run on a phone: retraining
+is LightGBM over 8,276 cards and ~2,600 features across 31 sets, so the pipeline stays on a
+real machine and the phone only fetches its output. The flow is:
+
+```bash
+./scripts/refresh_fra.sh     # scrape review -> retrain -> regrade -> build docs/ -> push
+```
+
+then hit Refresh on the phone. If there is no connection it says so and keeps showing the
+last data it saved, rather than going blank.
+
+To rebuild the published site without retraining: `./scripts/build_pwa.sh FRA`.
+
 ## Running it
 
 ```bash
