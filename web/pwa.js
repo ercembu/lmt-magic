@@ -34,7 +34,7 @@
             navigator.serviceWorker.controller.postMessage("refresh-data");
           }
           const files = ["grades.json", "signals.json", "validation.json",
-                         "calibration.json", "setinfo.json"];
+                         "calibration.json", "setinfo.json", "reviewdata.json"];
           const got = await Promise.all(files.map(f =>
             fetch(f + "?t=" + Date.now(), { cache: "no-store" })
               .then(r => r.ok ? r.json() : null).catch(() => null)));

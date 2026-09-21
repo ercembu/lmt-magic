@@ -1,0 +1,100 @@
+"""Data for the reviewer page: his ratings, his track record, and where we disagree.
+
+Only one set review is scrapable per set (MTG Arena Zone blocks bots, CFB is a
+JS app), so there is no consensus to average across sources. What can be
+aggregated is his *record*: 25 past sets where we have both his ratings and what
+actually happened.
+"""
+import json, os, sys
+import numpy as np
+from scipy.stats import spearmanr
+
+sys.path.insert(0, os.path.dirname(__file__))
+import dataset, textfeat, train, predict
+
+ROOT = os.path.join(os.path.dirname(__file__), "..")
+GI = {g: i for i, (g, _) in enumerate(predict.GRADE_THRESHOLDS)}
+
+
+def track_record():
+    """How well has this reviewer called past sets, against a blind model?"""
+    sets = [s for s in train.TRAIN_SETS
+            if os.path.exists(f"{ROOT}/data/labels/{s}.json")
+            and os.path.exists(f"{ROOT}/data/expert/{s}.json")]
+    out = []
+    for s in sets:
+        exp = json.load(open(f"{ROOT}/data/expert/{s}.json"))
+        recs = [r for r in dataset.load_set(s)
+                if r["gih_wr"] and r["gih_n"] >= 400 and r["name"] in exp]
+        if len(recs) < 40:
+            continue
+        rho = spearmanr([exp[r["name"]] for r in recs],
+                        [r["gih_wr"] for r in recs]).statistic
+        out.append({"set": s, "n": len(recs), "spearman": float(rho)})
+    return out
+
+
+def build(setcode="FRA"):
+    exp_path = f"{ROOT}/data/expert/{setcode}.json"
+    if not os.path.exists(exp_path):
+        raise SystemExit(f"no review scraped for {setcode}")
+    exp = json.load(open(exp_path))
+    grades = {r["name"]: r for r in json.load(open(f"{ROOT}/data/grades_{setcode}.json"))}
+    prose = {p["name"]: p["prose"] for p in json.load(open(f"{ROOT}/data/prose.json"))
+             if p["set"] == setcode}
+
+    # our grade without his rating, so "disagreement" means something
+    sets = [s for s in train.TRAIN_SETS if os.path.exists(f"{ROOT}/data/labels/{s}.json")]
+    X, y, texts, w, rows = dataset.build(sets, verbose=False)
+    vec = textfeat.vectorizer()
+    models = train.fit_ensemble(train.combine(X, texts, vec, fit_vec=True), y, w,
+                                train.feature_names(vec))
+    cards = [c for c in json.load(open(f"{ROOT}/data/cards/{setcode}.json"))
+             if "Basic Land" not in c.get("type_line", "")]
+    fc = dataset.set_features(setcode)
+    ei = dataset.FEATURE_KEYS.index("expert_rating")
+    Xh = np.array([[fc[c["name"]].get(k, np.nan) for k in dataset.FEATURE_KEYS] for c in cards])
+    Xh[:, ei] = np.nan
+    blind = predict.rank_to_z(train.predict_ensemble(
+        models, train.combine(Xh, [textfeat.normalize(c) for c in cards], vec)))
+    blind_g = predict.assign_grades(blind, predict.empirical_grade_curve())
+    bz = {c["name"]: (g, float(z)) for c, g, z in zip(cards, blind_g, blind)}
+
+    rated = [c for c in cards if c["name"] in exp]
+    ez = predict.rank_to_z([exp[c["name"]] for c in rated])
+    out = []
+    for c, z in zip(rated, ez):
+        g = grades.get(c["name"], {})
+        b_grade, b_z = bz.get(c["name"], ("?", 0.0))
+        out.append({
+            "name": c["name"], "rating": exp[c["name"]],
+            "reviewer_z": float(z), "reviewer_grade": predict.grade_from_percentile(
+                __import__("scipy.stats", fromlist=["norm"]).norm.cdf(z) * 100),
+            "blind_grade": b_grade, "blind_z": b_z,
+            "final_grade": g.get("grade"),
+            "disagreement": float(z - b_z),
+            "colors": c.get("colors", []), "rarity": c["rarity"],
+            "mana_cost": c.get("mana_cost", ""), "type_line": c.get("type_line", ""),
+            "image": (c.get("image_uris") or
+                      (c.get("card_faces", [{}])[0].get("image_uris") or {})).get("normal"),
+            "scryfall_uri": c.get("scryfall_uri"),
+            "prose": prose.get(c["name"], "")[:600],
+        })
+    out.sort(key=lambda r: -r["rating"])
+    return {"set": setcode, "cards": out, "track_record": track_record(),
+            "unrated": [c["name"] for c in cards if c["name"] not in exp]}
+
+
+if __name__ == "__main__":
+    code = sys.argv[1] if len(sys.argv) > 1 else "FRA"
+    d = build(code)
+    json.dump(d, open(f"{ROOT}/data/reviewdata_{code}.json", "w"))
+    tr = [t["spearman"] for t in d["track_record"]]
+    print(f"{code}: {len(d['cards'])} rated, {len(d['unrated'])} unrated")
+    print(f"track record: {len(tr)} past sets, mean spearman {np.mean(tr):.3f} "
+          f"(range {min(tr):.2f}-{max(tr):.2f})")
+    big = sorted(d["cards"], key=lambda r: -abs(r["disagreement"]))[:5]
+    print("biggest disagreements with the blind model:")
+    for r in big:
+        print(f"   {r['name'][:32]:34s} reviewer {r['rating']:.0f}/10 "
+              f"vs our blind {r['blind_grade']:<2s}  ({r['disagreement']:+.2f}z)")

@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reality Fracture — The Set Review</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#191527">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#191527; --ink-2:#211c33; --ink-3:#2b2442; --edge:#372e52;
+  --text:#ece8f6; --text-2:#a49cc0; --text-3:#736b8f;
+  --w:#e8dfc0; --u:#6fa8dc; --b:#a98fc4; --r:#e08268; --g:#7fbf92;
+  --gA:#ff5fa8; --gB:#c77dff; --gC:#7f93cc; --gD:#6b6580; --gF:#4c4660;
+  --warn:#e8a33d; --ok:#7fbf92;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:
+    radial-gradient(1100px 460px at 78% -8%, rgba(214,76,154,.10), transparent 60%),
+    radial-gradient(900px 400px at 5% 0%, rgba(111,168,220,.07), transparent 60%),
+    var(--ink);
+  color:var(--text);font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header{padding:32px 0 0}
+nav{display:flex;gap:16px;margin-bottom:22px;font-size:13px;align-items:center;flex-wrap:wrap}
+nav a{color:var(--text-3);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent}
+nav a:hover{color:var(--text-2)}
+nav a[aria-current=page]{color:var(--text);border-bottom-color:var(--gA)}
+nav button{margin-left:auto;background:var(--ink-2);border:1px solid var(--edge);
+  color:var(--text-2);border-radius:3px;padding:4px 10px;font:inherit;font-size:12.5px;cursor:pointer}
+h1{font-family:Spectral,Georgia,serif;font-weight:700;font-size:clamp(28px,4.2vw,46px);
+   line-height:1.04;letter-spacing:-.018em;margin:0}
+h1 em{font-style:italic;font-weight:400;color:var(--text-2)}
+.lede{margin:11px 0 0;max-width:66ch;color:var(--text-2);font-size:15px;line-height:1.62}
+.lede b{color:var(--text);font-weight:600}
+h2{font-family:Spectral,serif;font-weight:600;font-size:23px;letter-spacing:-.01em;margin:48px 0 4px}
+.note{color:var(--text-3);font-size:13px;margin:0 0 18px;max-width:72ch;line-height:1.6}
+.note b{color:var(--text-2)}
+
+/* scoreboard */
+.score{display:flex;flex-wrap:wrap;border:1px solid var(--edge);border-radius:4px;overflow:hidden;margin-top:22px}
+.score div{flex:1 1 190px;padding:13px 16px;border-right:1px solid var(--edge)}
+.score div:last-child{border-right:0}
+.score .k{font-family:Spectral,serif;font-size:24px;font-weight:600}
+.score .v{color:var(--text-3);font-size:11.5px;margin-top:2px;line-height:1.45}
+
+/* track record */
+.rec{border:1px solid var(--edge);border-radius:4px;overflow:hidden}
+.recrow{display:grid;grid-template-columns:58px minmax(0,1fr) 62px;gap:12px;align-items:center;
+        padding:7px 14px;border-bottom:1px solid rgba(55,46,82,.55);background:var(--ink-2)}
+.recrow:last-child{border-bottom:0}
+.recrow .s{font-family:Spectral,serif;font-size:13px;color:var(--text-2)}
+.recrow .bar{height:7px;border-radius:4px;background:var(--ink);overflow:hidden}
+.recrow .bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--gC),var(--gA))}
+.recrow .n{text-align:right;font-size:12.5px;color:var(--text-2)}
+
+/* rating tiers */
+.tier{margin-bottom:18px}
+.tierhead{display:flex;align-items:baseline;gap:10px;margin:0 0 7px}
+.tierhead .num{font-family:Spectral,serif;font-size:19px;font-weight:700}
+.tierhead .lbl{color:var(--text-3);font-size:12.5px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:6px}
+.c{display:grid;grid-template-columns:auto 1fr auto;gap:7px;align-items:center;
+   background:var(--ink-2);border:1px solid transparent;border-left:2px solid var(--gD);
+   border-radius:2px;padding:6px 8px;cursor:pointer;font:inherit;color:var(--text);text-align:left;width:100%}
+.c{text-decoration:none}
+.c .nm{text-decoration:none}
+.c:hover{background:var(--ink-3);border-color:var(--edge)}
+.c:focus-visible{outline:2px solid var(--gA);outline-offset:1px}
+.c .nm{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.c .gr{font-family:Spectral,serif;font-size:12px;color:var(--text-3)}
+.dot{width:9px;height:9px;border-radius:50%;flex:none}
+.W{background:var(--w)} .U{background:var(--u)} .B{background:var(--b)}
+.R{background:var(--r)} .G{background:var(--g)} .M{background:#d9c169} .C{background:#8d8aa0}
+.c[data-t="10"],.c[data-t="9"],.c[data-t="8"]{border-left-color:var(--gA)}
+.c[data-t="7"],.c[data-t="6"]{border-left-color:var(--gB)}
+.c[data-t="5"],.c[data-t="4"]{border-left-color:var(--gC)}
+.c[data-t="3"],.c[data-t="2"]{border-left-color:var(--gD)}
+.c[data-t="1"],.c[data-t="0"]{border-left-color:var(--gF)}
+
+/* disagreements */
+.dis{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:10px}
+.d{border:1px solid var(--edge);border-radius:4px;background:var(--ink-2);padding:12px 14px}
+.d .hd{display:flex;align-items:baseline;gap:8px;margin-bottom:8px}
+.d .nm{font-family:Spectral,serif;font-size:15px;font-weight:600}
+.vs{display:flex;gap:8px;margin-bottom:9px;font-size:12.5px}
+.vs span{flex:1;background:var(--ink);border:1px solid var(--edge);border-radius:3px;padding:6px 9px}
+.vs b{display:block;font-family:Spectral,serif;font-size:16px;margin-bottom:1px}
+.q{font-size:12.5px;color:var(--text-2);line-height:1.55;font-style:italic}
+
+footer{padding:46px 0 70px;color:var(--text-3);font-size:12.5px;line-height:1.65}
+footer p{max-width:78ch}
+@media (max-width:620px){ .score div{flex-basis:50%} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <nav>
+    <a href="./">All 280 cards</a>
+    <a href="signals.html">What to commit to</a>
+    <a href="reviews.html" aria-current="page">The set review</a>
+    <button id="refresh">Refresh</button>
+  </nav>
+  <p id="stamp" style="margin:-14px 0 16px;color:var(--text-3);font-size:12px"></p>
+  <h1>What the reviewer <em>actually said</em></h1>
+  <p class="lede">Draftsim's published set review, on its own — no model involved. Only one
+  review per set is readable (MTG Arena Zone blocks scrapers, ChannelFireball is a JavaScript
+  app), so there is no second opinion to average in. What <b>can</b> be aggregated is his
+  record: 25 past sets where we have both his ratings and what actually happened.</p>
+  <div class="score" id="score"></div>
+</header>
+
+<h2>His track record</h2>
+<p class="note" id="recnote"></p>
+<div class="rec" id="rec"></div>
+
+<h2>Where he and the model disagree</h2>
+<p class="note">The model here has <b>not</b> been shown his ratings — otherwise it would just
+repeat them. These are the cards where two independent methods reach opposite conclusions,
+which makes them the ones worth your own judgement rather than either of ours.</p>
+<div class="dis" id="dis"></div>
+
+<h2>Every rating</h2>
+<p class="note" id="allnote"></p>
+<div id="all"></div>
+
+<footer><p id="foot"></p></footer>
+</div>
+
+<script>
+const LABELS={10:"Format-defining",9:"Bomb",8:"Bomb",7:"Excellent",6:"Very good",
+  5:"Solid playable",4:"Playable",3:"Filler",2:"Marginal",1:"Barely",0:"Unplayable"};
+const pileOf=c=>{const k=c.colors||[];return !k.length?'C':k.length>1?'M':k[0];};
+
+fetch('reviewdata.json').then(r=>r.json()).then(d=>{
+  const tr=d.track_record.map(t=>t.spearman);
+  const mean=tr.reduce((a,b)=>a+b,0)/tr.length;
+  document.getElementById('score').innerHTML=`
+    <div><div class="k">${d.cards.length}</div><div class="v">cards he rated${d.unrated.length?` (${d.unrated.length} not covered)`:''}</div></div>
+    <div><div class="k">${mean.toFixed(2)}</div><div class="v">his rank correlation with real win rates, over ${tr.length} past sets</div></div>
+    <div><div class="k">0.57</div><div class="v">what our model gets without seeing his ratings</div></div>
+    <div><div class="k">0.65</div><div class="v">the two combined — they are complementary, not redundant</div></div>`;
+
+  document.getElementById('recnote').innerHTML =
+    `Each past set, his ratings ranked against what the cards actually did. He averages `
+    + `<b>${mean.toFixed(2)}</b>, ranging from ${Math.min(...tr).toFixed(2)} to ${Math.max(...tr).toFixed(2)}. `
+    + `For scale, a blind model on the same sets averages 0.57 — the two are level. Neither is `
+    + `close to perfect, which is the honest headline for anything published before a set is played.`;
+  const sorted=[...d.track_record].sort((a,b)=>b.spearman-a.spearman);
+  document.getElementById('rec').innerHTML=sorted.map(t=>`
+    <div class="recrow"><span class="s">${t.set}</span>
+      <div class="bar"><i style="width:${Math.max(3,t.spearman*100)}%"></i></div>
+      <span class="n">${t.spearman.toFixed(2)}</span></div>`).join('');
+
+  const dis=[...d.cards].sort((a,b)=>Math.abs(b.disagreement)-Math.abs(a.disagreement)).slice(0,8);
+  document.getElementById('dis').innerHTML=dis.map(c=>`
+    <div class="d">
+      <div class="hd"><span class="dot ${pileOf(c)}"></span><span class="nm">${c.name}</span></div>
+      <div class="vs">
+        <span>reviewer<b>${c.rating}/10</b></span>
+        <span>model, unaided<b>${c.blind_grade}</b></span>
+      </div>
+      ${c.prose?`<p class="q">“${c.prose.split('. ').slice(0,2).join('. ')}.”</p>`:''}
+    </div>`).join('');
+
+  const byTier={};
+  for(const c of d.cards){ (byTier[Math.round(c.rating)] ||= []).push(c); }
+  document.getElementById('allnote').textContent =
+    `All ${d.cards.length} ratings, grouped by score. Our own grade is shown beside each so you `
+    + `can see where they line up.`;
+  document.getElementById('all').innerHTML=Object.keys(byTier)
+    .sort((a,b)=>b-a).map(k=>`
+      <section class="tier">
+        <div class="tierhead"><span class="num">${k}/10</span>
+          <span class="lbl">${LABELS[k]||''} · ${byTier[k].length} cards</span></div>
+        <div class="grid">${byTier[k].map(c=>`
+          <a class="c" data-t="${k}" href="${c.scryfall_uri}" target="_blank" rel="noopener"
+             title="${c.type_line} ${c.mana_cost}">
+            <span class="dot ${pileOf(c)}"></span>
+            <span class="nm">${c.name}</span>
+            <span class="gr">${c.final_grade||''}</span>
+          </a>`).join('')}</div>
+      </section>`).join('');
+
+  document.getElementById('foot').innerHTML =
+    `Ratings and quoted reasoning are Draftsim's, reproduced here to compare against our own
+     grades; the review itself is theirs. "Our model, unaided" is the same pipeline with his
+     rating withheld, so the disagreements above are genuine independent errors rather than
+     one copying the other. Track-record figures cover only cards drawn in 400+ games, which is
+     where 17Lands win rates are stable.`;
+});
+</script>
+<script src="pwa.js"></script>
+<script>FRA.mountRefresh(document.getElementById('refresh'), document.getElementById('stamp'));</script>
+</body>
+</html>
