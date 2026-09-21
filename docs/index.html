@@ -234,8 +234,9 @@ footer p{max-width:78ch}
   </nav>
   <h1 class="title">Reality Fracture <em>graded before release</em></h1>
   <p class="sub">Every card in the set, scored by a model that has never seen a game of
-  <b>FRA</b> — it learned what makes a limited card good from <b>31 released sets</b> and
-  14&nbsp;million recorded games, then read these 280 cards cold.</p>
+  <b>FRA</b> — it learned what makes a limited card good from <b>31 released sets</b> and 14&nbsp;million
+  recorded games. It reads these 280 cards cold, then weighs in the published set review —
+  the one thing it cannot work out from the card alone.</p>
 
   <div class="trust" id="trust"></div>
 </header>
@@ -475,7 +476,7 @@ Promise.all([
     <div><div class="k">${g.length}</div><div class="v">cards graded</div></div>
     <div><div class="k">${folds}</div><div class="v">sets used to learn</div></div>
     <div><div class="k">${rho}</div><div class="v">rank correlation on sets it had never seen</div></div>
-    <div><div class="k">46%</div><div class="v">grades within one step of the real answer</div></div>
+    <div><div class="k">49%</div><div class="v">grades within one step of the real answer</div></div>
     <div><div class="k">${unsure}</div><div class="v">cards with wording the model rarely saw</div></div>`;
 
   if(s && s.archetypes){
@@ -489,8 +490,8 @@ Promise.all([
 
   document.getElementById('foot').innerHTML =
     `<b>How much to trust this.</b> Measured against the real grades of 31 released sets, each
-     predicted by a model trained only on the other 30: 17% of grades land exactly right, 46%
-     within one step, 67% within two. It is much better at the ends than the middle — about half
+     predicted by a model trained only on the other 30: 18% of grades land exactly right, 49%
+     within one step, 70% within two. It is much better at the ends than the middle — about half
      of the genuinely top-tier cards are placed in the top tier, and the same for the duds, but
      the B-to-C range is close to a coin flip. Replaying the same recorded games reproduces a
      card's real grade 77% of the time, so that gap is the model, not noisy data. Sort your pool
