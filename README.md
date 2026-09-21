@@ -479,6 +479,29 @@ that *were* played and *did* win — Kozilek 0.566 WR at 85.6% maindecked, Ulamo
 claim about this specific card. Which of them is right is checkable once FRA has 17Lands
 data.
 
+### Reading the reviewers' reasoning, not just their scores
+
+The cached set reviews carry ~7,000 written evaluations across 27 sets (532k words), which
+`review_prose.py` extracts and `mine_prose.py` regresses against the model's own error, to
+name blind spots instead of guessing at them.
+
+As a general method it fails: in-sample it explains 30.8% of our error, but leave-one-set-out
+it explains **0.6%**, beating the mean on 14 of 25 sets. The strongest terms are set-specific
+nouns — *treasure*, *ring*, *oil*, *sentinel* — not transferable ideas. The reviewer's number
+already carries his judgement more cleanly than his prose does.
+
+One finding did survive, and it is interpretable:
+
+| review mentions | n | our mean error |
+|---|---|---|
+| "constructed" | 118 | **+0.396** |
+| "commander" | 90 | **+0.352** |
+| everything else | 5,700 | -0.008 |
+
+We systematically over-rate cards built for other formats. They read powerful — dense text,
+narrow hate effects, high rarity — and the model has no concept of "this was designed for a
+60-card deck". That is a feature idea worth trying; it is not implemented.
+
 ## Two pages
 
 **`index.html`** — all 280 cards sorted into colour piles, best to worst, with a detail

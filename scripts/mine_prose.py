@@ -66,7 +66,13 @@ if __name__ == "__main__":
     names = vec.get_feature_names_out()
     order = np.argsort(m.coef_)
 
-    print(f"\nprose explains {m.score(T, resid):.1%} of the variance in our error\n")
+    # NOTE: this is IN-SAMPLE and badly inflated -- 4,000 features on ~5,900 rows.
+    # Leave-one-set-out puts the real figure at 0.6%, i.e. the prose does not
+    # generalise across sets: the strongest terms are set-specific nouns
+    # (treasure, ring, oil) rather than transferable ideas. The terms below are
+    # worth reading as a diagnostic, not trusted as a model.
+    print(f"\nprose explains {m.score(T, resid):.1%} of the variance in our error "
+          f"(IN-SAMPLE; out-of-sample is 0.6% -- see README)\n")
     print("PHRASES ON CARDS WE RATE TOO HIGH  (reviewer sees a problem we miss)")
     for i in order[::-1][:18]:
         print(f"   {m.coef_[i]:+.3f}  {names[i]}")
