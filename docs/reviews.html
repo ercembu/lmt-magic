@@ -63,6 +63,41 @@ h2{font-family:Spectral,serif;font-weight:600;font-size:23px;letter-spacing:-.01
 .recrow .bar i{display:block;height:100%;border-radius:4px;background:linear-gradient(90deg,var(--gC),var(--gA))}
 .recrow .n{text-align:right;font-size:12.5px;color:var(--text-2)}
 
+/* colour piles, matching the main page */
+.pool{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:9px;align-items:start}
+.pile{min-width:0}
+.pile-head{padding:8px 10px;border-radius:3px 3px 0 0;background:var(--ink-2);
+  border:1px solid var(--edge);border-bottom:0;display:flex;align-items:baseline;gap:7px}
+.pile-head .nm{font-family:Spectral,serif;font-size:15px;font-weight:600}
+.pile-head .n{color:var(--text-3);font-size:11.5px;margin-left:auto}
+.pile-body{border:1px solid var(--edge);border-top:0;border-radius:0 0 3px 3px;padding:5px;min-height:40px}
+.pile[data-c=W] .pile-head{box-shadow:inset 0 2px 0 var(--w)}
+.pile[data-c=U] .pile-head{box-shadow:inset 0 2px 0 var(--u)}
+.pile[data-c=B] .pile-head{box-shadow:inset 0 2px 0 var(--b)}
+.pile[data-c=R] .pile-head{box-shadow:inset 0 2px 0 var(--r)}
+.pile[data-c=G] .pile-head{box-shadow:inset 0 2px 0 var(--g)}
+.pile[data-c=M] .pile-head{box-shadow:inset 0 2px 0 #d9c169}
+.pile[data-c=C] .pile-head{box-shadow:inset 0 2px 0 #8d8aa0}
+.band{font-family:Spectral,serif;font-size:11.5px;color:var(--text-3);
+  padding:9px 4px 3px;border-bottom:1px solid rgba(55,46,82,.65);margin-bottom:4px;
+  display:flex;justify-content:space-between}
+.band:first-child{padding-top:3px}
+.row{display:grid;grid-template-columns:30px 1fr auto;gap:6px;align-items:center;
+  background:var(--ink-2);border:1px solid transparent;border-left:2px solid var(--gD);
+  border-radius:2px;padding:5px 6px;margin-bottom:3px;text-decoration:none;color:var(--text)}
+.row:hover{background:var(--ink-3);border-color:var(--edge)}
+.row .rt{font-family:Spectral,serif;font-weight:700;font-size:12.5px;text-align:center}
+.row .nm{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.row .og{font-family:Spectral,serif;font-size:11.5px;color:var(--text-3)}
+.row.t3{border-left-color:var(--gA)} .row.t3 .rt{color:var(--gA)}
+.row.t2{border-left-color:var(--gB)} .row.t2 .rt{color:var(--gB)}
+.row.t1{border-left-color:var(--gC)} .row.t1 .rt{color:var(--gC)}
+.row.t0{border-left-color:var(--gD)} .row.t0 .rt{color:var(--gD)}
+.row.tx{border-left-color:var(--gF)} .row.tx .rt{color:var(--gF)}
+@media (max-width:1150px){ .pool{grid-template-columns:repeat(4,minmax(0,1fr))} }
+@media (max-width:760px){ .pool{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:430px){ .pool{grid-template-columns:1fr} }
+
 /* rating tiers */
 .tier{margin-bottom:18px}
 .tierhead{display:flex;align-items:baseline;gap:10px;margin:0 0 7px}
@@ -145,7 +180,7 @@ which makes them the ones worth your own judgement rather than either of ours.</
 
 <h2>Every rating</h2>
 <p class="note" id="allnote"></p>
-<div id="all"></div>
+<div class="pool" id="all"></div>
 
 <footer><p id="foot"></p></footer>
 </div>
@@ -206,24 +241,34 @@ fetch('reviewdata.json').then(r=>r.json()).then(d=>{
       ${c.prose?`<p class="q">“${c.prose.split('. ').slice(0,2).join('. ')}.”</p>`:''}
     </div>`).join('');
 
-  const byTier={};
-  for(const c of d.cards){ (byTier[Math.round(c.rating)] ||= []).push(c); }
+  const PILES=[["W","White"],["U","Blue"],["B","Black"],["R","Red"],["G","Green"],
+               ["M","Multicolor"],["C","Colorless"]];
+  const BANDS=[["Bombs",8,10],["Strong",6,7.5],["Playables",4,5.5],
+               ["Filler",2,3.5],["Leave it",0,1.5]];
+  const cls=r=>r>=8?'t3':r>=6?'t2':r>=4?'t1':r>=2?'t0':'tx';
   document.getElementById('allnote').textContent =
-    `All ${d.cards.length} ratings, grouped by score. Our own grade is shown beside each so you `
-    + `can see where they line up.`;
-  document.getElementById('all').innerHTML=Object.keys(byTier)
-    .sort((a,b)=>b-a).map(k=>`
-      <section class="tier">
-        <div class="tierhead"><span class="num">${k}/10</span>
-          <span class="lbl">${LABELS[k]||''} · ${byTier[k].length} cards</span></div>
-        <div class="grid">${byTier[k].map(c=>`
-          <a class="c" data-t="${k}" href="${c.scryfall_uri}" target="_blank" rel="noopener"
-             title="${c.type_line} ${c.mana_cost}">
-            <span class="dot ${pileOf(c)}"></span>
-            <span class="nm">${c.name}</span>
-            <span class="gr">${c.final_grade||''}</span>
-          </a>`).join('')}</div>
-      </section>`).join('');
+    `All ${d.cards.length} ratings, sorted into colour piles the way you sort a pool, best `
+    + `first. Our own grade sits on the right of each row so you can see where they agree.`;
+  document.getElementById('all').innerHTML = PILES.map(([k,label])=>{
+    const mine=d.cards.filter(c=>pileOf(c)===k).sort((a,b)=>b.rating-a.rating);
+    let h=`<section class="pile" data-c="${k}"><div class="pile-head">
+      <span class="nm">${label}</span><span class="n">${mine.length}</span></div>
+      <div class="pile-body">`;
+    if(!mine.length) h+=`<div style="color:var(--text-3);font-size:12px;padding:10px 6px;font-style:italic">nothing here</div>`;
+    for(const [name,lo,hi] of BANDS){
+      const grp=mine.filter(c=>c.rating>=lo&&c.rating<=hi);
+      if(!grp.length) continue;
+      h+=`<div class="band"><span>${name}</span><span>${grp.length}</span></div>`;
+      for(const c of grp){
+        h+=`<a class="row ${cls(c.rating)}" href="${c.scryfall_uri}" target="_blank" rel="noopener"
+             title="${c.name.replace(/"/g,'&quot;')} — ${c.type_line}${c.second!=null?`  ·  second reviewer ${c.second}/5`:''}">
+          <span class="rt">${c.rating}</span>
+          <span class="nm">${c.name}</span>
+          <span class="og">${c.final_grade||''}</span></a>`;
+      }
+    }
+    return h+`</div></section>`;
+  }).join('');
 
   document.getElementById('foot').innerHTML =
     `Ratings and quoted reasoning are Draftsim's, reproduced here to compare against our own
