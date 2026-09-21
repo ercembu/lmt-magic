@@ -96,6 +96,14 @@ h2{font-family:Spectral,serif;font-weight:600;font-size:23px;letter-spacing:-.01
 .vs span{flex:1;background:var(--ink);border:1px solid var(--edge);border-radius:3px;padding:6px 9px}
 .vs b{display:block;font-family:Spectral,serif;font-size:16px;margin-bottom:1px}
 .q{font-size:12.5px;color:var(--text-2);line-height:1.55;font-style:italic}
+.two{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:5px}
+.t{display:grid;grid-template-columns:auto 1fr auto auto;gap:8px;align-items:center;
+   background:var(--ink-2);border:1px solid transparent;border-left:2px solid var(--gD);
+   border-radius:2px;padding:6px 9px;font-size:12.5px}
+.t .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.t .a,.t .b{font-family:Spectral,serif;font-size:12.5px;min-width:30px;text-align:right}
+.t .a{color:var(--gB)} .t .b{color:var(--gC)}
+.t.split{border-left-color:var(--warn)}
 
 footer{padding:46px 0 70px;color:var(--text-3);font-size:12.5px;line-height:1.65}
 footer p{max-width:78ch}
@@ -113,16 +121,21 @@ footer p{max-width:78ch}
   </nav>
   <p id="stamp" style="margin:-14px 0 16px;color:var(--text-3);font-size:12px"></p>
   <h1>What the reviewer <em>actually said</em></h1>
-  <p class="lede">Draftsim's published set review, on its own — no model involved. Only one
-  review per set is readable (MTG Arena Zone blocks scrapers, ChannelFireball is a JavaScript
-  app), so there is no second opinion to average in. What <b>can</b> be aggregated is his
-  record: 25 past sets where we have both his ratings and what actually happened.</p>
+  <p class="lede">The published set reviews, on their own — no model involved. <b>Draftsim</b>
+  covers the whole set; <b>MTG Arena Zone</b> is publishing one colour a day and is partway
+  through. Where both have rated a card you get a second opinion; everywhere else you get one.
+  What can be aggregated regardless is the <b>track record</b> — 25 past sets where we have
+  Draftsim's ratings and what actually happened.</p>
   <div class="score" id="score"></div>
 </header>
 
 <h2>His track record</h2>
 <p class="note" id="recnote"></p>
 <div class="rec" id="rec"></div>
+
+<h2>A second reviewer</h2>
+<p class="note" id="ssnote"></p>
+<div id="ss"></div>
 
 <h2>Where he and the model disagree</h2>
 <p class="note">The model here has <b>not</b> been shown his ratings — otherwise it would just
@@ -161,6 +174,26 @@ fetch('reviewdata.json').then(r=>r.json()).then(d=>{
     <div class="recrow"><span class="s">${t.set}</span>
       <div class="bar"><i style="width:${Math.max(3,t.spearman*100)}%"></i></div>
       <span class="n">${t.spearman.toFixed(2)}</span></div>`).join('');
+
+  const ss=d.second_source;
+  const two=d.cards.filter(c=>c.second!=null);
+  document.getElementById('ssnote').innerHTML = two.length
+    ? `<b>${ss.name}</b> rates on a ${ss.scale} scale and is publishing one colour a day —
+       <b>${ss.rated} cards</b> so far, all we can read. On the ${ss.overlap} cards both have
+       covered they agree at <b>${ss.agreement.toFixed(2)}</b>. That is worth knowing on its own:
+       two experienced reviewers looking at the same cards agree about as much as either agrees
+       with what actually happens, which is the honest ceiling on any single opinion.
+       Rows marked amber are where they differ by a wide margin.`
+    : `No second review is readable yet.`;
+  const half=c=>c.rating/2;
+  document.getElementById('ss').innerHTML = two.length ? `<div class="two">` + two
+    .sort((a,b)=>Math.abs(b.second-half(b))-Math.abs(a.second-half(a)))
+    .map(c=>`<div class="t ${Math.abs(c.second-half(c))>=1.25?'split':''}">
+      <span class="dot ${pileOf(c)}"></span>
+      <span class="nm">${c.name}</span>
+      <span class="a" title="Draftsim, rescaled from ${c.rating}/10">${half(c).toFixed(1)}</span>
+      <span class="b" title="MTG Arena Zone, ${c.second}/5">${c.second.toFixed(1)}</span>
+    </div>`).join('') + `</div>` : '';
 
   const dis=[...d.cards].sort((a,b)=>Math.abs(b.disagreement)-Math.abs(a.disagreement)).slice(0,8);
   document.getElementById('dis').innerHTML=dis.map(c=>`

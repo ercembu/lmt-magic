@@ -10,7 +10,7 @@ import numpy as np
 from scipy.stats import spearmanr
 
 sys.path.insert(0, os.path.dirname(__file__))
-import dataset, textfeat, train, predict
+import dataset, textfeat, train, predict, mtgazone
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 GI = {g: i for i, (g, _) in enumerate(predict.GRADE_THRESHOLDS)}
@@ -39,6 +39,8 @@ def build(setcode="FRA"):
     if not os.path.exists(exp_path):
         raise SystemExit(f"no review scraped for {setcode}")
     exp = json.load(open(exp_path))
+    # second reviewer, published colour by colour -- whatever exists so far
+    second, _ = mtgazone.load(setcode)
     grades = {r["name"]: r for r in json.load(open(f"{ROOT}/data/grades_{setcode}.json"))}
     prose = {p["name"]: p["prose"] for p in json.load(open(f"{ROOT}/data/prose.json"))
              if p["set"] == setcode}
@@ -79,10 +81,21 @@ def build(setcode="FRA"):
                       (c.get("card_faces", [{}])[0].get("image_uris") or {})).get("normal"),
             "scryfall_uri": c.get("scryfall_uri"),
             "prose": prose.get(c["name"], "")[:600],
+            # MTG Arena Zone rates 0-5 where Draftsim rates 0-10; both are
+            # anchored at zero, so halving the Draftsim score compares them
+            "second": second.get(c["name"]),
         })
     out.sort(key=lambda r: -r["rating"])
+    both = [(r["rating"] / 2.0, r["second"]) for r in out if r["second"] is not None]
+    agree = None
+    if len(both) >= 15:
+        agree = float(spearmanr([a for a, b in both], [b for a, b in both]).statistic)
     return {"set": setcode, "cards": out, "track_record": track_record(),
-            "unrated": [c["name"] for c in cards if c["name"] not in exp]}
+            "unrated": [c["name"] for c in cards if c["name"] not in exp],
+            "second_source": {
+                "name": "MTG Arena Zone (j2sjosh)", "scale": "0-5",
+                "rated": len(second), "overlap": len(both), "agreement": agree,
+                "url": "https://mtgazone.com/reality-fracture-fra-limited-set-review-white/"}}
 
 
 if __name__ == "__main__":
@@ -93,6 +106,10 @@ if __name__ == "__main__":
     print(f"{code}: {len(d['cards'])} rated, {len(d['unrated'])} unrated")
     print(f"track record: {len(tr)} past sets, mean spearman {np.mean(tr):.3f} "
           f"(range {min(tr):.2f}-{max(tr):.2f})")
+    ss = d["second_source"]
+    print(f"second reviewer: {ss['rated']} cards, overlap {ss['overlap']}, "
+          f"agreement with Draftsim {ss['agreement']:.3f}" if ss["agreement"] is not None
+          else f"second reviewer: {ss['rated']} cards (too few to correlate)")
     big = sorted(d["cards"], key=lambda r: -abs(r["disagreement"]))[:5]
     print("biggest disagreements with the blind model:")
     for r in big:
