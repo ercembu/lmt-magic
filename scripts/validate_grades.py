@@ -41,7 +41,12 @@ def run():
         names = train.feature_names(vec)
         pred = train.predict_ensemble(train.fit_ensemble(Xtr, y[~te], w[~te], names), Xte)
 
-        wr = np.array([r["gih_wr"] for r, m in zip(rows, te) if m])
+        sub = [r for r, m in zip(rows, te) if m]
+        # never-played cards are training aids carrying a placeholder win rate;
+        # scoring predictions against that placeholder measures nothing
+        real = [i for i, r in enumerate(sub) if not r.get("unplayed")]
+        pred = pred[real]
+        wr = np.array([sub[i]["gih_wr"] for i in real])
         act, _ = actual_grades(wr)
         # predicted grades: rank predictions onto the grade distribution that the
         # OTHER sets show -- the held-out set contributes nothing to the curve
@@ -51,7 +56,7 @@ def run():
         err = np.array([abs(GI[a] - GI[b]) for a, b in zip(pg, act)])
         exact = np.mean([a == b for a, b in zip(pg, act)])
         rho = spearmanr(pred, wr).statistic
-        per_set.append((s, int(te.sum()), rho, exact, err.mean(),
+        per_set.append((s, len(real), rho, exact, err.mean(),
                         float((err <= 1).mean()), float((err <= 2).mean())))
         all_err.append(err); all_pred += pg; all_act += act
 

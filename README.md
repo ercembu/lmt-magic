@@ -83,7 +83,8 @@ Ranking ability:
 | features + oracle text | 0.535 |
 | + ridge ensemble | 0.545 |
 | + 10 more training sets | 0.566 |
-| **+ published expert ratings, where a review exists** | **0.622** |
+| + published expert ratings, where a review exists | 0.622 |
+| **+ maindeck rate blended into the target** | **0.627** |
 
 **But Spearman flatters it.** `validate_grades.py` scores predictions against the real
 grades of all 21 sets, using limited-grades' exact algorithm (fit a normal to the set's
@@ -443,6 +444,40 @@ played**, which this metric cannot express at all.
 The fix would be a different signal: **maindeck rate** — of the players who opened this
 card, how many actually ran it. That is in the same public dumps (`deck_` and `sideboard_`
 columns) and would separate "good when played" from "nobody plays it". Not implemented.
+
+### Maindeck rate: teaching it what "unplayable" means
+
+GIH win rate is conditional on a card being in your deck and drawn, so it cannot say a card
+is unplayable. Maindeck rate can: of everyone who opened this card, how many ran it. Both
+come out of the same dumps (`deck_` vs `sideboard_` columns).
+
+The two measure genuinely different things (rank correlation 0.70). Blending maindeck rate
+into the training target trades a little agreement with win rate for a lot of agreement
+with expert human judgement, which is the thing that explicitly accounts for playability:
+
+| target | vs GIH WR | vs the reviewer |
+|---|---|---|
+| GIH WR only | 0.5536 | 0.5306 |
+| **0.75 WR / 0.25 maindeck (shipped)** | **0.5513 (-0.002)** | **0.5674 (+0.037)** |
+| 0.50 / 0.50 | 0.5326 (-0.021) | 0.5913 (+0.061) |
+| maindeck only | 0.4372 | 0.5691 |
+
+`MAINDECK_WEIGHT` in `dataset.py` sets the mix.
+
+**The bigger find was in the filter.** Keeping only cards drawn in 400+ games silently
+removed 147 cards across the 31 sets whose mean maindeck rate is **18%**, against 60% for
+everything kept — `Leyline of Mutation` at 0.1%, `Sorcerous Spyglass` at 0.2%. Those are
+the only examples of what unplayable looks like, and they were being thrown away. They are
+now trained on their maindeck rate alone, at reduced weight, since they have no trustworthy
+win rate.
+
+**What this did not fix:** `Emrakul, the Exigent Doom`, {10}, which the reviewer calls
+0/10. Three attempts (cost-cliff features, the blend, the unplayable examples) all left it
+at A-, and the training data is why: the 9+ mana cards that exist in 31 sets are mythics
+that *were* played and *did* win — Kozilek 0.566 WR at 85.6% maindecked, Ulamog 0.526 at
+82.7%. On the available evidence the model's position is arguable and the reviewer's is a
+claim about this specific card. Which of them is right is checkable once FRA has 17Lands
+data.
 
 ## Two pages
 

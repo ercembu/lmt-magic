@@ -63,26 +63,71 @@ def load_set(setcode, group="all", fmt="PremierDraft"):
     rows = []
     for c in cards:
         rec = next((labels[v] for v in name_variants(c) if v in labels), None)
-        y, n = (None, 0)
+        y, n, md = (None, 0, None)
         if rec:
             y, n = rec[group]["gih_wr"], rec[group]["gih_n"]
+            md = rec[group].get("maindeck_rate")
         rows.append({"set": setcode, "name": c["name"], "card": c,
-                     "gih_wr": y, "gih_n": n})
+                     "gih_wr": y, "gih_n": n, "maindeck_rate": md})
     return rows
 
 
-def build(setcodes, group="all", min_games=MIN_GAMES, verbose=True, fmt="PremierDraft"):
+# How much of the target is "would anyone play this" rather than "does it win
+# when drawn". GIH win rate is conditional on the card being in your deck, so on
+# its own it cannot say a card is unplayable -- a ten-mana Eldrazi scores fine
+# because the only people who cast it had ramp. Maindeck rate says how often the
+# players who opened it actually ran it.
+#   0.00  agrees with GIH WR at 0.554, with the expert reviewer at 0.531
+#   0.25  0.551 (-0.002)   0.567 (+0.037)
+#   0.50  0.533 (-0.021)   0.591 (+0.061)
+# 0.25 buys most of the human agreement for a cost indistinguishable from noise.
+MAINDECK_WEIGHT = 0.25
+
+
+def build(setcodes, group="all", min_games=MIN_GAMES, verbose=True, fmt="PremierDraft",
+          maindeck_weight=None):
     """X (dense features), y (within-set z-scored GIH WR), texts, weights, rows."""
     allrows = []
     for s in setcodes:
-        rows = [r for r in load_set(s, group, fmt)
-                if r["gih_wr"] is not None and r["gih_n"] >= min_games]
+        pool = load_set(s, group, fmt)
+        rows = [r for r in pool if r["gih_wr"] is not None and r["gih_n"] >= min_games]
+        # The games filter silently removes the cards nobody plays -- 147 across
+        # the 31 sets, mean maindeck rate 18% against 60% for everything kept.
+        # Those are precisely the examples needed to learn what "unplayable"
+        # looks like, and dropping them is why a ten-mana Eldrazi grades well.
+        # They have no trustworthy win rate, so they are trained on their
+        # maindeck rate alone, at reduced weight.
+        unplayed = [r for r in pool
+                    if r not in rows and r.get("maindeck_rate") is not None
+                    and r["maindeck_rate"] < 0.35
+                    and "Land" not in (r["card"].get("type_line") or "")]
         if not rows:
             continue
         wr = np.array([r["gih_wr"] for r in rows])
         mu, sd = wr.mean(), wr.std()
-        for r, w in zip(rows, wr):
-            r["y"], r["set_mu"], r["set_sd"] = (w - mu) / sd, mu, sd
+        lam = MAINDECK_WEIGHT if maindeck_weight is None else maindeck_weight
+        md = np.array([r.get("maindeck_rate") if r.get("maindeck_rate") is not None
+                       else np.nan for r in rows], dtype=float)
+        if lam and np.isfinite(md).sum() > 10:
+            ok = np.isfinite(md)
+            mdz = np.zeros(len(md))
+            mdz[ok] = (md[ok] - md[ok].mean()) / (md[ok].std() or 1.0)
+            for r, w, mz in zip(rows, wr, mdz):
+                r["y"] = (1 - lam) * ((w - mu) / sd) + lam * mz
+                r["set_mu"], r["set_sd"] = mu, sd
+        else:
+            for r, w in zip(rows, wr):
+                r["y"], r["set_mu"], r["set_sd"] = (w - mu) / sd, mu, sd
+        # scale their pseudo-target onto the same z scale as the rest
+        if lam and unplayed:
+            floor = min((r["y"] for r in rows), default=-2.0)
+            for r in unplayed:
+                # 0% maindecked -> a full step below the worst real card
+                r["y"] = floor - 0.5 * (1.0 - r["maindeck_rate"] / 0.35)
+                r["set_mu"], r["set_sd"] = mu, sd
+                r["gih_wr"] = r["gih_wr"] if r["gih_wr"] is not None else mu
+                r["unplayed"] = True
+            rows = rows + unplayed
         allrows += rows
         if verbose:
             print(f"  {s}: {len(rows):3d} cards  mean GIH {mu:.4f}  sd {sd:.4f}")
@@ -92,6 +137,8 @@ def build(setcodes, group="all", min_games=MIN_GAMES, verbose=True, fmt="Premier
     y = np.array([r["y"] for r in allrows])
     texts = [textfeat.normalize(r["card"]) for r in allrows]
     # More games behind a win rate means a more trustworthy label.
-    w = np.sqrt(np.array([r["gih_n"] for r in allrows], dtype=float))
+    # unplayed cards carry a nominal sample size so they do not dominate
+    w = np.sqrt(np.array([max(r["gih_n"], 200) if r.get("unplayed") else r["gih_n"]
+                          for r in allrows], dtype=float))
     w = w / w.mean()
     return X, y, texts, w, allrows

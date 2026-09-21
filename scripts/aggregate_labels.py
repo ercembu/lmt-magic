@@ -48,15 +48,17 @@ def aggregate(expansion, fmt="PremierDraft"):
     names = [n for n in names if all(k in cards[n] for k in
                                      ("opening_hand", "drawn", "deck"))]
     has_tu = all("tutored" in cards[n] for n in names) if names else False
+    has_sb = all("sideboard" in cards[n] for n in names) if names else False
+    sb = [cards[n]["sideboard"] for n in names] if has_sb else []
     oh = [cards[n]["opening_hand"] for n in names]
     dr = [cards[n]["drawn"] for n in names]
     tu = [cards[n]["tutored"] for n in names] if has_tu else []
     dk = [cards[n]["deck"] for n in names]
-    usecols = ["won", "rank"] + oh + dr + tu + dk
+    usecols = ["won", "rank"] + oh + dr + tu + dk + sb
 
     nc = len(names)
     acc = {g: {k: np.zeros(nc, dtype=np.int64) for k in
-               ("gih_n", "gih_w", "gnd_n", "gnd_w", "deck_n", "deck_w")}
+               ("gih_n", "gih_w", "gnd_n", "gnd_w", "deck_n", "deck_w", "sb_n")}
            for g in ("all", "top")}
     games = {"all": 0, "top": 0}
     wins = {"all": 0, "top": 0}
@@ -73,6 +75,8 @@ def aggregate(expansion, fmt="PremierDraft"):
         if has_tu:
             gih = gih + chunk[tu].to_numpy(dtype=np.int32, na_value=0)
         deck = chunk[dk].to_numpy(dtype=np.int32, na_value=0)
+        side = (chunk[sb].to_numpy(dtype=np.int32, na_value=0) if has_sb
+                else np.zeros_like(deck))
         gnd = np.maximum(deck - gih, 0)
 
         for group in ("all", "top"):
@@ -81,10 +85,11 @@ def aggregate(expansion, fmt="PremierDraft"):
                 continue
             w = won[m]
             a = acc[group]
-            g_, d_, n_ = gih[m], deck[m], gnd[m]
+            g_, d_, n_, s_ = gih[m], deck[m], gnd[m], side[m]
             a["gih_n"] += g_.sum(0);            a["gih_w"] += (g_ * w[:, None]).sum(0)
             a["gnd_n"] += n_.sum(0);            a["gnd_w"] += (n_ * w[:, None]).sum(0)
             a["deck_n"] += d_.sum(0);           a["deck_w"] += (d_ * w[:, None]).sum(0)
+            a["sb_n"] += s_.sum(0)
             games[group] += int(m.sum());       wins[group] += int(w.sum())
         if rows % (CHUNK * 10) == 0:
             print(f"  {expansion}: {rows:,} rows  ({time.time()-t0:.0f}s)", flush=True)
@@ -97,7 +102,14 @@ def aggregate(expansion, fmt="PremierDraft"):
         for i, n in enumerate(names):
             rec = out["cards"].setdefault(n, {})
             gih_n, gnd_n, deck_n = int(a["gih_n"][i]), int(a["gnd_n"][i]), int(a["deck_n"][i])
+            sb_n = int(a["sb_n"][i])
+            pool = deck_n + sb_n
             rec[group] = {
+                # Of every copy someone opened, how often did it make the deck?
+                # GIH win rate is conditional on playing the card, so it cannot
+                # express "nobody plays this". This can.
+                "sb_n": sb_n,
+                "maindeck_rate": (deck_n / pool) if pool else None,
                 "gih_n": gih_n, "gih_wr": (a["gih_w"][i] / gih_n) if gih_n else None,
                 "gnd_n": gnd_n, "gnd_wr": (a["gnd_w"][i] / gnd_n) if gnd_n else None,
                 "deck_n": deck_n, "deck_wr": (a["deck_w"][i] / deck_n) if deck_n else None,
