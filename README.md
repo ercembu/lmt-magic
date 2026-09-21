@@ -498,9 +498,11 @@ One finding did survive, and it is interpretable:
 | "commander" | 90 | **+0.352** |
 | everything else | 5,700 | -0.008 |
 
-We systematically over-rate cards built for other formats. They read powerful — dense text,
-narrow hate effects, high rarity — and the model has no concept of "this was designed for a
-60-card deck". That is a feature idea worth trying; it is not implemented.
+We systematically over-rate cards built for Constructed and Commander. They read powerful —
+dense text, narrow hate effects, high rarity — and the model has no concept of a card being
+aimed at a different format: your sealed deck is 40 cards with 17 lands, where a narrow
+answer you can't reliably cast is dead weight, while the same card is fine in a 60-card
+Constructed deck built around it. Worth trying as a feature; not implemented.
 
 ## Two pages
 
