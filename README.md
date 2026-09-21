@@ -408,6 +408,42 @@ card order not at all, so `predict.SHRINK` stays at 1.0 and keeps the top of the
 readable. And the honest pitch for the tool is not "49% accurate" but "sorts your pool
 about as well as a good set review, before one exists".
 
+### What the set review exposed
+
+When the Reality Fracture review landed it moved 62% of the blind grades, but with **no
+systematic bias** (mean movement +0.00) — corrections went both ways. The blind ordering
+already agreed with the reviewer at 0.567 spearman, about as well as the reviewer agrees
+with reality.
+
+The instructive failure was `Emrakul, the Exigent Doom`: graded **B+** blind, rated
+**0/10** by the reviewer, whose reasoning was one line — *"ten mana is, well, untenable."*
+
+Two things came out of chasing that.
+
+**`text_len` is gone.** Removing it and `n_lines` costs -0.0014 spearman (p=0.22), i.e.
+nothing, and "more words means better card" is precisely how a {10} Eldrazi with 269
+characters of rules text reached B+. A proxy that contributes nothing measurable and
+produces indefensible reasoning is not worth keeping.
+
+**A cost cliff does not work, and the reason matters.** Adding `cmc>=7` / `cmc>=9`
+features made Emrakul *worse* (B+ → A-). It is not a missing feature — it is the target.
+GIH win rate is conditional on a card being in your deck and drawn, so the only ten-drops
+the model can learn from are the ones somebody chose to play, and those had ramp behind
+them:
+
+| mana value | printed | reach training | mean GIH WR |
+|---|---|---|---|
+| 0-5 | 7563 | 93% | 0.5530 |
+| 6-7 | 584 | 88% | 0.5620 |
+| 8+ | 105 | 88% | **0.5537** |
+
+Expensive cards that get played perform *fine*. "Unplayable" shows up as **not being
+played**, which this metric cannot express at all.
+
+The fix would be a different signal: **maindeck rate** — of the players who opened this
+card, how many actually ran it. That is in the same public dumps (`deck_` and `sideboard_`
+columns) and would separate "good when played" from "nobody plays it". Not implemented.
+
 ## Two pages
 
 **`index.html`** — all 280 cards sorted into colour piles, best to worst, with a detail

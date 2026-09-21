@@ -161,9 +161,20 @@ def extract(card):
     f["is_instant_speed"] = 1.0 if (f["type_instant"] or f["kw_flash"]) else 0.0
 
     # --- text shape -------------------------------------------------------
-    f["text_len"]   = float(len(t))
+    # text_len / n_lines were here and are gone on purpose: ablating both cost
+    # -0.0014 spearman (p=0.22), i.e. nothing, and "more words = better card" is
+    # how a {10} Eldrazi with 269 characters of rules text graded B+ while the
+    # set review called it 0/10 ("ten mana is, well, untenable").
     f["n_lines"]    = float(t.count("\n") + 1) if t else 0.0
     f["is_vanilla"] = 1.0 if (f["type_creature"] and len(t) < 30 and not f["n_keywords"]) else 0.0
+
+    # A "cost cliff" feature (cmc>=7, cmc>=9) was tried here and removed: it made
+    # the {10} Eldrazi WORSE (B+ -> A-). The cause is the target, not the feature.
+    # GIH win rate is conditional on a card being in your deck and drawn, so the
+    # only ten-drops it can learn from are the ones somebody chose to play -- and
+    # those had ramp behind them and did fine (8+ mana mean GIH WR 0.5537, against
+    # 0.5530 for everything else). "Unplayable" shows up as not being played,
+    # which this metric cannot express. Maindeck rate would; see README.
 
     # --- archetype breadth -------------------------------------------------
     # How many of the ten standard two-colour strategies does this card actively
