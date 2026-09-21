@@ -22,7 +22,7 @@
    "mono": 39,
    "a_tier": 3,
    "b_or_better": 22,
-   "top15_mean_z": 1.1900047206269972,
+   "top15_mean_z": 1.2446144539934962,
    "rank": 5
   },
   "U": {
@@ -30,9 +30,9 @@
    "name": "Blue",
    "cards": 63,
    "mono": 39,
-   "a_tier": 8,
-   "b_or_better": 20,
-   "top15_mean_z": 1.29824084569326,
+   "a_tier": 7,
+   "b_or_better": 21,
+   "top15_mean_z": 1.3016334772838491,
    "rank": 4
   },
   "B": {
@@ -40,9 +40,9 @@
    "name": "Black",
    "cards": 60,
    "mono": 39,
-   "a_tier": 5,
-   "b_or_better": 21,
-   "top15_mean_z": 1.3230388644686302,
+   "a_tier": 6,
+   "b_or_better": 20,
+   "top15_mean_z": 1.3141950269351035,
    "rank": 3
   },
   "R": {
@@ -51,9 +51,9 @@
    "cards": 62,
    "mono": 40,
    "a_tier": 9,
-   "b_or_better": 21,
-   "top15_mean_z": 1.5227944407367473,
-   "rank": 1
+   "b_or_better": 22,
+   "top15_mean_z": 1.4725238702228454,
+   "rank": 2
   },
   "G": {
    "color": "G",
@@ -62,8 +62,8 @@
    "mono": 37,
    "a_tier": 9,
    "b_or_better": 22,
-   "top15_mean_z": 1.501938044065053,
-   "rank": 2
+   "top15_mean_z": 1.5667359415201856,
+   "rank": 1
   }
  },
  "pulls": {
@@ -71,7 +71,7 @@
    {
     "name": "Guiding Hydra",
     "grade": "A-",
-    "z": 1.4026732899923222,
+    "z": 1.5057052441899337,
     "rarity": "rare",
     "mana_cost": "{X}{W}",
     "type_line": "Creature \u2014 Hydra Horror",
@@ -91,31 +91,31 @@
     "oracle_text": "This creature enters with X +1/+1 counters on it.\nAt the beginning of combat on your turn, you may remove a +1/+1 counter from this creature. If you do, put a +1/+1 counter on each other creature you control."
    },
    {
-    "name": "Repurposed Enforcer",
+    "name": "Liliana the Faultless",
     "grade": "B+",
-    "z": 1.3126950855218626,
+    "z": 1.2917937758243683,
     "rarity": "rare",
-    "mana_cost": "{1}{W}",
-    "type_line": "Creature \u2014 Human Soldier",
-    "image": "https://cards.scryfall.io/normal/front/3/5/35000e93-85d3-44f8-976a-5918ee4c71e0.jpg?1788878108",
-    "scryfall_uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api",
+    "mana_cost": "{W}",
+    "type_line": "Legendary Creature \u2014 Human Cleric",
+    "image": "https://cards.scryfall.io/normal/front/7/0/70d8c400-87dc-4f15-808f-e54a95d779fc.jpg?1788329194",
+    "scryfall_uri": "https://scryfall.com/card/fra/200/liliana-the-faultless?utm_source=api",
     "colors": [
      "W"
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "trust": {
-     "band": 2,
+     "band": 1,
      "of": 5,
-     "mean_grade_error": 1.8579952267303104,
-     "within_1": 0.5089498806682577,
-     "within_2": 0.7147971360381862
+     "mean_grade_error": 1.6545346062052506,
+     "within_1": 0.5447494033412887,
+     "within_2": 0.7696897374701671
     },
-    "oracle_text": "Whenever this creature attacks, empower Jace X, where X is the number of creatures you control. (Put that many loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
+    "oracle_text": "Whenever another creature or planeswalker you control enters, you gain 1 life.\n{1}, {T}, Discard a card: Another target creature or planeswalker you control gains hexproof until end of turn."
    },
    {
     "name": "Enlightened Confidant",
     "grade": "B+",
-    "z": 1.2917937758243683,
+    "z": 1.2516037548183738,
     "rarity": "mythic",
     "mana_cost": "{1}{W}",
     "type_line": "Creature \u2014 Kor Cleric",
@@ -137,7 +137,7 @@
    {
     "name": "Lyra, Archangel of Dawn",
     "grade": "B+",
-    "z": 1.2516037548183738,
+    "z": 1.2133396224885171,
     "rarity": "rare",
     "mana_cost": "{2}{W}",
     "type_line": "Legendary Creature \u2014 Angel Knight",
@@ -157,26 +157,26 @@
     "oracle_text": "Flying\nWhenever you gain life, put a +1/+1 counter on each Angel you control."
    },
    {
-    "name": "Liliana the Faultless",
+    "name": "Repurposed Enforcer",
     "grade": "B+",
-    "z": 1.1948571240757904,
+    "z": 1.1767740211638869,
     "rarity": "rare",
-    "mana_cost": "{W}",
-    "type_line": "Legendary Creature \u2014 Human Cleric",
-    "image": "https://cards.scryfall.io/normal/front/7/0/70d8c400-87dc-4f15-808f-e54a95d779fc.jpg?1788329194",
-    "scryfall_uri": "https://scryfall.com/card/fra/200/liliana-the-faultless?utm_source=api",
+    "mana_cost": "{1}{W}",
+    "type_line": "Creature \u2014 Human Soldier",
+    "image": "https://cards.scryfall.io/normal/front/3/5/35000e93-85d3-44f8-976a-5918ee4c71e0.jpg?1788878108",
+    "scryfall_uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api",
     "colors": [
      "W"
     ],
-    "confidence": "high",
+    "confidence": "medium",
     "trust": {
-     "band": 1,
+     "band": 2,
      "of": 5,
-     "mean_grade_error": 1.6545346062052506,
-     "within_1": 0.5447494033412887,
-     "within_2": 0.7696897374701671
+     "mean_grade_error": 1.8579952267303104,
+     "within_1": 0.5089498806682577,
+     "within_2": 0.7147971360381862
     },
-    "oracle_text": "Whenever another creature or planeswalker you control enters, you gain 1 life.\n{1}, {T}, Discard a card: Another target creature or planeswalker you control gains hexproof until end of turn."
+    "oracle_text": "Whenever this creature attacks, empower Jace X, where X is the number of creatures you control. (Put that many loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
    },
    {
     "name": "Hexhaven Battalion",
@@ -203,7 +203,7 @@
    {
     "name": "Memory Trap",
     "grade": "B",
-    "z": 0.9276841577671586,
+    "z": 0.9555775379404315,
     "rarity": "common",
     "mana_cost": "{2}{W}",
     "type_line": "Enchantment",
@@ -223,31 +223,9 @@
     "oracle_text": "When this enchantment enters, exile target nonland permanent an opponent controls until this enchantment leaves the battlefield."
    },
    {
-    "name": "Kindred Judgment",
-    "grade": "B",
-    "z": 0.7977768461252381,
-    "rarity": "rare",
-    "mana_cost": "{5}{W}{W}",
-    "type_line": "Sorcery",
-    "image": "https://cards.scryfall.io/normal/front/6/f/6f9f814b-8249-4e48-a05e-4c84060fe6fb.jpg?1789470776",
-    "scryfall_uri": "https://scryfall.com/card/fra/13/kindred-judgment?utm_source=api",
-    "colors": [
-     "W"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 5,
-     "of": 5,
-     "mean_grade_error": 2.0435560859188544,
-     "within_1": 0.47613365155131265,
-     "within_2": 0.6640811455847255
-    },
-    "oracle_text": "Choose a creature type. Destroy all creatures that aren't of the chosen type."
-   },
-   {
     "name": "Refute Destiny",
-    "grade": "B-",
-    "z": 0.7855300527942329,
+    "grade": "B",
+    "z": 0.941539276553198,
     "rarity": "uncommon",
     "mana_cost": "{1}{W}",
     "type_line": "Sorcery",
@@ -267,14 +245,36 @@
     "oracle_text": "Exile target creature or planeswalker that's green or blue. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)"
    },
    {
-    "name": "Gideon's Memorial",
-    "grade": "B-",
-    "z": 0.737671186082929,
+    "name": "Kindred Judgment",
+    "grade": "B",
+    "z": 0.8226372910740668,
     "rarity": "rare",
-    "mana_cost": "{1}{W}",
-    "type_line": "Legendary Artifact",
-    "image": "https://cards.scryfall.io/normal/front/7/6/768c0e64-9907-417a-a763-c836fdf36883.jpg?1789127685",
-    "scryfall_uri": "https://scryfall.com/card/fra/198/gideons-memorial?utm_source=api",
+    "mana_cost": "{5}{W}{W}",
+    "type_line": "Sorcery",
+    "image": "https://cards.scryfall.io/normal/front/6/f/6f9f814b-8249-4e48-a05e-4c84060fe6fb.jpg?1789470776",
+    "scryfall_uri": "https://scryfall.com/card/fra/13/kindred-judgment?utm_source=api",
+    "colors": [
+     "W"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 5,
+     "of": 5,
+     "mean_grade_error": 2.0435560859188544,
+     "within_1": 0.47613365155131265,
+     "within_2": 0.6640811455847255
+    },
+    "oracle_text": "Choose a creature type. Destroy all creatures that aren't of the chosen type."
+   },
+   {
+    "name": "Your Fate Ends Here",
+    "grade": "B-",
+    "z": 0.7494742244645438,
+    "rarity": "uncommon",
+    "mana_cost": "{2}{W}",
+    "type_line": "Instant",
+    "image": "https://cards.scryfall.io/normal/front/2/5/25000a17-b701-4d69-b2ef-2c74029199d3.jpg?1789729751",
+    "scryfall_uri": "https://scryfall.com/card/fra/24/your-fate-ends-here?utm_source=api",
     "colors": [
      "W"
     ],
@@ -286,7 +286,7 @@
      "within_1": 0.47911694510739855,
      "within_2": 0.6825775656324582
     },
-    "oracle_text": "Creature tokens you control get +1/+0 and have vigilance.\n{T}: Add one mana of any color. Spend this mana only to cast a planeswalker spell.\n{1}{W}, Discard this card: It deals 4 damage to target attacking or blocking creature."
+    "oracle_text": "Destroy target creature or planeswalker with mana value 3 or greater. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)"
    }
   ],
   "U": [
@@ -335,6 +335,28 @@
     "oracle_text": "Flying\nAt the beginning of each end step, if you've drawn three or more cards this turn, create a 3/3 blue Angel creature token with flying.\n{3}{U}{U}: Until end of turn, whenever Lyra deals combat damage to a player, draw two cards."
    },
    {
+    "name": "Sphinx of False Conclusions",
+    "grade": "A-",
+    "z": 1.4784561928518916,
+    "rarity": "rare",
+    "mana_cost": "{2}{U}{U}",
+    "type_line": "Creature \u2014 Sphinx Illusion",
+    "image": "https://cards.scryfall.io/normal/front/0/8/08ffbd51-2bd3-4262-8809-09576ce2b6f5.jpg?1789385594",
+    "scryfall_uri": "https://scryfall.com/card/fra/40/sphinx-of-false-conclusions?utm_source=api",
+    "colors": [
+     "U"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 3,
+     "of": 5,
+     "mean_grade_error": 1.977923627684964,
+     "within_1": 0.47911694510739855,
+     "within_2": 0.6825775656324582
+    },
+    "oracle_text": "Flash\nFlying\nWhenever this creature attacks, draw a card, then discard a card.\nWhen this creature dies, if it isn't a token, create a token that's a copy of it."
+   },
+   {
     "name": "Seasoned Cryomancer",
     "grade": "A-",
     "z": 1.4522627115335212,
@@ -357,31 +379,9 @@
     "oracle_text": "When this creature enters, draw two cards, then discard two cards. When you discard one or more nonland cards this way, tap up to that many target creatures and put a stun counter on each of them.\n{3}{U}{U}, Exile this card from your graveyard: Draw two cards."
    },
    {
-    "name": "Sphinx of False Conclusions",
-    "grade": "A-",
-    "z": 1.4270293719956564,
-    "rarity": "rare",
-    "mana_cost": "{2}{U}{U}",
-    "type_line": "Creature \u2014 Sphinx Illusion",
-    "image": "https://cards.scryfall.io/normal/front/0/8/08ffbd51-2bd3-4262-8809-09576ce2b6f5.jpg?1789385594",
-    "scryfall_uri": "https://scryfall.com/card/fra/40/sphinx-of-false-conclusions?utm_source=api",
-    "colors": [
-     "U"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 3,
-     "of": 5,
-     "mean_grade_error": 1.977923627684964,
-     "within_1": 0.47911694510739855,
-     "within_2": 0.6825775656324582
-    },
-    "oracle_text": "Flash\nFlying\nWhenever this creature attacks, draw a card, then discard a card.\nWhen this creature dies, if it isn't a token, create a token that's a copy of it."
-   },
-   {
     "name": "Diviner of Victory // Unwind History",
-    "grade": "A-",
-    "z": 1.334186150846469,
+    "grade": "B+",
+    "z": 1.3126950855218626,
     "rarity": "rare",
     "mana_cost": "{U}",
     "type_line": "Creature \u2014 Dwarf Wizard // Sorcery",
@@ -401,31 +401,9 @@
     "oracle_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\nWhenever you scry or surveil, this creature gets +1/+1 until end of turn.\n//\nReturn target creature an opponent controls with mana value 3 or less to its owner's hand. Surveil 1."
    },
    {
-    "name": "Mindseeker Oculus",
-    "grade": "B-",
-    "z": 0.7143674402801873,
-    "rarity": "common",
-    "mana_cost": "{2}{U}",
-    "type_line": "Creature \u2014 Homunculus",
-    "image": "https://cards.scryfall.io/normal/front/f/5/f5324741-353a-4a70-adb2-b631b00806dd.jpg?1789556707",
-    "scryfall_uri": "https://scryfall.com/card/fra/33/mindseeker-oculus?utm_source=api",
-    "colors": [
-     "U"
-    ],
-    "confidence": "medium",
-    "trust": {
-     "band": 1,
-     "of": 5,
-     "mean_grade_error": 1.6545346062052506,
-     "within_1": 0.5447494033412887,
-     "within_2": 0.7696897374701671
-    },
-    "oracle_text": "When this creature enters, empower Jace 4. (Put four loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
-   },
-   {
     "name": "Chandra, Chill of Compliance",
-    "grade": "B-",
-    "z": 0.7028602309190991,
+    "grade": "B",
+    "z": 0.887146559018876,
     "rarity": "mythic",
     "mana_cost": "{1}{U}{U}",
     "type_line": "Legendary Planeswalker \u2014 Chandra",
@@ -445,9 +423,53 @@
     "oracle_text": "+1: Surveil 1. If you put a noncreature, nonland card into your graveyard this way, put that card into your hand.\n+1: Add {U}. Spend this mana only to cast a noncreature spell.\n\u2212X: Tap target artifact or creature. Put X stun counters on it.\n\u22126: You get an emblem with \"Whenever you cast a spell, draw a card.\""
    },
    {
+    "name": "Mindseeker Oculus",
+    "grade": "B-",
+    "z": 0.7855300527942329,
+    "rarity": "common",
+    "mana_cost": "{2}{U}",
+    "type_line": "Creature \u2014 Homunculus",
+    "image": "https://cards.scryfall.io/normal/front/f/5/f5324741-353a-4a70-adb2-b631b00806dd.jpg?1789556707",
+    "scryfall_uri": "https://scryfall.com/card/fra/33/mindseeker-oculus?utm_source=api",
+    "colors": [
+     "U"
+    ],
+    "confidence": "medium",
+    "trust": {
+     "band": 1,
+     "of": 5,
+     "mean_grade_error": 1.6545346062052506,
+     "within_1": 0.5447494033412887,
+     "within_2": 0.7696897374701671
+    },
+    "oracle_text": "When this creature enters, empower Jace 4. (Put four loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
+   },
+   {
+    "name": "Plan for All Outcomes",
+    "grade": "B-",
+    "z": 0.6247382610788094,
+    "rarity": "uncommon",
+    "mana_cost": "{3}{U}",
+    "type_line": "Enchantment",
+    "image": "https://cards.scryfall.io/normal/front/c/4/c4effc17-0d0e-423a-b5f2-597ea6c71f67.jpg?1789576786",
+    "scryfall_uri": "https://scryfall.com/card/fra/35/plan-for-all-outcomes?utm_source=api",
+    "colors": [
+     "U"
+    ],
+    "confidence": "medium",
+    "trust": {
+     "band": 5,
+     "of": 5,
+     "mean_grade_error": 2.0435560859188544,
+     "within_1": 0.47613365155131265,
+     "within_2": 0.6640811455847255
+    },
+    "oracle_text": "When this enchantment enters, the owner of up to one other target nonland permanent puts it on their choice of the top or bottom of their library.\nWhenever you cast your first noncreature spell each turn, empower Jace 1. (Put a loyalty counter on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
+   },
+   {
     "name": "Unsummon",
     "grade": "B-",
-    "z": 0.680119858293694,
+    "z": 0.6138934870699196,
     "rarity": "common",
     "mana_cost": "{U}",
     "type_line": "Instant",
@@ -468,8 +490,8 @@
    },
    {
     "name": "Theorist's Proxy",
-    "grade": "B-",
-    "z": 0.5607030318750833,
+    "grade": "C+",
+    "z": 0.5090541257167783,
     "rarity": "rare",
     "mana_cost": "{1}{U}",
     "type_line": "Creature \u2014 Illusion",
@@ -487,35 +509,13 @@
      "within_2": 0.7147971360381862
     },
     "oracle_text": "Flash\nWhen this creature enters, empower Jace 3. (Put three loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")\n{U}, Sacrifice this creature: The next spell you cast this turn can't be countered."
-   },
-   {
-    "name": "Yuriko, Hope from the Shadows",
-    "grade": "C+",
-    "z": 0.5090541257167783,
-    "rarity": "uncommon",
-    "mana_cost": "{U}",
-    "type_line": "Legendary Creature \u2014 Human Ninja",
-    "image": "https://cards.scryfall.io/normal/front/4/5/45e81487-8b8c-480b-922a-eaa9edc7201d.jpg?1789127717",
-    "scryfall_uri": "https://scryfall.com/card/fra/226/yuriko-hope-from-the-shadows?utm_source=api",
-    "colors": [
-     "U"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 2,
-     "of": 5,
-     "mean_grade_error": 1.8579952267303104,
-     "within_1": 0.5089498806682577,
-     "within_2": 0.7147971360381862
-    },
-    "oracle_text": "Flash\nWhen Yuriko enters, choose one \u2014\n\u2022 Target creature gets -X/-0 until end of turn, where X is the number of cards in your graveyard.\n\u2022 Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)"
    }
   ],
   "B": [
    {
     "name": "Garruk, Veiled Butcher",
     "grade": "A+",
-    "z": 2.551881811371639,
+    "z": 2.368567059267874,
     "rarity": "mythic",
     "mana_cost": "{3}{B}{B}",
     "type_line": "Legendary Planeswalker \u2014 Garruk",
@@ -559,7 +559,7 @@
    {
     "name": "Dark Matter Manipulator",
     "grade": "A-",
-    "z": 1.379121996655836,
+    "z": 1.4026732899923222,
     "rarity": "rare",
     "mana_cost": "{B}",
     "type_line": "Creature \u2014 Human Warlock",
@@ -579,31 +579,9 @@
     "oracle_text": "When this creature enters, mill three cards.\nThis creature gets +2/+0 for every seven cards in your graveyard."
    },
    {
-    "name": "Sanctum Lurker",
-    "grade": "B+",
-    "z": 1.2714420571847378,
-    "rarity": "rare",
-    "mana_cost": "{2}{B}",
-    "type_line": "Creature \u2014 Horror",
-    "image": "https://cards.scryfall.io/normal/front/2/1/2185c08f-bb4d-49d5-8b6c-c629a48bb61c.jpg?1789556729",
-    "scryfall_uri": "https://scryfall.com/card/fra/64/sanctum-lurker?utm_source=api",
-    "colors": [
-     "B"
-    ],
-    "confidence": "medium",
-    "trust": {
-     "band": 4,
-     "of": 5,
-     "mean_grade_error": 1.9397374701670644,
-     "within_1": 0.4904534606205251,
-     "within_2": 0.684964200477327
-    },
-    "oracle_text": "When this creature enters, empower Jace 1.\nPlaneswalkers you control aren't put into their owners' graveyards for having 0 loyalty.\nPlaneswalkers you control have \"[+2]: This planeswalker deals 1 damage to each opponent and you gain 1 life.\""
-   },
-   {
     "name": "Lich's Relic",
-    "grade": "B+",
-    "z": 1.2133396224885171,
+    "grade": "A-",
+    "z": 1.334186150846469,
     "rarity": "rare",
     "mana_cost": "{B}",
     "type_line": "Artifact \u2014 Equipment",
@@ -623,9 +601,31 @@
     "oracle_text": "When this Equipment enters, you may pay {2}. When you do, for each opponent, destroy up to one target creature or planeswalker that player controls.\nEquipped creature gets +2/+1.\nEquip {2}"
    },
    {
+    "name": "Sanctum Lurker",
+    "grade": "B+",
+    "z": 1.2322461657100987,
+    "rarity": "rare",
+    "mana_cost": "{2}{B}",
+    "type_line": "Creature \u2014 Horror",
+    "image": "https://cards.scryfall.io/normal/front/2/1/2185c08f-bb4d-49d5-8b6c-c629a48bb61c.jpg?1789556729",
+    "scryfall_uri": "https://scryfall.com/card/fra/64/sanctum-lurker?utm_source=api",
+    "colors": [
+     "B"
+    ],
+    "confidence": "medium",
+    "trust": {
+     "band": 4,
+     "of": 5,
+     "mean_grade_error": 1.9397374701670644,
+     "within_1": 0.4904534606205251,
+     "within_2": 0.684964200477327
+    },
+    "oracle_text": "When this creature enters, empower Jace 1.\nPlaneswalkers you control aren't put into their owners' graveyards for having 0 loyalty.\nPlaneswalkers you control have \"[+2]: This planeswalker deals 1 damage to each opponent and you gain 1 life.\""
+   },
+   {
     "name": "Liliana the Repentant",
     "grade": "B",
-    "z": 1.0441228151303865,
+    "z": 1.0288047620058414,
     "rarity": "rare",
     "mana_cost": "{1}{B}",
     "type_line": "Legendary Creature \u2014 Human Warlock",
@@ -645,31 +645,9 @@
     "oracle_text": "Whenever another creature or planeswalker you control enters, mill two cards.\nExhaust \u2014 {5}{B}: Return target creature or planeswalker card from your graveyard to the battlefield. Put a +1/+1 counter on Liliana. Activate only as a sorcery. (Activate each exhaust ability only once.)"
    },
    {
-    "name": "Mabel, Bitter Recluse",
-    "grade": "B",
-    "z": 0.887146559018876,
-    "rarity": "uncommon",
-    "mana_cost": "{B}",
-    "type_line": "Legendary Creature \u2014 Mouse Warlock",
-    "image": "https://cards.scryfall.io/normal/front/b/2/b2a412b0-2ae4-4552-bc5e-70654b6b9b4e.jpg?1789385677",
-    "scryfall_uri": "https://scryfall.com/card/fra/233/mabel-bitter-recluse?utm_source=api",
-    "colors": [
-     "B"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 4,
-     "of": 5,
-     "mean_grade_error": 1.9397374701670644,
-     "within_1": 0.4904534606205251,
-     "within_2": 0.684964200477327
-    },
-    "oracle_text": "Deathtouch\nWhen Mabel enters, remove up to three counters from another target creature or planeswalker."
-   },
-   {
     "name": "Terminal Criticism",
     "grade": "B",
-    "z": 0.8226372910740668,
+    "z": 0.8609134482524956,
     "rarity": "uncommon",
     "mana_cost": "{1}{B}",
     "type_line": "Instant",
@@ -689,31 +667,31 @@
     "oracle_text": "Destroy target creature or planeswalker that's blue or red. You gain 1 life."
    },
    {
-    "name": "Vraska's Final Mercy",
+    "name": "Mabel, Bitter Recluse",
     "grade": "B",
     "z": 0.8101444793537337,
-    "rarity": "rare",
-    "mana_cost": "{B}{B}",
-    "type_line": "Sorcery",
-    "image": "https://cards.scryfall.io/normal/front/9/9/992bd991-7cfb-459f-bafd-9a44f3c925c5.jpg?1789699369",
-    "scryfall_uri": "https://scryfall.com/card/fra/71/vraskas-final-mercy?utm_source=api",
+    "rarity": "uncommon",
+    "mana_cost": "{B}",
+    "type_line": "Legendary Creature \u2014 Mouse Warlock",
+    "image": "https://cards.scryfall.io/normal/front/b/2/b2a412b0-2ae4-4552-bc5e-70654b6b9b4e.jpg?1789385677",
+    "scryfall_uri": "https://scryfall.com/card/fra/233/mabel-bitter-recluse?utm_source=api",
     "colors": [
      "B"
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "trust": {
-     "band": 3,
+     "band": 4,
      "of": 5,
-     "mean_grade_error": 1.977923627684964,
-     "within_1": 0.47911694510739855,
-     "within_2": 0.6825775656324582
+     "mean_grade_error": 1.9397374701670644,
+     "within_1": 0.4904534606205251,
+     "within_2": 0.684964200477327
     },
-    "oracle_text": "Choose one \u2014\n\u2022 You lose 2 life. Destroy target creature or planeswalker.\n\u2022 You lose 2 life. Empower Jace 6. (Put six loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
+    "oracle_text": "Deathtouch\nWhen Mabel enters, remove up to three counters from another target creature or planeswalker."
    },
    {
     "name": "Multiply by Zero",
     "grade": "B-",
-    "z": 0.7613826096864253,
+    "z": 0.7259700310214303,
     "rarity": "uncommon",
     "mana_cost": "{1}{B}",
     "type_line": "Instant",
@@ -731,13 +709,35 @@
      "within_2": 0.6825775656324582
     },
     "oracle_text": "Target creature has base power and toughness 0/0 until end of turn."
+   },
+   {
+    "name": "Last Gasp",
+    "grade": "B-",
+    "z": 0.680119858293694,
+    "rarity": "common",
+    "mana_cost": "{1}{B}",
+    "type_line": "Instant",
+    "image": "https://cards.scryfall.io/normal/front/2/3/2381d123-d8c7-4822-98fe-b1c365beb5ed.jpg?1789127524",
+    "scryfall_uri": "https://scryfall.com/card/fra/56/last-gasp?utm_source=api",
+    "colors": [
+     "B"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 1,
+     "of": 5,
+     "mean_grade_error": 1.6545346062052506,
+     "within_1": 0.5447494033412887,
+     "within_2": 0.7696897374701671
+    },
+    "oracle_text": "Target creature gets -3/-3 until end of turn."
    }
   ],
   "R": [
    {
     "name": "Ajani Unrelenting",
     "grade": "A+",
-    "z": 2.9137263183343394,
+    "z": 2.551881811371639,
     "rarity": "mythic",
     "mana_cost": "{4}{R}{R}",
     "type_line": "Legendary Planeswalker \u2014 Ajani",
@@ -759,7 +759,7 @@
    {
     "name": "Curse-Marred Demon",
     "grade": "A",
-    "z": 1.9914760889023233,
+    "z": 1.87557046101229,
     "rarity": "rare",
     "mana_cost": "{2}{R}{R}",
     "type_line": "Creature \u2014 Demon",
@@ -802,8 +802,8 @@
    },
    {
     "name": "Chandra, Torch of Defiance",
-    "grade": "A",
-    "z": 1.6277805384476256,
+    "grade": "A-",
+    "z": 1.563831507541229,
     "rarity": "mythic",
     "mana_cost": "{2}{R}{R}",
     "type_line": "Legendary Planeswalker \u2014 Chandra",
@@ -825,7 +825,7 @@
    {
     "name": "Stingcaster Mage",
     "grade": "A-",
-    "z": 1.5057052441899337,
+    "z": 1.4270293719956564,
     "rarity": "mythic",
     "mana_cost": "{1}{R}",
     "type_line": "Creature \u2014 Human Wizard",
@@ -845,9 +845,31 @@
     "oracle_text": "Haste\nWhen this creature enters, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost."
    },
    {
+    "name": "Pia, Determined Rebuilder",
+    "grade": "B",
+    "z": 1.0441228151303865,
+    "rarity": "uncommon",
+    "mana_cost": "{2}{R}",
+    "type_line": "Legendary Creature \u2014 Human Artificer",
+    "image": "https://cards.scryfall.io/normal/front/d/d/dd3faaf4-45ca-4714-8dbe-37102ec131cf.jpg?1789385851",
+    "scryfall_uri": "https://scryfall.com/card/fra/250/pia-determined-rebuilder?utm_source=api",
+    "colors": [
+     "R"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 2,
+     "of": 5,
+     "mean_grade_error": 1.8579952267303104,
+     "within_1": 0.5089498806682577,
+     "within_2": 0.7147971360381862
+    },
+    "oracle_text": "When Pia enters, create a 1/1 colorless Thopter artifact creature token with flying.\n{5}{R}: Target creature gets +X/+0 until end of turn, where X is the number of artifacts you control."
+   },
+   {
     "name": "Master of Barbs",
-    "grade": "B+",
-    "z": 1.159067746996758,
+    "grade": "B",
+    "z": 1.0137243834483025,
     "rarity": "rare",
     "mana_cost": "{1}{R}",
     "type_line": "Creature \u2014 Lizard Bard",
@@ -889,31 +911,9 @@
     "oracle_text": "Violent Echoes deals 6 damage to target creature or planeswalker. If excess damage was dealt to that permanent this way, empower Jace X, where X is that excess damage. (Put that many loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
    },
    {
-    "name": "Pia, Determined Rebuilder",
-    "grade": "B",
-    "z": 0.9555775379404315,
-    "rarity": "uncommon",
-    "mana_cost": "{2}{R}",
-    "type_line": "Legendary Creature \u2014 Human Artificer",
-    "image": "https://cards.scryfall.io/normal/front/d/d/dd3faaf4-45ca-4714-8dbe-37102ec131cf.jpg?1789385851",
-    "scryfall_uri": "https://scryfall.com/card/fra/250/pia-determined-rebuilder?utm_source=api",
-    "colors": [
-     "R"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 2,
-     "of": 5,
-     "mean_grade_error": 1.8579952267303104,
-     "within_1": 0.5089498806682577,
-     "within_2": 0.7147971360381862
-    },
-    "oracle_text": "When Pia enters, create a 1/1 colorless Thopter artifact creature token with flying.\n{5}{R}: Target creature gets +X/+0 until end of turn, where X is the number of artifacts you control."
-   },
-   {
     "name": "Kiora of Fire and Ashes",
     "grade": "B",
-    "z": 0.941539276553198,
+    "z": 0.9004945152003261,
     "rarity": "uncommon",
     "mana_cost": "{4}{R}{R}",
     "type_line": "Legendary Creature \u2014 Merfolk Noble",
@@ -933,18 +933,18 @@
     "oracle_text": "When Kiora enters, create a 5/5 red Dragon creature token with flying.\n{8}: Create a 5/5 red Dragon creature token with flying."
    },
    {
-    "name": "Way of the Warlord",
+    "name": "Fulminous Forte",
     "grade": "B",
     "z": 0.8739548226961033,
     "rarity": "uncommon",
     "mana_cost": "{2}{R}",
-    "type_line": "Legendary Enchantment",
-    "image": "https://cards.scryfall.io/normal/front/6/d/6d86e410-20c4-4248-96bf-5780ece6274a.jpg?1789729585",
-    "scryfall_uri": "https://scryfall.com/card/fra/255/way-of-the-warlord?utm_source=api",
+    "type_line": "Instant",
+    "image": "https://cards.scryfall.io/normal/front/1/9/19acb2b5-3b3e-43f0-bd81-8426ed3d9c55.jpg?1789614832",
+    "scryfall_uri": "https://scryfall.com/card/fra/84/fulminous-forte?utm_source=api",
     "colors": [
      "R"
     ],
-    "confidence": "medium",
+    "confidence": "high",
     "trust": {
      "band": 2,
      "of": 5,
@@ -952,7 +952,7 @@
      "within_1": 0.5089498806682577,
      "within_2": 0.7147971360381862
     },
-    "oracle_text": "When Way of the Warlord enters, empower Jace 5. (Put five loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")\nPlaneswalkers you control have \"[\u22124]: This planeswalker deals 2 damage to up to one target creature or planeswalker and 2 damage to target player.\""
+    "oracle_text": "Choose one \u2014\n\u2022 Fulminous Forte deals 1 damage to each creature and planeswalker your opponents control.\n\u2022 Fulminous Forte deals 5 damage to target creature or planeswalker."
    }
   ],
   "G": [
@@ -981,7 +981,7 @@
    {
     "name": "Hungering Puppetbeast",
     "grade": "A",
-    "z": 1.7383857997158703,
+    "z": 1.7804643416920256,
     "rarity": "rare",
     "mana_cost": "{3}{G}{G}",
     "type_line": "Artifact Creature \u2014 Beast Construct",
@@ -1002,8 +1002,8 @@
    },
    {
     "name": "Verdant Kraken",
-    "grade": "A-",
-    "z": 1.5341205443525463,
+    "grade": "A",
+    "z": 1.6277805384476256,
     "rarity": "rare",
     "mana_cost": "{4}{G}{G}{G}",
     "type_line": "Creature \u2014 Plant Kraken",
@@ -1047,7 +1047,7 @@
    {
     "name": "Simulacrum Shaper",
     "grade": "B+",
-    "z": 1.1767740211638869,
+    "z": 1.1948571240757904,
     "rarity": "rare",
     "mana_cost": "{1}{G}{G}",
     "type_line": "Creature \u2014 Elf Druid",
@@ -1069,7 +1069,7 @@
    {
     "name": "Carnivorous Cultivator // Enroot",
     "grade": "B+",
-    "z": 1.1080108204698564,
+    "z": 1.1247044728027196,
     "rarity": "rare",
     "mana_cost": "{1}{G}",
     "type_line": "Creature \u2014 Elf Warlock // Sorcery",
@@ -1091,7 +1091,7 @@
    {
     "name": "Yoshimaru, Scrappy Stray",
     "grade": "B",
-    "z": 1.0137243834483025,
+    "z": 0.9698066908285993,
     "rarity": "uncommon",
     "mana_cost": "{1}{G}",
     "type_line": "Legendary Creature \u2014 Dog",
@@ -1113,7 +1113,7 @@
    {
     "name": "Tarmogoyf",
     "grade": "B",
-    "z": 0.9140048719459558,
+    "z": 0.8480168775797998,
     "rarity": "mythic",
     "mana_cost": "{1}{G}",
     "type_line": "Creature \u2014 Lhurgoyf",
@@ -1134,8 +1134,8 @@
    },
    {
     "name": "Marwyn, the Preserver",
-    "grade": "B",
-    "z": 0.9004945152003261,
+    "grade": "B-",
+    "z": 0.7733999589115741,
     "rarity": "uncommon",
     "mana_cost": "{1}{G}",
     "type_line": "Legendary Creature \u2014 Elf Druid",
@@ -1157,7 +1157,7 @@
    {
     "name": "Heartwood Crafter // Soul Tether",
     "grade": "B-",
-    "z": 0.7494742244645438,
+    "z": 0.7613826096864253,
     "rarity": "uncommon",
     "mana_cost": "{G}",
     "type_line": "Creature \u2014 Elf Artificer // Sorcery",
@@ -1183,14 +1183,14 @@
    "pair": "WU",
    "name": "Fatehold Surveil Aggro",
    "hook": "",
-   "deck_mean_z": 1.1037875156990296,
+   "deck_mean_z": 1.1201799173364315,
    "pool_size": 94,
-   "rank": 10,
+   "rank": 9,
    "gold": [
     {
      "name": "Denzilore Fatehold",
      "grade": "A-",
-     "z": 1.4784561928518916,
+     "z": 1.379121996655836,
      "rarity": "mythic",
      "mana_cost": "{1}{W}{U}{U}",
      "type_line": "Legendary Creature \u2014 Elder Sphinx",
@@ -1211,32 +1211,32 @@
      "oracle_text": "Flash\nFlying\nWhenever you scry or surveil, put a +1/+1 counter on each creature you control."
     },
     {
-     "name": "Fatehold Charm",
+     "name": "Desperate Futurescribe",
      "grade": "B-",
-     "z": 0.7733999589115741,
+     "z": 0.6577258857555088,
      "rarity": "uncommon",
-     "mana_cost": "{W}{U}",
-     "type_line": "Instant",
-     "image": "https://cards.scryfall.io/normal/front/c/f/cfc54011-647e-4428-bcdb-59400e1da49d.jpg?1789127637",
-     "scryfall_uri": "https://scryfall.com/card/fra/132/fatehold-charm?utm_source=api",
+     "mana_cost": "{2}{W}{U}",
+     "type_line": "Creature \u2014 Kor Scout",
+     "image": "https://cards.scryfall.io/normal/front/c/f/cfaa3ebd-5c21-4e99-a0dd-8426d19b53a5.jpg?1789644852",
+     "scryfall_uri": "https://scryfall.com/card/fra/129/desperate-futurescribe?utm_source=api",
      "colors": [
       "U",
       "W"
      ],
-     "confidence": "medium",
+     "confidence": "high",
      "trust": {
-      "band": 1,
+      "band": 2,
       "of": 5,
-      "mean_grade_error": 1.6545346062052506,
-      "within_1": 0.5447494033412887,
-      "within_2": 0.7696897374701671
+      "mean_grade_error": 1.8579952267303104,
+      "within_1": 0.5089498806682577,
+      "within_2": 0.7147971360381862
      },
-     "oracle_text": "Choose one \u2014\n\u2022 Draw a card. Empower Jace 2.\n\u2022 Return target spell or creature to its owner's hand.\n\u2022 Creatures you control get +1/+2 until end of turn."
+     "oracle_text": "Flying\nAt the beginning of combat on your turn, another target creature you control gets +1/+1 until end of turn. If you've scried or surveilled this turn, put a +1/+1 counter on that creature instead."
     },
     {
      "name": "Prudent Fateseer // Peer Review",
      "grade": "B-",
-     "z": 0.6247382610788094,
+     "z": 0.6466520810785404,
      "rarity": "uncommon",
      "mana_cost": "{1}{W/U}{W/U}",
      "type_line": "Creature \u2014 Dwarf Wizard // Sorcery",
@@ -1259,7 +1259,7 @@
     {
      "name": "Fatehold Chronologist // Peer Review",
      "grade": "B-",
-     "z": 0.6138934870699196,
+     "z": 0.6356570136975828,
      "rarity": "common",
      "mana_cost": "{1}{W/U}",
      "type_line": "Creature \u2014 Bird Wizard // Sorcery",
@@ -1280,32 +1280,32 @@
      "oracle_text": "Flying\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\n//\nCreate a 2/2 colorless Wizard Soldier creature token named Cadet. Surveil 1."
     },
     {
-     "name": "Desperate Futurescribe",
-     "grade": "C+",
-     "z": 0.4787129425050145,
+     "name": "Fatehold Charm",
+     "grade": "B-",
+     "z": 0.5924169353822332,
      "rarity": "uncommon",
-     "mana_cost": "{2}{W}{U}",
-     "type_line": "Creature \u2014 Kor Scout",
-     "image": "https://cards.scryfall.io/normal/front/c/f/cfaa3ebd-5c21-4e99-a0dd-8426d19b53a5.jpg?1789644852",
-     "scryfall_uri": "https://scryfall.com/card/fra/129/desperate-futurescribe?utm_source=api",
+     "mana_cost": "{W}{U}",
+     "type_line": "Instant",
+     "image": "https://cards.scryfall.io/normal/front/c/f/cfc54011-647e-4428-bcdb-59400e1da49d.jpg?1789127637",
+     "scryfall_uri": "https://scryfall.com/card/fra/132/fatehold-charm?utm_source=api",
      "colors": [
       "U",
       "W"
      ],
-     "confidence": "high",
+     "confidence": "medium",
      "trust": {
-      "band": 2,
+      "band": 1,
       "of": 5,
-      "mean_grade_error": 1.8579952267303104,
-      "within_1": 0.5089498806682577,
-      "within_2": 0.7147971360381862
+      "mean_grade_error": 1.6545346062052506,
+      "within_1": 0.5447494033412887,
+      "within_2": 0.7696897374701671
      },
-     "oracle_text": "Flying\nAt the beginning of combat on your turn, another target creature you control gets +1/+1 until end of turn. If you've scried or surveilled this turn, put a +1/+1 counter on that creature instead."
+     "oracle_text": "Choose one \u2014\n\u2022 Draw a card. Empower Jace 2.\n\u2022 Return target spell or creature to its owner's hand.\n\u2022 Creatures you control get +1/+2 until end of turn."
     },
     {
      "name": "Proctor of Potential",
      "grade": "C+",
-     "z": 0.23030195334230857,
+     "z": 0.38050386432868993,
      "rarity": "rare",
      "mana_cost": "{W}{U}",
      "type_line": "Creature \u2014 Human Cleric",
@@ -1328,9 +1328,54 @@
    ],
    "key_cards": [
     {
+     "name": "Your Fate Ends Here",
+     "grade": "B-",
+     "z": 0.7494742244645438,
+     "rarity": "uncommon",
+     "mana_cost": "{2}{W}",
+     "type_line": "Instant",
+     "image": "https://cards.scryfall.io/normal/front/2/5/25000a17-b701-4d69-b2ef-2c74029199d3.jpg?1789729751",
+     "scryfall_uri": "https://scryfall.com/card/fra/24/your-fate-ends-here?utm_source=api",
+     "colors": [
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.977923627684964,
+      "within_1": 0.47911694510739855,
+      "within_2": 0.6825775656324582
+     },
+     "oracle_text": "Destroy target creature or planeswalker with mana value 3 or greater. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)"
+    },
+    {
+     "name": "Desperate Futurescribe",
+     "grade": "B-",
+     "z": 0.6577258857555088,
+     "rarity": "uncommon",
+     "mana_cost": "{2}{W}{U}",
+     "type_line": "Creature \u2014 Kor Scout",
+     "image": "https://cards.scryfall.io/normal/front/c/f/cfaa3ebd-5c21-4e99-a0dd-8426d19b53a5.jpg?1789644852",
+     "scryfall_uri": "https://scryfall.com/card/fra/129/desperate-futurescribe?utm_source=api",
+     "colors": [
+      "U",
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 2,
+      "of": 5,
+      "mean_grade_error": 1.8579952267303104,
+      "within_1": 0.5089498806682577,
+      "within_2": 0.7147971360381862
+     },
+     "oracle_text": "Flying\nAt the beginning of combat on your turn, another target creature you control gets +1/+1 until end of turn. If you've scried or surveilled this turn, put a +1/+1 counter on that creature instead."
+    },
+    {
      "name": "Prudent Fateseer // Peer Review",
      "grade": "B-",
-     "z": 0.6247382610788094,
+     "z": 0.6466520810785404,
      "rarity": "uncommon",
      "mana_cost": "{1}{W/U}{W/U}",
      "type_line": "Creature \u2014 Dwarf Wizard // Sorcery",
@@ -1353,7 +1398,7 @@
     {
      "name": "Fatehold Chronologist // Peer Review",
      "grade": "B-",
-     "z": 0.6138934870699196,
+     "z": 0.6356570136975828,
      "rarity": "common",
      "mana_cost": "{1}{W/U}",
      "type_line": "Creature \u2014 Bird Wizard // Sorcery",
@@ -1374,54 +1419,9 @@
      "oracle_text": "Flying\nThis creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\n//\nCreate a 2/2 colorless Wizard Soldier creature token named Cadet. Surveil 1."
     },
     {
-     "name": "Your Fate Ends Here",
-     "grade": "B-",
-     "z": 0.5924169353822332,
-     "rarity": "uncommon",
-     "mana_cost": "{2}{W}",
-     "type_line": "Instant",
-     "image": "https://cards.scryfall.io/normal/front/2/5/25000a17-b701-4d69-b2ef-2c74029199d3.jpg?1789729751",
-     "scryfall_uri": "https://scryfall.com/card/fra/24/your-fate-ends-here?utm_source=api",
-     "colors": [
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.977923627684964,
-      "within_1": 0.47911694510739855,
-      "within_2": 0.6825775656324582
-     },
-     "oracle_text": "Destroy target creature or planeswalker with mana value 3 or greater. Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)"
-    },
-    {
-     "name": "Desperate Futurescribe",
-     "grade": "C+",
-     "z": 0.4787129425050145,
-     "rarity": "uncommon",
-     "mana_cost": "{2}{W}{U}",
-     "type_line": "Creature \u2014 Kor Scout",
-     "image": "https://cards.scryfall.io/normal/front/c/f/cfaa3ebd-5c21-4e99-a0dd-8426d19b53a5.jpg?1789644852",
-     "scryfall_uri": "https://scryfall.com/card/fra/129/desperate-futurescribe?utm_source=api",
-     "colors": [
-      "U",
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 2,
-      "of": 5,
-      "mean_grade_error": 1.8579952267303104,
-      "within_1": 0.5089498806682577,
-      "within_2": 0.7147971360381862
-     },
-     "oracle_text": "Flying\nAt the beginning of combat on your turn, another target creature you control gets +1/+1 until end of turn. If you've scried or surveilled this turn, put a +1/+1 counter on that creature instead."
-    },
-    {
      "name": "Semester Foreseer // Peer Review",
      "grade": "C+",
-     "z": 0.295179000488646,
+     "z": 0.34227644932452267,
      "rarity": "common",
      "mana_cost": "{3}{U}",
      "type_line": "Creature \u2014 Human Wizard // Sorcery",
@@ -1443,7 +1443,7 @@
     {
      "name": "Proft, Consulting Detective",
      "grade": "C-",
-     "z": -0.1845634850164327,
+     "z": -0.3045429376070458,
      "rarity": "uncommon",
      "mana_cost": "{1}{U}",
      "type_line": "Legendary Creature \u2014 Human Detective",
@@ -1509,17 +1509,38 @@
      "oracle_text": "Flying\nAt the beginning of each end step, if you've drawn three or more cards this turn, create a 3/3 blue Angel creature token with flying.\n{3}{U}{U}: Until end of turn, whenever Lyra deals combat damage to a player, draw two cards."
     },
     {
-     "name": "Denzilore Fatehold",
+     "name": "Guiding Hydra",
+     "grade": "A-",
+     "z": 1.5057052441899337,
+     "rarity": "rare",
+     "mana_cost": "{X}{W}",
+     "type_line": "Creature \u2014 Hydra Horror",
+     "image": "https://cards.scryfall.io/normal/front/a/5/a53eb840-039d-4c45-b701-d58cb26b1a6c.jpg?1789644816",
+     "scryfall_uri": "https://scryfall.com/card/fra/11/guiding-hydra?utm_source=api",
+     "colors": [
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6545346062052506,
+      "within_1": 0.5447494033412887,
+      "within_2": 0.7696897374701671
+     },
+     "oracle_text": "This creature enters with X +1/+1 counters on it.\nAt the beginning of combat on your turn, you may remove a +1/+1 counter from this creature. If you do, put a +1/+1 counter on each other creature you control."
+    },
+    {
+     "name": "Sphinx of False Conclusions",
      "grade": "A-",
      "z": 1.4784561928518916,
-     "rarity": "mythic",
-     "mana_cost": "{1}{W}{U}{U}",
-     "type_line": "Legendary Creature \u2014 Elder Sphinx",
-     "image": "https://cards.scryfall.io/normal/front/9/8/986f9e98-9d8d-428b-9187-860745cf3269.jpg?1788878215",
-     "scryfall_uri": "https://scryfall.com/card/fra/128/denzilore-fatehold?utm_source=api",
+     "rarity": "rare",
+     "mana_cost": "{2}{U}{U}",
+     "type_line": "Creature \u2014 Sphinx Illusion",
+     "image": "https://cards.scryfall.io/normal/front/0/8/08ffbd51-2bd3-4262-8809-09576ce2b6f5.jpg?1789385594",
+     "scryfall_uri": "https://scryfall.com/card/fra/40/sphinx-of-false-conclusions?utm_source=api",
      "colors": [
-      "U",
-      "W"
+      "U"
      ],
      "confidence": "high",
      "trust": {
@@ -1529,7 +1550,7 @@
       "within_1": 0.47911694510739855,
       "within_2": 0.6825775656324582
      },
-     "oracle_text": "Flash\nFlying\nWhenever you scry or surveil, put a +1/+1 counter on each creature you control."
+     "oracle_text": "Flash\nFlying\nWhenever this creature attacks, draw a card, then discard a card.\nWhen this creature dies, if it isn't a token, create a token that's a copy of it."
     },
     {
      "name": "Seasoned Cryomancer",
@@ -1554,16 +1575,17 @@
      "oracle_text": "When this creature enters, draw two cards, then discard two cards. When you discard one or more nonland cards this way, tap up to that many target creatures and put a stun counter on each of them.\n{3}{U}{U}, Exile this card from your graveyard: Draw two cards."
     },
     {
-     "name": "Sphinx of False Conclusions",
+     "name": "Denzilore Fatehold",
      "grade": "A-",
-     "z": 1.4270293719956564,
-     "rarity": "rare",
-     "mana_cost": "{2}{U}{U}",
-     "type_line": "Creature \u2014 Sphinx Illusion",
-     "image": "https://cards.scryfall.io/normal/front/0/8/08ffbd51-2bd3-4262-8809-09576ce2b6f5.jpg?1789385594",
-     "scryfall_uri": "https://scryfall.com/card/fra/40/sphinx-of-false-conclusions?utm_source=api",
+     "z": 1.379121996655836,
+     "rarity": "mythic",
+     "mana_cost": "{1}{W}{U}{U}",
+     "type_line": "Legendary Creature \u2014 Elder Sphinx",
+     "image": "https://cards.scryfall.io/normal/front/9/8/986f9e98-9d8d-428b-9187-860745cf3269.jpg?1788878215",
+     "scryfall_uri": "https://scryfall.com/card/fra/128/denzilore-fatehold?utm_source=api",
      "colors": [
-      "U"
+      "U",
+      "W"
      ],
      "confidence": "high",
      "trust": {
@@ -1573,34 +1595,12 @@
       "within_1": 0.47911694510739855,
       "within_2": 0.6825775656324582
      },
-     "oracle_text": "Flash\nFlying\nWhenever this creature attacks, draw a card, then discard a card.\nWhen this creature dies, if it isn't a token, create a token that's a copy of it."
-    },
-    {
-     "name": "Guiding Hydra",
-     "grade": "A-",
-     "z": 1.4026732899923222,
-     "rarity": "rare",
-     "mana_cost": "{X}{W}",
-     "type_line": "Creature \u2014 Hydra Horror",
-     "image": "https://cards.scryfall.io/normal/front/a/5/a53eb840-039d-4c45-b701-d58cb26b1a6c.jpg?1789644816",
-     "scryfall_uri": "https://scryfall.com/card/fra/11/guiding-hydra?utm_source=api",
-     "colors": [
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6545346062052506,
-      "within_1": 0.5447494033412887,
-      "within_2": 0.7696897374701671
-     },
-     "oracle_text": "This creature enters with X +1/+1 counters on it.\nAt the beginning of combat on your turn, you may remove a +1/+1 counter from this creature. If you do, put a +1/+1 counter on each other creature you control."
+     "oracle_text": "Flash\nFlying\nWhenever you scry or surveil, put a +1/+1 counter on each creature you control."
     },
     {
      "name": "Diviner of Victory // Unwind History",
-     "grade": "A-",
-     "z": 1.334186150846469,
+     "grade": "B+",
+     "z": 1.3126950855218626,
      "rarity": "rare",
      "mana_cost": "{U}",
      "type_line": "Creature \u2014 Dwarf Wizard // Sorcery",
@@ -1620,26 +1620,26 @@
      "oracle_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\nWhenever you scry or surveil, this creature gets +1/+1 until end of turn.\n//\nReturn target creature an opponent controls with mana value 3 or less to its owner's hand. Surveil 1."
     },
     {
-     "name": "Repurposed Enforcer",
+     "name": "Liliana the Faultless",
      "grade": "B+",
-     "z": 1.3126950855218626,
+     "z": 1.2917937758243683,
      "rarity": "rare",
-     "mana_cost": "{1}{W}",
-     "type_line": "Creature \u2014 Human Soldier",
-     "image": "https://cards.scryfall.io/normal/front/3/5/35000e93-85d3-44f8-976a-5918ee4c71e0.jpg?1788878108",
-     "scryfall_uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api",
+     "mana_cost": "{W}",
+     "type_line": "Legendary Creature \u2014 Human Cleric",
+     "image": "https://cards.scryfall.io/normal/front/7/0/70d8c400-87dc-4f15-808f-e54a95d779fc.jpg?1788329194",
+     "scryfall_uri": "https://scryfall.com/card/fra/200/liliana-the-faultless?utm_source=api",
      "colors": [
       "W"
      ],
-     "confidence": "medium",
+     "confidence": "high",
      "trust": {
-      "band": 2,
+      "band": 1,
       "of": 5,
-      "mean_grade_error": 1.8579952267303104,
-      "within_1": 0.5089498806682577,
-      "within_2": 0.7147971360381862
+      "mean_grade_error": 1.6545346062052506,
+      "within_1": 0.5447494033412887,
+      "within_2": 0.7696897374701671
      },
-     "oracle_text": "Whenever this creature attacks, empower Jace X, where X is the number of creatures you control. (Put that many loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
+     "oracle_text": "Whenever another creature or planeswalker you control enters, you gain 1 life.\n{1}, {T}, Discard a card: Another target creature or planeswalker you control gains hexproof until end of turn."
     }
    ]
   },
@@ -1647,9 +1647,9 @@
    "pair": "WB",
    "name": "Liliana's Attrition",
    "hook": "",
-   "deck_mean_z": 1.1120056959573843,
+   "deck_mean_z": 1.1100866192014074,
    "pool_size": 91,
-   "rank": 9,
+   "rank": 10,
    "gold": [
     {
      "name": "Twisted Fates",
@@ -1699,8 +1699,8 @@
     },
     {
      "name": "Edgar, Ancient Bloodlord",
-     "grade": "C",
-     "z": 0.2028072202322059,
+     "grade": "C+",
+     "z": 0.2395046570710373,
      "rarity": "uncommon",
      "mana_cost": "{W}{B}",
      "type_line": "Legendary Creature \u2014 Vampire Noble",
@@ -1723,7 +1723,7 @@
     {
      "name": "Blessed Ghoul",
      "grade": "C",
-     "z": -0.0582224625131554,
+     "z": 0.049257252484195595,
      "rarity": "common",
      "mana_cost": "{W/B}",
      "type_line": "Creature \u2014 Zombie Cleric",
@@ -1748,7 +1748,7 @@
     {
      "name": "Rank Rat",
      "grade": "B-",
-     "z": 0.5398714122010615,
+     "z": 0.5607030318750833,
      "rarity": "common",
      "mana_cost": "{1}{B}",
      "type_line": "Creature \u2014 Zombie Rat",
@@ -1792,8 +1792,8 @@
     },
     {
      "name": "Edgar, Ancient Bloodlord",
-     "grade": "C",
-     "z": 0.2028072202322059,
+     "grade": "C+",
+     "z": 0.2395046570710373,
      "rarity": "uncommon",
      "mana_cost": "{W}{B}",
      "type_line": "Legendary Creature \u2014 Vampire Noble",
@@ -1816,7 +1816,7 @@
     {
      "name": "Campus Crier",
      "grade": "C",
-     "z": 0.1301742440659819,
+     "z": -0.11213762424542992,
      "rarity": "common",
      "mana_cost": "{1}{W}",
      "type_line": "Creature \u2014 Human Advisor",
@@ -1840,7 +1840,7 @@
     {
      "name": "Garruk, Veiled Butcher",
      "grade": "A+",
-     "z": 2.551881811371639,
+     "z": 2.368567059267874,
      "rarity": "mythic",
      "mana_cost": "{3}{B}{B}",
      "type_line": "Legendary Planeswalker \u2014 Garruk",
@@ -1884,7 +1884,7 @@
     {
      "name": "Guiding Hydra",
      "grade": "A-",
-     "z": 1.4026732899923222,
+     "z": 1.5057052441899337,
      "rarity": "rare",
      "mana_cost": "{X}{W}",
      "type_line": "Creature \u2014 Hydra Horror",
@@ -1906,7 +1906,7 @@
     {
      "name": "Dark Matter Manipulator",
      "grade": "A-",
-     "z": 1.379121996655836,
+     "z": 1.4026732899923222,
      "rarity": "rare",
      "mana_cost": "{B}",
      "type_line": "Creature \u2014 Human Warlock",
@@ -1926,31 +1926,53 @@
      "oracle_text": "When this creature enters, mill three cards.\nThis creature gets +2/+0 for every seven cards in your graveyard."
     },
     {
-     "name": "Repurposed Enforcer",
-     "grade": "B+",
-     "z": 1.3126950855218626,
+     "name": "Lich's Relic",
+     "grade": "A-",
+     "z": 1.334186150846469,
      "rarity": "rare",
-     "mana_cost": "{1}{W}",
-     "type_line": "Creature \u2014 Human Soldier",
-     "image": "https://cards.scryfall.io/normal/front/3/5/35000e93-85d3-44f8-976a-5918ee4c71e0.jpg?1788878108",
-     "scryfall_uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api",
+     "mana_cost": "{B}",
+     "type_line": "Artifact \u2014 Equipment",
+     "image": "https://cards.scryfall.io/normal/front/b/1/b105511d-5022-4a84-b6ce-4bb433e93a62.jpg?1789644819",
+     "scryfall_uri": "https://scryfall.com/card/fra/57/lichs-relic?utm_source=api",
+     "colors": [
+      "B"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.977923627684964,
+      "within_1": 0.47911694510739855,
+      "within_2": 0.6825775656324582
+     },
+     "oracle_text": "When this Equipment enters, you may pay {2}. When you do, for each opponent, destroy up to one target creature or planeswalker that player controls.\nEquipped creature gets +2/+1.\nEquip {2}"
+    },
+    {
+     "name": "Liliana the Faultless",
+     "grade": "B+",
+     "z": 1.2917937758243683,
+     "rarity": "rare",
+     "mana_cost": "{W}",
+     "type_line": "Legendary Creature \u2014 Human Cleric",
+     "image": "https://cards.scryfall.io/normal/front/7/0/70d8c400-87dc-4f15-808f-e54a95d779fc.jpg?1788329194",
+     "scryfall_uri": "https://scryfall.com/card/fra/200/liliana-the-faultless?utm_source=api",
      "colors": [
       "W"
      ],
-     "confidence": "medium",
+     "confidence": "high",
      "trust": {
-      "band": 2,
+      "band": 1,
       "of": 5,
-      "mean_grade_error": 1.8579952267303104,
-      "within_1": 0.5089498806682577,
-      "within_2": 0.7147971360381862
+      "mean_grade_error": 1.6545346062052506,
+      "within_1": 0.5447494033412887,
+      "within_2": 0.7696897374701671
      },
-     "oracle_text": "Whenever this creature attacks, empower Jace X, where X is the number of creatures you control. (Put that many loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
+     "oracle_text": "Whenever another creature or planeswalker you control enters, you gain 1 life.\n{1}, {T}, Discard a card: Another target creature or planeswalker you control gains hexproof until end of turn."
     },
     {
      "name": "Enlightened Confidant",
      "grade": "B+",
-     "z": 1.2917937758243683,
+     "z": 1.2516037548183738,
      "rarity": "mythic",
      "mana_cost": "{1}{W}",
      "type_line": "Creature \u2014 Kor Cleric",
@@ -1972,7 +1994,7 @@
     {
      "name": "Sanctum Lurker",
      "grade": "B+",
-     "z": 1.2714420571847378,
+     "z": 1.2322461657100987,
      "rarity": "rare",
      "mana_cost": "{2}{B}",
      "type_line": "Creature \u2014 Horror",
@@ -1990,28 +2012,6 @@
       "within_2": 0.684964200477327
      },
      "oracle_text": "When this creature enters, empower Jace 1.\nPlaneswalkers you control aren't put into their owners' graveyards for having 0 loyalty.\nPlaneswalkers you control have \"[+2]: This planeswalker deals 1 damage to each opponent and you gain 1 life.\""
-    },
-    {
-     "name": "Lyra, Archangel of Dawn",
-     "grade": "B+",
-     "z": 1.2516037548183738,
-     "rarity": "rare",
-     "mana_cost": "{2}{W}",
-     "type_line": "Legendary Creature \u2014 Angel Knight",
-     "image": "https://cards.scryfall.io/normal/front/8/6/86a3866e-68a8-402c-baf0-1908e98e3995.jpg?1789127693",
-     "scryfall_uri": "https://scryfall.com/card/fra/201/lyra-archangel-of-dawn?utm_source=api",
-     "colors": [
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.977923627684964,
-      "within_1": 0.47911694510739855,
-      "within_2": 0.6825775656324582
-     },
-     "oracle_text": "Flying\nWhenever you gain life, put a +1/+1 counter on each Angel you control."
     }
    ]
   },
@@ -2019,14 +2019,14 @@
    "pair": "WR",
    "name": "Ajani's Army",
    "hook": "",
-   "deck_mean_z": 1.2350150029046298,
+   "deck_mean_z": 1.2067029407489849,
    "pool_size": 92,
-   "rank": 4,
+   "rank": 6,
    "gold": [
     {
      "name": "Warrior's Blades",
      "grade": "B+",
-     "z": 1.1247044728027196,
+     "z": 1.159067746996758,
      "rarity": "uncommon",
      "mana_cost": "{2}{R}{W}",
      "type_line": "Artifact \u2014 Equipment",
@@ -2048,8 +2048,8 @@
     },
     {
      "name": "Solitary Cell",
-     "grade": "B-",
-     "z": 0.6466520810785404,
+     "grade": "C+",
+     "z": 0.419295753041396,
      "rarity": "rare",
      "mana_cost": "{R}{W}",
      "type_line": "Artifact",
@@ -2072,7 +2072,7 @@
     {
      "name": "Mabel, Valley Hero",
      "grade": "C-",
-     "z": -0.2395046570710373,
+     "z": -0.19367729466533856,
      "rarity": "uncommon",
      "mana_cost": "{1}{R}{W}",
      "type_line": "Legendary Creature \u2014 Mouse Soldier",
@@ -2095,7 +2095,7 @@
     {
      "name": "Charge the Sanctum",
      "grade": "D-",
-     "z": -1.334186150846469,
+     "z": -1.3791219966558366,
      "rarity": "common",
      "mana_cost": "{2}{R/W}",
      "type_line": "Instant",
@@ -2117,6 +2117,29 @@
     }
    ],
    "key_cards": [
+    {
+     "name": "Warrior's Blades",
+     "grade": "B+",
+     "z": 1.159067746996758,
+     "rarity": "uncommon",
+     "mana_cost": "{2}{R}{W}",
+     "type_line": "Artifact \u2014 Equipment",
+     "image": "https://cards.scryfall.io/normal/front/c/6/c63d5b0e-ee72-42ed-aa7e-484ba84507cd.jpg?1789007648",
+     "scryfall_uri": "https://scryfall.com/card/fra/163/warriors-blades?utm_source=api",
+     "colors": [
+      "R",
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 2,
+      "of": 5,
+      "mean_grade_error": 1.8579952267303104,
+      "within_1": 0.5089498806682577,
+      "within_2": 0.7147971360381862
+     },
+     "oracle_text": "When this Equipment enters, it deals 3 damage to any target and you gain 3 life.\nEquipped creature gets +2/+1.\nEquip {3}. This ability costs {1} less to activate for each +1/+1 counter on the creature it targets."
+    },
     {
      "name": "Hexhaven Battalion",
      "grade": "B+",
@@ -2140,32 +2163,9 @@
      "oracle_text": "Create three 2/2 colorless Wizard Soldier creature tokens named Cadet. Empower Jace 2. (Put two loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")\nBasic landcycling {2} ({2}, Discard this card: Search your library for a basic land card, reveal it, put it into your hand, then shuffle.)"
     },
     {
-     "name": "Warrior's Blades",
-     "grade": "B+",
-     "z": 1.1247044728027196,
-     "rarity": "uncommon",
-     "mana_cost": "{2}{R}{W}",
-     "type_line": "Artifact \u2014 Equipment",
-     "image": "https://cards.scryfall.io/normal/front/c/6/c63d5b0e-ee72-42ed-aa7e-484ba84507cd.jpg?1789007648",
-     "scryfall_uri": "https://scryfall.com/card/fra/163/warriors-blades?utm_source=api",
-     "colors": [
-      "R",
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 2,
-      "of": 5,
-      "mean_grade_error": 1.8579952267303104,
-      "within_1": 0.5089498806682577,
-      "within_2": 0.7147971360381862
-     },
-     "oracle_text": "When this Equipment enters, it deals 3 damage to any target and you gain 3 life.\nEquipped creature gets +2/+1.\nEquip {3}. This ability costs {1} less to activate for each +1/+1 counter on the creature it targets."
-    },
-    {
      "name": "Heartstring Puller",
      "grade": "B",
-     "z": 0.8480168775797998,
+     "z": 0.8352598315774019,
      "rarity": "common",
      "mana_cost": "{3}{R}",
      "type_line": "Creature \u2014 Elf Sorcerer",
@@ -2187,7 +2187,7 @@
     {
      "name": "Mabel, Valley Hero",
      "grade": "C-",
-     "z": -0.2395046570710373,
+     "z": -0.19367729466533856,
      "rarity": "uncommon",
      "mana_cost": "{1}{R}{W}",
      "type_line": "Legendary Creature \u2014 Mouse Soldier",
@@ -2212,7 +2212,7 @@
     {
      "name": "Ajani Unrelenting",
      "grade": "A+",
-     "z": 2.9137263183343394,
+     "z": 2.551881811371639,
      "rarity": "mythic",
      "mana_cost": "{4}{R}{R}",
      "type_line": "Legendary Planeswalker \u2014 Ajani",
@@ -2234,7 +2234,7 @@
     {
      "name": "Curse-Marred Demon",
      "grade": "A",
-     "z": 1.9914760889023233,
+     "z": 1.87557046101229,
      "rarity": "rare",
      "mana_cost": "{2}{R}{R}",
      "type_line": "Creature \u2014 Demon",
@@ -2277,8 +2277,8 @@
     },
     {
      "name": "Chandra, Torch of Defiance",
-     "grade": "A",
-     "z": 1.6277805384476256,
+     "grade": "A-",
+     "z": 1.563831507541229,
      "rarity": "mythic",
      "mana_cost": "{2}{R}{R}",
      "type_line": "Legendary Planeswalker \u2014 Chandra",
@@ -2298,31 +2298,9 @@
      "oracle_text": "+1: Exile the top card of your library. You may cast that card. If you don't, Chandra deals 2 damage to each opponent.\n+1: Add {R}{R}.\n\u22123: Chandra deals 4 damage to target creature.\n\u22127: You get an emblem with \"Whenever you cast a spell, this emblem deals 5 damage to any target.\""
     },
     {
-     "name": "Stingcaster Mage",
-     "grade": "A-",
-     "z": 1.5057052441899337,
-     "rarity": "mythic",
-     "mana_cost": "{1}{R}",
-     "type_line": "Creature \u2014 Human Wizard",
-     "image": "https://cards.scryfall.io/normal/front/2/d/2d8e8e5f-3bf5-490d-aa9c-9df2b26f1460.jpg?1788329303",
-     "scryfall_uri": "https://scryfall.com/card/fra/93/stingcaster-mage?utm_source=api",
-     "colors": [
-      "R"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 4,
-      "of": 5,
-      "mean_grade_error": 1.9397374701670644,
-      "within_1": 0.4904534606205251,
-      "within_2": 0.684964200477327
-     },
-     "oracle_text": "Haste\nWhen this creature enters, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost."
-    },
-    {
      "name": "Guiding Hydra",
      "grade": "A-",
-     "z": 1.4026732899923222,
+     "z": 1.5057052441899337,
      "rarity": "rare",
      "mana_cost": "{X}{W}",
      "type_line": "Creature \u2014 Hydra Horror",
@@ -2342,31 +2320,53 @@
      "oracle_text": "This creature enters with X +1/+1 counters on it.\nAt the beginning of combat on your turn, you may remove a +1/+1 counter from this creature. If you do, put a +1/+1 counter on each other creature you control."
     },
     {
-     "name": "Repurposed Enforcer",
+     "name": "Stingcaster Mage",
+     "grade": "A-",
+     "z": 1.4270293719956564,
+     "rarity": "mythic",
+     "mana_cost": "{1}{R}",
+     "type_line": "Creature \u2014 Human Wizard",
+     "image": "https://cards.scryfall.io/normal/front/2/d/2d8e8e5f-3bf5-490d-aa9c-9df2b26f1460.jpg?1788329303",
+     "scryfall_uri": "https://scryfall.com/card/fra/93/stingcaster-mage?utm_source=api",
+     "colors": [
+      "R"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 4,
+      "of": 5,
+      "mean_grade_error": 1.9397374701670644,
+      "within_1": 0.4904534606205251,
+      "within_2": 0.684964200477327
+     },
+     "oracle_text": "Haste\nWhen this creature enters, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost."
+    },
+    {
+     "name": "Liliana the Faultless",
      "grade": "B+",
-     "z": 1.3126950855218626,
+     "z": 1.2917937758243683,
      "rarity": "rare",
-     "mana_cost": "{1}{W}",
-     "type_line": "Creature \u2014 Human Soldier",
-     "image": "https://cards.scryfall.io/normal/front/3/5/35000e93-85d3-44f8-976a-5918ee4c71e0.jpg?1788878108",
-     "scryfall_uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api",
+     "mana_cost": "{W}",
+     "type_line": "Legendary Creature \u2014 Human Cleric",
+     "image": "https://cards.scryfall.io/normal/front/7/0/70d8c400-87dc-4f15-808f-e54a95d779fc.jpg?1788329194",
+     "scryfall_uri": "https://scryfall.com/card/fra/200/liliana-the-faultless?utm_source=api",
      "colors": [
       "W"
      ],
-     "confidence": "medium",
+     "confidence": "high",
      "trust": {
-      "band": 2,
+      "band": 1,
       "of": 5,
-      "mean_grade_error": 1.8579952267303104,
-      "within_1": 0.5089498806682577,
-      "within_2": 0.7147971360381862
+      "mean_grade_error": 1.6545346062052506,
+      "within_1": 0.5447494033412887,
+      "within_2": 0.7696897374701671
      },
-     "oracle_text": "Whenever this creature attacks, empower Jace X, where X is the number of creatures you control. (Put that many loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
+     "oracle_text": "Whenever another creature or planeswalker you control enters, you gain 1 life.\n{1}, {T}, Discard a card: Another target creature or planeswalker you control gains hexproof until end of turn."
     },
     {
      "name": "Enlightened Confidant",
      "grade": "B+",
-     "z": 1.2917937758243683,
+     "z": 1.2516037548183738,
      "rarity": "mythic",
      "mana_cost": "{1}{W}",
      "type_line": "Creature \u2014 Kor Cleric",
@@ -2391,14 +2391,14 @@
    "pair": "WG",
    "name": "Vigorbloom Life Gain",
    "hook": "",
-   "deck_mean_z": 1.2114474670270703,
+   "deck_mean_z": 1.2505277819047114,
    "pool_size": 92,
-   "rank": 6,
+   "rank": 3,
    "gold": [
     {
      "name": "Kwia Vigorbloom",
      "grade": "A+",
-     "z": 2.368567059267874,
+     "z": 2.9137263183343394,
      "rarity": "mythic",
      "mana_cost": "{3}{G}{W}{W}",
      "type_line": "Legendary Creature \u2014 Elder Sphinx",
@@ -2419,32 +2419,9 @@
      "oracle_text": "Flying, vigilance, lifelink, ward {2}\nWhenever you gain life, create a colorless artifact token named Lotus with \"{T}, Sacrifice this token: Add three mana of any one color.\" This ability triggers only once each turn."
     },
     {
-     "name": "Vigorbloom Charm",
-     "grade": "B",
-     "z": 1.0288047620058414,
-     "rarity": "uncommon",
-     "mana_cost": "{G}{W}",
-     "type_line": "Instant",
-     "image": "https://cards.scryfall.io/normal/front/2/b/2b198e10-b507-4314-a29c-a219f06e48b7.jpg?1789127656",
-     "scryfall_uri": "https://scryfall.com/card/fra/160/vigorbloom-charm?utm_source=api",
-     "colors": [
-      "G",
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 2,
-      "of": 5,
-      "mean_grade_error": 1.8579952267303104,
-      "within_1": 0.5089498806682577,
-      "within_2": 0.7147971360381862
-     },
-     "oracle_text": "Choose one \u2014\n\u2022 Target permanent you control gains hexproof and indestructible until end of turn.\n\u2022 You draw a card and gain 3 life.\n\u2022 Put a +1/+1 counter on target creature you control. Then it fights target creature an opponent controls. (Each deals damage equal to its power to the other.)"
-    },
-    {
      "name": "Bloombrute",
      "grade": "B",
-     "z": 0.9698066908285993,
+     "z": 1.0916203674341685,
      "rarity": "uncommon",
      "mana_cost": "{2}{G}{W}",
      "type_line": "Creature \u2014 Plant Elemental",
@@ -2465,32 +2442,32 @@
      "oracle_text": "Whenever you gain life, draw a card. This ability triggers only once each turn.\n{4}{G}{W}: Target creature gains trample and lifelink until end of turn."
     },
     {
-     "name": "Emergency Phytomedic // Seed Suture",
-     "grade": "C",
-     "z": 0.14825331527855895,
-     "rarity": "common",
-     "mana_cost": "{G/W}",
-     "type_line": "Creature \u2014 Dryad Cleric // Sorcery",
-     "image": "https://cards.scryfall.io/normal/front/d/e/de94d388-919d-44ff-baef-8c90a417ac6d.jpg?1789637792",
-     "scryfall_uri": "https://scryfall.com/card/fra/130/emergency-phytomedic-seed-suture?utm_source=api",
+     "name": "Vigorbloom Charm",
+     "grade": "B",
+     "z": 1.0755180461469138,
+     "rarity": "uncommon",
+     "mana_cost": "{G}{W}",
+     "type_line": "Instant",
+     "image": "https://cards.scryfall.io/normal/front/2/b/2b198e10-b507-4314-a29c-a219f06e48b7.jpg?1789127656",
+     "scryfall_uri": "https://scryfall.com/card/fra/160/vigorbloom-charm?utm_source=api",
      "colors": [
       "G",
       "W"
      ],
      "confidence": "high",
      "trust": {
-      "band": 1,
+      "band": 2,
       "of": 5,
-      "mean_grade_error": 1.6545346062052506,
-      "within_1": 0.5447494033412887,
-      "within_2": 0.7696897374701671
+      "mean_grade_error": 1.8579952267303104,
+      "within_1": 0.5089498806682577,
+      "within_2": 0.7147971360381862
      },
-     "oracle_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\n//\nPut a +1/+1 counter on target creature. You gain 1 life."
+     "oracle_text": "Choose one \u2014\n\u2022 Target permanent you control gains hexproof and indestructible until end of turn.\n\u2022 You draw a card and gain 3 life.\n\u2022 Put a +1/+1 counter on target creature you control. Then it fights target creature an opponent controls. (Each deals damage equal to its power to the other.)"
     },
     {
      "name": "Vigorbloom Vanguard // Seed Suture",
      "grade": "C",
-     "z": 0.1392080919879747,
+     "z": 0.21195408262352528,
      "rarity": "uncommon",
      "mana_cost": "{1}{G/W}",
      "type_line": "Creature \u2014 Troll Druid // Sorcery",
@@ -2513,7 +2490,7 @@
     {
      "name": "Solarium Sentry",
      "grade": "C",
-     "z": 0.12115100745602812,
+     "z": 0.11213762424542978,
      "rarity": "rare",
      "mana_cost": "{G}{W}",
      "type_line": "Creature \u2014 Cat Soldier",
@@ -2532,13 +2509,36 @@
       "within_2": 0.684964200477327
      },
      "oracle_text": "Whenever an opponent casts a spell with mana value 2 or less, you gain 2 life."
+    },
+    {
+     "name": "Emergency Phytomedic // Seed Suture",
+     "grade": "C",
+     "z": 0.0941374143235364,
+     "rarity": "common",
+     "mana_cost": "{G/W}",
+     "type_line": "Creature \u2014 Dryad Cleric // Sorcery",
+     "image": "https://cards.scryfall.io/normal/front/d/e/de94d388-919d-44ff-baef-8c90a417ac6d.jpg?1789637792",
+     "scryfall_uri": "https://scryfall.com/card/fra/130/emergency-phytomedic-seed-suture?utm_source=api",
+     "colors": [
+      "G",
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6545346062052506,
+      "within_1": 0.5447494033412887,
+      "within_2": 0.7696897374701671
+     },
+     "oracle_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\n//\nPut a +1/+1 counter on target creature. You gain 1 life."
     }
    ],
    "key_cards": [
     {
      "name": "Bloombrute",
      "grade": "B",
-     "z": 0.9698066908285993,
+     "z": 1.0916203674341685,
      "rarity": "uncommon",
      "mana_cost": "{2}{G}{W}",
      "type_line": "Creature \u2014 Plant Elemental",
@@ -2559,32 +2559,9 @@
      "oracle_text": "Whenever you gain life, draw a card. This ability triggers only once each turn.\n{4}{G}{W}: Target creature gains trample and lifelink until end of turn."
     },
     {
-     "name": "Emergency Phytomedic // Seed Suture",
-     "grade": "C",
-     "z": 0.14825331527855895,
-     "rarity": "common",
-     "mana_cost": "{G/W}",
-     "type_line": "Creature \u2014 Dryad Cleric // Sorcery",
-     "image": "https://cards.scryfall.io/normal/front/d/e/de94d388-919d-44ff-baef-8c90a417ac6d.jpg?1789637792",
-     "scryfall_uri": "https://scryfall.com/card/fra/130/emergency-phytomedic-seed-suture?utm_source=api",
-     "colors": [
-      "G",
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6545346062052506,
-      "within_1": 0.5447494033412887,
-      "within_2": 0.7696897374701671
-     },
-     "oracle_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\n//\nPut a +1/+1 counter on target creature. You gain 1 life."
-    },
-    {
      "name": "Vigorbloom Vanguard // Seed Suture",
      "grade": "C",
-     "z": 0.1392080919879747,
+     "z": 0.21195408262352528,
      "rarity": "uncommon",
      "mana_cost": "{1}{G/W}",
      "type_line": "Creature \u2014 Troll Druid // Sorcery",
@@ -2605,9 +2582,32 @@
      "oracle_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\nEach creature you control with a +1/+1 counter on it has vigilance.\n//\nPut a +1/+1 counter on target creature. You gain 1 life."
     },
     {
+     "name": "Emergency Phytomedic // Seed Suture",
+     "grade": "C",
+     "z": 0.0941374143235364,
+     "rarity": "common",
+     "mana_cost": "{G/W}",
+     "type_line": "Creature \u2014 Dryad Cleric // Sorcery",
+     "image": "https://cards.scryfall.io/normal/front/d/e/de94d388-919d-44ff-baef-8c90a417ac6d.jpg?1789637792",
+     "scryfall_uri": "https://scryfall.com/card/fra/130/emergency-phytomedic-seed-suture?utm_source=api",
+     "colors": [
+      "G",
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6545346062052506,
+      "within_1": 0.5447494033412887,
+      "within_2": 0.7696897374701671
+     },
+     "oracle_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\n//\nPut a +1/+1 counter on target creature. You gain 1 life."
+    },
+    {
      "name": "Graft Surgeon",
-     "grade": "F",
-     "z": -1.9914760889023235,
+     "grade": "D-",
+     "z": -1.627780538447626,
      "rarity": "common",
      "mana_cost": "{2}{W}",
      "type_line": "Creature \u2014 Human Cleric",
@@ -2631,7 +2631,7 @@
     {
      "name": "Kwia Vigorbloom",
      "grade": "A+",
-     "z": 2.368567059267874,
+     "z": 2.9137263183343394,
      "rarity": "mythic",
      "mana_cost": "{3}{G}{W}{W}",
      "type_line": "Legendary Creature \u2014 Elder Sphinx",
@@ -2676,7 +2676,7 @@
     {
      "name": "Hungering Puppetbeast",
      "grade": "A",
-     "z": 1.7383857997158703,
+     "z": 1.7804643416920256,
      "rarity": "rare",
      "mana_cost": "{3}{G}{G}",
      "type_line": "Artifact Creature \u2014 Beast Construct",
@@ -2697,8 +2697,8 @@
     },
     {
      "name": "Verdant Kraken",
-     "grade": "A-",
-     "z": 1.5341205443525463,
+     "grade": "A",
+     "z": 1.6277805384476256,
      "rarity": "rare",
      "mana_cost": "{4}{G}{G}{G}",
      "type_line": "Creature \u2014 Plant Kraken",
@@ -2720,7 +2720,7 @@
     {
      "name": "Guiding Hydra",
      "grade": "A-",
-     "z": 1.4026732899923222,
+     "z": 1.5057052441899337,
      "rarity": "rare",
      "mana_cost": "{X}{W}",
      "type_line": "Creature \u2014 Hydra Horror",
@@ -2762,31 +2762,31 @@
      "oracle_text": "Domain \u2014 Fblthp's power is equal to the number of basic land types among lands you control.\nWhen Fblthp enters, search your library for up to X basic land cards with different names, reveal them, put them into your hand, then shuffle."
     },
     {
-     "name": "Repurposed Enforcer",
+     "name": "Liliana the Faultless",
      "grade": "B+",
-     "z": 1.3126950855218626,
+     "z": 1.2917937758243683,
      "rarity": "rare",
-     "mana_cost": "{1}{W}",
-     "type_line": "Creature \u2014 Human Soldier",
-     "image": "https://cards.scryfall.io/normal/front/3/5/35000e93-85d3-44f8-976a-5918ee4c71e0.jpg?1788878108",
-     "scryfall_uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api",
+     "mana_cost": "{W}",
+     "type_line": "Legendary Creature \u2014 Human Cleric",
+     "image": "https://cards.scryfall.io/normal/front/7/0/70d8c400-87dc-4f15-808f-e54a95d779fc.jpg?1788329194",
+     "scryfall_uri": "https://scryfall.com/card/fra/200/liliana-the-faultless?utm_source=api",
      "colors": [
       "W"
      ],
-     "confidence": "medium",
+     "confidence": "high",
      "trust": {
-      "band": 2,
+      "band": 1,
       "of": 5,
-      "mean_grade_error": 1.8579952267303104,
-      "within_1": 0.5089498806682577,
-      "within_2": 0.7147971360381862
+      "mean_grade_error": 1.6545346062052506,
+      "within_1": 0.5447494033412887,
+      "within_2": 0.7696897374701671
      },
-     "oracle_text": "Whenever this creature attacks, empower Jace X, where X is the number of creatures you control. (Put that many loyalty counters on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
+     "oracle_text": "Whenever another creature or planeswalker you control enters, you gain 1 life.\n{1}, {T}, Discard a card: Another target creature or planeswalker you control gains hexproof until end of turn."
     },
     {
      "name": "Enlightened Confidant",
      "grade": "B+",
-     "z": 1.2917937758243683,
+     "z": 1.2516037548183738,
      "rarity": "mythic",
      "mana_cost": "{1}{W}",
      "type_line": "Creature \u2014 Kor Cleric",
@@ -2811,9 +2811,9 @@
    "pair": "UB",
    "name": "Theorix Graveyard Math",
    "hook": "",
-   "deck_mean_z": 1.2325975396761462,
+   "deck_mean_z": 1.2294825468012498,
    "pool_size": 94,
-   "rank": 5,
+   "rank": 4,
    "gold": [
     {
      "name": "Uldaros Theorix",
@@ -2841,7 +2841,7 @@
     {
      "name": "Recursive Recruitment",
      "grade": "B+",
-     "z": 1.2322461657100987,
+     "z": 1.2714420571847378,
      "rarity": "uncommon",
      "mana_cost": "{2}{U}{B}",
      "type_line": "Sorcery",
@@ -2863,8 +2863,8 @@
     },
     {
      "name": "Null Summoner",
-     "grade": "B",
-     "z": 1.0755180461469138,
+     "grade": "B+",
+     "z": 1.1080108204698564,
      "rarity": "rare",
      "mana_cost": "{2}{U}{B}",
      "type_line": "Creature \u2014 Human Warlock",
@@ -2886,8 +2886,8 @@
     },
     {
      "name": "Theorix Charm",
-     "grade": "B-",
-     "z": 0.5712102324416991,
+     "grade": "C+",
+     "z": 0.4787129425050145,
      "rarity": "uncommon",
      "mana_cost": "{U}{B}",
      "type_line": "Instant",
@@ -2933,7 +2933,7 @@
     {
      "name": "Theorix Metamage // Omit Variables",
      "grade": "D-",
-     "z": -1.505705244189933,
+     "z": -1.334186150846469,
      "rarity": "common",
      "mana_cost": "{2}{U/B}",
      "type_line": "Creature \u2014 Shade Wizard // Sorcery",
@@ -2958,7 +2958,7 @@
     {
      "name": "Unsummon",
      "grade": "B-",
-     "z": 0.680119858293694,
+     "z": 0.6138934870699196,
      "rarity": "common",
      "mana_cost": "{U}",
      "type_line": "Instant",
@@ -2980,7 +2980,7 @@
     {
      "name": "Winter, Tormented Loner",
      "grade": "C+",
-     "z": 0.3327993958832692,
+     "z": 0.2579719291676173,
      "rarity": "uncommon",
      "mana_cost": "{2}{B}",
      "type_line": "Legendary Creature \u2014 Human Warlock",
@@ -3024,8 +3024,8 @@
     },
     {
      "name": "Void Extrapolator // Omit Variables",
-     "grade": "D",
-     "z": -0.7143674402801876,
+     "grade": "D+",
+     "z": -0.4887764111146695,
      "rarity": "common",
      "mana_cost": "{1}{B}",
      "type_line": "Creature \u2014 Aetherborn Warlock // Sorcery",
@@ -3047,7 +3047,7 @@
     {
      "name": "Theorix Metamage // Omit Variables",
      "grade": "D-",
-     "z": -1.505705244189933,
+     "z": -1.334186150846469,
      "rarity": "common",
      "mana_cost": "{2}{U/B}",
      "type_line": "Creature \u2014 Shade Wizard // Sorcery",
@@ -3072,7 +3072,7 @@
     {
      "name": "Garruk, Veiled Butcher",
      "grade": "A+",
-     "z": 2.551881811371639,
+     "z": 2.368567059267874,
      "rarity": "mythic",
      "mana_cost": "{3}{B}{B}",
      "type_line": "Legendary Planeswalker \u2014 Garruk",
@@ -3181,6 +3181,28 @@
      "oracle_text": "Flying\nWhen Uldaros Theorix enters, if you cast him, exile up to one target nonland card of each card type from your graveyard. Copy those cards. You may cast any number of spells with total mana value 6 or less from among the copies without paying their mana costs. (Permanent spells cast this way become tokens.)"
     },
     {
+     "name": "Sphinx of False Conclusions",
+     "grade": "A-",
+     "z": 1.4784561928518916,
+     "rarity": "rare",
+     "mana_cost": "{2}{U}{U}",
+     "type_line": "Creature \u2014 Sphinx Illusion",
+     "image": "https://cards.scryfall.io/normal/front/0/8/08ffbd51-2bd3-4262-8809-09576ce2b6f5.jpg?1789385594",
+     "scryfall_uri": "https://scryfall.com/card/fra/40/sphinx-of-false-conclusions?utm_source=api",
+     "colors": [
+      "U"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.977923627684964,
+      "within_1": 0.47911694510739855,
+      "within_2": 0.6825775656324582
+     },
+     "oracle_text": "Flash\nFlying\nWhenever this creature attacks, draw a card, then discard a card.\nWhen this creature dies, if it isn't a token, create a token that's a copy of it."
+    },
+    {
      "name": "Seasoned Cryomancer",
      "grade": "A-",
      "z": 1.4522627115335212,
@@ -3203,31 +3225,9 @@
      "oracle_text": "When this creature enters, draw two cards, then discard two cards. When you discard one or more nonland cards this way, tap up to that many target creatures and put a stun counter on each of them.\n{3}{U}{U}, Exile this card from your graveyard: Draw two cards."
     },
     {
-     "name": "Sphinx of False Conclusions",
-     "grade": "A-",
-     "z": 1.4270293719956564,
-     "rarity": "rare",
-     "mana_cost": "{2}{U}{U}",
-     "type_line": "Creature \u2014 Sphinx Illusion",
-     "image": "https://cards.scryfall.io/normal/front/0/8/08ffbd51-2bd3-4262-8809-09576ce2b6f5.jpg?1789385594",
-     "scryfall_uri": "https://scryfall.com/card/fra/40/sphinx-of-false-conclusions?utm_source=api",
-     "colors": [
-      "U"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.977923627684964,
-      "within_1": 0.47911694510739855,
-      "within_2": 0.6825775656324582
-     },
-     "oracle_text": "Flash\nFlying\nWhenever this creature attacks, draw a card, then discard a card.\nWhen this creature dies, if it isn't a token, create a token that's a copy of it."
-    },
-    {
      "name": "Dark Matter Manipulator",
      "grade": "A-",
-     "z": 1.379121996655836,
+     "z": 1.4026732899923222,
      "rarity": "rare",
      "mana_cost": "{B}",
      "type_line": "Creature \u2014 Human Warlock",
@@ -3252,14 +3252,14 @@
    "pair": "UR",
    "name": "Chandra's Prowess",
    "hook": "",
-   "deck_mean_z": 1.2526173244446295,
+   "deck_mean_z": 1.222320301141201,
    "pool_size": 92,
-   "rank": 3,
+   "rank": 5,
    "gold": [
     {
      "name": "Saheeli, Jewel of Avishkar",
      "grade": "C",
-     "z": 0.08514909838451043,
+     "z": 0.1573106846101707,
      "rarity": "uncommon",
      "mana_cost": "{2}{U}{R}",
      "type_line": "Legendary Creature \u2014 Human Artificer",
@@ -3282,7 +3282,7 @@
     {
      "name": "Twinned Vision",
      "grade": "C",
-     "z": 0.013428769351829664,
+     "z": 0.1392080919879747,
      "rarity": "common",
      "mana_cost": "{1}{U/R}",
      "type_line": "Instant",
@@ -3305,7 +3305,7 @@
     {
      "name": "Frostbite Pyromental",
      "grade": "C-",
-     "z": -0.17546498006949002,
+     "z": -0.20280722023220576,
      "rarity": "rare",
      "mana_cost": "{U}{R}{R}",
      "type_line": "Creature \u2014 Elemental",
@@ -3328,7 +3328,7 @@
     {
      "name": "Clash of Elements",
      "grade": "C-",
-     "z": -0.23030195334230857,
+     "z": -0.21195408262352514,
      "rarity": "uncommon",
      "mana_cost": "{1}{U}{R}",
      "type_line": "Instant",
@@ -3351,31 +3351,9 @@
    ],
    "key_cards": [
     {
-     "name": "No Admittance",
-     "grade": "B-",
-     "z": 0.6914453482019672,
-     "rarity": "common",
-     "mana_cost": "{1}{R}",
-     "type_line": "Sorcery",
-     "image": "https://cards.scryfall.io/normal/front/1/1/11ba4fdd-cc03-4bb6-a493-91a9785771d0.jpg?1788878170",
-     "scryfall_uri": "https://scryfall.com/card/fra/89/no-admittance?utm_source=api",
-     "colors": [
-      "R"
-     ],
-     "confidence": "medium",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6545346062052506,
-      "within_1": 0.5447494033412887,
-      "within_2": 0.7696897374701671
-     },
-     "oracle_text": "No Admittance deals 3 damage to any target.\nEmpower Jace 1. (Put a loyalty counter on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
-    },
-    {
      "name": "Unsummon",
      "grade": "B-",
-     "z": 0.680119858293694,
+     "z": 0.6138934870699196,
      "rarity": "common",
      "mana_cost": "{U}",
      "type_line": "Instant",
@@ -3395,9 +3373,31 @@
      "oracle_text": "Return target creature to its owner's hand."
     },
     {
+     "name": "No Admittance",
+     "grade": "B-",
+     "z": 0.6031204373866189,
+     "rarity": "common",
+     "mana_cost": "{1}{R}",
+     "type_line": "Sorcery",
+     "image": "https://cards.scryfall.io/normal/front/1/1/11ba4fdd-cc03-4bb6-a493-91a9785771d0.jpg?1788878170",
+     "scryfall_uri": "https://scryfall.com/card/fra/89/no-admittance?utm_source=api",
+     "colors": [
+      "R"
+     ],
+     "confidence": "medium",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6545346062052506,
+      "within_1": 0.5447494033412887,
+      "within_2": 0.7696897374701671
+     },
+     "oracle_text": "No Admittance deals 3 damage to any target.\nEmpower Jace 1. (Put a loyalty counter on a Jace token you control. If you don't control one, first create a blue Jace planeswalker token with \"[\u22121]: Surveil 1\" and \"[\u22123]: Draw a card.\")"
+    },
+    {
      "name": "Saheeli, Jewel of Avishkar",
      "grade": "C",
-     "z": 0.08514909838451043,
+     "z": 0.1573106846101707,
      "rarity": "uncommon",
      "mana_cost": "{2}{U}{R}",
      "type_line": "Legendary Creature \u2014 Human Artificer",
@@ -3420,7 +3420,7 @@
     {
      "name": "Clash of Elements",
      "grade": "C-",
-     "z": -0.23030195334230857,
+     "z": -0.21195408262352514,
      "rarity": "uncommon",
      "mana_cost": "{1}{U}{R}",
      "type_line": "Instant",
@@ -3445,7 +3445,7 @@
     {
      "name": "Ajani Unrelenting",
      "grade": "A+",
-     "z": 2.9137263183343394,
+     "z": 2.551881811371639,
      "rarity": "mythic",
      "mana_cost": "{4}{R}{R}",
      "type_line": "Legendary Planeswalker \u2014 Ajani",
@@ -3487,28 +3487,6 @@
      "oracle_text": "At the beginning of each opponent's draw step, you draw a card.\n+1: Create a 1/1 blue Illusion creature token.\n\u22122: For each opponent, return up to one target artifact or creature that player controls to its owner's hand.\n\u22126: Draw three cards. Then put X +1/+1 counters on each creature you control, where X is the number of cards in your hand."
     },
     {
-     "name": "Curse-Marred Demon",
-     "grade": "A",
-     "z": 1.9914760889023233,
-     "rarity": "rare",
-     "mana_cost": "{2}{R}{R}",
-     "type_line": "Creature \u2014 Demon",
-     "image": "https://cards.scryfall.io/normal/front/8/f/8f827e50-0a08-4bc8-98b1-b26c9af15ef2.jpg?1789470818",
-     "scryfall_uri": "https://scryfall.com/card/fra/79/curse-marred-demon?utm_source=api",
-     "colors": [
-      "R"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.977923627684964,
-      "within_1": 0.47911694510739855,
-      "within_2": 0.6825775656324582
-     },
-     "oracle_text": "Flying, trample\nWhen this creature enters, search your library for a card, put it into your hand, shuffle, then discard a card at random."
-    },
-    {
      "name": "Lyra, Tolarian Archangel",
      "grade": "A",
      "z": 1.9302858560575813,
@@ -3529,6 +3507,28 @@
       "within_2": 0.684964200477327
      },
      "oracle_text": "Flying\nAt the beginning of each end step, if you've drawn three or more cards this turn, create a 3/3 blue Angel creature token with flying.\n{3}{U}{U}: Until end of turn, whenever Lyra deals combat damage to a player, draw two cards."
+    },
+    {
+     "name": "Curse-Marred Demon",
+     "grade": "A",
+     "z": 1.87557046101229,
+     "rarity": "rare",
+     "mana_cost": "{2}{R}{R}",
+     "type_line": "Creature \u2014 Demon",
+     "image": "https://cards.scryfall.io/normal/front/8/f/8f827e50-0a08-4bc8-98b1-b26c9af15ef2.jpg?1789470818",
+     "scryfall_uri": "https://scryfall.com/card/fra/79/curse-marred-demon?utm_source=api",
+     "colors": [
+      "R"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.977923627684964,
+      "within_1": 0.47911694510739855,
+      "within_2": 0.6825775656324582
+     },
+     "oracle_text": "Flying, trample\nWhen this creature enters, search your library for a card, put it into your hand, shuffle, then discard a card at random."
     },
     {
      "name": "Craterclaw Colossus",
@@ -3554,8 +3554,8 @@
     },
     {
      "name": "Chandra, Torch of Defiance",
-     "grade": "A",
-     "z": 1.6277805384476256,
+     "grade": "A-",
+     "z": 1.563831507541229,
      "rarity": "mythic",
      "mana_cost": "{2}{R}{R}",
      "type_line": "Legendary Planeswalker \u2014 Chandra",
@@ -3575,26 +3575,26 @@
      "oracle_text": "+1: Exile the top card of your library. You may cast that card. If you don't, Chandra deals 2 damage to each opponent.\n+1: Add {R}{R}.\n\u22123: Chandra deals 4 damage to target creature.\n\u22127: You get an emblem with \"Whenever you cast a spell, this emblem deals 5 damage to any target.\""
     },
     {
-     "name": "Stingcaster Mage",
+     "name": "Sphinx of False Conclusions",
      "grade": "A-",
-     "z": 1.5057052441899337,
-     "rarity": "mythic",
-     "mana_cost": "{1}{R}",
-     "type_line": "Creature \u2014 Human Wizard",
-     "image": "https://cards.scryfall.io/normal/front/2/d/2d8e8e5f-3bf5-490d-aa9c-9df2b26f1460.jpg?1788329303",
-     "scryfall_uri": "https://scryfall.com/card/fra/93/stingcaster-mage?utm_source=api",
+     "z": 1.4784561928518916,
+     "rarity": "rare",
+     "mana_cost": "{2}{U}{U}",
+     "type_line": "Creature \u2014 Sphinx Illusion",
+     "image": "https://cards.scryfall.io/normal/front/0/8/08ffbd51-2bd3-4262-8809-09576ce2b6f5.jpg?1789385594",
+     "scryfall_uri": "https://scryfall.com/card/fra/40/sphinx-of-false-conclusions?utm_source=api",
      "colors": [
-      "R"
+      "U"
      ],
      "confidence": "high",
      "trust": {
-      "band": 4,
+      "band": 3,
       "of": 5,
-      "mean_grade_error": 1.9397374701670644,
-      "within_1": 0.4904534606205251,
-      "within_2": 0.684964200477327
+      "mean_grade_error": 1.977923627684964,
+      "within_1": 0.47911694510739855,
+      "within_2": 0.6825775656324582
      },
-     "oracle_text": "Haste\nWhen this creature enters, target instant or sorcery card in your graveyard gains flashback until end of turn. The flashback cost is equal to its mana cost."
+     "oracle_text": "Flash\nFlying\nWhenever this creature attacks, draw a card, then discard a card.\nWhen this creature dies, if it isn't a token, create a token that's a copy of it."
     },
     {
      "name": "Seasoned Cryomancer",
@@ -3624,14 +3624,14 @@
    "pair": "UG",
    "name": "Jace's Mastery",
    "hook": "",
-   "deck_mean_z": 1.2004310958694442,
+   "deck_mean_z": 1.205520026234458,
    "pool_size": 90,
-   "rank": 8,
+   "rank": 7,
    "gold": [
     {
      "name": "Avatar of Burgeoning Echoes",
      "grade": "A",
-     "z": 1.87557046101229,
+     "z": 1.8259543203082647,
      "rarity": "mythic",
      "mana_cost": "{G}{U}",
      "type_line": "Creature \u2014 Avatar",
@@ -3654,7 +3654,7 @@
     {
      "name": "Mind Meanderer",
      "grade": "B",
-     "z": 1.0596898668082535,
+     "z": 0.984234960446325,
      "rarity": "uncommon",
      "mana_cost": "{3}{G}{U}{U}",
      "type_line": "Creature \u2014 Bird Fish Illusion",
@@ -3677,7 +3677,7 @@
     {
      "name": "Kiora of Salt and Sand",
      "grade": "B-",
-     "z": 0.6356570136975828,
+     "z": 0.7028602309190991,
      "rarity": "uncommon",
      "mana_cost": "{1}{G}{U}",
      "type_line": "Legendary Creature \u2014 Merfolk Noble",
@@ -3699,8 +3699,8 @@
     },
     {
      "name": "Tam's Resistance",
-     "grade": "C",
-     "z": -0.06719235471022743,
+     "grade": "C-",
+     "z": -0.2579719291676174,
      "rarity": "common",
      "mana_cost": "{1}{G/U}",
      "type_line": "Sorcery",
@@ -3723,7 +3723,7 @@
     {
      "name": "Entrust the Spark",
      "grade": "D-",
-     "z": -1.5949908330757576,
+     "z": -1.5341205443525463,
      "rarity": "rare",
      "mana_cost": "{3}{G}{U}",
      "type_line": "Sorcery",
@@ -3748,7 +3748,7 @@
     {
      "name": "Mind Meanderer",
      "grade": "B",
-     "z": 1.0596898668082535,
+     "z": 0.984234960446325,
      "rarity": "uncommon",
      "mana_cost": "{3}{G}{U}{U}",
      "type_line": "Creature \u2014 Bird Fish Illusion",
@@ -3771,7 +3771,7 @@
     {
      "name": "Kiora of Salt and Sand",
      "grade": "B-",
-     "z": 0.6356570136975828,
+     "z": 0.7028602309190991,
      "rarity": "uncommon",
      "mana_cost": "{1}{G}{U}",
      "type_line": "Legendary Creature \u2014 Merfolk Noble",
@@ -3794,7 +3794,7 @@
     {
      "name": "Countersculpt",
      "grade": "C",
-     "z": 0.07616765650413386,
+     "z": 0.17546498006949002,
      "rarity": "uncommon",
      "mana_cost": "{U}{U}",
      "type_line": "Instant",
@@ -3884,7 +3884,7 @@
     {
      "name": "Avatar of Burgeoning Echoes",
      "grade": "A",
-     "z": 1.87557046101229,
+     "z": 1.8259543203082647,
      "rarity": "mythic",
      "mana_cost": "{G}{U}",
      "type_line": "Creature \u2014 Avatar",
@@ -3907,7 +3907,7 @@
     {
      "name": "Hungering Puppetbeast",
      "grade": "A",
-     "z": 1.7383857997158703,
+     "z": 1.7804643416920256,
      "rarity": "rare",
      "mana_cost": "{3}{G}{G}",
      "type_line": "Artifact Creature \u2014 Beast Construct",
@@ -3928,8 +3928,8 @@
     },
     {
      "name": "Verdant Kraken",
-     "grade": "A-",
-     "z": 1.5341205443525463,
+     "grade": "A",
+     "z": 1.6277805384476256,
      "rarity": "rare",
      "mana_cost": "{4}{G}{G}{G}",
      "type_line": "Creature \u2014 Plant Kraken",
@@ -3947,6 +3947,28 @@
       "within_2": 0.684964200477327
      },
      "oracle_text": "At the beginning of each player's upkeep, you create a 3/3 green Forest Tentacle land creature token. (It has \"{T}: Add {G}.\" It's affected by summoning sickness until your next turn.)"
+    },
+    {
+     "name": "Sphinx of False Conclusions",
+     "grade": "A-",
+     "z": 1.4784561928518916,
+     "rarity": "rare",
+     "mana_cost": "{2}{U}{U}",
+     "type_line": "Creature \u2014 Sphinx Illusion",
+     "image": "https://cards.scryfall.io/normal/front/0/8/08ffbd51-2bd3-4262-8809-09576ce2b6f5.jpg?1789385594",
+     "scryfall_uri": "https://scryfall.com/card/fra/40/sphinx-of-false-conclusions?utm_source=api",
+     "colors": [
+      "U"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.977923627684964,
+      "within_1": 0.47911694510739855,
+      "within_2": 0.6825775656324582
+     },
+     "oracle_text": "Flash\nFlying\nWhenever this creature attacks, draw a card, then discard a card.\nWhen this creature dies, if it isn't a token, create a token that's a copy of it."
     },
     {
      "name": "Seasoned Cryomancer",
@@ -3969,28 +3991,6 @@
       "within_2": 0.6825775656324582
      },
      "oracle_text": "When this creature enters, draw two cards, then discard two cards. When you discard one or more nonland cards this way, tap up to that many target creatures and put a stun counter on each of them.\n{3}{U}{U}, Exile this card from your graveyard: Draw two cards."
-    },
-    {
-     "name": "Sphinx of False Conclusions",
-     "grade": "A-",
-     "z": 1.4270293719956564,
-     "rarity": "rare",
-     "mana_cost": "{2}{U}{U}",
-     "type_line": "Creature \u2014 Sphinx Illusion",
-     "image": "https://cards.scryfall.io/normal/front/0/8/08ffbd51-2bd3-4262-8809-09576ce2b6f5.jpg?1789385594",
-     "scryfall_uri": "https://scryfall.com/card/fra/40/sphinx-of-false-conclusions?utm_source=api",
-     "colors": [
-      "U"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.977923627684964,
-      "within_1": 0.47911694510739855,
-      "within_2": 0.6825775656324582
-     },
-     "oracle_text": "Flash\nFlying\nWhenever this creature attacks, draw a card, then discard a card.\nWhen this creature dies, if it isn't a token, create a token that's a copy of it."
     }
    ]
   },
@@ -3998,14 +3998,14 @@
    "pair": "BR",
    "name": "Stingerquill Face Burn",
    "hook": "",
-   "deck_mean_z": 1.3618590175462577,
+   "deck_mean_z": 1.3064085085443649,
    "pool_size": 95,
    "rank": 2,
    "gold": [
     {
      "name": "Ingris Stingerquill",
      "grade": "A",
-     "z": 1.8259543203082647,
+     "z": 1.7383857997158703,
      "rarity": "mythic",
      "mana_cost": "{B}{R}{R}",
      "type_line": "Legendary Creature \u2014 Elder Sphinx",
@@ -4028,7 +4028,7 @@
     {
      "name": "Stingerquill Charm",
      "grade": "B",
-     "z": 1.0916203674341685,
+     "z": 0.9276841577671586,
      "rarity": "uncommon",
      "mana_cost": "{B}{R}",
      "type_line": "Instant",
@@ -4051,7 +4051,7 @@
     {
      "name": "Stingerquill Voxmancer // Vicious Verse",
      "grade": "C",
-     "z": 0.06719235471022743,
+     "z": -0.0582224625131554,
      "rarity": "uncommon",
      "mana_cost": "{B/R}",
      "type_line": "Creature \u2014 Goblin Sorcerer // Sorcery",
@@ -4074,7 +4074,7 @@
     {
      "name": "Stinging Vitriol",
      "grade": "C",
-     "z": -0.040295999838414386,
+     "z": -0.06719235471022743,
      "rarity": "rare",
      "mana_cost": "{B}{R}",
      "type_line": "Sorcery",
@@ -4096,8 +4096,8 @@
     },
     {
      "name": "Grim Repriser",
-     "grade": "C-",
-     "z": -0.3139336550376962,
+     "grade": "D",
+     "z": -0.8352598315774018,
      "rarity": "uncommon",
      "mana_cost": "{B}{R}",
      "type_line": "Creature \u2014 Zombie Bard",
@@ -4120,7 +4120,7 @@
     {
      "name": "Whiplash Wordsmith // Vicious Verse",
      "grade": "F",
-     "z": -1.8259543203082647,
+     "z": -1.6991776601112984,
      "rarity": "common",
      "mana_cost": "{3}{B/R}",
      "type_line": "Creature \u2014 Vampire Sorcerer // Sorcery",
@@ -4132,11 +4132,11 @@
      ],
      "confidence": "high",
      "trust": {
-      "band": 3,
+      "band": 4,
       "of": 5,
-      "mean_grade_error": 1.977923627684964,
-      "within_1": 0.47911694510739855,
-      "within_2": 0.6825775656324582
+      "mean_grade_error": 1.9397374701670644,
+      "within_1": 0.4904534606205251,
+      "within_2": 0.684964200477327
      },
      "oracle_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\nAs long as an opponent was dealt noncombat damage this turn, this creature has flying and haste.\n//\nVicious Verse deals 1 damage to target opponent."
     }
@@ -4145,7 +4145,7 @@
     {
      "name": "Stingerquill Charm",
      "grade": "B",
-     "z": 1.0916203674341685,
+     "z": 0.9276841577671586,
      "rarity": "uncommon",
      "mana_cost": "{B}{R}",
      "type_line": "Instant",
@@ -4168,7 +4168,7 @@
     {
      "name": "Fulminous Forte",
      "grade": "B",
-     "z": 0.8352598315774019,
+     "z": 0.8739548226961033,
      "rarity": "uncommon",
      "mana_cost": "{2}{R}",
      "type_line": "Instant",
@@ -4190,7 +4190,7 @@
     {
      "name": "Stingerquill Voxmancer // Vicious Verse",
      "grade": "C",
-     "z": 0.06719235471022743,
+     "z": -0.0582224625131554,
      "rarity": "uncommon",
      "mana_cost": "{B/R}",
      "type_line": "Creature \u2014 Goblin Sorcerer // Sorcery",
@@ -4211,9 +4211,31 @@
      "oracle_text": "At the beginning of your upkeep, if this creature isn't prepared, it becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\n//\nVicious Verse deals 1 damage to target opponent."
     },
     {
-     "name": "Grim Repriser",
+     "name": "Essence Burn",
      "grade": "C-",
-     "z": -0.3139336550376962,
+     "z": -0.35178434493515626,
+     "rarity": "uncommon",
+     "mana_cost": "{1}{R}",
+     "type_line": "Instant",
+     "image": "https://cards.scryfall.io/normal/front/d/2/d2e958de-70de-4156-8f9b-b2c0c1ba704a.jpg?1789470825",
+     "scryfall_uri": "https://scryfall.com/card/fra/82/essence-burn?utm_source=api",
+     "colors": [
+      "R"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 5,
+      "of": 5,
+      "mean_grade_error": 2.0435560859188544,
+      "within_1": 0.47613365155131265,
+      "within_2": 0.6640811455847255
+     },
+     "oracle_text": "Essence Burn deals 5 damage to target black or green creature or planeswalker. If that permanent would die this turn, exile it instead."
+    },
+    {
+     "name": "Grim Repriser",
+     "grade": "D",
+     "z": -0.8352598315774018,
      "rarity": "uncommon",
      "mana_cost": "{B}{R}",
      "type_line": "Creature \u2014 Zombie Bard",
@@ -4234,31 +4256,9 @@
      "oracle_text": "Prowess (Whenever you cast a noncreature spell, this creature gets +1/+1 until end of turn.)\n{B}{R}: Return this card from your graveyard to the battlefield with a finality counter on it. Activate only if an opponent has been dealt noncombat damage this turn. (If a creature with a finality counter on it would die, exile it instead.)"
     },
     {
-     "name": "Essence Burn",
-     "grade": "C-",
-     "z": -0.3422764493245228,
-     "rarity": "uncommon",
-     "mana_cost": "{1}{R}",
-     "type_line": "Instant",
-     "image": "https://cards.scryfall.io/normal/front/d/2/d2e958de-70de-4156-8f9b-b2c0c1ba704a.jpg?1789470825",
-     "scryfall_uri": "https://scryfall.com/card/fra/82/essence-burn?utm_source=api",
-     "colors": [
-      "R"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 5,
-      "of": 5,
-      "mean_grade_error": 2.0435560859188544,
-      "within_1": 0.47613365155131265,
-      "within_2": 0.6640811455847255
-     },
-     "oracle_text": "Essence Burn deals 5 damage to target black or green creature or planeswalker. If that permanent would die this turn, exile it instead."
-    },
-    {
      "name": "Whiplash Wordsmith // Vicious Verse",
      "grade": "F",
-     "z": -1.8259543203082647,
+     "z": -1.6991776601112984,
      "rarity": "common",
      "mana_cost": "{3}{B/R}",
      "type_line": "Creature \u2014 Vampire Sorcerer // Sorcery",
@@ -4270,11 +4270,11 @@
      ],
      "confidence": "high",
      "trust": {
-      "band": 3,
+      "band": 4,
       "of": 5,
-      "mean_grade_error": 1.977923627684964,
-      "within_1": 0.47911694510739855,
-      "within_2": 0.6825775656324582
+      "mean_grade_error": 1.9397374701670644,
+      "within_1": 0.4904534606205251,
+      "within_2": 0.684964200477327
      },
      "oracle_text": "This creature enters prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\nAs long as an opponent was dealt noncombat damage this turn, this creature has flying and haste.\n//\nVicious Verse deals 1 damage to target opponent."
     }
@@ -4283,7 +4283,7 @@
     {
      "name": "Ajani Unrelenting",
      "grade": "A+",
-     "z": 2.9137263183343394,
+     "z": 2.551881811371639,
      "rarity": "mythic",
      "mana_cost": "{4}{R}{R}",
      "type_line": "Legendary Planeswalker \u2014 Ajani",
@@ -4305,7 +4305,7 @@
     {
      "name": "Garruk, Veiled Butcher",
      "grade": "A+",
-     "z": 2.551881811371639,
+     "z": 2.368567059267874,
      "rarity": "mythic",
      "mana_cost": "{3}{B}{B}",
      "type_line": "Legendary Planeswalker \u2014 Garruk",
@@ -4349,7 +4349,7 @@
     {
      "name": "Curse-Marred Demon",
      "grade": "A",
-     "z": 1.9914760889023233,
+     "z": 1.87557046101229,
      "rarity": "rare",
      "mana_cost": "{2}{R}{R}",
      "type_line": "Creature \u2014 Demon",
@@ -4371,7 +4371,7 @@
     {
      "name": "Ingris Stingerquill",
      "grade": "A",
-     "z": 1.8259543203082647,
+     "z": 1.7383857997158703,
      "rarity": "mythic",
      "mana_cost": "{B}{R}{R}",
      "type_line": "Legendary Creature \u2014 Elder Sphinx",
@@ -4415,8 +4415,8 @@
     },
     {
      "name": "Chandra, Torch of Defiance",
-     "grade": "A",
-     "z": 1.6277805384476256,
+     "grade": "A-",
+     "z": 1.563831507541229,
      "rarity": "mythic",
      "mana_cost": "{2}{R}{R}",
      "type_line": "Legendary Planeswalker \u2014 Chandra",
@@ -4438,7 +4438,7 @@
     {
      "name": "Stingcaster Mage",
      "grade": "A-",
-     "z": 1.5057052441899337,
+     "z": 1.4270293719956564,
      "rarity": "mythic",
      "mana_cost": "{1}{R}",
      "type_line": "Creature \u2014 Human Wizard",
@@ -4463,14 +4463,14 @@
    "pair": "BG",
    "name": "Garruk's Bestiary",
    "hook": "",
-   "deck_mean_z": 1.206812244671355,
+   "deck_mean_z": 1.196833015944496,
    "pool_size": 89,
-   "rank": 7,
+   "rank": 8,
    "gold": [
     {
      "name": "Vraska, the Cutting Glare",
      "grade": "B",
-     "z": 0.984234960446325,
+     "z": 1.0596898668082535,
      "rarity": "rare",
      "mana_cost": "{B}{B}{G}",
      "type_line": "Legendary Creature \u2014 Gorgon Assassin",
@@ -4492,8 +4492,8 @@
     },
     {
      "name": "Hapatra, the Desert Fang",
-     "grade": "B-",
-     "z": 0.7259700310214303,
+     "grade": "B",
+     "z": 0.9140048719459558,
      "rarity": "uncommon",
      "mana_cost": "{2}{B}{B}{G}",
      "type_line": "Legendary Creature \u2014 Human Cleric",
@@ -4515,8 +4515,8 @@
     },
     {
      "name": "Primal Witchstalker",
-     "grade": "C+",
-     "z": 0.2395046570710373,
+     "grade": "C",
+     "z": 0.18456348501643255,
      "rarity": "uncommon",
      "mana_cost": "{1}{B}{G}",
      "type_line": "Creature \u2014 Wolf",
@@ -4539,7 +4539,7 @@
     {
      "name": "Ferocity of the Hunt",
      "grade": "F",
-     "z": -1.87557046101229,
+     "z": -1.9914760889023235,
      "rarity": "common",
      "mana_cost": "{1}{B/G}",
      "type_line": "Enchantment \u2014 Aura",
@@ -4563,8 +4563,8 @@
    "key_cards": [
     {
      "name": "Hapatra, the Desert Fang",
-     "grade": "B-",
-     "z": 0.7259700310214303,
+     "grade": "B",
+     "z": 0.9140048719459558,
      "rarity": "uncommon",
      "mana_cost": "{2}{B}{B}{G}",
      "type_line": "Legendary Creature \u2014 Human Cleric",
@@ -4586,8 +4586,8 @@
     },
     {
      "name": "Primal Witchstalker",
-     "grade": "C+",
-     "z": 0.2395046570710373,
+     "grade": "C",
+     "z": 0.18456348501643255,
      "rarity": "uncommon",
      "mana_cost": "{1}{B}{G}",
      "type_line": "Creature \u2014 Wolf",
@@ -4610,7 +4610,7 @@
     {
      "name": "Rewrite Regrets",
      "grade": "D+",
-     "z": -0.46869772364770435,
+     "z": -0.5090541257167783,
      "rarity": "uncommon",
      "mana_cost": "{3}{B}",
      "type_line": "Sorcery",
@@ -4632,7 +4632,7 @@
     {
      "name": "Teyo, Diamondblade Mage",
      "grade": "D",
-     "z": -0.7855300527942329,
+     "z": -0.7977768461252381,
      "rarity": "uncommon",
      "mana_cost": "{3}{B}",
      "type_line": "Legendary Creature \u2014 Human Warlock",
@@ -4656,7 +4656,7 @@
     {
      "name": "Garruk, Veiled Butcher",
      "grade": "A+",
-     "z": 2.551881811371639,
+     "z": 2.368567059267874,
      "rarity": "mythic",
      "mana_cost": "{3}{B}{B}",
      "type_line": "Legendary Planeswalker \u2014 Garruk",
@@ -4722,7 +4722,7 @@
     {
      "name": "Hungering Puppetbeast",
      "grade": "A",
-     "z": 1.7383857997158703,
+     "z": 1.7804643416920256,
      "rarity": "rare",
      "mana_cost": "{3}{G}{G}",
      "type_line": "Artifact Creature \u2014 Beast Construct",
@@ -4743,8 +4743,8 @@
     },
     {
      "name": "Verdant Kraken",
-     "grade": "A-",
-     "z": 1.5341205443525463,
+     "grade": "A",
+     "z": 1.6277805384476256,
      "rarity": "rare",
      "mana_cost": "{4}{G}{G}{G}",
      "type_line": "Creature \u2014 Plant Kraken",
@@ -4766,7 +4766,7 @@
     {
      "name": "Dark Matter Manipulator",
      "grade": "A-",
-     "z": 1.379121996655836,
+     "z": 1.4026732899923222,
      "rarity": "rare",
      "mana_cost": "{B}",
      "type_line": "Creature \u2014 Human Warlock",
@@ -4808,26 +4808,26 @@
      "oracle_text": "Domain \u2014 Fblthp's power is equal to the number of basic land types among lands you control.\nWhen Fblthp enters, search your library for up to X basic land cards with different names, reveal them, put them into your hand, then shuffle."
     },
     {
-     "name": "Sanctum Lurker",
-     "grade": "B+",
-     "z": 1.2714420571847378,
+     "name": "Lich's Relic",
+     "grade": "A-",
+     "z": 1.334186150846469,
      "rarity": "rare",
-     "mana_cost": "{2}{B}",
-     "type_line": "Creature \u2014 Horror",
-     "image": "https://cards.scryfall.io/normal/front/2/1/2185c08f-bb4d-49d5-8b6c-c629a48bb61c.jpg?1789556729",
-     "scryfall_uri": "https://scryfall.com/card/fra/64/sanctum-lurker?utm_source=api",
+     "mana_cost": "{B}",
+     "type_line": "Artifact \u2014 Equipment",
+     "image": "https://cards.scryfall.io/normal/front/b/1/b105511d-5022-4a84-b6ce-4bb433e93a62.jpg?1789644819",
+     "scryfall_uri": "https://scryfall.com/card/fra/57/lichs-relic?utm_source=api",
      "colors": [
       "B"
      ],
-     "confidence": "medium",
+     "confidence": "high",
      "trust": {
-      "band": 4,
+      "band": 3,
       "of": 5,
-      "mean_grade_error": 1.9397374701670644,
-      "within_1": 0.4904534606205251,
-      "within_2": 0.684964200477327
+      "mean_grade_error": 1.977923627684964,
+      "within_1": 0.47911694510739855,
+      "within_2": 0.6825775656324582
      },
-     "oracle_text": "When this creature enters, empower Jace 1.\nPlaneswalkers you control aren't put into their owners' graveyards for having 0 loyalty.\nPlaneswalkers you control have \"[+2]: This planeswalker deals 1 damage to each opponent and you gain 1 life.\""
+     "oracle_text": "When this Equipment enters, you may pay {2}. When you do, for each opponent, destroy up to one target creature or planeswalker that player controls.\nEquipped creature gets +2/+1.\nEquip {2}"
     }
    ]
   },
@@ -4835,14 +4835,14 @@
    "pair": "RG",
    "name": "Konstrari Mana Ramp",
    "hook": "",
-   "deck_mean_z": 1.4138145717691997,
+   "deck_mean_z": 1.3875241898968864,
    "pool_size": 93,
    "rank": 1,
    "gold": [
     {
      "name": "Aerid Konstrari",
      "grade": "A",
-     "z": 1.7804643416920256,
+     "z": 1.9914760889023233,
      "rarity": "mythic",
      "mana_cost": "{1}{R}{G}{G}",
      "type_line": "Legendary Creature \u2014 Elder Sphinx",
@@ -4888,7 +4888,7 @@
     {
      "name": "Tenured Tethermage",
      "grade": "A-",
-     "z": 1.563831507541229,
+     "z": 1.5341205443525463,
      "rarity": "rare",
      "mana_cost": "{1}{R}{G}",
      "type_line": "Creature \u2014 Human Artificer",
@@ -4909,32 +4909,9 @@
      "oracle_text": "When this creature enters, you may sacrifice a land. If you do, create two tapped Heartwood tokens. (They're red and green artifacts with \"{T}: Add {R} or {G}.\")\nTap two untapped artifacts you control: Put two +1/+1 counters on this creature."
     },
     {
-     "name": "Konstrari Charm",
-     "grade": "C",
-     "z": 0.049257252484195595,
-     "rarity": "uncommon",
-     "mana_cost": "{R}{G}",
-     "type_line": "Instant",
-     "image": "https://cards.scryfall.io/normal/front/7/d/7d29dfa1-9582-47bc-8f42-62b611bdcc4e.jpg?1789127645",
-     "scryfall_uri": "https://scryfall.com/card/fra/138/konstrari-charm?utm_source=api",
-     "colors": [
-      "G",
-      "R"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6545346062052506,
-      "within_1": 0.5447494033412887,
-      "within_2": 0.7696897374701671
-     },
-     "oracle_text": "Choose one \u2014\n\u2022 Konstrari Charm deals 6 damage to target creature with flying.\n\u2022 Put two +1/+1 counters on target creature. It gains trample until end of turn.\n\u2022 Add {C}{C}{C}."
-    },
-    {
      "name": "Konstrari Improviser // Soul Tether",
      "grade": "C",
-     "z": 0.03133798202142648,
+     "z": 0.08514909838451043,
      "rarity": "common",
      "mana_cost": "{1}{R/G}",
      "type_line": "Creature \u2014 Human Artificer // Sorcery",
@@ -4957,7 +4934,7 @@
     {
      "name": "Woodwork Prodigy // Soul Tether",
      "grade": "C",
-     "z": -0.10313334220271121,
+     "z": 0.07616765650413386,
      "rarity": "uncommon",
      "mana_cost": "{2}{R/G}",
      "type_line": "Creature \u2014 Cat Druid // Sorcery",
@@ -4976,13 +4953,36 @@
       "within_2": 0.6640811455847255
      },
      "oracle_text": "At the beginning of your upkeep, if this creature isn't prepared, it becomes prepared. (While it's prepared, you may cast a copy of its spell. Doing so unprepares it.)\n//\nCreate a Heartwood token. (It's a red and green artifact with \"{T}: Add {R} or {G}.\")"
+    },
+    {
+     "name": "Konstrari Charm",
+     "grade": "C",
+     "z": -0.0941374143235364,
+     "rarity": "uncommon",
+     "mana_cost": "{R}{G}",
+     "type_line": "Instant",
+     "image": "https://cards.scryfall.io/normal/front/7/d/7d29dfa1-9582-47bc-8f42-62b611bdcc4e.jpg?1789127645",
+     "scryfall_uri": "https://scryfall.com/card/fra/138/konstrari-charm?utm_source=api",
+     "colors": [
+      "G",
+      "R"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6545346062052506,
+      "within_1": 0.5447494033412887,
+      "within_2": 0.7696897374701671
+     },
+     "oracle_text": "Choose one \u2014\n\u2022 Konstrari Charm deals 6 damage to target creature with flying.\n\u2022 Put two +1/+1 counters on target creature. It gains trample until end of turn.\n\u2022 Add {C}{C}{C}."
     }
    ],
    "key_cards": [
     {
      "name": "Konstrari Improviser // Soul Tether",
      "grade": "C",
-     "z": 0.03133798202142648,
+     "z": 0.08514909838451043,
      "rarity": "common",
      "mana_cost": "{1}{R/G}",
      "type_line": "Creature \u2014 Human Artificer // Sorcery",
@@ -5005,7 +5005,7 @@
     {
      "name": "Woodwork Prodigy // Soul Tether",
      "grade": "C",
-     "z": -0.10313334220271121,
+     "z": 0.07616765650413386,
      "rarity": "uncommon",
      "mana_cost": "{2}{R/G}",
      "type_line": "Creature \u2014 Cat Druid // Sorcery",
@@ -5027,8 +5027,8 @@
     },
     {
      "name": "Vinelasher Adept",
-     "grade": "C-",
-     "z": -0.22111871299757055,
+     "grade": "C",
+     "z": -0.13017424406598177,
      "rarity": "common",
      "mana_cost": "{4}{G}{G}",
      "type_line": "Creature \u2014 Rhino Soldier",
@@ -5050,7 +5050,7 @@
     {
      "name": "Archive Arbiter",
      "grade": "D",
-     "z": -0.887146559018876,
+     "z": -0.8609134482524956,
      "rarity": "uncommon",
      "mana_cost": "{6}",
      "type_line": "Artifact Creature \u2014 Sphinx",
@@ -5072,7 +5072,7 @@
     {
      "name": "Ajani Unrelenting",
      "grade": "A+",
-     "z": 2.9137263183343394,
+     "z": 2.551881811371639,
      "rarity": "mythic",
      "mana_cost": "{4}{R}{R}",
      "type_line": "Legendary Planeswalker \u2014 Ajani",
@@ -5114,31 +5114,9 @@
      "oracle_text": "Whenever a creature you control with power 4 or greater enters, draw a card.\n+2: Untap up to two target lands.\n\u22123: Create a 4/4 green Beast creature token with trample.\n\u22124: Until your next turn, whenever one or more creatures attack one of your opponents, those creatures get +2/+2 and gain trample until end of turn."
     },
     {
-     "name": "Curse-Marred Demon",
-     "grade": "A",
-     "z": 1.9914760889023233,
-     "rarity": "rare",
-     "mana_cost": "{2}{R}{R}",
-     "type_line": "Creature \u2014 Demon",
-     "image": "https://cards.scryfall.io/normal/front/8/f/8f827e50-0a08-4bc8-98b1-b26c9af15ef2.jpg?1789470818",
-     "scryfall_uri": "https://scryfall.com/card/fra/79/curse-marred-demon?utm_source=api",
-     "colors": [
-      "R"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.977923627684964,
-      "within_1": 0.47911694510739855,
-      "within_2": 0.6825775656324582
-     },
-     "oracle_text": "Flying, trample\nWhen this creature enters, search your library for a card, put it into your hand, shuffle, then discard a card at random."
-    },
-    {
      "name": "Aerid Konstrari",
      "grade": "A",
-     "z": 1.7804643416920256,
+     "z": 1.9914760889023233,
      "rarity": "mythic",
      "mana_cost": "{1}{R}{G}{G}",
      "type_line": "Legendary Creature \u2014 Elder Sphinx",
@@ -5159,9 +5137,31 @@
      "oracle_text": "Flying\nWhen Aerid Konstrari enters or dies, create a Heartwood token. (It's a red and green artifact with \"{T}: Add {R} or {G}.\")\n{6}: Create a Heartwood token. Then Aerid Konstrari gets +X/+0 until end of turn, where X is the number of artifacts you control."
     },
     {
+     "name": "Curse-Marred Demon",
+     "grade": "A",
+     "z": 1.87557046101229,
+     "rarity": "rare",
+     "mana_cost": "{2}{R}{R}",
+     "type_line": "Creature \u2014 Demon",
+     "image": "https://cards.scryfall.io/normal/front/8/f/8f827e50-0a08-4bc8-98b1-b26c9af15ef2.jpg?1789470818",
+     "scryfall_uri": "https://scryfall.com/card/fra/79/curse-marred-demon?utm_source=api",
+     "colors": [
+      "R"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.977923627684964,
+      "within_1": 0.47911694510739855,
+      "within_2": 0.6825775656324582
+     },
+     "oracle_text": "Flying, trample\nWhen this creature enters, search your library for a card, put it into your hand, shuffle, then discard a card at random."
+    },
+    {
      "name": "Hungering Puppetbeast",
      "grade": "A",
-     "z": 1.7383857997158703,
+     "z": 1.7804643416920256,
      "rarity": "rare",
      "mana_cost": "{3}{G}{G}",
      "type_line": "Artifact Creature \u2014 Beast Construct",
@@ -5226,26 +5226,26 @@
      "oracle_text": "Haste\nWhen this creature enters, creatures you control gain trample and get +X/+0 until end of turn, where X is the number of artifacts you control."
     },
     {
-     "name": "Chandra, Torch of Defiance",
+     "name": "Verdant Kraken",
      "grade": "A",
      "z": 1.6277805384476256,
-     "rarity": "mythic",
-     "mana_cost": "{2}{R}{R}",
-     "type_line": "Legendary Planeswalker \u2014 Chandra",
-     "image": "https://cards.scryfall.io/normal/front/4/0/40cb22c8-cb03-45c9-bb0e-b8cabdcc43cd.jpg?1788329325",
-     "scryfall_uri": "https://scryfall.com/card/fra/244/chandra-torch-of-defiance?utm_source=api",
+     "rarity": "rare",
+     "mana_cost": "{4}{G}{G}{G}",
+     "type_line": "Creature \u2014 Plant Kraken",
+     "image": "https://cards.scryfall.io/normal/front/2/b/2bb7a8eb-227f-410b-859f-750ef0aea2f0.jpg?1789644841",
+     "scryfall_uri": "https://scryfall.com/card/fra/118/verdant-kraken?utm_source=api",
      "colors": [
-      "R"
+      "G"
      ],
      "confidence": "high",
      "trust": {
-      "band": 2,
+      "band": 4,
       "of": 5,
-      "mean_grade_error": 1.8579952267303104,
-      "within_1": 0.5089498806682577,
-      "within_2": 0.7147971360381862
+      "mean_grade_error": 1.9397374701670644,
+      "within_1": 0.4904534606205251,
+      "within_2": 0.684964200477327
      },
-     "oracle_text": "+1: Exile the top card of your library. You may cast that card. If you don't, Chandra deals 2 damage to each opponent.\n+1: Add {R}{R}.\n\u22123: Chandra deals 4 damage to target creature.\n\u22127: You get an emblem with \"Whenever you cast a spell, this emblem deals 5 damage to any target.\""
+     "oracle_text": "At the beginning of each player's upkeep, you create a 3/3 green Forest Tentacle land creature token. (It has \"{T}: Add {G}.\" It's affected by summoning sickness until your next turn.)"
     }
    ]
   }

@@ -186,6 +186,18 @@ def extract(card):
     f["arch_breadth"] = float(sum(1 for h in hits if h))
     f["arch_depth"] = float(max(hits)) if hits else 0.0
 
+    # A set of "is this built for a 40-card deck" features lived here -- narrow
+    # hate effects, build-around conditions, symmetrical effects, numeric
+    # thresholds -- and was removed. Aggregate gain was +0.0025 (p=0.057), and
+    # the targeted test killed it: on the 916 cards that actually tripped the
+    # flags, error got *worse* (+0.0025, p=0.59). Same cause as the set-context
+    # and per-colour experiments before it: TF-IDF over 1-3 grams already reads
+    # "opponents can't" and "as long as you control", so a regex over the same
+    # text adds nothing. edhrec_rank and card price were tested alongside
+    # (+0.0022 p=0.23, and worse together) and rejected too -- both are measured
+    # today, so a 2-year-old set carries years of accumulated Commander play
+    # while an unreleased one carries preview-week speculation.
+
     # --- efficiency interactions -----------------------------------------
     # cheap removal is the premium commodity in limited; encode it explicitly
     f["cheap_removal"]  = f["e_removal_any"] * max(0.0, 5.0 - cmc)

@@ -498,11 +498,23 @@ One finding did survive, and it is interpretable:
 | "commander" | 90 | **+0.352** |
 | everything else | 5,700 | -0.008 |
 
-We systematically over-rate cards built for Constructed and Commander. They read powerful —
-dense text, narrow hate effects, high rarity — and the model has no concept of a card being
-aimed at a different format: your sealed deck is 40 cards with 17 lands, where a narrow
-answer you can't reliably cast is dead weight, while the same card is fine in a 60-card
-Constructed deck built around it. Worth trying as a feature; not implemented.
+We systematically over-rate cards whose review mentions Constructed or Commander. Note what
+that is and isn't: being good in Constructed does **not** imply being bad in Limited — plenty
+of Constructed staples are Limited bombs. The signal is rhetorical. A reviewer brings up
+Constructed when he means "this is a Constructed card, not a Limited one", so the mention
+marks his judgement, not a property of the card, and it only exists where a review exists.
+
+**Tried to turn it into a real feature, and failed.** If the useful question is "does this do
+something in a 40-card deck", it should be detectable from the card: narrow hate effects,
+build-around conditions, symmetrical effects, numeric thresholds. Aggregate gain +0.0025
+(p=0.057), and the targeted test refuted it — on the 916 cards that actually tripped the
+flags, error got slightly *worse* (+0.0025, p=0.59).
+
+Same cause as every other feature experiment here: TF-IDF over 1-3 grams already reads
+"opponents can't" and "as long as you control". `edhrec_rank` and card price were tested as
+non-text proxies (+0.0022 p=0.23; worse in combination) and rejected too — both are measured
+*today*, so a two-year-old set carries years of accumulated Commander play while an
+unreleased one carries preview-week speculation.
 
 ## Two pages
 
