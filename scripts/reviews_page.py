@@ -84,9 +84,33 @@ def build(setcode="FRA"):
             # MTG Arena Zone rates 0-5 where Draftsim rates 0-10; both are
             # anchored at zero, so halving the Draftsim score compares them
             "second": second.get(c["name"]),
+            # consensus on the 0-10 scale: the mean of the two where both have
+            # rated, otherwise whichever one exists
+            "consensus": (round((exp[c["name"]] + second[c["name"]] * 2) / 2, 2)
+                          if second.get(c["name"]) is not None else exp[c["name"]]),
         })
     out.sort(key=lambda r: -r["rating"])
-    both = [(r["rating"] / 2.0, r["second"]) for r in out if r["second"] is not None]
+    # cards only the second reviewer covered still belong on the page
+    only_second = [n for n in second if n not in exp]
+    byname = {c["name"]: c for c in cards}
+    for n in only_second:
+        c = byname.get(n)
+        if not c:
+            continue
+        g = grades.get(n, {})
+        b_grade, b_z = bz.get(n, ("?", 0.0))
+        out.append({"name": n, "rating": None, "reviewer_z": None,
+                    "reviewer_grade": None, "blind_grade": b_grade, "blind_z": b_z,
+                    "final_grade": g.get("grade"), "disagreement": 0.0,
+                    "colors": c.get("colors", []), "rarity": c["rarity"],
+                    "mana_cost": c.get("mana_cost", ""), "type_line": c.get("type_line", ""),
+                    "image": (c.get("image_uris") or {}).get("normal"),
+                    "scryfall_uri": c.get("scryfall_uri"), "prose": "",
+                    "second": second[n], "consensus": second[n] * 2})
+    out.sort(key=lambda r: -(r["consensus"] if r["consensus"] is not None else -1))
+
+    both = [(r["rating"] / 2.0, r["second"]) for r in out
+            if r["second"] is not None and r["rating"] is not None]
     agree = None
     if len(both) >= 15:
         agree = float(spearmanr([a for a, b in both], [b for a, b in both]).statistic)

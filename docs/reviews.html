@@ -82,13 +82,14 @@ h2{font-family:Spectral,serif;font-weight:600;font-size:23px;letter-spacing:-.01
   padding:9px 4px 3px;border-bottom:1px solid rgba(55,46,82,.65);margin-bottom:4px;
   display:flex;justify-content:space-between}
 .band:first-child{padding-top:3px}
-.row{display:grid;grid-template-columns:30px 1fr auto;gap:6px;align-items:center;
+.row{display:grid;grid-template-columns:34px 1fr auto;gap:6px;align-items:center;
   background:var(--ink-2);border:1px solid transparent;border-left:2px solid var(--gD);
   border-radius:2px;padding:5px 6px;margin-bottom:3px;text-decoration:none;color:var(--text)}
 .row:hover{background:var(--ink-3);border-color:var(--edge)}
 .row .rt{font-family:Spectral,serif;font-weight:700;font-size:12.5px;text-align:center}
 .row .nm{font-size:12.5px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.row .og{font-family:Spectral,serif;font-size:11.5px;color:var(--text-3)}
+.row .og{font-family:Spectral,serif;font-size:11px;color:var(--text-3);text-align:right;line-height:1.25}
+.row .og i{font-style:normal;color:var(--text-2)}
 .row.t3{border-left-color:var(--gA)} .row.t3 .rt{color:var(--gA)}
 .row.t2{border-left-color:var(--gB)} .row.t2 .rt{color:var(--gB)}
 .row.t1{border-left-color:var(--gC)} .row.t1 .rt{color:var(--gC)}
@@ -156,11 +157,11 @@ footer p{max-width:78ch}
   </nav>
   <p id="stamp" style="margin:-14px 0 16px;color:var(--text-3);font-size:12px"></p>
   <h1>What the reviewer <em>actually said</em></h1>
-  <p class="lede">The published set reviews, on their own — no model involved. <b>Draftsim</b>
-  covers the whole set; <b>MTG Arena Zone</b> is publishing one colour a day and is partway
-  through. Where both have rated a card you get a second opinion; everywhere else you get one.
-  What can be aggregated regardless is the <b>track record</b> — 25 past sets where we have
-  Draftsim's ratings and what actually happened.</p>
+  <p class="lede">Two published set reviews, aggregated — no model involved. <b>Draftsim</b>
+  (0-10) and <b>MTG Arena Zone</b> (0-5) have both rated nearly the whole set, and where they
+  overlap you get a consensus rather than one person's opinion. They agree with each other at
+  <b>0.75</b>, which is a useful thing to know before trusting either alone. Also here: the
+  <b>track record</b> — 25 past sets where we have ratings and what actually happened.</p>
   <div class="score" id="score"></div>
 </header>
 
@@ -214,8 +215,8 @@ fetch('reviewdata.json').then(r=>r.json()).then(d=>{
   const two=d.cards.filter(c=>c.second!=null);
   document.getElementById('ssnote').innerHTML = two.length
     ? `<b>${ss.name}</b> rates on a ${ss.scale} scale and is publishing one colour a day —
-       <b>${ss.rated} cards</b> so far, all we can read. On the ${ss.overlap} cards both have
-       covered they agree at <b>${ss.agreement.toFixed(2)}</b>. That is worth knowing on its own:
+       <b>${ss.rated} cards</b>. On the ${ss.overlap} cards both have covered they agree at
+       <b>${ss.agreement.toFixed(2)}</b>. That is worth knowing on its own:
        two experienced reviewers looking at the same cards agree about as much as either agrees
        with what actually happens, which is the honest ceiling on any single opinion.
        Rows marked amber are where they differ by a wide margin.`
@@ -246,25 +247,29 @@ fetch('reviewdata.json').then(r=>r.json()).then(d=>{
   const BANDS=[["Bombs",8,10],["Strong",6,7.5],["Playables",4,5.5],
                ["Filler",2,3.5],["Leave it",0,1.5]];
   const cls=r=>r>=8?'t3':r>=6?'t2':r>=4?'t1':r>=2?'t0':'tx';
+  const con=c=>c.consensus;
   document.getElementById('allnote').textContent =
-    `All ${d.cards.length} ratings, sorted into colour piles the way you sort a pool, best `
-    + `first. Our own grade sits on the right of each row so you can see where they agree.`;
+    `All ${d.cards.length} cards, sorted into colour piles best first. The big number is the `
+    + `two reviewers' consensus on a 0-10 scale; the small pair on the right is what each said `
+    + `individually (Draftsim, then MTG Arena Zone doubled onto the same scale).`;
   document.getElementById('all').innerHTML = PILES.map(([k,label])=>{
-    const mine=d.cards.filter(c=>pileOf(c)===k).sort((a,b)=>b.rating-a.rating);
+    const mine=d.cards.filter(c=>pileOf(c)===k).sort((a,b)=>con(b)-con(a));
     let h=`<section class="pile" data-c="${k}"><div class="pile-head">
       <span class="nm">${label}</span><span class="n">${mine.length}</span></div>
       <div class="pile-body">`;
     if(!mine.length) h+=`<div style="color:var(--text-3);font-size:12px;padding:10px 6px;font-style:italic">nothing here</div>`;
     for(const [name,lo,hi] of BANDS){
-      const grp=mine.filter(c=>c.rating>=lo&&c.rating<=hi);
+      const grp=mine.filter(c=>con(c)>=lo&&con(c)<=hi);
       if(!grp.length) continue;
       h+=`<div class="band"><span>${name}</span><span>${grp.length}</span></div>`;
       for(const c of grp){
-        h+=`<a class="row ${cls(c.rating)}" href="${c.scryfall_uri}" target="_blank" rel="noopener"
-             title="${c.name.replace(/"/g,'&quot;')} — ${c.type_line}${c.second!=null?`  ·  second reviewer ${c.second}/5`:''}">
-          <span class="rt">${c.rating}</span>
+        const ds=c.rating!=null?c.rating.toFixed(0):'–';
+        const az=c.second!=null?(c.second*2).toFixed(0):'–';
+        h+=`<a class="row ${cls(con(c))}" href="${c.scryfall_uri}" target="_blank" rel="noopener"
+             title="${c.name.replace(/"/g,'&quot;')} — ${c.type_line}  ·  our grade ${c.final_grade||'?'}">
+          <span class="rt">${con(c)%1?con(c).toFixed(1):con(c).toFixed(0)}</span>
           <span class="nm">${c.name}</span>
-          <span class="og">${c.final_grade||''}</span></a>`;
+          <span class="og">${ds}<i>/</i>${az}</span></a>`;
       }
     }
     return h+`</div></section>`;
