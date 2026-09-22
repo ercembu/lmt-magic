@@ -580,7 +580,7 @@ the measured per-rarity offset (learned out-of-fold) does not help either: **-0.
 p=0.55, 15 of 31 sets improved**. The bias is a real descriptive fact about how humans read
 new cards; it is not an exploitable modelling signal.
 
-## Two pages
+## Four pages
 
 **`index.html`** — all 280 cards sorted into colour piles, best to worst, with a detail
 panel per card (grade, percentile, trust band, set-mechanic notes, archetype fit).
@@ -624,6 +624,21 @@ and the top pair under the blind model is 4th under the grades. That matches wha
 `validate_signals.py` measured on released sets (colour ladder 0.22, pairs 0.34) but is
 visible per-pair rather than as one number, so the page can mark which specific calls are
 stable and which are noise.
+
+**`ideas.html`** — the same review collected by idea rather than by card. The ratings pages
+give you 280 numbers; beside each one is a paragraph saying the things a number cannot. Grouped
+by subject that prose becomes the closest thing to a strategy article that exists for a set
+nobody has played: the four set mechanics and what he says about each, all ten archetypes in
+his own words, the arguments that recur across many cards, the older cards he reaches for to
+explain a new one ("basically a Resplendent Angel that's been shifted into blue"), and the lines
+at both ends where he actually commits. Every line is quoted and keeps the card it came from.
+
+Two things fell out of building it. Five archetypes are named for the planeswalker tokens, and
+those same names are a keyword on 35 cards — so a bare "Jace" is not a claim about the Jace
+deck. Those five are matched strictly and the page says their counts are floors rather than
+like-for-like. And the review covers the set's **ten Special Guests**, which are printed under
+their own set code: `set:fra` never returned them, so the grader has never seen them. They are
+rare in Play Boosters but openable, so they are kept on the page and marked rather than dropped.
 
 ## On your phone
 
