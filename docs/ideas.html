@@ -171,13 +171,13 @@ const badge = o => `<span class="gr ${tier(o.grade)}">${o.grade||'—'}</span>`
 function quote(q){
   return `<div class="q"><p>${esc(q.text)}</p><div class="src">
     ${badge(q)}
-    <a href="${q.uri||'#'}" target="_blank" rel="noopener">${esc(q.name)}</a>
+    <a href="${q.uri||'#'}" data-card="${esc(q.name)}" target="_blank" rel="noopener">${esc(q.name)}</a>
     ${q.rating!=null?`<span>rated ${q.rating}/10</span>`:''}
   </div></div>`;
 }
 function chip(c){
-  return `<a class="chip ${tier(c.grade)}" href="${c.uri||'#'}" target="_blank" rel="noopener">
-    <b>${c.grade||'—'}</b> ${esc(c.name)}</a>`;
+  return `<a class="chip ${tier(c.grade)}" href="${c.uri||'#'}" data-card="${esc(c.name)}"
+    target="_blank" rel="noopener"><b>${c.grade||'—'}</b> ${esc(c.name)}</a>`;
 }
 const pip = c => `<span class="dot ${c}"></span>`;
 
@@ -239,9 +239,10 @@ fetch('ideas.json').then(r=>r.json()).then(d=>{
      something we hold are caught — he reaches for older cards than that too.`;
   document.getElementById('cmp').innerHTML = d.comparisons.map(c=>`
     <div class="cmprow">
-      <a href="${c.uri||'#'}" target="_blank" rel="noopener">${badge(c)} ${esc(c.name)}</a>
+      <a href="${c.uri||'#'}" data-card="${esc(c.name)}" target="_blank" rel="noopener">${badge(c)} ${esc(c.name)}</a>
       <span class="arrow">≈</span>
-      <a class="old" href="${c.compared_uri||'#'}" target="_blank" rel="noopener">${esc(c.compared_to)}</a>
+      <a class="old" href="${c.compared_uri||'#'}" data-card="${esc(c.compared_to)}"
+         target="_blank" rel="noopener">${esc(c.compared_to)}</a>
       <span class="say">${esc(c.text)}</span>
     </div>`).join('');
 

@@ -289,7 +289,8 @@ fetch('reviewdata.json').then(r=>r.json()).then(d=>{
   const half=c=>c.rating/2;
   document.getElementById('ss').innerHTML = two.length ? `<div class="two">` + two
     .sort((a,b)=>Math.abs(b.second-half(b))-Math.abs(a.second-half(a)))
-    .map(c=>`<div class="t ${Math.abs(c.second-half(c))>=1.25?'split':''}">
+    .map(c=>`<div class="t ${Math.abs(c.second-half(c))>=1.25?'split':''}"
+      data-card="${c.name.replace(/"/g,'&quot;')}">
       <span class="dot ${pileOf(c)}"></span>
       <span class="nm">${c.name}</span>
       <span class="a" title="Draftsim, rescaled from ${c.rating}/10">${half(c).toFixed(1)}</span>
@@ -299,7 +300,8 @@ fetch('reviewdata.json').then(r=>r.json()).then(d=>{
   const dis=[...d.cards].sort((a,b)=>Math.abs(b.disagreement)-Math.abs(a.disagreement)).slice(0,8);
   document.getElementById('dis').innerHTML=dis.map(c=>`
     <div class="d">
-      <div class="hd"><span class="dot ${pileOf(c)}"></span><span class="nm">${c.name}</span></div>
+      <div class="hd" data-card="${c.name.replace(/"/g,'&quot;')}">
+        <span class="dot ${pileOf(c)}"></span><span class="nm">${c.name}</span></div>
       <div class="vs">
         <span>reviewer<b>${c.rating}/10</b></span>
         <span>model, unaided<b>${c.blind_grade}</b></span>
@@ -331,6 +333,7 @@ fetch('reviewdata.json').then(r=>r.json()).then(d=>{
         const ds=c.rating!=null?c.rating.toFixed(0):'–';
         const az=c.second!=null?(c.second*2).toFixed(0):'–';
         h+=`<a class="row ${cls(con(c))}" href="${c.scryfall_uri}" target="_blank" rel="noopener"
+             data-card="${c.name.replace(/"/g,'&quot;')}"
              title="${c.name.replace(/"/g,'&quot;')} — ${c.type_line}  ·  our grade ${c.final_grade||'?'}">
           <span class="rt">${con(c)%1?con(c).toFixed(1):con(c).toFixed(0)}</span>
           <span class="nm">${c.name}</span>

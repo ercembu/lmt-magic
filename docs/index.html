@@ -439,7 +439,7 @@ function openCard(name){
         rest.map(a=>`<span class="arch">${a.pair} ${a.name}</span>`).join('') + `</div>`;
     }
   }
-  if(c.scryfall_uri) h += `<div class="sect"><a href="${c.scryfall_uri}" target="_blank" rel="noopener">Open on Scryfall</a></div>`;
+  if(c.scryfall_uri) h += `<div class="sect"><a href="${c.scryfall_uri}" target="_blank" rel="noopener" data-nopreview>Open on Scryfall</a></div>`;
 
   document.getElementById('detailIn').innerHTML = h;
   document.getElementById('detail').dataset.open='true';

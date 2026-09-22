@@ -48,15 +48,23 @@
 
   function imageFor(el) {
     if (el.dataset.img) return el.dataset.img;
-    const key = el.dataset.card || el.textContent.trim();
-    return REG[key] || REG[key.split(" // ")[0]] || null;
+    let key = el.dataset.card || el.textContent.trim();
+    // Several lists put the grade inside the link ("A+ Overwrite the Multiverse"),
+    // so falling back to link text needs the badge stripped off first.
+    const bare = key.replace(/^(?:[A-F][+-]?|guest|rated \S+)\s+/i, "");
+    return REG[key] || REG[key.split(" // ")[0]]
+        || REG[bare] || REG[bare.split(" // ")[0]] || null;
   }
 
   /** The nearest thing under the pointer that stands for a card. */
   function cardEl(node) {
     const el = node && node.closest &&
       node.closest('[data-img],[data-card],a[href*="scryfall.com"]');
-    return el && imageFor(el) ? el : null;
+    // data-nopreview is for a deliberate "open this in Scryfall" button sitting
+    // next to a card image that is already on screen: previewing it would be
+    // redundant, and on touch it would eat the tap the button exists for.
+    if (!el || el.hasAttribute("data-nopreview")) return null;
+    return imageFor(el) ? el : null;
   }
 
   function place(x, y) {

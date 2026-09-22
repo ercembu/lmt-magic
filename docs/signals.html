@@ -190,13 +190,15 @@ const pip = c => `<span class="dot ${c}"></span>`;
 function cardRow(c){
   return `<li class="card" data-t="${tier(c.grade)}">
     <span class="gr">${c.grade}</span>
-    <a class="nm" href="${c.scryfall_uri}" target="_blank" rel="noopener"
+    <a class="nm" href="${c.scryfall_uri}" data-card="${c.name.replace(/"/g,'&quot;')}"
+       target="_blank" rel="noopener"
        title="${c.name.replace(/"/g,'&quot;')} — ${c.mana_cost}">${c.name}</a>
     <span class="rar ${c.rarity}" title="${c.rarity}"></span>
   </li>`;
 }
 function chip(c){
-  return `<a class="chip ${tier(c.grade)}" href="${c.scryfall_uri}" target="_blank"
+  return `<a class="chip ${tier(c.grade)}" href="${c.scryfall_uri}"
+    data-card="${c.name.replace(/"/g,'&quot;')}" target="_blank"
     rel="noopener" title="${c.type_line}"><b>${c.grade}</b> ${c.name}</a>`;
 }
 

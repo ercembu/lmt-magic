@@ -263,6 +263,7 @@ scripts/
   calibrate.py         measure error-vs-novelty, build the trust bands
   signals.py           colour depth, commit-worthy cards, pair strength
   validate_signals.py  are those colour/pair rankings real? (mostly not)
+  validate_preview.js  does every card element on every page resolve to an image?
   holdout_demo.py      show the damage on a set we know the answer to
   validate_grades.py   predicted vs limited-grades' real grades, all 21 sets
   guard_ablation.py    does the guard layer help? (it does not)
@@ -677,7 +678,12 @@ holds the link, a second tap follows it, tapping the image does nothing, and tap
 else closes it.
 
 It hooks Scryfall links automatically rather than asking each template to opt in, since a link
-to a card is exactly the thing that should show one. Images come from Scryfall's CDN, so they
+to a card is exactly the thing that should show one. It shipped broken on three of the four
+pages first time round, for a reason worth recording: it fell back to reading the card's name
+out of the link text, and those pages put the grade badge *inside* the link, so the text was
+"A+ Overwrite the Multiverse" and never matched. Every card element now names its card with
+`data-card`, and `scripts/validate_preview.js` checks that invariant against the built pages —
+which is the check that would have caught it, and that testing the module in isolation did not. Images come from Scryfall's CDN, so they
 are the one part of the app that needs a connection — the grades, signals and reviews are all
 cached and work with no signal at all.
 
