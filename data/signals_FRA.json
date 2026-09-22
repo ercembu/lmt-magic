@@ -14,6 +14,21 @@
   "R",
   "G"
  ],
+ "views": [
+  "model",
+  "blind",
+  "review"
+ ],
+ "view_labels": {
+  "model": "the grades",
+  "blind": "model, reviews withheld",
+  "review": "the reviewers"
+ },
+ "agreement": {
+  "model_review": 0.8253119356567631,
+  "blind_review": 0.6226662433558985,
+  "model_blind": 0.9094449508242611
+ },
  "depth": {
   "W": {
    "color": "W",
@@ -23,7 +38,22 @@
    "a_tier": 4,
    "b_or_better": 24,
    "top15_mean_z": 1.252815171311344,
-   "rank": 5
+   "rank": 5,
+   "views": {
+    "model": {
+     "score": 1.252815171311344,
+     "rank": 5
+    },
+    "blind": {
+     "score": 1.2666718427515034,
+     "rank": 5
+    },
+    "review": {
+     "score": 1.2258465697476877,
+     "rank": 5
+    }
+   },
+   "rank_spread": 0
   },
   "U": {
    "color": "U",
@@ -33,7 +63,22 @@
    "a_tier": 7,
    "b_or_better": 21,
    "top15_mean_z": 1.2651964979010972,
-   "rank": 4
+   "rank": 4,
+   "views": {
+    "model": {
+     "score": 1.2651964979010972,
+     "rank": 4
+    },
+    "blind": {
+     "score": 1.2964944891710943,
+     "rank": 4
+    },
+    "review": {
+     "score": 1.4247194527109512,
+     "rank": 3
+    }
+   },
+   "rank_spread": 1
   },
   "B": {
    "color": "B",
@@ -43,7 +88,22 @@
    "a_tier": 5,
    "b_or_better": 20,
    "top15_mean_z": 1.3784527456234963,
-   "rank": 3
+   "rank": 3,
+   "views": {
+    "model": {
+     "score": 1.3784527456234963,
+     "rank": 3
+    },
+    "blind": {
+     "score": 1.3974086184968966,
+     "rank": 2
+    },
+    "review": {
+     "score": 1.2555205449915878,
+     "rank": 4
+    }
+   },
+   "rank_spread": 2
   },
   "R": {
    "color": "R",
@@ -53,7 +113,22 @@
    "a_tier": 9,
    "b_or_better": 23,
    "top15_mean_z": 1.4440352401022818,
-   "rank": 2
+   "rank": 2,
+   "views": {
+    "model": {
+     "score": 1.4440352401022818,
+     "rank": 2
+    },
+    "blind": {
+     "score": 1.3712475895046197,
+     "rank": 3
+    },
+    "review": {
+     "score": 1.5030937685430954,
+     "rank": 1
+    }
+   },
+   "rank_spread": 2
   },
   "G": {
    "color": "G",
@@ -63,7 +138,22 @@
    "a_tier": 9,
    "b_or_better": 22,
    "top15_mean_z": 1.5846728161457146,
-   "rank": 1
+   "rank": 1,
+   "views": {
+    "model": {
+     "score": 1.5846728161457146,
+     "rank": 1
+    },
+    "blind": {
+     "score": 1.4658053098867783,
+     "rank": 1
+    },
+    "review": {
+     "score": 1.4542702847573807,
+     "rank": 2
+    }
+   },
+   "rank_spread": 1
   }
  },
  "pulls": {
@@ -1186,6 +1276,21 @@
    "deck_mean_z": 1.1082083689838411,
    "pool_size": 94,
    "rank": 10,
+   "views": {
+    "model": {
+     "score": 1.1082083689838411,
+     "rank": 10
+    },
+    "blind": {
+     "score": 1.1892671241694759,
+     "rank": 8
+    },
+    "review": {
+     "score": 1.1838312844953485,
+     "rank": 4
+    }
+   },
+   "rank_spread": 6,
    "gold": [
     {
      "name": "Denzilore Fatehold",
@@ -1650,6 +1755,21 @@
    "deck_mean_z": 1.140875699669218,
    "pool_size": 91,
    "rank": 9,
+   "views": {
+    "model": {
+     "score": 1.140875699669218,
+     "rank": 9
+    },
+    "blind": {
+     "score": 1.3015556053777635,
+     "rank": 3
+    },
+    "review": {
+     "score": 1.0322135484459172,
+     "rank": 10
+    }
+   },
+   "rank_spread": 7,
    "gold": [
     {
      "name": "Twisted Fates",
@@ -2022,6 +2142,21 @@
    "deck_mean_z": 1.1932667438098223,
    "pool_size": 92,
    "rank": 6,
+   "views": {
+    "model": {
+     "score": 1.1932667438098223,
+     "rank": 6
+    },
+    "blind": {
+     "score": 1.2001236996706464,
+     "rank": 7
+    },
+    "review": {
+     "score": 1.1815409080309045,
+     "rank": 5
+    }
+   },
+   "rank_spread": 2,
    "gold": [
     {
      "name": "Warrior's Blades",
@@ -2394,6 +2529,21 @@
    "deck_mean_z": 1.253388884471223,
    "pool_size": 92,
    "rank": 3,
+   "views": {
+    "model": {
+     "score": 1.253388884471223,
+     "rank": 3
+    },
+    "blind": {
+     "score": 1.2602404688735729,
+     "rank": 6
+    },
+    "review": {
+     "score": 1.162353093279312,
+     "rank": 8
+    }
+   },
+   "rank_spread": 5,
    "gold": [
     {
      "name": "Kwia Vigorbloom",
@@ -2814,6 +2964,21 @@
    "deck_mean_z": 1.2218644290127052,
    "pool_size": 94,
    "rank": 5,
+   "views": {
+    "model": {
+     "score": 1.2218644290127052,
+     "rank": 5
+    },
+    "blind": {
+     "score": 1.32895206652042,
+     "rank": 2
+    },
+    "review": {
+     "score": 1.1684685898105598,
+     "rank": 7
+    }
+   },
+   "rank_spread": 5,
    "gold": [
     {
      "name": "Uldaros Theorix",
@@ -3255,6 +3420,21 @@
    "deck_mean_z": 1.188514929121822,
    "pool_size": 92,
    "rank": 7,
+   "views": {
+    "model": {
+     "score": 1.188514929121822,
+     "rank": 7
+    },
+    "blind": {
+     "score": 1.1452485505035581,
+     "rank": 10
+    },
+    "review": {
+     "score": 1.2908587110781125,
+     "rank": 2
+    }
+   },
+   "rank_spread": 8,
    "gold": [
     {
      "name": "Saheeli, Jewel of Avishkar",
@@ -3627,6 +3807,21 @@
    "deck_mean_z": 1.1550625464722375,
    "pool_size": 90,
    "rank": 8,
+   "views": {
+    "model": {
+     "score": 1.1550625464722375,
+     "rank": 8
+    },
+    "blind": {
+     "score": 1.1813086583214953,
+     "rank": 9
+    },
+    "review": {
+     "score": 1.1720661668872483,
+     "rank": 6
+    }
+   },
+   "rank_spread": 3,
    "gold": [
     {
      "name": "Avatar of Burgeoning Echoes",
@@ -4001,6 +4196,21 @@
    "deck_mean_z": 1.317500607092474,
    "pool_size": 95,
    "rank": 2,
+   "views": {
+    "model": {
+     "score": 1.317500607092474,
+     "rank": 2
+    },
+    "blind": {
+     "score": 1.3463268564165587,
+     "rank": 1
+    },
+    "review": {
+     "score": 1.2716379618973177,
+     "rank": 3
+    }
+   },
+   "rank_spread": 2,
    "gold": [
     {
      "name": "Ingris Stingerquill",
@@ -4466,6 +4676,21 @@
    "deck_mean_z": 1.222128987930166,
    "pool_size": 89,
    "rank": 4,
+   "views": {
+    "model": {
+     "score": 1.222128987930166,
+     "rank": 4
+    },
+    "blind": {
+     "score": 1.2642564114233044,
+     "rank": 5
+    },
+    "review": {
+     "score": 1.1449666789390978,
+     "rank": 9
+    }
+   },
+   "rank_spread": 5,
    "gold": [
     {
      "name": "Vraska, the Cutting Glare",
@@ -4838,6 +5063,21 @@
    "deck_mean_z": 1.370697979946349,
    "pool_size": 93,
    "rank": 1,
+   "views": {
+    "model": {
+     "score": 1.370697979946349,
+     "rank": 1
+    },
+    "blind": {
+     "score": 1.293607621284232,
+     "rank": 4
+    },
+    "review": {
+     "score": 1.3639921058318931,
+     "rank": 1
+    }
+   },
+   "rank_spread": 3,
    "gold": [
     {
      "name": "Aerid Konstrari",

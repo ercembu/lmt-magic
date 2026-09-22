@@ -53,7 +53,7 @@ h2{font-family:Spectral,serif;font-weight:600;font-size:23px;letter-spacing:-.01
 
 /* ---------- colour ladder ---------- */
 .ladder{border:1px solid var(--edge);border-radius:4px;overflow:hidden}
-.rung{display:grid;grid-template-columns:26px 22px minmax(0,1fr) 268px;gap:12px;align-items:center;
+.rung{display:grid;grid-template-columns:26px 22px minmax(0,1fr) auto 238px;gap:12px;align-items:center;
       padding:13px 15px;border-bottom:1px solid var(--edge);background:var(--ink-2)}
 .rung:last-child{border-bottom:0}
 .rung .pos{font-family:Spectral,serif;font-size:15px;color:var(--text-3);text-align:right}
@@ -67,6 +67,19 @@ h2{font-family:Spectral,serif;font-weight:600;font-size:23px;letter-spacing:-.01
 .R{background:var(--r)} .G{background:var(--g)}
 .barW{background:var(--w)} .barU{background:var(--u)} .barB{background:var(--b)}
 .barR{background:var(--r)} .barG{background:var(--g)}
+
+/* three views of the same question */
+.vws{display:flex;gap:4px;align-items:center;justify-content:flex-end}
+.vws .v{display:inline-flex;align-items:center;gap:3px;background:var(--ink);
+  border:1px solid var(--edge);border-radius:3px;padding:2px 5px;font-size:11px;
+  color:var(--text-3);line-height:1.3;white-space:nowrap}
+.vws .v b{color:var(--text-2);font-weight:600;font-variant-numeric:tabular-nums}
+.vws .v.k{color:var(--text-3)}
+.vws[data-agree="1"] .v{border-color:rgba(127,191,146,.55);background:rgba(127,191,146,.10)}
+.vws[data-agree="1"] .v b{color:var(--ok)}
+.vws[data-agree="0"] .v{border-color:rgba(232,163,61,.5);background:rgba(232,163,61,.10)}
+.vws[data-agree="0"] .v b{color:var(--warn)}
+.pair .vws{justify-content:flex-start;margin:0 0 8px;padding:0 12px}
 
 /* ---------- pull columns ---------- */
 .pulls{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;align-items:start}
@@ -114,7 +127,7 @@ footer p{max-width:78ch}
   .pulls{grid-template-columns:repeat(2,minmax(0,1fr))}
   .pairs{grid-template-columns:1fr}
   .rung{grid-template-columns:22px 20px 1fr;row-gap:6px}
-  .rung .stat{grid-column:1/-1;text-align:left}
+  .rung .stat,.rung .vws{grid-column:1/-1;justify-content:flex-start;text-align:left}
 }
 @media (max-width:520px){ .pulls{grid-template-columns:1fr} }
 </style>
@@ -186,16 +199,38 @@ function chip(c){
     rel="noopener" title="${c.type_line}"><b>${c.grade}</b> ${c.name}</a>`;
 }
 
+const VKEY={model:"M",blind:"B",review:"R"};
+const VTIP={model:"the shipped grades (which are shown the reviewers' ratings)",
+  blind:"the same model with the reviewers' ratings withheld \u2014 card text and past win rates only",
+  review:"the two-reviewer consensus, no model involved"};
+function views(o,d){
+  if(!o.views) return '';
+  const ks=d.views.filter(v=>o.views[v]&&o.views[v].rank);
+  if(ks.length<2) return '';
+  const agree=o.rank_spread<=1?1:(o.rank_spread>=3?0:'');
+  return `<span class="vws" data-agree="${agree}" title="Rank under each view. ${
+    ks.map(v=>VKEY[v]+' = '+VTIP[v]).join('; ')}">`
+    + ks.map(v=>`<span class="v ${v==='model'?'':'k'}">${VKEY[v]}<b>${o.views[v].rank}</b></span>`).join('')
+    + `</span>`;
+}
+
 fetch('signals.json').then(r=>r.json()).then(d=>{
   const depth = Object.values(d.depth).sort((a,b)=>a.rank-b.rank);
   const maxZ = Math.max(...depth.map(x=>x.top15_mean_z));
   const deepest = depth[0], thinnest = depth[depth.length-1];
 
-  document.getElementById('depthNote').textContent =
-    `Ordered by the average grade of each colour's best 15 cards. The model puts ${deepest.name} `
+  const firm = depth.filter(x=>x.rank_spread<=1).map(x=>x.name);
+  document.getElementById('depthNote').innerHTML =
+    `Ordered by the average grade of each colour's best 15 cards. The model puts <b>${deepest.name}</b> `
     + `first (${deepest.a_tier} bombs, ${deepest.b_or_better} graded B- or better) and `
-    + `${thinnest.name} last, but see above: that ordering is about as accurate as guessing. `
-    + `The bomb counts are worth more than the ordering — they come from individual grades.`;
+    + `<b>${thinnest.name}</b> last, but see above: that ordering is about as accurate as guessing. `
+    + `The bomb counts are worth more than the ordering — they come from individual grades.`
+    + (d.views && d.views.length>1 ? ` <b>M/B/R</b> shows where each colour lands under the grades, `
+      + `under the model with the reviews withheld, and under the reviewers alone. `
+      + (firm.length ? `${firm.join(', ')} land within one place of each other in all three — `
+        + `that is the closest thing on this page to a call you can lean on before you open a pack. `
+        : ``)
+      + `Amber means the three disagree by three places or more; believe none of them there.` : ``);
 
   document.getElementById('ladder').innerHTML = depth.map(x=>`
     <div class="rung">
@@ -205,6 +240,7 @@ fetch('signals.json').then(r=>r.json()).then(d=>{
         <div class="nm">${x.name}</div>
         <div class="bar"><i class="bar${x.color}" style="width:${x.top15_mean_z/maxZ*100}%"></i></div>
       </div>
+      ${views(x,d)}
       <div class="stat"><b>${x.top15_mean_z.toFixed(2)}</b> avg top-15 ·
         <b>${x.b_or_better}</b> playable · <b>${x.a_tier}</b> bomb${x.a_tier===1?'':'s'}</div>
     </div>`).join('');
@@ -224,6 +260,14 @@ fetch('signals.json').then(r=>r.json()).then(d=>{
     + `correlation 0.34 across 21 released sets, and the pair it called best was inside the real `
     + `top three 10 times in 21 (chance is 6). ${pairs[0].name} tops it here. A single bomb in `
     + `your packs still outweighs the whole ordering.`;
+  const spread = pairs.filter(p=>p.rank_spread>=3).length;
+  if(d.views && d.views.length>1){
+    document.getElementById('pairNote').innerHTML +=
+      ` The M/B/R marks repeat the ranking under each of the three views, and here they are `
+      + `<b>far apart — ${spread} of the ten pairs move by three places or more</b> depending on `
+      + `who you ask. Pair order is the least stable number on this page; treat it as a tiebreak `
+      + `between two pools you already like, never as a plan.`;
+  }
 
   document.getElementById('pairs').innerHTML = pairs.map(p=>{
     const width = 12 + (p.deck_mean_z - lo) / Math.max(hi - lo, 1e-6) * 88;
@@ -235,6 +279,7 @@ fetch('signals.json').then(r=>r.json()).then(d=>{
         <span class="nm">${p.name}</span>
       </div>
       <div class="bar"><i style="width:${width}%"></i></div>
+      ${views(p,d)}
       ${p.gold.length?`<p class="sub">Signposts — only castable here</p>
         <div class="chips">${p.gold.map(chip).join('')}</div>`:''}
       ${p.key_cards.length?`<p class="sub">What WotC says the deck wants</p>
@@ -252,7 +297,15 @@ fetch('signals.json').then(r=>r.json()).then(d=>{
      errors are correlated rather than independent, so they do not cancel, and what is left is
      the same size as the real differences between colours. That is why the two rankings on this
      page carry their measured accuracy next to them and the card lists do not.
-     Run <code>scripts/validate_signals.py</code> to reproduce those numbers.`;
+     Run <code>scripts/validate_signals.py</code> to reproduce those numbers.`
+    + (d.agreement && d.agreement.blind_review!==undefined ? `<br><br>
+     On the three views: the grades and the reviewers agree at
+     <b>${d.agreement.model_review.toFixed(2)}</b>, but that is partly circular — the model is
+     handed the consensus as a feature. The honest measure of a second opinion is the
+     <b>blind</b> model against the reviewers, which is
+     <b>${d.agreement.blind_review.toFixed(2)}</b>: related, clearly not the same answer. That
+     gap is the point. Where two genuinely different methods land in the same place, the call is
+     worth something; where they do not, neither of them knows.` : ``);
 });
 </script>
 <script src="pwa.js"></script>

@@ -604,6 +604,27 @@ and cannot see that a card is good *because* the rest of the archetype is in the
 Where most of a pair's payoffs grade poorly, the page says so and tells you to trust
 WotC over the grade.
 
+Both rankings are computed three times over, because one estimate of "green is deep" is
+worth much less than two that agree:
+
+| view | what it sees |
+|---|---|
+| **model** | the shipped grades |
+| **blind** | the same model with the reviewers' ratings withheld — card text and past win rates only |
+| **review** | the two-reviewer consensus, no model at all |
+
+Model and review are not independent — the model is *handed* the consensus as a feature,
+which is why they agree at 0.83. The honest number is **blind vs review: 0.62**. Related,
+clearly not the same answer, and that gap is what makes the comparison worth showing.
+
+On FRA it separates the two rankings sharply. Colour depth largely holds up: all three
+views put **White last**, and Green and Blue move by at most one place. Pair order does
+not — **8 of the 10 pairs move by three places or more** depending on which view you ask,
+and the top pair under the blind model is 4th under the grades. That matches what
+`validate_signals.py` measured on released sets (colour ladder 0.22, pairs 0.34) but is
+visible per-pair rather than as one number, so the page can mark which specific calls are
+stable and which are noise.
+
 ## On your phone
 
 The grader installs as a PWA — an app icon, offline, no store or APK needed. GitHub Pages
