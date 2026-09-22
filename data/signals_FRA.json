@@ -61,7 +61,7 @@
    "cards": 60,
    "mono": 37,
    "a_tier": 9,
-   "b_or_better": 21,
+   "b_or_better": 22,
    "top15_mean_z": 1.5846728161457146,
    "rank": 1
   }
@@ -402,7 +402,7 @@
    },
    {
     "name": "Mindseeker Oculus",
-    "grade": "B-",
+    "grade": "B",
     "z": 0.7855300527942329,
     "rarity": "common",
     "mana_cost": "{2}{U}",

@@ -534,11 +534,51 @@ Effect on FRA: 67% of grades unchanged, 29% moved one step, mean movement 0.38. 
 that moved are the ones the two reviewers disagreed about — `Ajani Resolute` C+ to B+ (MTGAZone
 3.5 against Draftsim 1.0), `Chandra, Chill of Compliance` B to C+.
 
-**This one is reasoned, not measured.** Every other change in this project was accepted or
-rejected on a leave-one-set-out test; this cannot be, because MTG Arena Zone ratings do not
-exist for the 25 past sets. The noise-reduction argument is sound and the quantile mapping
-makes it safe, but it has not been validated the way the rest has. Pasting a couple of that
-reviewer's past-set reviews would make it testable.
+**And it is now measured.** Secrets of Strixhaven is the one past set with both reviews *and*
+real win rates, which makes the consensus directly testable:
+
+| predictor | spearman vs SOS's actual win rates |
+|---|---|
+| Draftsim alone | 0.5417 |
+| MTG Arena Zone alone | 0.6369 |
+| **consensus** | **0.6358** |
+
+Consensus beats Draftsim by **+0.094** (95% CI +0.056 to +0.134; it won 100% of 4,000
+bootstrap samples). End to end, holding SOS out and training on the other 30 sets, swapping
+the expert feature from Draftsim-only to the consensus moves the model from **0.5224 to
+0.5651 (+0.043)**.
+
+One caveat on how far that generalises: the SOS review is by a different author (Icky) than
+the FRA one (j2sjosh), so this validates *combining two reviews*, not either individual.
+
+### What pre-release reviews get wrong
+
+5,780 cards across 25 sets have both a published pre-release rating and the win rate it
+eventually posted. Reviews predict reality at **0.558** on average (best set 0.67, worst
+0.42) — which is roughly where our own model sits, and nowhere near certainty.
+
+They are wrong in a very consistent direction:
+
+| | reviewers | our model |
+|---|---|---|
+| mythic | **+0.265** | +0.392 |
+| rare | **+0.262** | +0.257 |
+| uncommon | +0.099 | -0.004 |
+| common | **-0.309** | -0.229 |
+
+(positive = rated above what actually happened)
+
+**Pre-release reviews chase rares.** They over-rate mythics and rares by about a quarter of
+a standard deviation and under-rate commons by a third — a 0.57 gap, consistent across 25
+sets. The same pattern holds by cost (7+ mana +0.20, 0-2 mana -0.15) and by type
+(instants/sorceries -0.19). At a prerelease that is worth knowing directly: discount the
+hype on a rare, and take the commons more seriously than the review does.
+
+I expected the model to correct this, since it sees rarity and the rating side by side. It
+does not — its bias is essentially the same size, and on mythics it is worse. Subtracting
+the measured per-rarity offset (learned out-of-fold) does not help either: **-0.0018,
+p=0.55, 15 of 31 sets improved**. The bias is a real descriptive fact about how humans read
+new cards; it is not an exploitable modelling signal.
 
 ## Two pages
 

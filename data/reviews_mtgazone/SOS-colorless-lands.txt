@@ -1,0 +1,27 @@
+# SOS colorless & lands  author: Icky  0.0-5.0
+# the two land cycles were rated as cycles; each member carries the cycle rating
+Biblioplex Tomekeeper — 0.5
+Diary of Dreams — 0.5
+Mage Tower Referee — 1.0
+Page, Loose Leaf — 1.0
+Potioner's Trove — 2.0
+Rancorous Archaic — 2.0
+Strixhaven Skycoach — 2.5
+Sundering Archaic — 2.5
+The Dawning Archaic — 2.0
+Together as One — 3.5
+Transcendent Archaic — 2.5
+Forum of Amity — 2.0
+Spectacle Summit — 2.0
+Deathcap Glade — 2.0
+Fields of Strife — 2.0
+Dreamroot Cascade — 2.0
+Shattered Sanctum — 2.5
+Stormcarved Coast — 2.5
+Titan's Grave — 2.5
+Sundown Pass — 2.5
+Paradox Gardens — 2.5
+Great Hall of the Biblioplex — 3.0
+Petrified Hamlet — 0.0
+Skycoach Waypoint — 0.5
+Terramorphic Expanse — 2.5
