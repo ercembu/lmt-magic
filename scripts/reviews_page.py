@@ -11,6 +11,7 @@ from scipy.stats import spearmanr
 
 sys.path.insert(0, os.path.dirname(__file__))
 import dataset, textfeat, train, predict, mtgazone
+from dataset import MIN_GAMES
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 GI = {g: i for i, (g, _) in enumerate(predict.GRADE_THRESHOLDS)}
@@ -32,6 +33,83 @@ def track_record():
                         [r["gih_wr"] for r in recs]).statistic
         out.append({"set": s, "n": len(recs), "spearman": float(rho)})
     return out
+
+
+def _bucket(r):
+    """Group a card for the bias table: rarity, cost band, and broad type."""
+    t = r["type_line"]
+    kind = ("creature" if "Creature" in t else
+            "instant/sorcery" if ("Instant" in t or "Sorcery" in t) else
+            "land" if "Land" in t else "other")
+    cmc = r.get("cmc") or 0
+    band = "0-2" if cmc <= 2 else "3-4" if cmc <= 4 else "5-6" if cmc <= 6 else "7+"
+    return r["rarity"], band, kind
+
+
+def reviewer_bias():
+    """Where pre-release reviews sit relative to what actually happened.
+
+    Every past card with both a published rating and a real win rate. Both sides
+    are rank-normalised within their own set, so the comparison is "was this
+    rated above or below where it finished, relative to its set" rather than
+    anything scale-dependent. Positive means the review was too generous.
+
+    The model's own out-of-fold predictions go through the same machine, because
+    the obvious hope -- that a model seeing rarity and the rating side by side
+    would correct the reviewer's bias -- turns out to be false, and the page
+    should say so rather than imply otherwise.
+    """
+    oof = {(r["set"], r["name"]): r for r in json.load(open(f"{ROOT}/data/oof.json"))}
+    rows = []
+    sets = [s for s in train.TRAIN_SETS
+            if os.path.exists(f"{ROOT}/data/labels/{s}.json")
+            and os.path.exists(f"{ROOT}/data/expert/{s}.json")]
+    for s in sets:
+        exp = json.load(open(f"{ROOT}/data/expert/{s}.json"))
+        recs = [r for r in dataset.load_set(s)
+                if r["gih_wr"] and r["gih_n"] >= MIN_GAMES and r["name"] in exp]
+        if len(recs) < 40:
+            continue
+        az = predict.rank_to_z([r["gih_wr"] for r in recs])
+        rz = predict.rank_to_z([exp[r["name"]] for r in recs])
+        mz = predict.rank_to_z([oof[(s, r["name"])]["pred"]
+                                if (s, r["name"]) in oof else np.nan for r in recs])
+        for r, a, e, m in zip(recs, az, rz, mz):
+            c = r["card"]
+            rows.append({"rarity": c["rarity"], "cmc": c.get("cmc", 0),
+                         "type_line": c.get("type_line", ""),
+                         "reviewer": float(e - a),
+                         "model": float(m - a) if np.isfinite(m) else None})
+
+    def table(idx, order):
+        out = []
+        for key in order:
+            grp = [r for r in rows if _bucket(r)[idx] == key]
+            if len(grp) < 30:
+                continue
+            mv = [r["model"] for r in grp if r["model"] is not None]
+            out.append({"key": key, "n": len(grp),
+                        "reviewer": float(np.mean([r["reviewer"] for r in grp])),
+                        "model": float(np.mean(mv)) if mv else None})
+        return out
+
+    per_set = []
+    for s in sets:
+        exp = json.load(open(f"{ROOT}/data/expert/{s}.json"))
+        recs = [r for r in dataset.load_set(s)
+                if r["gih_wr"] and r["gih_n"] >= MIN_GAMES and r["name"] in exp]
+        if len(recs) < 40:
+            continue
+        per_set.append(float(spearmanr([exp[r["name"]] for r in recs],
+                                       [r["gih_wr"] for r in recs]).statistic))
+    return {
+        "cards": len(rows), "sets": len(per_set),
+        "accuracy": {"mean": float(np.mean(per_set)),
+                     "best": float(max(per_set)), "worst": float(min(per_set))},
+        "rarity": table(0, ["mythic", "rare", "uncommon", "common"]),
+        "cost": table(1, ["0-2", "3-4", "5-6", "7+"]),
+        "type": table(2, ["creature", "instant/sorcery", "land", "other"]),
+    }
 
 
 def build(setcode="FRA"):
@@ -115,6 +193,7 @@ def build(setcode="FRA"):
     if len(both) >= 15:
         agree = float(spearmanr([a for a, b in both], [b for a, b in both]).statistic)
     return {"set": setcode, "cards": out, "track_record": track_record(),
+            "bias": reviewer_bias(),
             "unrated": [c["name"] for c in cards if c["name"] not in exp],
             "second_source": {
                 "name": "MTG Arena Zone (j2sjosh)", "scale": "0-5",

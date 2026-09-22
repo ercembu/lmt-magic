@@ -53,6 +53,28 @@ h2{font-family:Spectral,serif;font-weight:600;font-size:23px;letter-spacing:-.01
 .score .k{font-family:Spectral,serif;font-size:24px;font-weight:600}
 .score .v{color:var(--text-3);font-size:11.5px;margin-top:2px;line-height:1.45}
 
+/* bias: how far reviews sit from what happened */
+.biasgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(330px,1fr));gap:14px}
+.biasbox{border:1px solid var(--edge);border-radius:4px;background:var(--ink-2);padding:11px 13px 13px}
+.biasbox h3{font-family:Spectral,serif;font-weight:600;font-size:13.5px;margin:0 0 9px;
+  color:var(--text-2);letter-spacing:.02em;text-transform:lowercase}
+.brow{display:grid;grid-template-columns:96px minmax(0,1fr) 44px;gap:9px;align-items:center;
+  padding:4px 0;font-size:12.5px}
+.brow .l{color:var(--text-2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brow .n{text-align:right;font-variant-numeric:tabular-nums;font-size:12px;color:var(--text-2)}
+.track{position:relative;height:16px;background:var(--ink);border-radius:3px}
+.track::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;
+  background:var(--edge)}
+.track i{position:absolute;top:4px;height:8px;border-radius:2px}
+.track i.over{background:linear-gradient(90deg,rgba(232,163,61,.5),var(--warn))}
+.track i.under{background:linear-gradient(270deg,rgba(111,168,220,.5),var(--u))}
+.track u{position:absolute;top:1px;height:14px;width:2px;background:var(--text-3);
+  text-decoration:none;border-radius:1px}
+.biaskey{color:var(--text-3);font-size:11.5px;margin:12px 0 0;display:flex;gap:16px;flex-wrap:wrap}
+.biaskey span{display:inline-flex;align-items:center;gap:6px}
+.biaskey i{width:14px;height:7px;border-radius:2px;display:inline-block}
+.biaskey u{width:2px;height:12px;background:var(--text-3);display:inline-block;text-decoration:none}
+
 /* track record */
 .rec{border:1px solid var(--edge);border-radius:4px;overflow:hidden}
 .recrow{display:grid;grid-template-columns:58px minmax(0,1fr) 62px;gap:12px;align-items:center;
@@ -169,6 +191,16 @@ footer p{max-width:78ch}
 <p class="note" id="recnote"></p>
 <div class="rec" id="rec"></div>
 
+<h2>What reviews get wrong</h2>
+<p class="note" id="biasnote"></p>
+<div class="biasgrid" id="bias"></div>
+<p class="biaskey">
+  <span><i class="over" style="background:var(--warn)"></i> rated above where it finished</span>
+  <span><i class="under" style="background:var(--u)"></i> rated below where it finished</span>
+  <span><u></u> our model, same measurement</span>
+</p>
+<p class="note" id="biasfoot" style="margin-top:14px"></p>
+
 <h2>A second reviewer</h2>
 <p class="note" id="ssnote"></p>
 <div id="ss"></div>
@@ -210,6 +242,37 @@ fetch('reviewdata.json').then(r=>r.json()).then(d=>{
     <div class="recrow"><span class="s">${t.set}</span>
       <div class="bar"><i style="width:${Math.max(3,t.spearman*100)}%"></i></div>
       <span class="n">${t.spearman.toFixed(2)}</span></div>`).join('');
+
+  const B=d.bias;
+  document.getElementById('biasnote').innerHTML =
+    `Every past card with both a published rating and a real win rate — <b>${B.cards.toLocaleString()} cards
+     across ${B.sets} sets</b>. Both sides are ranked within their own set, so this asks "was it rated
+     above or below where it finished, relative to its set". The answer is not random:
+     <b>pre-release reviews chase rares</b>.`;
+  const span=0.45, pos=v=>Math.min(Math.abs(v)/span,1)*50;
+  const box=(title,rows)=>`<div class="biasbox"><h3>${title}</h3>`+rows.map(r=>{
+    const w=pos(r.reviewer), over=r.reviewer>0;
+    const m=r.model==null?'':`<u style="left:${(50+Math.max(-50,Math.min(50,r.model/span*50))).toFixed(1)}%"></u>`;
+    return `<div class="brow">
+      <span class="l" title="${r.n} cards">${r.key}</span>
+      <span class="track">
+        <i class="${over?'over':'under'}" style="${over?'left:50%':'right:50%'};width:${w.toFixed(1)}%"></i>${m}
+      </span>
+      <span class="n">${r.reviewer>0?'+':''}${r.reviewer.toFixed(2)}</span></div>`;
+  }).join('')+`</div>`;
+  document.getElementById('bias').innerHTML =
+    box('by rarity',B.rarity)+box('by mana value',B.cost)+box('by type',B.type);
+  const my=Object.fromEntries(B.rarity.map(r=>[r.key,r]));
+  document.getElementById('biasfoot').innerHTML =
+    `Mythics and rares are rated about a quarter of a standard deviation above where they land;
+     commons a third below. That is a <b>${(my.mythic.reviewer-my.common.reviewer).toFixed(2)} gap</b>,
+     and it holds in all ${B.sets} sets. At a prerelease that is worth applying directly:
+     discount the hype on a rare, and take the commons more seriously than the review does.
+     The obvious hope was that our model would correct this, since it sees rarity and the rating
+     side by side — <b>it does not</b>. Its own bias is the same size and on mythics it is worse
+     (${my.mythic.model>0?'+':''}${my.mythic.model.toFixed(2)}). Subtracting the measured offset per
+     rarity does not help either (−0.002 spearman, p=0.55, 15 of 31 sets improved), so this is a real
+     fact about how people read new cards rather than a knob the model can turn.`;
 
   const ss=d.second_source;
   const two=d.cards.filter(c=>c.second!=null);
