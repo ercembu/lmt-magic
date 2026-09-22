@@ -152,6 +152,8 @@ main{max-width:1680px;margin:0 auto;padding:20px 20px 80px}
   font-size:12.5px;line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
 }
 .tile .meta{display:flex;align-items:center;gap:4px}
+.sgtag{font-size:9px;letter-spacing:.05em;text-transform:uppercase;color:var(--warn);
+  border:1px solid rgba(232,163,61,.45);border-radius:2px;padding:0 3px;flex:none;line-height:1.5}
 .rar{width:6px;height:6px;border-radius:50%;flex:none}
 .rar.common{background:#6f6a85}
 .rar.uncommon{background:#b9c2cf}
@@ -357,7 +359,7 @@ function render(){
           html += `<button class="tile" data-t="${tierOf(c.grade)}" data-name="${encodeURIComponent(c.name)}">
             <span class="gr">${c.grade}</span>
             <span class="nm" title="${c.name.replace(/"/g,'&quot;')}">${c.name}</span>
-            <span class="meta">${flagged}<span class="rar ${c.rarity}" title="${c.rarity}"></span></span>
+            <span class="meta">${c.bonus_sheet?`<span class="sgtag" title="Special Guest — in Play Boosters, but rare enough that most pools will not have one">guest</span>`:''}${flagged}<span class="rar ${c.rarity}" title="${c.rarity}"></span></span>
           </button>`;
         }
       }
@@ -401,6 +403,14 @@ function openCard(name){
       On released sets, band ${t.band} cards missed their real grade by
       <b>${t.mean_grade_error.toFixed(2)} steps</b> on average —
       ${Math.round(t.within_1*100)}% within one grade, ${Math.round(t.within_2*100)}% within two.</div>`;
+  }
+  if(c.bonus_sheet){
+    h += `<div class="row warn"><span class="h">Special Guest</span><br>
+      Printed under its own set code and dropped into this set's Play Boosters.
+      It is graded like any other card, but it is rare enough that most pools will
+      not contain one — so it is left out of the colour depth and pair strength on
+      <a href="signals.html">What to commit to</a>, which are about the pool you can
+      expect rather than the one you might get.</div>`;
   }
   if((c.flags||[]).length){
     h += `<div class="sect">Set mechanics it leans on</div>`;

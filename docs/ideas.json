@@ -36,7 +36,7 @@
     },
     {
      "name": "Sanctum Lurker",
-     "grade": "A-",
+     "grade": "A",
      "uri": "https://scryfall.com/card/fra/64/sanctum-lurker?utm_source=api"
     },
     {
@@ -46,7 +46,7 @@
     },
     {
      "name": "Hexhaven Battalion",
-     "grade": "B",
+     "grade": "B+",
      "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api"
     },
     {
@@ -60,9 +60,9 @@
      "uri": "https://scryfall.com/card/fra/89/no-admittance?utm_source=api"
     },
     {
-     "name": "Way of the Warlord",
+     "name": "Mindseeker Oculus",
      "grade": "B",
-     "uri": "https://scryfall.com/card/fra/255/way-of-the-warlord?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/33/mindseeker-oculus?utm_source=api"
     }
    ],
    "quotes": [
@@ -132,8 +132,13 @@
      "uri": "https://scryfall.com/card/fra/100/carnivorous-cultivator-enroot?utm_source=api"
     },
     {
+     "name": "Prudent Fateseer // Peer Review",
+     "grade": "B-",
+     "uri": "https://scryfall.com/card/fra/146/prudent-fateseer-peer-review?utm_source=api"
+    },
+    {
      "name": "Bloodline Recollector // Ancestral Craving",
-     "grade": "B",
+     "grade": "B-",
      "uri": "https://scryfall.com/card/fra/49/bloodline-recollector-ancestral-craving?utm_source=api"
     },
     {
@@ -142,14 +147,9 @@
      "uri": "https://scryfall.com/card/fra/133/fatehold-chronologist-peer-review?utm_source=api"
     },
     {
-     "name": "Prudent Fateseer // Peer Review",
-     "grade": "B-",
-     "uri": "https://scryfall.com/card/fra/146/prudent-fateseer-peer-review?utm_source=api"
-    },
-    {
-     "name": "Heartwood Crafter // Soul Tether",
-     "grade": "B-",
-     "uri": "https://scryfall.com/card/fra/105/heartwood-crafter-soul-tether?utm_source=api"
+     "name": "Emergency Phytomedic // Seed Suture",
+     "grade": "C+",
+     "uri": "https://scryfall.com/card/fra/130/emergency-phytomedic-seed-suture?utm_source=api"
     },
     {
      "name": "Vigorbloom Vanguard // Seed Suture",
@@ -173,7 +173,7 @@
     },
     {
      "name": "Master of Barbs",
-     "grade": "B-",
+     "grade": "B",
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/fra/88/master-of-barbs?utm_source=api",
@@ -205,7 +205,7 @@
     },
     {
      "name": "Cruel Calculations",
-     "grade": "D",
+     "grade": "D+",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/26/cruel-calculations?utm_source=api",
@@ -216,7 +216,7 @@
   {
    "name": "Surveil",
    "blurb": "Look at the top card, bin it or keep it. Selection that also fills a graveyard, which is why it turns up in both the white-blue aggro deck and the blue-black graveyard one.",
-   "cards": 46,
+   "cards": 47,
    "top": [
     {
      "name": "Overwrite the Multiverse",
@@ -229,19 +229,14 @@
      "uri": "https://scryfall.com/card/fra/122/avatar-of-burgeoning-echoes?utm_source=api"
     },
     {
-     "name": "Denzilore Fatehold",
-     "grade": "A-",
-     "uri": "https://scryfall.com/card/fra/128/denzilore-fatehold?utm_source=api"
-    },
-    {
      "name": "Repurposed Enforcer",
      "grade": "A-",
      "uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api"
     },
     {
-     "name": "Enlightened Confidant",
+     "name": "Denzilore Fatehold",
      "grade": "B+",
-     "uri": "https://scryfall.com/card/fra/5/enlightened-confidant?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/128/denzilore-fatehold?utm_source=api"
     },
     {
      "name": "Diviner of Victory // Unwind History",
@@ -250,13 +245,18 @@
     },
     {
      "name": "Hexhaven Battalion",
-     "grade": "B",
+     "grade": "B+",
      "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api"
     },
     {
      "name": "Violent Echoes",
      "grade": "B",
      "uri": "https://scryfall.com/card/fra/95/violent-echoes?utm_source=api"
+    },
+    {
+     "name": "Enlightened Confidant",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/fra/5/enlightened-confidant?utm_source=api"
     }
    ],
    "quotes": [
@@ -286,7 +286,7 @@
     },
     {
      "name": "Proft, Consulting Detective",
-     "grade": "C-",
+     "grade": "C",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/218/proft-consulting-detective?utm_source=api",
@@ -313,22 +313,17 @@
   {
    "name": "Legendary",
    "blurb": "A third of the set. Named characters, many appearing twice in different colours, which is what makes 'every deck has a legend in it' a safe assumption here and a payoff worth building on.",
-   "cards": 95,
+   "cards": 97,
    "top": [
-    {
-     "name": "Kwia Vigorbloom",
-     "grade": "A+",
-     "uri": "https://scryfall.com/card/fra/140/kwia-vigorbloom?utm_source=api"
-    },
     {
      "name": "Garruk, Veiled Butcher",
      "grade": "A+",
      "uri": "https://scryfall.com/card/fra/229/garruk-veiled-butcher?utm_source=api"
     },
     {
-     "name": "Garruk, Curse Breaker",
+     "name": "Kwia Vigorbloom",
      "grade": "A+",
-     "uri": "https://scryfall.com/card/fra/259/garruk-curse-breaker?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/140/kwia-vigorbloom?utm_source=api"
     },
     {
      "name": "Ajani Unrelenting",
@@ -336,14 +331,19 @@
      "uri": "https://scryfall.com/card/fra/242/ajani-unrelenting?utm_source=api"
     },
     {
-     "name": "The Theorist, Jace Beleren",
+     "name": "Garruk, Curse Breaker",
      "grade": "A+",
+     "uri": "https://scryfall.com/card/fra/259/garruk-curse-breaker?utm_source=api"
+    },
+    {
+     "name": "The Theorist, Jace Beleren",
+     "grade": "A",
      "uri": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren?utm_source=api"
     },
     {
-     "name": "Aerid Konstrari",
+     "name": "Lyra, Tolarian Archangel",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/121/aerid-konstrari?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/217/lyra-tolarian-archangel?utm_source=api"
     },
     {
      "name": "Ingris Stingerquill",
@@ -351,9 +351,9 @@
      "uri": "https://scryfall.com/card/fra/137/ingris-stingerquill?utm_source=api"
     },
     {
-     "name": "Lyra, Tolarian Archangel",
+     "name": "Aerid Konstrari",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/217/lyra-tolarian-archangel?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/121/aerid-konstrari?utm_source=api"
     }
    ],
    "quotes": [
@@ -367,7 +367,7 @@
     },
     {
      "name": "Fateshaper Aspirant",
-     "grade": "D",
+     "grade": "D+",
      "special": false,
      "rating": 3.0,
      "uri": "https://scryfall.com/card/fra/6/fateshaper-aspirant?utm_source=api",
@@ -435,7 +435,7 @@
     },
     {
      "name": "Sphinx's Approach",
-     "grade": "D-",
+     "grade": "D",
      "special": false,
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/41/sphinxs-approach?utm_source=api",
@@ -444,7 +444,7 @@
     },
     {
      "name": "Hexhaven Battalion",
-     "grade": "B",
+     "grade": "B+",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api",
@@ -471,7 +471,7 @@
     },
     {
      "name": "Marwyn, the Clearcutter",
-     "grade": "C-",
+     "grade": "C",
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/249/marwyn-the-clearcutter?utm_source=api",
@@ -480,7 +480,7 @@
     },
     {
      "name": "Tetsuko Umezawa, Pursuer",
-     "grade": "C-",
+     "grade": "C",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/252/tetsuko-umezawa-pursuer?utm_source=api",
@@ -498,10 +498,10 @@
     },
     {
      "name": "Splinter Twin",
-     "grade": null,
+     "grade": "D",
      "special": true,
      "rating": 6.0,
-     "uri": null,
+     "uri": "https://scryfall.com/card/spg/167/splinter-twin?utm_source=api",
      "text": "If you pick it up early in a draft, you could look for a copy or two of Divining Duelist and put together the classic auto-win that made this card the bane of every Modern player\u2019s existence throughout the 2010s.",
      "strong": false
     },
@@ -541,7 +541,7 @@
    "quotes": [
     {
      "name": "Vigorbloom Annex",
-     "grade": "D",
+     "grade": "D+",
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/194/vigorbloom-annex?utm_source=api",
@@ -595,7 +595,7 @@
     },
     {
      "name": "Tetsuko Umezawa, Pursuer",
-     "grade": "C-",
+     "grade": "C",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/252/tetsuko-umezawa-pursuer?utm_source=api",
@@ -683,7 +683,7 @@
     },
     {
      "name": "Tetsuko Umezawa, Pursuer",
-     "grade": "C-",
+     "grade": "C",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/252/tetsuko-umezawa-pursuer?utm_source=api",
@@ -701,7 +701,7 @@
     },
     {
      "name": "Sanctum Lurker",
-     "grade": "A-",
+     "grade": "A",
      "special": false,
      "rating": 5.0,
      "uri": "https://scryfall.com/card/fra/64/sanctum-lurker?utm_source=api",
@@ -728,7 +728,7 @@
     },
     {
      "name": "Denzilore Fatehold",
-     "grade": "A-",
+     "grade": "B+",
      "special": false,
      "rating": 10.0,
      "uri": "https://scryfall.com/card/fra/128/denzilore-fatehold?utm_source=api",
@@ -780,7 +780,7 @@
     },
     {
      "name": "Tetsuko Umezawa, Pursuer",
-     "grade": "C-",
+     "grade": "C",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/252/tetsuko-umezawa-pursuer?utm_source=api",
@@ -879,10 +879,10 @@
     },
     {
      "name": "Necrodominance",
-     "grade": null,
+     "grade": "F",
      "special": true,
      "rating": 0.0,
-     "uri": null,
+     "uri": "https://scryfall.com/card/spg/165/necrodominance?utm_source=api",
      "text": "Triple black makes it too difficult to cast, and without the ability to also draft the right cards to support it, it just has too many downsides.",
      "strong": false
     }
@@ -895,7 +895,7 @@
    "quotes": [
     {
      "name": "Vigorbloom Annex",
-     "grade": "D",
+     "grade": "D+",
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/194/vigorbloom-annex?utm_source=api",
@@ -931,10 +931,10 @@
     },
     {
      "name": "Consign to Memory",
-     "grade": null,
+     "grade": "D-",
      "special": true,
      "rating": 1.0,
-     "uri": null,
+     "uri": "https://scryfall.com/card/spg/162/consign-to-memory?utm_source=api",
      "text": "While this is the best sideboard card in Modern for very good reasons, Consign to Memory is far too situational to see any Limited play.",
      "strong": true
     },
@@ -949,7 +949,7 @@
     },
     {
      "name": "Way of the Cryomancer",
-     "grade": "D-",
+     "grade": "D",
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/223/way-of-the-cryomancer?utm_source=api",
@@ -967,7 +967,7 @@
     },
     {
      "name": "Rampart Hunter",
-     "grade": "D+",
+     "grade": "C-",
      "special": false,
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/60/rampart-hunter?utm_source=api",
@@ -985,16 +985,16 @@
     },
     {
      "name": "Splinter Twin",
-     "grade": null,
+     "grade": "D",
      "special": true,
      "rating": 6.0,
-     "uri": null,
+     "uri": "https://scryfall.com/card/spg/167/splinter-twin?utm_source=api",
      "text": "On the one hand, it\u2019ll be unplayable in most decks, but Reality Fracture does have a little twist in it.",
      "strong": true
     },
     {
      "name": "Sphinx's Approach",
-     "grade": "D-",
+     "grade": "D",
      "special": false,
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/41/sphinxs-approach?utm_source=api",
@@ -1003,7 +1003,7 @@
     },
     {
      "name": "Hexhaven Battalion",
-     "grade": "B",
+     "grade": "B+",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api",
@@ -1012,7 +1012,7 @@
     },
     {
      "name": "Hexhaven Battalion",
-     "grade": "B",
+     "grade": "B+",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api",
@@ -1037,7 +1037,7 @@
     },
     {
      "name": "Heartstring Puller",
-     "grade": "B",
+     "grade": "B-",
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/86/heartstring-puller?utm_source=api",
@@ -1046,7 +1046,7 @@
     },
     {
      "name": "Lyra, Archangel of Dawn",
-     "grade": "B+",
+     "grade": "B",
      "special": false,
      "rating": 8.0,
      "uri": "https://scryfall.com/card/fra/201/lyra-archangel-of-dawn?utm_source=api",
@@ -1055,7 +1055,7 @@
     },
     {
      "name": "Sureshot Sower",
-     "grade": "C",
+     "grade": "C-",
      "special": false,
      "rating": 3.0,
      "uri": "https://scryfall.com/card/fra/115/sureshot-sower?utm_source=api",
@@ -1064,7 +1064,7 @@
     },
     {
      "name": "Ruric Thar, Biomagus",
-     "grade": "C-",
+     "grade": "D+",
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/219/ruric-thar-biomagus?utm_source=api",
@@ -1165,7 +1165,7 @@
     "mentions": [
      {
       "from": "Bloodline Recollector",
-      "grade": "B",
+      "grade": "B-",
       "uri": "https://scryfall.com/card/fra/49/bloodline-recollector-ancestral-craving?utm_source=api",
       "text": "Even sacrificing a creature to Silence the Echo won\u2019t get you all the way there."
      },
@@ -1179,7 +1179,7 @@
    },
    {
     "name": "Rank Rat",
-    "grade": "B-",
+    "grade": "C+",
     "uri": "https://scryfall.com/card/fra/61/rank-rat?utm_source=api",
     "count": 2,
     "mentions": [
@@ -1205,14 +1205,14 @@
     "mentions": [
      {
       "from": "Woodwork Prodigy",
-      "grade": "C",
+      "grade": "C+",
       "uri": "https://scryfall.com/card/fra/165/woodwork-prodigy-soul-tether?utm_source=api",
       "text": "Artifacts/Colorless Emrakul, the Exigent Doom"
      },
      {
       "from": "Eye of Ugin",
-      "grade": null,
-      "uri": null,
+      "grade": "D",
+      "uri": "https://scryfall.com/card/spg/159/eye-of-ugin?utm_source=api",
       "text": "Technically this can work with Emrakul, the Exigent Doom , but to do that you\u2019d have to play a land that doesn\u2019t tap for mana."
      }
     ]
@@ -1235,7 +1235,7 @@
      },
      {
       "name": "Woodwork Prodigy",
-      "grade": "C",
+      "grade": "C+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/165/woodwork-prodigy-soul-tether?utm_source=api",
       "text": "There are only a handful of cards in the set that create these hallmark tokens for Konstrari\u2019s artifact ramp strategy, so having a card that can keep churning them out each turn sounds incredibly powerful to me."
@@ -1256,7 +1256,7 @@
      },
      {
       "name": "Murmuring Volume",
-      "grade": "F",
+      "grade": "D-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/174/murmuring-volume?utm_source=api",
       "text": "I don\u2019t think Murmuring Volume quite stacks up against the rest of them, but it\u2019s worth noting that Konstrari are trying to ramp with artifacts and this is definitely a way to do that."
@@ -1277,7 +1277,7 @@
      },
      {
       "name": "Konstrari Improviser",
-      "grade": "C",
+      "grade": "C+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/139/konstrari-improviser-soul-tether?utm_source=api",
       "text": "While this is obviously good in a Konstrari deck, the fact that this is hybrid red/green allows you to play it in a variety of decks that might also want an effect like this."
@@ -1321,9 +1321,9 @@
      },
      {
       "name": "Consider",
-      "grade": null,
+      "grade": "C+",
       "special": true,
-      "uri": null,
+      "uri": "https://scryfall.com/card/spg/164/consider?utm_source=api",
       "text": "Fatehold will love it since it triggers all of its abilities, Theorix appreciates the help it gives you to load the graveyard, and the blue/red deck will also like it for triggering prowess."
      },
      {
@@ -1358,7 +1358,7 @@
     "quotes": [
      {
       "name": "Ajani Resolute",
-      "grade": "B+",
+      "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/195/ajani-resolute?utm_source=api",
       "text": "Vigorbloom is of course a lifegain archetype, but the fact that you need to have gained life at least three times before Ajani can use its -4 and survive makes me think this isn\u2019t where we want to be."
@@ -1372,7 +1372,7 @@
      },
      {
       "name": "Enlightened Confidant",
-      "grade": "B+",
+      "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/5/enlightened-confidant?utm_source=api",
       "text": "Having lifelink is a good way to help you with that, assuming you can attack with them, but it\u2019ll be the other lifegain sources from Vigorbloom that will really let this pop off."
@@ -1437,9 +1437,9 @@
      },
      {
       "name": "Consider",
-      "grade": null,
+      "grade": "C+",
       "special": true,
-      "uri": null,
+      "uri": "https://scryfall.com/card/spg/164/consider?utm_source=api",
       "text": "Fatehold will love it since it triggers all of its abilities, Theorix appreciates the help it gives you to load the graveyard, and the blue/red deck will also like it for triggering prowess."
      },
      {
@@ -1465,7 +1465,7 @@
      },
      {
       "name": "Denzilore Fatehold",
-      "grade": "A-",
+      "grade": "B+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/128/denzilore-fatehold?utm_source=api",
       "text": "Flash enables Denzilore Fatehold to swoop in during combat for an easy two-for-one, or just at the end of a turn to avoid sorcery-speed removal."
@@ -1495,7 +1495,7 @@
      },
      {
       "name": "Master of Barbs",
-      "grade": "B-",
+      "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/88/master-of-barbs?utm_source=api",
       "text": "Normally, the ability on Master of Barbs would look kind of situational, but thanks to the Stingerquill prepared spell, Vicious Verse, there should actually be a lot of ways to trigger it."
@@ -1553,21 +1553,21 @@
     "quotes": [
      {
       "name": "Jace's Machinations",
-      "grade": "C-",
+      "grade": "D+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/32/jaces-machinations?utm_source=api",
       "text": "On its own, Jace's Machinations is an instant that draws you two cards, since you can -3 the Jace token on your opponent\u2019s turn and again on yours, leaving behind a Jace with 2 loyalty."
      },
      {
       "name": "Protege's Awakening",
-      "grade": "D+",
+      "grade": "C-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/37/proteges-awakening?utm_source=api",
       "text": "Just like with Jace's Machinations , this could just be a simple draw spell in most blue decks, but one built around  utilize it so much more."
      },
      {
       "name": "Jiang Yanggu, Alone",
-      "grade": "D+",
+      "grade": "D",
       "special": false,
       "uri": "https://scryfall.com/card/fra/246/jiang-yanggu-alone?utm_source=api",
       "text": "Jiang Yanggu, Alone , or to give him his proper title, Jiang Wick, is perhaps the victim of Jace\u2019s gravest crime in creating the Echoverse."
@@ -1581,14 +1581,14 @@
      },
      {
       "name": "The Theorist, Jace Beleren",
-      "grade": "A+",
+      "grade": "A",
       "special": false,
       "uri": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren?utm_source=api",
       "text": "All of the best planeswalkers protect themselves, and both of Jace\u2019s main loyalty abilities are capable of doing that."
      },
      {
       "name": "The Theorist, Jace Beleren",
-      "grade": "A+",
+      "grade": "A",
       "special": false,
       "uri": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren?utm_source=api",
       "text": "This is Jace\u2019s set, so of course we get an incredibly powerful card to represent him."
@@ -1604,21 +1604,21 @@
     "quotes": [
      {
       "name": "Ajani Resolute",
-      "grade": "B+",
+      "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/195/ajani-resolute?utm_source=api",
       "text": "While Ajani Resolute is probably my favorite design in this set, answering the question \u201cWhat would Ajani's Pridemate look like as a planeswalker ?\u201d, it sadly feels very lackluster for Limited play."
      },
      {
       "name": "Lyra, Archangel of Dawn",
-      "grade": "B+",
+      "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/201/lyra-archangel-of-dawn?utm_source=api",
       "text": "Sadly that\u2019s not the case, but Lyra, Archangel of Dawn is still able to buff itself, which makes it a 3-mana 3/3 flying Ajani's Pridemate when white has access to a lot of sources of lifegain."
      },
      {
       "name": "Ajani's Anguish",
-      "grade": "B",
+      "grade": "B-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/72/ajanis-anguish?utm_source=api",
       "text": "At the end of day, Ajani's Anguish is fine and you could use it better in a Konstrari ramp deck , but a lot of red decks aren\u2019t going to be interested in playing it."
@@ -1655,7 +1655,7 @@
      },
      {
       "name": "Chandra, Chill of Compliance",
-      "grade": "C+",
+      "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/fra/212/chandra-chill-of-compliance?utm_source=api",
       "text": "Chandra\u2019s Echoverse double has a lot to live up to."
@@ -1718,7 +1718,7 @@
   },
   {
    "name": "Lyra, Archangel of Dawn",
-   "grade": "B+",
+   "grade": "B",
    "uri": "https://scryfall.com/card/fra/201/lyra-archangel-of-dawn?utm_source=api",
    "special": false,
    "rating": 8.0,
@@ -1738,13 +1738,23 @@
   },
   {
    "name": "Mind Twist",
-   "grade": null,
-   "uri": null,
+   "grade": "B",
+   "uri": "https://scryfall.com/card/spg/166/mind-twist?utm_source=api",
    "special": true,
    "rating": 8.0,
    "compared_to": "Arcane Omens",
    "compared_uri": "https://scryfall.com/card/sos/73/arcane-omens?utm_source=api",
    "text": "Arcane Omens was incredible in Secrets of Strixhaven , but this is a very different format."
+  },
+  {
+   "name": "Liliana the Faultless",
+   "grade": "B+",
+   "uri": "https://scryfall.com/card/fra/200/liliana-the-faultless?utm_source=api",
+   "special": false,
+   "rating": 7.0,
+   "compared_to": "Soul Warden",
+   "compared_uri": "https://scryfall.com/card/spg/65/soul-warden?utm_source=api",
+   "text": "Considering we have Vigorbloom really wanting lifegain sources, Liliana the Faultless looks like an exceptional Soul Warden for that archetype to function."
   },
   {
    "name": "Lich's Relic",
@@ -1798,7 +1808,7 @@
   },
   {
    "name": "Hapatra, the Desert Fang",
-   "grade": "B",
+   "grade": "B-",
    "uri": "https://scryfall.com/card/fra/271/hapatra-the-desert-fang?utm_source=api",
    "special": false,
    "rating": 7.0,
@@ -1817,8 +1827,18 @@
    "text": "I loved getting to play Affectionate Indrik back in Guilds of Ravnica , so give it flying and an extra ability and you know I\u2019m still going to love it."
   },
   {
+   "name": "Null Summoner",
+   "grade": "B+",
+   "uri": "https://scryfall.com/card/fra/142/null-summoner?utm_source=api",
+   "special": false,
+   "rating": 7.0,
+   "compared_to": "Thought-Knot Seer",
+   "compared_uri": "https://scryfall.com/card/spg/39/thought-knot-seer?utm_source=api",
+   "text": "Stealing an opponent\u2019s card and then potentially getting to cast it for yourself is pretty busted, kind of like a Thought-Knot Seer crossed with Hostage Taker ."
+  },
+  {
    "name": "Stingerquill Charm",
-   "grade": "B",
+   "grade": "B+",
    "uri": "https://scryfall.com/card/fra/150/stingerquill-charm?utm_source=api",
    "special": false,
    "rating": 7.0,
@@ -1827,8 +1847,18 @@
    "text": "All three modes are incredible, especially with the base rate of just being Lightning Strike ."
   },
   {
+   "name": "Gideon's Memorial",
+   "grade": "C+",
+   "uri": "https://scryfall.com/card/fra/198/gideons-memorial?utm_source=api",
+   "special": false,
+   "rating": 6.0,
+   "compared_to": "Intangible Virtue",
+   "compared_uri": "https://scryfall.com/card/wot/6/intangible-virtue?utm_source=api",
+   "text": "We can simply ignore the second ability and this is still an Intangible Virtue that you could also use as a mediocre removal spell."
+  },
+  {
    "name": "Hexhaven Battalion",
-   "grade": "B",
+   "grade": "B+",
    "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api",
    "special": false,
    "rating": 6.0,
@@ -1858,7 +1888,7 @@
   },
   {
    "name": "Plan for All Outcomes",
-   "grade": "B-",
+   "grade": "C+",
    "uri": "https://scryfall.com/card/fra/35/plan-for-all-outcomes?utm_source=api",
    "special": false,
    "rating": 6.0,
@@ -1878,7 +1908,7 @@
   },
   {
    "name": "Heartwood Crafter",
-   "grade": "B-",
+   "grade": "C+",
    "uri": "https://scryfall.com/card/fra/105/heartwood-crafter-soul-tether?utm_source=api",
    "special": false,
    "rating": 6.0,
@@ -1898,7 +1928,7 @@
   },
   {
    "name": "Solitary Cell",
-   "grade": "C+",
+   "grade": "B-",
    "uri": "https://scryfall.com/card/fra/149/solitary-cell?utm_source=api",
    "special": false,
    "rating": 6.0,
@@ -1918,7 +1948,7 @@
   },
   {
    "name": "Woodwork Prodigy",
-   "grade": "C",
+   "grade": "C+",
    "uri": "https://scryfall.com/card/fra/165/woodwork-prodigy-soul-tether?utm_source=api",
    "special": false,
    "rating": 6.0,
@@ -1938,7 +1968,7 @@
   },
   {
    "name": "Jace's Machinations",
-   "grade": "C-",
+   "grade": "D+",
    "uri": "https://scryfall.com/card/fra/32/jaces-machinations?utm_source=api",
    "special": false,
    "rating": 5.0,
@@ -1978,7 +2008,7 @@
   },
   {
    "name": "Fblthp, Impossibly Lost",
-   "grade": "C-",
+   "grade": "D+",
    "uri": "https://scryfall.com/card/fra/213/fblthp-impossibly-lost?utm_source=api",
    "special": false,
    "rating": 4.0,
@@ -2008,13 +2038,23 @@
   },
   {
    "name": "Gallia, the Merrymaker",
-   "grade": "D+",
+   "grade": "C-",
    "uri": "https://scryfall.com/card/fra/245/gallia-the-merrymaker?utm_source=api",
    "special": false,
    "rating": 4.0,
    "compared_to": "Axgard Cavalry",
    "compared_uri": "https://scryfall.com/card/fdn/189/axgard-cavalry?utm_source=api",
    "text": "Two-drop creatures that can give haste to your other creatures entering, like Axgard Cavalry , have been reasonable in the past."
+  },
+  {
+   "name": "Greenhouse Propagator",
+   "grade": "C-",
+   "uri": "https://scryfall.com/card/fra/104/greenhouse-propagator?utm_source=api",
+   "special": false,
+   "rating": 4.0,
+   "compared_to": "Soul Warden",
+   "compared_uri": "https://scryfall.com/card/spg/65/soul-warden?utm_source=api",
+   "text": "Acting as both a mana dork and a Soul Warden , a lot of decks will be happy to run Greenhouse Propagator ."
   },
   {
    "name": "Theorix Charm",
@@ -2025,6 +2065,16 @@
    "compared_to": "Spell Pierce",
    "compared_uri": "https://scryfall.com/card/dft/64/spell-pierce?utm_source=api",
    "text": "Each mode is essentially a 1-mana spell, Spell Pierce , Disfigure , and"
+  },
+  {
+   "name": "Traxos, Scourge Eternal",
+   "grade": "D",
+   "uri": "https://scryfall.com/card/fra/280/traxos-scourge-eternal?utm_source=api",
+   "special": false,
+   "rating": 4.0,
+   "compared_to": "Traxos, Scourge of Kroog",
+   "compared_uri": "https://scryfall.com/card/fca/20/traxos-scourge-of-kroog?utm_source=api",
+   "text": "Needing you to cast a creature or artifact spell to untap it is a pretty big downside, but unlike the original Traxos, Scourge of Kroog , Traxos, Scourge Eternal at least enters untapped, so you get that first attack without needing to cast another spell."
   },
   {
    "name": "Blessed Ghoul",
@@ -2038,7 +2088,7 @@
   },
   {
    "name": "Ajani Resolute",
-   "grade": "B+",
+   "grade": "B",
    "uri": "https://scryfall.com/card/fra/195/ajani-resolute?utm_source=api",
    "special": false,
    "rating": 2.0,
@@ -2048,7 +2098,7 @@
   },
   {
    "name": "Sphinx's Approach",
-   "grade": "D-",
+   "grade": "D",
    "uri": "https://scryfall.com/card/fra/41/sphinxs-approach?utm_source=api",
    "special": false,
    "rating": 2.0,
@@ -2058,7 +2108,7 @@
   },
   {
    "name": "Bloodline Recollector",
-   "grade": "B",
+   "grade": "B-",
    "uri": "https://scryfall.com/card/fra/49/bloodline-recollector-ancestral-craving?utm_source=api",
    "special": false,
    "rating": 2.0,
@@ -2085,6 +2135,16 @@
    "compared_to": "Skycoach Waypoint",
    "compared_uri": "https://scryfall.com/card/sos/261/skycoach-waypoint?utm_source=api",
    "text": "I thought Skycoach Waypoint might have been good enough, but it ended up being pretty bad, so I imagine the same is true here."
+  },
+  {
+   "name": "Roiling Canopy",
+   "grade": "D+",
+   "uri": "https://scryfall.com/card/fra/187/roiling-canopy?utm_source=api",
+   "special": false,
+   "rating": 0.0,
+   "compared_to": "Valakut, the Molten Pinnacle",
+   "compared_uri": "https://scryfall.com/card/zne/29/valakut-the-molten-pinnacle?utm_source=api",
+   "text": "A green-shifted Valakut, the Molten Pinnacle is kind of cool, but Roiling Canopy does literally nothing until you reach your sixth forest in play."
   }
  ],
  "verdicts": {
@@ -2099,7 +2159,7 @@
    },
    {
     "name": "Chandra, Torch of Defiance",
-    "grade": "A",
+    "grade": "A-",
     "rating": 10.0,
     "uri": "https://scryfall.com/card/fra/244/chandra-torch-of-defiance?utm_source=api",
     "text": "When it was originally printed in Kaladesh , it was an absolute house in Standard and was basically the best card in the format up until it rotated.",
@@ -2107,7 +2167,7 @@
    },
    {
     "name": "The Theorist, Jace Beleren",
-    "grade": "A+",
+    "grade": "A",
     "rating": 10.0,
     "uri": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren?utm_source=api",
     "text": "All of the best planeswalkers protect themselves, and both of Jace\u2019s main loyalty abilities are capable of doing that.",
@@ -2205,17 +2265,17 @@
    },
    {
     "name": "Root Maze",
-    "grade": null,
+    "grade": "F",
     "rating": 0.0,
-    "uri": null,
+    "uri": "https://scryfall.com/card/spg/168/root-maze?utm_source=api",
     "text": "Root Maze is absurdly bad and you should never play it.",
     "special": true
    },
    {
     "name": "Consign to Memory",
-    "grade": null,
+    "grade": "D-",
     "rating": 1.0,
-    "uri": null,
+    "uri": "https://scryfall.com/card/spg/162/consign-to-memory?utm_source=api",
     "text": "While this is the best sideboard card in Modern for very good reasons, Consign to Memory is far too situational to see any Limited play.",
     "special": true
    },
@@ -2229,7 +2289,7 @@
    },
    {
     "name": "Ferocity of the Hunt",
-    "grade": "F",
+    "grade": "D-",
     "rating": 1.0,
     "uri": "https://scryfall.com/card/fra/134/ferocity-of-the-hunt?utm_source=api",
     "text": "That sounds amazing when you frame it that way, but that\u2019s only the best-case scenario.",
@@ -2261,7 +2321,7 @@
    },
    {
     "name": "Rampart Hunter",
-    "grade": "D+",
+    "grade": "C-",
     "rating": 2.0,
     "uri": "https://scryfall.com/card/fra/60/rampart-hunter?utm_source=api",
     "text": "The ETB ability might be enough to warrant playing it in some decks, but this looks like filler material at best.",
@@ -2269,7 +2329,7 @@
    },
    {
     "name": "Sphinx's Approach",
-    "grade": "D-",
+    "grade": "D",
     "rating": 2.0,
     "uri": "https://scryfall.com/card/fra/41/sphinxs-approach?utm_source=api",
     "text": "I think this is quite playable in a slower control deck, but I\u2019d never play it in an aggressive deck.",

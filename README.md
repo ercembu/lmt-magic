@@ -580,6 +580,34 @@ the measured per-rarity offset (learned out-of-fold) does not help either: **-0.
 p=0.55, 15 of 31 sets improved**. The bias is a real descriptive fact about how humans read
 new cards; it is not an exploitable modelling signal.
 
+### What is actually in a booster
+
+`set:fra` is not the set. A Play Booster also holds bonus-sheet cards, and they are in the
+draft environment: **Special Guests** (a standing set, `spg`, whose cards are dealt to whichever
+release they ship with — identifiable by sharing its release date) and **child sets** of type
+`masterpiece` or `expansion` (Breaking News, The Big Score, Mystical Archive, Stellar Sights,
+Through the Ages).
+
+We were dropping all of them. The symptom was invisible: 17Lands had win rates for cards our
+card files did not contain, so the join silently discarded the row. Across the 31 training sets
+that was **249 rows recovered out of 9,357**, down from ~560 unmatched — OTJ alone was losing
+105 cards, SOS 76, and every Play Booster set since Duskmourn its 10 Special Guests.
+
+Measured on identical test cards, training on the recovered rows is worth **+0.0019 spearman
+(p=0.24, 20 of 31 sets)** — positive, not significant. So this is a *coverage* fix, not an
+accuracy win: the reason to do it is that FRA's ten Special Guests are openable at a prerelease
+and the grader could not see them at all.
+
+`eternal` children (Avatar Eternal, TMNT Eternal) were tried and rejected: they recover 45
+labelled TLA cards while dragging in 242 that are not in the draft environment, and anything
+computed per set — colour depth, the grade curve — would then be measured over cards nobody
+can open. The remaining 2.7% of unmatched labels is mostly MSH, SIR and MKM, whose bonus
+structures do not follow this pattern.
+
+Bonus-sheet cards are graded like anything else and marked `guest` on the card list, but they
+are **left out of colour depth and pair strength** — those describe the pool you can expect,
+and most sealed pools will not contain one.
+
 ## Four pages
 
 **`index.html`** — all 280 cards sorted into colour piles, best to worst, with a detail

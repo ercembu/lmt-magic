@@ -165,9 +165,8 @@ would be most wrong about — worth knowing before you take his word on one.</p>
 const tier = g => (g||'C')[0];
 const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
 
-const badge = o => o.special
-  ? `<span class="gr sg" title="A Special Guest: printed under its own set code, so it is not in our card data and has no grade. Very rare in Play Boosters.">guest</span>`
-  : `<span class="gr ${tier(o.grade)}">${o.grade||'—'}</span>`;
+const badge = o => `<span class="gr ${tier(o.grade)}">${o.grade||'—'}</span>`
+  + (o.special ? `<span class="gr sg" title="A Special Guest: in this set's Play Boosters but printed under its own set code. Graded like any other card, and left out of the colour and pair statistics because most pools will not contain one.">guest</span>` : '');
 
 function quote(q){
   return `<div class="q"><p>${esc(q.text)}</p><div class="src">
@@ -251,11 +250,13 @@ fetch('ideas.json').then(r=>r.json()).then(d=>{
     `Everything on this page is <b>quoted, never paraphrased</b> — each line keeps the card it
      came from so you can check it. The grouping is ours; the sentences are his.
      <br><br>
-     <b>${d.special_guests.length} cards here have no grade.</b> They are the set's Special
-     Guests — ${d.special_guests.join(', ')} — printed under their own set code, so Scryfall's
-     <code>set:fra</code> does not return them and the grader has never seen them. They are very
-     rare in Play Boosters but they are openable, and the review covers them, so they are kept
-     here and marked <span class="gr sg">guest</span> rather than quietly dropped.
+     <b>${d.special_guests.length} cards here are marked <span class="gr sg">guest</span>.</b>
+     They are the set's Special Guests — ${d.special_guests.join(', ')} — printed under their own
+     set code, which is why <code>set:fra</code> never returned them and the grader could not see
+     them until now. They are graded like anything else, but they are rare enough in Play Boosters
+     that they are left out of the colour depth and pair strength on
+     <a href="signals.html">What to commit to</a>: those describe the pool you can expect, not the
+     one you might get.
      <br><br>
      <b>One source.</b> This is Draftsim's prose. MTG Arena Zone publishes ratings we can read,
      and the ratings pages use both, but their write-ups are not in our cache — so where the

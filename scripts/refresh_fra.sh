@@ -15,6 +15,8 @@ $PY scripts/train.py
 $PY scripts/calibrate.py
 $PY scripts/predict.py FRA
 $PY scripts/signals.py FRA
+$PY scripts/reviews_page.py FRA || true
+$PY scripts/ideas.py FRA || true
 cp -f data/grades_FRA.json web/grades.json
 cp -f data/signals_FRA.json web/signals.json
 cp -f data/calibration.json web/calibration.json

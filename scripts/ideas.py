@@ -100,10 +100,9 @@ def load(setcode):
         p["grade"] = g["grade"] if g else None
         p["uri"] = g["scryfall_uri"] if g else None
         p["colors"] = (g.get("colors") or []) if g else []
-        # The review covers the set's ten Special Guests, which are printed under
-        # their own set code and so are not in our card data or our grades. They
-        # are openable at a prerelease, so they stay on the page, labelled.
-        p["special"] = g is None
+        # The set's Special Guests are graded like everything else now, but they
+        # are rare enough in Play Boosters that a page should say which is which.
+        p["special"] = bool(g and g.get("bonus_sheet")) or g is None
     return prose, grades
 
 
@@ -302,7 +301,7 @@ if __name__ == "__main__":
     d = build(code)
     json.dump(d, open(f"{ROOT}/data/ideas_{code}.json", "w"), indent=1)
     print(f"{code}: {d['cards']} write-ups, {d['words']:,} words")
-    print(f"special guests (reviewed, not in our card data): "
+    print(f"special guests (graded, but left out of pool statistics): "
           f"{len(d['special_guests'])} -- {', '.join(d['special_guests'])}")
     print("\nmechanics:")
     for m in d["mechanics"]:

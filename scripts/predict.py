@@ -177,6 +177,11 @@ def grade_set(setcode, model_path=None, exclude_unplayable=True):
         out.append({
             "name": c["name"],
             "set": setcode,
+            # Cards from the set's bonus sheet -- Special Guests and the like.
+            # Openable in Play Boosters, so they are graded with everything else,
+            # but rare enough that the pages mark them rather than letting one
+            # read as a card you should plan around.
+            "bonus_sheet": c.get("bonus_sheet"),
             "rarity": c["rarity"],
             "mana_cost": fr.get("mana_cost", ""),
             "cmc": c.get("cmc", 0),

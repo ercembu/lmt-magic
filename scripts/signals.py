@@ -51,6 +51,17 @@ def is_land(card):
     return "Land" in (card.get("type_line") or "")
 
 
+def in_pool(card):
+    """Cards you can reasonably expect to open.
+
+    Bonus-sheet cards (Special Guests) are in Play Boosters but most sealed pools
+    will not contain one, so counting them toward a colour's depth or a pair's
+    best 23 would describe a pool nobody gets. They are still graded and still on
+    the card list -- they are just not part of the prior this page is about.
+    """
+    return not card.get("bonus_sheet")
+
+
 VIEWS = ["model", "blind", "review"]
 VIEW_LABEL = {"model": "the grades", "blind": "model, reviews withheld",
               "review": "the reviewers"}
@@ -85,7 +96,7 @@ def alt_scores(setcode, cards):
 def build(setcode="FRA"):
     cards = json.load(open(f"{ROOT}/data/grades_{setcode}.json"))
     info = guards.load_setinfo(setcode) or {"archetypes": {}, "removal": []}
-    playable = [c for c in cards if not is_land(c)]
+    playable = [c for c in cards if not is_land(c) and in_pool(c)]
     alt = alt_scores(setcode, cards)
     scores = {"model": {c["name"]: c["z"] for c in cards}, **alt}
 
@@ -153,7 +164,7 @@ def build(setcode="FRA"):
         arch = info["archetypes"].get(pair)
         keys = []
         if arch:
-            byname = {c["name"]: c for c in cards}
+            byname = {c["name"]: c for c in cards if in_pool(c)}
             for n in arch["key_cards"]:
                 hit = byname.get(n) or next(
                     (v for k, v in byname.items()
@@ -219,6 +230,11 @@ if __name__ == "__main__":
                      for k, v in res["pairs"].items()}}
     json.dump(out, open(f"{ROOT}/data/signals_{code}.json", "w"), indent=1)
 
+    nb = sum(1 for c in json.load(open(f"{ROOT}/data/grades_{code}.json"))
+             if c.get("bonus_sheet"))
+    if nb:
+        print(f"({nb} bonus-sheet cards excluded -- openable, but not in a pool "
+              f"you can plan around)\n")
     print(f"{code}: colour depth (deepest first)")
     for d in sorted(res["depth"].values(), key=lambda d: d["rank"]):
         print(f"  {d['rank']}. {d['name']:6s} {d['cards']:3d} cards  "
