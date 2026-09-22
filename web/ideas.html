@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Reality Fracture — the ideas</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#191527">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#191527; --ink-2:#211c33; --ink-3:#2b2442; --edge:#372e52;
+  --text:#ece8f6; --text-2:#a49cc0; --text-3:#736b8f;
+  --w:#e8dfc0; --u:#6fa8dc; --b:#a98fc4; --r:#e08268; --g:#7fbf92;
+  --gA:#ff5fa8; --gB:#c77dff; --gC:#7f93cc; --gD:#6b6580; --gF:#4c4660;
+  --warn:#e8a33d; --ok:#7fbf92;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:
+    radial-gradient(1100px 460px at 78% -8%, rgba(214,76,154,.10), transparent 60%),
+    radial-gradient(900px 400px at 5% 0%, rgba(111,168,220,.07), transparent 60%),
+    var(--ink);
+  color:var(--text);font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 60px}
+header{padding:32px 0 0}
+nav{display:flex;gap:16px;margin-bottom:22px;font-size:13px;align-items:center;flex-wrap:wrap}
+nav a{color:var(--text-3);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent}
+nav a:hover{color:var(--text-2)}
+nav a[aria-current=page]{color:var(--text);border-bottom-color:var(--gA)}
+nav button{margin-left:auto;background:var(--ink-2);border:1px solid var(--edge);
+  color:var(--text-2);border-radius:3px;padding:4px 10px;font:inherit;font-size:12.5px;cursor:pointer}
+h1{font-family:Spectral,Georgia,serif;font-weight:700;font-size:clamp(28px,4.2vw,46px);
+   line-height:1.04;letter-spacing:-.018em;margin:0}
+h1 em{font-style:italic;font-weight:400;color:var(--text-2)}
+.lede{margin:11px 0 0;max-width:66ch;color:var(--text-2);font-size:15px;line-height:1.62}
+.lede b{color:var(--text);font-weight:600}
+h2{font-family:Spectral,serif;font-weight:600;font-size:23px;letter-spacing:-.01em;margin:48px 0 4px}
+h3{font-family:Spectral,serif;font-weight:600;font-size:16px;margin:0 0 3px}
+.note{color:var(--text-3);font-size:13px;margin:0 0 18px;max-width:74ch;line-height:1.6}
+.note b{color:var(--text-2)}
+.score{display:flex;flex-wrap:wrap;border:1px solid var(--edge);border-radius:4px;overflow:hidden;margin-top:22px}
+.score div{flex:1 1 180px;padding:13px 16px;border-right:1px solid var(--edge)}
+.score div:last-child{border-right:0}
+.score .k{font-family:Spectral,serif;font-size:24px;font-weight:600}
+.score .v{color:var(--text-3);font-size:11.5px;margin-top:2px;line-height:1.45}
+
+/* a quoted sentence with the card it came from */
+.q{border-left:2px solid var(--edge);padding:1px 0 1px 12px;margin:0 0 11px}
+.q p{margin:0 0 3px;font-size:13.5px;line-height:1.58;color:var(--text)}
+.q .src{font-size:11.5px;color:var(--text-3);display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.q .src a{color:var(--text-2);text-decoration:none;border-bottom:1px solid var(--edge)}
+.q .src a:hover{color:var(--text)}
+.gr{font-family:Spectral,serif;font-weight:600;font-size:11px;border-radius:2px;
+  padding:1px 5px;background:var(--ink);border:1px solid var(--edge)}
+.gr.A{color:var(--gA);border-color:rgba(255,95,168,.4)}
+.gr.B{color:var(--gB);border-color:rgba(199,125,255,.35)}
+.gr.C{color:var(--gC)} .gr.D{color:var(--gD)} .gr.F{color:var(--gF)}
+.gr.sg{color:var(--warn);border-color:rgba(232,163,61,.4);font-family:inherit;font-size:10px;
+  letter-spacing:.04em;text-transform:uppercase}
+
+/* cards in a row */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(272px,1fr));gap:14px}
+#verdicts{grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+.box{border:1px solid var(--edge);border-radius:4px;background:var(--ink-2);padding:14px 16px}
+.box .sub{color:var(--text-3);font-size:12px;margin:0 0 10px;line-height:1.55}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 12px}
+.chip{display:inline-flex;align-items:center;gap:5px;background:var(--ink);border:1px solid var(--edge);
+  border-radius:3px;padding:3px 7px;font-size:12px;text-decoration:none;color:var(--text)}
+.chip b{font-family:Spectral,serif;font-size:11px}
+.chip.A b{color:var(--gA)} .chip.B b{color:var(--gB)} .chip.C b{color:var(--gC)}
+.chip.D b{color:var(--gD)} .chip.F b{color:var(--gF)}
+.count{color:var(--text-3);font-size:11.5px;font-weight:400;margin-left:auto}
+.bhead{display:flex;align-items:baseline;gap:8px;margin-bottom:6px}
+/* scoped to .dot: W/U/B/R/G would otherwise collide with the grade letters */
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.dot.W{background:var(--w)} .dot.U{background:var(--u)} .dot.B{background:var(--b)}
+.dot.R{background:var(--r)} .dot.G{background:var(--g)}
+.pips{display:inline-flex;gap:3px;align-items:center}
+
+/* old cards he reaches for */
+.cmp{border:1px solid var(--edge);border-radius:4px;overflow:hidden}
+.cmprow{display:grid;grid-template-columns:minmax(0,220px) 18px minmax(0,220px) minmax(0,1fr);
+  gap:10px;align-items:baseline;padding:9px 14px;border-bottom:1px solid rgba(55,46,82,.55);
+  background:var(--ink-2);font-size:13px}
+.cmprow:last-child{border-bottom:0}
+.cmprow .arrow{color:var(--text-3);text-align:center}
+.cmprow a{text-decoration:none}
+.cmprow .old{color:var(--text-2)}
+.cmprow .say{color:var(--text-3);font-size:12.5px;line-height:1.5}
+
+details{border:1px solid var(--edge);border-radius:4px;background:var(--ink-2);margin-bottom:10px}
+summary{cursor:pointer;padding:11px 14px;font-size:13.5px;list-style:none;display:flex;
+  align-items:baseline;gap:9px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";color:var(--text-3);font-size:11px}
+details[open] summary::before{content:"▾"}
+details[open] summary{border-bottom:1px solid var(--edge)}
+summary .t{font-family:Spectral,serif;font-weight:600;font-size:15px}
+.body{padding:13px 16px 4px}
+footer{margin-top:52px;border-top:1px solid var(--edge);padding-top:16px;
+  color:var(--text-3);font-size:12.5px;max-width:82ch;line-height:1.65}
+footer b{color:var(--text-2)}
+@media (max-width:720px){
+  .cmprow{grid-template-columns:1fr;gap:3px}
+  .cmprow .arrow{display:none}
+  .cmprow .old::before{content:"≈ ";color:var(--text-3)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <nav>
+    <a href="./">All 280 cards</a>
+    <a href="signals.html">What to commit to</a>
+    <a href="reviews.html">The set review</a>
+    <a href="ideas.html" aria-current="page">The ideas</a>
+    <button id="refresh">Refresh</button>
+  </nav>
+  <p id="stamp" style="margin:-14px 0 16px;color:var(--text-3);font-size:12px"></p>
+  <h1>The review, <em>collected by idea</em></h1>
+  <p class="lede">The ratings page gives you 280 numbers. Beside each one is a paragraph of
+  reasoning, and that is where a reviewer says the things a number cannot — that a mechanic is
+  weaker than it reads, that a card needs three others to work, that the format is slower than
+  the last one. Read card by card those observations are scattered across 280 entries.
+  <b>Collected by subject, they are the closest thing to a strategy article that exists for a
+  set nobody has played yet.</b></p>
+  <div class="score" id="score"></div>
+</header>
+
+<h2>The set's own vocabulary</h2>
+<p class="note">Reality Fracture's mechanics, how many cards carry each, the ones our model
+rates highest — and what the reviewer says about the mechanic itself rather than any one card.</p>
+<div class="grid" id="mech"></div>
+
+<h2>The ten archetypes, in his words</h2>
+<p class="note" id="archnote"></p>
+<div id="arch"></div>
+
+<h2>The arguments he keeps making</h2>
+<p class="note">Every sentence in the review filed under the subjects it touches. These are the
+claims that recur across many cards, which is what makes them claims about the format rather
+than about one card. Sentences where he commits to a judgement are listed first.</p>
+<div id="themes"></div>
+
+<h2>What he reaches for</h2>
+<p class="note" id="cmpnote"></p>
+<div class="cmp" id="cmp"></div>
+
+<h2>Where he commits</h2>
+<p class="note">The lines with a real judgement in them, at both ends. These are the cards he
+would be most wrong about — worth knowing before you take his word on one.</p>
+<div class="grid" id="verdicts"></div>
+
+<footer><p id="foot"></p></footer>
+</div>
+
+<script>
+const tier = g => (g||'C')[0];
+const esc = s => s.replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+const badge = o => o.special
+  ? `<span class="gr sg" title="A Special Guest: printed under its own set code, so it is not in our card data and has no grade. Very rare in Play Boosters.">guest</span>`
+  : `<span class="gr ${tier(o.grade)}">${o.grade||'—'}</span>`;
+
+function quote(q){
+  return `<div class="q"><p>${esc(q.text)}</p><div class="src">
+    ${badge(q)}
+    <a href="${q.uri||'#'}" target="_blank" rel="noopener">${esc(q.name)}</a>
+    ${q.rating!=null?`<span>rated ${q.rating}/10</span>`:''}
+  </div></div>`;
+}
+function chip(c){
+  return `<a class="chip ${tier(c.grade)}" href="${c.uri||'#'}" target="_blank" rel="noopener">
+    <b>${c.grade||'—'}</b> ${esc(c.name)}</a>`;
+}
+const pip = c => `<span class="dot ${c}"></span>`;
+
+fetch('ideas.json').then(r=>r.json()).then(d=>{
+  document.getElementById('score').innerHTML = `
+    <div><div class="k">${d.cards}</div><div class="v">cards written up</div></div>
+    <div><div class="k">${(d.words/1000).toFixed(1)}k</div><div class="v">words of reasoning behind the ratings</div></div>
+    <div><div class="k">${d.mechanics.length}</div><div class="v">set mechanics he weighs in on</div></div>
+    <div><div class="k">${d.comparisons.length}</div><div class="v">older cards he reaches for to explain a new one</div></div>`;
+
+  document.getElementById('mech').innerHTML = d.mechanics.map(m=>`
+    <div class="box">
+      <div class="bhead"><h3>${esc(m.name)}</h3><span class="count">${m.cards} cards</span></div>
+      <p class="sub">${esc(m.blurb)}</p>
+      <div class="chips">${m.top.map(chip).join('')}</div>
+      ${m.quotes.map(quote).join('')}
+    </div>`).join('');
+
+  const arch = d.synergies.archetypes;
+  document.getElementById('archnote').innerHTML =
+    `How much of the review each two-colour deck gets named in, and what is said when it is. `
+    + `<b>${esc(arch[0].name)}</b> gets the most attention by a distance. `
+    + `One caveat on the counts: five archetypes are named for the planeswalker tokens, and those `
+    + `same names appear as a keyword on 35 cards, so those five are matched strictly — only a `
+    + `possessive or an explicit "Jace deck" counts. Their numbers are therefore floors, not `
+    + `like-for-like with the five that have proper nouns of their own.`;
+  document.getElementById('arch').innerHTML = arch.map(a=>`
+    <details ${a.count>=12?'open':''}>
+      <summary>
+        <span class="pips">${a.pair.split('').map(pip).join('')}</span>
+        <span class="t">${esc(a.name)}</span>
+        <span class="count">${a.count} write-up${a.count===1?'':'s'} name it</span>
+      </summary>
+      <div class="body">${a.quotes.length ? a.quotes.map(quote).join('')
+        : `<p class="sub">No write-up names this deck. That is its own signal: a pair nobody
+           mentions is a pair without cards worth mentioning.</p>`}</div>
+    </details>`).join('');
+
+  document.getElementById('themes').innerHTML = d.themes.map(t=>`
+    <details>
+      <summary><span class="t">${esc(t.name)}</span>
+        <span class="count">${t.count} sentence${t.count===1?'':'s'}</span></summary>
+      <div class="body"><p class="sub">${esc(t.blurb)}</p>${t.quotes.map(quote).join('')}</div>
+    </details>`).join('');
+
+  const eg = d.comparisons[0];
+  document.getElementById('cmpnote').innerHTML =
+    `${d.comparisons.length} times he explains a new card by naming an old one — <b>"${esc(eg.name)}
+     is basically ${esc(eg.compared_to)}"</b>. For a set nobody has played that is worth more than
+     any feature we extract: it tells you how the card <em>plays</em>, which is exactly what card
+     text cannot. Matched against every card in the 31 sets we have cached, so only comparisons to
+     something we hold are caught — he reaches for older cards than that too.`;
+  document.getElementById('cmp').innerHTML = d.comparisons.map(c=>`
+    <div class="cmprow">
+      <a href="${c.uri||'#'}" target="_blank" rel="noopener">${badge(c)} ${esc(c.name)}</a>
+      <span class="arrow">≈</span>
+      <a class="old" href="${c.compared_uri||'#'}" target="_blank" rel="noopener">${esc(c.compared_to)}</a>
+      <span class="say">${esc(c.text)}</span>
+    </div>`).join('');
+
+  document.getElementById('verdicts').innerHTML = `
+    <div class="box"><div class="bhead"><h3>Cards he is sure about</h3>
+      <span class="count">rated 6+/10</span></div>
+      ${d.verdicts.high.map(quote).join('')}</div>
+    <div class="box"><div class="bhead"><h3>Cards he writes off</h3>
+      <span class="count">rated 2.5/10 or less</span></div>
+      ${d.verdicts.low.map(quote).join('')}</div>`;
+
+  document.getElementById('foot').innerHTML =
+    `Everything on this page is <b>quoted, never paraphrased</b> — each line keeps the card it
+     came from so you can check it. The grouping is ours; the sentences are his.
+     <br><br>
+     <b>${d.special_guests.length} cards here have no grade.</b> They are the set's Special
+     Guests — ${d.special_guests.join(', ')} — printed under their own set code, so Scryfall's
+     <code>set:fra</code> does not return them and the grader has never seen them. They are very
+     rare in Play Boosters but they are openable, and the review covers them, so they are kept
+     here and marked <span class="gr sg">guest</span> rather than quietly dropped.
+     <br><br>
+     <b>One source.</b> This is Draftsim's prose. MTG Arena Zone publishes ratings we can read,
+     and the ratings pages use both, but their write-ups are not in our cache — so where the
+     other two pages give you a consensus, this one gives you one person's reasoning. Read it
+     as an argument to weigh, not a description of the format. His track record on 25 past sets
+     is a rank correlation of 0.56 with what actually happened, and pre-release reviews
+     systematically over-rate rares — both measured on <a href="reviews.html">the set review
+     page</a>.`;
+});
+</script>
+<script src="pwa.js"></script>
+<script>FRA.mountRefresh(document.getElementById('refresh'), document.getElementById('stamp'));</script>
+</body>
+</html>

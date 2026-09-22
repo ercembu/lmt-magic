@@ -7,7 +7,7 @@ cd "$(dirname "$0")/.."
 TARGET="${1:-FRA}"
 rm -rf docs && mkdir -p docs
 
-cp web/index.html web/signals.html web/reviews.html web/pwa.js web/sw.js \
+cp web/index.html web/signals.html web/reviews.html web/ideas.html web/pwa.js web/sw.js \
    web/manifest.webmanifest web/icon-192.png web/icon-512.png docs/
 
 cp "data/grades_$TARGET.json"  docs/grades.json
@@ -16,6 +16,7 @@ cp data/validation.json        docs/validation.json
 cp data/calibration.json       docs/calibration.json
 cp "data/setinfo/$TARGET.json" docs/setinfo.json 2>/dev/null || true
 cp "data/reviewdata_$TARGET.json" docs/reviewdata.json 2>/dev/null || true
+cp "data/ideas_$TARGET.json"      docs/ideas.json      2>/dev/null || true
 
 # Pages serves this as a plain static dir; the .nojekyll stops Jekyll eating files
 touch docs/.nojekyll

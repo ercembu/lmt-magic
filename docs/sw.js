@@ -5,14 +5,14 @@
  * so a refresh picks up new grades, falling back to cache the moment the
  * network is unavailable.
  */
-const SHELL = "fra-shell-v1";
+const SHELL = "fra-shell-v2";
 const DATA = "fra-data-v1";
 const SHELL_FILES = [
-  "./", "./index.html", "./signals.html", "./reviews.html",
+  "./", "./index.html", "./signals.html", "./reviews.html", "./ideas.html",
   "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"
 ];
 const DATA_FILES = ["grades.json", "signals.json", "validation.json",
-                    "calibration.json", "setinfo.json", "reviewdata.json"];
+                    "calibration.json", "setinfo.json", "reviewdata.json", "ideas.json"];
 
 self.addEventListener("install", e => {
   e.waitUntil((async () => {
