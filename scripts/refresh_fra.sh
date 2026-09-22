@@ -9,6 +9,8 @@ $PY scripts/expert_grades.py FRA
 if [ ! -f data/expert/FRA.json ]; then
   echo "No FRA review published yet — nothing to do."; exit 0
 fi
+$PY scripts/mtgazone.py FRA 2>/dev/null || true
+$PY scripts/consensus.py FRA || true
 $PY scripts/train.py
 $PY scripts/calibrate.py
 $PY scripts/predict.py FRA

@@ -36,7 +36,11 @@ def set_features(setcode):
     """
     cards = json.load(open(f"{ROOT}/data/cards/{setcode}.json"))
     base = [features.extract(c) for c in cards]
-    ep = f"{ROOT}/data/expert/{setcode}.json"
+    # Prefer the calibrated two-reviewer consensus where it exists (consensus.py);
+    # fall back to the single published review otherwise.
+    ep = f"{ROOT}/data/expert_consensus/{setcode}.json"
+    if not os.path.exists(ep):
+        ep = f"{ROOT}/data/expert/{setcode}.json"
     expert = json.load(open(ep)) if os.path.exists(ep) else {}
     out = {}
     for c, f in zip(cards, base):

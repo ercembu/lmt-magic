@@ -516,6 +516,30 @@ non-text proxies (+0.0022 p=0.23; worse in combination) and rejected too — bot
 *today*, so a two-year-old set carries years of accumulated Commander play while an
 unreleased one carries preview-week speculation.
 
+### Feeding both reviewers to the model
+
+The grades use the **consensus of both reviews**, not just one. Two independent ratings of
+the same card are a less noisy estimate than either alone -- they agree at 0.75, so much of
+where they differ is noise that averaging cancels. It also lifts coverage from 264 cards to
+**280**, since each reviewer covered cards the other skipped.
+
+One wrinkle had to be handled. The model learned its mapping from *Draftsim's* rating
+distribution across 25 past sets, and a plain average is visibly tighter (sd 2.05 against
+2.34) because disagreement pulls values toward the middle -- that would put the input off
+the distribution the model was trained on. So `consensus.py` ranks cards by the consensus
+and then hands back Draftsim's own sorted values in that order: the improved ordering, the
+expected marginal distribution, nothing to recalibrate.
+
+Effect on FRA: 67% of grades unchanged, 29% moved one step, mean movement 0.38. The cards
+that moved are the ones the two reviewers disagreed about — `Ajani Resolute` C+ to B+ (MTGAZone
+3.5 against Draftsim 1.0), `Chandra, Chill of Compliance` B to C+.
+
+**This one is reasoned, not measured.** Every other change in this project was accepted or
+rejected on a leave-one-set-out test; this cannot be, because MTG Arena Zone ratings do not
+exist for the 25 past sets. The noise-reduction argument is sound and the quantile mapping
+makes it safe, but it has not been validated the way the rest has. Pasting a couple of that
+reviewer's past-set reviews would make it testable.
+
 ## Two pages
 
 **`index.html`** — all 280 cards sorted into colour piles, best to worst, with a detail

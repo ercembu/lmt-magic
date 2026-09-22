@@ -15,6 +15,10 @@ echo "==> 3/7  aggregating per-card win rates"
 $PY scripts/aggregate_labels.py HOB MSH SOS TMT ECL TLA EOE FIN TDM DFT DSK \
     BLB OTJ MKM LCI WOE LTR MOM ONE BRO DMU
 
+echo "==> 3b/7 combining the published reviews"
+$PY scripts/mtgazone.py "$TARGET" 2>/dev/null || true
+$PY scripts/consensus.py "$TARGET" || true
+
 echo "==> 4/7  measuring precedent for $TARGET's mechanics"
 $PY scripts/precedent_scan.py "$TARGET"
 
