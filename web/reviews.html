@@ -225,6 +225,7 @@ const LABELS={10:"Format-defining",9:"Bomb",8:"Bomb",7:"Excellent",6:"Very good"
 const pileOf=c=>{const k=c.colors||[];return !k.length?'C':k.length>1?'M':k[0];};
 
 fetch('reviewdata.json').then(r=>r.json()).then(d=>{
+  CardPreview.registerCards(d.cards);
   const tr=d.track_record.map(t=>t.spearman);
   const mean=tr.reduce((a,b)=>a+b,0)/tr.length;
   document.getElementById('score').innerHTML=`
@@ -347,6 +348,7 @@ fetch('reviewdata.json').then(r=>r.json()).then(d=>{
      where 17Lands win rates are stable.`;
 });
 </script>
+<script src="cardpreview.js"></script>
 <script src="pwa.js"></script>
 <script>FRA.mountRefresh(document.getElementById('refresh'), document.getElementById('stamp'));</script>
 </body>

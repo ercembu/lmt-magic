@@ -99,6 +99,7 @@ def load(setcode):
             (v for k, v in grades.items() if k.split(" // ")[0] == p["name"]), None)
         p["grade"] = g["grade"] if g else None
         p["uri"] = g["scryfall_uri"] if g else None
+        p["image"] = g.get("image") if g else None
         p["colors"] = (g.get("colors") or []) if g else []
         # The set's Special Guests are graded like everything else now, but they
         # are rare enough in Play Boosters that a page should say which is which.
@@ -126,7 +127,8 @@ def mechanics(prose, grades, setcode):
             for s in sentences(p["text"]):
                 if rx.search(s):
                     quotes.append({"name": p["name"], "grade": p["grade"], "special": p["special"],
-                                   "rating": p["rating"], "uri": p["uri"], "text": s})
+                                   "rating": p["rating"], "uri": p["uri"],
+                                   "image": p["image"], "text": s})
         # the ones with an argument in them first: longer sentences that are not
         # simply restating the card's own rules text
         quotes.sort(key=lambda q: -(len(q["text"]) + 60 * bool(SUPERLATIVE.search(q["text"]))))
@@ -135,7 +137,8 @@ def mechanics(prose, grades, setcode):
         if carriers:
             out.append({"name": name, "blurb": blurb, "cards": len(carriers),
                         "top": [{"name": n, "grade": grades[n]["grade"],
-                                 "uri": grades[n]["scryfall_uri"]} for n in best],
+                                 "uri": grades[n]["scryfall_uri"],
+                                 "image": grades[n].get("image")} for n in best],
                         "quotes": quotes[:6]})
     return out
 
@@ -155,6 +158,7 @@ def themes(prose):
                 seen.add(key)
                 found.append({"name": p["name"], "grade": p["grade"], "special": p["special"],
                               "rating": p["rating"], "uri": p["uri"], "text": s,
+                              "image": p["image"],
                               "strong": bool(SUPERLATIVE.search(s))})
         found.sort(key=lambda q: (-q["strong"], -len(q["text"])))
         out.append({"name": name, "blurb": blurb, "count": len(found),
@@ -169,7 +173,7 @@ def comparisons(prose, setcode):
     than any feature we extract, and he does it constantly. The name pool is
     every set we have cached, minus this one.
     """
-    pool = {}
+    pool, art = {}, {}
     for fn in sorted(os.listdir(f"{ROOT}/data/cards")):
         code = fn[:-5]
         if code == setcode:
@@ -178,6 +182,9 @@ def comparisons(prose, setcode):
             n = c["name"].split(" // ")[0]
             if len(n) >= 10 and " " in n:
                 pool.setdefault(n, c.get("scryfall_uri"))
+                art.setdefault(n, (c.get("image_uris")
+                                   or (c.get("card_faces", [{}])[0].get("image_uris") or {})
+                                   ).get("normal"))
     here = {g.split(" // ")[0] for g in
             json.load(open(f"{ROOT}/data/cards/{setcode}.json"))[0].keys()} if False else set()
     here = {c["name"].split(" // ")[0]
@@ -193,9 +200,10 @@ def comparisons(prose, setcode):
             sent = next((s for s in sentences(text) if n in s), None)
             if sent:
                 found.append({"name": p["name"], "grade": p["grade"], "uri": p["uri"],
-                              "special": p["special"],
+                              "special": p["special"], "image": p["image"],
                               "rating": p["rating"], "compared_to": n,
-                              "compared_uri": pool[n], "text": sent})
+                              "compared_uri": pool[n], "compared_image": art.get(n),
+                              "text": sent})
             break
     found.sort(key=lambda q: -q["rating"])
     return found
@@ -244,8 +252,8 @@ def synergies(prose, grades, setcode):
             for s in sentences(EMPOWER.sub(" ", p["text"])):
                 if rx.search(s) and s not in seen:
                     seen.add(s)
-                    hits.append({"name": p["name"], "grade": p["grade"],
-                                 "special": p["special"], "uri": p["uri"], "text": s})
+                    hits.append({"name": p["name"], "grade": p["grade"], "special": p["special"],
+                                 "uri": p["uri"], "image": p["image"], "text": s})
         hits.sort(key=lambda q: -len(q["text"]))
         arch.append({"pair": pair, "name": a["name"], "hook": a.get("hook", ""),
                      "word": word, "count": len(hits), "quotes": hits[:8]})
@@ -267,7 +275,8 @@ def verdicts(prose):
             if not SUPERLATIVE.search(s):
                 continue
             rec = {"name": p["name"], "grade": p["grade"], "rating": p["rating"],
-                   "uri": p["uri"], "text": s, "special": p["special"]}
+                   "uri": p["uri"], "image": p["image"], "text": s,
+                   "special": p["special"]}
             (hi if p["rating"] >= 6 else lo if p["rating"] <= 2.5 else []).append(rec)
     def dedupe(rows):
         seen, out = set(), []

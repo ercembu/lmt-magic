@@ -216,6 +216,13 @@ function views(o,d){
 }
 
 fetch('signals.json').then(r=>r.json()).then(d=>{
+  // every card the page can link to, so the scryfall links resolve an image
+  for(const col of d.colors) CardPreview.registerCards(d.pulls[col]);
+  for(const k in d.pairs){
+    const p=d.pairs[k];
+    CardPreview.registerCards(p.gold); CardPreview.registerCards(p.key_cards);
+    CardPreview.registerCards(p.top);
+  }
   const depth = Object.values(d.depth).sort((a,b)=>a.rank-b.rank);
   const maxZ = Math.max(...depth.map(x=>x.top15_mean_z));
   const deepest = depth[0], thinnest = depth[depth.length-1];
@@ -309,6 +316,7 @@ fetch('signals.json').then(r=>r.json()).then(d=>{
      worth something; where they do not, neither of them knows.` : ``);
 });
 </script>
+<script src="cardpreview.js"></script>
 <script src="pwa.js"></script>
 <script>FRA.mountRefresh(document.getElementById('refresh'), document.getElementById('stamp'));</script>
 </body>

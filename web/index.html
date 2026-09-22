@@ -356,7 +356,7 @@ function render(){
           const bd = c.trust ? c.trust.band : 1;
           const flagged = bd>=4
             ? `<span class="flagdot" title="unusual wording for this model — historically ±${c.trust.mean_grade_error.toFixed(1)} grades">&#9670;</span>` : '';
-          html += `<button class="tile" data-t="${tierOf(c.grade)}" data-name="${encodeURIComponent(c.name)}">
+          html += `<button class="tile" data-t="${tierOf(c.grade)}" data-name="${encodeURIComponent(c.name)}"${c.image?` data-img="${c.image}"`:''}>
             <span class="gr">${c.grade}</span>
             <span class="nm" title="${c.name.replace(/"/g,'&quot;')}">${c.name}</span>
             <span class="meta">${c.bonus_sheet?`<span class="sgtag" title="Special Guest — in Play Boosters, but rare enough that most pools will not have one">guest</span>`:''}${flagged}<span class="rar ${c.rarity}" title="${c.rarity}"></span></span>
@@ -521,6 +521,7 @@ Promise.all([
   if(want) openCard(want);
 });
 </script>
+<script src="cardpreview.js"></script>
 <script src="pwa.js"></script>
 <script>FRA.mountRefresh(document.getElementById('refresh'), document.getElementById('stamp'));</script>
 </body>

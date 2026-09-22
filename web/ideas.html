@@ -182,6 +182,13 @@ function chip(c){
 const pip = c => `<span class="dot ${c}"></span>`;
 
 fetch('ideas.json').then(r=>r.json()).then(d=>{
+  const reg = o => CardPreview.registerCards(o);
+  d.mechanics.forEach(m=>{ reg(m.top); reg(m.quotes); });
+  d.themes.forEach(t=>reg(t.quotes));
+  d.synergies.archetypes.forEach(a=>reg(a.quotes));
+  reg(d.verdicts.high); reg(d.verdicts.low); reg(d.comparisons);
+  // the older cards he cites are links too, under their own names
+  CardPreview.registerCards(d.comparisons, 'compared_to', 'compared_image');
   document.getElementById('score').innerHTML = `
     <div><div class="k">${d.cards}</div><div class="v">cards written up</div></div>
     <div><div class="k">${(d.words/1000).toFixed(1)}k</div><div class="v">words of reasoning behind the ratings</div></div>
@@ -267,6 +274,7 @@ fetch('ideas.json').then(r=>r.json()).then(d=>{
      page</a>.`;
 });
 </script>
+<script src="cardpreview.js"></script>
 <script src="pwa.js"></script>
 <script>FRA.mountRefresh(document.getElementById('refresh'), document.getElementById('stamp'));</script>
 </body>

@@ -27,42 +27,50 @@
     {
      "name": "Overwrite the Multiverse",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/59/overwrite-the-multiverse?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/59/overwrite-the-multiverse?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/c/4/c4554f5b-791b-48f6-bf54-ad28699e1beb.jpg?1788952080"
     },
     {
      "name": "Avatar of Burgeoning Echoes",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/122/avatar-of-burgeoning-echoes?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/122/avatar-of-burgeoning-echoes?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/5/9/5905995b-7a20-4602-a7cc-90aa5089a082.jpg?1788878208"
     },
     {
      "name": "Sanctum Lurker",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/64/sanctum-lurker?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/64/sanctum-lurker?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/1/2185c08f-bb4d-49d5-8b6c-c629a48bb61c.jpg?1789556729"
     },
     {
      "name": "Repurposed Enforcer",
      "grade": "A-",
-     "uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/5/35000e93-85d3-44f8-976a-5918ee4c71e0.jpg?1788878108"
     },
     {
      "name": "Hexhaven Battalion",
      "grade": "B+",
-     "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/b/3b6ac80e-c726-4bd0-893a-e666041a04a6.jpg?1789556695"
     },
     {
      "name": "Violent Echoes",
      "grade": "B",
-     "uri": "https://scryfall.com/card/fra/95/violent-echoes?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/95/violent-echoes?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/d/ad03ba90-2442-4a71-94df-2088b5b63662.jpg?1789127599"
     },
     {
      "name": "No Admittance",
      "grade": "B",
-     "uri": "https://scryfall.com/card/fra/89/no-admittance?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/89/no-admittance?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/1/1/11ba4fdd-cc03-4bb6-a493-91a9785771d0.jpg?1788878170"
     },
     {
      "name": "Mindseeker Oculus",
      "grade": "B",
-     "uri": "https://scryfall.com/card/fra/33/mindseeker-oculus?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/33/mindseeker-oculus?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/f/5/f5324741-353a-4a70-adb2-b631b00806dd.jpg?1789556707"
     }
    ],
    "quotes": [
@@ -72,6 +80,7 @@
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/273/kiora-of-salt-and-sand?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/8/1/8151f5f5-e9f6-4fbe-b543-f456ebf22aa5.jpg?1789127745",
      "text": "Since it doesn\u2019t have an ability that lets you empower, this isn\u2019t the best blue/green payoff in the world, but these 8/8 hexproof tokens should be more than enough to win a game if you can create even one."
     },
     {
@@ -80,6 +89,7 @@
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/44/theorists-proxy?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/7/1/710302ca-c4be-4069-8ce1-f531414c74e9.jpg?1788878151",
      "text": "The empower 3 allows you to draw a card, which already makes Theorist's Proxy comparable to something like a Spirited Companion , but the high toughness also makes it better at protecting your Jace token should you need to build it up for a bigger loyalty ability."
     },
     {
@@ -88,6 +98,7 @@
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/207/way-of-the-healer?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/5/0/50326a2a-7e10-464b-a97e-e880bda0558c.jpg?1789729503",
      "text": "Way of the Healer starts out by giving you up to two 2/2s from the Jace token it creates, which will be better than drawing cards on average, but then it just sticks in play and makes every empower ability you use a lot stronger."
     },
     {
@@ -96,6 +107,7 @@
      "special": false,
      "rating": 3.0,
      "uri": "https://scryfall.com/card/fra/62/rewrite-regrets?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/4/5/453cfde7-c460-4b55-9472-b714e16f24bb.jpg?1788952087",
      "text": "Rewrite Regrets might find a home in Reality Fracture thanks to the big landcycling creatures like Apex Witchstalker , especially since the empower ability is a nice bonus that other spells don\u2019t normally give us."
     },
     {
@@ -104,6 +116,7 @@
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/25/countersculpt?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/1/4/145b928d-a7ff-4fe5-ae4d-bbae7b1d955b.jpg?1788878107",
      "text": "The empower 1 will usually result in a free surveil, like Sinister Sabotage , and if you can get the mana discount on it because you have a bunch of other empower sources then it just gets even better."
     },
     {
@@ -112,6 +125,7 @@
      "special": false,
      "rating": 5.0,
      "uri": "https://scryfall.com/card/fra/132/fatehold-charm?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/c/f/cfc54011-647e-4428-bcdb-59400e1da49d.jpg?1789127637",
      "text": "When looking over these charms , I figured Fatehold Charm would probably have Consider as one of its modes, so the mode of drawing a card and empowering 2 is a very nice surprise."
     }
    ]
@@ -124,42 +138,50 @@
     {
      "name": "Diviner of Victory // Unwind History",
      "grade": "B+",
-     "uri": "https://scryfall.com/card/fra/28/diviner-of-victory-unwind-history?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/28/diviner-of-victory-unwind-history?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/0/8/0853bb80-8664-432a-8457-600139fd96d5.jpg?1788878145"
     },
     {
      "name": "Carnivorous Cultivator // Enroot",
      "grade": "B",
-     "uri": "https://scryfall.com/card/fra/100/carnivorous-cultivator-enroot?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/100/carnivorous-cultivator-enroot?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/7/9/79dd5c54-5ea5-47b5-8f9b-50ed57a5ea45.jpg?1789385967"
     },
     {
      "name": "Prudent Fateseer // Peer Review",
      "grade": "B-",
-     "uri": "https://scryfall.com/card/fra/146/prudent-fateseer-peer-review?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/146/prudent-fateseer-peer-review?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/c/6c1c790b-9e0e-4964-9ea3-554843907f06.jpg?1788329412"
     },
     {
      "name": "Bloodline Recollector // Ancestral Craving",
      "grade": "B-",
-     "uri": "https://scryfall.com/card/fra/49/bloodline-recollector-ancestral-craving?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/49/bloodline-recollector-ancestral-craving?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/4/f/4fcc913e-f736-460a-b24b-022fa2e861b9.jpg?1788329264"
     },
     {
      "name": "Fatehold Chronologist // Peer Review",
      "grade": "B-",
-     "uri": "https://scryfall.com/card/fra/133/fatehold-chronologist-peer-review?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/133/fatehold-chronologist-peer-review?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/9/29e7ec16-0c16-48aa-8e09-ce6e0d5bd40b.jpg?1789060173"
     },
     {
      "name": "Emergency Phytomedic // Seed Suture",
      "grade": "C+",
-     "uri": "https://scryfall.com/card/fra/130/emergency-phytomedic-seed-suture?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/130/emergency-phytomedic-seed-suture?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/d/e/de94d388-919d-44ff-baef-8c90a417ac6d.jpg?1789637792"
     },
     {
      "name": "Vigorbloom Vanguard // Seed Suture",
      "grade": "C+",
-     "uri": "https://scryfall.com/card/fra/161/vigorbloom-vanguard-seed-suture?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/161/vigorbloom-vanguard-seed-suture?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/c/acefc515-bf97-4dc0-b0f7-ae8ae5a61671.jpg?1788329423"
     },
     {
      "name": "Semester Foreseer // Peer Review",
      "grade": "C+",
-     "uri": "https://scryfall.com/card/fra/39/semester-foreseer-peer-review?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/39/semester-foreseer-peer-review?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/7/e/7e5a640b-fd88-4b5a-9dfc-1d8f5a5cef41.jpg?1789127516"
     }
    ],
    "quotes": [
@@ -169,6 +191,7 @@
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/146/prudent-fateseer-peer-review?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/c/6c1c790b-9e0e-4964-9ea3-554843907f06.jpg?1788329412",
      "text": "Most of the power behind Prudent Fateseer comes from the fact that it has Peer Review as a prepared spell, so it\u2019s actually two creatures in one card, but I don\u2019t give it much credit beyond that."
     },
     {
@@ -177,6 +200,7 @@
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/fra/88/master-of-barbs?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/4/4/4404d9d4-9cdd-4dad-a4f6-574d90db5052.jpg?1789127596",
      "text": "Normally, the ability on Master of Barbs would look kind of situational, but thanks to the Stingerquill prepared spell, Vicious Verse, there should actually be a lot of ways to trigger it."
     },
     {
@@ -185,6 +209,7 @@
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/148/solarium-sentry?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/1/e/1ef12dcf-df50-4da6-8c4c-e2937ba9698e.jpg?1789127651",
      "text": "Most cards in your average Limited deck are going to cost more than 2 mana, but the prevalance of cheap prepare spells means Solarium Sentry will actually trigger a good bit."
     },
     {
@@ -193,6 +218,7 @@
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/28/diviner-of-victory-unwind-history?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/0/8/0853bb80-8664-432a-8457-600139fd96d5.jpg?1788878145",
      "text": "Between its own prepared spell, Jace tokens, and the Fatehold archetype as a whole, Diviner of Victory may be able to attack as a 3/3 or even a 4/4 on certain turns."
     },
     {
@@ -201,6 +227,7 @@
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/39/semester-foreseer-peer-review?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/7/e/7e5a640b-fd88-4b5a-9dfc-1d8f5a5cef41.jpg?1789127516",
      "text": "Four mana for a 3/4 plus a surveil isn\u2019t that good, but getting a free prepared spell out of it on a later turn, or perhaps the same turn, sounds really good."
     },
     {
@@ -209,6 +236,7 @@
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/26/cruel-calculations?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/f/7/f76c4d8e-3e1f-4264-99af-1b8adb9a06be.jpg?1789127482",
      "text": "All you need to do is cast the Omit Variables prepared spell and this will draw you three cards, which is a great deal for 3 mana."
     }
    ]
@@ -221,42 +249,50 @@
     {
      "name": "Overwrite the Multiverse",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/59/overwrite-the-multiverse?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/59/overwrite-the-multiverse?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/c/4/c4554f5b-791b-48f6-bf54-ad28699e1beb.jpg?1788952080"
     },
     {
      "name": "Avatar of Burgeoning Echoes",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/122/avatar-of-burgeoning-echoes?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/122/avatar-of-burgeoning-echoes?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/5/9/5905995b-7a20-4602-a7cc-90aa5089a082.jpg?1788878208"
     },
     {
      "name": "Repurposed Enforcer",
      "grade": "A-",
-     "uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/19/repurposed-enforcer?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/5/35000e93-85d3-44f8-976a-5918ee4c71e0.jpg?1788878108"
     },
     {
      "name": "Denzilore Fatehold",
      "grade": "B+",
-     "uri": "https://scryfall.com/card/fra/128/denzilore-fatehold?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/128/denzilore-fatehold?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/8/986f9e98-9d8d-428b-9187-860745cf3269.jpg?1788878215"
     },
     {
      "name": "Diviner of Victory // Unwind History",
      "grade": "B+",
-     "uri": "https://scryfall.com/card/fra/28/diviner-of-victory-unwind-history?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/28/diviner-of-victory-unwind-history?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/0/8/0853bb80-8664-432a-8457-600139fd96d5.jpg?1788878145"
     },
     {
      "name": "Hexhaven Battalion",
      "grade": "B+",
-     "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/b/3b6ac80e-c726-4bd0-893a-e666041a04a6.jpg?1789556695"
     },
     {
      "name": "Violent Echoes",
      "grade": "B",
-     "uri": "https://scryfall.com/card/fra/95/violent-echoes?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/95/violent-echoes?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/d/ad03ba90-2442-4a71-94df-2088b5b63662.jpg?1789127599"
     },
     {
      "name": "Enlightened Confidant",
      "grade": "B",
-     "uri": "https://scryfall.com/card/fra/5/enlightened-confidant?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/5/enlightened-confidant?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/4/8/483fcc58-cc6e-4452-a696-7b38e117c837.jpg?1788329184"
     }
    ],
    "quotes": [
@@ -266,6 +302,7 @@
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/226/yuriko-hope-from-the-shadows?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/4/5/45e81487-8b8c-480b-922a-eaa9edc7201d.jpg?1789127717",
      "text": "Yuriko, Hope from the Shadows doesn\u2019t do this particularly consistently, but it does also have the buyout of getting to surveil 2, which can also trigger Fatehold cards, so this ninja seems pretty good on balance."
     },
     {
@@ -274,6 +311,7 @@
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/fra/203/saheeli-consul-of-oversight?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/0/7/07572be0-6610-493c-a21e-14b78e9805c9.jpg?1789645608",
      "text": "Creating a thopter token every time you scry or surveil is incredible in Fatehold, but it also synergizes incredibly with the Jace tokens, so it might just be good enough to top the curve in any white deck."
     },
     {
@@ -282,6 +320,7 @@
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/25/countersculpt?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/1/4/145b928d-a7ff-4fe5-ae4d-bbae7b1d955b.jpg?1788878107",
      "text": "The empower 1 will usually result in a free surveil, like Sinister Sabotage , and if you can get the mana discount on it because you have a bunch of other empower sources then it just gets even better."
     },
     {
@@ -290,6 +329,7 @@
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/218/proft-consulting-detective?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/b/8/b8466593-40fe-4557-89b2-760c1c92087b.jpg?1789127178",
      "text": "If you\u2019re drafting Fatehold and have plenty of ways to scry and surveil, then Proft, Consulting Detective is one of your best payoffs."
     },
     {
@@ -298,6 +338,7 @@
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/fra/145/proctor-of-potential?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/c/f/cf0eec8c-0475-4050-8144-481a9bb13a0f.jpg?1789127661",
      "text": "It\u2019s already great as a 2-drop 3/1 that surveils when it enters and can replay itself out of the graveyard, but then consider how it synergizes with other cards from this color pair."
     },
     {
@@ -306,6 +347,7 @@
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/207/way-of-the-healer?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/5/0/50326a2a-7e10-464b-a97e-e880bda0558c.jpg?1789729503",
      "text": "As powerful as the empower mechanic can be, only getting to surveil or draw limits what the Jace tokens can do, so giving them better abilities sounds very lucrative."
     }
    ]
@@ -318,42 +360,50 @@
     {
      "name": "Garruk, Veiled Butcher",
      "grade": "A+",
-     "uri": "https://scryfall.com/card/fra/229/garruk-veiled-butcher?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/229/garruk-veiled-butcher?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/d/4/d48bfb8a-d135-45f3-be99-4694b4b9ab93.jpg?1788329269"
     },
     {
      "name": "Kwia Vigorbloom",
      "grade": "A+",
-     "uri": "https://scryfall.com/card/fra/140/kwia-vigorbloom?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/140/kwia-vigorbloom?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/d/2d6ff182-a853-4898-895b-072c89324ca7.jpg?1788878236"
     },
     {
      "name": "Ajani Unrelenting",
      "grade": "A+",
-     "uri": "https://scryfall.com/card/fra/242/ajani-unrelenting?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/242/ajani-unrelenting?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/b/c/bc3c096f-7f6c-474c-a2c8-75d3e6ddd6f5.jpg?1788329317"
     },
     {
      "name": "Garruk, Curse Breaker",
      "grade": "A+",
-     "uri": "https://scryfall.com/card/fra/259/garruk-curse-breaker?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/259/garruk-curse-breaker?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/0/90ca5812-ceb5-46bd-b049-aed7ff10e6af.jpg?1788329370"
     },
     {
      "name": "The Theorist, Jace Beleren",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/0/20bb8c55-4b0b-425f-8201-b54fa2fdde86.jpg?1788329228"
     },
     {
      "name": "Lyra, Tolarian Archangel",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/217/lyra-tolarian-archangel?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/217/lyra-tolarian-archangel?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/5/a5183681-447b-4023-91f7-00e9338f4417.jpg?1789128032"
     },
     {
      "name": "Ingris Stingerquill",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/137/ingris-stingerquill?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/137/ingris-stingerquill?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/4/6471b135-33a8-4005-9a07-ebb74e0bf145.jpg?1788878212"
     },
     {
      "name": "Aerid Konstrari",
      "grade": "A",
-     "uri": "https://scryfall.com/card/fra/121/aerid-konstrari?utm_source=api"
+     "uri": "https://scryfall.com/card/fra/121/aerid-konstrari?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/f/1/f17d2792-b075-4c47-ad38-e7a7eaee5f8c.jpg?1788878199"
     }
    ],
    "quotes": [
@@ -363,6 +413,7 @@
      "special": false,
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/30/icy-reception?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/8/d/8d754b96-5e44-45af-9c7a-b0da59fbe4c3.jpg?1788779540",
      "text": "A Mana Leak that only hits creatures and legendary spells is still pretty strong, since that should be most of the cards your opponents will play in the first place."
     },
     {
@@ -371,6 +422,7 @@
      "special": false,
      "rating": 3.0,
      "uri": "https://scryfall.com/card/fra/6/fateshaper-aspirant?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/f/0/f0c8400d-824f-4d79-84bc-7615a0deb831.jpg?1789556683",
      "text": "I\u2019d imagine that nearly every deck in this format will have at least one legendary creature in it, thanks to the prevalence of the echoed pairs."
     },
     {
@@ -379,6 +431,7 @@
      "special": false,
      "rating": 9.0,
      "uri": "https://scryfall.com/card/fra/159/uldaros-theorix?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/7/a7ad622a-42ff-48fa-ae95-12e0a5bd9387.jpg?1788878220",
      "text": "All five of these legendary sphinxes are phenomenal cards and will all be great starts to any draft in this format."
     },
     {
@@ -387,6 +440,7 @@
      "special": false,
      "rating": 5.0,
      "uri": "https://scryfall.com/card/fra/240/winter-tormented-loner?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/6/9670f754-f41f-45ac-8e8b-025ad2c0f66b.jpg?1789127724",
      "text": "This is a pretty good way to design a legendary Fleshbag Marauder ."
     },
     {
@@ -395,6 +449,7 @@
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/207/way-of-the-healer?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/5/0/50326a2a-7e10-464b-a97e-e880bda0558c.jpg?1789729503",
      "text": "This cycle of legendary enchantments is really intriguing."
     }
    ]
@@ -413,6 +468,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/15/memory-trap?utm_source=api",
      "text": "This is an early frontrunner for white\u2019s best common, but even if it isn\u2019t, it should still be a premium pickup when you\u2019re drafting white.",
+     "image": "https://cards.scryfall.io/normal/front/2/f/2f5345ae-4489-4d05-b2d5-c71285254f05.jpg?1788866058",
      "strong": true
     },
     {
@@ -422,6 +478,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/92/skilled-battlecarver?utm_source=api",
      "text": "This is a very powerful 2-drop, but it\u2019s best suited for aggressive decks, meaning it looks pretty mediocre in Konstrari builds.",
+     "image": "https://cards.scryfall.io/normal/front/0/e/0e44f959-1322-4abd-b6eb-dea992307c0c.jpg?1789556811",
      "strong": true
     },
     {
@@ -431,6 +488,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/143/paradox-shaper-omit-variables?utm_source=api",
      "text": "It even works well in the late game to restock your deck with some of your best cards and stop yourself from decking out.",
+     "image": "https://cards.scryfall.io/normal/front/e/6/e61b9d48-0ace-4453-afe0-a1024444bac0.jpg?1788329390",
      "strong": true
     },
     {
@@ -440,6 +498,7 @@
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/41/sphinxs-approach?utm_source=api",
      "text": "I think this is quite playable in a slower control deck, but I\u2019d never play it in an aggressive deck.",
+     "image": "https://cards.scryfall.io/normal/front/f/4/f49be090-c745-40e5-bc1c-605b8d98acdf.jpg?1789644816",
      "strong": true
     },
     {
@@ -449,6 +508,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api",
      "text": "This card looks amazing to me, and it\u2019s my early pick for white\u2019s best common.",
+     "image": "https://cards.scryfall.io/normal/front/3/b/3b6ac80e-c726-4bd0-893a-e666041a04a6.jpg?1789556695",
      "strong": true
     },
     {
@@ -458,6 +518,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/104/greenhouse-propagator?utm_source=api",
      "text": "Turn 3 is definitely not my favorite time to be ramping , but Reality Fracture does look slow enough to accommodate that, and Soul Tether is also a 3-mana ramp spell, which leads me to believe this is actually what we\u2019ll be doing in this set.",
+     "image": "https://cards.scryfall.io/normal/front/a/5/a56e0f91-b128-4693-a949-53cb403f4fbf.jpg?1789127136",
      "strong": false
     },
     {
@@ -467,6 +528,7 @@
      "rating": 9.0,
      "uri": "https://scryfall.com/card/fra/121/aerid-konstrari?utm_source=api",
      "text": "Aerid Konstrari isn\u2019t only a beefy creature that can close out games, it also ramps you with a Heartwood token and then has an activated ability that not only creates more of them but also speeds up the clock and kills your opponent faster?",
+     "image": "https://cards.scryfall.io/normal/front/f/1/f17d2792-b075-4c47-ad38-e7a7eaee5f8c.jpg?1788878199",
      "strong": false
     },
     {
@@ -476,6 +538,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/249/marwyn-the-clearcutter?utm_source=api",
      "text": "When you get to the late game, turning your Heartwood tokens and excess lands into more cards is something that should help you turn the corner, but only being a vanilla creature up to that point means it\u2019s fairly limited in scope.",
+     "image": "https://cards.scryfall.io/normal/front/f/9/f93da73c-ca8b-438e-8387-6109dac3fc1a.jpg?1789644549",
      "strong": false
     },
     {
@@ -485,6 +548,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/252/tetsuko-umezawa-pursuer?utm_source=api",
      "text": "While you need to support it to maximize its potential, Tetsuko Umezawa, Pursuer is a very powerful and aggressive creature that demands an answer of some kind and even punishes chump blocks with its last ability.",
+     "image": "https://cards.scryfall.io/normal/front/d/f/df818900-ce5e-4b0d-a927-c975cbef7eda.jpg?1789128002",
      "strong": false
     },
     {
@@ -494,6 +558,7 @@
      "rating": 5.0,
      "uri": "https://scryfall.com/card/fra/254/way-of-the-pyromancer?utm_source=api",
      "text": "Of course, having your Jace token act as a mana dork is a lot worse than it being a creature, since it\u2019s a lot more vulnerable, but with there being so few other ways to do this early, it should be worth the risk.",
+     "image": "https://cards.scryfall.io/normal/front/c/1/c1a00020-7c14-4503-a057-5763704bb83e.jpg?1788878311",
      "strong": false
     },
     {
@@ -503,6 +568,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/spg/167/splinter-twin?utm_source=api",
      "text": "If you pick it up early in a draft, you could look for a copy or two of Divining Duelist and put together the classic auto-win that made this card the bane of every Modern player\u2019s existence throughout the 2010s.",
+     "image": "https://cards.scryfall.io/normal/front/a/0/a0c1323f-d468-4d8a-beed-5077d91b86d9.jpg?1788922613",
      "strong": false
     },
     {
@@ -512,6 +578,7 @@
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/166/afterthought-sentry?utm_source=api",
      "text": "We never see colorless creatures of this size, so I\u2019m interested to see how Afterthought Sentry plays out, but I\u2019d imagine that aggressive decks will be able to find better options in their own colors.",
+     "image": "https://cards.scryfall.io/normal/front/4/d/4d4b3bf7-a149-4099-b97d-4e36a87dfa60.jpg?1789385875",
      "strong": false
     },
     {
@@ -521,6 +588,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/148/solarium-sentry?utm_source=api",
      "text": "When you\u2019re matched up against a deck like blue/red prowess though, its stock goes way up because now it should trigger off of most of their spells, making it incredibly hard for the opponent to race.",
+     "image": "https://cards.scryfall.io/normal/front/1/e/1ef12dcf-df50-4da6-8c4c-e2937ba9698e.jpg?1789127651",
      "strong": false
     },
     {
@@ -530,6 +598,7 @@
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/85/hallway-heckler-vicious-verse?utm_source=api",
      "text": "Tacking on a Vicious Verse for free is nice, but decks that want that extra damage ping are probably going to want to be more aggressive than what a creature like Hallway Heckler is suited for.",
+     "image": "https://cards.scryfall.io/normal/front/7/e/7e324816-552f-455d-97c4-5ea6b26d2e6e.jpg?1789127576",
      "strong": false
     }
    ]
@@ -546,6 +615,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/194/vigorbloom-annex?utm_source=api",
      "text": "As with all cycles of common dual lands , you should pick these up if you need fixing and prioritize them over medium-level commons, but not over premium cards like removal or the more powerful legends.",
+     "image": "https://cards.scryfall.io/normal/front/d/b/db8c7bdd-76cd-4be0-ae0d-d430e9a5fe7a.jpg?1789557019",
      "strong": true
     },
     {
@@ -555,6 +625,7 @@
      "rating": 8.0,
      "uri": "https://scryfall.com/card/fra/93/stingcaster-mage?utm_source=api",
      "text": "The best thing to do will typically be to flashback a removal spell and turn this into a makeshift Flametongue Kavu , but there are a lot of other options.",
+     "image": "https://cards.scryfall.io/normal/front/2/d/2d8e8e5f-3bf5-490d-aa9c-9df2b26f1460.jpg?1788329303",
      "strong": true
     },
     {
@@ -564,6 +635,7 @@
      "rating": 3.0,
      "uri": "https://scryfall.com/card/fra/236/teyo-diamondblade-mage?utm_source=api",
      "text": "Only giving a single +1/+1 counter and deathtouch isn\u2019t the best trick in the world, and being only a 3/1 for 4 mana itself isn\u2019t very impressive.",
+     "image": "https://cards.scryfall.io/normal/front/1/0/100c3b67-0c92-4224-b5ed-67789c612df7.jpg?1789470892",
      "strong": true
     },
     {
@@ -573,6 +645,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/56/last-gasp?utm_source=api",
      "text": "For 2 mana, this is one of the most efficient removal spells in FRA, and it\u2019ll probably be the best black common.",
+     "image": "https://cards.scryfall.io/normal/front/2/3/2381d123-d8c7-4822-98fe-b1c365beb5ed.jpg?1789127524",
      "strong": true
     },
     {
@@ -582,6 +655,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/204/teyo-lightshield-expert?utm_source=api",
      "text": "Some, like Shardmage's Rescue , provide some additional benefit beyond stopping a removal spell, but Teyo, Lightshield Expert not only gives a +1/+1 counter (or loyalty counter), but a whole body for you to use to your advantage.",
+     "image": "https://cards.scryfall.io/normal/front/5/f/5f7521d7-9f1f-4f03-b2ea-dd2a1b1e4e5b.jpg?1789471515",
      "strong": false
     },
     {
@@ -591,6 +665,7 @@
      "rating": 5.0,
      "uri": "https://scryfall.com/card/fra/101/compel-brutality?utm_source=api",
      "text": "You should be wary of black and red, as their removal spells are very good in Reality Fracture and they will have ways to disrupt this, but it\u2019s still a strong card, especially when you pair it with a deathtouch creature.",
+     "image": "https://cards.scryfall.io/normal/front/b/d/bd32d736-7a58-46b9-90b4-2cac3c3e80a1.jpg?1788521235",
      "strong": false
     },
     {
@@ -600,6 +675,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/252/tetsuko-umezawa-pursuer?utm_source=api",
      "text": "While you need to support it to maximize its potential, Tetsuko Umezawa, Pursuer is a very powerful and aggressive creature that demands an answer of some kind and even punishes chump blocks with its last ability.",
+     "image": "https://cards.scryfall.io/normal/front/d/f/df818900-ce5e-4b0d-a927-c975cbef7eda.jpg?1789128002",
      "strong": false
     },
     {
@@ -609,6 +685,7 @@
      "rating": 1.0,
      "uri": "https://scryfall.com/card/fra/34/perfected-theory?utm_source=api",
      "text": "While costing 1 mana and having the flexibility to buff your own creature or downgrade your opponent\u2019s, Perfected Theory is still just a combat trick in the color least likely to want one in the first place.",
+     "image": "https://cards.scryfall.io/normal/front/d/0/d0ecae06-bc5a-4886-84df-c2900816f226.jpg?1788329222",
      "strong": false
     },
     {
@@ -618,6 +695,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/58/multiply-by-zero?utm_source=api",
      "text": "It\u2019s a perfect representation of the name and a very powerful removal spell, able to kill any creature that doesn\u2019t have a toughness buff of some kind, and it can at least shrink those creatures in combat.",
+     "image": "https://cards.scryfall.io/normal/front/9/0/90d684a4-9639-4792-8760-2011a7a85370.jpg?1789644823",
      "strong": false
     },
     {
@@ -627,6 +705,7 @@
      "rating": 10.0,
      "uri": "https://scryfall.com/card/fra/118/verdant-kraken?utm_source=api",
      "text": "If your opponent can\u2019t answer it before their turn begins, you\u2019re getting a minimum of a 3/3 out of the deal, and then even more if they still can\u2019t find a way to remove it.",
+     "image": "https://cards.scryfall.io/normal/front/2/b/2bb7a8eb-227f-410b-859f-750ef0aea2f0.jpg?1789644841",
      "strong": false
     },
     {
@@ -636,6 +715,7 @@
      "rating": 0.0,
      "uri": "https://scryfall.com/card/fra/438/emrakul-the-exigent-doom?utm_source=api",
      "text": "I\u2019m not saying Emrakul will be removed every time, but the fact that your opponent can deal with it is too much of a downside for me to want to go out of my way to play it.",
+     "image": "https://cards.scryfall.io/normal/front/e/e/ee609b68-5c9c-43e0-aff4-eb1bbc8b2911.jpg?1789060230",
      "strong": false
     },
     {
@@ -645,6 +725,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/54/extended-absence?utm_source=api",
      "text": "There\u2019s a lot of good removal in Reality Fracture , but there\u2019ll always be a need to cleanly remove anything, and the extra damage ping is very welcome in Stingerquill.",
+     "image": "https://cards.scryfall.io/normal/front/e/b/eb4b6ed8-782e-4473-abc9-d50bf2275c6a.jpg?1789556713",
      "strong": false
     },
     {
@@ -654,6 +735,7 @@
      "rating": 9.0,
      "uri": "https://scryfall.com/card/fra/107/hungering-puppetbeast?utm_source=api",
      "text": "While I\u2019m not ecstatic at the thought of losing my Heartwood tokens to fuel it, it\u2019s so absurdly big and difficult to deal with that I don\u2019t think I\u2019ll care too much.",
+     "image": "https://cards.scryfall.io/normal/front/3/d/3db2da7a-8088-4117-916b-f9c905d1b45b.jpg?1789127646",
      "strong": false
     },
     {
@@ -663,6 +745,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/264/pia-aether-ascetic?utm_source=api",
      "text": "You can\u2019t always run Pia, Aether Ascetic , but this set has quite a few powerful enchantments, including the cycle of \u201cWay\u201d enchantments and multiple removal spells.",
+     "image": "https://cards.scryfall.io/normal/front/f/f/ff0bc30f-9d20-458e-808f-bdc2825905a5.jpg?1789387120",
      "strong": false
     }
    ]
@@ -679,6 +762,7 @@
      "rating": 9.0,
      "uri": "https://scryfall.com/card/fra/121/aerid-konstrari?utm_source=api",
      "text": "This card is absolutely incredible and a great first pick to cement you into what might be the best Hexhaven school.",
+     "image": "https://cards.scryfall.io/normal/front/f/1/f17d2792-b075-4c47-ad38-e7a7eaee5f8c.jpg?1788878199",
      "strong": true
     },
     {
@@ -688,6 +772,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/252/tetsuko-umezawa-pursuer?utm_source=api",
      "text": "While you need to support it to maximize its potential, Tetsuko Umezawa, Pursuer is a very powerful and aggressive creature that demands an answer of some kind and even punishes chump blocks with its last ability.",
+     "image": "https://cards.scryfall.io/normal/front/d/f/df818900-ce5e-4b0d-a927-c975cbef7eda.jpg?1789128002",
      "strong": false
     },
     {
@@ -697,6 +782,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/230/gideon-the-oathless?utm_source=api",
      "text": "Although Gideon isn\u2019t a huge bomb or anything, it seems to provide just enough to be a very annoying creature and a welcome addition to any deck, particularly aggressive ones.",
+     "image": "https://cards.scryfall.io/normal/front/c/9/c985b0d1-25bd-4069-aab7-a566ff27a8f6.jpg?1789127990",
      "strong": false
     },
     {
@@ -706,6 +792,7 @@
      "rating": 5.0,
      "uri": "https://scryfall.com/card/fra/64/sanctum-lurker?utm_source=api",
      "text": "Sanctum Lurker isn\u2019t exactly a bomb rare, but it does provide a good amount of value and is a great addition to any deck with a good number of empower cards.",
+     "image": "https://cards.scryfall.io/normal/front/2/1/2185c08f-bb4d-49d5-8b6c-c629a48bb61c.jpg?1789556729",
      "strong": false
     },
     {
@@ -715,6 +802,7 @@
      "rating": 10.0,
      "uri": "https://scryfall.com/card/fra/140/kwia-vigorbloom?utm_source=api",
      "text": "The Black Lotus tokens it creates are a funny touch, but really not necessary to make this one of the silliest bombs in the set.",
+     "image": "https://cards.scryfall.io/normal/front/2/d/2d6ff182-a853-4898-895b-072c89324ca7.jpg?1788878236",
      "strong": false
     },
     {
@@ -724,6 +812,7 @@
      "rating": 7.0,
      "uri": "https://scryfall.com/card/fra/200/liliana-the-faultless?utm_source=api",
      "text": "While not a bomb rare by any means, there\u2019s a lot to like on this Liliana, and it comes down as early as turn 1.",
+     "image": "https://cards.scryfall.io/normal/front/7/0/70d8c400-87dc-4f15-808f-e54a95d779fc.jpg?1788329194",
      "strong": false
     },
     {
@@ -733,6 +822,7 @@
      "rating": 10.0,
      "uri": "https://scryfall.com/card/fra/128/denzilore-fatehold?utm_source=api",
      "text": "This card is just obscene, and I can\u2019t imagine being able to win the game against anyone who plays it right.",
+     "image": "https://cards.scryfall.io/normal/front/9/8/986f9e98-9d8d-428b-9187-860745cf3269.jpg?1788878215",
      "strong": false
     },
     {
@@ -742,6 +832,7 @@
      "rating": 10.0,
      "uri": "https://scryfall.com/card/fra/118/verdant-kraken?utm_source=api",
      "text": "This bomb rare is a reference to Verdant Force , an extremely powerful rare in its own right.",
+     "image": "https://cards.scryfall.io/normal/front/2/b/2bb7a8eb-227f-410b-859f-750ef0aea2f0.jpg?1789644841",
      "strong": false
     },
     {
@@ -751,6 +842,7 @@
      "rating": 9.0,
      "uri": "https://scryfall.com/card/fra/159/uldaros-theorix?utm_source=api",
      "text": "Our last sphinx and it\u2019s still a massive bomb.",
+     "image": "https://cards.scryfall.io/normal/front/a/7/a7ad622a-42ff-48fa-ae95-12e0a5bd9387.jpg?1788878220",
      "strong": false
     }
    ]
@@ -767,6 +859,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/273/kiora-of-salt-and-sand?utm_source=api",
      "text": "Since it doesn\u2019t have an ability that lets you empower, this isn\u2019t the best blue/green payoff in the world, but these 8/8 hexproof tokens should be more than enough to win a game if you can create even one.",
+     "image": "https://cards.scryfall.io/normal/front/8/1/8151f5f5-e9f6-4fbe-b543-f456ebf22aa5.jpg?1789127745",
      "strong": true
     },
     {
@@ -776,6 +869,7 @@
      "rating": 7.0,
      "uri": "https://scryfall.com/card/fra/124/bloombrute?utm_source=api",
      "text": "I often say that the best build around cards in Limited are usually the ones that draw a card whenever you do the thing, so of course I like Bloombrute .",
+     "image": "https://cards.scryfall.io/normal/front/6/b/6b804503-9c70-4b1f-bb13-a65fb6dd3ef8.jpg?1789644843",
      "strong": true
     },
     {
@@ -785,6 +879,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/252/tetsuko-umezawa-pursuer?utm_source=api",
      "text": "While you need to support it to maximize its potential, Tetsuko Umezawa, Pursuer is a very powerful and aggressive creature that demands an answer of some kind and even punishes chump blocks with its last ability.",
+     "image": "https://cards.scryfall.io/normal/front/d/f/df818900-ce5e-4b0d-a927-c975cbef7eda.jpg?1789128002",
      "strong": false
     },
     {
@@ -794,6 +889,7 @@
      "rating": 7.0,
      "uri": "https://scryfall.com/card/fra/203/saheeli-consul-of-oversight?utm_source=api",
      "text": "Creating a thopter token every time you scry or surveil is incredible in Fatehold, but it also synergizes incredibly with the Jace tokens, so it might just be good enough to top the curve in any white deck.",
+     "image": "https://cards.scryfall.io/normal/front/0/7/07572be0-6610-493c-a21e-14b78e9805c9.jpg?1789645608",
      "strong": false
     },
     {
@@ -803,6 +899,7 @@
      "rating": 9.0,
      "uri": "https://scryfall.com/card/fra/11/guiding-hydra?utm_source=api",
      "text": "You obviously need a lot of creatures to make this work to its full potential, but white looks to be quite good at that in Reality Fracture , so I don\u2019t see that I\u2019d ever not want to play this card.",
+     "image": "https://cards.scryfall.io/normal/front/a/5/a53eb840-039d-4c45-b701-d58cb26b1a6c.jpg?1789644816",
      "strong": false
     },
     {
@@ -812,6 +909,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/196/danitha-sword-of-hope?utm_source=api",
      "text": "Danitha, Sword of Hope isn\u2019t supported well enough for you to consider it a solid build-around, but there are enough synergies that it should at least be a playable card in the right deck.",
+     "image": "https://cards.scryfall.io/normal/front/d/5/d5cb9810-3c2d-4ae4-b8b6-0155ca3f47ad.jpg?1789127178",
      "strong": false
     },
     {
@@ -821,6 +919,7 @@
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/76/chandras-emberling?utm_source=api",
      "text": "Some variants on this design have seen play in the past, but the difficulty is even wanting to put a comparatively weak creature in a deck that has enough noncreature spells to support it.",
+     "image": "https://cards.scryfall.io/normal/front/3/a/3a64c5f4-9cfc-4d19-bd99-13d619b1aa9d.jpg?1789385708",
      "strong": false
     },
     {
@@ -830,6 +929,7 @@
      "rating": 7.0,
      "uri": "https://scryfall.com/card/fra/145/proctor-of-potential?utm_source=api",
      "text": "It\u2019s already great as a 2-drop 3/1 that surveils when it enters and can replay itself out of the graveyard, but then consider how it synergizes with other cards from this color pair.",
+     "image": "https://cards.scryfall.io/normal/front/c/f/cf0eec8c-0475-4050-8144-481a9bb13a0f.jpg?1789127661",
      "strong": false
     },
     {
@@ -839,6 +939,7 @@
      "rating": 3.0,
      "uri": "https://scryfall.com/card/fra/90/pompous-battlemage-improvised-act?utm_source=api",
      "text": "Prowess is a supported archetype in Reality Fracture , with lots of good 1-mana spells to trigger them, but Pompous Battlemage feels a little too reserved for my liking.",
+     "image": "https://cards.scryfall.io/normal/front/a/a/aa0f77ac-741a-444a-8bf0-a42c644726bf.jpg?1788878186",
      "strong": false
     },
     {
@@ -848,6 +949,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/143/paradox-shaper-omit-variables?utm_source=api",
      "text": "I\u2019m very impressed with the amount of graveyard support there is in this set, and that makes me really happy to see an enabler as strong as this one.",
+     "image": "https://cards.scryfall.io/normal/front/e/6/e61b9d48-0ace-4453-afe0-a1024444bac0.jpg?1788329390",
      "strong": false
     },
     {
@@ -857,6 +959,7 @@
      "rating": 5.0,
      "uri": "https://scryfall.com/card/fra/152/stinging-vitriol?utm_source=api",
      "text": "Two mana is very reasonable for this effect, and you\u2019ll always get the 2 damage out of it anyway, so it\u2019ll also trigger your Stingerquill synergies.",
+     "image": "https://cards.scryfall.io/normal/front/a/7/a7d78297-7411-4ec5-8931-a25146869d5b.jpg?1789385971",
      "strong": false
     },
     {
@@ -866,6 +969,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/266/titanbones-towering-heart?utm_source=api",
      "text": "Titanbones, Towering Heart looks like an excellent payoff for Vigorbloom decks, and something I\u2019d probably look to take early and try to make work.",
+     "image": "https://cards.scryfall.io/normal/front/e/d/edea6f70-a5a7-475d-b7f2-97933d0f32cf.jpg?1788329375",
      "strong": false
     },
     {
@@ -875,6 +979,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/77/command-the-stage?utm_source=api",
      "text": "Unless you curve a 2-drop wizard into this, the first cast could be a little rough, but this still looks like an incredible card to build around.",
+     "image": "https://cards.scryfall.io/normal/front/f/3/f3307da2-6dad-4ef2-9614-a7d34f38088e.jpg?1789644825",
      "strong": false
     },
     {
@@ -884,6 +989,7 @@
      "rating": 0.0,
      "uri": "https://scryfall.com/card/spg/165/necrodominance?utm_source=api",
      "text": "Triple black makes it too difficult to cast, and without the ability to also draft the right cards to support it, it just has too many downsides.",
+     "image": "https://cards.scryfall.io/normal/front/4/f/4f981c28-9134-45e8-8687-94b3c81ba582.jpg?1788922592",
      "strong": false
     }
    ]
@@ -900,6 +1006,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/194/vigorbloom-annex?utm_source=api",
      "text": "As with all cycles of common dual lands , you should pick these up if you need fixing and prioritize them over medium-level commons, but not over premium cards like removal or the more powerful legends.",
+     "image": "https://cards.scryfall.io/normal/front/d/b/db8c7bdd-76cd-4be0-ae0d-d430e9a5fe7a.jpg?1789557019",
      "strong": true
     },
     {
@@ -909,6 +1016,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/262/loot-the-nexus?utm_source=api",
      "text": "Loot, the Nexus is only guaranteed to tap for 1 mana, but with the potential to tap for 2, 3, or even more, it stands out as a premium green uncommon, particularly in Konstrari.",
+     "image": "https://cards.scryfall.io/normal/front/3/c/3cfa4fc6-4d90-4576-a83f-6496c7f21104.jpg?1789614764",
      "strong": true
     },
     {
@@ -918,6 +1026,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/23/unflinching-hortimancer?utm_source=api",
      "text": "It\u2019ll basically be unplayable outside of it, but that just means that when you\u2019re drafting Vigorbloom, you should be able to take as many of these as you need.",
+     "image": "https://cards.scryfall.io/normal/front/6/3/63f82985-c9c2-4d0a-ac4f-560166bebd9f.jpg?1789556741",
      "strong": true
     },
     {
@@ -927,6 +1036,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/15/memory-trap?utm_source=api",
      "text": "This is an early frontrunner for white\u2019s best common, but even if it isn\u2019t, it should still be a premium pickup when you\u2019re drafting white.",
+     "image": "https://cards.scryfall.io/normal/front/2/f/2f5345ae-4489-4d05-b2d5-c71285254f05.jpg?1788866058",
      "strong": true
     },
     {
@@ -936,6 +1046,7 @@
      "rating": 1.0,
      "uri": "https://scryfall.com/card/spg/162/consign-to-memory?utm_source=api",
      "text": "While this is the best sideboard card in Modern for very good reasons, Consign to Memory is far too situational to see any Limited play.",
+     "image": "https://cards.scryfall.io/normal/front/e/c/ec9ffeac-ae49-465e-9dc5-976db8252fe6.jpg?1788922549",
      "strong": true
     },
     {
@@ -945,6 +1056,7 @@
      "rating": 0.0,
      "uri": "https://scryfall.com/card/fra/55/extrapolate-the-impossible?utm_source=api",
      "text": "Having so little agency over what you can get from Extrapolate the Impossible makes it look pretty unplayable from where I\u2019m standing.",
+     "image": "https://cards.scryfall.io/normal/front/1/7/17fb6538-493c-41aa-ad13-3e63d3ad3317.jpg?1789729624",
      "strong": true
     },
     {
@@ -954,6 +1066,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/223/way-of-the-cryomancer?utm_source=api",
      "text": "That would lead me to believe that Way of the Cryomancer is unplayable, but there\u2019s so much potential here that I\u2019m doubting it.",
+     "image": "https://cards.scryfall.io/normal/front/8/3/838b0efb-7398-4df9-8fdf-b8af43b47938.jpg?1789014637",
      "strong": true
     },
     {
@@ -963,6 +1076,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/56/last-gasp?utm_source=api",
      "text": "For 2 mana, this is one of the most efficient removal spells in FRA, and it\u2019ll probably be the best black common.",
+     "image": "https://cards.scryfall.io/normal/front/2/3/2381d123-d8c7-4822-98fe-b1c365beb5ed.jpg?1789127524",
      "strong": true
     },
     {
@@ -972,6 +1086,7 @@
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/60/rampart-hunter?utm_source=api",
      "text": "The ETB ability might be enough to warrant playing it in some decks, but this looks like filler material at best.",
+     "image": "https://cards.scryfall.io/normal/front/f/4/f4a80225-7459-4151-86bb-8fdea31c39a6.jpg?1789127211",
      "strong": true
     },
     {
@@ -981,6 +1096,7 @@
      "rating": 5.0,
      "uri": "https://scryfall.com/card/fra/18/refute-destiny?utm_source=api",
      "text": "Even if you do only sideboard this, it\u2019s probably the strongest card you\u2019ll bring in for the right matchups.",
+     "image": "https://cards.scryfall.io/normal/front/2/c/2c588954-c6eb-4aae-a2fa-0651ccf2d90a.jpg?1789470778",
      "strong": true
     },
     {
@@ -990,6 +1106,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/spg/167/splinter-twin?utm_source=api",
      "text": "On the one hand, it\u2019ll be unplayable in most decks, but Reality Fracture does have a little twist in it.",
+     "image": "https://cards.scryfall.io/normal/front/a/0/a0c1323f-d468-4d8a-beed-5077d91b86d9.jpg?1788922613",
      "strong": true
     },
     {
@@ -999,6 +1116,7 @@
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/41/sphinxs-approach?utm_source=api",
      "text": "I think this is quite playable in a slower control deck, but I\u2019d never play it in an aggressive deck.",
+     "image": "https://cards.scryfall.io/normal/front/f/4/f49be090-c745-40e5-bc1c-605b8d98acdf.jpg?1789644816",
      "strong": true
     },
     {
@@ -1008,6 +1126,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api",
      "text": "It ended up widely regarded as the best white common and one of the best commons overall.",
+     "image": "https://cards.scryfall.io/normal/front/3/b/3b6ac80e-c726-4bd0-893a-e666041a04a6.jpg?1789556695",
      "strong": true
     },
     {
@@ -1017,6 +1136,7 @@
      "rating": 6.0,
      "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api",
      "text": "This card looks amazing to me, and it\u2019s my early pick for white\u2019s best common.",
+     "image": "https://cards.scryfall.io/normal/front/3/b/3b6ac80e-c726-4bd0-893a-e666041a04a6.jpg?1789556695",
      "strong": true
     }
    ]
@@ -1033,6 +1153,7 @@
      "rating": 3.0,
      "uri": "https://scryfall.com/card/fra/45/undulating-witness?utm_source=api",
      "text": "Fixing your mana is incredible, and you\u2019ll sometimes play this just for that ability, then if you do happen to cast it, a big flying creature is hardly the worst thing to play.",
+     "image": "https://cards.scryfall.io/normal/front/0/a/0adbb4b2-a142-48da-8f4b-fa91529dbac4.jpg?1789556706",
      "strong": true
     },
     {
@@ -1042,6 +1163,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/86/heartstring-puller?utm_source=api",
      "text": "Turning one of those 2/2s into a 3/1 with trample, as Heartstring Puller is doing, raises the bar a fair bit and helps these two creatures to provide some extra utility over their predecessors.",
+     "image": "https://cards.scryfall.io/normal/front/c/b/cbfe3354-7ced-4773-9a4e-a937ae9f94f8.jpg?1789556808",
      "strong": false
     },
     {
@@ -1051,6 +1173,7 @@
      "rating": 8.0,
      "uri": "https://scryfall.com/card/fra/201/lyra-archangel-of-dawn?utm_source=api",
      "text": "Sadly that\u2019s not the case, but Lyra, Archangel of Dawn is still able to buff itself, which makes it a 3-mana 3/3 flying Ajani's Pridemate when white has access to a lot of sources of lifegain.",
+     "image": "https://cards.scryfall.io/normal/front/8/6/86a3866e-68a8-402c-baf0-1908e98e3995.jpg?1789127693",
      "strong": false
     },
     {
@@ -1060,6 +1183,7 @@
      "rating": 3.0,
      "uri": "https://scryfall.com/card/fra/115/sureshot-sower?utm_source=api",
      "text": "When you draw it late it\u2019ll get a lot worse, but the ability to discard it and destroy a flying creature gives it a great extra purpose when you get to that point in a game.",
+     "image": "https://cards.scryfall.io/normal/front/b/6/b635389c-e286-4edb-80d1-23dbe4a18857.jpg?1789614751",
      "strong": false
     },
     {
@@ -1069,6 +1193,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/219/ruric-thar-biomagus?utm_source=api",
      "text": "A huge flier that gets +2/+2 whenever you cast a noncreature spell and replaces itself if your opponent tries to target it is going to be pretty hard to deal with.",
+     "image": "https://cards.scryfall.io/normal/front/0/0/00af4e87-5576-4a43-9422-4c35b2b66775.jpg?1789127229",
      "strong": false
     },
     {
@@ -1078,6 +1203,7 @@
      "rating": 7.0,
      "uri": "https://scryfall.com/card/fra/141/mind-meanderer?utm_source=api",
      "text": "I loved getting to play Affectionate Indrik back in Guilds of Ravnica , so give it flying and an extra ability and you know I\u2019m still going to love it.",
+     "image": "https://cards.scryfall.io/normal/front/9/4/94c290ce-252c-42b3-bcb0-c1ef621df566.jpg?1789470861",
      "strong": false
     },
     {
@@ -1087,6 +1213,7 @@
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/173/medics-kitesail?utm_source=api",
      "text": "The ability to give a creature flying tends to be pretty strong, especially if you have a deck that might struggle with breaking out of a board stall.",
+     "image": "https://cards.scryfall.io/normal/front/8/b/8b07409a-1dce-461d-95e4-1130521ff4c4.jpg?1789556945",
      "strong": false
     },
     {
@@ -1096,6 +1223,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/108/hunters-axe?utm_source=api",
      "text": "Much like an equipment that grants flying, granting trample is a huge bonus that helps your big, dumb creatures to get their damage through blockers.",
+     "image": "https://cards.scryfall.io/normal/front/a/2/a2cc5d0e-9643-4ee2-81de-fa2c3bd1ab09.jpg?1789556822",
      "strong": false
     },
     {
@@ -1105,6 +1233,7 @@
      "rating": 10.0,
      "uri": "https://scryfall.com/card/fra/217/lyra-tolarian-archangel?utm_source=api",
      "text": "A 3/3 flier for 3 mana is already great, and if you ever get to activate its ability for 5 mana, you\u2019re completely running away with the game.",
+     "image": "https://cards.scryfall.io/normal/front/a/5/a5183681-447b-4023-91f7-00e9338f4417.jpg?1789128032",
      "strong": false
     },
     {
@@ -1114,6 +1243,7 @@
      "rating": 2.0,
      "uri": "https://scryfall.com/card/fra/138/konstrari-charm?utm_source=api",
      "text": "I honestly think this is leaning much closer to sideboard territory than anything else, and then you bring it in to attack flying creatures .",
+     "image": "https://cards.scryfall.io/normal/front/7/d/7d29dfa1-9582-47bc-8f42-62b611bdcc4e.jpg?1789127645",
      "strong": false
     },
     {
@@ -1123,6 +1253,7 @@
      "rating": 9.0,
      "uri": "https://scryfall.com/card/fra/121/aerid-konstrari?utm_source=api",
      "text": "You don\u2019t need much to sell me on a 5/4 with flying for just 4 mana, but yeah, I\u2019ll take a few extra abilities while we\u2019re at it.",
+     "image": "https://cards.scryfall.io/normal/front/f/1/f17d2792-b075-4c47-ad38-e7a7eaee5f8c.jpg?1788878199",
      "strong": false
     },
     {
@@ -1132,6 +1263,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/47/variable-chaser-arc-of-fortune?utm_source=api",
      "text": "A 2/3 with flying and prowess is a very good rate for a 3-drop, but it\u2019s hard to see Variable Chaser as much more than that.",
+     "image": "https://cards.scryfall.io/normal/front/e/3/e3afedb1-bf9d-4e31-9700-433514cc29b1.jpg?1789470807",
      "strong": false
     },
     {
@@ -1141,6 +1273,7 @@
      "rating": 4.0,
      "uri": "https://scryfall.com/card/fra/260/ghalta-the-unstoppable?utm_source=api",
      "text": "An 8/8 with trample that gives trample to all your creatures is a lot more impactful than a glorified 7/7 vanilla creature.",
+     "image": "https://cards.scryfall.io/normal/front/1/d/1d535b5f-c916-4f16-89a7-9477578826d2.jpg?1788878290",
      "strong": false
     },
     {
@@ -1150,6 +1283,7 @@
      "rating": 7.0,
      "uri": "https://scryfall.com/card/fra/203/saheeli-consul-of-oversight?utm_source=api",
      "text": "It\u2019s also a huge flier, so even if you don\u2019t have anything to trigger Saheeli right away, it\u2019s not exactly a dead card.",
+     "image": "https://cards.scryfall.io/normal/front/0/7/07572be0-6610-493c-a21e-14b78e9805c9.jpg?1789645608",
      "strong": false
     }
    ]
@@ -1231,6 +1365,7 @@
       "grade": "A",
       "special": false,
       "uri": "https://scryfall.com/card/fra/121/aerid-konstrari?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/f/1/f17d2792-b075-4c47-ad38-e7a7eaee5f8c.jpg?1788878199",
       "text": "Aerid Konstrari isn\u2019t only a beefy creature that can close out games, it also ramps you with a Heartwood token and then has an activated ability that not only creates more of them but also speeds up the clock and kills your opponent faster?"
      },
      {
@@ -1238,6 +1373,7 @@
       "grade": "C+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/165/woodwork-prodigy-soul-tether?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/7/d/7d17f7e3-7b63-4674-9024-4fd1827f40ec.jpg?1788329429",
       "text": "There are only a handful of cards in the set that create these hallmark tokens for Konstrari\u2019s artifact ramp strategy, so having a card that can keep churning them out each turn sounds incredibly powerful to me."
      },
      {
@@ -1245,6 +1381,7 @@
       "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/250/pia-determined-rebuilder?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/d/d/dd3faaf4-45ca-4714-8dbe-37102ec131cf.jpg?1789385851",
       "text": "You should play Pia, Determined Rebuilder in every red deck, but it\u2019s Konstrari that will be able to utilize it the most, as they can give Pia the artifacts needed to activate its ability."
      },
      {
@@ -1252,6 +1389,7 @@
       "grade": "C-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/106/hexhaven-invigorator?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/9/a/9a446cae-e93c-4574-8ffd-7688f9729a8a.jpg?1788878191",
       "text": "Even in Konstrari, where the Heartwood tokens would help to fix for it, there are going to be plenty of times when this will be stuck in your hand and you\u2019re too far away from casting it."
      },
      {
@@ -1259,6 +1397,7 @@
       "grade": "D-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/174/murmuring-volume?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/d/6/d68eab2e-89dd-4377-b7af-01512b1804a0.jpg?1789385977",
       "text": "I don\u2019t think Murmuring Volume quite stacks up against the rest of them, but it\u2019s worth noting that Konstrari are trying to ramp with artifacts and this is definitely a way to do that."
      },
      {
@@ -1266,6 +1405,7 @@
       "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/fra/262/loot-the-nexus?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/3/c/3cfa4fc6-4d90-4576-a83f-6496c7f21104.jpg?1789614764",
       "text": "Loot, the Nexus is only guaranteed to tap for 1 mana, but with the potential to tap for 2, 3, or even more, it stands out as a premium green uncommon, particularly in Konstrari."
      },
      {
@@ -1273,6 +1413,7 @@
       "grade": "C+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/111/puppet-crafting?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/6/b/6b8789a6-3b63-4198-af5f-c2f2f49fafd9.jpg?1789470736",
       "text": "In the context of Reality Fracture , there are a good number of artifacts and enchantments for Puppet Crafting to combine with, including the Heartwood tokens out of Konstrari."
      },
      {
@@ -1280,6 +1421,7 @@
       "grade": "C+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/139/konstrari-improviser-soul-tether?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/4/2/42e28bd2-486b-45d4-8840-6e33c19c2d57.jpg?1789556881",
       "text": "While this is obviously good in a Konstrari deck, the fact that this is hybrid red/green allows you to play it in a variety of decks that might also want an effect like this."
      }
     ]
@@ -1296,6 +1438,7 @@
       "grade": "C-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/228/gallia-tragic-host?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/4/9/498fa810-8522-4020-b773-52ad404c9f65.jpg?1789385697",
       "text": "I\u2019m very impressed however at Gallia, Tragic Host \u2019s potential inclusion in graveyard-centric decks like Theorix, where you can mill this satyr or discard it for value and then pull it out of the graveyard without costing anything from your hand or field."
      },
      {
@@ -1303,6 +1446,7 @@
       "grade": "A",
       "special": false,
       "uri": "https://scryfall.com/card/fra/159/uldaros-theorix?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/7/a7ad622a-42ff-48fa-ae95-12e0a5bd9387.jpg?1788878220",
       "text": "Simply casting Uldaros gives you an immediate two/three-for-one depending on the situation, and if you\u2019re filling your graveyard as we\u2019ve seen that Theorix is very capable of doing, that just gives you a lot more options for what to do with it."
      },
      {
@@ -1310,6 +1454,7 @@
       "grade": "D",
       "special": false,
       "uri": "https://scryfall.com/card/fra/27/cryotheory-adept?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/9/b/9ba1f7ce-3404-4932-9795-22967707f762.jpg?1789556701",
       "text": "If you\u2019re milling yourself aggressively in Theorix, then Cryotheory Adept is a great card to hit, since it actually does something relevant from the graveyard, while also being something you can play on the board if you draw it."
      },
      {
@@ -1317,6 +1462,7 @@
       "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/fra/211/arni-humble-scribe?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/e/8e3a2239-9348-4639-9318-e9e35b2cf86b.jpg?1789568409",
       "text": "The fact that you can probably use it twice in a turn thanks to its creaturefall trigger will let you churn through your deck pretty quickly, which will be especially good in Theorix to fill your graveyard."
      },
      {
@@ -1324,6 +1470,7 @@
       "grade": "C+",
       "special": true,
       "uri": "https://scryfall.com/card/spg/164/consider?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/f/8fcce60c-6baa-4f55-907a-4acc2a597030.jpg?1788922586",
       "text": "Fatehold will love it since it triggers all of its abilities, Theorix appreciates the help it gives you to load the graveyard, and the blue/red deck will also like it for triggering prowess."
      },
      {
@@ -1331,6 +1478,7 @@
       "grade": "B+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/52/dark-matter-manipulator?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/4/e/4ec912d5-cbe7-4d07-9ece-b03ac02d3055.jpg?1789385959",
       "text": "Theorix is all about self-mill , so getting to mill three cards as early as turn 1 sounds like something they\u2019ll be very interested in doing."
      },
      {
@@ -1338,6 +1486,7 @@
       "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/231/liliana-the-repentant?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/1/e/1eb25a6c-d6b4-465d-990e-f1ab86b26b69.jpg?1788329273",
       "text": "Theorix decks are going to love it, but any black deck apart from an aggressive Stingerquill one will be very happy to play this Liliana."
      },
      {
@@ -1345,6 +1494,7 @@
       "grade": "A-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/441/seasoned-cryomancer?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/f/1/f1a15a83-2f74-4513-ae4b-4cdc17016a84.jpg?1789470965",
       "text": "This puts you +2 on card advantage since you\u2019re not spending a card, and you can even use it if you just mill it with Theorix cards."
      }
     ]
@@ -1361,6 +1511,7 @@
       "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/195/ajani-resolute?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/5/a5e1a7dd-8c49-4435-935c-bcc78704082b.jpg?1788329189",
       "text": "Vigorbloom is of course a lifegain archetype, but the fact that you need to have gained life at least three times before Ajani can use its -4 and survive makes me think this isn\u2019t where we want to be."
      },
      {
@@ -1368,6 +1519,7 @@
       "grade": "D+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/9/germinate-recruits?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/1/b/1b5d7d19-b32a-4786-ae9a-00da5e6658ad.jpg?1789644810",
       "text": "Vigorbloom has some great ways of gaining life, but they mostly cost a lot of mana, so paying 3 more to Germinate Recruits in the same turn sounds far too situational for my liking."
      },
      {
@@ -1375,6 +1527,7 @@
       "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/5/enlightened-confidant?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/4/8/483fcc58-cc6e-4452-a696-7b38e117c837.jpg?1788329184",
       "text": "Having lifelink is a good way to help you with that, assuming you can attack with them, but it\u2019ll be the other lifegain sources from Vigorbloom that will really let this pop off."
      },
      {
@@ -1382,6 +1535,7 @@
       "grade": "C-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/123/blessed-ghoul?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/b/b/bb975803-9bf2-401e-9414-d272df314398.jpg?1789556847",
       "text": "In Reality Fracture in particular, I think this is a great way to get value out of milling yourself and a cheap lifelink creature helps to trigger various Vigorbloom triggers."
      },
      {
@@ -1389,6 +1543,7 @@
       "grade": "C+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/161/vigorbloom-vanguard-seed-suture?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/c/acefc515-bf97-4dc0-b0f7-ae8ae5a61671.jpg?1788329423",
       "text": "The point of lifegain, the vigilance, these aren\u2019t the kinds of bonuses that can elevate Vigorbloom Vanguard beyond the level of a simple common, despite being uncommon."
      },
      {
@@ -1396,6 +1551,7 @@
       "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/fra/22/surgical-precision?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/d/3/d3acf176-ef02-4729-88c4-0f0dfbfdada4.jpg?1789385570",
       "text": "It won\u2019t do much early on, but you can always cycle it if you need to, and both modes gain you life too, making this an especially good inclusion in Vigorbloom decks."
      },
      {
@@ -1403,6 +1559,7 @@
       "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/fra/23/unflinching-hortimancer?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/6/3/63f82985-c9c2-4d0a-ac4f-560166bebd9f.jpg?1789556741",
       "text": "It\u2019ll basically be unplayable outside of it, but that just means that when you\u2019re drafting Vigorbloom, you should be able to take as many of these as you need."
      },
      {
@@ -1410,6 +1567,7 @@
       "grade": "B+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/200/liliana-the-faultless?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/7/0/70d8c400-87dc-4f15-808f-e54a95d779fc.jpg?1788329194",
       "text": "Considering we have Vigorbloom really wanting lifegain sources, Liliana the Faultless looks like an exceptional Soul Warden for that archetype to function."
      }
     ]
@@ -1426,6 +1584,7 @@
       "grade": "C+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/226/yuriko-hope-from-the-shadows?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/4/5/45e81487-8b8c-480b-922a-eaa9edc7201d.jpg?1789127717",
       "text": "Yuriko, Hope from the Shadows doesn\u2019t do this particularly consistently, but it does also have the buyout of getting to surveil 2, which can also trigger Fatehold cards, so this ninja seems pretty good on balance."
      },
      {
@@ -1433,6 +1592,7 @@
       "grade": "C+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/203/saheeli-consul-of-oversight?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/0/7/07572be0-6610-493c-a21e-14b78e9805c9.jpg?1789645608",
       "text": "Creating a thopter token every time you scry or surveil is incredible in Fatehold, but it also synergizes incredibly with the Jace tokens, so it might just be good enough to top the curve in any white deck."
      },
      {
@@ -1440,6 +1600,7 @@
       "grade": "C+",
       "special": true,
       "uri": "https://scryfall.com/card/spg/164/consider?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/f/8fcce60c-6baa-4f55-907a-4acc2a597030.jpg?1788922586",
       "text": "Fatehold will love it since it triggers all of its abilities, Theorix appreciates the help it gives you to load the graveyard, and the blue/red deck will also like it for triggering prowess."
      },
      {
@@ -1447,6 +1608,7 @@
       "grade": "B-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/132/fatehold-charm?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/c/f/cfc54011-647e-4428-bcdb-59400e1da49d.jpg?1789127637",
       "text": "When looking over these charms , I figured Fatehold Charm would probably have Consider as one of its modes, so the mode of drawing a card and empowering 2 is a very nice surprise."
      },
      {
@@ -1454,6 +1616,7 @@
       "grade": "B+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/28/diviner-of-victory-unwind-history?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/0/8/0853bb80-8664-432a-8457-600139fd96d5.jpg?1788878145",
       "text": "Between its own prepared spell, Jace tokens, and the Fatehold archetype as a whole, Diviner of Victory may be able to attack as a 3/3 or even a 4/4 on certain turns."
      },
      {
@@ -1461,6 +1624,7 @@
       "grade": "B-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/145/proctor-of-potential?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/c/f/cf0eec8c-0475-4050-8144-481a9bb13a0f.jpg?1789127661",
       "text": "Getting to surveil without spending mana is going to really make the Fatehold deck come alive, and that\u2019s exactly what Proctor of Potential does for you."
      },
      {
@@ -1468,6 +1632,7 @@
       "grade": "B+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/128/denzilore-fatehold?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/9/8/986f9e98-9d8d-428b-9187-860745cf3269.jpg?1788878215",
       "text": "Flash enables Denzilore Fatehold to swoop in during combat for an easy two-for-one, or just at the end of a turn to avoid sorcery-speed removal."
      },
      {
@@ -1475,6 +1640,7 @@
       "grade": "B-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/133/fatehold-chronologist-peer-review?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/2/9/29e7ec16-0c16-48aa-8e09-ce6e0d5bd40b.jpg?1789060173",
       "text": "You wouldn\u2019t think I\u2019d be interested in a Storm Crow , but Fatehold Chronologist is a great design to work well with its Peer Review spell."
      }
     ]
@@ -1491,6 +1657,7 @@
       "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/fra/151/stingerquill-voxmancer-vicious-verse?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/4/84b1c268-3b8a-41b6-92e3-a2ce0cc3d738.jpg?1788329418",
       "text": "The Stingerquill archetype is based around sources of noncombat damage in the first place, and Stingerquill Voxmancer preparing itself every turn means it can give you noncombat damage every turn."
      },
      {
@@ -1498,6 +1665,7 @@
       "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/88/master-of-barbs?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/4/4/4404d9d4-9cdd-4dad-a4f6-574d90db5052.jpg?1789127596",
       "text": "Normally, the ability on Master of Barbs would look kind of situational, but thanks to the Stingerquill prepared spell, Vicious Verse, there should actually be a lot of ways to trigger it."
      },
      {
@@ -1505,6 +1673,7 @@
       "grade": "C+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/54/extended-absence?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/e/b/eb4b6ed8-782e-4473-abc9-d50bf2275c6a.jpg?1789556713",
       "text": "There\u2019s a lot of good removal in Reality Fracture , but there\u2019ll always be a need to cleanly remove anything, and the extra damage ping is very welcome in Stingerquill."
      },
      {
@@ -1512,6 +1681,7 @@
       "grade": "D-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/51/cast-away-doubt?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/3/b/3b5b28a4-0abd-4dc2-9856-c9a8d27f6a2d.jpg?1788353191",
       "text": "Cast Away Doubt \u2019s upside is quite relevant in Reality Fracture though, as the 2 damage to your opponent is perfect for triggering the effects of Stingerquill cards."
      },
      {
@@ -1519,6 +1689,7 @@
       "grade": "D-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/164/whiplash-wordsmith-vicious-verse?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/0/8096bc9a-a610-448f-bef2-7230e17e9777.jpg?1789127692",
       "text": "Stingerquill is probably the most aggressive archetype in Reality Fracture , so it\u2019s far more interested in creatures that are cheaper than Whiplash Wordsmith ."
      },
      {
@@ -1526,6 +1697,7 @@
       "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/fra/152/stinging-vitriol?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/7/a7d78297-7411-4ec5-8931-a25146869d5b.jpg?1789385971",
       "text": "Two mana is very reasonable for this effect, and you\u2019ll always get the 2 damage out of it anyway, so it\u2019ll also trigger your Stingerquill synergies."
      },
      {
@@ -1533,6 +1705,7 @@
       "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/231/liliana-the-repentant?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/1/e/1eb25a6c-d6b4-465d-990e-f1ab86b26b69.jpg?1788329273",
       "text": "Theorix decks are going to love it, but any black deck apart from an aggressive Stingerquill one will be very happy to play this Liliana."
      },
      {
@@ -1540,6 +1713,7 @@
       "grade": "A",
       "special": false,
       "uri": "https://scryfall.com/card/fra/137/ingris-stingerquill?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/6/4/6471b135-33a8-4005-9a07-ebb74e0bf145.jpg?1788878212",
       "text": "One of the keys to a good Stingerquill deck will be the ability to deal noncombat damage without spending any mana."
      }
     ]
@@ -1556,6 +1730,7 @@
       "grade": "D+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/32/jaces-machinations?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/2/8/282588b9-3656-453b-aa25-2419e078ddc1.jpg?1788878150",
       "text": "On its own, Jace's Machinations is an instant that draws you two cards, since you can -3 the Jace token on your opponent\u2019s turn and again on yours, leaving behind a Jace with 2 loyalty."
      },
      {
@@ -1563,6 +1738,7 @@
       "grade": "C-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/37/proteges-awakening?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/0/a08c7ec2-4c6a-4db2-85a7-41afe8731523.jpg?1788878176",
       "text": "Just like with Jace's Machinations , this could just be a simple draw spell in most blue decks, but one built around  utilize it so much more."
      },
      {
@@ -1570,6 +1746,7 @@
       "grade": "D",
       "special": false,
       "uri": "https://scryfall.com/card/fra/246/jiang-yanggu-alone?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/e/8/e8c1ce21-b77d-40bf-9ed1-478604e71f5f.jpg?1789014416",
       "text": "Jiang Yanggu, Alone , or to give him his proper title, Jiang Wick, is perhaps the victim of Jace\u2019s gravest crime in creating the Echoverse."
      },
      {
@@ -1577,6 +1754,7 @@
       "grade": "F",
       "special": false,
       "uri": "https://scryfall.com/card/fra/172/living-library?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/5/d/5d4a8e5f-0024-4da3-a2f5-edb48b12e733.jpg?1789556949",
       "text": "Living Library isn\u2019t something I\u2019ll go out of my way for, but it may be able to find a home in a good blue/green Jace deck."
      },
      {
@@ -1584,6 +1762,7 @@
       "grade": "A",
       "special": false,
       "uri": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/2/0/20bb8c55-4b0b-425f-8201-b54fa2fdde86.jpg?1788329228",
       "text": "All of the best planeswalkers protect themselves, and both of Jace\u2019s main loyalty abilities are capable of doing that."
      },
      {
@@ -1591,6 +1770,7 @@
       "grade": "A",
       "special": false,
       "uri": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/2/0/20bb8c55-4b0b-425f-8201-b54fa2fdde86.jpg?1788329228",
       "text": "This is Jace\u2019s set, so of course we get an incredibly powerful card to represent him."
      }
     ]
@@ -1607,6 +1787,7 @@
       "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/195/ajani-resolute?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/5/a5e1a7dd-8c49-4435-935c-bcc78704082b.jpg?1788329189",
       "text": "While Ajani Resolute is probably my favorite design in this set, answering the question \u201cWhat would Ajani's Pridemate look like as a planeswalker ?\u201d, it sadly feels very lackluster for Limited play."
      },
      {
@@ -1614,6 +1795,7 @@
       "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/fra/201/lyra-archangel-of-dawn?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/6/86a3866e-68a8-402c-baf0-1908e98e3995.jpg?1789127693",
       "text": "Sadly that\u2019s not the case, but Lyra, Archangel of Dawn is still able to buff itself, which makes it a 3-mana 3/3 flying Ajani's Pridemate when white has access to a lot of sources of lifegain."
      },
      {
@@ -1621,6 +1803,7 @@
       "grade": "B-",
       "special": false,
       "uri": "https://scryfall.com/card/fra/72/ajanis-anguish?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/d/9/d9039a58-2f17-4b8a-b714-3a2f0b46f057.jpg?1789470674",
       "text": "At the end of day, Ajani's Anguish is fine and you could use it better in a Konstrari ramp deck , but a lot of red decks aren\u2019t going to be interested in playing it."
      },
      {
@@ -1628,6 +1811,7 @@
       "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/fra/23/unflinching-hortimancer?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/6/3/63f82985-c9c2-4d0a-ac4f-560166bebd9f.jpg?1789556741",
       "text": "Ajani's Pridemate is a design that has proven itself time and time again in previous sets."
      },
      {
@@ -1635,6 +1819,7 @@
       "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/fra/266/titanbones-towering-heart?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/e/d/edea6f70-a5a7-475d-b7f2-97933d0f32cf.jpg?1788329375",
       "text": "Ajani's Pridemate is a tried and tested formula that really works."
      }
     ]
@@ -1651,6 +1836,7 @@
       "grade": "F",
       "special": false,
       "uri": "https://scryfall.com/card/fra/76/chandras-emberling?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/3/a/3a64c5f4-9cfc-4d19-bd99-13d619b1aa9d.jpg?1789385708",
       "text": "I\u2019d assume that Chandra's Emberling just isn\u2019t good enough at first, though it wouldn\u2019t be that shocking if it was playable."
      },
      {
@@ -1658,6 +1844,7 @@
       "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/fra/212/chandra-chill-of-compliance?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/2/4/240f58ab-944c-4f4c-9df9-5f40b132bf3e.jpg?1788329242",
       "text": "Chandra\u2019s Echoverse double has a lot to live up to."
      }
     ]
@@ -1674,6 +1861,7 @@
       "grade": "A+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/259/garruk-curse-breaker?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/9/0/90ca5812-ceb5-46bd-b049-aed7ff10e6af.jpg?1788329370",
       "text": "Then on future turns, whatever other big plays you make will draw you more cards without even using Garruk\u2019s loyalty abilities."
      },
      {
@@ -1681,6 +1869,7 @@
       "grade": "A+",
       "special": false,
       "uri": "https://scryfall.com/card/fra/259/garruk-curse-breaker?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/9/0/90ca5812-ceb5-46bd-b049-aed7ff10e6af.jpg?1788329370",
       "text": "On top of that, we get a free Garruk's Uprising , which makes all the difference."
      }
     ]
@@ -1701,9 +1890,11 @@
    "grade": "A",
    "uri": "https://scryfall.com/card/fra/217/lyra-tolarian-archangel?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/a/5/a5183681-447b-4023-91f7-00e9338f4417.jpg?1789128032",
    "rating": 10.0,
    "compared_to": "Resplendent Angel",
    "compared_uri": "https://scryfall.com/card/lci/32/resplendent-angel?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/5/9/59adbd35-9959-4a0f-babf-46ea3c15f018.jpg?1783913805",
    "text": "Lyra, Tolarian Archangel is basically a Resplendent Angel that\u2019s been shifted into blue."
   },
   {
@@ -1711,9 +1902,11 @@
    "grade": "A+",
    "uri": "https://scryfall.com/card/fra/259/garruk-curse-breaker?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/9/0/90ca5812-ceb5-46bd-b049-aed7ff10e6af.jpg?1788329370",
    "rating": 10.0,
    "compared_to": "Garruk's Uprising",
    "compared_uri": "https://scryfall.com/card/fdn/220/garruks-uprising?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/4/8/4805c303-e73b-443b-a09f-49d2c2c88bb5.jpg?1783909059",
    "text": "On top of that, we get a free Garruk's Uprising , which makes all the difference."
   },
   {
@@ -1721,9 +1914,11 @@
    "grade": "B",
    "uri": "https://scryfall.com/card/fra/201/lyra-archangel-of-dawn?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/8/6/86a3866e-68a8-402c-baf0-1908e98e3995.jpg?1789127693",
    "rating": 8.0,
    "compared_to": "Ajani's Pridemate",
    "compared_uri": "https://scryfall.com/card/fdn/135/ajanis-pridemate?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/2/2/222c1a68-e34c-4103-b1be-17d4ceaef6ce.jpg?1783909088",
    "text": "Sadly that\u2019s not the case, but Lyra, Archangel of Dawn is still able to buff itself, which makes it a 3-mana 3/3 flying Ajani's Pridemate when white has access to a lot of sources of lifegain."
   },
   {
@@ -1731,9 +1926,11 @@
    "grade": "A",
    "uri": "https://scryfall.com/card/fra/122/avatar-of-burgeoning-echoes?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/5/9/5905995b-7a20-4602-a7cc-90aa5089a082.jpg?1788878208",
    "rating": 8.0,
    "compared_to": "Tatyova, Benthic Druid",
    "compared_uri": "https://scryfall.com/card/fdn/247/tatyova-benthic-druid?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/e/a/eabc978a-0666-472d-bdc6-d4b29d29eca4.jpg?1783909051",
    "text": "One of my favorite Limited cards of all time was Tatyova, Benthic Druid ."
   },
   {
@@ -1741,9 +1938,11 @@
    "grade": "B",
    "uri": "https://scryfall.com/card/spg/166/mind-twist?utm_source=api",
    "special": true,
+   "image": "https://cards.scryfall.io/normal/front/0/a/0ab1e081-47b1-4d53-a820-98c451e6440d.jpg?1788922604",
    "rating": 8.0,
    "compared_to": "Arcane Omens",
    "compared_uri": "https://scryfall.com/card/sos/73/arcane-omens?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/d/3/d357d997-9d4e-4ade-81f2-37629853f13a.jpg?1783903683",
    "text": "Arcane Omens was incredible in Secrets of Strixhaven , but this is a very different format."
   },
   {
@@ -1751,9 +1950,11 @@
    "grade": "B+",
    "uri": "https://scryfall.com/card/fra/200/liliana-the-faultless?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/7/0/70d8c400-87dc-4f15-808f-e54a95d779fc.jpg?1788329194",
    "rating": 7.0,
    "compared_to": "Soul Warden",
    "compared_uri": "https://scryfall.com/card/spg/65/soul-warden?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/b/c/bc9df8ac-0214-4d8a-a401-667f8c34e63e.jpg?1783909282",
    "text": "Considering we have Vigorbloom really wanting lifegain sources, Liliana the Faultless looks like an exceptional Soul Warden for that archetype to function."
   },
   {
@@ -1761,9 +1962,11 @@
    "grade": "B+",
    "uri": "https://scryfall.com/card/fra/57/lichs-relic?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/b/1/b105511d-5022-4a84-b6ce-4bb433e93a62.jpg?1789644819",
    "rating": 7.0,
    "compared_to": "Crude Bent Blade",
    "compared_uri": "https://scryfall.com/card/hob/63/crude-bent-blade?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/f/a/fa8fd3c4-bd00-485d-80b1-2b67f5786fce.jpg?1785496297",
    "text": "We\u2019ve just seen how relevant Crude Bent Blade ended up being in The Hobbit , only this time this is targeted removal, which means it\u2019s going to be even better."
   },
   {
@@ -1771,9 +1974,11 @@
    "grade": "B",
    "uri": "https://scryfall.com/card/fra/84/fulminous-forte?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/1/9/19acb2b5-3b3e-43f0-bd81-8426ed3d9c55.jpg?1789614832",
    "rating": 7.0,
    "compared_to": "Gnashing of Teeth",
    "compared_uri": "https://scryfall.com/card/hob/69/gnashing-of-teeth?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/5/d/5d485d70-c7b9-40a4-9089-5e7f1c2b9213.jpg?1784734464",
    "text": "We just had Gnashing of Teeth in The Hobbit , and Fulminous Forte looks remarkably similar."
   },
   {
@@ -1781,9 +1986,11 @@
    "grade": "C",
    "uri": "https://scryfall.com/card/fra/265/ruric-thar-magecrusher?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/e/e/eed83302-dc2c-45f4-a4bd-af9da51edef5.jpg?1789358701",
    "rating": 7.0,
    "compared_to": "Karakyk Guardian",
    "compared_uri": "https://scryfall.com/card/tdm/198/karakyk-guardian?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/a/4/a4c77b08-c3f6-4458-8636-f226f9843b6d.jpg?1783907312",
    "text": "I was very high on Karakyk Guardian in Tarkir: Dragonstorm , and it turned out to be one of the best uncommons in the entire set."
   },
   {
@@ -1791,9 +1998,11 @@
    "grade": "A-",
    "uri": "https://scryfall.com/card/fra/113/simulacrum-shaper?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/7/c/7c725702-8696-4e5a-8318-62f5e2616d52.jpg?1789470857",
    "rating": 7.0,
    "compared_to": "Solemn Simulacrum",
    "compared_uri": "https://scryfall.com/card/fdn/257/solemn-simulacrum?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/5/3/5383f45e-3da2-40fb-beee-801448bbb60f.jpg?1783909048",
    "text": "The classic Solemn Simulacrum always felt a little over-costed, but at 3 mana it\u2019s absolutely perfect."
   },
   {
@@ -1801,9 +2010,11 @@
    "grade": "B-",
    "uri": "https://scryfall.com/card/fra/129/desperate-futurescribe?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/c/f/cfaa3ebd-5c21-4e99-a0dd-8426d19b53a5.jpg?1789644852",
    "rating": 7.0,
    "compared_to": "Luminarch Aspirant",
    "compared_uri": "https://scryfall.com/card/znr/24/luminarch-aspirant?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/f/e/fe964e7e-e2c5-4263-889d-0a531eb51442.jpg?1783929413",
    "text": "Luminarch Aspirant is still one of the most broken rares we\u2019ve seen in the last decade."
   },
   {
@@ -1811,9 +2022,11 @@
    "grade": "B-",
    "uri": "https://scryfall.com/card/fra/271/hapatra-the-desert-fang?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/c/f/cf7c1534-af41-4991-b3c3-f0a34ae330b5.jpg?1789385991",
    "rating": 7.0,
    "compared_to": "Cloud of Darkness",
    "compared_uri": "https://scryfall.com/card/fin/217/cloud-of-darkness?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/a/2/a292094a-674a-401f-8776-ba5ebe57c946.jpg?1783906575",
    "text": "This reminds me a lot of Cloud of Darkness from Final Fantasy , one of the best uncommons in that set."
   },
   {
@@ -1821,9 +2034,11 @@
    "grade": "B",
    "uri": "https://scryfall.com/card/fra/141/mind-meanderer?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/9/4/94c290ce-252c-42b3-bcb0-c1ef621df566.jpg?1789470861",
    "rating": 7.0,
    "compared_to": "Affectionate Indrik",
    "compared_uri": "https://scryfall.com/card/fdn/211/affectionate-indrik?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/2/d/2da8347d-06a4-46e0-a55e-cc2da4660263.jpg?1783909062",
    "text": "I loved getting to play Affectionate Indrik back in Guilds of Ravnica , so give it flying and an extra ability and you know I\u2019m still going to love it."
   },
   {
@@ -1831,9 +2046,11 @@
    "grade": "B+",
    "uri": "https://scryfall.com/card/fra/142/null-summoner?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/3/a/3afdc75a-1bf5-4f2f-84eb-d82f77a095cd.jpg?1789127648",
    "rating": 7.0,
    "compared_to": "Thought-Knot Seer",
    "compared_uri": "https://scryfall.com/card/spg/39/thought-knot-seer?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/2/7/27bf5e61-87d4-446e-8583-cece83d3aacd.jpg?1783911136",
    "text": "Stealing an opponent\u2019s card and then potentially getting to cast it for yourself is pretty busted, kind of like a Thought-Knot Seer crossed with Hostage Taker ."
   },
   {
@@ -1841,9 +2058,11 @@
    "grade": "B+",
    "uri": "https://scryfall.com/card/fra/150/stingerquill-charm?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/8/1/81733ff7-e611-43ee-bf38-6bb700676017.jpg?1789127652",
    "rating": 7.0,
    "compared_to": "Lightning Strike",
    "compared_uri": "https://scryfall.com/card/dft/136/lightning-strike?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/3/0/30077b49-b825-4dbb-a0c7-f3992f647df0.jpg?1783907880",
    "text": "All three modes are incredible, especially with the base rate of just being Lightning Strike ."
   },
   {
@@ -1851,9 +2070,11 @@
    "grade": "C+",
    "uri": "https://scryfall.com/card/fra/198/gideons-memorial?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/7/6/768c0e64-9907-417a-a763-c836fdf36883.jpg?1789127685",
    "rating": 6.0,
    "compared_to": "Intangible Virtue",
    "compared_uri": "https://scryfall.com/card/wot/6/intangible-virtue?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/b/b/bb1bc2f9-d02a-4515-aa07-fcf98a3d194d.jpg?1783914933",
    "text": "We can simply ignore the second ability and this is still an Intangible Virtue that you could also use as a mediocre removal spell."
   },
   {
@@ -1861,9 +2082,11 @@
    "grade": "B+",
    "uri": "https://scryfall.com/card/fra/12/hexhaven-battalion?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/3/b/3b6ac80e-c726-4bd0-893a-e666041a04a6.jpg?1789556695",
    "rating": 6.0,
    "compared_to": "Imperial Oath",
    "compared_uri": "https://scryfall.com/card/neo/17/imperial-oath?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/3/d/3d6750dd-2303-493b-885d-1bfb5787b16c.jpg?1783923922",
    "text": "In Kamigawa: Neon Dynasty , there was a card called Imperial Oath ."
   },
   {
@@ -1871,9 +2094,11 @@
    "grade": "B",
    "uri": "https://scryfall.com/card/fra/15/memory-trap?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/2/f/2f5345ae-4489-4d05-b2d5-c71285254f05.jpg?1788866058",
    "rating": 6.0,
    "compared_to": "Banishing Light",
    "compared_uri": "https://scryfall.com/card/blb/1/banishing-light?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/2/5/25a06f82-ebdb-4dd6-bfe8-958018ce557c.jpg?1783910866",
    "text": "Whether you call it Banishing Light , Web Up , or of course Memory Trap , 3 mana to answer just about anything you want is a very good deal."
   },
   {
@@ -1881,9 +2106,11 @@
    "grade": "B-",
    "uri": "https://scryfall.com/card/fra/204/teyo-lightshield-expert?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/5/f/5f7521d7-9f1f-4f03-b2ea-dd2a1b1e4e5b.jpg?1789471515",
    "rating": 6.0,
    "compared_to": "Shardmage's Rescue",
    "compared_uri": "https://scryfall.com/card/dsk/29/shardmages-rescue?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/a/e/aed0cafa-d701-4e1f-9773-abcf817c244c.jpg?1783909505",
    "text": "Some, like Shardmage's Rescue , provide some additional benefit beyond stopping a removal spell, but Teyo, Lightshield Expert not only gives a +1/+1 counter (or loyalty counter), but a whole body for you to use to your advantage."
   },
   {
@@ -1891,9 +2118,11 @@
    "grade": "C+",
    "uri": "https://scryfall.com/card/fra/35/plan-for-all-outcomes?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/c/4/c4effc17-0d0e-423a-b5f2-597ea6c71f67.jpg?1789576786",
    "rating": 6.0,
    "compared_to": "Trickster's Stratagem",
    "compared_uri": "https://scryfall.com/card/msh/81/tricksters-stratagem?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/6/2/620376d0-dc0c-405f-8121-eb36d9b4f4c2.jpg?1783902948",
    "text": "It\u2019s only sorcery speed, and that didn\u2019t stop Trickster's Stratagem , but staying in play and letting you empower when you cast a noncreature spell each turn is incredible."
   },
   {
@@ -1901,9 +2130,11 @@
    "grade": "B-",
    "uri": "https://scryfall.com/card/fra/58/multiply-by-zero?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/9/0/90d684a4-9639-4792-8760-2011a7a85370.jpg?1789644823",
    "rating": 6.0,
    "compared_to": "Divide by Zero",
    "compared_uri": "https://scryfall.com/card/stx/41/divide-by-zero?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/1/9/1958d96e-ec44-48ab-80b1-5b01a24ac7b8.jpg?1783927380",
    "text": "As such, I was always puzzled by how Divide by Zero didn\u2019t feel quite like the result of dividing by zero."
   },
   {
@@ -1911,9 +2142,11 @@
    "grade": "C+",
    "uri": "https://scryfall.com/card/fra/105/heartwood-crafter-soul-tether?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/9/1/910a1f41-17fd-4ab0-9597-7151e79dc760.jpg?1789127630",
    "rating": 6.0,
    "compared_to": "Llanowar Elves",
    "compared_uri": "https://scryfall.com/card/fdn/227/llanowar-elves?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/6/a/6a0b230b-d391-4998-a3f7-7b158a0ec2cd.jpg?1783909057",
    "text": "While it doesn\u2019t function as a Llanowar Elves , it does cast its own Soul Tether ahead of schedule, as well as any other Soul Tether spells you want to cast."
   },
   {
@@ -1921,9 +2154,11 @@
    "grade": "C",
    "uri": "https://scryfall.com/card/fra/266/titanbones-towering-heart?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/e/d/edea6f70-a5a7-475d-b7f2-97933d0f32cf.jpg?1788329375",
    "rating": 6.0,
    "compared_to": "Ajani's Pridemate",
    "compared_uri": "https://scryfall.com/card/fdn/135/ajanis-pridemate?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/2/2/222c1a68-e34c-4103-b1be-17d4ceaef6ce.jpg?1783909088",
    "text": "Ajani's Pridemate is a tried and tested formula that really works."
   },
   {
@@ -1931,9 +2166,11 @@
    "grade": "B-",
    "uri": "https://scryfall.com/card/fra/149/solitary-cell?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/5/1/5142bbb6-194c-4b12-b11a-1a21c9fe81a6.jpg?1788260690",
    "rating": 6.0,
    "compared_to": "Glass Casket",
    "compared_uri": "https://scryfall.com/card/eld/15/glass-casket?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/5/6/562f1c51-d245-4771-bf61-415297e4f9d5.jpg?1783932673",
    "text": "Glass Casket has proven itself to be a solid removal spell in past sets."
   },
   {
@@ -1941,9 +2178,11 @@
    "grade": "B",
    "uri": "https://scryfall.com/card/fra/163/warriors-blades?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/c/6/c63d5b0e-ee72-42ed-aa7e-484ba84507cd.jpg?1789007648",
    "rating": 6.0,
    "compared_to": "Lightning Helix",
    "compared_uri": "https://scryfall.com/card/mkm/218/lightning-helix?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/4/1/4101e3fe-b0e7-4f0f-b9ac-9b61a4d628b3.jpg?1783912843",
    "text": "Lightning Helix on a stick is a pretty powerful card, even if that stick is only an equipment, not a creature."
   },
   {
@@ -1951,9 +2190,11 @@
    "grade": "C+",
    "uri": "https://scryfall.com/card/fra/165/woodwork-prodigy-soul-tether?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/7/d/7d17f7e3-7b63-4674-9024-4fd1827f40ec.jpg?1788329429",
    "rating": 6.0,
    "compared_to": "Svella, Ice Shaper",
    "compared_uri": "https://scryfall.com/card/khm/230/svella-ice-shaper?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/a/7/a7054d48-5ed3-43a1-85e5-9f306b081b4f.jpg?1783928190",
    "text": "One of my favorite Limited cards in recent years is Svella, Ice Shaper ."
   },
   {
@@ -1961,9 +2202,11 @@
    "grade": "C",
    "uri": "https://scryfall.com/card/fra/215/hapatra-the-desert-frost?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/8/5/85faaa9d-4656-4365-871d-7cba53ed0996.jpg?1789387113",
    "rating": 5.0,
    "compared_to": "Frost Lynx",
    "compared_uri": "https://scryfall.com/card/iko/51/frost-lynx?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/d/f/dfcaeccc-fc8c-4a9e-80d5-b48da71d7ff1.jpg?1783931076",
    "text": "I\u2019m in for a big 4-drop Frost Lynx ."
   },
   {
@@ -1971,9 +2214,11 @@
    "grade": "D+",
    "uri": "https://scryfall.com/card/fra/32/jaces-machinations?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/2/8/282588b9-3656-453b-aa25-2419e078ddc1.jpg?1788878150",
    "rating": 5.0,
    "compared_to": "Quick Study",
    "compared_uri": "https://scryfall.com/card/fdn/513/quick-study?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/0/9/098c86fd-5a38-41fd-be44-ab963448f2a2.jpg?1783908961",
    "text": "That\u2019s a bit better than your average Quick Study effect, but not by a lot."
   },
   {
@@ -1981,9 +2226,11 @@
    "grade": "B",
    "uri": "https://scryfall.com/card/fra/89/no-admittance?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/1/1/11ba4fdd-cc03-4bb6-a493-91a9785771d0.jpg?1788878170",
    "rating": 5.0,
    "compared_to": "Lightning Strike",
    "compared_uri": "https://scryfall.com/card/dft/136/lightning-strike?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/3/0/30077b49-b825-4dbb-a0c7-f3992f647df0.jpg?1783907880",
    "text": "No Admittance is bound to be one of red\u2019s better commons, even though it lacks some of the flexibility of a simple Lightning Strike ."
   },
   {
@@ -1991,9 +2238,11 @@
    "grade": "C",
    "uri": "https://scryfall.com/card/fra/23/unflinching-hortimancer?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/6/3/63f82985-c9c2-4d0a-ac4f-560166bebd9f.jpg?1789556741",
    "rating": 4.0,
    "compared_to": "Ajani's Pridemate",
    "compared_uri": "https://scryfall.com/card/fdn/135/ajanis-pridemate?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/2/2/222c1a68-e34c-4103-b1be-17d4ceaef6ce.jpg?1783909088",
    "text": "Ajani's Pridemate is a design that has proven itself time and time again in previous sets."
   },
   {
@@ -2001,9 +2250,11 @@
    "grade": "D-",
    "uri": "https://scryfall.com/card/fra/209/yoshimaru-beloved-companion?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/3/8/384f3b7d-8d7f-41bf-bebd-64e8babe7fca.jpg?1789470881",
    "rating": 4.0,
    "compared_to": "Conclave Mentor",
    "compared_uri": "https://scryfall.com/card/m21/216/conclave-mentor?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/a/3/a328a93a-e720-46d5-a190-cc65d1c90cea.jpg?1783930665",
    "text": "When we\u2019ve seen these kinds of effects in the past, like on Winding Constrictor or Conclave Mentor , they\u2019ve been pretty strong."
   },
   {
@@ -2011,9 +2262,11 @@
    "grade": "D+",
    "uri": "https://scryfall.com/card/fra/213/fblthp-impossibly-lost?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/a/3/a3a2edbb-d144-4670-acad-17316cea98d2.jpg?1789127697",
    "rating": 4.0,
    "compared_to": "Chart a Course",
    "compared_uri": "https://scryfall.com/card/fdn/586/chart-a-course?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/7/5/7599d459-fe71-48f4-8c65-0f519bb63a68.jpg?1783908936",
    "text": "Fblthp, Impossibly Lost has a lot of text, but it basically amounts to a 2-mana spell that draws you two cards if you can deal combat damage to your opponent, kind of like when you cast Chart a Course ."
   },
   {
@@ -2021,9 +2274,11 @@
    "grade": "C+",
    "uri": "https://scryfall.com/card/fra/39/semester-foreseer-peer-review?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/7/e/7e5a640b-fd88-4b5a-9dfc-1d8f5a5cef41.jpg?1789127516",
    "rating": 4.0,
    "compared_to": "Campus Composer",
    "compared_uri": "https://scryfall.com/card/sos/40/campus-composer-aqueous-aria?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/f/a/fac8ac39-ecb4-4142-bf37-131c65660a9b.jpg?1783903694",
    "text": "The comparison to make here is to Campus Composer , a pretty good card from Secrets of Strixhaven ."
   },
   {
@@ -2031,9 +2286,11 @@
    "grade": "C+",
    "uri": "https://scryfall.com/card/fra/44/theorists-proxy?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/7/1/710302ca-c4be-4069-8ce1-f531414c74e9.jpg?1788878151",
    "rating": 4.0,
    "compared_to": "Spirited Companion",
    "compared_uri": "https://scryfall.com/card/neo/38/spirited-companion?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/5/a/5aa91a9e-2fe2-43bc-aa9c-cfb8a71829ff.jpg?1783923912",
    "text": "The empower 3 allows you to draw a card, which already makes Theorist's Proxy comparable to something like a Spirited Companion , but the high toughness also makes it better at protecting your Jace token should you need to build it up for a bigger loyalty ability."
   },
   {
@@ -2041,9 +2298,11 @@
    "grade": "C-",
    "uri": "https://scryfall.com/card/fra/245/gallia-the-merrymaker?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/f/2/f27d50f0-d76e-4ce1-a8d9-d997af6a5b41.jpg?1789385716",
    "rating": 4.0,
    "compared_to": "Axgard Cavalry",
    "compared_uri": "https://scryfall.com/card/fdn/189/axgard-cavalry?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/f/e/fe3cc41a-adae-4c9b-b4d3-03f3ca862fed.jpg?1783909068",
    "text": "Two-drop creatures that can give haste to your other creatures entering, like Axgard Cavalry , have been reasonable in the past."
   },
   {
@@ -2051,9 +2310,11 @@
    "grade": "C-",
    "uri": "https://scryfall.com/card/fra/104/greenhouse-propagator?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/a/5/a56e0f91-b128-4693-a949-53cb403f4fbf.jpg?1789127136",
    "rating": 4.0,
    "compared_to": "Soul Warden",
    "compared_uri": "https://scryfall.com/card/spg/65/soul-warden?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/b/c/bc9df8ac-0214-4d8a-a401-667f8c34e63e.jpg?1783909282",
    "text": "Acting as both a mana dork and a Soul Warden , a lot of decks will be happy to run Greenhouse Propagator ."
   },
   {
@@ -2061,9 +2322,11 @@
    "grade": "C+",
    "uri": "https://scryfall.com/card/fra/155/theorix-charm?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/2/8/2835c9aa-0904-44db-8da2-e8c4e04201aa.jpg?1789127659",
    "rating": 4.0,
    "compared_to": "Spell Pierce",
    "compared_uri": "https://scryfall.com/card/dft/64/spell-pierce?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/8/d/8dd4374f-0301-4b2e-bc99-2cd19568cb3b.jpg?1783907902",
    "text": "Each mode is essentially a 1-mana spell, Spell Pierce , Disfigure , and"
   },
   {
@@ -2071,9 +2334,11 @@
    "grade": "D",
    "uri": "https://scryfall.com/card/fra/280/traxos-scourge-eternal?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/0/5/05102c46-96f8-44a0-a1e6-e388fa5e0841.jpg?1789557046",
    "rating": 4.0,
    "compared_to": "Traxos, Scourge of Kroog",
    "compared_uri": "https://scryfall.com/card/fca/20/traxos-scourge-of-kroog?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/3/f/3f0cbff1-4b4e-4d60-b114-20bd3e977b25.jpg?1783906388",
    "text": "Needing you to cast a creature or artifact spell to untap it is a pretty big downside, but unlike the original Traxos, Scourge of Kroog , Traxos, Scourge Eternal at least enters untapped, so you get that first attack without needing to cast another spell."
   },
   {
@@ -2081,9 +2346,11 @@
    "grade": "C-",
    "uri": "https://scryfall.com/card/fra/123/blessed-ghoul?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/b/b/bb975803-9bf2-401e-9414-d272df314398.jpg?1789556847",
    "rating": 3.0,
    "compared_to": "Sanitarium Skeleton",
    "compared_uri": "https://scryfall.com/card/sir/133/sanitarium-skeleton?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/7/c/7c73530c-4dde-4b02-ba70-b583c3968b37.jpg?1783917620",
    "text": "I\u2019ve always been a big fan of Sanitarium Skeleton , so swapping out that second point of toughness for lifelink sounds like a fair trade."
   },
   {
@@ -2091,9 +2358,11 @@
    "grade": "B",
    "uri": "https://scryfall.com/card/fra/195/ajani-resolute?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/a/5/a5e1a7dd-8c49-4435-935c-bcc78704082b.jpg?1788329189",
    "rating": 2.0,
    "compared_to": "Ajani's Pridemate",
    "compared_uri": "https://scryfall.com/card/fdn/135/ajanis-pridemate?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/2/2/222c1a68-e34c-4103-b1be-17d4ceaef6ce.jpg?1783909088",
    "text": "While Ajani Resolute is probably my favorite design in this set, answering the question \u201cWhat would Ajani's Pridemate look like as a planeswalker ?\u201d, it sadly feels very lackluster for Limited play."
   },
   {
@@ -2101,9 +2370,11 @@
    "grade": "D",
    "uri": "https://scryfall.com/card/fra/41/sphinxs-approach?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/f/4/f49be090-c745-40e5-bc1c-605b8d98acdf.jpg?1789644816",
    "rating": 2.0,
    "compared_to": "Quick Study",
    "compared_uri": "https://scryfall.com/card/fdn/513/quick-study?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/0/9/098c86fd-5a38-41fd-be44-ab963448f2a2.jpg?1783908961",
    "text": "This is simply a Quick Study that\u2019s harder to cast, which is just barely still good enough."
   },
   {
@@ -2111,9 +2382,11 @@
    "grade": "B-",
    "uri": "https://scryfall.com/card/fra/49/bloodline-recollector-ancestral-craving?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/4/f/4fcc913e-f736-460a-b24b-022fa2e861b9.jpg?1788329264",
    "rating": 2.0,
    "compared_to": "Emeritus of Ideation",
    "compared_uri": "https://scryfall.com/card/sos/45/emeritus-of-ideation-ancestral-recall?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/7/5/75961d36-acf6-425f-9698-0bf52af74f31.jpg?1783903694",
    "text": "This is a real far cry from Emeritus of Ideation ."
   },
   {
@@ -2121,9 +2394,11 @@
    "grade": "C-",
    "uri": "https://scryfall.com/card/fra/106/hexhaven-invigorator?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/9/a/9a446cae-e93c-4574-8ffd-7688f9729a8a.jpg?1788878191",
    "rating": 1.0,
    "compared_to": "Phyrexian Obliterator",
    "compared_uri": "https://scryfall.com/card/one/105/phyrexian-obliterator?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/6/7/67a9c38b-6b3a-4056-a87c-fc48446f854f.jpg?1783918042",
    "text": "Just like its black counterpart, Phyrexian Obliterator , this isn\u2019t remotely good enough."
   },
   {
@@ -2131,9 +2406,11 @@
    "grade": "D-",
    "uri": "https://scryfall.com/card/fra/181/hexhaven-dueling-arena?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/9/1/9128ce00-6744-4d36-bfbe-ef75d78110b0.jpg?1789556985",
    "rating": 1.0,
    "compared_to": "Skycoach Waypoint",
    "compared_uri": "https://scryfall.com/card/sos/261/skycoach-waypoint?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/6/7/6747657b-5ce4-4dbd-b924-ca1f7119faf7.jpg?1783903618",
    "text": "I thought Skycoach Waypoint might have been good enough, but it ended up being pretty bad, so I imagine the same is true here."
   },
   {
@@ -2141,9 +2418,11 @@
    "grade": "D+",
    "uri": "https://scryfall.com/card/fra/187/roiling-canopy?utm_source=api",
    "special": false,
+   "image": "https://cards.scryfall.io/normal/front/d/b/db61361b-bd12-453e-abc2-bbe09b66e3d9.jpg?1789514074",
    "rating": 0.0,
    "compared_to": "Valakut, the Molten Pinnacle",
    "compared_uri": "https://scryfall.com/card/zne/29/valakut-the-molten-pinnacle?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/c/2/c2d07eea-b165-4976-9088-d283ab7cfe72.jpg?1783929426",
    "text": "A green-shifted Valakut, the Molten Pinnacle is kind of cool, but Roiling Canopy does literally nothing until you reach your sixth forest in play."
   }
  ],
@@ -2154,6 +2433,7 @@
     "grade": "A+",
     "rating": 10.0,
     "uri": "https://scryfall.com/card/fra/242/ajani-unrelenting?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/b/c/bc3c096f-7f6c-474c-a2c8-75d3e6ddd6f5.jpg?1788329317",
     "text": "I\u2019m assuming that you\u2019ll use the -3 ability a lot of the time you play Ajani, and the fact that you get the Cadet token as well as wiping the board seems truly absurd.",
     "special": false
    },
@@ -2162,6 +2442,7 @@
     "grade": "A-",
     "rating": 10.0,
     "uri": "https://scryfall.com/card/fra/244/chandra-torch-of-defiance?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/4/0/40cb22c8-cb03-45c9-bb0e-b8cabdcc43cd.jpg?1788329325",
     "text": "When it was originally printed in Kaladesh , it was an absolute house in Standard and was basically the best card in the format up until it rotated.",
     "special": false
    },
@@ -2170,6 +2451,7 @@
     "grade": "A",
     "rating": 10.0,
     "uri": "https://scryfall.com/card/fra/43/the-theorist-jace-beleren?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/2/0/20bb8c55-4b0b-425f-8201-b54fa2fdde86.jpg?1788329228",
     "text": "All of the best planeswalkers protect themselves, and both of Jace\u2019s main loyalty abilities are capable of doing that.",
     "special": false
    },
@@ -2178,6 +2460,7 @@
     "grade": "A",
     "rating": 10.0,
     "uri": "https://scryfall.com/card/fra/217/lyra-tolarian-archangel?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/a/5/a5183681-447b-4023-91f7-00e9338f4417.jpg?1789128032",
     "text": "This is a truly absurd rare, and I expect to lose to it quite a bit in this format.",
     "special": false
    },
@@ -2186,6 +2469,7 @@
     "grade": "A",
     "rating": 9.0,
     "uri": "https://scryfall.com/card/fra/59/overwrite-the-multiverse?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/c/4/c4554f5b-791b-48f6-bf54-ad28699e1beb.jpg?1788952080",
     "text": "While Sunfall was one of the best cards in March of the Machine , Overwrite the Multiverse will likely fall short of that.",
     "special": false
    },
@@ -2194,6 +2478,7 @@
     "grade": "A",
     "rating": 9.0,
     "uri": "https://scryfall.com/card/fra/121/aerid-konstrari?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/f/1/f17d2792-b075-4c47-ad38-e7a7eaee5f8c.jpg?1788878199",
     "text": "This card is absolutely incredible and a great first pick to cement you into what might be the best Hexhaven school.",
     "special": false
    },
@@ -2202,6 +2487,7 @@
     "grade": "A-",
     "rating": 8.0,
     "uri": "https://scryfall.com/card/fra/93/stingcaster-mage?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/2/d/2d8e8e5f-3bf5-490d-aa9c-9df2b26f1460.jpg?1788329303",
     "text": "The best thing to do will typically be to flashback a removal spell and turn this into a makeshift Flametongue Kavu , but there are a lot of other options.",
     "special": false
    },
@@ -2210,6 +2496,7 @@
     "grade": "A-",
     "rating": 8.0,
     "uri": "https://scryfall.com/card/fra/441/seasoned-cryomancer?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/f/1/f1a15a83-2f74-4513-ae4b-4cdc17016a84.jpg?1789470965",
     "text": "It\u2019s still pretty good though, and the best ability it has is the last one, where you can draw two cards by exiling it from your graveyard.",
     "special": false
    },
@@ -2218,6 +2505,7 @@
     "grade": "A-",
     "rating": 8.0,
     "uri": "https://scryfall.com/card/fra/154/tenured-tethermage?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/1/7/1703306d-6a3d-4ab8-bf58-a9992236ef0f.jpg?1789385792",
     "text": "There are a bunch of creatures in Reality Fracture that ramp you for 3 mana, but Tenured Tethermage might be the best of the lot.",
     "special": false
    },
@@ -2226,6 +2514,7 @@
     "grade": "B+",
     "rating": 7.0,
     "uri": "https://scryfall.com/card/fra/142/null-summoner?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/3/a/3afdc75a-1bf5-4f2f-84eb-d82f77a095cd.jpg?1789127648",
     "text": "Stealing an opponent\u2019s card and then potentially getting to cast it for yourself is pretty busted, kind of like a Thought-Knot Seer crossed with Hostage Taker .",
     "special": false
    },
@@ -2234,6 +2523,7 @@
     "grade": "B",
     "rating": 7.0,
     "uri": "https://scryfall.com/card/fra/124/bloombrute?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/6/b/6b804503-9c70-4b1f-bb13-a65fb6dd3ef8.jpg?1789644843",
     "text": "I often say that the best build around cards in Limited are usually the ones that draw a card whenever you do the thing, so of course I like Bloombrute .",
     "special": false
    },
@@ -2242,6 +2532,7 @@
     "grade": "B",
     "rating": 7.0,
     "uri": "https://scryfall.com/card/fra/84/fulminous-forte?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/1/9/19acb2b5-3b3e-43f0-bd81-8426ed3d9c55.jpg?1789614832",
     "text": "That extra bit of flexibility over a sorcery makes a big difference and sells this to me as one of red\u2019s best and most versatile cards.",
     "special": false
    }
@@ -2252,6 +2543,7 @@
     "grade": "D+",
     "rating": 0.0,
     "uri": "https://scryfall.com/card/fra/187/roiling-canopy?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/d/b/db61361b-bd12-453e-abc2-bbe09b66e3d9.jpg?1789514074",
     "text": "That won\u2019t happen unless you warp your entire draft around forcing mono-green, so since it enters tapped, that makes it strictly worse than a forest and you should never play it.",
     "special": false
    },
@@ -2260,6 +2552,7 @@
     "grade": "F",
     "rating": 0.0,
     "uri": "https://scryfall.com/card/fra/55/extrapolate-the-impossible?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/1/7/17fb6538-493c-41aa-ad13-3e63d3ad3317.jpg?1789729624",
     "text": "Not only should all your best cards be in your main deck already, but your opponent gets to give you the worst option of the two you show them.",
     "special": false
    },
@@ -2268,6 +2561,7 @@
     "grade": "F",
     "rating": 0.0,
     "uri": "https://scryfall.com/card/spg/168/root-maze?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/0/7/07bf6e66-b146-4db3-b2ab-f7b199acbe27.jpg?1788922621",
     "text": "Root Maze is absurdly bad and you should never play it.",
     "special": true
    },
@@ -2276,6 +2570,7 @@
     "grade": "D-",
     "rating": 1.0,
     "uri": "https://scryfall.com/card/spg/162/consign-to-memory?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/e/c/ec9ffeac-ae49-465e-9dc5-976db8252fe6.jpg?1788922549",
     "text": "While this is the best sideboard card in Modern for very good reasons, Consign to Memory is far too situational to see any Limited play.",
     "special": true
    },
@@ -2284,6 +2579,7 @@
     "grade": "D",
     "rating": 1.0,
     "uri": "https://scryfall.com/card/fra/220/samut-tyrant-of-naktamun?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/6/d/6d7d8fa7-ce69-4a8c-9af0-55571393a244.jpg?1789729644",
     "text": "I view Samut, Tyrant of Naktamun as basically nothing more than a vanilla 2/1, which you should basically never play.",
     "special": false
    },
@@ -2292,6 +2588,7 @@
     "grade": "D-",
     "rating": 1.0,
     "uri": "https://scryfall.com/card/fra/134/ferocity-of-the-hunt?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/a/9/a9793ce9-5a0b-41fe-b9ad-02f6f7da2481.jpg?1789644856",
     "text": "That sounds amazing when you frame it that way, but that\u2019s only the best-case scenario.",
     "special": false
    },
@@ -2300,6 +2597,7 @@
     "grade": "D-",
     "rating": 1.0,
     "uri": "https://scryfall.com/card/fra/120/wrecking-gecko?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/3/d/3d693cb0-681e-480a-8f70-07e94c39225c.jpg?1789385843",
     "text": "Naturally, as a common, Wrecking Gecko is the worst by a lot.",
     "special": false
    },
@@ -2308,6 +2606,7 @@
     "grade": "D+",
     "rating": 1.0,
     "uri": "https://scryfall.com/card/fra/9/germinate-recruits?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/1/b/1b5d7d19-b32a-4786-ae9a-00da5e6658ad.jpg?1789644810",
     "text": "This is a 1/10 in most scenarios and a 10/10 when it works.",
     "special": false
    },
@@ -2316,6 +2615,7 @@
     "grade": "D-",
     "rating": 1.0,
     "uri": "https://scryfall.com/card/fra/239/way-of-the-necromancer?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/a/0/a0ff9689-ea49-4fff-b37c-4abbaeb0f73d.jpg?1789729526",
     "text": "It\u2019s not unplayable, but it\u2019s definitely not good.",
     "special": false
    },
@@ -2324,6 +2624,7 @@
     "grade": "C-",
     "rating": 2.0,
     "uri": "https://scryfall.com/card/fra/60/rampart-hunter?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/f/4/f4a80225-7459-4151-86bb-8fdea31c39a6.jpg?1789127211",
     "text": "The ETB ability might be enough to warrant playing it in some decks, but this looks like filler material at best.",
     "special": false
    },
@@ -2332,6 +2633,7 @@
     "grade": "D",
     "rating": 2.0,
     "uri": "https://scryfall.com/card/fra/41/sphinxs-approach?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/f/4/f49be090-c745-40e5-bc1c-605b8d98acdf.jpg?1789644816",
     "text": "I think this is quite playable in a slower control deck, but I\u2019d never play it in an aggressive deck.",
     "special": false
    },
@@ -2340,6 +2642,7 @@
     "grade": "C",
     "rating": 2.0,
     "uri": "https://scryfall.com/card/fra/138/konstrari-charm?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/7/d/7d29dfa1-9582-47bc-8f42-62b611bdcc4e.jpg?1789127645",
     "text": "Gruul Charm was abysmal and now Konstrari Charm is easily the worst of this cycle.",
     "special": false
    }

@@ -668,6 +668,19 @@ like-for-like. And the review covers the set's **ten Special Guests**, which are
 their own set code: `set:fra` never returned them, so the grader has never seen them. They are
 rare in Play Boosters but openable, so they are kept on the page and marked rather than dropped.
 
+### Seeing the card
+
+Every page here is a list of card names, and reading a grade without the card in front of you
+is guesswork. `cardpreview.js` attaches a floating card image to **every link to a card**, on
+all four pages — hover on a desktop, tap on a phone. On touch the first tap shows the card and
+holds the link, a second tap follows it, tapping the image does nothing, and tapping anywhere
+else closes it.
+
+It hooks Scryfall links automatically rather than asking each template to opt in, since a link
+to a card is exactly the thing that should show one. Images come from Scryfall's CDN, so they
+are the one part of the app that needs a connection — the grades, signals and reviews are all
+cached and work with no signal at all.
+
 ## On your phone
 
 The grader installs as a PWA — an app icon, offline, no store or APK needed. GitHub Pages
