@@ -609,6 +609,67 @@ Bonus-sheet cards are graded like anything else and marked `guest` on the card l
 are **left out of colour depth and pair strength** — those describe the pool you can expect,
 and most sealed pools will not contain one.
 
+## The post-mortem: how it actually did
+
+Everything above is cross-validation. This is the real thing. Reality Fracture was graded on
+2026-09-22, three days before the prerelease, by a model that had never seen a game of it. The
+file was frozen as `data/grades_FRA.prerelease.json`. Five weeks later 17Lands has ~298k draft
+games and ~61k sealed ones, and limitedgrades.com publishes its grades for the set.
+
+**Premier Draft**, 256 cards with 400+ games each:
+
+| predictor | spearman vs real win rates |
+|---|---|
+| **our model** | **0.675** |
+| the two-reviewer consensus | 0.672 |
+| MTG Arena Zone | 0.667 |
+| Draftsim | 0.607 |
+| the same model with reviews withheld | 0.528 |
+
+Against limitedgrades.com's own published grades rather than our reconstruction of them, the
+ordering is the same: **us 0.667**, consensus 0.655, MTG Arena Zone 0.648, Draftsim 0.595.
+(Their grades and our reconstruction agree at 0.948, so the two measurements are the same
+measurement.)
+
+**Sealed** — the format a prerelease actually is — 237 cards: us **0.613**, MTG Arena Zone
+0.600, consensus 0.599, Draftsim 0.548. Same order, everything a little lower.
+
+**Grade accuracy**: 19% exact, **47% within one step**, 70% within two, mean 1.82 steps off.
+Top 10 picks: 6 of the real top 10. Top 30: 21 of the real top 30.
+
+### What the validation got right
+
+The honest part of this project was never the score, it was the claim that leave-one-set-out
+measures something real. It did:
+
+| | predicted by LOSO | actual on FRA |
+|---|---|---|
+| spearman | 0.655 | 0.675 |
+| within one grade | 49% | 47% |
+| reviewers' rare bias | +0.262 | +0.270 |
+| reviewers' common bias | −0.309 | −0.411 |
+| our rare bias | +0.257 | +0.238 |
+
+The one it missed is mythics: we predicted the model would over-rate them by +0.392 and it came
+in at +0.063 — on 30 cards, which is about the sample size where that estimate was always going
+to be noise.
+
+### What it got wrong
+
+**The reviewers were right about the cards we argued over.** Emrakul, the Exigent Doom: we said
+C−, they said 1.5/10, it finished D. Ajani Resolute: we said B, they said 4.5/10, it finished D.
+Frostbite Pyromental, Bloodline Recollector — same story. Every card where the model and the
+humans disagreed sharply, the humans won. That is also visible in the headline table: the blind
+model scores 0.528 and the reviewers lift it to 0.675. **The expert feature is worth +0.147 on
+real data, nearly twice the +0.076 that cross-validation measured.** Getting a set review into
+the model is by a distance the highest-value thing we do.
+
+**Special Guests are a coin flip.** Splinter Twin graded D and finished A — a nine-step miss, the
+worst of the set. But measured across the 17 past sets that have a bonus sheet, those cards are
+*over*-rated by +0.220 (p=2.6e-07), while FRA's were *under*-rated by −0.580. Opposite
+directions, so there is no offset to apply; what is true is that they are simply predicted
+worse than ordinary cards. They stay flagged and stay out of the pool statistics.
+
 ## Four pages
 
 **`index.html`** — all 280 cards sorted into colour piles, best to worst, with a detail

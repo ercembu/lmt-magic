@@ -19,7 +19,11 @@ sys.path.insert(0, os.path.dirname(__file__))
 import dataset, textfeat
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
-TRAIN_SETS = ["HOB", "MSH", "SOS", "TMT", "ECL", "TLA", "EOE", "FIN", "TDM",
+# FRA joined the pool on 2026-11-01, five weeks after release, once 17lands had
+# ~300k games of it. It is also the one set we predicted completely blind and
+# can therefore score honestly -- see scripts/postmortem.py.
+TRAIN_SETS = ["FRA",
+              "HOB", "MSH", "SOS", "TMT", "ECL", "TLA", "EOE", "FIN", "TDM",
               "DFT", "DSK", "BLB", "OTJ", "MKM", "LCI", "WOE", "LTR", "MOM",
               "ONE", "BRO", "DMU",
               # older sets; pre-2022 files carry no tutored_ columns, handled

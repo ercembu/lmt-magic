@@ -5,7 +5,7 @@ OUT = os.path.join(os.path.dirname(__file__), "..", "data", "cards")
 
 # 17lands expansion code -> scryfall set code
 SETS = {
-    "FRA": "fra", "HOB": "hob", "MSH": "msh", "SOS": "sos", "TMT": "tmt",
+    "TRK": "trk", "FRA": "fra", "HOB": "hob", "MSH": "msh", "SOS": "sos", "TMT": "tmt",
     "ECL": "ecl", "TLA": "tla", "EOE": "eoe", "FIN": "fin", "TDM": "tdm",
     "DFT": "dft", "DSK": "dsk", "BLB": "blb", "OTJ": "otj", "MKM": "mkm",
     "LCI": "lci", "WOE": "woe", "LTR": "ltr", "MOM": "mom", "ONE": "one",
