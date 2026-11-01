@@ -264,6 +264,8 @@ scripts/
   signals.py           colour depth, commit-worthy cards, pair strength
   validate_signals.py  are those colour/pair rankings real? (mostly not)
   validate_preview.js  does every card element on every page resolve to an image?
+  validate_sealed.py   should a prerelease grader train on Sealed instead? (no)
+  postmortem.py        how did the frozen pre-release grades actually do?
   holdout_demo.py      show the damage on a set we know the answer to
   validate_grades.py   predicted vs limited-grades' real grades, all 21 sets
   guard_ablation.py    does the guard layer help? (it does not)
@@ -669,6 +671,22 @@ worst of the set. But measured across the 17 past sets that have a bonus sheet, 
 *over*-rated by +0.220 (p=2.6e-07), while FRA's were *under*-rated by −0.580. Opposite
 directions, so there is no offset to apply; what is true is that they are simply predicted
 worse than ordinary cards. They stay flagged and stay out of the pool statistics.
+
+### Should a prerelease grader be trained on Sealed?
+
+The model learns from Premier Draft win rates because that is where the data is, but the use
+case is a prerelease, which is Sealed: bigger decks, worse mana, slower games, removal you
+cannot side out. If the formats rank cards differently we have been answering the wrong
+question, so — 21 sets have both.
+
+The two formats rank cards the same way at **0.841**, close but clearly not identical. Training
+on Sealed labels and scoring on Sealed is nonetheless **worse**: 0.5283 against 0.5351,
+**−0.0068, p=0.36, 10 of 21 sets**. A coin flip.
+
+The reason is sample size. Sealed dumps are roughly a fifth of the draft ones, so the
+format-specific target is bought with five times the label noise, and at 0.841 agreement there
+is not enough format-specific signal left to pay for it. One model serves both, and
+`scripts/validate_sealed.py` reproduces the check when the next set makes it worth re-asking.
 
 ## Four pages
 
