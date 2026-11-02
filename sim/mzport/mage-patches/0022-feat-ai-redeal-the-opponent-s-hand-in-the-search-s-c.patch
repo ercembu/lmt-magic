@@ -1,0 +1,55 @@
+From 1e7f536073aa4a8c5856ab747d75c9cef25ea7f2 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 20:53:25 +0100
+Subject: [PATCH 22/22] feat(ai): redeal the opponent's hand in the search's
+ copy of the game
+
+The search saw the opponent's real hand, so games were open-handed and
+tricks, flash and counterspells lost their value. The copy now redeals
+that hand at random from hand and library, unless choices are being
+replayed. -Dlmt.seeOpponentHand=true restores the old behaviour.
+---
+ .../mage/player/ai/ComputerPlayerMCTS2.java   | 20 +++++++++++++------
+ 1 file changed, 14 insertions(+), 6 deletions(-)
+
+diff --git a/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/ComputerPlayerMCTS2.java b/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/ComputerPlayerMCTS2.java
+index 2f3b3374..a4fa05c3 100644
+--- a/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/ComputerPlayerMCTS2.java
++++ b/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/ComputerPlayerMCTS2.java
+@@ -51,6 +51,9 @@ public class ComputerPlayerMCTS2 extends ComputerPlayerMCTS {
+     /** shuffle both libraries in the search's copy of the game, so it can't see the next draws.
+      *  -Dlmt.keepLibraryOrder=true restores the old behaviour */
+     public static boolean shuffleLibraries = !Boolean.getBoolean("lmt.keepLibraryOrder");
++    /** redeal the opponent's hand from their hand + library in the search's copy, so it can't see that hand.
++     *  -Dlmt.seeOpponentHand=true restores the old behaviour */
++    public static boolean hideOpponentHand = !Boolean.getBoolean("lmt.seeOpponentHand");
+ 
+ 
+ 
+@@ -322,12 +325,17 @@ public class ComputerPlayerMCTS2 extends ComputerPlayerMCTS {
+         Game sim = createMCTSGame(game.getLastPriority());
+         PlayerScript prefixScript = new PlayerScript(getPlayerHistory());
+         PlayerScript opponentPrefixScript = new PlayerScript(game.getOpponent(playerId).getPlayerHistory());
+-        // the search plays on a copy of the real game, so it would know both players' next draws. Shuffle both
+-        // libraries in the copy (hands stay as they are). Not when choices made since the last priority are
+-        // replayed: those can name a library card being looked at (surveil, search), which a shuffle would move
+-        if (shuffleLibraries && prefixScript.isEmpty() && opponentPrefixScript.isEmpty()) {
+-            for (Player p : sim.getState().getPlayers().values()) {
+-                p.getLibrary().shuffle();
++        // the search plays on a copy of the real game, so it would know the opponent's hand and both players' next
++        // draws. In the copy, the opponent's hand is redealt at random from their hand + library (same size) and
++        // both libraries are shuffled. Not when choices made since the last priority are replayed: those can name
++        // a card being looked at or held, which this would move
++        if (prefixScript.isEmpty() && opponentPrefixScript.isEmpty()) {
++            if (hideOpponentHand) {
++                shuffleUnknowns(sim, playerId);   // redeals the opponent's hand; shuffles every library
++            } else if (shuffleLibraries) {
++                for (Player p : sim.getState().getPlayers().values()) {
++                    p.getLibrary().shuffle();
++                }
+             }
+         }
+         MCTSNode2 newRoot = new MCTSNode2(this, sim, actionType, prefixScript, opponentPrefixScript);
+-- 
+2.56.0
+

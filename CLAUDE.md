@@ -28,11 +28,8 @@ the XMage fork that become `sim/mzport/mage-patches/*.patch`.
   the AI's decision lines are filtered out of it.
 - Don't `pkill -f` a pattern that also appears in the shell command running it: it kills that shell.
 
-## Open issues (deferred to the round after gens 3-5)
+## Open issues
 
-- **Instants and flash are cast at the first chance; tricks almost never in combat.** In 42 gen-3 games, 13% of
-  casts were in the caster's own upkeep or draw step and under 1% in any combat step. Search-only play is greedy
-  on the board heuristic. Candidate fix: pass on your own upkeep/draw with an empty stack. Measure the timing
-  table again on network-led gens first: it may be learned.
-- **The search sees the opponent's hand** (the network doesn't), so games are open-handed and tricks, flash and
-  counterspells are likely undervalued. Fix it if FRA's real win rates show that bias.
+- **Combat tricks are almost never cast in combat** (under 1% of casts in gen 3). Since gen 4's gate the search
+  hides the opponent's hand and passes in its own upkeep, which should help; measure the casting-timing table
+  again on gens 4-5 before doing more (it may be learned, or need a deeper search).
