@@ -5,8 +5,22 @@ Magic set actually performed. It's excellent, and it's useless the week you need
 most: the week before release, when you're sitting down to a prerelease with a card
 pool nobody has ever played.
 
-This grades **Reality Fracture** (`FRA`, released 2026-10-02) with a model that has
-never seen a game of it.
+It graded **Reality Fracture** (`FRA`, released 2026-10-02) three days before the
+prerelease, with a model that had never seen a game of it, and [came out ahead of both
+published set reviews](#the-post-mortem-how-it-actually-did) once the real win rates were in.
+FRA is now part of the training pool. The next target is **Star Trek** (`TRK`, released
+2026-11-13), which is the default for every script. Its mechanics and archetypes are in place,
+but it has not been graded yet (`./run.sh TRK`).
+
+## Where things stand (2026-11-02)
+
+| | status |
+|---|---|
+| FRA grades | frozen pre-release file scored against real data: spearman **0.675** draft, 0.613 sealed |
+| TRK | guide, mechanics, archetypes and oracle tags (216 of 341 cards tagged) in; grading pending the review |
+| [oracle tags](#the-one-thing-that-did-close-some-of-it-oracle-tags) | in the model: blind +0.009, p=0.0005 |
+| [synergy score](#a-synergy-score-from-a-tag-graph) | passes the 32-set test (blind +0.005, p=0.014), **not yet wired into `train.py`** |
+| [simulated games](#playing-the-set-before-anyone-else-simulation) | XMage's stock AI: real but weak signal (sealed ρ≈0.13). A self-play agent is now training to replace it |
 
 ## How it works
 
@@ -275,9 +289,28 @@ scripts/
   validate_grades.py   predicted vs limited-grades' real grades, all 21 sets
   guard_ablation.py    does the guard layer help? (it does not)
   validate_removal.py  regex detector vs WotC's official list
+  fastloso.py          leave-one-set-out with cached text fits and baselines, folds in parallel
+  synergy.py           the tag graph and per-card synergy score (screen / graph)
+  setmeta.py           set.json: which set the pages are about
+  refresh.sh [SET]     regrade once a set review is out (default TRK)
+  sim_pools.py         random sealed pools -> 40-card decks for XMage to play
+  sim_fit.py           simulated games -> a value per card, scored against real win rates
+  sim_stats.py         live stats of a stock-AI simulation run
+  sim_index.py         index recorded games for the viewer
+  eval_train.py        learned position evaluator from simulated games (not adopted)
+  mz_loop.py           MageZero self-play loop: gate -> play -> train, per generation
+  mz_split.py          by-game train/validation split of a training file
+  selfplay_stats.py    live self-play progress for the viewer
+  jfr_hotspots.py      where a simulation JVM spends its CPU
+sim/
+  SimRunner.java ...   XMage stock-AI sealed simulation, recorder, duel tools
+  viewer.html          step through recorded games; live progress, losses, gates
+  mzport/              the self-play engine as patches + setup.sh (own README)
 web/
   index.html           the full set, sorted into colour piles
   signals.html         what to commit to: colour depth and pair strength
+  reviews.html         the published reviews side by side, with track records
+  ideas.html           the set review collected by idea instead of by card
 ```
 
 ### Aggregating grades does not make them safer
@@ -755,6 +788,74 @@ time from the other direction. A dozen hand-written feature families failed beca
 cleverer readings of information already in the model. This one worked because it was new
 information. `scripts/fetch_otags.py` pulls them, `scripts/otag_test.py` measures them.
 
+### A synergy score from a tag graph
+
+Every feature describes a card on its own, and limited isn't played that way: a sacrifice outlet
+is a different card in a set full of death triggers. `scripts/synergy.py` learns that from the 32
+released sets as a graph. The nodes are what a card does: oracle tags, our effect, keyword and
+trigger flags, and a few generic payoff patterns. An edge A → B is how much a card doing A gains
+from the supply of B among the cards it can be played beside (same colour or colourless),
+weighted by rarity, because commons are what you open. A card's score is its own nodes times its
+colours' supply, so it varies card by card. That's why it doesn't share the failure of the old
+per-colour context features, which were constant across a colour.
+
+Cross-fitted (the graph is refit without the held-out set, 528 fits) and tested on all 32 folds:
+
+| strength | blind | sets improved | p | sighted |
+|---|---|---|---|---|
+| ×0.03 | **+0.0048** | 22/32 | 0.014 | −0.0005 |
+| ×0.01 | **+0.0041** | 21/32 | 0.040 | +0.0004 |
+
+The score is real, robust to its strength, about half the oracle-tag gain, and again only blind.
+It doesn't move FRA itself (0.619 → 0.620 blind). The graph is not trustworthy as a picture:
+graphs fitted on two halves of the sets agree at only r≈0.18, so individual "A goes with B"
+edges flip, and only the aggregate carries signal. **It is not wired into `train.py` yet.**
+`data/synergy_graph.json` is the graph fitted on every set.
+
+`scripts/fastloso.py` is what made tests at this scale affordable. It caches the per-fold text
+fits and the baselines and runs the folds in parallel, which brought an experiment down from
+~30 minutes to a few. The same pass rejected a reprint prior, a Special Guest flag and recency
+weighting: each was noise across all 32 sets, and recency looked like +0.02 on FRA alone.
+
+## Playing the set before anyone else: simulation
+
+The lesson above is that new *information* helps and cleverer readings of the old doesn't. The
+one source of win-rate-like information that exists before release is playing the set.
+XMage implements both FRA and TRK, so the games can be simulated.
+
+**Stock AI.** `sim_pools.py` builds 2,000 FRA sealed decks from the review consensus plus heavy
+noise, never from our own grades, or the simulation could only echo the model back. XMage's
+built-in AI then plays random pairs (`sim/SimRunner.java`), and `sim_fit.py` fits a value per
+card: P(A beats B) = logistic(Σ A's values − Σ B's), ridge-penalised.
+
+After 5,850 games the fitted values agree with FRA's real Sealed win rates at **ρ≈0.13**. They
+plateau at 0.12–0.15, which is real signal but far below the blind model's 0.52–0.61. The
+recorded games (`sim/viewer.html`) show why: the stock AI misplays whole card types,
+planeswalkers above all, and over-rates simple aggressive creatures. More games of the same
+weak player don't fix that.
+
+**Self-play.** So the work moved to an agent that learns to play: [MageZero](https://github.com/WillWroble/MageZero)'s
+AlphaZero-style search and network, with its AI ported onto upstream XMage, trained as **one
+agent for any FRA sealed deck** by `scripts/mz_loop.py`. Each generation plays 120 games. The
+next network is then trained on them, and it only takes over once it beats search alone in a
+60-game gate. After three generations:
+
+| | gate vs search alone | value loss on held-out games |
+|---|---|---|
+| v1 (first training setup) | 5/60 | 0.344, worse than guessing the mean (0.32) |
+| **v2** (fixed training) | **36/59 = 61%** | 0.115 |
+
+Two bugs cost most of the first day, and both are written up in `sim/mzport/README.md`. Players
+skipped land drops, because the search couldn't tell "play a land" from "pass". And validation
+used the other seat of the same games, which hid that the network was memorising decks. The
+engine changes are kept as patches on upstream XMage, so `sim/mzport/setup.sh` rebuilds the
+whole thing. Models and training data are attached to GitHub releases (`fra-selfplay-v3`) and
+not committed.
+
+The bar for this to matter is the same as for everything else here. Simulated card values have
+to add information the blind model lacks, measured on FRA's real win rates, before TRK is
+simulated and trusted.
+
 ## Four pages
 
 **`index.html`** — all 280 cards sorted into colour piles, best to worst, with a detail
@@ -867,16 +968,19 @@ means no PC is involved at all:
 Card data is cached rather than committed (57MB, regenerable), so a cache miss just
 re-fetches it from Scryfall.
 
-Locally, `./scripts/refresh_fra.sh` does the same thing, and `./scripts/build_pwa.sh FRA`
-rebuilds the published site without retraining.
+Locally, `./scripts/refresh.sh [SET]` does the same thing (default `TRK`, the workflow's
+`TARGET`), and `./scripts/build_pwa.sh <SET>` rebuilds the published site without retraining.
 
 ## Running it
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install pandas scikit-learn lightgbm scipy
-./run.sh FRA        # ~15 min, mostly the 1.2GB download (cached after)
+./run.sh            # grades TRK; ./run.sh FRA for the previous set. ~15 min, mostly the 1.2GB download (cached after)
 ./web/serve.sh      # http://localhost:8731/web/
 ```
+
+The simulation and self-play side needs Java, Maven and a GPU environment. `sim/mzport/setup.sh`
+builds all of it; see `sim/mzport/README.md`.
 
 ## Grading another set
 
@@ -890,10 +994,15 @@ When the next set is spoiled:
 3. Describe its mechanics in `SET_MECHANICS` in `guards.py` — each needs a `pattern`
    (matches this set) and an `analogue` (matches equivalent older cards, so precedent
    counts mean something; literal token names always score zero).
-4. `./run.sh <CODE>`, then `guard_ablation.py <a released set>` before trusting any
+4. Add its archetypes and removal to `data/setinfo/<CODE>.json`. The pages take the set's
+   name and card count from `set.json`, written by `setmeta.py`, so no HTML edits are needed.
+5. Make it the default: `TARGET` in `.github/workflows/refresh.yml`, and the defaults of `run.sh`
+   and `refresh.sh`.
+6. `./run.sh <CODE>`, then `guard_ablation.py <a released set>` before trusting any
    guard change you make.
 
-Add the previous set to the training pool once it has ~3 weeks of 17Lands data.
+Add the previous set to the training pool (the `aggregate_labels.py` list in `run.sh`) once it
+has ~3 weeks of 17Lands data. FRA went in on 2026-11-02.
 
 ## What this can't do
 
