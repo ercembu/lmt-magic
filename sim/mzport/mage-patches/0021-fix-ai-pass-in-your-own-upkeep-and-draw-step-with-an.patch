@@ -1,0 +1,44 @@
+From d1ce6edd876123178d2b0761cb853546521ae88d Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 20:53:25 +0100
+Subject: [PATCH 21/22] fix(ai): pass in your own upkeep and draw step with an
+ empty stack
+
+The board heuristic rewards casting at the first chance, so instants
+and flash went out in upkeep before the draw (13% of casts).
+-Dlmt.actInOwnUpkeep=true restores the old behaviour.
+---
+ .../Mage.Player.AIMCTS/src/mage/player/ai/MCTSNode.java   | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSNode.java b/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSNode.java
+index d7bab3dd..4800d05f 100644
+--- a/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSNode.java
++++ b/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSNode.java
+@@ -50,6 +50,8 @@ public class MCTSNode {
+     private double prior = 1;
+     /** lmt: -Dlmt.skipLandDrops=true restores MageZero's behaviour (pass may be chosen over a land drop) */
+     static final boolean SKIP_LAND_DROPS = Boolean.getBoolean("lmt.skipLandDrops");
++    /** lmt: -Dlmt.actInOwnUpkeep=true lets the active player act in its own upkeep and draw step with an empty stack */
++    static final boolean ACT_IN_OWN_UPKEEP = Boolean.getBoolean("lmt.actInOwnUpkeep");
+     private double score = 0;
+ 
+     //action fields - how the node represents the state - only one is not null at a time
+@@ -459,8 +461,14 @@ public class MCTSNode {
+             boolean dropLand = !SKIP_LAND_DROPS && game.getStack().isEmpty() && game.isActivePlayer(player.getId())
+                     && (game.getTurnStepType() == mage.constants.PhaseStep.PRECOMBAT_MAIN || game.getTurnStepType() == mage.constants.PhaseStep.POSTCOMBAT_MAIN)
+                     && player.playables.stream().anyMatch(a -> a instanceof PlayLandAbility);
++            // lmt: in its own upkeep and draw step with nothing to respond to, the active player passes. The board
++            // heuristic rewards casting at the first chance, so instants and flash went out in upkeep (13% of casts),
++            // before the draw and with the main phase still to come. Responses to triggers are still searched.
++            boolean waitForMain = !ACT_IN_OWN_UPKEEP && game.getStack().isEmpty() && game.isActivePlayer(player.getId())
++                    && (game.getTurnStepType() == mage.constants.PhaseStep.UPKEEP || game.getTurnStepType() == mage.constants.PhaseStep.DRAW);
+             for(Ability playable : player.playables) {
+                 if (dropLand && playable instanceof PassAbility) continue;
++                if (waitForMain && !(playable instanceof PassAbility)) continue;
+                 logger.trace(game.getTurn().getValue(game.getTurnNum()) + " expanding: " + playable.toString());
+                 MCTSNode node = createChild();
+                 node.priorityAction = playable.copy();
+-- 
+2.56.0
+
