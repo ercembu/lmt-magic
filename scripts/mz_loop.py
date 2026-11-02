@@ -121,6 +121,8 @@ def main():
                          "them in flight fill the server's batches (a batch costs ~25ms from 1 state to 128)")
     ap.add_argument("--budget", type=int, default=300, help="MCTS simulations per decision")
     ap.add_argument("--window", type=int, default=8, help="generations of data to train on")
+    ap.add_argument("--data-from", type=int, default=3,
+                    help="oldest generation to train on: gens 0-2 encode the opponent's hand and not your library")
     ap.add_argument("--gate-games", type=int, default=60, help="network vs search-only games before it may lead")
     ap.add_argument("--gate-rate", type=float, default=0.55, help="win rate the network needs to lead self-play")
     ap.add_argument("--epochs", type=int, default=8)
@@ -209,7 +211,7 @@ def main():
             tdir, vdir = f"{MZ}/data/{AGENT}/ver{v}/training", f"{MZ}/data/{AGENT}/ver{v}/testing"
             shutil.rmtree(f"{MZ}/data/{AGENT}/ver{v}", ignore_errors=True)
             os.makedirs(tdir), os.makedirs(vdir)
-            for k in range(max(0, g - a.window + 1), g + 1):
+            for k in range(max(a.data_from, g - a.window + 1), g + 1):
                 for f in glob.glob(f"{pool}/gen{k}/*.hdf5"):
                     name = f"gen{k}_{os.path.basename(f)}"
                     if k == g:
