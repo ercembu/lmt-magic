@@ -266,6 +266,9 @@ scripts/
   validate_preview.js  does every card element on every page resolve to an image?
   validate_sealed.py   should a prerelease grader train on Sealed instead? (no)
   postmortem.py        how did the frozen pre-release grades actually do?
+  fra_blind.py         blind accuracy on FRA -- the prerelease-morning state
+  tune.py              try a change on every fold, keep it only if it earns it
+  validate_blend.py    should the target average draft and sealed? (no)
   holdout_demo.py      show the damage on a set we know the answer to
   validate_grades.py   predicted vs limited-grades' real grades, all 21 sets
   guard_ablation.py    does the guard layer help? (it does not)
@@ -687,6 +690,40 @@ The reason is sample size. Sealed dumps are roughly a fifth of the draft ones, s
 format-specific target is bought with five times the label noise, and at 0.841 agreement there
 is not enough format-specific signal left to pay for it. One model serves both, and
 `scripts/validate_sealed.py` reproduces the check when the next set makes it worth re-asking.
+
+### Trying to close the blind gap (and failing)
+
+The post-mortem split the model in two. With the reviews it scored 0.675 on FRA; without them,
+**0.524**. On prerelease morning, before anyone has published a review, the blind half is what
+runs. So: can it be improved with the real data we now have?
+
+Screened on FRA (one fit, ~20s) and then confirmed on all 32 folds. Nothing survived.
+
+**Removing the expert column instead of blanking it.** The best idea of the lot, and
+mechanically sound: today the column exists in training with real values for 26 sets, then
+arrives as a `-999` sentinel for every card of an unreviewed set, so every split spent on it is
+wasted. On FRA that was worth **+0.033**. Across 32 folds it was worth **+0.0001 (p=0.61,
+17/32)**. The FRA number was one set's noise. This is the whole reason for the two-stage
+design, and the clearest illustration of it in the project: a change that looks like a 6%
+improvement on the set you care about can be exactly zero.
+
+**Hyperparameters**, never searched before: 13 variants over tree depth, leaf size, learning
+rate, rounds, L2, feature fraction, and both ensemble weights. The spread on FRA was 0.515 to
+0.543 around a 0.529 baseline — entirely within the single-set noise that the expert-column
+test just calibrated for us. Nothing to take.
+
+**Averaging the two formats' win rates into one target.** Training *on* sealed failed before;
+averaging is a different and better-motivated idea, since the formats agree at 0.841 and so are
+largely two noisy measurements of one quantity. It fails monotonically: −0.0020 at 25% sealed
+(p=0.15), −0.0061 at 40% (p=0.001), −0.0081 at 50% (p=0.0001). Sealed's fifth-size sample
+brings more noise than its independence removes.
+
+So the blind model is at its ceiling for the information it has, and the gap to 0.675 is not a
+tuning problem — it is the reviews. Which is the same lesson this project keeps learning: more
+information helps, cleverer processing of the same information does not.
+
+`scripts/fra_blind.py` is the fast screen, `scripts/tune.py` the full-fold confirmation,
+`scripts/validate_blend.py` the target experiment.
 
 ## Four pages
 
