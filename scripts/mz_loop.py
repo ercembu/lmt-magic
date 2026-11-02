@@ -52,7 +52,7 @@ def capped(unit, mem, cmd, cwd, log, runtime=None, env=None):
     return subprocess.run(args, capture_output=True, text=True).returncode
 
 
-def write_game_yml(g, out_dir, pairs_file, games, threads, budget, online=(False, False)):
+def write_game_yml(g, out_dir, pairs_file, games, threads, budget, online=(False, False), max_turns=50):
     """online: whether seat A / seat B searches with the network (else XMage's heuristic only)."""
     cfg = yaml.safe_load(open(f"{MZ}/configs/game.yml"))
     c = curriculum(g)
@@ -67,7 +67,7 @@ def write_game_yml(g, out_dir, pairs_file, games, threads, budget, online=(False
                            target=c["target"] and net, opponent=c["opponent"] and net,
                            prior_temperature=c["prior_temperature"])
     cfg["training"].update(games=games, threads=threads, pairs_file=pairs_file,
-                           minimum_deck_size=40, max_turns=30)
+                           minimum_deck_size=40, max_turns=max_turns)
     # self-play: the same model on two server processes, one per seat -- a single Python server pegged one
     # core and left the GPU ~90% idle (each request waited ~53ms, mostly in preprocessing)
     cfg["server"].update(port=PORT, opponent_port=PORT + 1)
@@ -122,6 +122,8 @@ def main():
     ap.add_argument("--gate-games", type=int, default=60, help="network vs search-only games before it may lead")
     ap.add_argument("--gate-rate", type=float, default=0.55, help="win rate the network needs to lead self-play")
     ap.add_argument("--epochs", type=int, default=8)
+    ap.add_argument("--max-turns", type=int, default=50,
+                    help="game turns (both players' turns count) before a game is a draw; 30 drew stalled boards")
     ap.add_argument("--decks", default=f"{SIM}/simdecks")
     ap.add_argument("--profile-minutes", type=int, default=0, help="flight-record the first N minutes of play")
     a = ap.parse_args()
@@ -153,7 +155,8 @@ def main():
                     for _ in range(a.gate_games):
                         x, y = rng.sample(decks, 2)
                         f.write(f"{x}\t{y}\n")
-                gy = write_game_yml(g, gd, gp, a.gate_games, a.threads_online, a.budget, online=(True, False))
+                gy = write_game_yml(g, gd, gp, a.gate_games, a.threads_online, a.budget, online=(True, False),
+                                    max_turns=a.max_turns)
                 if not start_server(g, f"{gd}/server.log", ports=(PORT,)):
                     stop_server()
                     sys.exit(f"gen {g}: model server for v{g} did not come up (see {gd}/server.log)")
@@ -179,7 +182,7 @@ def main():
                     x, y = rng.sample(decks, 2)
                     f.write(f"{x}\t{y}\n")
             yml = write_game_yml(g, gdir, pairs, a.games, a.threads_online if online else a.threads, a.budget,
-                                 online=(online, online))
+                                 online=(online, online), max_turns=a.max_turns)
             if online and not start_server(g, f"{gdir}/server.log"):
                 stop_server()
                 sys.exit(f"gen {g}: model server for v{g} did not come up (see {gdir}/server.log)")
