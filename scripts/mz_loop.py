@@ -63,6 +63,8 @@ def write_game_yml(g, out_dir, pairs_file, games, threads, budget, online=(False
         p["output_file"] = f"{out_dir}/{side}.hdf5"
         p["mcts"].update(offline_mode=not net, td_discount=c["td_discount"],
                          search_budget=budget, timeout_ms=4000)
+        # the network sees only its own hand (MageZero's default shows it the opponent's too; off from gen 3)
+        p.setdefault("hiddenInfo", {})["see_opponent_hand"] = False
         p["priors"].update(binary=c["binary"] and net, priority=c["priority"] and net,
                            target=c["target"] and net, opponent=c["opponent"] and net,
                            prior_temperature=c["prior_temperature"])
