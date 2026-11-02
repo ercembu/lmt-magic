@@ -135,6 +135,7 @@ table.st th { color: var(--ink-3); font-weight: 500; font-size: 12px; }
     <div class="tabs"><button id="tabGames" class="on">Games</button><button id="tabProg">Progress</button></div>
     <div class="filters">
       <select id="sort">
+        <option value="latest" selected>Latest first</option>
         <option value="upset">Biggest upsets first</option>
         <option value="long">Longest games</option>
         <option value="short">Shortest games</option>
@@ -159,6 +160,8 @@ table.st th { color: var(--ink-3); font-weight: 500; font-size: 12px; }
 const $ = s => document.querySelector(s);
 let INDEX = [], CARDS = {}, GAME = null, POS = 0, TIMER = null, SEL = null;
 const strip = s => s.replace(/<[^>]+>/g, '');
+// when a game was played: replay files are named ..._G<unix seconds>_<game number>.json.gz
+const playedAt = g => { const m = g.file.match(/G(\d+)_(\d+)\.json\.gz$/); return m ? +m[1] * 1e5 + +m[2] : 0; };
 
 async function loadJSON(u) { const r = await fetch(u); return r.json(); }
 async function loadGz(u) {
@@ -172,7 +175,7 @@ function renderList() {
   const sort = $('#sort').value;
   const kind = $('#kind').value;
   let rows = INDEX.filter(g => (!q || g.castA.concat(g.castB).some(c => c.toLowerCase().includes(q))) && (!kind || g.kind === kind));
-  const key = { upset: g => -(g.upset ?? -99), long: g => -g.turns, short: g => g.turns, file: g => g.file,
+  const key = { latest: g => -playedAt(g), upset: g => -(g.upset ?? -99), long: g => -g.turns, short: g => g.turns, file: g => g.file,
                gen: g => -(g.gen ?? -1) }[sort];
   rows = rows.slice().sort((a, b) => key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : 0);
   $('#list').innerHTML = rows.map(g => `
@@ -523,8 +526,12 @@ $('#tabProg').onclick = () => setTab(true);
 (async () => {
   [INDEX, CARDS] = await Promise.all([loadJSON('index.json'), loadJSON('cards.json')]);
   if (INDEX.some(g => g.kind)) { $('#kind').style.display = ''; $('#kind').onchange = renderList; }
-  if (!INDEX.some(g => g.upset != null)) $('#sort').value = 'long';
   renderList();
+  // the index is rebuilt every minute while games are being played: pick up new games while sorted by latest
+  setInterval(async () => {
+    if ($('#sort').value !== 'latest') return;
+    try { INDEX = await loadJSON('index.json?t=' + Date.now()); renderList(); } catch (e) {}
+  }, 60000);
   // deep links: #progress, or #game=games/G00012.json.gz[&step=40]
   const h = new URLSearchParams(location.hash.slice(1));
   if (location.hash === '#progress') setTab(true);
