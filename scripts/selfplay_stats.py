@@ -131,7 +131,15 @@ def system():
                                  timeout=5).stdout.strip().split(", ")
         s["gpu"] = {"util": int(u), "mem_gb": round(int(m) / 1024, 1), "mem_total_gb": round(int(t) / 1024, 1)}
     except Exception:
-        pass
+        # AMD (amdgpu) has no nvidia-smi; the driver exposes the same numbers in sysfs
+        for d in sorted(glob.glob("/sys/class/drm/card*/device")):
+            try:
+                rd = lambda f: int(open(f"{d}/{f}").read())
+                s["gpu"] = {"util": rd("gpu_busy_percent"), "mem_gb": round(rd("mem_info_vram_used") / 2**30, 1),
+                            "mem_total_gb": round(rd("mem_info_vram_total") / 2**30, 1)}
+                break
+            except Exception:
+                pass
     try:
         mi = {l.split(":")[0]: int(l.split()[1]) for l in open("/proc/meminfo")}
         s["ram"] = {"used_gb": round((mi["MemTotal"] - mi["MemAvailable"]) / 1e6, 1),
