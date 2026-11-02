@@ -1,0 +1,29 @@
+From fddfea0c17a007820abac8fa82517d67842b9f69 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 20:39:01 +0100
+Subject: [PATCH 19/20] fix(magezero): label each seat by its own win
+
+Seat B was labeled !playerAWon, so a draw trained as a win for B.
+A draw is now a loss for both seats.
+---
+ .../main/java/org/mage/magezero/ParallelDataGenerator.java    | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java b/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
+index 3a856c63..cd50d7c8 100644
+--- a/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
++++ b/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
+@@ -416,7 +416,9 @@ public class ParallelDataGenerator {
+             logger.info("Game #" + gameCount.incrementAndGet() + " completed successfully");
+             logger.info("Current WR: " + winCount.get()*1.0/gameCount.get());
+             List<LabeledState> statesA = generateLabeledStatesForGame(threadEncoderA, playerAWon, Config.INSTANCE.playerA.mcts.tdDiscount);
+-            List<LabeledState> statesB = generateLabeledStatesForGame(threadEncoderB, !playerAWon, Config.INSTANCE.playerB.mcts.tdDiscount);
++            // each seat is labeled by its own win, so a draw (e.g. the turn limit) is a loss for both. It used to be
++            // !playerAWon, which made every draw a win for seat B
++            List<LabeledState> statesB = generateLabeledStatesForGame(threadEncoderB, playerB.hasWon(), Config.INSTANCE.playerB.mcts.tdDiscount);
+             return new GameResult(statesA, statesB, playerAWon);
+         } catch (Exception e) {
+             logger.error("Caught an internal AI/Game exception in a worker thread. Ignoring this game. Cause: " + e.getMessage());
+-- 
+2.56.0
+

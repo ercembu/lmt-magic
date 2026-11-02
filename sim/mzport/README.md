@@ -64,15 +64,18 @@ than pass. That's the number to watch.
   mana already in the pool, which assumes manual tapping; the loop auto-taps, so the pool was empty and the cap came
   out at 0 without ever reaching the search. Guiding Hydra died on entry with 6 lands out. Gens 0–2 and gen 3's gate
   were played with the bug, so the four FRA X cards look worse in that data than they are.
+- **A draw trained as a win for seat B.** B's states were labeled `!playerAWon`, so a game that hit the turn
+  limit was a loss for A and a win for B. Each seat is now labeled by its own win, so a draw is a loss for both
+  (fixed 2026-11-02, from gen 3's self-play on; the turn limit went from 30 to 50 at the same time).
 - The **gen-1 data from before the land fix** taught the first network that pass was the best move with
   lands in hand. Data from an engine bug has to go, so `pool/FRA_SEALED_preLandFix` is kept aside and
   never trained on.
 
 ## Files
 
-- `mage-patches/`: 18 commits on upstream XMage `6b07e46d8d` (branch `lmt-ai-port`). They cover
+- `mage-patches/`: 19 commits on upstream XMage `6b07e46d8d` (branch `lmt-ai-port`). They cover
   MageZero's AI port, deterministic ids, the TRK/FRA cards, the recorder, copy-on-write, the land rule
-  parked waits, and X under auto-tap.
+  parked waits, X under auto-tap, and draws labeled as losses.
 - `magezero.patch`: on MageZero `fb6ee21`. The server shares a port (SO_REUSEPORT) and has quieter
   logs; the trainer prints progress lines and per-epoch accuracy.
 - `mz-xmage.sh`: the runner launcher (ParallelGC; heap set by `MZ_XMX`, default 11g).
