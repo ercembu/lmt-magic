@@ -1,0 +1,34 @@
+From ae21a154dd564241e4afe6bfcd54cc161802c2dd Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 20:39:01 +0100
+Subject: [PATCH 18/20] fix(ai): count untapped mana when announcing X under
+ auto-tap
+
+The X cap counted only the mana pool, which is still empty when an
+auto-tapping player announces X, so every X spell was cast with X=0.
+---
+ .../Mage.Player.AI/src/mage/player/ai/ComputerPlayer.java | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/ComputerPlayer.java b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/ComputerPlayer.java
+index c3845e7e..462ebd94 100644
+--- a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/ComputerPlayer.java
++++ b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/ComputerPlayer.java
+@@ -964,7 +964,13 @@ public class ComputerPlayer extends PlayerImpl {
+                     .anyMatch(a -> a instanceof mage.abilities.costs.mana.AlternateManaPaymentAbility);
+ 
+             if (!hasCostAdjuster && !hasAltPay) {
+-                max = Math.min(max, getManaPool().getMana().count() - source.getManaCostsToPay().getUnpaid().manaValue());
++                // MageZero taps manually, so its mana is already in the pool when X is announced. With auto-tap the
++                // pool is still empty here, which capped X at 0 every time: count what untapped sources can add too
++                int mana = getManaPool().getMana().count();
++                if (!isManualTappingAI()) {
++                    mana += getManaAvailable(game).stream().mapToInt(Mana::count).max().orElse(0);
++                }
++                max = Math.min(max, mana - source.getManaCostsToPay().getUnpaid().manaValue());
+             }
+         }
+ 
+-- 
+2.56.0
+

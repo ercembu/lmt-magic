@@ -60,15 +60,19 @@ than pass. That's the number to watch.
   about 25 ms from 1 state to 128 (kernel launches and syncs), so the fix is more states in flight per
   batch: game threads park instead of spinning on `Thread.yield()`, requests carry 32 states, and
   there are more game threads.
+- **X spells were always cast with X=0** (fixed 2026-11-02, from gen 3's self-play on). MageZero's X cap counts the
+  mana already in the pool, which assumes manual tapping; the loop auto-taps, so the pool was empty and the cap came
+  out at 0 without ever reaching the search. Guiding Hydra died on entry with 6 lands out. Gens 0–2 and gen 3's gate
+  were played with the bug, so the four FRA X cards look worse in that data than they are.
 - The **gen-1 data from before the land fix** taught the first network that pass was the best move with
   lands in hand. Data from an engine bug has to go, so `pool/FRA_SEALED_preLandFix` is kept aside and
   never trained on.
 
 ## Files
 
-- `mage-patches/`: 17 commits on upstream XMage `6b07e46d8d` (branch `lmt-ai-port`). They cover
+- `mage-patches/`: 18 commits on upstream XMage `6b07e46d8d` (branch `lmt-ai-port`). They cover
   MageZero's AI port, deterministic ids, the TRK/FRA cards, the recorder, copy-on-write, the land rule
-  and parked waits.
+  parked waits, and X under auto-tap.
 - `magezero.patch`: on MageZero `fb6ee21`. The server shares a port (SO_REUSEPORT) and has quieter
   logs; the trainer prints progress lines and per-epoch accuracy.
 - `mz-xmage.sh`: the runner launcher (ParallelGC; heap set by `MZ_XMX`, default 11g).
