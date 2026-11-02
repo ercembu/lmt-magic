@@ -1,0 +1,83 @@
+From 150d638efa6c9db44213d009c8775884a6a84a54 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 20:39:01 +0100
+Subject: [PATCH 20/20] feat(ai): encode own library and shuffle libraries in
+ search
+
+The deciding player's remaining deck is encoded as a Library zone,
+sorted by name so it carries contents but not order. The search's
+copy of the game shuffles both libraries, so it can't see the next
+draws; -Dlmt.keepLibraryOrder=true restores the old behaviour.
+---
+ .../src/mage/player/ai/ComputerPlayerMCTS2.java      | 11 +++++++++++
+ .../src/mage/player/ai/encoder/FeatureGraph.java     |  1 +
+ .../src/mage/player/ai/encoder/StateEncoder.java     | 12 ++++++++++++
+ 3 files changed, 24 insertions(+)
+
+diff --git a/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/ComputerPlayerMCTS2.java b/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/ComputerPlayerMCTS2.java
+index dd5dcb43..2f3b3374 100644
+--- a/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/ComputerPlayerMCTS2.java
++++ b/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/ComputerPlayerMCTS2.java
+@@ -48,6 +48,9 @@ public class ComputerPlayerMCTS2 extends ComputerPlayerMCTS {
+     public transient RemoteModelEvaluator nn;
+     MCTSNode2 root;
+     public boolean allowDuplicates = true;
++    /** shuffle both libraries in the search's copy of the game, so it can't see the next draws.
++     *  -Dlmt.keepLibraryOrder=true restores the old behaviour */
++    public static boolean shuffleLibraries = !Boolean.getBoolean("lmt.keepLibraryOrder");
+ 
+ 
+ 
+@@ -319,6 +322,14 @@ public class ComputerPlayerMCTS2 extends ComputerPlayerMCTS {
+         Game sim = createMCTSGame(game.getLastPriority());
+         PlayerScript prefixScript = new PlayerScript(getPlayerHistory());
+         PlayerScript opponentPrefixScript = new PlayerScript(game.getOpponent(playerId).getPlayerHistory());
++        // the search plays on a copy of the real game, so it would know both players' next draws. Shuffle both
++        // libraries in the copy (hands stay as they are). Not when choices made since the last priority are
++        // replayed: those can name a library card being looked at (surveil, search), which a shuffle would move
++        if (shuffleLibraries && prefixScript.isEmpty() && opponentPrefixScript.isEmpty()) {
++            for (Player p : sim.getState().getPlayers().values()) {
++                p.getLibrary().shuffle();
++            }
++        }
+         MCTSNode2 newRoot = new MCTSNode2(this, sim, actionType, prefixScript, opponentPrefixScript);
+ 
+         //do first expansion automatically
+diff --git a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/encoder/FeatureGraph.java b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/encoder/FeatureGraph.java
+index 6a381642..9b7af217 100644
+--- a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/encoder/FeatureGraph.java
++++ b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/encoder/FeatureGraph.java
+@@ -8,6 +8,7 @@ public class FeatureGraph {
+     public static final UUID BATTLEFIELD_ID = stringToUUID("BattlefieldId");
+     public static final UUID GRAVEYARD_ID = stringToUUID("GraveyardId");
+     public static final UUID HAND_ID = stringToUUID("HandId");
++    public static final UUID LIBRARY_ID = stringToUUID("LibraryId");
+     public static final UUID EXILE_ID = stringToUUID("ExileId");
+     public static final UUID STACK_ID = stringToUUID("StackId");
+     public static final UUID COMMAND_ZONE_ID = stringToUUID("CommandZoneId");
+diff --git a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/encoder/StateEncoder.java b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/encoder/StateEncoder.java
+index 9afb64d6..fa6e9e0f 100644
+--- a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/encoder/StateEncoder.java
++++ b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/encoder/StateEncoder.java
+@@ -590,6 +590,18 @@ public class StateEncoder {
+         if(playerId.equals(decisionPlayerId) || perfectInfo) { //keep perspective
+             processHand(hand, game, handId);
+         }
++        //library: what is left of your own deck, which a player knows (it's their 40 cards minus what they've
++        //seen leave). Its order is not: cards are sorted by name, and only the deciding player sees their own
++        if(playerId.equals(decisionPlayerId)) {
++            UUID libId = stringToUUID(LIBRARY_ID + parentId.toString());
++            addNode(FeatureGraph.Node.Type.ZONE, "Library", libId, parentId);
++            List<Card> library = new ArrayList<>(myPlayer.getLibrary().getCards(game));
++            library.sort(Comparator.comparing(Card::getName));
++            for (Card c : library) {
++                addNode(FeatureGraph.Node.Type.CARD, c.getName(), c.getId(), libId);
++                processCard(c, game, c.getId()); // name, types, colour, cost: no ability detail, to keep the graph small
++            }
++        }
+ 
+         //command zone
+         UUID czId = stringToUUID(COMMAND_ZONE_ID + parentId.toString());
+-- 
+2.56.0
+

@@ -44,6 +44,19 @@ Every heavy step runs under a systemd memory cap (`systemd-run --user`). Without
 Priority accuracy is about 81%, but only about 25% on states where the search did something other
 than pass. That's the number to watch.
 
+## What the agent knows (from gen 3)
+
+| | network | search |
+|---|---|---|
+| your hand, board, graveyards, exile, stack | yes | yes |
+| your remaining deck (contents, sorted by name) | yes | yes |
+| library order (either player) | no | no: shuffled in its copy of the game |
+| opponent's hand | no (`see_opponent_hand: false`) | **yes** |
+
+The search still sees the opponent's hand, in both seats, so the games are open-handed: expect combat tricks,
+flash and counterspells to come out undervalued. Hiding it means swapping hand cards in the search's copy,
+which breaks replayed choices that name those cards; do it if FRA's real win rates show that bias.
+
 ## Mistakes that cost time (don't repeat them)
 
 - **Players skipped land drops** (8–11% of drops; some players went 4+ turns with lands in hand). The
@@ -73,9 +86,9 @@ than pass. That's the number to watch.
 
 ## Files
 
-- `mage-patches/`: 19 commits on upstream XMage `6b07e46d8d` (branch `lmt-ai-port`). They cover
+- `mage-patches/`: 20 commits on upstream XMage `6b07e46d8d` (branch `lmt-ai-port`). They cover
   MageZero's AI port, deterministic ids, the TRK/FRA cards, the recorder, copy-on-write, the land rule
-  parked waits, X under auto-tap, and draws labeled as losses.
+  parked waits, X under auto-tap, draws labeled as losses, your deck in the state and library shuffles in the search.
 - `magezero.patch`: on MageZero `fb6ee21`. The server shares a port (SO_REUSEPORT) and has quieter
   logs; the trainer prints progress lines and per-epoch accuracy.
 - `mz-xmage.sh`: the runner launcher (ParallelGC; heap set by `MZ_XMX`, default 11g).
