@@ -202,7 +202,7 @@ def build(setcode="FRA"):
 
 
 if __name__ == "__main__":
-    code = sys.argv[1] if len(sys.argv) > 1 else "FRA"
+    code = sys.argv[1] if len(sys.argv) > 1 else "TRK"
     d = build(code)
     json.dump(d, open(f"{ROOT}/data/reviewdata_{code}.json", "w"))
     tr = [t["spearman"] for t in d["track_record"]]

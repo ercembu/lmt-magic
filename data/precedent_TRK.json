@@ -1,0 +1,133 @@
+{
+ "beam_me_up": {
+  "desc": "Beam me up \u2014 recast an instant/sorcery from the graveyard by bouncing your own creature",
+  "n_precedent": 152,
+  "sets": {
+   "MID": 51,
+   "FIN": 13,
+   "VOW": 12,
+   "SOS": 11,
+   "TDM": 11,
+   "FDN": 8,
+   "MH3": 7,
+   "FRA": 6,
+   "TLA": 4,
+   "HOB": 3,
+   "OTJ": 3,
+   "MOM": 3,
+   "DFT": 2,
+   "DSK": 2,
+   "BLB": 2,
+   "DMU": 2,
+   "SNC": 2,
+   "AFR": 2,
+   "STX": 2,
+   "ECL": 1,
+   "EOE": 1,
+   "MKM": 1,
+   "LCI": 1,
+   "ONE": 1,
+   "KHM": 1
+  },
+  "mean_z": 0.03988580745488312,
+  "examples": [
+   "Antiquities on the Loose",
+   "Practiced Offense",
+   "Katilda, Dawnhart Martyr // Katilda's Rising Dawn",
+   "Squee, Dubious Monarch",
+   "Phlage, Titan of Fire's Fury"
+  ]
+ },
+ "dilemma": {
+  "desc": "Face a dilemma \u2014 payoffs for choosing modes on modal spells and abilities",
+  "n_precedent": 1,
+  "sets": {
+   "OTJ": 1
+  },
+  "mean_z": -1.2341841056268463,
+  "examples": [
+   "Riku of Many Paths"
+  ]
+ },
+ "federation": {
+  "desc": "Federation \u2014 counts creature types among your non-Borg creatures",
+  "n_precedent": 0,
+  "sets": {},
+  "mean_z": null,
+  "examples": []
+ },
+ "strange_new_worlds": {
+  "desc": "Strange new worlds \u2014 counts differently named lands you control (domain-like)",
+  "n_precedent": 31,
+  "sets": {
+   "DMU": 22,
+   "EOE": 3,
+   "FRA": 1,
+   "SOS": 1,
+   "OTJ": 1,
+   "MOM": 1,
+   "VOW": 1,
+   "MID": 1
+  },
+  "mean_z": 0.3469996896770596,
+  "examples": [
+   "Sphinx of Clear Skies",
+   "Herd Migration",
+   "Llanowar Greenwidow",
+   "Nishoba Brawler",
+   "Drag to the Bottom"
+  ]
+ },
+ "station": {
+  "desc": "Spacecraft and station \u2014 returning from Edge of Eternities",
+  "n_precedent": 38,
+  "sets": {
+   "EOE": 38
+  },
+  "mean_z": -0.10777966393466148,
+  "examples": [
+   "Warmaker Gunship",
+   "Lumen-Class Frigate",
+   "The Seriema",
+   "Fell Gravship",
+   "Synthesizer Labship"
+  ]
+ },
+ "assimilate": {
+  "desc": "Assimilate \u2014 steal a creature (often from a graveyard) as a Borg artifact creature",
+  "n_precedent": 37,
+  "sets": {
+   "WOE": 3,
+   "ONE": 3,
+   "DMU": 3,
+   "FIN": 2,
+   "DSK": 2,
+   "OTJ": 2,
+   "MH3": 2,
+   "NEO": 2,
+   "VOW": 2,
+   "AFR": 2,
+   "STX": 2,
+   "MSH": 1,
+   "SOS": 1,
+   "ECL": 1,
+   "DFT": 1,
+   "MKM": 1,
+   "MOM": 1,
+   "BRO": 1,
+   "FDN": 1,
+   "SIR": 1,
+   "SNC": 1,
+   "MID": 1,
+   "KHM": 1
+  },
+  "mean_z": 0.1474642347483484,
+  "examples": [
+   "Virtue of Persistence // Locthwain Scorn",
+   "Mind Flayer",
+   "Portal to Phyrexia",
+   "Junji, the Midnight Sky",
+   "Vodalian Mindsinger"
+  ]
+ }
+}

@@ -61,7 +61,7 @@ def load(setcode):
 
 
 if __name__ == "__main__":
-    setcode = sys.argv[1] if len(sys.argv) > 1 else "FRA"
+    setcode = sys.argv[1] if len(sys.argv) > 1 else "TRK"
     ratings, miss = load(setcode)
     if not ratings:
         raise SystemExit(f"no {setcode}-*.txt files in {SRC}")

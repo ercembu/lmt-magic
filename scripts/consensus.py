@@ -50,7 +50,7 @@ def build(setcode):
 
 
 if __name__ == "__main__":
-    setcode = sys.argv[1] if len(sys.argv) > 1 else "FRA"
+    setcode = sys.argv[1] if len(sys.argv) > 1 else "TRK"
     res, note = build(setcode)
     if res is None:
         raise SystemExit(note)

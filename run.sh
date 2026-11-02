@@ -3,7 +3,7 @@
 set -e
 cd "$(dirname "$0")"
 PY=.venv/bin/python
-TARGET="${1:-FRA}"
+TARGET="${1:-TRK}"
 
 echo "==> 1/7  card data from Scryfall"
 $PY scripts/fetch_scryfall.py
@@ -12,7 +12,7 @@ echo "==> 2/7  17lands public game data (~1.2GB, cached)"
 scripts/download_labels.sh
 
 echo "==> 3/7  aggregating per-card win rates"
-$PY scripts/aggregate_labels.py HOB MSH SOS TMT ECL TLA EOE FIN TDM DFT DSK \
+$PY scripts/aggregate_labels.py FRA HOB MSH SOS TMT ECL TLA EOE FIN TDM DFT DSK \
     BLB OTJ MKM LCI WOE LTR MOM ONE BRO DMU
 
 echo "==> 3b/7 combining the published reviews"
@@ -38,5 +38,6 @@ cp -f data/validation.json web/validation.json
 cp -f "data/precedent_$TARGET.json" web/precedent.json
 cp -f data/calibration.json web/calibration.json
 cp -f "data/setinfo/$TARGET.json" web/setinfo.json 2>/dev/null || true
+$PY scripts/setmeta.py "$TARGET" web/set.json
 echo
 echo "Done. Run  ./web/serve.sh  and open http://localhost:8731/web/"

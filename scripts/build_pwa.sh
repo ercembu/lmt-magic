@@ -4,7 +4,8 @@
 # the last pipeline run.
 set -e
 cd "$(dirname "$0")/.."
-TARGET="${1:-FRA}"
+TARGET="${1:-TRK}"
+PY="${PY:-$([ -x .venv/bin/python ] && echo .venv/bin/python || echo python3)}"
 rm -rf docs && mkdir -p docs
 
 cp web/index.html web/signals.html web/reviews.html web/ideas.html web/pwa.js web/cardpreview.js web/sw.js \
@@ -17,6 +18,7 @@ cp data/calibration.json       docs/calibration.json
 cp "data/setinfo/$TARGET.json" docs/setinfo.json 2>/dev/null || true
 cp "data/reviewdata_$TARGET.json" docs/reviewdata.json 2>/dev/null || true
 cp "data/ideas_$TARGET.json"      docs/ideas.json      2>/dev/null || true
+$PY scripts/setmeta.py "$TARGET" docs/set.json
 
 # Pages serves this as a plain static dir; the .nojekyll stops Jekyll eating files
 touch docs/.nojekyll

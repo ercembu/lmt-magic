@@ -90,7 +90,13 @@ def load_set(setcode, group="all", fmt="PremierDraft"):
     labels = json.load(open(lp))["cards"] if os.path.exists(lp) else {}
     rows = []
     for c in cards:
-        rec = next((labels[v] for v in name_variants(c) if v in labels), None)
+        # 17lands lists some DFCs under both faces, the back face with an empty
+        # record. name_variants is a set, so taking the first hit picked one at
+        # random per process (string hashing is salted): 16 cards, mostly KHM's
+        # gods, flipped between 4,000 games and none, and every baseline drifted
+        # by up to 0.003 run to run. Take the record with the most games.
+        hits = [labels[v] for v in name_variants(c) if v in labels]
+        rec = max(hits, key=lambda h: h[group]["gih_n"] or 0) if hits else None
         y, n, md = (None, 0, None)
         if rec:
             y, n = rec[group]["gih_wr"], rec[group]["gih_n"]

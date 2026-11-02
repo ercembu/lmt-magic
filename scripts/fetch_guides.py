@@ -21,6 +21,7 @@ CACHE = os.path.join(ROOT, "data", "guides")
 
 # Real slugs, taken from the news archive rather than guessed -- suffixes vary.
 SLUGS = {
+    "TRK": "star-trek-prerelease-guide",
     "FRA": "reality-fracture-prerelease-guide",
     "HOB": "the-hobbit-prerelease-guide",
     "MSH": "marvel-super-heroes-prerelease-guide",

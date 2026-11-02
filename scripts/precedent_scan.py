@@ -51,7 +51,7 @@ def scan(setcode="FRA"):
 
 
 if __name__ == "__main__":
-    setcode = sys.argv[1] if len(sys.argv) > 1 else "FRA"
+    setcode = sys.argv[1] if len(sys.argv) > 1 else "TRK"
     res = scan(setcode)
     json.dump(res, open(f"{ROOT}/data/precedent_{setcode}.json", "w"), indent=1)
     print(f"{setcode} mechanics vs. 21 training sets\n")

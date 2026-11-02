@@ -306,7 +306,7 @@ def build(setcode="FRA"):
 
 
 if __name__ == "__main__":
-    code = sys.argv[1] if len(sys.argv) > 1 else "FRA"
+    code = sys.argv[1] if len(sys.argv) > 1 else "TRK"
     d = build(code)
     json.dump(d, open(f"{ROOT}/data/ideas_{code}.json", "w"), indent=1)
     print(f"{code}: {d['cards']} write-ups, {d['words']:,} words")

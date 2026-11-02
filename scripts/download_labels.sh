@@ -1,7 +1,7 @@
 #!/bin/bash
 # Download 17lands public game-data dumps (one per set). Resumable.
 cd "$(dirname "$0")/../data/raw" || exit 1
-SETS="HOB MSH SOS TMT ECL TLA EOE FIN TDM DFT DSK BLB OTJ MKM LCI WOE LTR MOM ONE BRO DMU"
+SETS="FRA HOB MSH SOS TMT ECL TLA EOE FIN TDM DFT DSK BLB OTJ MKM LCI WOE LTR MOM ONE BRO DMU"
 for S in $SETS; do
   F="game_data_public.$S.PremierDraft.csv.gz"
   if [ -f "$F" ]; then

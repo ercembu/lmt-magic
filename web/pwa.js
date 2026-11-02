@@ -23,6 +23,26 @@
 
   function paint(el, msg) { if (el) el.textContent = msg; }
 
+  // Which set this build grades (set.json, written by build_pwa.sh). Pages mark
+  // the words that depend on it with data-set="name|code|cards|train_sets";
+  // some of those are inserted by page scripts after load, hence the observer.
+  let SET = null;
+  function fillSet(root) {
+    if (!SET) return;
+    root.querySelectorAll("[data-set]").forEach(el => {
+      const v = SET[el.dataset.set];
+      if (v != null && el.textContent !== String(v)) el.textContent = v;
+    });
+  }
+  fetch("set.json").then(r => r.ok ? r.json() : null).then(s => {
+    if (!s) return;
+    SET = s;
+    document.title = document.title.replace(/^[^—]*—/, `${s.name} —`);
+    fillSet(document);
+    new MutationObserver(() => fillSet(document))
+      .observe(document.body, { childList: true, subtree: true });
+  }).catch(() => {});
+
   window.FRA = {
     mountRefresh(btn, status) {
       paint(status, ago(localStorage.getItem(STAMP)));
@@ -33,7 +53,7 @@
           if (navigator.serviceWorker && navigator.serviceWorker.controller) {
             navigator.serviceWorker.controller.postMessage("refresh-data");
           }
-          const files = ["grades.json", "signals.json", "validation.json",
+          const files = ["grades.json", "set.json", "signals.json", "validation.json",
                          "calibration.json", "setinfo.json", "reviewdata.json"];
           const got = await Promise.all(files.map(f =>
             fetch(f + "?t=" + Date.now(), { cache: "no-store" })

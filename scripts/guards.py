@@ -70,6 +70,48 @@ SET_MECHANICS = {
             "archetypes": ["UG", "WU"],
         },
     },
+    # From WotC's "Star Trek Mechanics" article. Battlefront is Commander-only and
+    # appears on no booster card, so it is left out.
+    "TRK": {
+        "beam_me_up": {
+            "pattern": r"beam me up",
+            "analogue": r"flashback|you may cast this card from your graveyard"
+                        r"|return a creature you control to its owner's hand",
+            "desc": "Beam me up — recast an instant/sorcery from the graveyard by bouncing your own creature",
+            "archetypes": [],
+        },
+        "dilemma": {
+            "pattern": r"\bdilemmas?\b",
+            "analogue": r"\bdilemmas?\b|whenever you cast a modal|spells? with .{0,10}modes",
+            "desc": "Face a dilemma — payoffs for choosing modes on modal spells and abilities",
+            "archetypes": ["UB"],
+        },
+        "federation": {
+            "pattern": r"federation —|creature types among non-borg",
+            "analogue": r"creature types among|number of creature types|for each creature type",
+            "desc": "Federation — counts creature types among your non-Borg creatures",
+            "archetypes": [],
+        },
+        "strange_new_worlds": {
+            "pattern": r"strange new worlds|differently named lands",
+            "analogue": r"differently named lands|basic land types among lands you control|\bdomain\b",
+            "desc": "Strange new worlds — counts differently named lands you control (domain-like)",
+            "archetypes": ["UG"],
+        },
+        "station": {
+            "pattern": r"\bstation\b|spacecraft",
+            "analogue": r"\bstation\b|spacecraft",
+            "desc": "Spacecraft and station — returning from Edge of Eternities",
+            "archetypes": ["WU"],
+        },
+        "assimilate": {
+            "pattern": r"assimilat",
+            "analogue": r"assimilat|creature card from a graveyard onto the battlefield under your control"
+                        r"|gain control of target creature",
+            "desc": "Assimilate — steal a creature (often from a graveyard) as a Borg artifact creature",
+            "archetypes": ["WB"],
+        },
+    },
 }
 
 # Mechanical signals that a card serves a given archetype hook. Deliberately
@@ -85,6 +127,25 @@ ARCHETYPE_SIGNALS = {
     "BG": [r"deathtouch", r"trample", r"when .{0,30}enters", r"when .{0,30}dies"],
     "WR": [r"\+1/\+1 counter", r"create .{0,40}token", r"attacks", r"haste"],
     "UG": [r"empower", r"planeswalker", r"loyalty counter", r"behold"],
+}
+# The list above is also a model feature (features.py: arch_breadth/arch_depth),
+# so it stays fixed. A set whose archetypes are themed differently gets its own
+# list here, which only drives the archetype-fit display.
+ARCHETYPE_SIGNALS_BY_SET = {
+    "TRK": {
+        "WU": [r"spacecraft", r"\bstation\b", r"artificer", r"\bartifacts?\b"],
+        "UB": [r"\bdilemma", r"choose one or more", r"choose (one|two) —"],
+        "BR": [r"klingon", r"\bdies\b", r"sacrifice"],
+        "RG": [r"landfall|whenever a land (you control )?enters", r"away team",
+               r"search your library for a .{0,20}land"],
+        "WG": [r"\bdoctor\b", r"\+1/\+1 counter", r"you gain \d+ life"],
+        "WB": [r"\bborg\b", r"artifact creature", r"assimilat"],
+        "UR": [r"scientist", r"noncreature spell", r"instant or sorcery"],
+        "BG": [r"archaeolog", r"from your graveyard", r"\bmills?\b"],
+        "WR": [r"total power", r"\bofficer\b", r"\battacks\b"],
+        "UG": [r"strange new worlds|differently named lands", r"\blands?\b.{0,30}enters",
+               r"search your library for a .{0,20}land"],
+    },
 }
 
 
@@ -137,12 +198,13 @@ def archetype_fit(card, setcode):
     # the exception is Codie, whose five-colour ability you cannot use in a
     # two-colour deck anyway -- which is part of why it grades F.
     ci = set(card.get("color_identity") or [])
-    defined = list(info["archetypes"]) if info else list(ARCHETYPE_SIGNALS)
+    signals = ARCHETYPE_SIGNALS_BY_SET.get(setcode, ARCHETYPE_SIGNALS)
+    defined = list(info["archetypes"]) if info else list(signals)
     fits = []
     for pair in defined:
         if not ci <= set(pair):
             continue                        # can't cast it there
-        pats = ARCHETYPE_SIGNALS.get(pair, [])
+        pats = signals.get(pair, [])
         n = sum(1 for p in pats if re.search(p, t))
         entry = info["archetypes"][pair] if info else None
         fits.append({

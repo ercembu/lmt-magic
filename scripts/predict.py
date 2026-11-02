@@ -213,7 +213,7 @@ def grade_set(setcode, model_path=None, exclude_unplayable=True):
 
 
 if __name__ == "__main__":
-    setcode = sys.argv[1] if len(sys.argv) > 1 else "FRA"
+    setcode = sys.argv[1] if len(sys.argv) > 1 else "TRK"
     res = grade_set(setcode)
     json.dump(res, open(f"{ROOT}/data/grades_{setcode}.json", "w"), indent=1)
     import collections

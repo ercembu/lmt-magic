@@ -224,3 +224,6 @@ data/cards/
 data/reviews/
 data/guides/
 data/embeddings.npz
+
+# fastloso.py: per-fold text blocks and baseline sweeps, regenerable
+data/cache/

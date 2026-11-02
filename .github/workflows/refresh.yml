@@ -21,6 +21,10 @@ on:
 permissions:
   contents: write
 
+# The set being graded. Move this on when the next set is spoiled.
+env:
+  TARGET: TRK
+
 concurrency:
   group: refresh
   cancel-in-progress: false
@@ -52,9 +56,9 @@ jobs:
       - name: Look for a published set review
         id: review
         run: |
-          before=$(sha1sum data/expert/FRA.json 2>/dev/null | cut -d' ' -f1 || echo none)
-          python scripts/expert_grades.py FRA || true
-          after=$(sha1sum data/expert/FRA.json 2>/dev/null | cut -d' ' -f1 || echo none)
+          before=$(sha1sum data/expert/$TARGET.json 2>/dev/null | cut -d' ' -f1 || echo none)
+          python scripts/expert_grades.py $TARGET || true
+          after=$(sha1sum data/expert/$TARGET.json 2>/dev/null | cut -d' ' -f1 || echo none)
           echo "before=$before after=$after"
           if [ "$before" != "$after" ] || [ "${{ inputs.force }}" = "true" ]; then
             echo "changed=yes" >> "$GITHUB_OUTPUT"
@@ -66,19 +70,23 @@ jobs:
       - name: Retrain and regrade
         if: steps.review.outputs.changed == 'yes'
         run: |
+          python scripts/mtgazone.py $TARGET || true
+          python scripts/consensus.py $TARGET || true
           python scripts/train.py
           python scripts/calibrate.py
-          python scripts/predict.py FRA
-          python scripts/signals.py FRA
+          python scripts/predict.py $TARGET
+          python scripts/signals.py $TARGET
+          python scripts/reviews_page.py $TARGET || true
+          python scripts/ideas.py $TARGET || true
 
       - name: Rebuild the published site
-        run: bash scripts/build_pwa.sh FRA
+        run: bash scripts/build_pwa.sh $TARGET
 
       - name: Commit if anything changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A docs data/expert data/grades_FRA.json data/signals_FRA.json \
+          git add -A docs data/expert data/expert_consensus data/grades_$TARGET.json data/signals_$TARGET.json \
                      data/calibration.json data/validation.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "Nothing changed."

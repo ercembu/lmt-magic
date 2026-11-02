@@ -211,7 +211,7 @@ def build(setcode="FRA"):
 
 
 if __name__ == "__main__":
-    code = sys.argv[1] if len(sys.argv) > 1 else "FRA"
+    code = sys.argv[1] if len(sys.argv) > 1 else "TRK"
     res = build(code)
     slim = lambda c: {k: c[k] for k in
                       ("name", "grade", "z", "rarity", "mana_cost", "type_line",
