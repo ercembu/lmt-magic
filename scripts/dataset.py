@@ -24,7 +24,30 @@ BASE_KEYS = sorted(features.extract(_sample))
 # +0.076 spearman. NaN when no review has been published for a set, which is the
 # normal state for the first days of preview season -- the model then falls back
 # to text and stats alone.
-FEATURE_KEYS = BASE_KEYS + ["expert_rating"]
+# Scryfall's community oracle tags (fetch_otags.py). The only features here not
+# derived by us from the card: a human-curated functional taxonomy that catches
+# what a regex does not -- their "evasion" covers landwalk, shadow and
+# protection-based evasion, "combat-trick" separates an instant that pumps from
+# one that draws. Worth +0.0089 spearman to the BLIND model (p=0.0005, 24 of 32
+# sets) and nothing once a review is available (+0.002, p=0.39), which is the
+# shape you expect if a reviewer already encodes the same thing. Blind is the
+# state the model is in on prerelease morning, so that is where it matters.
+_otag_path = f"{ROOT}/data/otags.json"
+OTAGS = json.load(open(_otag_path)) if os.path.exists(_otag_path) else {}
+OTAG_VOCAB = sorted({t for v in OTAGS.values() for t in v})
+OTAG_KEYS = [f"ot_{t.replace('-', '_')}" for t in OTAG_VOCAB] + ["ot_count"]
+FEATURE_KEYS = BASE_KEYS + ["expert_rating"] + OTAG_KEYS
+
+
+def otag_features(name):
+    tags = OTAGS.get(name) or OTAGS.get(name.split(" // ")[0]) or []
+    f = {f"ot_{t.replace('-', '_')}": 0.0 for t in OTAG_VOCAB}
+    for t in tags:
+        k = f"ot_{t.replace('-', '_')}"
+        if k in f:
+            f[k] = 1.0
+    f["ot_count"] = float(len(tags))
+    return f
 
 
 def set_features(setcode):
@@ -45,6 +68,7 @@ def set_features(setcode):
     out = {}
     for c, f in zip(cards, base):
         f["expert_rating"] = float(expert.get(c["name"], np.nan))
+        f.update(otag_features(c["name"]))
         out[c["name"]] = f
     return out
 

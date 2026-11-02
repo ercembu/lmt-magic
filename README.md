@@ -269,6 +269,8 @@ scripts/
   fra_blind.py         blind accuracy on FRA -- the prerelease-morning state
   tune.py              try a change on every fold, keep it only if it earns it
   validate_blend.py    should the target average draft and sealed? (no)
+  fetch_otags.py       scryfall's community oracle tags, per card
+  otag_test.py         do they earn their place? (blind yes, sighted no)
   holdout_demo.py      show the damage on a set we know the answer to
   validate_grades.py   predicted vs limited-grades' real grades, all 21 sets
   guard_ablation.py    does the guard layer help? (it does not)
@@ -724,6 +726,34 @@ information helps, cleverer processing of the same information does not.
 
 `scripts/fra_blind.py` is the fast screen, `scripts/tune.py` the full-fold confirmation,
 `scripts/validate_blend.py` the target experiment.
+
+### The one thing that did close some of it: oracle tags
+
+The blind model looked stuck. It was not — it was short of information, which is a different
+problem, and the fix was to stop deriving features from the card and go and get some.
+
+Scryfall's tagger community maintains a functional taxonomy over every card: `otag:removal`,
+`otag:combat-trick`, `otag:evasion` and so on. These are the only features in the model not
+derived by us from the card text, and they catch what a regex does not — their "evasion"
+covers landwalk, shadow and protection-based evasion; "combat-trick" separates an instant that
+pumps a creature from one that draws a card. 26 usable tags, 19,639 taggings over 7,846 cards.
+
+| | baseline | with oracle tags | | |
+|---|---|---|---|---|
+| **blind** (prerelease morning) | 0.5985 | **0.6074** | **+0.0089** | p=0.0005, 24/32 sets |
+| sighted (a review published) | 0.6603 | 0.6623 | +0.0020 | p=0.39, 20/32 |
+
+Significant blind, nothing once a review is in — exactly the shape you would expect if a human
+reviewer already encodes what the tags encode. Blind is the state the model is in on prerelease
+morning, before anyone has published, so that is the half where it counts.
+
+The thing that makes this usable at all is that the taggers run **ahead of release**: TRK was
+at 216 of 341 cards tagged five days before its own prerelease, and FRA sits at 206 of 295.
+
+It is also the clearest confirmation yet of the rule this project keeps rediscovering, this
+time from the other direction. A dozen hand-written feature families failed because they were
+cleverer readings of information already in the model. This one worked because it was new
+information. `scripts/fetch_otags.py` pulls them, `scripts/otag_test.py` measures them.
 
 ## Four pages
 
