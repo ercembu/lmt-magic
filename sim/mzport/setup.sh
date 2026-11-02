@@ -5,7 +5,9 @@
 #   sim/mzport/setup.sh [snapshot.tar]
 #
 # Workspace: $LMT_SIM (default ~/pers/lmt-magic-sim). Re-running skips whatever already exists.
-# Needs: git, curl, unzip, python3 (3.12+), an NVIDIA driver for the GPU server. ~15 GB disk, ~20 min.
+# Needs: git, curl, unzip, python3 (3.12+), a GPU for the model server. ~15 GB disk, ~20 min.
+# TORCH_INDEX picks the PyTorch build: the default is CUDA 12.8 (NVIDIA); for AMD use e.g.
+#   TORCH_INDEX=https://download.pytorch.org/whl/rocm7.1 sim/mzport/setup.sh ...
 set -eu
 
 REPO=$(cd "$(dirname "$0")/../.." && pwd)
@@ -14,6 +16,7 @@ SIM=${LMT_SIM:-$HOME/pers/lmt-magic-sim}
 MZ=$SIM/mzport
 XMAGE_BASE=6b07e46d8de1e57bdab5d8852a6e6e8a78b5602c     # upstream magefree/mage our patches apply to
 MAGEZERO_BASE=fb6ee21                                    # WillWroble/MageZero main our patch applies to
+TORCH_INDEX=${TORCH_INDEX:-https://download.pytorch.org/whl/cu128}
 mkdir -p $SIM/xm $MZ
 
 echo "== toolchain (Temurin JDK 21, Maven 3.9.9) in $SIM/xm"
@@ -56,7 +59,7 @@ chmod +x $MZ/magezero-py/xmage/mz-xmage.sh
 echo "== Python env for the model server and trainer: $SIM/.venv-ml"
 if [ ! -x $SIM/.venv-ml/bin/python ]; then
   python3 -m venv $SIM/.venv-ml
-  $SIM/.venv-ml/bin/pip install -q --index-url https://download.pytorch.org/whl/cu128 torch
+  $SIM/.venv-ml/bin/pip install -q --index-url $TORCH_INDEX torch
   $SIM/.venv-ml/bin/pip install -q -e $MZ/magezero-py py-spy
 fi
 
