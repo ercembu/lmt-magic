@@ -1,0 +1,221 @@
+From 20e3186db0971320526681450b2a68846e92bae7 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 14:11:43 +0100
+Subject: [PATCH 13/17] MageZero runner: optional replays for lmt-magic's
+ viewer (logging.record_dir)
+
+---
+ .../main/java/org/mage/magezero/Config.java   |   3 +
+ .../java/org/mage/magezero/GameRecorder.java  | 153 ++++++++++++++++++
+ .../mage/magezero/ParallelDataGenerator.java  |  13 ++
+ 3 files changed, 169 insertions(+)
+ create mode 100644 Mage.MageZero/src/main/java/org/mage/magezero/GameRecorder.java
+
+diff --git a/Mage.MageZero/src/main/java/org/mage/magezero/Config.java b/Mage.MageZero/src/main/java/org/mage/magezero/Config.java
+index a9d1ab6b12..316e17b37b 100644
+--- a/Mage.MageZero/src/main/java/org/mage/magezero/Config.java
++++ b/Mage.MageZero/src/main/java/org/mage/magezero/Config.java
+@@ -180,11 +180,14 @@ public class Config {
+         public final boolean logFeatureHash;
+         public final boolean writeFinalWR;
+         public final boolean showWr;
++        /** lmt: if set, each game is also saved here as a replay for lmt-magic's game viewer */
++        public final String recordDir;
+ 
+         public LoggingConfig(Map<String, Object> raw) {
+             this.logFeatureHash = (boolean) raw.getOrDefault("log_feature_hash", false);
+             this.writeFinalWR = (boolean) raw.getOrDefault("save_final_wr", true);
+             this.showWr = (boolean) raw.getOrDefault("show_wr", true);
++            this.recordDir = (String) raw.getOrDefault("record_dir", null);
+         }
+     }
+ }
+\ No newline at end of file
+diff --git a/Mage.MageZero/src/main/java/org/mage/magezero/GameRecorder.java b/Mage.MageZero/src/main/java/org/mage/magezero/GameRecorder.java
+new file mode 100644
+index 0000000000..1ec07a50e8
+--- /dev/null
++++ b/Mage.MageZero/src/main/java/org/mage/magezero/GameRecorder.java
+@@ -0,0 +1,153 @@
++package org.mage.magezero;
++
++import mage.cards.Card;
++import mage.counters.Counter;
++import mage.game.Game;
++import mage.game.events.TableEvent;
++import mage.game.permanent.Permanent;
++import mage.game.permanent.PermanentToken;
++import mage.game.stack.StackObject;
++import mage.players.Player;
++
++import java.io.IOException;
++import java.io.OutputStreamWriter;
++import java.io.Writer;
++import java.nio.charset.StandardCharsets;
++import java.nio.file.Files;
++import java.nio.file.Path;
++import java.util.*;
++import java.util.zip.GZIPOutputStream;
++
++/**
++ * lmt: records a self-play game for lmt-magic's game viewer (sim/viewer.html), in the same format as
++ * sim/SimRecorder.java: a snapshot of both boards each time the real game logs a line, with that line.
++ *
++ * Only the real game logs (simulations are silent), so MCTS look-ahead never shows up in a replay.
++ */
++public class GameRecorder {
++
++    private final Game real;
++    private final Map<UUID, String> seat = new HashMap<>();
++    private final List<String> snaps = new ArrayList<>();
++    private final List<String> pending = new ArrayList<>();
++    private String lastState = "";
++
++    public GameRecorder(Game game, UUID playerA, UUID playerB) {
++        this.real = game;
++        seat.put(playerA, "A");
++        seat.put(playerB, "B");
++        game.addTableEventListener(e -> {
++            if (e.getEventType() == TableEvent.EventType.INFO) {
++                log(e.getMessage());
++            }
++        });
++    }
++
++    private synchronized void log(String msg) {
++        pending.add(msg);
++        snap(false);
++    }
++
++    public synchronized void snap(boolean force) {
++        String state = state();
++        if (!force && state.equals(lastState) && pending.isEmpty()) return;
++        lastState = state;
++        StringBuilder sb = new StringBuilder("{\"turn\":").append(real.getTurnNum())
++                .append(",\"step\":").append(q(String.valueOf(real.getTurnStepType())))
++                .append(",\"active\":").append(q(seatOf(real.getActivePlayerId())))
++                .append(",\"log\":[");
++        for (int i = 0; i < pending.size(); i++) {
++            if (i > 0) sb.append(',');
++            sb.append(q(pending.get(i)));
++        }
++        pending.clear();
++        snaps.add(sb.append("],").append(state).append('}').toString());
++    }
++
++    private String seatOf(UUID id) {
++        return id == null ? "" : seat.getOrDefault(id, "");
++    }
++
++    static String q(String s) {
++        StringBuilder sb = new StringBuilder("\"");
++        for (char c : (s == null ? "" : s).toCharArray()) {
++            switch (c) {
++                case '"': sb.append("\\\""); break;
++                case '\\': sb.append("\\\\"); break;
++                case '\n': sb.append("\\n"); break;
++                case '\r': break;
++                case '\t': sb.append(' '); break;
++                default: sb.append(c < 0x20 ? ' ' : c);
++            }
++        }
++        return sb.append('"').toString();
++    }
++
++    private static String cards(Collection<Card> cs) {
++        StringBuilder sb = new StringBuilder("[");
++        boolean first = true;
++        for (Card c : cs) {
++            if (!first) sb.append(',');
++            first = false;
++            sb.append(q(c.getName()));
++        }
++        return sb.append(']').toString();
++    }
++
++    private String state() {
++        StringBuilder sb = new StringBuilder("\"players\":[");
++        boolean firstP = true;
++        for (Player p : real.getPlayers().values()) {
++            if (!firstP) sb.append(',');
++            firstP = false;
++            sb.append("{\"name\":").append(q(seatOf(p.getId())))
++                    .append(",\"life\":").append(p.getLife())
++                    .append(",\"library\":").append(p.getLibrary().size())
++                    .append(",\"hand\":").append(cards(p.getHand().getCards(real)))
++                    .append(",\"graveyard\":").append(cards(p.getGraveyard().getCards(real)))
++                    .append(",\"battlefield\":[");
++            boolean firstC = true;
++            for (Permanent perm : real.getBattlefield().getAllActivePermanents(p.getId())) {
++                if (!firstC) sb.append(',');
++                firstC = false;
++                sb.append("{\"name\":").append(q(perm.getName()))
++                        .append(",\"tapped\":").append(perm.isTapped())
++                        .append(",\"token\":").append(perm instanceof PermanentToken)
++                        .append(",\"land\":").append(perm.isLand(real))
++                        .append(",\"creature\":").append(perm.isCreature(real));
++                if (perm.isCreature(real)) {
++                    sb.append(",\"pt\":").append(q(perm.getPower().getValue() + "/" + perm.getToughness().getValue()));
++                }
++                if (perm.isAttacking()) sb.append(",\"attacking\":true");
++                if (perm.getBlocking() > 0) sb.append(",\"blocking\":true");
++                if (perm.getDamage() > 0) sb.append(",\"damage\":").append(perm.getDamage());
++                StringBuilder ctr = new StringBuilder();
++                for (Counter c : perm.getCounters(real).values()) {
++                    if (ctr.length() > 0) ctr.append(", ");
++                    ctr.append(c.getCount()).append(' ').append(c.getName());
++                }
++                if (ctr.length() > 0) sb.append(",\"counters\":").append(q(ctr.toString()));
++                sb.append('}');
++            }
++            sb.append("]}");
++        }
++        sb.append("],\"stack\":[");
++        boolean firstS = true;
++        for (StackObject so : real.getStack()) {
++            if (!firstS) sb.append(',');
++            firstS = false;
++            sb.append(q(so.getName() + " (" + seatOf(so.getControllerId()) + ")"));
++        }
++        return sb.append(']').toString();
++    }
++
++    public synchronized void write(Path out, String deckA, String deckB, String winner) throws IOException {
++        snap(true);
++        Files.createDirectories(out.getParent());
++        try (Writer w = new OutputStreamWriter(new GZIPOutputStream(Files.newOutputStream(out)), StandardCharsets.UTF_8)) {
++            w.write("{\"deckA\":" + q(deckA) + ",\"deckB\":" + q(deckB) + ",\"winner\":" + q(winner)
++                    + ",\"turns\":" + real.getTurnNum() + ",\"agent\":\"magezero\",\"snapshots\":["
++                    + String.join(",", snaps) + "]}");
++        }
++    }
++}
+diff --git a/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java b/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
+index 119d71fe36..3a856c6355 100644
+--- a/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
++++ b/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
+@@ -393,8 +393,21 @@ public class ParallelDataGenerator {
+                     game.setStartingPlayerId(playerB.getId());
+                 }
+             }
++            String recordDir = Config.INSTANCE.logging.recordDir;
++            GameRecorder recorder = recordDir == null ? null : new GameRecorder(game, playerA.getId(), playerB.getId());
+             game.start(null);
+             boolean playerAWon = playerA.hasWon();
++            if (recorder != null) {
++                String winner = playerA.hasWon() ? "A" : playerB.hasWon() ? "B" : "draw";
++                java.nio.file.Path out = java.nio.file.Paths.get(recordDir,
++                        String.format("G%d_%05d.json.gz", System.currentTimeMillis() / 1000, gameCount.get() + 1));
++                try {
++                    recorder.write(out, java.nio.file.Paths.get(deckA).getFileName().toString(),
++                            java.nio.file.Paths.get(deckB).getFileName().toString(), winner);
++                } catch (IOException e) {
++                    logger.warn("could not write replay " + out + ": " + e);
++                }
++            }
+             //merge to the final features
+             synchronized (seenFeatures) {
+                 seenFeatures.merge(threadEncoderA.featureMap);
+-- 
+2.55.0
+

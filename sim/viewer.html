@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sim Game Viewer</title>
+<style>
+:root {
+  --bg: #f5f4f0; --panel: #ffffff; --ink: #1d1d1b; --ink-2: #5b5a55; --ink-3: #8d8b84;
+  --line: #e2e0d8; --accent: #2f6f8f; --win: #2e7d4f; --lose: #b2453a;
+  --atk: #d9822b; --blk: #2f6f8f; --chip: #efede6;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1d9a6c; --s4: #8a5cd8;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #151514; --panel: #1f1f1d; --ink: #ecebe6; --ink-2: #b4b2aa; --ink-3: #7d7b74;
+    --line: #34332f; --accent: #7fb6d1; --win: #6cc08f; --lose: #e2897f;
+    --atk: #f0a35a; --blk: #7fb6d1; --chip: #2a2a27;
+    --s1: #3987e5; --s2: #d95926; --s3: #34b884; --s4: #a07ef0;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #151514; --panel: #1f1f1d; --ink: #ecebe6; --ink-2: #b4b2aa; --ink-3: #7d7b74;
+  --line: #34332f; --accent: #7fb6d1; --win: #6cc08f; --lose: #e2897f;
+  --atk: #f0a35a; --blk: #7fb6d1; --chip: #2a2a27;
+  --s1: #3987e5; --s2: #d95926; --s3: #34b884; --s4: #a07ef0;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink);
+  font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.app { display: grid; grid-template-columns: 300px 1fr 320px; height: 100vh; }
+aside, .log { background: var(--panel); border-color: var(--line); overflow: auto; }
+aside { border-right: 1px solid var(--line); display: flex; flex-direction: column; }
+.log { border-left: 1px solid var(--line); padding: 12px 14px; }
+h1 { font-size: 15px; margin: 14px 14px 8px; }
+.filters { padding: 0 14px 10px; display: grid; gap: 6px; border-bottom: 1px solid var(--line); }
+.seat { font-size: 11px; padding: 1px 5px; border-radius: 4px; border: 1px solid var(--line); white-space: nowrap; }
+.seat.network { color: var(--s3); border-color: var(--s3); }
+.seat.gate { color: var(--s2); border-color: var(--s2); }
+.seat.search { color: var(--ink-3); }
+.filters input, .filters select { width: 100%; padding: 6px 8px; border: 1px solid var(--line);
+  border-radius: 6px; background: var(--bg); color: var(--ink); font: inherit; }
+.list { overflow: auto; flex: 1; }
+.game { padding: 8px 14px; border-bottom: 1px solid var(--line); cursor: pointer; }
+.game:hover { background: var(--chip); }
+.game.sel { background: var(--chip); box-shadow: inset 3px 0 0 var(--accent); }
+.game .t { font-weight: 600; font-size: 13px; }
+.game .m { color: var(--ink-3); font-size: 12px; }
+.up { color: var(--lose); font-weight: 600; }
+main { overflow: auto; padding: 12px 16px; display: flex; flex-direction: column; gap: 10px; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.bar button { border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+  border-radius: 6px; padding: 5px 10px; font: inherit; cursor: pointer; }
+.bar button:hover { border-color: var(--accent); }
+.bar input[type=range] { flex: 1; min-width: 160px; }
+.where { font-variant-numeric: tabular-nums; color: var(--ink-2); min-width: 180px; }
+.board { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px; }
+.board.active { box-shadow: 0 0 0 2px var(--accent); }
+.phead { display: flex; gap: 14px; align-items: baseline; flex-wrap: wrap; margin-bottom: 6px; }
+.phead .n { font-weight: 700; font-size: 15px; }
+.life { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.meta { color: var(--ink-3); font-size: 12px; }
+.row { display: flex; flex-wrap: wrap; gap: 6px; min-height: 30px; align-items: flex-end; margin: 4px 0; }
+.lbl { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); margin-top: 6px; }
+.card { position: relative; width: 68px; height: 95px; border-radius: 5px; background: var(--chip);
+  border: 1px solid var(--line); overflow: hidden; flex: none; transition: transform .15s; }
+.card img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.card .nm { position: absolute; inset: 4px; font-size: 10px; line-height: 1.15; color: var(--ink-2); }
+.card.tapped { transform: rotate(90deg); margin: 0 14px; }
+.card.atk { box-shadow: 0 0 0 3px var(--atk); }
+.card.blk { box-shadow: 0 0 0 3px var(--blk); }
+.badge { position: absolute; right: 2px; bottom: 2px; background: rgba(0,0,0,.78); color: #fff;
+  font-size: 11px; font-weight: 700; padding: 1px 4px; border-radius: 4px; }
+.ctr { position: absolute; left: 2px; top: 2px; background: var(--accent); color: #fff; font-size: 10px;
+  padding: 1px 4px; border-radius: 4px; max-width: 64px; overflow: hidden; white-space: nowrap; }
+.dmg { position: absolute; left: 2px; bottom: 2px; background: var(--lose); color: #fff; font-size: 10px;
+  padding: 1px 4px; border-radius: 4px; }
+.hand .card { width: 52px; height: 73px; }
+.stack { background: var(--panel); border: 1px dashed var(--line); border-radius: 10px; padding: 6px 10px;
+  color: var(--ink-2); font-size: 13px; min-height: 32px; }
+.log h2 { font-size: 13px; margin: 0 0 8px; color: var(--ink-2); }
+.ln { font-size: 12.5px; padding: 2px 0; color: var(--ink-3); }
+.ln.now { color: var(--ink); }
+.ln.turn { color: var(--accent); font-weight: 600; margin-top: 6px; }
+#preview { position: fixed; pointer-events: none; width: 244px; border-radius: 10px; display: none;
+  box-shadow: 0 8px 30px rgba(0,0,0,.35); z-index: 10; }
+.empty { color: var(--ink-3); padding: 40px; text-align: center; }
+.tabs { display: flex; gap: 4px; padding: 0 14px 10px; }
+.tabs button { flex: 1; border: 1px solid var(--line); background: var(--bg); color: var(--ink-2);
+  border-radius: 6px; padding: 6px; font: inherit; cursor: pointer; }
+.tabs button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+.chart { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+  padding: 10px 12px 6px; max-width: 900px; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart .ttl { font-weight: 600; font-size: 13px; }
+.chart .legend { display: flex; gap: 14px; font-size: 12px; color: var(--ink-2); margin: 4px 0 2px; flex-wrap: wrap; }
+.chart .legend i { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 5px; }
+.chart .legend i.dash { height: 0; border-top: 2px dashed var(--ink-3); }
+.chart .tip { position: absolute; pointer-events: none; background: var(--ink); color: var(--panel); font-size: 12px;
+  padding: 5px 8px; border-radius: 6px; white-space: nowrap; display: none; z-index: 3; }
+.chart text { fill: var(--ink-3); font-size: 11px; font-family: inherit; }
+.chart .grid { stroke: var(--line); stroke-width: 1; }
+.chart .ref { stroke: var(--ink-3); stroke-width: 1.5; stroke-dasharray: 5 4; }
+.chart .reflbl { fill: var(--ink-2); }
+.chart .xh { stroke: var(--ink-3); stroke-width: 1; }
+.cname { border-bottom: 1px dotted var(--ink-3); cursor: default; }
+.prog h2 { font-size: 15px; margin: 18px 0 8px; }
+.prog .note { color: var(--ink-3); font-size: 12.5px; max-width: 70ch; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
+.tile { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; }
+.tile .v { font-size: 22px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.tile .k { color: var(--ink-3); font-size: 12px; }
+.pbar { height: 8px; background: var(--chip); border-radius: 4px; overflow: hidden; margin-top: 8px; }
+.pbar i { display: block; height: 100%; background: var(--accent); }
+table.st { border-collapse: collapse; width: 100%; max-width: 720px; font-variant-numeric: tabular-nums; }
+table.st td, table.st th { padding: 5px 8px; border-bottom: 1px solid var(--line); text-align: left; font-size: 13px; }
+table.st th { color: var(--ink-3); font-weight: 500; font-size: 12px; }
+.wrbar { position: relative; height: 12px; background: var(--chip); border-radius: 3px; width: 220px; }
+.wrbar .ci { position: absolute; top: 0; bottom: 0; background: color-mix(in srgb, var(--accent) 30%, transparent); }
+.wrbar .pt { position: absolute; top: -2px; bottom: -2px; width: 3px; background: var(--accent); }
+.wrbar .mid { position: absolute; top: -3px; bottom: -3px; left: 50%; width: 1px; background: var(--ink-3); }
+.hist { display: flex; align-items: flex-end; gap: 3px; height: 90px; max-width: 720px; }
+.hist div { flex: 1; background: var(--accent); border-radius: 2px 2px 0 0; min-height: 1px; }
+.cols2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; max-width: 900px; }
+@media (max-width: 1000px) {
+  .app { grid-template-columns: 1fr; height: auto; }
+  aside { max-height: 40vh; } .log { max-height: 50vh; border-left: 0; border-top: 1px solid var(--line); }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <h1>Simulated games</h1>
+    <div class="tabs"><button id="tabGames" class="on">Games</button><button id="tabProg">Progress</button></div>
+    <div class="filters">
+      <select id="sort">
+        <option value="upset">Biggest upsets first</option>
+        <option value="long">Longest games</option>
+        <option value="short">Shortest games</option>
+        <option value="file">In order</option>
+        <option value="gen">Newest generation first</option>
+      </select>
+      <select id="kind" style="display:none" aria-label="Who played">
+        <option value="">All games</option>
+        <option value="network">Network self-play (vN vs vN)</option>
+        <option value="gate">Gate (network vs search)</option>
+        <option value="search">Search only</option>
+      </select>
+      <input id="q" type="search" placeholder="Card cast in the game…" aria-label="Filter by card">
+    </div>
+    <div class="list" id="list"></div>
+  </aside>
+  <main id="main"><div class="empty">Pick a game on the left.<br>← → step · Shift+← → turn · Space play</div></main>
+  <section class="log" id="log"></section>
+</div>
+<img id="preview" alt="">
+<script>
+const $ = s => document.querySelector(s);
+let INDEX = [], CARDS = {}, GAME = null, POS = 0, TIMER = null, SEL = null;
+const strip = s => s.replace(/<[^>]+>/g, '');
+
+async function loadJSON(u) { const r = await fetch(u); return r.json(); }
+async function loadGz(u) {
+  const r = await fetch(u);
+  const ds = r.body.pipeThrough(new DecompressionStream('gzip'));
+  return JSON.parse(await new Response(ds).text());
+}
+
+function renderList() {
+  const q = $('#q').value.trim().toLowerCase();
+  const sort = $('#sort').value;
+  const kind = $('#kind').value;
+  let rows = INDEX.filter(g => (!q || g.castA.concat(g.castB).some(c => c.toLowerCase().includes(q))) && (!kind || g.kind === kind));
+  const key = { upset: g => -(g.upset ?? -99), long: g => -g.turns, short: g => g.turns, file: g => g.file,
+               gen: g => -(g.gen ?? -1) }[sort];
+  rows = rows.slice().sort((a, b) => key(a) < key(b) ? -1 : key(a) > key(b) ? 1 : 0);
+  $('#list').innerHTML = rows.map(g => `
+    <div class="game ${g.file === SEL ? 'sel' : ''}" data-f="${g.file}">
+      <div class="t">${g.gen != null ? `<span class="up" style="color:var(--accent)">gen ${g.gen}</span> · ` : ''}${g.seatA ? `<span class="seat ${g.kind}">${g.seatA} vs ${g.seatB}</span> · ` : ''}${g.pairA || 'A'} vs ${g.pairB || 'B'} — ${g.winner === 'draw' ? 'draw' : g.winner + ' won'}</div>
+      <div class="m">${g.turns} turns${g.upset != null ? ` · <span class="${g.upset > 0 ? 'up' : ''}">${g.upset > 0 ? 'upset ' : ''}${g.upset > 0 ? '+' : ''}${g.upset}</span>` : ''}
+        · ${g.deckA.replace('.dck','')} / ${g.deckB.replace('.dck','')}</div>
+    </div>`).join('') || '<div class="empty">No games match.</div>';
+}
+
+function card(c, cls = '') {
+  const img = CARDS[c.name || c];
+  const name = c.name || c;
+  const k = [cls, c.tapped ? 'tapped' : '', c.attacking ? 'atk' : '', c.blocking ? 'blk' : ''].join(' ');
+  return `<div class="card ${k}" data-card="${name.replace(/"/g, '&quot;')}" title="${name.replace(/"/g, '&quot;')}${c.counters ? ' — ' + c.counters : ''}">
+    ${img ? `<img src="${img.small}" alt="" loading="lazy">` : `<div class="nm">${name}${c.token ? '<br>(token)' : ''}</div>`}
+    ${c.pt ? `<span class="badge">${c.pt}</span>` : ''}
+    ${c.counters ? `<span class="ctr">${c.counters}</span>` : ''}
+    ${c.damage ? `<span class="dmg">${c.damage} dmg</span>` : ''}
+  </div>`;
+}
+
+function board(p, s) {
+  const lands = p.battlefield.filter(c => c.land && !c.creature);
+  const rest = p.battlefield.filter(c => !(c.land && !c.creature));
+  const won = GAME.winner === p.name;
+  return `<div class="board ${s.active === p.name ? 'active' : ''}">
+    <div class="phead"><span class="n" style="color:${won ? 'var(--win)' : 'var(--ink)'}">Player ${p.name}${won ? ' (won)' : ''}</span>
+      <span class="life">${p.life} ♥</span>
+      <span class="meta">library ${p.library} · hand ${p.hand.length} · graveyard ${p.graveyard.length}</span></div>
+    <div class="lbl">Permanents</div><div class="row">${rest.map(c => card(c)).join('')}</div>
+    <div class="lbl">Lands</div><div class="row">${lands.map(c => card(c)).join('')}</div>
+    <div class="lbl">Hand</div><div class="row hand">${p.hand.map(c => card(c)).join('')}</div>
+    <div class="lbl">Graveyard</div><div class="row hand">${p.graveyard.map(c => card(c)).join('')}</div>
+  </div>`;
+}
+
+function render() {
+  const s = GAME.snapshots[POS];
+  const pA = s.players.find(p => p.name === 'A'), pB = s.players.find(p => p.name === 'B');
+  const g = INDEX.find(x => x.file === SEL) || {};
+  $('#main').innerHTML = `
+    <div class="bar">
+      <button id="pt" title="Previous turn (Shift+←)">⏮</button>
+      <button id="ps" title="Previous step (←)">◀</button>
+      <button id="pl" title="Play/pause (Space)">${TIMER ? '⏸' : '▶'}</button>
+      <button id="ns" title="Next step (→)">▶|</button>
+      <button id="nt" title="Next turn (Shift+→)">⏭</button>
+      <input type="range" id="sl" min="0" max="${GAME.snapshots.length - 1}" value="${POS}" aria-label="Step">
+      <span class="where">Turn ${s.turn} · ${s.step} · ${s.active}'s turn · ${POS + 1}/${GAME.snapshots.length}</span>
+    </div>
+    <div id="life"></div>
+    ${board(pB, s)}
+    <div class="stack">${s.stack.length ? 'Stack: ' + s.stack.join(' ← ') : 'Stack empty'}</div>
+    ${board(pA, s)}
+    <div class="meta">${g.seatA ? `<span class="seat ${g.kind}">A: ${g.seatA} · B: ${g.seatB}</span> ` : ''}${GAME.deckA} (${g.pairA || ''}${g.strA != null ? ', strength ' + g.strA : ''}) vs
+      ${GAME.deckB} (${g.pairB || ''}${g.strB != null ? ', strength ' + g.strB : ''}) · winner ${GAME.winner}</div>`;
+  // life totals at the end of each turn; click a turn to jump to it
+  const byTurn = new Map();
+  GAME.snapshots.forEach(sn => byTurn.set(sn.turn, sn));
+  const life = n => [...byTurn.entries()].map(([t, sn]) => [t, sn.players.find(p => p.name === n).life]);
+  lineChart($('#life'), {
+    title: 'Life totals by turn',
+    series: [{ name: 'Player A', color: '--s1', pts: life('A') }, { name: 'Player B', color: '--s2', pts: life('B') }],
+    xfmt: x => 'T' + x, mark: s.turn,
+    tip: (x, at) => `<b>Turn ${x}</b> (click to jump)<br>` + at.map(o => `${o.s.name}: <b>${o.p[1]}</b>`).join('<br>'),
+    onPick: t => { const i = GAME.snapshots.findIndex(sn => sn.turn === t); if (i >= 0) go(i); }
+  });
+  $('#pt').onclick = () => turnJump(-1); $('#nt').onclick = () => turnJump(1);
+  $('#ps').onclick = () => go(POS - 1); $('#ns').onclick = () => go(POS + 1);
+  $('#pl').onclick = toggle; $('#sl').oninput = e => go(+e.target.value);
+  // the log: everything so far, the current step highlighted
+  let html = '<h2>Game log</h2>', lastTurn = null;
+  GAME.snapshots.slice(0, POS + 1).forEach((sn, i) => {
+    if (sn.turn !== lastTurn) { html += `<div class="ln turn">Turn ${sn.turn} — ${sn.active}</div>`; lastTurn = sn.turn; }
+    sn.log.forEach(l => html += `<div class="ln ${i === POS ? 'now' : ''}">${strip(l)}</div>`);
+  });
+  $('#log').innerHTML = html;
+  $('#log').scrollTop = $('#log').scrollHeight;
+}
+
+function go(i) { if (!GAME) return; POS = Math.max(0, Math.min(GAME.snapshots.length - 1, i)); render(); }
+function turnJump(d) {
+  const t = GAME.snapshots[POS].turn + d;
+  const i = GAME.snapshots.findIndex(s => s.turn === t);
+  if (i >= 0) go(i); else go(d > 0 ? GAME.snapshots.length - 1 : 0);
+}
+function toggle() {
+  if (TIMER) { clearInterval(TIMER); TIMER = null; }
+  else TIMER = setInterval(() => { if (POS >= GAME.snapshots.length - 1) toggle(); else go(POS + 1); }, 600);
+  render();
+}
+
+async function open(f) {
+  SEL = f; if (TIMER) toggle();
+  GAME = await loadGz(f); POS = 0; render(); renderList();
+}
+
+document.addEventListener('keydown', e => {
+  if (!GAME || e.target.tagName === 'INPUT') return;
+  if (e.key === 'ArrowRight') { e.shiftKey ? turnJump(1) : go(POS + 1); e.preventDefault(); }
+  if (e.key === 'ArrowLeft') { e.shiftKey ? turnJump(-1) : go(POS - 1); e.preventDefault(); }
+  if (e.key === ' ') { toggle(); e.preventDefault(); }
+});
+$('#list').onclick = e => { const g = e.target.closest('.game'); if (g) open(g.dataset.f); };
+$('#sort').onchange = renderList; $('#q').oninput = renderList;
+
+// large preview on hover
+const pv = $('#preview');
+document.addEventListener('mouseover', e => {
+  const c = e.target.closest('.card, .cname'); const img = c && CARDS[c.dataset.card];
+  if (!img) { pv.style.display = 'none'; return; }
+  pv.src = img.normal; pv.style.display = 'block';
+});
+document.addEventListener('mousemove', e => {
+  if (pv.style.display === 'none') return;
+  const x = e.clientX + 260 > innerWidth ? e.clientX - 260 : e.clientX + 16;
+  pv.style.left = x + 'px'; pv.style.top = Math.min(e.clientY - 20, innerHeight - 350) + 'px';
+});
+
+// ---- a small line chart: thin 2px lines, recessive grid, crosshair + tooltip ----
+// series: [{name, color (css var), pts: [[x, y], ...]}]; refs: [{y, label}]
+function lineChart(el, { title, series, refs = [], xfmt = x => x, yfmt = y => y, tip, onPick, mark }) {
+  const W = 860, H = 220, L = 44, R = 16, T = 10, B = 26;
+  const xs = series.flatMap(s => s.pts.map(p => p[0]));
+  const ys = series.flatMap(s => s.pts.map(p => p[1])).concat(refs.map(r => r.y));
+  if (!xs.length) { el.innerHTML = ''; return; }
+  let x0 = Math.min(...xs), x1 = Math.max(...xs); if (x0 === x1) x1 = x0 + 1;
+  let y0 = Math.min(...ys), y1 = Math.max(...ys);
+  const pad = (y1 - y0) * 0.08 || 1; y0 -= pad; y1 += pad;
+  const X = x => L + (x - x0) / (x1 - x0) * (W - L - R), Y = y => T + (1 - (y - y0) / (y1 - y0)) * (H - T - B);
+  const ticks = (a, b, n) => { const st = Math.pow(10, Math.floor(Math.log10((b - a) / n))); const m = [1, 2, 5, 10].find(m => (b - a) / (st * m) <= n) * st;
+    const out = []; for (let v = Math.ceil(a / m) * m; v <= b + 1e-9; v += m) out.push(+v.toFixed(6)); return out; };
+  const yt = ticks(y0, y1, 4), xt = ticks(x0, x1, 6);
+  const path = pts => pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join(' ');
+  el.className = 'chart';
+  el.innerHTML = `<div class="ttl">${title}</div>
+    <div class="legend">${series.map(s => `<span><i style="background:var(${s.color})"></i>${s.name}</span>`).join('')}
+      ${refs.length ? '<span><i class="dash"></i>reference</span>' : ''}</div>
+    <svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${title}">
+      ${yt.map(v => `<line class="grid" x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${L - 6}" y="${Y(v) + 4}" text-anchor="end">${yfmt(v)}</text>`).join('')}
+      ${xt.map(v => `<text x="${X(v)}" y="${H - 6}" text-anchor="middle">${xfmt(v)}</text>`).join('')}
+      ${refs.map(r => `<line class="ref" x1="${L}" x2="${W - R}" y1="${Y(r.y)}" y2="${Y(r.y)}"/>
+        <text class="reflbl" x="${W - R - 4}" y="${Y(r.y) - 5}" text-anchor="end">${r.label}</text>`).join('')}
+      ${mark != null ? `<line class="xh" x1="${X(mark)}" x2="${X(mark)}" y1="${T}" y2="${H - B}" stroke-dasharray="2 3"/>` : ''}
+      ${series.map(s => `<path d="${path(s.pts)}" fill="none" stroke="var(${s.color})" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`).join('')}
+      ${series.map(s => { const p = s.pts[s.pts.length - 1]; return `<text x="${X(p[0]) + 6}" y="${Y(p[1]) + 4}" style="fill:var(--ink-2)">${s.name.split(' ')[0]}</text>`; }).join('')}
+      <line class="xh hx" y1="${T}" y2="${H - B}" style="display:none"/>
+      <g class="dots"></g>
+      <rect x="${L}" y="${T}" width="${W - L - R}" height="${H - T - B}" fill="transparent" style="cursor:${onPick ? 'pointer' : 'crosshair'}"/>
+    </svg><div class="tip"></div>`;
+  const svg = el.querySelector('svg'), hx = el.querySelector('.hx'), dots = el.querySelector('.dots'), tp = el.querySelector('.tip');
+  const allX = [...new Set(xs)].sort((a, b) => a - b);
+  const nearest = cx => allX.reduce((a, b) => Math.abs(X(b) - cx) < Math.abs(X(a) - cx) ? b : a);
+  const toX = e => { const r = svg.getBoundingClientRect(); return (e.clientX - r.left) / r.width * W; };
+  svg.addEventListener('mousemove', e => {
+    const x = nearest(toX(e));
+    hx.setAttribute('x1', X(x)); hx.setAttribute('x2', X(x)); hx.style.display = '';
+    const at = series.map(s => ({ s, p: s.pts.find(p => p[0] === x) })).filter(o => o.p);
+    dots.innerHTML = at.map(o => `<circle cx="${X(x)}" cy="${Y(o.p[1])}" r="4.5" fill="var(${o.s.color})" stroke="var(--panel)" stroke-width="2"/>`).join('');
+    tp.innerHTML = tip ? tip(x, at) : `${xfmt(x)}<br>` + at.map(o => `${o.s.name}: <b>${yfmt(o.p[1])}</b>`).join('<br>');
+    const r = svg.getBoundingClientRect(), er = el.getBoundingClientRect();
+    tp.style.display = 'block';
+    const left = r.left - er.left + X(x) / W * r.width;
+    tp.style.left = (left + 12 + tp.offsetWidth > er.width ? left - tp.offsetWidth - 12 : left + 12) + 'px';
+    tp.style.top = '34px';
+  });
+  svg.addEventListener('mouseleave', () => { hx.style.display = 'none'; dots.innerHTML = ''; tp.style.display = 'none'; });
+  if (onPick) svg.addEventListener('click', e => onPick(nearest(toX(e))));
+}
+
+// ---- Progress tab: stats.json is rewritten every minute by sim_stats.py ----
+let PROG_TIMER = null;
+const pct = x => (100 * x).toFixed(1) + '%';
+function wrbar(r) {
+  return `<div class="wrbar"><span class="mid"></span>
+    <span class="ci" style="left:${100 * r.ci[0]}%;width:${100 * (r.ci[1] - r.ci[0])}%"></span>
+    <span class="pt" style="left:calc(${100 * r.wr}% - 1px)"></span></div>`;
+}
+async function showProgress() {
+  let st;
+  try { st = await (await fetch('stats.json?t=' + Date.now(), { cache: 'no-store' })).json(); }
+  catch (e) { $('#main').innerHTML = '<div class="empty">No stats.json yet.</div>'; return; }
+  if (st.mode === 'selfplay') return showSelfPlay(st);
+  const eta = st.eta_min != null ? (st.eta_min >= 60 ? Math.floor(st.eta_min / 60) + 'h ' + (st.eta_min % 60) + 'm' : st.eta_min + 'm') : '—';
+  const acc = st.accuracy || {};
+  const accTile = f => acc[f] ? `<div class="tile"><div class="v">${acc[f].rho >= 0 ? '+' : ''}${acc[f].rho.toFixed(3)}</div>
+      <div class="k">sim vs real ${f === 'Sealed' ? 'Sealed' : 'draft'} win rates (${acc[f].cards} cards)</div></div>` : '';
+  const tmax = Math.max(1, ...Object.values(st.turns));
+  const cardRows = rows => rows.map(r => `<tr><td><span data-card="${r.card.replace(/"/g, '&quot;')}" class="cname">${r.card}</span></td>
+      <td>${r.value >= 0 ? '+' : ''}${r.value.toFixed(3)}</td><td>${r.decks}</td></tr>`).join('');
+  $('#main').innerHTML = `<div class="prog">
+    <div class="tiles">
+      <div class="tile"><div class="v">${st.done.toLocaleString()}</div><div class="k">of ${st.total.toLocaleString()} games</div>
+        <div class="pbar"><i style="width:${pct(st.done / st.total)}"></i></div></div>
+      <div class="tile"><div class="v">${st.rate ? st.rate.toFixed(0) : '—'}</div><div class="k">games / minute</div></div>
+      <div class="tile"><div class="v">${eta}</div><div class="k">to finish at this rate</div></div>
+      <div class="tile"><div class="v">${st.draws} · ${st.errors}</div><div class="k">draws (turn cap) · errors (retried)</div></div>
+      ${accTile('Sealed')}${accTile('PremierDraft')}
+    </div>
+    <p class="note">Updated ${st.updated}, refreshes every minute. The accuracy tiles are the question this run
+      answers: do simulated card values rank cards the way real players' results do? Below a few thousand games
+      they are mostly noise — each card has only been in a handful of decks.</p>
+
+    <h2>Is it learning? Accuracy as games accumulate</h2>
+    <p class="note">The score after the first 500, 1,000, … finished games: how well simulated card values rank cards
+      against FRA's real win rates (Spearman, 1 = perfect order, 0 = none). Dashed lines are our own model's score
+      on the same cards, the bar the simulation has to clear to be worth adding. A curve still climbing means more
+      games are paying off; a flat one means they are not.</p>
+    <div id="curve"></div>
+
+    <h2>Colour pairs</h2>
+    <p class="note">Win rate of each pair against the other pairs (mirror matches left out). Bar: the point is the
+      win rate, the shaded band its 95% range; the line marks 50%.</p>
+    <table class="st"><tr><th>pair</th><th>win rate</th><th></th><th>games</th></tr>
+      ${st.pairs.map(r => `<tr><td><b>${r.pair}</b></td><td>${pct(r.wr)}</td><td>${wrbar(r)}</td><td>${r.games}</td></tr>`).join('')}</table>
+
+    <h2>Colours</h2>
+    <table class="st"><tr><th>colour</th><th>win rate</th><th></th><th>games</th></tr>
+      ${st.colours.map(r => `<tr><td><b>${r.colour}</b></td><td>${pct(r.wr)}</td><td>${wrbar(r)}</td><td>${r.games}</td></tr>`).join('')}</table>
+
+    <h2>Game length</h2>
+    <div class="hist">${Object.entries(st.turns).map(([t, n]) => `<div title="${t} turns: ${n} games" style="height:${100 * n / tmax}%"></div>`).join('')}</div>
+    <p class="note">Turns ${Object.keys(st.turns)[0] || ''}–${Object.keys(st.turns).slice(-1)[0] || ''}; a game still going at turn 30 is stopped as a draw.</p>
+
+    ${st.top ? `<h2>Cards, by simulated value so far</h2>
+    <p class="note">Each card's fitted contribution to its deck's chance of winning, among cards in 30+ decks. Hover a name for the card.</p>
+    <div class="cols2">
+      <table class="st"><tr><th>strongest</th><th>value</th><th>decks</th></tr>${cardRows(st.top)}</table>
+      <table class="st"><tr><th>weakest</th><th>value</th><th>decks</th></tr>${cardRows(st.bottom)}</table>
+    </div>` : ''}
+  </div>`;
+  const c = st.curve || [];
+  lineChart($('#curve'), {
+    title: 'Simulated values vs real win rates',
+    series: [{ name: 'Sealed (what a prerelease is)', color: '--s1', pts: c.map(r => [r.games, r.Sealed]) },
+             { name: 'Draft', color: '--s2', pts: c.map(r => [r.games, r.PremierDraft]) }],
+    refs: (st.refs || []).map(r => ({ y: r.rho, label: r.label })),
+    xfmt: x => x >= 1000 ? (x / 1000) + 'k' : x, yfmt: y => (y >= 0 ? '+' : '') + y.toFixed(2),
+    tip: (x, at) => {
+      const r = c.find(r => r.games === x);
+      const hrs = st.rate ? ` · ≈${(x / st.rate / 60).toFixed(1)} h of play` : '';
+      return `<b>${x.toLocaleString()} games</b>${hrs}${r && !r.estimated_time ? ' · at ' + r.t : ''}<br>` +
+        at.map(o => `${o.s.name.split(' ')[0]}: <b>${(o.p[1] >= 0 ? '+' : '') + o.p[1].toFixed(3)}</b>`).join('<br>');
+    }
+  });
+}
+// ---- self-play progress (scripts/selfplay_stats.py) ----
+function showSelfPlay(st) {
+  const c = st.current || {};
+  const eta = st.eta_min != null ? (st.eta_min >= 60 ? Math.floor(st.eta_min / 60) + 'h ' + (st.eta_min % 60) + 'm' : st.eta_min + 'm') : '—';
+  const f3 = x => x == null ? '—' : x.toFixed(3);
+  const pc = x => x == null ? '—' : (100 * x).toFixed(0) + '%';
+  const sy = st.system || {}, tr = st.training;
+  const isGate = (c.status || '').startsWith('gate');
+  const gl = isGate ? c.gate_live : null;
+  const res = r => r ? `A ${r.A} · B ${r.B}${r.draws ? ' · ' + r.draws + ' draws' : ''} · ${r.avg_turns ?? '—'} turns` : '—';
+  const rows = st.gens.map(g => `<tr><td><b>gen ${g.gen}</b></td><td>${g.status}${g.gate ? '<br><small>gate ' + g.gate + '</small>' : ''}</td>
+      <td>${g.done}${g.failed ? ' <small>(' + g.failed + ' failed)</small>' : ''}</td><td>${g.minutes ?? '—'}</td><td><small>${res(g.results)}</small></td>
+      <td>${f3(g.val.value)}</td><td>${f3(g.val.priority)}</td><td>${f3(g.val.choose_target)}</td>
+      <td>${pc(g.val_acc)}</td><td>${pc(g.val_acc_nonpass)}</td><td>${g.epochs.length || '—'}</td></tr>`).join('');
+  const now = (sy.running && sy.running.length) ? sy.running.join(' + ') : 'idle';
+  let trainCard = '';
+  if (tr) {
+    const frac = ((tr.epoch - 1) + tr.step / Math.max(tr.steps, 1)) / Math.max(tr.epochs, 1);
+    const perStep = tr.elapsed / Math.max(tr.step, 1);
+    const left = Math.round((((tr.epochs - tr.epoch) * tr.steps) + (tr.steps - tr.step)) * perStep / 60);
+    trainCard = `<h2>Training v${tr.version} on gens ≤ ${tr.gen} — live</h2>
+      <div class="tiles">
+        <div class="tile"><div class="v">epoch ${tr.epoch} / ${tr.epochs}</div><div class="k">step ${tr.step} / ${tr.steps} · ~${left} min left</div>
+          <div class="pbar"><i style="width:${pct(frac)}"></i></div></div>
+        <div class="tile"><div class="v">${f3(tr.losses.value)}</div><div class="k">value loss (running, this epoch)</div></div>
+        <div class="tile"><div class="v">${f3(tr.losses.priority)}</div><div class="k">priority loss (running)</div></div>
+        <div class="tile"><div class="v">${pc(tr.acc)}</div><div class="k">priority accuracy (running, training data)</div></div>
+      </div>`;
+  }
+  const gateTile = gl ? `<div class="tile"><div class="v">${gl.A} – ${gl.B}${gl.draws ? ' (' + gl.draws + ' d)' : ''}</div>
+      <div class="k">network (A) vs search-only (B) so far — needs 55% to lead</div>
+      <div class="pbar"><i style="width:${pct(gl.A / Math.max(gl.games, 1))}"></i></div></div>` : '';
+  $('#main').innerHTML = `<div class="prog">
+    <div class="tiles">
+      <div class="tile"><div class="v">gen ${c.gen ?? '—'}</div><div class="k">${c.status || ''}</div></div>
+      <div class="tile"><div class="v">${c.done ?? 0} / ${c.target ?? st.per_gen}</div><div class="k">${isGate ? 'gate games' : 'games this generation'}</div>
+        <div class="pbar"><i style="width:${pct(((c.done || 0) + (c.failed || 0)) / (c.target ?? st.per_gen))}"></i></div></div>
+      ${gateTile}
+      <div class="tile"><div class="v">${st.games_per_hour ?? '—'}</div><div class="k">games / hour · ${eta} left</div></div>
+      <div class="tile"><div class="v">${st.total_games}</div><div class="k">self-play games so far (${st.total_failed} failed)</div></div>
+    </div>
+    <div class="tiles">
+      <div class="tile"><div class="v">${now}</div><div class="k">running now</div></div>
+      <div class="tile"><div class="v">${sy.gpu ? sy.gpu.util + '%' : '—'}</div><div class="k">GPU${sy.gpu ? ' · ' + sy.gpu.mem_gb + ' / ' + sy.gpu.mem_total_gb + ' GB' : ''}</div></div>
+      <div class="tile"><div class="v">${sy.load ?? '—'} / ${sy.cores ?? '—'}</div><div class="k">CPU load / cores</div></div>
+      <div class="tile"><div class="v">${sy.ram ? sy.ram.used_gb + ' / ' + sy.ram.total_gb : '—'}</div><div class="k">RAM GB</div></div>
+    </div>
+    ${trainCard}
+    <p class="note">Updated ${st.updated}, refreshes every 10 s. Each generation plays games, then trains the next version
+      on them; validation is on held-out games of the newest generation (both seats). <b>Value loss</b> = how well it
+      predicts the winner (guessing the average scores ≈0.32). <b>Accuracy</b> = the network's top action matches the
+      search's most-visited one; <b>non-pass</b> counts only states where the search did something other than pass —
+      the hard part. A version leads self-play only after winning ≥55% against search alone (the gate).</p>
+
+    <h2>Generations</h2>
+    <table class="st"><tr><th>generation</th><th>status</th><th>games</th><th>min</th><th>results</th>
+      <th>value loss</th><th>priority loss</th><th>target loss</th><th>accuracy</th><th>non-pass</th><th>epochs</th></tr>${rows}</table>
+
+    <h2>Training curve of the latest version</h2>
+    <div id="epochChart"></div><div id="accChart"></div>
+    <h2>Validation loss by generation</h2>
+    <div id="lossChart"></div>
+  </div>`;
+  const latest = [...st.gens].reverse().find(g => g.epochs && g.epochs.length);
+  if (latest) {
+    const E = latest.epochs;
+    lineChart($('#epochChart'), {
+      title: `v${latest.gen + 1}: loss per epoch (lower is better)`,
+      series: [{ name: 'Value, training', color: '--s1', pts: E.filter(e => e.train.value != null).map(e => [e.epoch, e.train.value]) },
+               { name: 'Value, validation', color: '--s2', pts: E.filter(e => e.val.value != null).map(e => [e.epoch, e.val.value]) },
+               { name: 'Priority, training', color: '--s3', pts: E.filter(e => e.train.priority != null).map(e => [e.epoch, e.train.priority]) },
+               { name: 'Priority, validation', color: '--s4', pts: E.filter(e => e.val.priority != null).map(e => [e.epoch, e.val.priority]) }],
+      xfmt: x => 'ep ' + x, yfmt: y => y.toFixed(2)
+    });
+    lineChart($('#accChart'), {
+      title: `v${latest.gen + 1}: validation accuracy per epoch (higher is better)`,
+      series: [{ name: 'Priority, all states', color: '--s1', pts: E.filter(e => e.val_acc != null).map(e => [e.epoch, e.val_acc]) },
+               { name: 'Priority, non-pass states', color: '--s2', pts: E.filter(e => e.val_acc_nonpass != null).map(e => [e.epoch, e.val_acc_nonpass]) }],
+      xfmt: x => 'ep ' + x, yfmt: y => (100 * y).toFixed(0) + '%'
+    });
+  } else $('#epochChart').innerHTML = '<p class="note">No training yet.</p>';
+  const trg = st.gens.filter(g => g.val && g.val.priority != null);
+  if (trg.length) lineChart($('#lossChart'), {
+    title: 'Best validation loss after training (lower is better)',
+    series: [{ name: 'Priority (which action)', color: '--s1', pts: trg.map(g => [g.gen, g.val.priority]) },
+             { name: 'Value (who wins)', color: '--s2', pts: trg.map(g => [g.gen, g.val.value]) }],
+    xfmt: x => 'gen ' + x, yfmt: y => y.toFixed(2)
+  });
+}
+
+function setTab(prog) {
+  $('#tabGames').classList.toggle('on', !prog); $('#tabProg').classList.toggle('on', prog);
+  $('.filters').style.display = prog ? 'none' : ''; $('#list').style.display = prog ? 'none' : '';
+  clearInterval(PROG_TIMER); PROG_TIMER = null;
+  if (prog) { if (TIMER) toggle(); GAME = null; SEL = null; $('#log').innerHTML = ''; showProgress(); PROG_TIMER = setInterval(showProgress, 10000); }
+  else { $('#main').innerHTML = '<div class="empty">Pick a game on the left.<br>← → step · Shift+← → turn · Space play</div>'; renderList(); }
+}
+$('#tabGames').onclick = () => setTab(false);
+$('#tabProg').onclick = () => setTab(true);
+
+(async () => {
+  [INDEX, CARDS] = await Promise.all([loadJSON('index.json'), loadJSON('cards.json')]);
+  if (INDEX.some(g => g.kind)) { $('#kind').style.display = ''; $('#kind').onchange = renderList; }
+  if (!INDEX.some(g => g.upset != null)) $('#sort').value = 'long';
+  renderList();
+  // deep links: #progress, or #game=games/G00012.json.gz[&step=40]
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (location.hash === '#progress') setTab(true);
+  else if (h.get('game')) { await open(h.get('game')); if (h.get('step')) go(+h.get('step')); }
+})();
+</script>
+</body>
+</html>

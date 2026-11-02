@@ -1,0 +1,81 @@
+From 3b54a7eafc636b82349d192a09334cc3f9356dd9 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 15:26:32 +0100
+Subject: [PATCH 16/17] MCTS never skips a land drop; switch to turn off
+ playable-calc copy-on-write
+
+Search-only values are too flat to separate playing a land from passing, and
+passing in main 1 transposes into playing it in main 2, so pass won the tie
+twice and 8-11% of land drops were lost. -Dlmt.skipLandDrops=true restores the
+old behaviour; -Dlmt.noPlayableCow=true disables the copy-on-write (A/B: no
+difference in land play).
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+---
+ .../src/mage/player/ai/MCTSNode.java                 | 12 ++++++++++++
+ Mage/src/main/java/mage/game/GameImpl.java           |  4 +++-
+ 2 files changed, 15 insertions(+), 1 deletion(-)
+
+diff --git a/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSNode.java b/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSNode.java
+index f96ec1b4a5..d7bab3ddb5 100644
+--- a/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSNode.java
++++ b/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSNode.java
+@@ -3,6 +3,7 @@ package mage.player.ai;
+ import java.util.*;
+ 
+ import mage.abilities.common.PassAbility;
++import mage.abilities.PlayLandAbility;
+ import mage.constants.Zone;
+ import mage.abilities.Ability;
+ import mage.cards.Card;
+@@ -47,6 +48,8 @@ public class MCTSNode {
+     private int depth = 1;
+     private long dirichletSeed = 0;
+     private double prior = 1;
++    /** lmt: -Dlmt.skipLandDrops=true restores MageZero's behaviour (pass may be chosen over a land drop) */
++    static final boolean SKIP_LAND_DROPS = Boolean.getBoolean("lmt.skipLandDrops");
+     private double score = 0;
+ 
+     //action fields - how the node represents the state - only one is not null at a time
+@@ -448,7 +451,16 @@ public class MCTSNode {
+     public List<MCTSNode> createChildren(ActionEncoder.ActionType actionType, MCTSPlayer player, Game game) {
+         List<MCTSNode> children = new ArrayList<>();
+         if(actionType == ActionEncoder.ActionType.PRIORITY) {
++            // lmt: a land drop is never skipped. Search-only values are too flat to tell "play a land" from "pass"
++            // (one land is ~+0.06 of [-1, 1]; 150 simulations of noise is more), and "pass now, play it in main 2"
++            // transposes into the same states, so pass won the tie in main 1 and again in main 2 -- 8-11% of land
++            // drops were lost, some players went 4+ turns with lands in hand. Which land, and whether to cast first,
++            // is still searched; pass comes back once the land is down.
++            boolean dropLand = !SKIP_LAND_DROPS && game.getStack().isEmpty() && game.isActivePlayer(player.getId())
++                    && (game.getTurnStepType() == mage.constants.PhaseStep.PRECOMBAT_MAIN || game.getTurnStepType() == mage.constants.PhaseStep.POSTCOMBAT_MAIN)
++                    && player.playables.stream().anyMatch(a -> a instanceof PlayLandAbility);
+             for(Ability playable : player.playables) {
++                if (dropLand && playable instanceof PassAbility) continue;
+                 logger.trace(game.getTurn().getValue(game.getTurnNum()) + " expanding: " + playable.toString());
+                 MCTSNode node = createChild();
+                 node.priorityAction = playable.copy();
+diff --git a/Mage/src/main/java/mage/game/GameImpl.java b/Mage/src/main/java/mage/game/GameImpl.java
+index 0b41922692..97e87e34ac 100644
+--- a/Mage/src/main/java/mage/game/GameImpl.java
++++ b/Mage/src/main/java/mage/game/GameImpl.java
+@@ -131,6 +131,8 @@ public abstract class GameImpl implements Game {
+     // the copy is discarded after, so the parent's shared cards cannot change underneath it.
+     private Set<UUID> sharedCards = Collections.emptySet();
+     private static final ThreadLocal<Boolean> copyingForPlayableCalc = ThreadLocal.withInitial(() -> false);
++    // -Dlmt.noPlayableCow=true turns the card sharing off (diagnostics)
++    private static final boolean PLAYABLE_COW = !Boolean.getBoolean("lmt.noPlayableCow");
+     protected Map<UUID, MeldCard> meldCards = new HashMap<>(0);
+ 
+     protected Map<Zone, Map<UUID, MageObject>> lki = new EnumMap<>(Zone.class);
+@@ -308,7 +310,7 @@ public abstract class GameImpl implements Game {
+     @Override
+     public Game createSimulationForPlayableCalc() {
+         Game res;
+-        copyingForPlayableCalc.set(true);
++        copyingForPlayableCalc.set(PLAYABLE_COW);
+         try {
+             res = this.copy();
+         } finally {
+-- 
+2.55.0
+

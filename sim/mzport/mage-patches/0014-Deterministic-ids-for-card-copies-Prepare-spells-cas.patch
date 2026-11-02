@@ -1,0 +1,87 @@
+From 0170d0729359cb79c14215029269a55446f56db3 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 14:17:32 +0100
+Subject: [PATCH 14/17] Deterministic ids for card copies (Prepare spells,
+ cast-a-copy effects)
+
+A copied card's id now comes from the game's copyable stream when the game sets
+one, so a Prepare spell copy made in an MCTS simulation has the id the real game
+will give it. Everywhere else ids stay random.
+---
+ Mage/src/main/java/mage/cards/CardImpl.java   |  2 +-
+ Mage/src/main/java/mage/game/GameState.java   |  3 +-
+ .../main/java/mage/util/DeterministicIds.java | 35 +++++++++++++++++++
+ 3 files changed, 38 insertions(+), 2 deletions(-)
+ create mode 100644 Mage/src/main/java/mage/util/DeterministicIds.java
+
+diff --git a/Mage/src/main/java/mage/cards/CardImpl.java b/Mage/src/main/java/mage/cards/CardImpl.java
+index ab184ebab0..df7065f16f 100644
+--- a/Mage/src/main/java/mage/cards/CardImpl.java
++++ b/Mage/src/main/java/mage/cards/CardImpl.java
+@@ -145,7 +145,7 @@ public abstract class CardImpl extends MageObjectImpl implements Card {
+ 
+     @Override
+     public void assignNewId() {
+-        this.objectId = UUID.randomUUID();
++        this.objectId = mage.util.DeterministicIds.next(); // random unless a game set its id stream (copies)
+         this.abilities.newOriginalId();
+         this.abilities.setSourceId(objectId);
+         if (this.spellAbility != null) {
+diff --git a/Mage/src/main/java/mage/game/GameState.java b/Mage/src/main/java/mage/game/GameState.java
+index 3dc1652970..4547087109 100644
+--- a/Mage/src/main/java/mage/game/GameState.java
++++ b/Mage/src/main/java/mage/game/GameState.java
+@@ -1696,7 +1696,8 @@ public class GameState implements Serializable, Copyable<GameState> {
+     }
+ 
+     private void prepareCardForCopy(Card originalCard, Card copiedCard, UUID newController) {
+-        copiedCard.assignNewId();
++        // MageZero AI hook: copies take ids from the game's copyable stream (see DeterministicIds)
++        mage.util.DeterministicIds.with(gameLocalRandom, copiedCard::assignNewId);
+         copiedCard.setOwnerId(newController);
+         copiedCard.setCopy(true, originalCard);
+     }
+diff --git a/Mage/src/main/java/mage/util/DeterministicIds.java b/Mage/src/main/java/mage/util/DeterministicIds.java
+new file mode 100644
+index 0000000000..9038dfecbd
+--- /dev/null
++++ b/Mage/src/main/java/mage/util/DeterministicIds.java
+@@ -0,0 +1,35 @@
++package mage.util;
++
++import java.util.Random;
++import java.util.UUID;
++
++/**
++ * lmt (MageZero AI port): an optional, per-thread id source for copied cards.
++ *
++ * When a game sets its copyable random stream here (GameState.prepareCardForCopy), a card copy gets
++ * the next id from that stream, so a copy made inside an MCTS simulation gets the same id as the one
++ * the real game makes later (FRA's Prepare spells failed to cast without this). Everywhere else no
++ * source is set and ids stay random, exactly as before. Ids are labels only: no rule reads them.
++ */
++public final class DeterministicIds {
++
++    private static final ThreadLocal<Random> SOURCE = new ThreadLocal<>();
++
++    private DeterministicIds() {
++    }
++
++    public static UUID next() {
++        Random r = SOURCE.get();
++        return r == null ? UUID.randomUUID() : new UUID(r.nextLong(), r.nextLong());
++    }
++
++    public static void with(Random source, Runnable action) {
++        Random previous = SOURCE.get();
++        SOURCE.set(source);
++        try {
++            action.run();
++        } finally {
++            SOURCE.set(previous);
++        }
++    }
++}
+-- 
+2.55.0
+

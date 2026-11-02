@@ -1,0 +1,51 @@
+From 3623dcdfa495e3ab9ab9c334ba51da2214bb0014 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 13:18:26 +0100
+Subject: [PATCH 05/17] Add the drawHandInTestMode game option MageZero's
+ runner uses (off by default)
+
+---
+ Mage/src/main/java/mage/game/GameImpl.java    | 2 +-
+ Mage/src/main/java/mage/game/GameOptions.java | 6 ++++++
+ 2 files changed, 7 insertions(+), 1 deletion(-)
+
+diff --git a/Mage/src/main/java/mage/game/GameImpl.java b/Mage/src/main/java/mage/game/GameImpl.java
+index cc54bd12fd..cf75b8506c 100644
+--- a/Mage/src/main/java/mage/game/GameImpl.java
++++ b/Mage/src/main/java/mage/game/GameImpl.java
+@@ -1528,7 +1528,7 @@ public abstract class GameImpl implements Game {
+             if (!gameOptions.testMode || player.getLife() == 0) {
+                 player.initLife(this.getStartingLife());
+             }
+-            if (!gameOptions.testMode) {
++            if (gameOptions.drawHandInTestMode || !gameOptions.testMode) { // MageZero self-play draws in test mode
+                 mulligan.drawHand(startingHandSize, player, this);
+             }
+         }
+diff --git a/Mage/src/main/java/mage/game/GameOptions.java b/Mage/src/main/java/mage/game/GameOptions.java
+index 6db1767049..834eaeeda5 100644
+--- a/Mage/src/main/java/mage/game/GameOptions.java
++++ b/Mage/src/main/java/mage/game/GameOptions.java
+@@ -29,6 +29,11 @@ public class GameOptions implements Serializable, Copyable<GameOptions> {
+      */
+     public boolean testMode = false;
+ 
++    /**
++     * If true, players draw their opening hands even in test mode (MageZero self-play)
++     */
++    public boolean drawHandInTestMode = false;
++
+     /**
+      * Defines the turn number game should stop on. By default, is null meaning
+      * that game shouldn't stop on any specific turn.
+@@ -79,6 +84,7 @@ public class GameOptions implements Serializable, Copyable<GameOptions> {
+ 
+     private GameOptions(final GameOptions options) {
+         this.testMode = options.testMode;
++        this.drawHandInTestMode = options.drawHandInTestMode;
+         this.stopOnTurn = options.stopOnTurn;
+         this.stopAtStep = options.stopAtStep;
+         this.skipInitShuffling = options.skipInitShuffling;
+-- 
+2.55.0
+

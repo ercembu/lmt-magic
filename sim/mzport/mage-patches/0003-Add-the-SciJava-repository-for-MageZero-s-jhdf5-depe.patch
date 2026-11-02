@@ -1,0 +1,30 @@
+From 17d70aa6056a5f076ded0e1876e1230722d379be Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 13:10:25 +0100
+Subject: [PATCH 03/17] Add the SciJava repository for MageZero's jhdf5
+ dependency
+
+---
+ pom.xml | 6 ++++++
+ 1 file changed, 6 insertions(+)
+
+diff --git a/pom.xml b/pom.xml
+index 5ebfee5ae6..725c73c4c2 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -269,6 +269,12 @@
+             <id>local-project-repo</id>
+             <url>file://${basedir}/repository</url>
+         </repository>
++        <repository>
++            <!-- jhdf5 (HDF5 training-data writer for Mage.MageZero) -->
++            <id>scijava.public</id>
++            <name>SciJava Public</name>
++            <url>https://maven.scijava.org/content/repositories/public/</url>
++        </repository>
+     </repositories>
+ 
+     <dependencies>
+-- 
+2.55.0
+

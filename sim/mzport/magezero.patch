@@ -1,0 +1,106 @@
+diff --git a/src/magezero/server.py b/src/magezero/server.py
+index 8ea82a6..1165d8b 100644
+--- a/src/magezero/server.py
++++ b/src/magezero/server.py
+@@ -27,6 +27,7 @@ EDGE_VOCAB = None
+ app = Flask(__name__)
+ 
+ req_counter = 0
++batch_counter = 0
+ req_counter_lock = threading.Lock()
+ 
+ def init(deck: str, version: int, port: int):
+@@ -40,7 +41,15 @@ def init(deck: str, version: int, port: int):
+ 
+     print(f"[INIT] deck={deck} ver={version} port={port} device={DEVICE} "
+           f"leaf_rows={len(VOCAB)} edge_rows={len(EDGE_VOCAB)}")
+-    waitress.serve(app, host="127.0.0.1", port=port, threads=32)
++    # lmt: SO_REUSEPORT so several server processes can share one port; the kernel spreads the client's
++    # connections across them. One process is GIL-bound on request decoding (~1 core) and left the
++    # MCTS threads waiting on it ~60% of the time while the GPU sat at ~10%.
++    import socket
++    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
++    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
++    sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEPORT, 1)
++    sock.bind(("127.0.0.1", port))
++    waitress.serve(app, sockets=[sock], threads=32)
+ 
+ 
+ def request_states(data):
+@@ -132,7 +141,10 @@ def worker_loop():
+             p.t_done = time.perf_counter()
+             p.evt.set()
+ 
+-        print(f"[BATCH] size={len(batch)}, total_states={len(states)}")
++        global batch_counter
++        batch_counter += 1
++        if batch_counter % 200 == 0:
++            print(f"[BATCH {batch_counter}] size={len(batch)}, total_states={len(states)}", flush=True)
+ 
+ 
+ @app.post("/evaluate")
+@@ -146,7 +158,6 @@ def evaluate():
+ 
+     pending = Pending(req_id, data)
+ 
+-    print(f"[REQ {req_id}] nodes={pending.nodes}, kept={pending.kept}, states={len(pending.states)}")
+ 
+     Q.put(pending)
+     pending.evt.wait()
+@@ -155,8 +166,6 @@ def evaluate():
+         print(f"[REQ {req_id}] failed: {pending.error}")
+         return Response(pending.error, status=500, mimetype="text/plain")
+ 
+-    total_ms = (pending.t_done - pending.t_recv) * 1000.0
+-    print(f"[REQ {req_id}] done: {total_ms:.1f}ms")
+ 
+     # always an array with one result map per state, as RemoteModelEvaluator reads it
+     return Response(msgpack.packb(pending.out, use_bin_type=True), mimetype="application/x-msgpack")
+diff --git a/src/magezero/train.py b/src/magezero/train.py
+index de452ed..e2218a0 100644
+--- a/src/magezero/train.py
++++ b/src/magezero/train.py
+@@ -1,3 +1,4 @@
++import time
+ import os
+ import gzip
+ import shutil
+@@ -88,6 +89,9 @@ def save_checkpoint(path, epoch, model, opt, vocab, edge_vocab, avg):
+     os.remove(temp_path)
+ 
+ 
++PROGRESS_EVERY = 100
++
++
+ def train_loop(deck, version, epochs, steps, model, ds, test_ds, vocab, edge_vocab):
+ 
+     dl = DataLoader(ds, batch_size=BATCH_SIZE, shuffle=True, num_workers=0, collate_fn=collate_batch,
+@@ -107,6 +111,7 @@ def train_loop(deck, version, epochs, steps, model, ds, test_ds, vocab, edge_voc
+         stats = {}
+         model.train()
+         step = 0
++        t_epoch = time.time()
+ 
+         for graphs, targets in dl:
+             graphs, targets = graphs.to(DEVICE), targets.to(DEVICE)
+@@ -122,10 +127,20 @@ def train_loop(deck, version, epochs, steps, model, ds, test_ds, vocab, edge_voc
+ 
+             accumulate(stats, heads)
+             step += 1
++            if step % PROGRESS_EVERY == 0:
++                # lmt: running averages for the viewer's Progress tab (scripts/selfplay_stats.py reads these)
++                run = averages(stats)
++                tot, n, correct = stats.get("priority", (0.0, 0, 0))
++                print(f"Progress epoch={epoch}/{epochs} step={step}/{min(steps, len(dl))} "
++                      f"elapsed={time.time() - t_epoch:.0f}s priority_loss={run['priority']:.3f} "
++                      f"choose_target_loss={run['choose_target']:.3f} choose_use_loss={run['choose_use']:.3f} "
++                      f"value_loss={run['value']:.3f} priority_acc={correct / max(n, 1):.3f}", flush=True)
+             if step >= steps:
+                 break
+ 
+         avg = averages(stats)
++        _, n, correct = stats.get("priority", (0.0, 0, 0))
++        print(f"Epoch {epoch}  priority_acc={correct / max(n, 1):.3f}  time={time.time() - t_epoch:.0f}s")
+         print(f"Epoch {epoch}  priority_loss={avg['priority']:.3f}  choose_target_loss={avg['choose_target']:.3f}  "
+               f"choose_use_loss={avg['choose_use']:.3f}  value_loss={avg['value']:.3f}  "
+               f"decision_states={decision_states(stats)}")

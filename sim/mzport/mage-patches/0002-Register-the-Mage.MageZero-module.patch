@@ -1,0 +1,24 @@
+From b6c9049a271166509c73b458163a6832afcc9130 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 13:09:17 +0100
+Subject: [PATCH 02/17] Register the Mage.MageZero module
+
+---
+ pom.xml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/pom.xml b/pom.xml
+index 68b7f7f318..5ebfee5ae6 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -247,6 +247,7 @@
+         <module>Mage.Server.Plugins</module>
+         <module>Mage.Server.Console</module>
+         <module>Mage.Tests</module>
++        <module>Mage.MageZero</module>
+         <module>Mage.Verify</module>
+         <module>Mage.Reports</module>
+     </modules>
+-- 
+2.55.0
+

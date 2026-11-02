@@ -1,0 +1,53 @@
+From aac9ccb634e3f12d2f468d23800ae98c05eb3a20 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 13:55:43 +0100
+Subject: [PATCH 10/17] Ability.setId (MageZero), needed by the deterministic
+ ids
+
+---
+ Mage/src/main/java/mage/abilities/Ability.java     |  5 +++++
+ Mage/src/main/java/mage/abilities/AbilityImpl.java | 12 ++++++++++++
+ 2 files changed, 17 insertions(+)
+
+diff --git a/Mage/src/main/java/mage/abilities/Ability.java b/Mage/src/main/java/mage/abilities/Ability.java
+index 8703323555..338027b569 100644
+--- a/Mage/src/main/java/mage/abilities/Ability.java
++++ b/Mage/src/main/java/mage/abilities/Ability.java
+@@ -38,6 +38,11 @@ public interface Ability extends Controllable, Serializable {
+      */
+     void newId();
+ 
++    /** Like newId, but with the given id (MageZero: deterministic ids). */
++    default void setId(UUID newId) {
++        newId();
++    }
++
+     /**
+      * Assigns a new {@link java.util.UUID}
+      */
+diff --git a/Mage/src/main/java/mage/abilities/AbilityImpl.java b/Mage/src/main/java/mage/abilities/AbilityImpl.java
+index c8f722c6cb..1aeb843cf9 100644
+--- a/Mage/src/main/java/mage/abilities/AbilityImpl.java
++++ b/Mage/src/main/java/mage/abilities/AbilityImpl.java
+@@ -165,6 +165,18 @@ public abstract class AbilityImpl implements Ability {
+         }
+     }
+ 
++    @Override
++    public void setId(UUID newId) {
++        if (!(this instanceof MageSingleton)) {
++            this.id = newId;
++        }
++        getEffects().newId();
++
++        for (Ability sub : getSubAbilities()) {
++            sub.newId();
++        }
++    }
++
+     @Override
+     public void newOriginalId() {
+         this.id = UUID.randomUUID();
+-- 
+2.55.0
+

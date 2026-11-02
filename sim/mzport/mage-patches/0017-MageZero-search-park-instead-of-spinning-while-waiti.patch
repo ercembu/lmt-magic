@@ -1,0 +1,59 @@
+From 6a8b8ab272e412af997bc7ac3e16a6e36b6a6323 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 16:52:49 +0100
+Subject: [PATCH 17/17] MageZero search: park instead of spinning while waiting
+ on the network; 32-state requests
+
+The game threads spun on Thread.yield() while waiting ~60% of the time on the
+model server, keeping every core busy, and requests carried at most 4 states
+although a server batch costs ~25ms from 1 state to 128.
+
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>
+---
+ .../Mage.Player.AI.RL/src/mage/player/ai/MCTSNode2.java     | 6 ++++--
+ .../src/mage/player/ai/RemoteModelEvaluator.java            | 4 +++-
+ 2 files changed, 7 insertions(+), 3 deletions(-)
+
+diff --git a/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/MCTSNode2.java b/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/MCTSNode2.java
+index fe0eb58e5f..42d77a90a1 100644
+--- a/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/MCTSNode2.java
++++ b/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/MCTSNode2.java
+@@ -46,8 +46,10 @@ public class MCTSNode2 extends MCTSNode {
+             ((ComputerPlayerMCTS2)basePlayer).pendingNodes.decrementAndGet();
+             return;
+         }
++        // lmt: park instead of spinning on Thread.yield(): a network answer takes ~25ms, and the spinning game
++        // threads kept every core busy while waiting ~60% of the time, so no more games could run alongside
+         while (((ComputerPlayerMCTS2)basePlayer).pendingNodes.get() > ComputerPlayerMCTS2.MAX_PENDING) {
+-            Thread.yield();
++            java.util.concurrent.locks.LockSupport.parkNanos(50_000);
+         }
+         ((ComputerPlayerMCTS2) basePlayer).nn.inferAsync(featureGraph)
+                 .thenAccept(out -> {
+@@ -96,7 +98,7 @@ public class MCTSNode2 extends MCTSNode {
+     }
+     public void awaitEvaluation() {
+         while (evaluationPending) {
+-            Thread.yield();
++            java.util.concurrent.locks.LockSupport.parkNanos(50_000);
+         }
+     }
+ }
+diff --git a/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/RemoteModelEvaluator.java b/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/RemoteModelEvaluator.java
+index c99f727cc8..12e97d6acc 100644
+--- a/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/RemoteModelEvaluator.java
++++ b/Mage.Server.Plugins/Mage.Player.AI.RL/src/mage/player/ai/RemoteModelEvaluator.java
+@@ -38,7 +38,9 @@ public class RemoteModelEvaluator implements AutoCloseable {
+ 
+     // ---------- batching controls ----------
+     public static final int batchInterval = 2500;//micro seconds
+-    public static final int maxBatchSize = 4;
++    // lmt: was 4. A server batch costs ~25ms from 1 state to 128 (kernel launches and syncs, not GPU work), so
++    // fewer, larger requests are nearly free throughput
++    public static final int maxBatchSize = 32;
+ 
+     private final OkHttpClient http;
+     private final HttpUrl evalUrl;
+-- 
+2.55.0
+

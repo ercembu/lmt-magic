@@ -1,0 +1,27 @@
+From 98335e41f69048f28a2e4f5dbc77ccec3fdf855b Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 14:02:02 +0100
+Subject: [PATCH 12/17] PassAbility: fixed id (MageZero), so the search can
+ encode pass consistently
+
+---
+ Mage/src/main/java/mage/abilities/common/PassAbility.java | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/Mage/src/main/java/mage/abilities/common/PassAbility.java b/Mage/src/main/java/mage/abilities/common/PassAbility.java
+index 22926d0caa..ab2c8cdccc 100644
+--- a/Mage/src/main/java/mage/abilities/common/PassAbility.java
++++ b/Mage/src/main/java/mage/abilities/common/PassAbility.java
+@@ -18,6 +18,9 @@ public class PassAbility extends ActivatedAbilityImpl {
+     public PassAbility() {
+         super(Zone.ALL, new PassEffect(), null);
+         this.usesStack = false;
++        // MageZero: one fixed id, so "pass" is the same action in every game copy the MCTS search encodes.
++        // AI-only stand-in for passing priority; no card or rule refers to it.
++        this.id = new UUID(0, "Pass".hashCode());
+     }
+ 
+     protected PassAbility(final PassAbility ability) {
+-- 
+2.55.0
+

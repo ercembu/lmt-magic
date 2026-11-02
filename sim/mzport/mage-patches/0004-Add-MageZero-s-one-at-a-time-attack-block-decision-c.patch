@@ -1,0 +1,148 @@
+From 86de2fea9e867d89325031f15997b4188c2d3251 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 13:14:54 +0100
+Subject: [PATCH 04/17] Add MageZero's one-at-a-time attack/block decision
+ classes
+
+---
+ .../players/ChooseCreatureToBlockAbility.java | 60 +++++++++++++++++++
+ .../mage/players/ChooseToAttackAbility.java   | 60 +++++++++++++++++++
+ 2 files changed, 120 insertions(+)
+ create mode 100644 Mage/src/main/java/mage/players/ChooseCreatureToBlockAbility.java
+ create mode 100644 Mage/src/main/java/mage/players/ChooseToAttackAbility.java
+
+diff --git a/Mage/src/main/java/mage/players/ChooseCreatureToBlockAbility.java b/Mage/src/main/java/mage/players/ChooseCreatureToBlockAbility.java
+new file mode 100644
+index 0000000000..905a2da0a9
+--- /dev/null
++++ b/Mage/src/main/java/mage/players/ChooseCreatureToBlockAbility.java
+@@ -0,0 +1,60 @@
++package mage.players;
++
++import mage.abilities.AbilityImpl;
++import mage.constants.AbilityType;
++import mage.constants.Zone;
++import mage.game.Game;
++
++import java.util.UUID;
++
++/**
++ * AI: fake ability to use as a flag for combat decisions
++ *
++ * @author willwroble
++ */
++public class ChooseCreatureToBlockAbility extends AbilityImpl {
++
++    public ChooseCreatureToBlockAbility() {
++        super(AbilityType.SPECIAL_ACTION, Zone.ALL);
++        this.usesStack = false;
++        this.name = "choose which creature to block for {this}";
++        this.id = new  UUID(0, this.toString().hashCode());
++    }
++    public ChooseCreatureToBlockAbility(String message) {
++        super(AbilityType.SPECIAL_ACTION, Zone.ALL);
++        this.usesStack = false;
++        this.name = message;
++        this.id = new  UUID(0, this.toString().hashCode());
++    }
++    public ChooseCreatureToBlockAbility(String message, UUID source) {
++        super(AbilityType.SPECIAL_ACTION, Zone.ALL);
++        this.usesStack = false;
++        this.name = message;
++        this.sourceId = source;
++        this.id = new UUID(this.sourceId.toString().hashCode(), this.toString().hashCode());
++    }
++
++    protected ChooseCreatureToBlockAbility(final ChooseCreatureToBlockAbility ability) {
++        super(ability);
++    }
++
++    @Override
++    public ChooseCreatureToBlockAbility copy() {
++        return new ChooseCreatureToBlockAbility(this);
++    }
++
++    @Override
++    public String toString() {
++        return this.name;
++    }
++    @Override
++    public String getGameLogMessage(Game game) {
++        return this.name.replace("{this}", game.getEntityName(sourceId));
++    }
++
++    @Override
++    public String getRule() {
++        return this.name;
++    }
++
++}
+diff --git a/Mage/src/main/java/mage/players/ChooseToAttackAbility.java b/Mage/src/main/java/mage/players/ChooseToAttackAbility.java
+new file mode 100644
+index 0000000000..8f4d8a9d42
+--- /dev/null
++++ b/Mage/src/main/java/mage/players/ChooseToAttackAbility.java
+@@ -0,0 +1,60 @@
++package mage.players;
++
++import mage.abilities.AbilityImpl;
++import mage.constants.AbilityType;
++import mage.constants.Zone;
++import mage.game.Game;
++
++import java.util.UUID;
++
++/**
++ * AI: fake ability to use as a flag for combat decisions
++ *
++ * @author willwroble
++ */
++public class ChooseToAttackAbility extends AbilityImpl {
++
++    public ChooseToAttackAbility() {
++        super(AbilityType.SPECIAL_ACTION, Zone.ALL);
++        this.usesStack = false;
++        this.name = "attack with: {this} ?";
++        this.id = new  UUID(0, this.toString().hashCode());
++    }
++    public ChooseToAttackAbility(String message) {
++        super(AbilityType.SPECIAL_ACTION, Zone.ALL);
++        this.usesStack = false;
++        this.name = message;
++        this.id = new  UUID(0, this.toString().hashCode());
++    }
++    public ChooseToAttackAbility(String message, UUID source) {
++        super(AbilityType.SPECIAL_ACTION, Zone.ALL);
++        this.usesStack = false;
++        this.name = message;
++        this.sourceId = source;
++        this.id = new UUID(this.sourceId.toString().hashCode(), this.toString().hashCode());
++    }
++
++    protected ChooseToAttackAbility(final ChooseToAttackAbility ability) {
++        super(ability);
++    }
++
++    @Override
++    public ChooseToAttackAbility copy() {
++        return new ChooseToAttackAbility(this);
++    }
++
++    @Override
++    public String toString() {
++        return this.name;
++    }
++    @Override
++    public String getGameLogMessage(Game game) {
++        return this.name.replace("{this}", game.getEntityName(sourceId));
++    }
++
++    @Override
++    public String getRule() {
++        return this.name;
++    }
++
++}
+-- 
+2.55.0
+

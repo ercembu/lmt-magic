@@ -1,0 +1,29 @@
+From 07d54b077e3f265d6c96224d44389a065af058f6 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 13:51:33 +0100
+Subject: [PATCH 08/17] MageZero runner: name game threads GAME... as upstream
+ requires
+
+---
+ .../main/java/org/mage/magezero/ParallelDataGenerator.java   | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java b/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
+index 9b0b789f1f..067e278d19 100644
+--- a/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
++++ b/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
+@@ -254,7 +254,10 @@ public class ParallelDataGenerator {
+         int poolSize = Config.INSTANCE.training.threads;
+         logger.info(String.format("Simulating %d games. Using thread pool of size %d on %d available cores.", numGames, poolSize, availableCores));
+ 
+-        ExecutorService executor = Executors.newFixedThreadPool(poolSize);
++        // lmt: upstream XMage only runs game code on threads named "GAME..." (MageZero's fork relaxed that check)
++        java.util.concurrent.atomic.AtomicInteger threadNo = new java.util.concurrent.atomic.AtomicInteger();
++        ExecutorService executor = Executors.newFixedThreadPool(poolSize,
++                r -> new Thread(r, mage.util.ThreadUtils.THREAD_PREFIX_GAME + " magezero-" + threadNo.incrementAndGet()));
+         List<Callable<Boolean>> tasks = new ArrayList<>();
+         AtomicLongArray startNs = new AtomicLongArray(numGames);
+ 
+-- 
+2.55.0
+

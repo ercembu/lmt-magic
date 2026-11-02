@@ -1,0 +1,2139 @@
+From a181da9ca9230eb2d564ff9cbd687432f8d84c16 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 13:49:10 +0100
+Subject: [PATCH 07/17] TRK/FRA cards (10 open PRs + Sarek + our 2 FRA cards);
+ MageZero runner: deck pairs file, limited deck size, per-game deck parsing
+
+---
+ .../main/java/org/mage/magezero/Config.java   |   6 +
+ .../mage/magezero/ParallelDataGenerator.java  |  48 +++-
+ Mage.Sets/src/mage/cards/d/DeepSpace9.java    |  99 ++++++++
+ Mage.Sets/src/mage/cards/f/FirstContact.java  | 120 ++++++++++
+ .../mage/cards/g/GeorgiouTerranEmperor.java   |  60 +++++
+ .../mage/cards/g/GowronEagerForBattle.java    |  71 ++++++
+ .../src/mage/cards/j/JacesMachinations.java   |  80 +++++++
+ .../src/mage/cards/l/LiveLongAndProsper.java  |  47 ++++
+ Mage.Sets/src/mage/cards/n/NullSummoner.java  | 214 ++++++++++++++++++
+ Mage.Sets/src/mage/cards/s/SaltVampire.java   |  90 ++++++++
+ .../cards/s/SarekFederationAmbassador.java    |  80 +++++++
+ .../src/mage/cards/s/SeasonedCryomancer.java  |  99 ++++++++
+ .../src/mage/cards/s/StoriedVeteran.java      |  50 ++++
+ .../src/mage/cards/t/TemporalConqueror.java   |  87 +++++++
+ .../mage/cards/u/USSVoyagerLoneWanderer.java  | 104 +++++++++
+ Mage.Sets/src/mage/sets/RealityFracture.java  |   4 +
+ Mage.Sets/src/mage/sets/StarTrek.java         |  21 ++
+ .../cards/single/fra/LmtSimCardsTest.java     |  91 ++++++++
+ .../single/trk/GowronEagerForBattleTest.java  | 100 ++++++++
+ .../single/trk/TemporalConquerorTest.java     | 177 +++++++++++++++
+ .../trk/USSVoyagerLoneWandererTest.java       | 183 +++++++++++++++
+ .../src/main/java/mage/constants/SubType.java |   1 +
+ 22 files changed, 1820 insertions(+), 12 deletions(-)
+ create mode 100644 Mage.Sets/src/mage/cards/d/DeepSpace9.java
+ create mode 100644 Mage.Sets/src/mage/cards/f/FirstContact.java
+ create mode 100644 Mage.Sets/src/mage/cards/g/GeorgiouTerranEmperor.java
+ create mode 100644 Mage.Sets/src/mage/cards/g/GowronEagerForBattle.java
+ create mode 100644 Mage.Sets/src/mage/cards/j/JacesMachinations.java
+ create mode 100644 Mage.Sets/src/mage/cards/l/LiveLongAndProsper.java
+ create mode 100644 Mage.Sets/src/mage/cards/n/NullSummoner.java
+ create mode 100644 Mage.Sets/src/mage/cards/s/SaltVampire.java
+ create mode 100644 Mage.Sets/src/mage/cards/s/SarekFederationAmbassador.java
+ create mode 100644 Mage.Sets/src/mage/cards/s/SeasonedCryomancer.java
+ create mode 100644 Mage.Sets/src/mage/cards/s/StoriedVeteran.java
+ create mode 100644 Mage.Sets/src/mage/cards/t/TemporalConqueror.java
+ create mode 100644 Mage.Sets/src/mage/cards/u/USSVoyagerLoneWanderer.java
+ create mode 100644 Mage.Tests/src/test/java/org/mage/test/cards/single/fra/LmtSimCardsTest.java
+ create mode 100644 Mage.Tests/src/test/java/org/mage/test/cards/single/trk/GowronEagerForBattleTest.java
+ create mode 100644 Mage.Tests/src/test/java/org/mage/test/cards/single/trk/TemporalConquerorTest.java
+ create mode 100644 Mage.Tests/src/test/java/org/mage/test/cards/single/trk/USSVoyagerLoneWandererTest.java
+
+diff --git a/Mage.MageZero/src/main/java/org/mage/magezero/Config.java b/Mage.MageZero/src/main/java/org/mage/magezero/Config.java
+index 37474e05d6..a9d1ab6b12 100644
+--- a/Mage.MageZero/src/main/java/org/mage/magezero/Config.java
++++ b/Mage.MageZero/src/main/java/org/mage/magezero/Config.java
+@@ -147,6 +147,10 @@ public class Config {
+         public int maxMinutes;
+         public int threads;
+         public final boolean trainOpponentHead;
++        /** lmt: optional TSV of "deckA<TAB>deckB" lines; game i plays pair i (mod count) instead of the fixed decks */
++        public final String pairsFile;
++        /** lmt: 60 for constructed (MageZero's default), 40 for limited */
++        public final int minimumDeckSize;
+ 
+         public TrainingConfig(Map<String, Object> raw) {
+             this.games = ((Number) raw.getOrDefault("games", 1000)).intValue();
+@@ -155,6 +159,8 @@ public class Config {
+             this.maxMinutes = ((Number) raw.getOrDefault("max_minutes", 20)).intValue();
+             this.threads = ((Number) raw.getOrDefault("threads", 2)).intValue();
+             this.trainOpponentHead = (boolean) raw.getOrDefault("train_opponent_head", false);
++            this.pairsFile = (String) raw.getOrDefault("pairs_file", null);
++            this.minimumDeckSize = ((Number) raw.getOrDefault("minimum_deck_size", 60)).intValue();
+         }
+     }
+ 
+diff --git a/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java b/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
+index 8ea37178df..9b0b789f1f 100644
+--- a/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
++++ b/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
+@@ -55,7 +55,30 @@ public class ParallelDataGenerator {
+     private final BlockingQueue<GameResult> LSQueue = new ArrayBlockingQueue<>(32);
+     private final AtomicBoolean stop = new AtomicBoolean(false);
+ 
+-    protected static Map<String, DeckCardLists> loadedDecks = new HashMap<>(); // deck's cache
++    protected static Map<String, DeckCardLists> loadedDecks = new HashMap<>(); // deck's cache (unused: see createLocalPlayer)
++
++    // lmt: per-game deck pairs (training.pairs_file); each game thread reads the pair it was given
++    private static List<String[]> deckPairs = null;
++    private static final ThreadLocal<String[]> currentPair = new ThreadLocal<>();
++
++    private static synchronized List<String[]> deckPairs() {
++        if (deckPairs == null) {
++            deckPairs = new ArrayList<>();
++            String f = Config.INSTANCE.training.pairsFile;
++            if (f != null) {
++                try {
++                    for (String line : java.nio.file.Files.readAllLines(java.nio.file.Paths.get(f))) {
++                        String[] p = line.split("\t");
++                        if (p.length == 2) deckPairs.add(p);
++                    }
++                } catch (IOException e) {
++                    throw new RuntimeException("can't read pairs_file " + f, e);
++                }
++                logger.info("Loaded " + deckPairs.size() + " deck pairs from " + f);
++            }
++        }
++        return deckPairs;
++    }
+     protected static Map<String, CardInfo> loadedCardInfo = new HashMap<>(); // db card's cache
+     private int maxGameTime = 20;
+ 
+@@ -241,6 +264,8 @@ public class ParallelDataGenerator {
+                 @Override
+                 public Boolean call() throws Exception {
+                     startNs.set(idx, System.nanoTime());
++                    List<String[]> pairs = deckPairs();
++                    currentPair.set(pairs.isEmpty() ? null : pairs.get(idx % pairs.size()));
+                     GameResult out = runSingleGame();
+                     LSQueue.put(out);
+                     return out.didPlayerAWin;
+@@ -313,10 +338,13 @@ public class ParallelDataGenerator {
+             if(Config.INSTANCE.gameMode.equals("commander")) {
+                 game = new CommanderDuel(MultiplayerAttackOption.LEFT, RangeOfInfluence.ONE, MulliganType.GAME_DEFAULT.getMulligan(0), 40, 7);
+             } else {
+-                game = new TwoPlayerDuel(MultiplayerAttackOption.LEFT, RangeOfInfluence.ONE, MulliganType.GAME_DEFAULT.getMulligan(0), 60, 20, 7);
++                game = new TwoPlayerDuel(MultiplayerAttackOption.LEFT, RangeOfInfluence.ONE, MulliganType.GAME_DEFAULT.getMulligan(0), Config.INSTANCE.training.minimumDeckSize, 20, 7);
+             }
+-            Player playerA = createLocalPlayer(game, "PlayerA", Config.INSTANCE.playerA.deckPath, localMatch);
+-            Player playerB = createLocalPlayer(game, "PlayerB", Config.INSTANCE.playerB.deckPath, localMatch);
++            String[] pair = currentPair.get();
++            String deckA = pair != null ? pair[0] : Config.INSTANCE.playerA.deckPath;
++            String deckB = pair != null ? pair[1] : Config.INSTANCE.playerB.deckPath;
++            Player playerA = createLocalPlayer(game, "PlayerA", deckA, localMatch);
++            Player playerB = createLocalPlayer(game, "PlayerB", deckB, localMatch);
+ 
+ 
+             configurePlayer(playerA, threadEncoderA, threadEncoderB);
+@@ -482,16 +510,12 @@ public class ParallelDataGenerator {
+ 
+ 
+         logger.debug("Loading deck...");
+-        DeckCardLists list;
+-        if (loadedDecks.containsKey(deckPath)) {
+-            list = loadedDecks.get(deckPath);
+-        } else {
+-            list = DeckImporter.importDeckFromFile(deckPath, true);
+-            loadedDecks.put(deckPath, list);
+-        }
++        // lmt: parsed per game. The shared HashMap cache was unsafe across game threads, and the deck
++        // loader mutates the list it is given (ConcurrentModificationException with many decks)
++        DeckCardLists list = DeckImporter.importDeckFromFile(deckPath, false);
+         Deck deck = Deck.load(list, false, false, loadedCardInfo);
+         logger.debug("Done!");
+-        if (deck.getMaindeckCards().size() < 40) {
++        if (deck.getMaindeckCards().size() < Math.min(40, Config.INSTANCE.training.minimumDeckSize)) {
+             logger.error(deckPath);
+             throw new IllegalArgumentException("Couldn't load deck, deck size=" + deck.getMaindeckCards().size());
+         }
+diff --git a/Mage.Sets/src/mage/cards/d/DeepSpace9.java b/Mage.Sets/src/mage/cards/d/DeepSpace9.java
+new file mode 100644
+index 0000000000..6d4d425ec2
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/d/DeepSpace9.java
+@@ -0,0 +1,99 @@
++package mage.cards.d;
++
++import mage.abilities.Ability;
++import mage.abilities.common.EntersBattlefieldTriggeredAbility;
++import mage.abilities.common.SimpleStaticAbility;
++import mage.abilities.effects.OneShotEffect;
++import mage.abilities.effects.common.continuous.BoostControlledEffect;
++import mage.abilities.keyword.StationAbility;
++import mage.abilities.keyword.StationLevelAbility;
++import mage.abilities.meta.OrTriggeredAbility;
++import mage.abilities.triggers.BeginningOfUpkeepTriggeredAbility;
++import mage.cards.Card;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.cards.Cards;
++import mage.cards.CardsImpl;
++import mage.constants.CardType;
++import mage.constants.Duration;
++import mage.constants.Outcome;
++import mage.constants.SubType;
++import mage.constants.SuperType;
++import mage.constants.Zone;
++import mage.game.Game;
++import mage.players.Player;
++
++import java.util.UUID;
++
++/**
++ * @author muz
++ */
++public final class DeepSpace9 extends CardImpl {
++
++    public DeepSpace9(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.ARTIFACT}, "{9}");
++
++        this.supertype.add(SuperType.LEGENDARY);
++        this.subtype.add(SubType.SPACECRAFT);
++
++        // When Deep Space 9 enters and at the beginning of your upkeep, exile the top four cards of your library. Put all permanent cards exiled this way onto the battlefield.
++        this.addAbility(new OrTriggeredAbility(
++            Zone.BATTLEFIELD, new DeepSpace9Effect(), false,
++            "When {this} enters and at the beginning of your upkeep, ",
++            new EntersBattlefieldTriggeredAbility(null),
++            new BeginningOfUpkeepTriggeredAbility(null)
++        ));
++
++        // Station
++        this.addAbility(new StationAbility());
++
++        // STATION 9+
++        // Creatures you control get +3/+3.
++        this.addAbility(new StationLevelAbility(9).withLevelAbility(
++            new SimpleStaticAbility(new BoostControlledEffect(3, 3, Duration.WhileOnBattlefield))
++        ));
++    }
++
++    private DeepSpace9(final DeepSpace9 card) {
++        super(card);
++    }
++
++    @Override
++    public DeepSpace9 copy() {
++        return new DeepSpace9(this);
++    }
++}
++
++class DeepSpace9Effect extends OneShotEffect {
++
++    DeepSpace9Effect() {
++        super(Outcome.PutCardInPlay);
++        staticText = "exile the top four cards of your library. Put all permanent cards exiled this way onto the battlefield";
++    }
++
++    private DeepSpace9Effect(final DeepSpace9Effect effect) {
++        super(effect);
++    }
++
++    @Override
++    public DeepSpace9Effect copy() {
++        return new DeepSpace9Effect(this);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        Player controller = game.getPlayer(source.getControllerId());
++        if (controller == null) {
++            return false;
++        }
++        Cards cards = new CardsImpl(controller.getLibrary().getTopCards(game, 4));
++        controller.moveCards(cards, Zone.EXILED, source, game);
++        cards.retainZone(Zone.EXILED, game);
++        cards.removeIf(cardId -> {
++            Card card = game.getCard(cardId);
++            return card == null || !card.isPermanent(game);
++        });
++        controller.moveCards(cards, Zone.BATTLEFIELD, source, game);
++        return true;
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/f/FirstContact.java b/Mage.Sets/src/mage/cards/f/FirstContact.java
+new file mode 100644
+index 0000000000..b2a639509b
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/f/FirstContact.java
+@@ -0,0 +1,120 @@
++package mage.cards.f;
++
++import java.util.HashMap;
++import java.util.Map;
++import java.util.UUID;
++
++import mage.abilities.Ability;
++import mage.abilities.effects.OneShotEffect;
++import mage.cards.Card;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.cards.Cards;
++import mage.constants.CardType;
++import mage.constants.Outcome;
++import mage.constants.WatcherScope;
++import mage.constants.Zone;
++import mage.filter.StaticFilters;
++import mage.game.Game;
++import mage.game.events.GameEvent;
++import mage.game.stack.Spell;
++import mage.players.Player;
++import mage.target.TargetCard;
++import mage.watchers.Watcher;
++
++/**
++ *
++ * @author muz
++ */
++public final class FirstContact extends CardImpl {
++
++    public FirstContact(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.INSTANT}, "{1}{G}");
++
++        // Mill four cards. You may put a permanent card from among them into your hand. If this spell is the first spell you've cast this game, you gain 2 life.
++        this.getSpellAbility().addEffect(new FirstContactEffect());
++        this.getSpellAbility().addWatcher(new FirstContactWatcher());
++    }
++
++    private FirstContact(final FirstContact card) {
++        super(card);
++    }
++
++    @Override
++    public FirstContact copy() {
++        return new FirstContact(this);
++    }
++}
++
++class FirstContactEffect extends OneShotEffect {
++
++    FirstContactEffect() {
++        super(Outcome.Benefit);
++        staticText = "mill four cards. You may put a permanent card from among them into your hand. " +
++            "If this spell is the first spell you've cast this game, you gain 2 life";
++    }
++
++    private FirstContactEffect(final FirstContactEffect effect) {
++        super(effect);
++    }
++
++    @Override
++    public FirstContactEffect copy() {
++        return new FirstContactEffect(this);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        Player player = game.getPlayer(source.getControllerId());
++        if (player == null) {
++            return false;
++        }
++        Cards cards = player.millCards(4, source, game);
++        if (cards.isEmpty()) {
++            return false;
++        }
++        TargetCard target = new TargetCard(0, 1, Zone.ALL, StaticFilters.FILTER_CARD_PERMANENT);
++        target.withNotTarget(true);
++        player.choose(Outcome.DrawCard, cards, target, source, game);
++        Card card = game.getCard(target.getFirstTarget());
++        if (card != null) {
++            player.moveCards(card, Zone.HAND, source, game);
++        }
++        FirstContactWatcher watcher = game.getState().getWatcher(FirstContactWatcher.class);
++        if (watcher != null && watcher.getSpellsCastThisGame(source.getControllerId())) {
++            player.gainLife(2, game, source);
++        }
++        return true;
++    }
++}
++
++class FirstContactWatcher extends Watcher {
++
++    private final Map<UUID, Integer> castSpells = new HashMap<>();
++
++    FirstContactWatcher() {
++        super(WatcherScope.GAME);
++    }
++
++    @Override
++    public void watch(GameEvent event, Game game) {
++        switch (event.getType()) {
++            case SPELL_CAST:
++                Spell spell = (Spell) game.getObject(event.getTargetId());
++                if (spell == null) {
++                    return;
++                }
++                UUID playerId = spell.getControllerId();
++                castSpells.put(playerId, castSpells.getOrDefault(playerId, 0) + 1);
++                return;
++            case BEGINNING_PHASE_PRE:
++                if (game.getTurnNum() == 1) {
++                    castSpells.clear();
++                }
++        }
++    }
++
++    boolean getSpellsCastThisGame(UUID playerId) {
++        return castSpells.getOrDefault(playerId, 0) == 1;
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/g/GeorgiouTerranEmperor.java b/Mage.Sets/src/mage/cards/g/GeorgiouTerranEmperor.java
+new file mode 100644
+index 0000000000..c7f10ae9ce
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/g/GeorgiouTerranEmperor.java
+@@ -0,0 +1,60 @@
++package mage.cards.g;
++
++import mage.MageInt;
++import mage.abilities.Ability;
++import mage.abilities.common.SimpleStaticAbility;
++import mage.abilities.condition.common.LifeCompareCondition;
++import mage.abilities.decorator.ConditionalOneShotEffect;
++import mage.abilities.effects.common.CreateTokenEffect;
++import mage.abilities.effects.common.DrawCardSourceControllerEffect;
++import mage.abilities.effects.common.LoseLifeSourceControllerEffect;
++import mage.abilities.effects.common.continuous.DontLoseByZeroOrLessLifeEffect;
++import mage.abilities.triggers.BeginningOfEndStepTriggeredAbility;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.constants.CardType;
++import mage.constants.ComparisonType;
++import mage.constants.Duration;
++import mage.constants.SubType;
++import mage.constants.SuperType;
++import mage.constants.TargetController;
++import mage.game.permanent.token.OfficerToken;
++
++import java.util.UUID;
++
++/**
++ * @author muz
++ */
++public final class GeorgiouTerranEmperor extends CardImpl {
++
++    public GeorgiouTerranEmperor(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{4}{B}{B}");
++
++        this.supertype.add(SuperType.LEGENDARY);
++        this.subtype.add(SubType.HUMAN);
++        this.subtype.add(SubType.ROGUE);
++        this.subtype.add(SubType.NOBLE);
++        this.power = new MageInt(4);
++        this.toughness = new MageInt(6);
++
++        // You don't lose the game for having 0 or less life.
++        this.addAbility(new SimpleStaticAbility(new DontLoseByZeroOrLessLifeEffect(Duration.WhileOnBattlefield)));
++
++        // At the beginning of your end step, you lose 3 life and draw a card. Then if your life total is 0 or less, create ten 1/1 red Officer creature tokens.
++        Ability ability = new BeginningOfEndStepTriggeredAbility(new LoseLifeSourceControllerEffect(3));
++        ability.addEffect(new DrawCardSourceControllerEffect(1).concatBy("and"));
++        ability.addEffect(new ConditionalOneShotEffect(new CreateTokenEffect(new OfficerToken(), 10),
++            new LifeCompareCondition(TargetController.YOU, ComparisonType.FEWER_THAN, 1),
++            "then if your life total is 0 or less, create ten 1/1 red Officer creature tokens"));
++        this.addAbility(ability);
++    }
++
++    private GeorgiouTerranEmperor(final GeorgiouTerranEmperor card) {
++        super(card);
++    }
++
++    @Override
++    public GeorgiouTerranEmperor copy() {
++        return new GeorgiouTerranEmperor(this);
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/g/GowronEagerForBattle.java b/Mage.Sets/src/mage/cards/g/GowronEagerForBattle.java
+new file mode 100644
+index 0000000000..078dc1e538
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/g/GowronEagerForBattle.java
+@@ -0,0 +1,71 @@
++package mage.cards.g;
++
++import mage.MageInt;
++import mage.abilities.Ability;
++import mage.abilities.common.DiesCreatureTriggeredAbility;
++import mage.abilities.common.SimpleActivatedAbility;
++import mage.abilities.condition.Condition;
++import mage.abilities.condition.common.SacrificedPermanentCondition;
++import mage.abilities.costs.common.SacrificeTargetCost;
++import mage.abilities.decorator.ConditionalOneShotEffect;
++import mage.abilities.effects.common.DrawCardSourceControllerEffect;
++import mage.abilities.effects.common.LoseLifeSourceControllerEffect;
++import mage.abilities.effects.common.counter.AddCountersSourceEffect;
++import mage.abilities.effects.common.continuous.GainAbilitySourceEffect;
++import mage.abilities.keyword.TrampleAbility;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.constants.CardType;
++import mage.constants.Duration;
++import mage.constants.SubType;
++import mage.constants.SuperType;
++import mage.counters.CounterType;
++import mage.filter.FilterPermanent;
++import mage.filter.StaticFilters;
++
++import java.util.UUID;
++
++/**
++ * @author DejviFiala
++ */
++public final class GowronEagerForBattle extends CardImpl {
++
++    private static final Condition condition = new SacrificedPermanentCondition(
++            new FilterPermanent(SubType.KLINGON, "Klingon"), true
++    );
++
++    public GowronEagerForBattle(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{2}{B}{R}");
++
++        this.supertype.add(SuperType.LEGENDARY);
++        this.subtype.add(SubType.KLINGON);
++        this.subtype.add(SubType.WARRIOR);
++        this.power = new MageInt(3);
++        this.toughness = new MageInt(3);
++
++        // Whenever another creature dies, put a +1/+1 counter on Gowron.
++        this.addAbility(new DiesCreatureTriggeredAbility(
++                new AddCountersSourceEffect(CounterType.P1P1.createInstance()), false, true
++        ));
++
++        // Sacrifice another creature: Gowron gains trample until end of turn. If you sacrificed a Klingon this way, you draw a card and lose 1 life.
++        Ability ability = new SimpleActivatedAbility(
++                new GainAbilitySourceEffect(TrampleAbility.getInstance(), Duration.EndOfTurn),
++                new SacrificeTargetCost(StaticFilters.FILTER_CONTROLLED_ANOTHER_CREATURE)
++        );
++        ability.addEffect(new ConditionalOneShotEffect(
++                new DrawCardSourceControllerEffect(1, true), condition,
++                "If you sacrificed a Klingon this way, you draw a card and lose 1 life"
++        ).addEffect(new LoseLifeSourceControllerEffect(1)));
++        this.addAbility(ability);
++    }
++
++    private GowronEagerForBattle(final GowronEagerForBattle card) {
++        super(card);
++    }
++
++    @Override
++    public GowronEagerForBattle copy() {
++        return new GowronEagerForBattle(this);
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/j/JacesMachinations.java b/Mage.Sets/src/mage/cards/j/JacesMachinations.java
+new file mode 100644
+index 0000000000..10490e1b69
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/j/JacesMachinations.java
+@@ -0,0 +1,80 @@
++package mage.cards.j;
++
++import mage.abilities.Ability;
++import mage.abilities.LoyaltyAbility;
++import mage.abilities.effects.AsThoughEffectImpl;
++import mage.abilities.effects.keyword.EmpowerJaceEffect;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.constants.AsThoughEffectType;
++import mage.constants.CardType;
++import mage.constants.Duration;
++import mage.constants.Outcome;
++import mage.constants.SubType;
++import mage.game.Game;
++import mage.game.permanent.Permanent;
++
++import java.util.UUID;
++
++/**
++ * @author lmt-magic (local, for limited simulation)
++ */
++public final class JacesMachinations extends CardImpl {
++
++    public JacesMachinations(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.INSTANT}, "{2}{U}");
++
++        // Until end of turn, you may activate loyalty abilities of Jace planeswalkers you control on any player's turn any time you could cast an instant.
++        this.getSpellAbility().addEffect(new JacesMachinationsEffect());
++
++        // Empower Jace 8.
++        this.getSpellAbility().addEffect(new EmpowerJaceEffect(8).concatBy("<br>"));
++    }
++
++    private JacesMachinations(final JacesMachinations card) {
++        super(card);
++    }
++
++    @Override
++    public JacesMachinations copy() {
++        return new JacesMachinations(this);
++    }
++}
++
++class JacesMachinationsEffect extends AsThoughEffectImpl {
++
++    JacesMachinationsEffect() {
++        super(AsThoughEffectType.ACTIVATE_AS_INSTANT, Duration.EndOfTurn, Outcome.Benefit);
++        staticText = "until end of turn, you may activate loyalty abilities of Jace planeswalkers "
++                + "you control on any player's turn any time you could cast an instant";
++    }
++
++    private JacesMachinationsEffect(final JacesMachinationsEffect effect) {
++        super(effect);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        return true;
++    }
++
++    @Override
++    public JacesMachinationsEffect copy() {
++        return new JacesMachinationsEffect(this);
++    }
++
++    @Override
++    public boolean applies(UUID objectId, Ability affectedAbility, Ability source, Game game, UUID playerId) {
++        if (!affectedAbility.isControlledBy(source.getControllerId())
++                || !(affectedAbility instanceof LoyaltyAbility)) {
++            return false;
++        }
++        Permanent permanent = game.getPermanent(affectedAbility.getSourceId());
++        return permanent != null && permanent.hasSubtype(SubType.JACE, game);
++    }
++
++    @Override
++    public boolean applies(UUID objectId, Ability source, UUID affectedControllerId, Game game) {
++        return false; // Not used
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/l/LiveLongAndProsper.java b/Mage.Sets/src/mage/cards/l/LiveLongAndProsper.java
+new file mode 100644
+index 0000000000..08144d0d7a
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/l/LiveLongAndProsper.java
+@@ -0,0 +1,47 @@
++package mage.cards.l;
++
++import mage.abilities.common.CantBeCounteredSourceAbility;
++import mage.abilities.dynamicvalue.MultipliedValue;
++import mage.abilities.dynamicvalue.common.CardsInControllerHandCount;
++import mage.abilities.dynamicvalue.common.ControllerLifeCount;
++import mage.abilities.effects.common.DrawCardSourceControllerEffect;
++import mage.abilities.effects.common.SetPlayerLifeSourceEffect;
++import mage.abilities.effects.common.continuous.MaximumHandSizeControllerEffect;
++import mage.abilities.effects.common.continuous.MaximumHandSizeControllerEffect.HandSizeModification;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.constants.CardType;
++import mage.constants.Duration;
++
++import java.util.UUID;
++
++/**
++ * @author muz
++ */
++public final class LiveLongAndProsper extends CardImpl {
++
++    public LiveLongAndProsper(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.SORCERY}, "{5}{W}{U}");
++
++        // This spell can't be countered.
++        this.addAbility(new CantBeCounteredSourceAbility());
++
++        // Double your life total. Draw cards equal to the number of cards in your hand. You have no maximum hand size until your next turn.
++        this.getSpellAbility().addEffect(new SetPlayerLifeSourceEffect(new MultipliedValue(ControllerLifeCount.instance, 2))
++            .setText("double your life total"));
++        this.getSpellAbility().addEffect(new DrawCardSourceControllerEffect(CardsInControllerHandCount.ANY)
++            .setText("Draw cards equal to the number of cards in your hand"));
++        this.getSpellAbility().addEffect(new MaximumHandSizeControllerEffect(
++            Integer.MAX_VALUE, Duration.UntilYourNextTurn, HandSizeModification.SET
++        ).setText("You have no maximum hand size until your next turn"));
++    }
++
++    private LiveLongAndProsper(final LiveLongAndProsper card) {
++        super(card);
++    }
++
++    @Override
++    public LiveLongAndProsper copy() {
++        return new LiveLongAndProsper(this);
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/n/NullSummoner.java b/Mage.Sets/src/mage/cards/n/NullSummoner.java
+new file mode 100644
+index 0000000000..200aed2302
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/n/NullSummoner.java
+@@ -0,0 +1,214 @@
++package mage.cards.n;
++
++import mage.MageInt;
++import mage.abilities.Ability;
++import mage.abilities.common.EntersBattlefieldTriggeredAbility;
++import mage.abilities.common.SimpleStaticAbility;
++import mage.abilities.condition.common.CastFromEverywhereSourceCondition;
++import mage.abilities.condition.common.ThresholdCondition;
++import mage.abilities.effects.*;
++import mage.cards.*;
++import mage.constants.*;
++import mage.filter.StaticFilters;
++import mage.game.ExileZone;
++import mage.game.Game;
++import mage.game.permanent.Permanent;
++import mage.players.ManaPoolItem;
++import mage.players.Player;
++import mage.target.TargetCard;
++import mage.target.common.TargetOpponent;
++import mage.target.targetpointer.FixedTarget;
++import mage.util.CardUtil;
++
++import java.util.UUID;
++
++/**
++ * @author miesma
++ */
++public final class NullSummoner extends CardImpl {
++
++    public NullSummoner(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{2}{U}{B}");
++
++        this.subtype.add(SubType.HUMAN);
++        this.subtype.add(SubType.WARLOCK);
++        this.power = new MageInt(4);
++        this.toughness = new MageInt(2);
++
++        // When this creature enters, if you cast it, target opponent reveals their hand. You choose a nonland card from it. Exile that card.
++        Ability entersAbility = new EntersBattlefieldTriggeredAbility(
++                new NullSummonerExileEffect()
++        ).withInterveningIf(CastFromEverywhereSourceCondition.instance);
++        entersAbility.addTarget(new TargetOpponent());
++        this.addAbility(entersAbility);
++
++        // Threshold — As long as there are seven or more cards in your graveyard, you may cast the exiled card, and mana of any type can be spent to cast that spell.
++        Ability staticThreshold = new SimpleStaticAbility(new NullSummonerCastEffect());
++        staticThreshold.setAbilityWord(AbilityWord.THRESHOLD);
++        this.addAbility(staticThreshold);
++    }
++
++    private NullSummoner(final NullSummoner card) {
++        super(card);
++    }
++
++    @Override
++    public NullSummoner copy() {
++        return new NullSummoner(this);
++    }
++}
++
++class NullSummonerExileEffect extends OneShotEffect {
++
++    NullSummonerExileEffect() {
++        super(Outcome.Benefit);
++        staticText = "target opponent reveals their hand. You choose a nonland card from it. Exile that card.";
++    }
++
++    private NullSummonerExileEffect(final NullSummonerExileEffect effect) {
++        super(effect);
++    }
++
++    @Override
++    public NullSummonerExileEffect copy() {
++        return new NullSummonerExileEffect(this);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        Player controller = game.getPlayer(source.getControllerId());
++        Player opponent = game.getPlayer(getTargetPointer().getFirst(game, source));
++        if (controller == null || opponent == null || opponent.getHand().isEmpty()) {
++            return false;
++        }
++        Cards cards = new CardsImpl(opponent.getHand());
++        opponent.revealCards(source, cards, game);
++        if (cards.count(StaticFilters.FILTER_CARD_NON_LAND, game) < 1) {
++            return true;
++        }
++        TargetCard target = new TargetCard(Zone.HAND, StaticFilters.FILTER_CARD_NON_LAND);
++        target.withNotTarget(true);
++        controller.choose(Outcome.Exile, cards, target, source, game);
++        Card card = game.getCard(target.getFirstTarget());
++        if (card == null) {
++            return true;
++        }
++        // Needs unique Key across two different source abilities
++        StringBuilder unique;
++        Permanent permanent = game.getPermanent(source.getSourceId());
++        if (permanent == null) {
++            // Will never be able to cast this one
++            // Still differentiate to avoid confusion
++            unique = new StringBuilder("unused");
++            unique.append(UUID.randomUUID());
++        } else {
++            unique = new StringBuilder("nullsummonereffect_");
++            unique.append(permanent.getId().toString());
++            unique.append(permanent.getZoneChangeCounter(game));
++        }
++        return controller.moveCardsToExile(
++                card, source, game, true,
++                CardUtil.getExileZoneId(unique.toString(), game),
++                CardUtil.getSourceName(game, source));
++    }
++}
++
++class NullSummonerCastEffect extends AsThoughEffectImpl {
++
++    boolean addManaEffect = false;
++
++    NullSummonerCastEffect() {
++        super(AsThoughEffectType.CAST_FROM_NOT_OWN_HAND_ZONE, Duration.WhileOnBattlefield, Outcome.Benefit);
++        staticText = "As long as there are seven or more cards in your graveyard, you may cast the exiled card, and mana of any type can be spent to cast that spell.";
++    }
++
++    private NullSummonerCastEffect(final NullSummonerCastEffect effect) {
++        super(effect);
++    }
++
++    @Override
++    public NullSummonerCastEffect copy() {
++        return new NullSummonerCastEffect(this);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        return true;
++    }
++
++    @Override
++    public boolean applies(UUID objectId, Ability source, UUID affectedControllerId, Game game) {
++        if (!source.isControlledBy(affectedControllerId)) {
++            return false;
++        }
++        Card card = game.getCard(objectId);
++        if (card == null) {
++            return false;
++        }
++        Permanent permanent = game.getPermanent(source.getSourceId());
++        if (permanent == null) {
++            return false;
++        }
++        StringBuilder unique = new StringBuilder("nullsummonereffect_");
++        unique.append(permanent.getId().toString());
++        unique.append(permanent.getZoneChangeCounter(game));
++        ExileZone exileZone = game.getState().getExile().getExileZone(CardUtil.getExileZoneId(unique.toString(), game));
++        if (exileZone != null && exileZone.contains(objectId) && ThresholdCondition.instance.apply(game, source)) {
++            if (!addManaEffect) {
++                // Need a FixedTarget on the Card as it moves from exile to spell zone once casting begins
++                // Only add the effect once and not every time applies returns true
++                ContinuousEffect effect = new NullSummonerManaEffect();
++                effect.setTargetPointer(new FixedTarget(card, game));
++                game.addEffect(effect, source);
++                addManaEffect = true;
++            }
++            return true;
++        }
++        return false;
++    }
++
++
++}
++
++class NullSummonerManaEffect extends AsThoughEffectImpl implements AsThoughManaEffect {
++
++    NullSummonerManaEffect() {
++        super(AsThoughEffectType.SPEND_OTHER_MANA, Duration.WhileOnBattlefield, Outcome.Benefit);
++        staticText = "and mana of any type can be spent to cast that spell.";
++    }
++
++    private NullSummonerManaEffect(final NullSummonerManaEffect effect) {
++        super(effect);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        return true;
++    }
++
++    @Override
++    public NullSummonerManaEffect copy() {
++        return new NullSummonerManaEffect(this);
++    }
++
++    @Override
++    public boolean applies(UUID objectId, Ability source, UUID affectedControllerId, Game game) {
++        objectId = CardUtil.getMainCardId(game, objectId); // for split cards
++        if (objectId.equals(((FixedTarget) getTargetPointer()).getTarget())
++                && game.getState().getZoneChangeCounter(objectId) <= ((FixedTarget) getTargetPointer()).getZoneChangeCounter() + 1) {
++            // if the card moved from exile to spell the zone change counter is increased by 1 (effect must applies before and on stack, use isCheckPlayableMode?)
++            return source.isControlledBy(affectedControllerId);
++        } else if (((FixedTarget) getTargetPointer()).getTarget().equals(objectId)) {
++            // object has moved zone so effect can be discarted
++            this.discard();
++        }
++        return false;
++    }
++
++
++    @Override
++    public ManaType getAsThoughManaType(ManaType manaType, ManaPoolItem mana, UUID affectedControllerId, Ability source, Game game) {
++        return mana.getFirstAvailable();
++    }
++}
++
+diff --git a/Mage.Sets/src/mage/cards/s/SaltVampire.java b/Mage.Sets/src/mage/cards/s/SaltVampire.java
+new file mode 100644
+index 0000000000..a03aea7323
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/s/SaltVampire.java
+@@ -0,0 +1,90 @@
++package mage.cards.s;
++
++import mage.MageInt;
++import mage.abilities.Ability;
++import mage.abilities.common.EntersBattlefieldTriggeredAbility;
++import mage.abilities.effects.OneShotEffect;
++import mage.abilities.keyword.LifelinkAbility;
++import mage.cards.Card;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.constants.CardType;
++import mage.constants.Outcome;
++import mage.constants.SubType;
++import mage.constants.Zone;
++import mage.filter.StaticFilters;
++import mage.game.Game;
++import mage.players.Player;
++import mage.target.TargetCard;
++import mage.target.common.TargetOpponent;
++
++import java.util.UUID;
++
++/**
++ * @author muz
++ */
++public final class SaltVampire extends CardImpl {
++
++    public SaltVampire(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{1}{B}");
++
++        this.subtype.add(SubType.VAMPIRE);
++        this.subtype.add(SubType.SHAPESHIFTER);
++        this.power = new MageInt(2);
++        this.toughness = new MageInt(2);
++
++        // Lifelink
++        this.addAbility(LifelinkAbility.getInstance());
++
++        // When this creature enters, look at target opponent's hand. You may choose a nonland card from it. If you do, that player exiles that card, then draws a card.
++        Ability ability = new EntersBattlefieldTriggeredAbility(new SaltVampireEffect());
++        ability.addTarget(new TargetOpponent());
++        this.addAbility(ability);
++    }
++
++    private SaltVampire(final SaltVampire card) {
++        super(card);
++    }
++
++    @Override
++    public SaltVampire copy() {
++        return new SaltVampire(this);
++    }
++}
++
++class SaltVampireEffect extends OneShotEffect {
++
++    SaltVampireEffect() {
++        super(Outcome.Discard);
++        staticText = "look at target opponent's hand. You may choose a nonland card from it. "
++            + "If you do, that player exiles that card, then draws a card";
++    }
++
++    private SaltVampireEffect(final SaltVampireEffect effect) {
++        super(effect);
++    }
++
++    @Override
++    public SaltVampireEffect copy() {
++        return new SaltVampireEffect(this);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        Player controller = game.getPlayer(source.getControllerId());
++        Player opponent = game.getPlayer(getTargetPointer().getFirst(game, source));
++        if (controller == null || opponent == null) {
++            return false;
++        }
++        controller.lookAtCards(source, "Hand of " + opponent.getName(), opponent.getHand(), game);
++        TargetCard target = new TargetCard(0, 1, Zone.HAND, StaticFilters.FILTER_CARD_NON_LAND);
++        if (controller.choose(outcome, opponent.getHand(), target, source, game)) {
++            Card card = game.getCard(target.getFirstTarget());
++            if (card != null) {
++                opponent.moveCards(card, Zone.EXILED, source, game);
++                opponent.drawCards(1, source, game);
++            }
++        }
++        return true;
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/s/SarekFederationAmbassador.java b/Mage.Sets/src/mage/cards/s/SarekFederationAmbassador.java
+new file mode 100644
+index 0000000000..6dd273c5c8
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/s/SarekFederationAmbassador.java
+@@ -0,0 +1,80 @@
++package mage.cards.s;
++
++import mage.MageInt;
++import mage.abilities.Ability;
++import mage.abilities.dynamicvalue.common.FederationCount;
++import mage.abilities.effects.OneShotEffect;
++import mage.abilities.effects.common.counter.AddCountersAllEffect;
++import mage.abilities.triggers.BeginningOfCombatTriggeredAbility;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.constants.AbilityWord;
++import mage.constants.CardType;
++import mage.constants.Outcome;
++import mage.constants.SubType;
++import mage.constants.SuperType;
++import mage.counters.CounterType;
++import mage.filter.StaticFilters;
++import mage.game.Game;
++import mage.players.Player;
++
++import java.util.UUID;
++
++/**
++ * @author muz
++ */
++public final class SarekFederationAmbassador extends CardImpl {
++
++    public SarekFederationAmbassador(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{1}{G}{W}{U}");
++        this.supertype.add(SuperType.LEGENDARY);
++        this.subtype.add(SubType.VULCAN);
++        this.subtype.add(SubType.ADVISOR);
++        this.power = new MageInt(0);
++        this.toughness = new MageInt(5);
++
++        // Federation -- At the beginning of combat on your turn, draw a card for every five creature types among non-Borg creatures you control. If you draw three or more cards this way, put two +1/+1 counters on each creature you control.
++        this.addAbility(new BeginningOfCombatTriggeredAbility(new SarekFederationAmbassadorEffect())
++            .setAbilityWord(AbilityWord.FEDERATION).addHint(FederationCount.instance.getHint()));
++    }
++
++    private SarekFederationAmbassador(final SarekFederationAmbassador card) {
++        super(card);
++    }
++
++    @Override
++    public SarekFederationAmbassador copy() {
++        return new SarekFederationAmbassador(this);
++    }
++}
++
++class SarekFederationAmbassadorEffect extends OneShotEffect {
++
++    SarekFederationAmbassadorEffect() {
++        super(Outcome.DrawCard);
++        staticText = "draw a card for every five creature types among non-Borg creatures you control. "
++            + "If you draw three or more cards this way, put two +1/+1 counters on each creature you control";
++    }
++
++    private SarekFederationAmbassadorEffect(final SarekFederationAmbassadorEffect effect) {
++        super(effect);
++    }
++
++    @Override
++    public SarekFederationAmbassadorEffect copy() {
++        return new SarekFederationAmbassadorEffect(this);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        Player controller = game.getPlayer(source.getControllerId());
++        if (controller == null) {
++            return false;
++        }
++        int cardsDrawn = controller.drawCards(FederationCount.instance.calculate(game, source, this) / 5, source, game);
++        if (cardsDrawn >= 3) {
++            new AddCountersAllEffect(CounterType.P1P1.createInstance(2), StaticFilters.FILTER_CONTROLLED_CREATURES).apply(game, source);
++        }
++        return true;
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/s/SeasonedCryomancer.java b/Mage.Sets/src/mage/cards/s/SeasonedCryomancer.java
+new file mode 100644
+index 0000000000..aa8f924d17
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/s/SeasonedCryomancer.java
+@@ -0,0 +1,99 @@
++package mage.cards.s;
++
++import mage.MageInt;
++import mage.abilities.Ability;
++import mage.abilities.common.EntersBattlefieldTriggeredAbility;
++import mage.abilities.common.SimpleActivatedAbility;
++import mage.abilities.common.delayed.ReflexiveTriggeredAbility;
++import mage.abilities.costs.common.ExileSourceFromGraveCost;
++import mage.abilities.costs.mana.ManaCostsImpl;
++import mage.abilities.effects.OneShotEffect;
++import mage.abilities.effects.common.DrawCardSourceControllerEffect;
++import mage.abilities.effects.common.TapTargetEffect;
++import mage.abilities.effects.common.counter.AddCountersTargetEffect;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.cards.Cards;
++import mage.constants.CardType;
++import mage.constants.Outcome;
++import mage.constants.SubType;
++import mage.constants.Zone;
++import mage.counters.CounterType;
++import mage.game.Game;
++import mage.players.Player;
++import mage.target.common.TargetCreaturePermanent;
++
++import java.util.UUID;
++
++/**
++ * @author lmt-magic (local, for limited simulation)
++ */
++public final class SeasonedCryomancer extends CardImpl {
++
++    public SeasonedCryomancer(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{1}{U}{U}");
++
++        this.subtype.add(SubType.HUMAN);
++        this.subtype.add(SubType.WIZARD);
++        this.power = new MageInt(2);
++        this.toughness = new MageInt(2);
++
++        // When this creature enters, draw two cards, then discard two cards. When you discard one or more nonland cards this way, tap up to that many target creatures and put a stun counter on each of them.
++        Ability ability = new EntersBattlefieldTriggeredAbility(new DrawCardSourceControllerEffect(2));
++        ability.addEffect(new SeasonedCryomancerEffect());
++        this.addAbility(ability);
++
++        // {3}{U}{U}, Exile this card from your graveyard: Draw two cards.
++        Ability graveAbility = new SimpleActivatedAbility(
++                Zone.GRAVEYARD, new DrawCardSourceControllerEffect(2), new ManaCostsImpl<>("{3}{U}{U}")
++        );
++        graveAbility.addCost(new ExileSourceFromGraveCost());
++        this.addAbility(graveAbility);
++    }
++
++    private SeasonedCryomancer(final SeasonedCryomancer card) {
++        super(card);
++    }
++
++    @Override
++    public SeasonedCryomancer copy() {
++        return new SeasonedCryomancer(this);
++    }
++}
++
++class SeasonedCryomancerEffect extends OneShotEffect {
++
++    SeasonedCryomancerEffect() {
++        super(Outcome.Benefit);
++        staticText = ", then discard two cards. When you discard one or more nonland cards this way, "
++                + "tap up to that many target creatures and put a stun counter on each of them";
++    }
++
++    private SeasonedCryomancerEffect(final SeasonedCryomancerEffect effect) {
++        super(effect);
++    }
++
++    @Override
++    public SeasonedCryomancerEffect copy() {
++        return new SeasonedCryomancerEffect(this);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        Player player = game.getPlayer(source.getControllerId());
++        if (player == null) {
++            return false;
++        }
++        Cards discarded = player.discard(2, false, false, source, game);
++        int nonland = discarded.count(mage.filter.StaticFilters.FILTER_CARD_NON_LAND, game);
++        if (nonland < 1) {
++            return true;
++        }
++        ReflexiveTriggeredAbility ability = new ReflexiveTriggeredAbility(new TapTargetEffect(), false,
++                "tap up to that many target creatures and put a stun counter on each of them");
++        ability.addEffect(new AddCountersTargetEffect(CounterType.STUN.createInstance()));
++        ability.addTarget(new TargetCreaturePermanent(0, nonland));
++        game.fireReflexiveTriggeredAbility(ability, source);
++        return true;
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/s/StoriedVeteran.java b/Mage.Sets/src/mage/cards/s/StoriedVeteran.java
+new file mode 100644
+index 0000000000..2ebd993154
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/s/StoriedVeteran.java
+@@ -0,0 +1,50 @@
++package mage.cards.s;
++
++import mage.MageInt;
++import mage.abilities.AbilityImpl;
++import mage.abilities.common.CantBlockAbility;
++import mage.abilities.common.EntersBattlefieldAbility;
++import mage.abilities.common.MayCastFromGraveyardSourceAbility;
++import mage.abilities.condition.common.CastFromGraveyardSourceCondition;
++import mage.abilities.effects.common.counter.AddCountersSourceEffect;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.constants.CardType;
++import mage.constants.SubType;
++import mage.counters.CounterType;
++
++import java.util.UUID;
++
++/**
++ * @author muz
++ */
++public final class StoriedVeteran extends CardImpl {
++
++    public StoriedVeteran(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{B}");
++
++        this.subtype.add(SubType.KLINGON);
++        this.subtype.add(SubType.ADVISOR);
++        this.power = new MageInt(2);
++        this.toughness = new MageInt(1);
++
++        // This creature can't block.
++        this.addAbility(new CantBlockAbility());
++
++        // You may cast this card from your graveyard. If you do, it enters with a finality counter on it.
++        AbilityImpl ability = new MayCastFromGraveyardSourceAbility();
++        ability.appendToRule(" If you do, it enters with a finality counter on it.");
++        ability.addSubAbility(new EntersBattlefieldAbility(new AddCountersSourceEffect(CounterType.FINALITY.createInstance()),
++            CastFromGraveyardSourceCondition.instance, "", "").setRuleVisible(false));
++        this.addAbility(ability);
++    }
++
++    private StoriedVeteran(final StoriedVeteran card) {
++        super(card);
++    }
++
++    @Override
++    public StoriedVeteran copy() {
++        return new StoriedVeteran(this);
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/t/TemporalConqueror.java b/Mage.Sets/src/mage/cards/t/TemporalConqueror.java
+new file mode 100644
+index 0000000000..882b6227cd
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/t/TemporalConqueror.java
+@@ -0,0 +1,87 @@
++package mage.cards.t;
++
++import mage.MageInt;
++import mage.abilities.Ability;
++import mage.abilities.common.EntersBattlefieldTriggeredAbility;
++import mage.abilities.effects.OneShotEffect;
++import mage.abilities.effects.common.MillCardsControllerEffect;
++import mage.cards.Card;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.constants.CardType;
++import mage.constants.Outcome;
++import mage.constants.SubType;
++import mage.constants.Zone;
++import mage.filter.StaticFilters;
++import mage.game.Game;
++import mage.game.permanent.token.TreasureToken;
++import mage.players.Player;
++import mage.target.TargetCard;
++import mage.target.common.TargetCardInYourGraveyard;
++
++import java.util.UUID;
++
++/**
++ * @author DejviFiala
++ */
++public final class TemporalConqueror extends CardImpl {
++
++    public TemporalConqueror(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.CREATURE}, "{2}{G}");
++
++        this.subtype.add(SubType.NAKUHL);
++        this.subtype.add(SubType.WARRIOR);
++        this.power = new MageInt(2);
++        this.toughness = new MageInt(3);
++
++        // When this creature enters, mill three cards. Then return a land card from your graveyard to your hand. If you can't, create a Treasure token.
++        Ability ability = new EntersBattlefieldTriggeredAbility(new MillCardsControllerEffect(3));
++        ability.addEffect(new TemporalConquerorEffect());
++        this.addAbility(ability);
++    }
++
++    private TemporalConqueror(final TemporalConqueror card) {
++        super(card);
++    }
++
++    @Override
++    public TemporalConqueror copy() {
++        return new TemporalConqueror(this);
++    }
++}
++
++class TemporalConquerorEffect extends OneShotEffect {
++
++    TemporalConquerorEffect() {
++        super(Outcome.ReturnToHand);
++        staticText = "Then return a land card from your graveyard to your hand. If you can't, create a Treasure token";
++    }
++
++    private TemporalConquerorEffect(final TemporalConquerorEffect effect) {
++        super(effect);
++    }
++
++    @Override
++    public TemporalConquerorEffect copy() {
++        return new TemporalConquerorEffect(this);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        Player player = game.getPlayer(source.getControllerId());
++        if (player == null) {
++            return false;
++        }
++        TargetCard target = new TargetCardInYourGraveyard(StaticFilters.FILTER_CARD_LAND);
++        target.withNotTarget(true);
++        if (target.canChoose(source.getControllerId(), source, game)
++                && player.choose(outcome, target, source, game)) {
++            Card card = player.getGraveyard().get(target.getFirstTarget(), game);
++            if (card != null) {
++                player.moveCards(card, Zone.HAND, source, game);
++                return true;
++            }
++        }
++        return new TreasureToken().putOntoBattlefield(1, game, source);
++    }
++}
+diff --git a/Mage.Sets/src/mage/cards/u/USSVoyagerLoneWanderer.java b/Mage.Sets/src/mage/cards/u/USSVoyagerLoneWanderer.java
+new file mode 100644
+index 0000000000..9988cc00f3
+--- /dev/null
++++ b/Mage.Sets/src/mage/cards/u/USSVoyagerLoneWanderer.java
+@@ -0,0 +1,104 @@
++package mage.cards.u;
++
++import mage.abilities.Ability;
++import mage.abilities.common.EntersBattlefieldTriggeredAbility;
++import mage.abilities.effects.OneShotEffect;
++import mage.abilities.keyword.FlyingAbility;
++import mage.abilities.keyword.StationAbility;
++import mage.abilities.keyword.StationLevelAbility;
++import mage.abilities.keyword.VigilanceAbility;
++import mage.cards.Card;
++import mage.cards.CardImpl;
++import mage.cards.CardSetInfo;
++import mage.cards.Cards;
++import mage.cards.CardsImpl;
++import mage.constants.CardType;
++import mage.constants.Outcome;
++import mage.constants.PutCards;
++import mage.constants.SubType;
++import mage.constants.SuperType;
++import mage.constants.Zone;
++import mage.game.Game;
++import mage.players.Player;
++
++import java.util.UUID;
++
++/**
++ * @author DejviFiala
++ */
++public final class USSVoyagerLoneWanderer extends CardImpl {
++
++    public USSVoyagerLoneWanderer(UUID ownerId, CardSetInfo setInfo) {
++        super(ownerId, setInfo, new CardType[]{CardType.ARTIFACT}, "{3}{G}");
++
++        this.supertype.add(SuperType.LEGENDARY);
++        this.subtype.add(SubType.SPACECRAFT);
++
++        // When U.S.S. Voyager enters, reveal cards from the top of your library until you reveal two land cards. Put those land cards onto the battlefield tapped and the rest on the bottom of your library in a random order.
++        this.addAbility(new EntersBattlefieldTriggeredAbility(new USSVoyagerLoneWandererEffect()));
++
++        // Station
++        this.addAbility(new StationAbility());
++
++        // STATION 8+
++        // Flying
++        // Vigilance
++        // 3/3
++        this.addAbility(new StationLevelAbility(8)
++            .withLevelAbility(FlyingAbility.getInstance())
++            .withLevelAbility(VigilanceAbility.getInstance())
++            .withPT(3, 3));
++    }
++
++    private USSVoyagerLoneWanderer(final USSVoyagerLoneWanderer card) {
++        super(card);
++    }
++
++    @Override
++    public USSVoyagerLoneWanderer copy() {
++        return new USSVoyagerLoneWanderer(this);
++    }
++}
++
++class USSVoyagerLoneWandererEffect extends OneShotEffect {
++
++    USSVoyagerLoneWandererEffect() {
++        super(Outcome.PutLandInPlay);
++        staticText = "reveal cards from the top of your library until you reveal two land cards. "
++            + "Put those land cards onto the battlefield tapped and the rest on the bottom of your library in a random order";
++    }
++
++    private USSVoyagerLoneWandererEffect(final USSVoyagerLoneWandererEffect effect) {
++        super(effect);
++    }
++
++    @Override
++    public USSVoyagerLoneWandererEffect copy() {
++        return new USSVoyagerLoneWandererEffect(this);
++    }
++
++    @Override
++    public boolean apply(Game game, Ability source) {
++        Player controller = game.getPlayer(source.getControllerId());
++        if (controller == null || !controller.getLibrary().hasCards()) {
++            return false;
++        }
++        Cards revealed = new CardsImpl();
++        Cards lands = new CardsImpl();
++        for (Card card : controller.getLibrary().getCards(game)) {
++            revealed.add(card);
++            if (card.isLand(game)) {
++                lands.add(card);
++                if (lands.size() >= 2) {
++                    break;
++                }
++            }
++        }
++        controller.revealCards(source, revealed, game);
++        PutCards.BATTLEFIELD_TAPPED.moveCards(controller, lands, source, game);
++        // lands that couldn't enter stay with the rest of the revealed cards
++        revealed.retainZone(Zone.LIBRARY, game);
++        PutCards.BOTTOM_RANDOM.moveCards(controller, revealed, source, game);
++        return true;
++    }
++}
+diff --git a/Mage.Sets/src/mage/sets/RealityFracture.java b/Mage.Sets/src/mage/sets/RealityFracture.java
+index 72374f27fd..954af671d5 100644
+--- a/Mage.Sets/src/mage/sets/RealityFracture.java
++++ b/Mage.Sets/src/mage/sets/RealityFracture.java
+@@ -207,6 +207,7 @@ public final class RealityFracture extends ExpansionSet {
+         cards.add(new SetCardInfo("Island", 385, Rarity.LAND, mage.cards.basiclands.Island.class, FULL_ART_BFZ_VARIOUS));
+         cards.add(new SetCardInfo("Island", 386, Rarity.LAND, mage.cards.basiclands.Island.class, FULL_ART_BFZ_VARIOUS));
+         cards.add(new SetCardInfo("Island", 387, Rarity.LAND, mage.cards.basiclands.Island.class, FULL_ART_BFZ_VARIOUS));
++        cards.add(new SetCardInfo("Jace's Machinations", 32, Rarity.RARE, mage.cards.j.JacesMachinations.class));
+         cards.add(new SetCardInfo("Jace, Reality Sculptor", 216, Rarity.RARE, mage.cards.j.JaceRealitySculptor.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Jace, Reality Sculptor", 300, Rarity.RARE, mage.cards.j.JaceRealitySculptor.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Jiang Yanggu, Alone", 246, Rarity.UNCOMMON, mage.cards.j.JiangYangguAlone.class));
+@@ -270,6 +271,8 @@ public final class RealityFracture extends ExpansionSet {
+         cards.add(new SetCardInfo("Multiply by Zero", 58, Rarity.UNCOMMON, mage.cards.m.MultiplyByZero.class));
+         cards.add(new SetCardInfo("Murmuring Volume", 174, Rarity.COMMON, mage.cards.m.MurmuringVolume.class));
+         cards.add(new SetCardInfo("No Admittance", 89, Rarity.COMMON, mage.cards.n.NoAdmittance.class));
++        cards.add(new SetCardInfo("Null Summoner", 142, Rarity.RARE, mage.cards.n.NullSummoner.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Null Summoner", 353, Rarity.RARE, mage.cards.n.NullSummoner.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Omnipresence", 110, Rarity.MYTHIC, mage.cards.o.Omnipresence.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Omnipresence", 331, Rarity.MYTHIC, mage.cards.o.Omnipresence.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Omnipresence", 448, Rarity.MYTHIC, mage.cards.o.Omnipresence.class, NON_FULL_USE_VARIOUS));
+@@ -337,6 +340,7 @@ public final class RealityFracture extends ExpansionSet {
+         cards.add(new SetCardInfo("Samut, Tyrant of Naktamun", 220, Rarity.RARE, mage.cards.s.SamutTyrantOfNaktamun.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Samut, Tyrant of Naktamun", 302, Rarity.RARE, mage.cards.s.SamutTyrantOfNaktamun.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Screeching Soulbreaker", 65, Rarity.COMMON, mage.cards.s.ScreechingSoulbreaker.class));
++        cards.add(new SetCardInfo("Seasoned Cryomancer", 38, Rarity.MYTHIC, mage.cards.s.SeasonedCryomancer.class));
+         cards.add(new SetCardInfo("Semester Foreseer", 39, Rarity.COMMON, mage.cards.s.SemesterForeseer.class));
+         cards.add(new SetCardInfo("Shatterwing Pegasus", 21, Rarity.COMMON, mage.cards.s.ShatterwingPegasus.class));
+         cards.add(new SetCardInfo("Shipwreck Marsh", 189, Rarity.RARE, mage.cards.s.ShipwreckMarsh.class, NON_FULL_USE_VARIOUS));
+diff --git a/Mage.Sets/src/mage/sets/StarTrek.java b/Mage.Sets/src/mage/sets/StarTrek.java
+index e75cefd1c1..f22165676a 100644
+--- a/Mage.Sets/src/mage/sets/StarTrek.java
++++ b/Mage.Sets/src/mage/sets/StarTrek.java
+@@ -123,6 +123,9 @@ public final class StarTrek extends ExpansionSet {
+         cards.add(new SetCardInfo("Deanna Troi, Psychic Counsel", 11, Rarity.RARE, mage.cards.d.DeannaTroiPsychicCounsel.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Deanna Troi, Psychic Counsel", 365, Rarity.RARE, mage.cards.d.DeannaTroiPsychicCounsel.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Deanna Troi, Psychic Counsel", 499, Rarity.RARE, mage.cards.d.DeannaTroiPsychicCounsel.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Deep Space 9", 263, Rarity.MYTHIC, mage.cards.d.DeepSpace9.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Deep Space 9", 479, Rarity.MYTHIC, mage.cards.d.DeepSpace9.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Deep Space 9", 556, Rarity.MYTHIC, mage.cards.d.DeepSpace9.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Deep Space Scan", 370, Rarity.RARE, mage.cards.d.DeepSpaceScan.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Deep Space Scan", 504, Rarity.RARE, mage.cards.d.DeepSpaceScan.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Deep Space Scan", 53, Rarity.RARE, mage.cards.d.DeepSpaceScan.class, NON_FULL_USE_VARIOUS));
+@@ -157,6 +160,7 @@ public final class StarTrek extends ExpansionSet {
+         cards.add(new SetCardInfo("Federation Resupply", 528, Rarity.RARE, mage.cards.f.FederationResupply.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Ferenginar", 283, Rarity.COMMON, mage.cards.f.Ferenginar.class));
+         cards.add(new SetCardInfo("Final Frontier", 198, Rarity.COMMON, mage.cards.f.FinalFrontier.class));
++        cards.add(new SetCardInfo("First Contact", 199, Rarity.COMMON, mage.cards.f.FirstContact.class));
+         cards.add(new SetCardInfo("Forest", 311, Rarity.LAND, mage.cards.basiclands.Forest.class, FULL_ART_BFZ_VARIOUS));
+         cards.add(new SetCardInfo("Forest", 316, Rarity.LAND, mage.cards.basiclands.Forest.class, FULL_ART_BFZ_VARIOUS));
+         cards.add(new SetCardInfo("Forest", 486, Rarity.LAND, mage.cards.basiclands.Forest.class, FULL_ART_BFZ_VARIOUS));
+@@ -173,10 +177,15 @@ public final class StarTrek extends ExpansionSet {
+         cards.add(new SetCardInfo("General Chang, Cold Warrior", 437, Rarity.RARE, mage.cards.g.GeneralChangColdWarrior.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("General Chang, Cold Warrior", 539, Rarity.RARE, mage.cards.g.GeneralChangColdWarrior.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Genesis Effect", 151, Rarity.COMMON, mage.cards.g.GenesisEffect.class));
++        cards.add(new SetCardInfo("Georgiou, Terran Emperor", 110, Rarity.MYTHIC, mage.cards.g.GeorgiouTerranEmperor.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Georgiou, Terran Emperor", 457, Rarity.MYTHIC, mage.cards.g.GeorgiouTerranEmperor.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Ghost of Illyria", 20, Rarity.UNCOMMON, mage.cards.g.GhostOfIllyria.class));
+         cards.add(new SetCardInfo("Godless Shrine", 285, Rarity.RARE, mage.cards.g.GodlessShrine.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Godless Shrine", 397, Rarity.RARE, mage.cards.g.GodlessShrine.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Godless Shrine", 492, Rarity.RARE, mage.cards.g.GodlessShrine.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Gowron, Eager for Battle", 237, Rarity.RARE, mage.cards.g.GowronEagerForBattle.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Gowron, Eager for Battle", 433, Rarity.RARE, mage.cards.g.GowronEagerForBattle.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Gowron, Eager for Battle", 443, Rarity.RARE, mage.cards.g.GowronEagerForBattle.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Grand Nagus Zek", 112, Rarity.RARE, mage.cards.g.GrandNagusZek.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Grand Nagus Zek", 458, Rarity.RARE, mage.cards.g.GrandNagusZek.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Guidance Failure", 60, Rarity.COMMON, mage.cards.g.GuidanceFailure.class));
+@@ -227,6 +236,9 @@ public final class StarTrek extends ExpansionSet {
+         cards.add(new SetCardInfo("Lieutenant Commander Data", 371, Rarity.MYTHIC, mage.cards.l.LieutenantCommanderData.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Lieutenant Commander Data", 505, Rarity.MYTHIC, mage.cards.l.LieutenantCommanderData.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Lieutenant Commander Data", 69, Rarity.MYTHIC, mage.cards.l.LieutenantCommanderData.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Live Long and Prosper", 244, Rarity.RARE, mage.cards.l.LiveLongAndProsper.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Live Long and Prosper", 423, Rarity.RARE, mage.cards.l.LiveLongAndProsper.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Live Long and Prosper", 547, Rarity.RARE, mage.cards.l.LiveLongAndProsper.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Locutus, the One Who Speaks", 245, Rarity.UNCOMMON, mage.cards.l.LocutusTheOneWhoSpeaks.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Locutus, the One Who Speaks", 360, Rarity.UNCOMMON, mage.cards.l.LocutusTheOneWhoSpeaks.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Locutus, the One Who Speaks", 389, Rarity.UNCOMMON, mage.cards.l.LocutusTheOneWhoSpeaks.class, NON_FULL_USE_VARIOUS));
+@@ -318,7 +330,11 @@ public final class StarTrek extends ExpansionSet {
+         cards.add(new SetCardInfo("Sacred Foundry", 295, Rarity.RARE, mage.cards.s.SacredFoundry.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Sacred Foundry", 400, Rarity.RARE, mage.cards.s.SacredFoundry.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Sacred Foundry", 495, Rarity.RARE, mage.cards.s.SacredFoundry.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Salt Vampire", 127, Rarity.RARE, mage.cards.s.SaltVampire.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Salt Vampire", 417, Rarity.RARE, mage.cards.s.SaltVampire.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Salt Vampire", 541, Rarity.RARE, mage.cards.s.SaltVampire.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Sarcophagus, Ship of the Dead", 170, Rarity.UNCOMMON, mage.cards.s.SarcophagusShipOfTheDead.class));
++        cards.add(new SetCardInfo("Sarek, Federation Ambassador", 251, Rarity.RARE, mage.cards.s.SarekFederationAmbassador.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Saru, Unthreatened", 212, Rarity.UNCOMMON, mage.cards.s.SaruUnthreatened.class));
+         cards.add(new SetCardInfo("Saurian Explorer", 213, Rarity.COMMON, mage.cards.s.SaurianExplorer.class));
+         cards.add(new SetCardInfo("Savvy Profiteer", 171, Rarity.COMMON, mage.cards.s.SavvyProfiteer.class));
+@@ -348,6 +364,9 @@ public final class StarTrek extends ExpansionSet {
+         cards.add(new SetCardInfo("Stomping Ground", 299, Rarity.RARE, mage.cards.s.StompingGround.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Stomping Ground", 395, Rarity.RARE, mage.cards.s.StompingGround.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Stomping Ground", 490, Rarity.RARE, mage.cards.s.StompingGround.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Storied Veteran", 129, Rarity.UNCOMMON, mage.cards.s.StoriedVeteran.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Storied Veteran", 429, Rarity.UNCOMMON, mage.cards.s.StoriedVeteran.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Storied Veteran", 439, Rarity.UNCOMMON, mage.cards.s.StoriedVeteran.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Stray from History", 130, Rarity.COMMON, mage.cards.s.StrayFromHistory.class));
+         cards.add(new SetCardInfo("Subcommander T'Pol", 82, Rarity.RARE, mage.cards.s.SubcommanderTPol.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Subcommander T'Pol", 453, Rarity.RARE, mage.cards.s.SubcommanderTPol.class, NON_FULL_USE_VARIOUS));
+@@ -372,6 +391,7 @@ public final class StarTrek extends ExpansionSet {
+         cards.add(new SetCardInfo("Temple Garden", 301, Rarity.RARE, mage.cards.t.TempleGarden.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Temple Garden", 396, Rarity.RARE, mage.cards.t.TempleGarden.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("Temple Garden", 491, Rarity.RARE, mage.cards.t.TempleGarden.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("Temporal Conqueror", 219, Rarity.COMMON, mage.cards.t.TemporalConqueror.class));
+         cards.add(new SetCardInfo("Tenacious Drone", 133, Rarity.COMMON, mage.cards.t.TenaciousDrone.class));
+         cards.add(new SetCardInfo("Temporal Anomaly", 302, Rarity.UNCOMMON, mage.cards.t.TemporalAnomaly.class));
+         cards.add(new SetCardInfo("Test of Conviction", 39, Rarity.UNCOMMON, mage.cards.t.TestOfConviction.class));
+@@ -416,6 +436,7 @@ public final class StarTrek extends ExpansionSet {
+         cards.add(new SetCardInfo("U.S.S. Reliant, From Hell's Heart", 135, Rarity.RARE, mage.cards.u.USSReliantFromHellsHeart.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("U.S.S. Reliant, From Hell's Heart", 461, Rarity.RARE, mage.cards.u.USSReliantFromHellsHeart.class, NON_FULL_USE_VARIOUS));
+         cards.add(new SetCardInfo("U.S.S. Reliant, From Hell's Heart", 552, Rarity.RARE, mage.cards.u.USSReliantFromHellsHeart.class, NON_FULL_USE_VARIOUS));
++        cards.add(new SetCardInfo("U.S.S. Voyager, Lone Wanderer", 222, Rarity.UNCOMMON, mage.cards.u.USSVoyagerLoneWanderer.class));
+         cards.add(new SetCardInfo("Una Chin-Riley, Number One", 42, Rarity.UNCOMMON, mage.cards.u.UnaChinRileyNumberOne.class));
+         cards.add(new SetCardInfo("Unexplored Territory", 303, Rarity.COMMON, mage.cards.u.UnexploredTerritory.class));
+         cards.add(new SetCardInfo("V'Ger, the Intruder", 87, Rarity.UNCOMMON, mage.cards.v.VGerTheIntruder.class));
+diff --git a/Mage.Tests/src/test/java/org/mage/test/cards/single/fra/LmtSimCardsTest.java b/Mage.Tests/src/test/java/org/mage/test/cards/single/fra/LmtSimCardsTest.java
+new file mode 100644
+index 0000000000..704b682e4e
+--- /dev/null
++++ b/Mage.Tests/src/test/java/org/mage/test/cards/single/fra/LmtSimCardsTest.java
+@@ -0,0 +1,91 @@
++package org.mage.test.cards.single.fra;
++
++import mage.constants.PhaseStep;
++import mage.constants.Zone;
++import mage.counters.CounterType;
++import org.junit.Test;
++import org.mage.test.player.TestPlayer;
++import org.mage.test.serverside.base.CardTestPlayerBase;
++
++/**
++ * Sanity checks for the two FRA cards implemented locally for lmt-magic's
++ * limited simulation (Jace's Machinations, Seasoned Cryomancer).
++ */
++public class LmtSimCardsTest extends CardTestPlayerBase {
++
++    @Test
++    public void testJacesMachinationsCreatesJaceWithEightLoyalty() {
++        addCard(Zone.HAND, playerA, "Jace's Machinations");
++        addCard(Zone.BATTLEFIELD, playerA, "Island", 3);
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, "Jace's Machinations");
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.END_TURN);
++        execute();
++
++        assertGraveyardCount(playerA, "Jace's Machinations", 1);
++        assertPermanentCount(playerA, "Jace", 1);
++        assertCounterCount(playerA, "Jace", CounterType.LOYALTY, 8);
++    }
++
++    @Test
++    public void testJacesMachinationsLetsJaceActivateOnOpponentsTurn() {
++        addCard(Zone.HAND, playerA, "Jace's Machinations");
++        addCard(Zone.BATTLEFIELD, playerA, "Island", 3);
++        addCard(Zone.LIBRARY, playerA, "Grizzly Bears", 3);
++
++        // cast on the opponent's turn, then use the token's -3 on that same turn
++        castSpell(2, PhaseStep.PRECOMBAT_MAIN, playerA, "Jace's Machinations");
++        waitStackResolved(2, PhaseStep.PRECOMBAT_MAIN);
++        activateAbility(2, PhaseStep.POSTCOMBAT_MAIN, playerA, "-3: Draw a card.");
++
++        setStopAt(2, PhaseStep.END_TURN);
++        execute();
++
++        assertCounterCount(playerA, "Jace", CounterType.LOYALTY, 5);
++        assertHandCount(playerA, 1);
++    }
++
++    @Test
++    public void testSeasonedCryomancerStunsForNonlandDiscards() {
++        skipInitShuffling();            // so it draws the two Bears placed on top
++        addCard(Zone.HAND, playerA, "Seasoned Cryomancer");
++        addCard(Zone.BATTLEFIELD, playerA, "Island", 3);
++        addCard(Zone.LIBRARY, playerA, "Grizzly Bears", 2);
++        addCard(Zone.BATTLEFIELD, playerB, "Silvercoat Lion");
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, "Seasoned Cryomancer");
++        addTarget(playerA, "Silvercoat Lion");        // up to two targets: tap + stun
++        addTarget(playerA, TestPlayer.TARGET_SKIP);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.END_TURN);
++        execute();
++
++        assertPermanentCount(playerA, "Seasoned Cryomancer", 1);
++        assertHandCount(playerA, 0);
++        assertGraveyardCount(playerA, "Grizzly Bears", 2);
++        assertTapped("Silvercoat Lion", true);
++        assertCounterCount(playerB, "Silvercoat Lion", CounterType.STUN, 1);
++    }
++
++    @Test
++    public void testSeasonedCryomancerNoStunWhenOnlyLandsDiscarded() {
++        skipInitShuffling();
++        addCard(Zone.HAND, playerA, "Seasoned Cryomancer");
++        addCard(Zone.BATTLEFIELD, playerA, "Island", 3);
++        addCard(Zone.LIBRARY, playerA, "Mountain", 2);
++        addCard(Zone.BATTLEFIELD, playerB, "Silvercoat Lion");
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, "Seasoned Cryomancer");
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.END_TURN);
++        execute();
++
++        assertGraveyardCount(playerA, "Mountain", 2);
++        assertTapped("Silvercoat Lion", false);
++        assertCounterCount(playerB, "Silvercoat Lion", CounterType.STUN, 0);
++    }
++}
+diff --git a/Mage.Tests/src/test/java/org/mage/test/cards/single/trk/GowronEagerForBattleTest.java b/Mage.Tests/src/test/java/org/mage/test/cards/single/trk/GowronEagerForBattleTest.java
+new file mode 100644
+index 0000000000..b933f1467d
+--- /dev/null
++++ b/Mage.Tests/src/test/java/org/mage/test/cards/single/trk/GowronEagerForBattleTest.java
+@@ -0,0 +1,100 @@
++package org.mage.test.cards.single.trk;
++
++import mage.abilities.keyword.TrampleAbility;
++import mage.constants.PhaseStep;
++import mage.constants.Zone;
++import mage.counters.CounterType;
++import org.junit.Test;
++import org.mage.test.serverside.base.CardTestPlayerBase;
++
++/**
++ * @author DejviFiala
++ */
++public class GowronEagerForBattleTest extends CardTestPlayerBase {
++
++    /*
++     * Gowron, Eager for Battle {2}{B}{R}
++     * Legendary Creature — Klingon Warrior
++     * Whenever another creature dies, put a +1/+1 counter on Gowron.
++     * Sacrifice another creature: Gowron gains trample until end of turn.
++     * If you sacrificed a Klingon this way, you draw a card and lose 1 life.
++     * 3/3
++     */
++    private static final String gowron = "Gowron, Eager for Battle";
++    private static final String sacAbility = "Sacrifice another creature";
++    private static final String bears = "Grizzly Bears"; // 2/2
++    private static final String aggressor = "Defense Force Aggressor"; // 2/1 Klingon Warrior
++    private static final String bolt = "Lightning Bolt";
++
++    @Test
++    public void testSacrificeNonKlingon() {
++        addCard(Zone.BATTLEFIELD, playerA, gowron);
++        addCard(Zone.BATTLEFIELD, playerA, bears);
++
++        activateAbility(1, PhaseStep.PRECOMBAT_MAIN, playerA, sacAbility);
++        setChoice(playerA, bears);
++        waitStackResolved(1, PhaseStep.PRECOMBAT_MAIN);
++        checkAbility("trample this turn", 1, PhaseStep.PRECOMBAT_MAIN, playerA, gowron, TrampleAbility.class, true);
++
++        setStrictChooseMode(true);
++        setStopAt(2, PhaseStep.UPKEEP);
++        execute();
++
++        assertGraveyardCount(playerA, bears, 1);
++        assertCounterCount(playerA, gowron, CounterType.P1P1, 1);
++        assertPowerToughness(playerA, gowron, 4, 4);
++        assertAbility(playerA, gowron, TrampleAbility.getInstance(), false);
++        assertHandCount(playerA, 0);
++        assertLife(playerA, 20);
++    }
++
++    @Test
++    public void testSacrificeKlingon() {
++        addCard(Zone.BATTLEFIELD, playerA, gowron);
++        addCard(Zone.BATTLEFIELD, playerA, aggressor);
++
++        activateAbility(1, PhaseStep.PRECOMBAT_MAIN, playerA, sacAbility);
++        setChoice(playerA, aggressor);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.END_TURN);
++        execute();
++
++        assertGraveyardCount(playerA, aggressor, 1);
++        assertCounterCount(playerA, gowron, CounterType.P1P1, 1);
++        assertAbility(playerA, gowron, TrampleAbility.getInstance(), true);
++        assertHandCount(playerA, 1);
++        assertLife(playerA, 19);
++    }
++
++    @Test
++    public void testOpponentCreatureDies() {
++        addCard(Zone.BATTLEFIELD, playerA, gowron);
++        addCard(Zone.BATTLEFIELD, playerA, "Mountain");
++        addCard(Zone.HAND, playerA, bolt);
++        addCard(Zone.BATTLEFIELD, playerB, bears);
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, bolt, bears);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.END_TURN);
++        execute();
++
++        assertGraveyardCount(playerB, bears, 1);
++        assertCounterCount(playerA, gowron, CounterType.P1P1, 1);
++        assertAbility(playerA, gowron, TrampleAbility.getInstance(), false);
++    }
++
++    @Test
++    public void testCantSacrificeItself() {
++        addCard(Zone.BATTLEFIELD, playerA, gowron);
++
++        checkPlayableAbility("no other creature", 1, PhaseStep.PRECOMBAT_MAIN, playerA, sacAbility, false);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.END_TURN);
++        execute();
++
++        assertPermanentCount(playerA, gowron, 1);
++    }
++}
+diff --git a/Mage.Tests/src/test/java/org/mage/test/cards/single/trk/TemporalConquerorTest.java b/Mage.Tests/src/test/java/org/mage/test/cards/single/trk/TemporalConquerorTest.java
+new file mode 100644
+index 0000000000..8f591c753b
+--- /dev/null
++++ b/Mage.Tests/src/test/java/org/mage/test/cards/single/trk/TemporalConquerorTest.java
+@@ -0,0 +1,177 @@
++package org.mage.test.cards.single.trk;
++
++import mage.constants.PhaseStep;
++import mage.constants.Zone;
++import org.junit.Test;
++import org.mage.test.serverside.base.CardTestPlayerBase;
++
++/**
++ * @author DejviFiala
++ */
++public class TemporalConquerorTest extends CardTestPlayerBase {
++
++    /*
++     * Temporal Conqueror {2}{G}
++     * Creature — Na'kuhl Warrior
++     * When this creature enters, mill three cards. Then return a land card from your graveyard to your hand.
++     * If you can't, create a Treasure token.
++     * 2/3
++     */
++    private static final String conqueror = "Temporal Conqueror";
++    private static final String treasure = "Treasure Token";
++    private static final String bears = "Grizzly Bears";
++    private static final String bolt = "Lightning Bolt";
++
++    private void setupLibrary(String... cards) {
++        removeAllCardsFromLibrary(playerA);
++        for (String card : cards) {
++            addCard(Zone.LIBRARY, playerA, card);
++        }
++    }
++
++    @Test
++    public void testReturnLandThatWasNotMilled() {
++        setupLibrary(bears, "Mountain", bears);
++        addCard(Zone.GRAVEYARD, playerA, "Island");
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 3);
++        addCard(Zone.HAND, playerA, conqueror);
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, conqueror);
++        // the returned land can be any land card in the graveyard, not only a milled one
++        setChoice(playerA, "Island");
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertPermanentCount(playerA, conqueror, 1);
++        assertLibraryCount(playerA, 0);
++        assertHandCount(playerA, 1);
++        assertHandCount(playerA, "Island", 1);
++        assertGraveyardCount(playerA, "Mountain", 1);
++        assertGraveyardCount(playerA, bears, 2);
++        assertPermanentCount(playerA, treasure, 0);
++    }
++
++    @Test
++    public void testReturnMilledLand() {
++        setupLibrary(bears, bears, "Mountain");
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 3);
++        addCard(Zone.HAND, playerA, conqueror);
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, conqueror);
++        setChoice(playerA, "Mountain");
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertHandCount(playerA, 1);
++        assertHandCount(playerA, "Mountain", 1);
++        assertGraveyardCount(playerA, bears, 2);
++        assertPermanentCount(playerA, treasure, 0);
++    }
++
++    @Test
++    public void testNoLandCreatesTreasure() {
++        setupLibrary(bears, bolt, bears);
++        addCard(Zone.GRAVEYARD, playerA, bolt);
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 3);
++        addCard(Zone.HAND, playerA, conqueror);
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, conqueror);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertHandCount(playerA, 0);
++        assertGraveyardCount(playerA, 4);
++        assertPermanentCount(playerA, treasure, 1);
++    }
++
++    @Test
++    public void testEmptyLibraryNoLandCreatesTreasure() {
++        removeAllCardsFromLibrary(playerA);
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 3);
++        addCard(Zone.HAND, playerA, conqueror);
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, conqueror);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertPermanentCount(playerA, conqueror, 1);
++        assertHandCount(playerA, 0);
++        assertPermanentCount(playerA, treasure, 1);
++    }
++
++    @Test
++    public void testLandInOpponentGraveyardNotReturned() {
++        setupLibrary(bears, bears, bears);
++        addCard(Zone.GRAVEYARD, playerB, "Island");
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 3);
++        addCard(Zone.HAND, playerA, conqueror);
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, conqueror);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertHandCount(playerA, 0);
++        assertGraveyardCount(playerB, "Island", 1);
++        assertPermanentCount(playerA, treasure, 1);
++    }
++
++    @Test
++    public void testSourceRemovedTriggerStillResolves() {
++        setupLibrary(bears, bears, bears);
++        addCard(Zone.GRAVEYARD, playerA, "Island");
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 3);
++        addCard(Zone.HAND, playerA, conqueror);
++        addCard(Zone.BATTLEFIELD, playerB, "Mountain");
++        addCard(Zone.HAND, playerB, bolt);
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, conqueror);
++        // resolve the creature spell only, the enters trigger stays on the stack
++        waitStackResolved(1, PhaseStep.PRECOMBAT_MAIN, true);
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerB, bolt, conqueror);
++        setChoice(playerA, "Island");
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertGraveyardCount(playerA, conqueror, 1);
++        assertGraveyardCount(playerA, bears, 3);
++        assertHandCount(playerA, 1);
++        assertHandCount(playerA, "Island", 1);
++        assertPermanentCount(playerA, treasure, 0);
++    }
++
++    @Test
++    public void testRestInPeaceLandAlreadyInGraveyard() {
++        // If a card or token would be put into a graveyard from anywhere, exile it instead.
++        addCard(Zone.BATTLEFIELD, playerB, "Rest in Peace");
++        setupLibrary(bears, "Mountain", bears);
++        addCard(Zone.GRAVEYARD, playerA, "Island");
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 3);
++        addCard(Zone.HAND, playerA, conqueror);
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, conqueror);
++        // the milled Mountain is exiled, so only the Island can be returned
++        setChoice(playerA, "Island");
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertExileCount(playerA, 3);
++        assertExileCount(playerA, "Mountain", 1);
++        assertHandCount(playerA, 1);
++        assertHandCount(playerA, "Island", 1);
++        assertPermanentCount(playerA, treasure, 0);
++    }
++}
+diff --git a/Mage.Tests/src/test/java/org/mage/test/cards/single/trk/USSVoyagerLoneWandererTest.java b/Mage.Tests/src/test/java/org/mage/test/cards/single/trk/USSVoyagerLoneWandererTest.java
+new file mode 100644
+index 0000000000..24f675e962
+--- /dev/null
++++ b/Mage.Tests/src/test/java/org/mage/test/cards/single/trk/USSVoyagerLoneWandererTest.java
+@@ -0,0 +1,183 @@
++package org.mage.test.cards.single.trk;
++
++import mage.abilities.keyword.FlyingAbility;
++import mage.abilities.keyword.VigilanceAbility;
++import mage.constants.CardType;
++import mage.constants.PhaseStep;
++import mage.constants.Zone;
++import mage.counters.CounterType;
++import org.junit.Test;
++import org.mage.test.serverside.base.CardTestPlayerBase;
++
++/**
++ * @author DejviFiala
++ */
++public class USSVoyagerLoneWandererTest extends CardTestPlayerBase {
++
++    /**
++     * {@link mage.cards.u.USSVoyagerLoneWanderer}
++     * <p>
++     * {3}{G} Legendary Artifact - Spacecraft<br>
++     * When U.S.S. Voyager enters, reveal cards from the top of your library until you reveal two land cards.
++     * Put those land cards onto the battlefield tapped and the rest on the bottom of your library in a random order.<br>
++     * Station<br>
++     * STATION 8+<br>
++     * Flying, vigilance<br>
++     * 3/3
++     */
++    private static final String VOYAGER = "U.S.S. Voyager, Lone Wanderer";
++
++    @Test
++    public void test_Enters_TwoLandsTappedRestOnBottom() {
++        addCard(Zone.HAND, playerA, VOYAGER);
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 4);
++        removeAllCardsFromLibrary(playerA);
++        skipInitShuffling();
++        // library from bottom to top (last added is on top)
++        addCard(Zone.LIBRARY, playerA, "Plains"); // not revealed, stays and becomes the top card
++        addCard(Zone.LIBRARY, playerA, "Island"); // second land, stop here
++        addCard(Zone.LIBRARY, playerA, "Grizzly Bears");
++        addCard(Zone.LIBRARY, playerA, "Swamp"); // first land
++        addCard(Zone.LIBRARY, playerA, "Memnite");
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, VOYAGER);
++
++        setStrictChooseMode(true);
++        setStopAt(3, PhaseStep.PRECOMBAT_MAIN);
++        execute();
++
++        assertPermanentCount(playerA, VOYAGER, 1);
++        assertType(VOYAGER, CardType.CREATURE, false);
++        assertPermanentCount(playerA, "Swamp", 1);
++        assertPermanentCount(playerA, "Island", 1);
++        // entered tapped, untapped on turn 3
++        assertTapped("Swamp", false);
++        assertTapped("Island", false);
++        // Plains was the top card after the trigger, the rest went to the bottom
++        assertHandCount(playerA, "Plains", 1);
++        assertHandCount(playerA, 1);
++        assertLibraryCount(playerA, "Memnite", 1);
++        assertLibraryCount(playerA, "Grizzly Bears", 1);
++        assertLibraryCount(playerA, 2);
++    }
++
++    @Test
++    public void test_Enters_LandsEnterTapped() {
++        addCard(Zone.HAND, playerA, VOYAGER);
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 4);
++        removeAllCardsFromLibrary(playerA);
++        skipInitShuffling();
++        addCard(Zone.LIBRARY, playerA, "Island");
++        addCard(Zone.LIBRARY, playerA, "Swamp");
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, VOYAGER);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertTapped("Swamp", true);
++        assertTapped("Island", true);
++        assertLibraryCount(playerA, 0);
++    }
++
++    @Test
++    public void test_Enters_OnlyOneLandInLibrary() {
++        addCard(Zone.HAND, playerA, VOYAGER);
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 4);
++        removeAllCardsFromLibrary(playerA);
++        skipInitShuffling();
++        addCard(Zone.LIBRARY, playerA, "Grizzly Bears");
++        addCard(Zone.LIBRARY, playerA, "Island");
++        addCard(Zone.LIBRARY, playerA, "Memnite");
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, VOYAGER);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertPermanentCount(playerA, "Island", 1);
++        assertTapped("Island", true);
++        assertLibraryCount(playerA, "Memnite", 1);
++        assertLibraryCount(playerA, "Grizzly Bears", 1);
++        assertLibraryCount(playerA, 2);
++    }
++
++    @Test
++    public void test_Enters_NoLandsInLibrary() {
++        addCard(Zone.HAND, playerA, VOYAGER);
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 4);
++        removeAllCardsFromLibrary(playerA);
++        skipInitShuffling();
++        addCard(Zone.LIBRARY, playerA, "Grizzly Bears");
++        addCard(Zone.LIBRARY, playerA, "Memnite");
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, VOYAGER);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertPermanentCount(playerA, VOYAGER, 1);
++        assertPermanentCount(playerA, 4 + 1);
++        assertLibraryCount(playerA, "Memnite", 1);
++        assertLibraryCount(playerA, "Grizzly Bears", 1);
++        assertLibraryCount(playerA, 2);
++    }
++
++    @Test
++    public void test_Enters_MdfcWithLandBackIsNotALand() {
++        addCard(Zone.HAND, playerA, VOYAGER);
++        addCard(Zone.BATTLEFIELD, playerA, "Forest", 4);
++        removeAllCardsFromLibrary(playerA);
++        skipInitShuffling();
++        addCard(Zone.LIBRARY, playerA, "Swamp");
++        addCard(Zone.LIBRARY, playerA, "Island");
++        // modal double-faced card: only its front face (sorcery) counts in the library
++        addCard(Zone.LIBRARY, playerA, "Turntimber Symbiosis");
++
++        castSpell(1, PhaseStep.PRECOMBAT_MAIN, playerA, VOYAGER);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.POSTCOMBAT_MAIN);
++        execute();
++
++        assertPermanentCount(playerA, "Island", 1);
++        assertPermanentCount(playerA, "Swamp", 1);
++        assertLibraryCount(playerA, "Turntimber Symbiosis", 1);
++        assertLibraryCount(playerA, 1);
++    }
++
++    @Test
++    public void test_Station8_FlyingVigilanceCreature() {
++        addCard(Zone.BATTLEFIELD, playerA, VOYAGER);
++        addCard(Zone.BATTLEFIELD, playerA, "Colossal Dreadmaw"); // 6/6
++        addCard(Zone.BATTLEFIELD, playerA, "Grizzly Bears"); // 2/2
++
++        activateAbility(1, PhaseStep.PRECOMBAT_MAIN, playerA, "Station");
++        setChoice(playerA, "Colossal Dreadmaw");
++        waitStackResolved(1, PhaseStep.PRECOMBAT_MAIN);
++        // 6 counters: not a creature yet
++        runCode("not a creature at 6", 1, PhaseStep.PRECOMBAT_MAIN, playerA, (info, player, game) -> {
++            assertType(VOYAGER, CardType.CREATURE, false);
++        });
++        activateAbility(1, PhaseStep.PRECOMBAT_MAIN, playerA, "Station");
++        setChoice(playerA, "Grizzly Bears");
++        waitStackResolved(1, PhaseStep.PRECOMBAT_MAIN);
++
++        attack(1, playerA, VOYAGER, playerB);
++
++        setStrictChooseMode(true);
++        setStopAt(1, PhaseStep.END_COMBAT);
++        execute();
++
++        assertCounterCount(playerA, VOYAGER, CounterType.CHARGE, 8);
++        assertType(VOYAGER, CardType.CREATURE, true);
++        assertPowerToughness(playerA, VOYAGER, 3, 3);
++        assertAbility(playerA, VOYAGER, FlyingAbility.getInstance(), true);
++        assertAbility(playerA, VOYAGER, VigilanceAbility.getInstance(), true);
++        assertTapped(VOYAGER, false);
++        assertLife(playerB, 20 - 3);
++    }
++}
+diff --git a/Mage/src/main/java/mage/constants/SubType.java b/Mage/src/main/java/mage/constants/SubType.java
+index 1077d37c3e..304ae511b9 100644
+--- a/Mage/src/main/java/mage/constants/SubType.java
++++ b/Mage/src/main/java/mage/constants/SubType.java
+@@ -337,6 +337,7 @@ public enum SubType {
+     MYR("Myr", SubTypeSet.CreatureType),
+     MYSTIC("Mystic", SubTypeSet.CreatureType),
+     // N
++    NAKUHL("Na'kuhl", SubTypeSet.CreatureType),
+     NAUTILUS("Nautilus", SubTypeSet.CreatureType),
+     NAUTOLAN("Nautolan", SubTypeSet.CreatureType, true), // Star Wars
+     NECRON("Necron", SubTypeSet.CreatureType),
+-- 
+2.55.0
+

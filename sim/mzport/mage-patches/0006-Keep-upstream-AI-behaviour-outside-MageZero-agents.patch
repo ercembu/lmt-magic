@@ -1,0 +1,528 @@
+From 4214ab99927b91a2d3f64c2b0ad73e5f04fcd960 Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 13:43:17 +0100
+Subject: [PATCH 06/17] Keep upstream AI behaviour outside MageZero agents
+
+The base AI is shared by every XMage AI and by the test player, so MageZero's
+reworked decisions now apply only when isMageZeroAgent(): choice fallbacks, X
+cap, cast-mode order, mode choice, target choice, tie-breaks. Its scoring change
+(mana value x100) and dropped harmful-aura rule are reverted to upstream's. The
+history hook uses hasEnded(), which has no side effects.
+
+All 105 test classes that failed on the port now pass.
+---
+ .../src/mage/player/ai/ComputerPlayer.java    | 236 +++++++++++++++++-
+ .../ai/score/ArtificialScoringSystem.java     |   4 +-
+ .../player/ai/score/GameStateEvaluator2.java  |  88 +++----
+ .../mage/player/ai/ComputerPlayerMCTS.java    |   5 +
+ .../src/mage/player/ai/MCTSPlayer.java        |   5 +
+ .../main/java/mage/players/PlayerImpl.java    |   4 +-
+ 6 files changed, 291 insertions(+), 51 deletions(-)
+
+diff --git a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/ComputerPlayer.java b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/ComputerPlayer.java
+index fa88fc2ef0..c3845e7e21 100644
+--- a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/ComputerPlayer.java
++++ b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/ComputerPlayer.java
+@@ -69,6 +69,15 @@ public class ComputerPlayer extends PlayerImpl {
+ 
+     private static final Logger logger = Logger.getLogger(ComputerPlayer.class);
+ 
++    /**
++     * lmt AI-only port: MageZero reworked several base decisions for its search (choice fallbacks, X caps,
++     * cast-mode order, attack/block). Those apply only to MageZero agents; every other AI, and the test
++     * player built on this class, keeps upstream's behaviour.
++     */
++    protected boolean isMageZeroAgent() {
++        return false;
++    }
++
+     protected static final int PASSIVITY_PENALTY = 5; // Penalty value for doing nothing if some actions are available
+ 
+     // debug only: set TRUE to debug simulation's code/games (on false sim thread will be stopped after few secs by timeout)
+@@ -208,6 +217,64 @@ public class ComputerPlayer extends PlayerImpl {
+      * Default choice logic for any choose dialogs due effect's outcome and possible target priority
+      */
+     protected boolean makeChoice(Outcome outcome, Target target, Ability source, Game game, Cards fromCards) {
++        if (isMageZeroAgent()) {
++            return makeChoiceMageZero(outcome, target, source, game, fromCards);
++        }
++        // choose itself for starting player all the time
++        if (target.getMessage(game).equals("Select a starting player")) {
++            target.add(this.getId(), game);
++            return true;
++        }
++
++        // nothing to choose
++        if (fromCards != null && fromCards.isEmpty()) {
++            return false;
++        }
++
++        UUID abilityControllerId = target.getAffectedAbilityControllerId(getId());
++
++        // nothing to choose, e.g. X=0
++        if (target.isChoiceCompleted(abilityControllerId, source, game, fromCards)) {
++            return false;
++        }
++
++        PossibleTargetsSelector possibleTargetsSelector = new PossibleTargetsSelector(outcome, target, abilityControllerId, source, game);
++        possibleTargetsSelector.findNewTargets(fromCards);
++
++        // nothing to choose, e.g. no valid targets
++        if (!possibleTargetsSelector.hasAnyTargets()) {
++            return false;
++        }
++
++        // can't choose
++        if (!possibleTargetsSelector.hasMinNumberOfTargets()) {
++            return false;
++        }
++
++        final Consumer<MageItem> targetAdder = target.isNotTarget() ?
++            (MageItem item) -> { target.add(item.getId(), game); } :
++            (MageItem item) -> { target.addTarget(item.getId(), source, game); };
++
++        // good targets -- choose as much as possible
++        for (MageItem item : possibleTargetsSelector.getGoodTargets()) {
++            targetAdder.accept(item);
++            if (target.isChoiceCompleted(abilityControllerId, source, game, fromCards)) {
++                return true;
++            }
++        }
++        // bad targets -- choose as low as possible
++        for (MageItem item : possibleTargetsSelector.getBadTargets()) {
++            if (target.isChosen(game)) {
++                break;
++            }
++            targetAdder.accept(item);
++        }
++
++        return target.isChosen(game) && !target.getTargets().isEmpty();
++    }
++
++    // MageZero's version, used only by MageZero agents (lmt AI-only port)
++    protected boolean makeChoiceMageZero(Outcome outcome, Target target, Ability source, Game game, Cards fromCards) {
+         UUID abilityControllerId = target.getAffectedAbilityControllerId(getId());
+         // nothing to choose, e.g. X=0
+         if (target.isChoiceCompleted(abilityControllerId, source, game, fromCards)) {
+@@ -241,6 +308,46 @@ public class ComputerPlayer extends PlayerImpl {
+      * Default choice logic for X or amount values
+      */
+     protected int makeChoiceAmount(int min, int max, Game game, Ability source, boolean isManaPay) {
++        if (isMageZeroAgent()) {
++            return makeChoiceAmountMageZero(min, max, game, source, isManaPay);
++        }
++        // fast calc on nothing to choose
++        if (min >= max) {
++            return min;
++        }
++
++        // TODO: add good/bad effects support
++        // TODO: add simple game simulations like declare blocker (need to find only workable payment)?
++        // TODO: remove random logic or make it more stable (e.g. use same value in same game cycle)
++
++        // protection from too big values
++        int realMin = min;
++        int realMax = max;
++        if (max == Integer.MAX_VALUE) {
++            realMax = Math.max(realMin, 10); // AI don't need huge values for X, cause can't use infinite combos
++        }
++
++        int xValue;
++        if (isManaPay) {
++            // as X mana payment - due available mana
++            xValue = Math.max(0, getAvailableManaProducers(game).size() - source.getManaCostsToPay().getUnpaid().manaValue());
++        } else {
++            // as X actions
++            xValue = RandomUtil.nextInt(realMax + 1);
++        }
++
++        if (xValue > realMax) {
++            xValue = realMax;
++        }
++        if (xValue < realMin) {
++            xValue = realMin;
++        }
++
++        return xValue;
++    }
++
++    // MageZero's version, used only by MageZero agents (lmt AI-only port)
++    protected int makeChoiceAmountMageZero(int min, int max, Game game, Ability source, boolean isManaPay) {
+         if(min >= max) {
+             return min;
+         }
+@@ -675,7 +782,7 @@ public class ComputerPlayer extends PlayerImpl {
+         // GUI: user see "special" button while pay spell's cost
+         // TODO: AI can't prioritize special mana types to pay, e.g. it will use first available
+         SpecialAction specialAction = game.getState().getSpecialActions().getControlledBy(this.getId(), true).values()
+-                .stream().min(Comparator.comparing(SpecialAction::toString))
++                .stream().min(isMageZeroAgent() ? Comparator.comparing(SpecialAction::toString) : (a, b) -> 0) // upstream: first
+                 .orElse(null);
+         ManaOptions specialMana = specialAction == null ? null : specialAction.getManaOptions(ability, game, unpaid);
+         if (specialMana != null) {
+@@ -763,8 +870,8 @@ public class ComputerPlayer extends PlayerImpl {
+                         a2Max = netMana.count();
+                     }
+                 }
+-                if(a1Max == a2Max){
+-                    return a1.getId().compareTo(a2.getId());
++                if (a1Max == a2Max && isMageZeroAgent()) {
++                    return a1.getId().compareTo(a2.getId()); // MageZero: deterministic tie-break
+                 }
+                 return CardUtil.overflowDec(a2Max, a1Max);
+             });
+@@ -816,6 +923,20 @@ public class ComputerPlayer extends PlayerImpl {
+     }
+ 
+     private List<MageObject> sortByValue(Map<MageObject, Integer> map) {
++        if (isMageZeroAgent()) {
++            return sortByValueMageZero(map);
++        }
++        List<Entry<MageObject, Integer>> list = new LinkedList<>(map.entrySet());
++        Collections.sort(list, Comparator.comparing(Entry::getValue));
++        List<MageObject> result = new ArrayList<>();
++        for (Entry<MageObject, Integer> entry : list) {
++            result.add(entry.getKey());
++        }
++        return result;
++    }
++
++    // MageZero's version, used only by MageZero agents (lmt AI-only port)
++    private List<MageObject> sortByValueMageZero(Map<MageObject, Integer> map) {
+         Comparator<MageObject> keyCompare = Comparator.comparing(MageItem::getId);
+         return map.entrySet().stream()
+                 .sorted(Comparator
+@@ -828,6 +949,14 @@ public class ComputerPlayer extends PlayerImpl {
+ 
+     @Override
+     public int announceX(int min, int max, String message, Game game, Ability source, boolean isManaPay) {
++        if (isMageZeroAgent()) {
++            return announceXMageZero(min, max, message, game, source, isManaPay);
++        }
++        return makeChoiceAmount(min, max, game, source, isManaPay);
++    }
++
++    // MageZero's version, used only by MageZero agents (lmt AI-only port)
++    protected int announceXMageZero(int min, int max, String message, Game game, Ability source, boolean isManaPay) {
+         if(isManaPay) {
+             MageObject obj = source.getSourceObject(game);
+             boolean hasCostAdjuster = source.getCostAdjuster() != null; // card may have set  bounds or value already
+@@ -938,6 +1067,61 @@ public class ComputerPlayer extends PlayerImpl {
+ 
+     @Override
+     public boolean choose(Outcome outcome, Choice choice, Game game) {
++        if (isMageZeroAgent()) {
++            return chooseMageZero(outcome, choice, game);
++        }
++        //TODO: improve this
++
++        // choose creature type
++        // TODO: WTF?! Creature types dialog text can changes, need to replace that code
++        if (choice.getMessage() != null && (choice.getMessage().equals("Choose creature type") || choice.getMessage().equals("Choose a creature type"))) {
++            if (chooseCreatureType(outcome, choice, game)) {
++                return true;
++            }
++        }
++
++        // choose the correct color to pay a spell (use last unpaid ability for color hint)
++        ManaCost unpaid = null;
++        if (!lastUnpaidMana.isEmpty()) {
++            unpaid = new ArrayList<>(lastUnpaidMana.values()).get(lastUnpaidMana.size() - 1);
++        }
++        if (outcome == Outcome.PutManaInPool && unpaid != null && choice.isManaColorChoice()) {
++            if (unpaid.containsColor(ColoredManaSymbol.W) && choice.getChoices().contains("White")) {
++                choice.setChoice("White");
++                return true;
++            }
++            if (unpaid.containsColor(ColoredManaSymbol.R) && choice.getChoices().contains("Red")) {
++                choice.setChoice("Red");
++                return true;
++            }
++            if (unpaid.containsColor(ColoredManaSymbol.G) && choice.getChoices().contains("Green")) {
++                choice.setChoice("Green");
++                return true;
++            }
++            if (unpaid.containsColor(ColoredManaSymbol.U) && choice.getChoices().contains("Blue")) {
++                choice.setChoice("Blue");
++                return true;
++            }
++            if (unpaid.containsColor(ColoredManaSymbol.B) && choice.getChoices().contains("Black")) {
++                choice.setChoice("Black");
++                return true;
++            }
++            if (unpaid.getMana().getColorless() > 0 && choice.getChoices().contains("Colorless")) {
++                choice.setChoice("Colorless");
++                return true;
++            }
++        }
++
++        // choose by random
++        if (!choice.isChosen()) {
++            choice.setRandomChoice();
++        }
++
++        return true;
++    }
++
++    // MageZero's version, used only by MageZero agents (lmt AI-only port)
++    protected boolean chooseMageZero(Outcome outcome, Choice choice, Game game) {
+ 
+         if (choice.getMessage() != null && (choice.getMessage().equalsIgnoreCase("Choose creature type") || choice.getMessage().equalsIgnoreCase("Choose a creature type"))) {
+             return  chooseCreatureType(outcome, choice, game);
+@@ -1098,6 +1282,38 @@ public class ComputerPlayer extends PlayerImpl {
+ 
+     @Override
+     public Mode chooseMode(Modes modes, Ability source, Game game) {
++        if (isMageZeroAgent()) {
++            return chooseModeMageZero(modes, source, game);
++        }
++        if (modes.getMode() != null && modes.getMaxModes(game, source) == modes.getSelectedModes().size()) {
++            // normal use case with cast/activate on priority like simulated games
++            logger.debug("AI, found already selected modes on " + game);
++            return modes.getMode();
++        }
++
++        // normal use cases for forced selection (e.g. cast by effect instead priority)
++        // bad use cases for cast/activate on priority
++        logger.debug("AI, fallback to modes selection on " + game);
++        logger.debug("  - available modes order: " + modes.getAvailableModes(source, game).stream()
++                .map(m -> m.getId() + " [" + m.getEffects().getText(m) + "]")
++                .collect(Collectors.joining(" | ")));
++
++        Mode result = modes.getAvailableModes(source, game).stream()
++                .filter(mode -> modes.isMayChooseSameModeMoreThanOnce() || !modes.getSelectedModes().contains(mode.getId()))
++                .filter(mode -> mode.getTargets().canChoose(source.getControllerId(), source, game))
++                .findFirst()
++                .orElse(null);
++
++        logger.debug("  - fallback picked: " + (result == null ? "null" : result.getId() + " [" + result.getEffects().getText(result) + "]"));
++        logger.debug("  - canChoose per mode: " + modes.getAvailableModes(source, game).stream()
++            .map(m -> m.getId() + "=" + m.getTargets().canChoose(source.getControllerId(), source, game))
++            .collect(Collectors.joining(" | ")));
++
++        return result;
++    }
++
++    // MageZero's version, used only by MageZero agents (lmt AI-only port)
++    protected Mode chooseModeMageZero(Modes modes, Ability source, Game game) {
+         logger.warn("chooseMode");
+         List<Mode> options = modes.getAvailableModes(source, game).stream()
+                 .filter(mode -> !modes.getSelectedModes().contains(mode.getId()))
+@@ -1320,6 +1536,18 @@ public class ComputerPlayer extends PlayerImpl {
+ 
+     @Override
+     public SpellAbility chooseAbilityForCast(Card card, Game game, boolean noMana) {
++        if (isMageZeroAgent()) {
++            return chooseAbilityForCastMageZero(card, game, noMana);
++        }
++        Map<UUID, SpellAbility> usable = PlayerImpl.getCastableSpellAbilities(game, this.getId(), card, game.getState().getZone(card.getId()), noMana);
++        return usable.values().stream()
++                .filter(a -> a.getTargets().canChoose(getId(), a, game))
++                .findFirst()
++                .orElse(null);
++    }
++
++    // MageZero's version, used only by MageZero agents (lmt AI-only port)
++    protected SpellAbility chooseAbilityForCastMageZero(Card card, Game game, boolean noMana) {
+         logger.warn("chooseAbilityForCast");
+ 
+         Map<UUID, SpellAbility> usable = PlayerImpl.getCastableSpellAbilities(
+@@ -1667,7 +1895,7 @@ public class ComputerPlayer extends PlayerImpl {
+         }
+         // pay special mana like convoke cost (tap for pay) TODO: support handling multiple special actions (ie Hogaak)
+         SpecialAction specialAction = game.getState().getSpecialActions().getControlledBy(this.getId(), true).values()
+-                .stream().min(Comparator.comparing(SpecialAction::toString))
++                .stream().min(isMageZeroAgent() ? Comparator.comparing(SpecialAction::toString) : (a, b) -> 0) // upstream: first
+                 .orElse(null);
+         ManaOptions specialMana = specialAction == null ? null : specialAction.getManaOptions(ability, game, unpaid);
+         if (specialMana != null) {
+diff --git a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/score/ArtificialScoringSystem.java b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/score/ArtificialScoringSystem.java
+index fae6866713..4cef32c7ec 100644
+--- a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/score/ArtificialScoringSystem.java
++++ b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/score/ArtificialScoringSystem.java
+@@ -49,7 +49,7 @@ public final class ArtificialScoringSystem {
+ 
+     public static int getFixedPermanentScore(final Game game, final Permanent permanent) {
+         //TODO: cache it inside Card
+-        int score = permanent.getManaCost().manaValue()*100;//getCardDefinitionScore(game, permanent);
++        int score = getCardDefinitionScore(game, permanent);
+         score += PERMANENT_SCORE;
+         if (permanent.getCardType(game).contains(CardType.CREATURE)) {
+             // TODO: implement in the mage core
+@@ -127,7 +127,7 @@ public final class ArtificialScoringSystem {
+         if (permanent.isCreature(game)) {
+             return -100;
+         } else if (permanent.isLand(game)) {
+-            return -20; // means probably no mana available  (should be greater than passivity penalty(was 20)
++            return -20; // means probably no mana available  (should be greater than passivity penalty
+         } else {
+             return -2;
+         }
+diff --git a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/score/GameStateEvaluator2.java b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/score/GameStateEvaluator2.java
+index 5c3f74fb64..1153b707a1 100644
+--- a/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/score/GameStateEvaluator2.java
++++ b/Mage.Server.Plugins/Mage.Player.AI/src/mage/player/ai/score/GameStateEvaluator2.java
+@@ -7,7 +7,6 @@ import org.apache.log4j.Logger;
+ 
+ import java.util.UUID;
+ import java.util.stream.Collectors;
+-
+ import mage.abilities.Ability;
+ import mage.abilities.effects.Effect;
+ import mage.constants.Outcome;
+@@ -126,56 +125,18 @@ public final class GameStateEvaluator2 {
+                 playerLifeScore, playerHandScore, playerPermanentsScore,
+                 opponentLifeScore, opponentHandScore, opponentPermanentsScore);
+     }
+-    public static void printBattlefield(Game game, UUID playerId) {
+-        // hand
+-        Player player = game.getPlayer(playerId);
+-        GameStateEvaluator2.PlayerEvaluateScore score = GameStateEvaluator2.evaluate(playerId, game);
+-        logger.info(new StringBuilder("[").append(game.getPlayer(playerId).getName()).append("]")
+-                .append(", life = ").append(player.getLife())
+-                .append(", score = ").append(score.getTotalScore())
+-                .append(" (").append(score.getPlayerInfoFull()).append(")")
+-                .toString());
+-        String cardsInfo = player.getHand().getCards(game).stream()
+-                .map(card -> card.getName() + ":" + GameStateEvaluator2.HAND_CARD_SCORE) // TODO: add card score here after implement
+-                .collect(Collectors.joining("; "));
+-        StringBuilder sb = new StringBuilder("-> Hand: [")
+-                .append(cardsInfo)
+-                .append("]");
+-        logger.info(sb.toString());
+ 
+-        // battlefield
+-        sb.setLength(0);
+-        String ownPermanentsInfo = game.getBattlefield().getAllPermanents().stream()
+-                .filter(p -> p.isOwnedBy(player.getId()))
+-                .map(p -> p.getName()
+-                        + (p.isTapped() ? ",tapped" : "")
+-                        + (p.isAttacking() ? ",attacking" : "")
+-                        + (p.getBlocking() > 0 ? ",blocking" : "")
+-                        + ":" + GameStateEvaluator2.evaluatePermanent(p, game, true))
+-                .collect(Collectors.joining("; "));
+-        sb.append("-> Permanents: [").append(ownPermanentsInfo).append("]");
+-        logger.info(sb.toString());
+-        // graveyard
+-        sb.setLength(0);
+-        String ownGraveInfo = player.getGraveyard().stream()
+-                .map(id -> game.getObject(id).getName())
+-                .collect(Collectors.joining("; "));
+-        sb.append("-> Graveyard: [").append(ownGraveInfo).append("]");
+-        logger.info(sb.toString());
+-    }
+     public static int evaluatePermanent(Permanent permanent, Game game, boolean useCombatPermanentScore) {
+         // prevent AI from attaching bad auras to its own permanents ex: Brainwash and Demonic Torment (no immediate penalty on the battlefield)
+         int value = 0;
+         if (!permanent.getAttachments().isEmpty()) {
+             for (UUID attachmentId : permanent.getAttachments()) {
+                 Permanent attachment = game.getPermanent(attachmentId);
+-                if(attachment != null) {
+-                    for (Ability a : attachment.getAbilities(game)) {
+-                        for (Effect e : a.getEffects()) {
+-                            if (e.getOutcome().equals(Outcome.Detriment)
+-                                    && attachment.getControllerId().equals(permanent.getControllerId())) {
+-                                value -= 1000;  // seems to work well ; -300 is not effective enough
+-                            }
++                for (Ability a : attachment.getAbilities(game)) {
++                    for (Effect e : a.getEffects()) {
++                        if (e.getOutcome().equals(Outcome.Detriment)
++                                && attachment.getControllerId().equals(permanent.getControllerId())) {
++                            value -= 1000;  // seems to work well ; -300 is not effective enough
+                         }
+                     }
+                 }
+@@ -275,4 +236,43 @@ public final class GameStateEvaluator2 {
+                     + ",P:" + opponentPermanentsScore;
+         }
+     }
++
++    // MageZero debug helper (used by ComputerPlayerMCTS2); scoring above is upstream's
++    public static void printBattlefield(Game game, UUID playerId) {
++        // hand
++        Player player = game.getPlayer(playerId);
++        GameStateEvaluator2.PlayerEvaluateScore score = GameStateEvaluator2.evaluate(playerId, game);
++        logger.info(new StringBuilder("[").append(game.getPlayer(playerId).getName()).append("]")
++                .append(", life = ").append(player.getLife())
++                .append(", score = ").append(score.getTotalScore())
++                .append(" (").append(score.getPlayerInfoFull()).append(")")
++                .toString());
++        String cardsInfo = player.getHand().getCards(game).stream()
++                .map(card -> card.getName() + ":" + GameStateEvaluator2.HAND_CARD_SCORE) // TODO: add card score here after implement
++                .collect(Collectors.joining("; "));
++        StringBuilder sb = new StringBuilder("-> Hand: [")
++                .append(cardsInfo)
++                .append("]");
++        logger.info(sb.toString());
++
++        // battlefield
++        sb.setLength(0);
++        String ownPermanentsInfo = game.getBattlefield().getAllPermanents().stream()
++                .filter(p -> p.isOwnedBy(player.getId()))
++                .map(p -> p.getName()
++                        + (p.isTapped() ? ",tapped" : "")
++                        + (p.isAttacking() ? ",attacking" : "")
++                        + (p.getBlocking() > 0 ? ",blocking" : "")
++                        + ":" + GameStateEvaluator2.evaluatePermanent(p, game, true))
++                .collect(Collectors.joining("; "));
++        sb.append("-> Permanents: [").append(ownPermanentsInfo).append("]");
++        logger.info(sb.toString());
++        // graveyard
++        sb.setLength(0);
++        String ownGraveInfo = player.getGraveyard().stream()
++                .map(id -> game.getObject(id).getName())
++                .collect(Collectors.joining("; "));
++        sb.append("-> Graveyard: [").append(ownGraveInfo).append("]");
++        logger.info(sb.toString());
++    }
+ }
+diff --git a/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/ComputerPlayerMCTS.java b/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/ComputerPlayerMCTS.java
+index 07414e4cf2..70e2853990 100644
+--- a/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/ComputerPlayerMCTS.java
++++ b/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/ComputerPlayerMCTS.java
+@@ -29,6 +29,11 @@ import static mage.target.TargetImpl.STOP_CHOOSING;
+  */
+ public class ComputerPlayerMCTS extends ComputerPlayer {
+ 
++    @Override
++    protected boolean isMageZeroAgent() {
++        return true; // lmt AI-only port: MageZero's own decision variants
++    }
++
+     public double searchTimeout = MCTSDefaults.CURRENT.searchTimeout;//seconds
+     public int searchBudget = MCTSDefaults.CURRENT.searchBudget;//per thread
+ 
+diff --git a/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSPlayer.java b/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSPlayer.java
+index 3816c1e51d..b76c358741 100644
+--- a/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSPlayer.java
++++ b/Mage.Server.Plugins/Mage.Player.AIMCTS/src/mage/player/ai/MCTSPlayer.java
+@@ -31,6 +31,11 @@ import static mage.target.TargetImpl.STOP_CHOOSING;
+  */
+ public class MCTSPlayer extends ComputerPlayer {
+ 
++    @Override
++    protected boolean isMageZeroAgent() {
++        return true; // lmt AI-only port: MageZero's own decision variants
++    }
++
+     //the script of actions this dummy player is supposed to follow to catch up to the latest decision
+     public PlayerScript actionScript = new PlayerScript();
+     public boolean scriptFailed = false;
+diff --git a/Mage/src/main/java/mage/players/PlayerImpl.java b/Mage/src/main/java/mage/players/PlayerImpl.java
+index dec9727006..8ec2dc8fd4 100644
+--- a/Mage/src/main/java/mage/players/PlayerImpl.java
++++ b/Mage/src/main/java/mage/players/PlayerImpl.java
+@@ -1701,7 +1701,9 @@ public abstract class PlayerImpl implements Player, Serializable {
+         // MageZero: record the decision for MCTS replay. Mana abilities only count for an AI that taps
+         // manually; recorded before the pass check because pass() records itself.
+         boolean isNonMCTSManaAbility = !isManualTappingAI() && ability instanceof ManaAbility;
+-        if (!isPayingMana && !game.isPaused() && !game.checkIfGameIsOver() && !isNonMCTSManaAbility
++        // hasEnded, not checkIfGameIsOver: that one can end the game as a side effect, which changed AI
++        // combat simulations (BlockSimulationAITest)
++        if (!isPayingMana && !game.isPaused() && !game.hasEnded() && !isNonMCTSManaAbility
+                 && !(ability instanceof PassAbility)) {
+             playerHistory.prioritySequence.add(ability.copy());
+         }
+-- 
+2.55.0
+

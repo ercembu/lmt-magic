@@ -1,0 +1,215 @@
+From 9f4003b30e8aaac3598121c212983833e2e91bdd Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 13:54:43 +0100
+Subject: [PATCH 09/17] Deterministic ids for tokens, activated/triggered
+ abilities and random modes (MageZero)
+
+A game copy now continues the same id stream as the real game, so an action
+the MCTS search picks in a copy names the same objects in the real game (a
+Jace token's loyalty ability failed to activate without this). Ids are labels
+only; library shuffles keep upstream's randomness so the search can't see the
+deck order.
+---
+ Mage/src/main/java/mage/abilities/Modes.java  |  2 +-
+ Mage/src/main/java/mage/game/GameImpl.java    | 13 ++--
+ Mage/src/main/java/mage/game/GameState.java   |  6 ++
+ .../mage/game/permanent/PermanentToken.java   |  4 ++
+ .../main/java/mage/players/PlayerImpl.java    |  2 +-
+ .../main/java/mage/util/CopyableRandom.java   | 64 +++++++++++++++++++
+ 6 files changed, 81 insertions(+), 10 deletions(-)
+ create mode 100644 Mage/src/main/java/mage/util/CopyableRandom.java
+
+diff --git a/Mage/src/main/java/mage/abilities/Modes.java b/Mage/src/main/java/mage/abilities/Modes.java
+index 9db7c89c62..88e8a32de1 100644
+--- a/Mage/src/main/java/mage/abilities/Modes.java
++++ b/Mage/src/main/java/mage/abilities/Modes.java
+@@ -399,7 +399,7 @@ public class Modes extends LinkedHashMap<UUID, Mode> implements Copyable<Modes>
+             // choose random
+             if (this.isRandom) {
+                 // TODO: research rules of Cult of Skaro after WHO release (is it random from all modes or from available/valid)
+-                this.addSelectedMode(availableModes.get(RandomUtil.nextInt(availableModes.size())).getId());
++                this.addSelectedMode(availableModes.get(game.getLocalRandom().nextInt(availableModes.size())).getId()); // MageZero: reproducible across game copies
+                 return isSelectedValid(source, game);
+             }
+ 
+diff --git a/Mage/src/main/java/mage/game/GameImpl.java b/Mage/src/main/java/mage/game/GameImpl.java
+index cf75b8506c..c84eca75e3 100644
+--- a/Mage/src/main/java/mage/game/GameImpl.java
++++ b/Mage/src/main/java/mage/game/GameImpl.java
+@@ -111,7 +111,6 @@ public abstract class GameImpl implements Game {
+     protected boolean mctsSimulation = false; // for MCTS simulations
+     private Game lastPriority = this; // the game at the last MCTS anchor; + players' histories = this game
+     private UUID lastPriorityPlayerId;
+-    private transient Random localRandom = new Random();
+     protected boolean aiGame = false; // for inner simulations (ai game, debug only)
+     protected boolean checkPlayableState = false; // for inner playable calculations (game without user dialogs)
+ 
+@@ -203,7 +202,6 @@ public abstract class GameImpl implements Game {
+         this.simulation = game.simulation;
+         this.mctsSimulation = game.mctsSimulation;
+         this.lastPriorityPlayerId = game.lastPriorityPlayerId;
+-        this.localRandom = new Random(game.getLocalRandom().nextLong());
+         this.checkPlayableState = game.checkPlayableState;
+ 
+         this.id = game.id;
+@@ -333,15 +331,14 @@ public abstract class GameImpl implements Game {
+ 
+     @Override
+     public Random getLocalRandom() {
+-        if (localRandom == null) {
+-            localRandom = new Random();
+-        }
+-        return localRandom;
++        return state.gameLocalRandom;
+     }
+ 
+     @Override
+     public void setLocalRandom(Random random) {
+-        this.localRandom = random;
++        if (random instanceof mage.util.CopyableRandom) {
++            state.gameLocalRandom = (mage.util.CopyableRandom) random;
++        }
+     }
+ 
+     @Override
+@@ -2447,7 +2444,7 @@ public abstract class GameImpl implements Game {
+             }
+         } else {
+             TriggeredAbility newAbility = ability.copy();
+-            newAbility.newId();
++            newAbility.setId(new UUID(getLocalRandom().nextLong(), getLocalRandom().nextLong())); // MageZero: deterministic id
+             newAbility.initSourceObjectZoneChangeCounter(this, false);
+             if (!(newAbility instanceof DelayedTriggeredAbility)) {
+                 newAbility.setSourcePermanentTransformCount(this);
+diff --git a/Mage/src/main/java/mage/game/GameState.java b/Mage/src/main/java/mage/game/GameState.java
+index ad9807174c..3dc1652970 100644
+--- a/Mage/src/main/java/mage/game/GameState.java
++++ b/Mage/src/main/java/mage/game/GameState.java
+@@ -118,6 +118,10 @@ public class GameState implements Serializable, Copyable<GameState> {
+ 
+     private int applyEffectsCounter; // Upcounting number of each applyEffects execution
+     public int priorityCounter = 0; // MageZero AI hook: priority windows so far
++    // MageZero AI hook: id source for tokens and abilities, copied with the state so that a game copy
++    // (an MCTS simulation) gives an object the same id the real game will. Ids are labels only: no rule
++    // reads them. Library shuffles deliberately do NOT use this (that would reveal the deck order).
++    public mage.util.CopyableRandom gameLocalRandom = new mage.util.CopyableRandom();
+ 
+     public GameState() {
+         players = new Players();
+@@ -187,6 +191,7 @@ public class GameState implements Serializable, Copyable<GameState> {
+         this.permanentOrderNumber = state.permanentOrderNumber;
+         this.applyEffectsCounter = state.applyEffectsCounter;
+         this.priorityCounter = state.priorityCounter;
++        this.gameLocalRandom = state.gameLocalRandom.copy();
+         state.usePowerInsteadOfToughnessForDamageLethalityFilters.forEach((uuid, filter)
+                 -> this.usePowerInsteadOfToughnessForDamageLethalityFilters.put(uuid, filter.copy()));
+         this.commandersToStay.addAll(state.commandersToStay);
+@@ -289,6 +294,7 @@ public class GameState implements Serializable, Copyable<GameState> {
+         this.permanentOrderNumber = state.permanentOrderNumber;
+         this.applyEffectsCounter = state.applyEffectsCounter;
+         this.priorityCounter = state.priorityCounter;
++        this.gameLocalRandom = state.gameLocalRandom.copy();
+         state.usePowerInsteadOfToughnessForDamageLethalityFilters.forEach((uuid, filter)
+                 -> this.usePowerInsteadOfToughnessForDamageLethalityFilters.put(uuid, filter.copy()));
+         this.commandersToStay = state.commandersToStay;
+diff --git a/Mage/src/main/java/mage/game/permanent/PermanentToken.java b/Mage/src/main/java/mage/game/permanent/PermanentToken.java
+index d773dade86..959073b087 100644
+--- a/Mage/src/main/java/mage/game/permanent/PermanentToken.java
++++ b/Mage/src/main/java/mage/game/permanent/PermanentToken.java
+@@ -27,6 +27,10 @@ public class PermanentToken extends PermanentImpl {
+ 
+     public PermanentToken(Token token, UUID controllerId, Game game) {
+         super(controllerId, controllerId, token.getName()); // random id
++        // MageZero: id from the game's copyable stream, so a token made in an MCTS simulation has the same
++        // id as the one the real game makes
++        java.util.Random rand = game.getLocalRandom();
++        this.objectId = new UUID(rand.nextLong(), rand.nextLong());
+         this.token = token.copy();
+         this.token.getAbilities().newOriginalId(); // neccessary if token has ability like DevourAbility()
+         this.token.getAbilities().setSourceId(objectId);
+diff --git a/Mage/src/main/java/mage/players/PlayerImpl.java b/Mage/src/main/java/mage/players/PlayerImpl.java
+index 8ec2dc8fd4..cae73ceccf 100644
+--- a/Mage/src/main/java/mage/players/PlayerImpl.java
++++ b/Mage/src/main/java/mage/players/PlayerImpl.java
+@@ -1606,7 +1606,7 @@ public abstract class PlayerImpl implements Player, Serializable {
+         if (ability.isUsesStack()) {
+             // put to stack
+             setStoredBookmark(bookmark); // move global bookmark to current state (if you activated mana before then you can't rollback it)
+-            ability.newId();
++            ability.setId(new UUID(game.getLocalRandom().nextLong(), game.getLocalRandom().nextLong())); // MageZero: deterministic id
+             ability.setControllerId(playerId);
+             game.getStack().push(game, new StackAbility(ability, playerId));
+             if (ability.activate(game, false)) {
+diff --git a/Mage/src/main/java/mage/util/CopyableRandom.java b/Mage/src/main/java/mage/util/CopyableRandom.java
+new file mode 100644
+index 0000000000..74f1be3d8c
+--- /dev/null
++++ b/Mage/src/main/java/mage/util/CopyableRandom.java
+@@ -0,0 +1,64 @@
++package mage.util;
++
++import java.util.Random;
++
++/**
++ * java.util.Random with the same sequence (same LCG and gaussian cache), whose state can be copied directly.
++ * Random keeps its state private, so copying a plain Random needs a serialization round trip (see RandomUtil.deepCopy).
++ */
++public class CopyableRandom extends Random {
++
++    private static final long MULTIPLIER = 0x5DEECE66DL;
++    private static final long ADDEND = 0xBL;
++    private static final long MASK = (1L << 48) - 1;
++
++    // no initializers: Random's constructor sets them through setSeed before this class's initializers would run
++    private long seed;
++    private double nextNextGaussian;
++    private boolean haveNextNextGaussian;
++
++    public CopyableRandom() {
++        super();
++    }
++
++    private CopyableRandom(final CopyableRandom random) {
++        super(0);
++        this.seed = random.seed;
++        this.nextNextGaussian = random.nextNextGaussian;
++        this.haveNextNextGaussian = random.haveNextNextGaussian;
++    }
++
++    public CopyableRandom copy() {
++        return new CopyableRandom(this);
++    }
++
++    @Override
++    public void setSeed(long seed) {
++        this.seed = (seed ^ MULTIPLIER) & MASK;
++        this.haveNextNextGaussian = false;
++    }
++
++    @Override
++    protected int next(int bits) {
++        seed = (seed * MULTIPLIER + ADDEND) & MASK;
++        return (int) (seed >>> (48 - bits));
++    }
++
++    @Override
++    public double nextGaussian() {
++        if (haveNextNextGaussian) {
++            haveNextNextGaussian = false;
++            return nextNextGaussian;
++        }
++        double v1, v2, s;
++        do {
++            v1 = 2 * nextDouble() - 1;
++            v2 = 2 * nextDouble() - 1;
++            s = v1 * v1 + v2 * v2;
++        } while (s >= 1 || s == 0);
++        double multiplier = StrictMath.sqrt(-2 * StrictMath.log(s) / s);
++        nextNextGaussian = v2 * multiplier;
++        haveNextNextGaussian = true;
++        return v1 * multiplier;
++    }
++}
+-- 
+2.55.0
+

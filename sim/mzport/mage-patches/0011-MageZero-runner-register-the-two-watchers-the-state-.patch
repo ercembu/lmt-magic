@@ -1,0 +1,28 @@
+From 0a8e0117e0596489a49a8dfe416d19aa66be2bfe Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 13:59:05 +0100
+Subject: [PATCH 11/17] MageZero runner: register the two watchers the state
+ encoder reads
+
+---
+ .../main/java/org/mage/magezero/ParallelDataGenerator.java    | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java b/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
+index 067e278d19..119d71fe36 100644
+--- a/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
++++ b/Mage.MageZero/src/main/java/org/mage/magezero/ParallelDataGenerator.java
+@@ -348,6 +348,10 @@ public class ParallelDataGenerator {
+             String deckB = pair != null ? pair[1] : Config.INSTANCE.playerB.deckPath;
+             Player playerA = createLocalPlayer(game, "PlayerA", deckA, localMatch);
+             Player playerB = createLocalPlayer(game, "PlayerB", deckB, localMatch);
++            // lmt: the state encoder reads these two watchers for features; upstream only registers them
++            // for cards that need them, so without this every lookup logged an error and the feature was lost
++            game.getState().addWatcher(new mage.watchers.common.PlayerGainedLifeWatcher());
++            game.getState().addWatcher(new mage.watchers.common.CreatedTokenWatcher());
+ 
+ 
+             configurePlayer(playerA, threadEncoderA, threadEncoderB);
+-- 
+2.55.0
+

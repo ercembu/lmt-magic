@@ -1,0 +1,116 @@
+From 6be8eeef0c21ca5ee8318a2b0d99263a2c758b5a Mon Sep 17 00:00:00 2001
+From: lmt <lmt@local>
+Date: Mon, 2 Nov 2026 14:39:25 +0100
+Subject: [PATCH 15/17] Copy-on-write cards for playable-calculation copies
+
+Profiling MageZero self-play: ~47% of CPU was creating the throwaway game copy
+for each playable-ability calculation, ~38% of it deep-copying every card. Such
+a copy now shares its parent's cards and clones each on first access; the
+parent waits while it runs and it is discarded after.
+---
+ Mage/src/main/java/mage/game/GameImpl.java | 44 +++++++++++++++++++++-
+ 1 file changed, 42 insertions(+), 2 deletions(-)
+
+diff --git a/Mage/src/main/java/mage/game/GameImpl.java b/Mage/src/main/java/mage/game/GameImpl.java
+index c84eca75e3..0b41922692 100644
+--- a/Mage/src/main/java/mage/game/GameImpl.java
++++ b/Mage/src/main/java/mage/game/GameImpl.java
+@@ -125,6 +125,12 @@ public abstract class GameImpl implements Game {
+     protected transient PlayerQueryEventSource playerQueryEventSource = new PlayerQueryEventSource();
+ 
+     protected Map<UUID, Card> gameCards = new HashMap<>();
++    // lmt perf (from MageZero, narrowed): a copy made for a playable calculation shares its parent's cards
++    // and clones each one on first access (getCard/getCards). Profiling self-play showed ~38% of all CPU
++    // deep-copying every card for these throwaway copies. The parent waits while the calculation runs and
++    // the copy is discarded after, so the parent's shared cards cannot change underneath it.
++    private Set<UUID> sharedCards = Collections.emptySet();
++    private static final ThreadLocal<Boolean> copyingForPlayableCalc = ThreadLocal.withInitial(() -> false);
+     protected Map<UUID, MeldCard> meldCards = new HashMap<>(0);
+ 
+     protected Map<Zone, Map<UUID, MageObject>> lki = new EnumMap<>(Zone.class);
+@@ -213,7 +219,12 @@ public abstract class GameImpl implements Game {
+         //this.tableEventSource = game.tableEventSource; // client-server part, not need on copy/simulations
+         //this.playerQueryEventSource = game.playerQueryEventSource; // client-server part, not need on copy/simulations
+ 
+-        this.gameCards = CardUtil.deepCopyObject(game.gameCards);
++        if (copyingForPlayableCalc.get()) {
++            this.gameCards = new HashMap<>(game.gameCards);
++            this.sharedCards = new HashSet<>(game.gameCards.keySet());
++        } else {
++            this.gameCards = CardUtil.deepCopyObject(game.gameCards); // also deep-copies any shared cards
++        }
+         this.meldCards = CardUtil.deepCopyObject(game.meldCards);
+ 
+         this.lki = CardUtil.deepCopyObject(game.lki);
+@@ -296,7 +307,13 @@ public abstract class GameImpl implements Game {
+ 
+     @Override
+     public Game createSimulationForPlayableCalc() {
+-        Game res = this.copy();
++        Game res;
++        copyingForPlayableCalc.set(true);
++        try {
++            res = this.copy();
++        } finally {
++            copyingForPlayableCalc.set(false);
++        }
+         ((GameImpl) res).simulation = true;
+         ((GameImpl) res).checkPlayableState = true;
+         return res;
+@@ -501,9 +518,24 @@ public abstract class GameImpl implements Game {
+ 
+     @Override
+     public Collection<Card> getCards() {
++        unshareAllCards();
+         return gameCards.values();
+     }
+ 
++    /** Clone every card still shared with the parent game (see sharedCards). */
++    private void unshareAllCards() {
++        if (sharedCards.isEmpty()) {
++            return;
++        }
++        for (UUID id : new ArrayList<>(sharedCards)) {
++            Card card = gameCards.get(id);
++            if (card != null) {
++                gameCards.put(id, card.copy());
++            }
++        }
++        sharedCards.clear();
++    }
++
+     @Override
+     public void addMeldCard(UUID meldId, MeldCard meldCard) {
+         meldCards.put(meldId, meldCard);
+@@ -936,6 +968,10 @@ public abstract class GameImpl implements Game {
+             return null;
+         }
+         Card card = gameCards.get(cardId);
++        if (card != null && !sharedCards.isEmpty() && sharedCards.remove(cardId)) {
++            card = card.copy(); // first access in a playable-calc copy: clone the parent's card
++            gameCards.put(cardId, card);
++        }
+         if (card == null) {
+             card = state.getCopiedCard(cardId);
+         }
+@@ -1221,6 +1257,7 @@ public abstract class GameImpl implements Game {
+     @Override
+     public void cleanUp() {
+         gameCards.clear();
++        sharedCards = Collections.emptySet();
+         meldCards.clear();
+     }
+ 
+@@ -3730,6 +3767,9 @@ public abstract class GameImpl implements Game {
+             Card card = entry.getValue();
+             if (card.isOwnedBy(playerId)) {
+                 it.remove();
++                if (!sharedCards.isEmpty()) {
++                    sharedCards.remove(entry.getKey());
++                }
+             }
+         }
+         // Make sure effects of no longer existing objects are removed
+-- 
+2.55.0
+
