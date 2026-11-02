@@ -26,7 +26,12 @@ MZ = f"{SIM}/mzport/magezero-py"
 PY = f"{SIM}/.venv-ml/bin/python"
 AGENT = "FRA_SEALED"
 PORT = 50061
-PLAY_MEM = "14G"   # the runner's cap; its heap is MZ_XMX (11g) in mz-xmage.sh, plus ~2G off-heap
+# Memory caps. Defaults fit a 32 GB machine; on a smaller one set them in the environment, e.g. on 16 GB:
+#   LMT_PLAY_MEM=8G MZ_XMX=6g LMT_SERVER_MEM=2500M LMT_TRAIN_MEM=7G
+PLAY_MEM = os.environ.get("LMT_PLAY_MEM", "14G")   # the runner's cap: heap MZ_XMX plus ~2G off-heap
+MZ_XMX = os.environ.get("MZ_XMX", "11g")             # the runner's heap (read by mz-xmage.sh)
+SERVER_MEM = os.environ.get("LMT_SERVER_MEM", "3G")  # per model-server process
+TRAIN_MEM = os.environ.get("LMT_TRAIN_MEM", "8G")
 
 
 def curriculum(g):
@@ -41,7 +46,7 @@ def capped(unit, mem, cmd, cwd, log, runtime=None, env=None):
             "-p", "MemorySwapMax=512M", "--wait", "--collect"]
     if runtime:
         args += ["-p", f"RuntimeMaxSec={runtime}"]
-    for k, v in (env or {}).items():
+    for k, v in {"MZ_XMX": MZ_XMX, **(env or {})}.items():
         args += ["-E", f"{k}={v}"]
     args += ["sh", "-c", f"cd {cwd} && exec {cmd} > {log} 2>&1"]
     return subprocess.run(args, capture_output=True, text=True).returncode
@@ -83,7 +88,7 @@ def start_server(version, log, ports=(PORT, PORT + 1)):
     per = WORKERS_PER_PORT
     for port in ports:
         for k in range(per):
-            subprocess.run(["systemd-run", "--user", f"--unit=lmt-mzserver{port}-{k}", "-p", "MemoryMax=3G",
+            subprocess.run(["systemd-run", "--user", f"--unit=lmt-mzserver{port}-{k}", "-p", f"MemoryMax={SERVER_MEM}",
                             "--collect", "sh", "-c",
                             f"cd {MZ} && exec {PY} src/magezero/server.py --deck {AGENT} "
                             f"--version {version} --port {port} > {log}.{port}.{k} 2>&1"], capture_output=True)
@@ -216,7 +221,7 @@ def main():
                 shutil.copy(f"{MZ}/models/{AGENT}/ver{g}/model.pt.gz", f"{MZ}/models/{AGENT}/ver{v}/model.pt.gz")
                 ckpt = ["--checkpoint"]
             t1 = time.time()
-            rc = capped("lmt-mztrain", "8G",
+            rc = capped("lmt-mztrain", TRAIN_MEM,
                         f"{PY} src/magezero/train.py --deck {AGENT} --version {v} --epochs {a.epochs} "
                         + " ".join(ckpt), MZ, f"{gdir}/train.log", env={"PYTHONUNBUFFERED": "1"})
             tail = [l for l in open(f"{gdir}/train.log", errors="replace") if "Validation loss" in l]
