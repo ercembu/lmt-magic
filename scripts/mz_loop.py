@@ -91,8 +91,10 @@ def start_server(version, log, ports=(PORT, PORT + 1)):
     per = WORKERS_PER_PORT
     for port in ports:
         for k in range(per):
+            # MALLOC_ARENA_MAX: glibc gave each of waitress's 32 threads its own malloc arena and the server grew
+            # ~4 GB/h into swap (anonymous memory, not the GPU's); two arenas keep it flat
             subprocess.run(["systemd-run", "--user", f"--unit=lmt-mzserver{port}-{k}", "-p", f"MemoryMax={SERVER_MEM}",
-                            "--collect", "sh", "-c",
+                            "-E", "MALLOC_ARENA_MAX=2", "--collect", "sh", "-c",
                             f"cd {MZ} && exec {PY} src/magezero/server.py --deck {AGENT} "
                             f"--version {version} --port {port} > {log}.{port}.{k} 2>&1"], capture_output=True)
     for port in ports:
