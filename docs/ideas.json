@@ -33,33 +33,33 @@
     },
     {
      "name": "Ni'Var Science Academy",
-     "grade": "B-",
+     "grade": "B",
      "uri": "https://scryfall.com/card/trk/287/nivar-science-academy?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/a/7/a785dcd0-2df5-4d31-a01a-61fa7a1f1806.jpg?1793273928"
     },
     {
      "name": "Quark's Bar",
-     "grade": "B-",
+     "grade": "B",
      "uri": "https://scryfall.com/card/trk/292/quarks-bar?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/8/4/8422ee4a-9845-429d-bda8-74852168dcba.jpg?1792632965"
+    },
+    {
+     "name": "Federation Outpost",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/282/federation-outpost?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/0/2/02e368bd-ece8-4201-8d1a-4c5287d5cfee.jpg?1792632946"
+    },
+    {
+     "name": "Vash, Freelance Archaeologist",
+     "grade": "B-",
+     "uri": "https://scryfall.com/card/trk/255/vash-freelance-archaeologist?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/d/1/d1f51765-f336-4ca2-a0f5-e42dc352c0fa.jpg?1792508403"
     },
     {
      "name": "Sylvia Tilly, Joy of Discovery",
      "grade": "B-",
      "uri": "https://scryfall.com/card/trk/217/sylvia-tilly-joy-of-discovery?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/f/e/fe6e03b5-cd96-430b-9c74-96eca0212a81.jpg?1792989779"
-    },
-    {
-     "name": "Federation Outpost",
-     "grade": "B-",
-     "uri": "https://scryfall.com/card/trk/282/federation-outpost?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/0/2/02e368bd-ece8-4201-8d1a-4c5287d5cfee.jpg?1792632946"
-    },
-    {
-     "name": "The Unicomplex",
-     "grade": "B-",
-     "uri": "https://scryfall.com/card/trk/304/the-unicomplex?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/4/c/4c881efb-d55b-45fe-9e5a-8a61aec6fbbb.jpg?1792632978"
     }
    ],
    "quotes": []

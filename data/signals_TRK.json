@@ -15,27 +15,61 @@
   "G"
  ],
  "views": [
-  "model"
+  "model",
+  "blind",
+  "review"
  ],
  "view_labels": {
   "model": "the grades",
   "blind": "model, reviews withheld",
   "review": "the reviewers"
  },
- "agreement": {},
+ "agreement": {
+  "model_review": 0.7290528449652538,
+  "blind_review": 0.5244895250734667,
+  "model_blind": 0.9107164368478238
+ },
+ "notes": {
+  "source": "MTG Arena Zone (j2sjosh): Star Trek mechanics preview and set review, Oct-Nov 2026. Summarized; the grades on this site are the model's, not his.",
+  "format": [
+   "Take fixing early: the Planets, shocklands and surveil lands, plus the basic landcyclers (Free Borg Revolutionaries, Humpback Whales, Rogue Artificial Intelligence, Horta, Cold-Blooded Crew). The Strange New Worlds drafters want the same lands, so don't count on them wheeling.",
+   "The set is full of 1/1 Officer, Borg and Klingon tokens. X/1 creatures trade with free bodies, edicts usually hit a token (prefer the nontoken ones: In the Pale Moonlight, The Wrath of Khan), and small sweepers like Encounter the Unknown and D'Ghor Bloodletter gain value.",
+   "Those same tokens are resources: sacrifice fodder for Eject the Warp Core and Dahar Master, and bodies to station Spacecraft with.",
+   "Lots of artifact creatures (Borg, Spacecraft): removal that only hits nonartifact creatures (Resistance Is Futile) is weaker than it looks, and artifact removal (Perils of the Past) has real targets.",
+   "Synergy cards are everywhere, but judge each card by what it does without its friends. A deck of weak enablers that say \"choose one\" or carry the right creature type loses to a deck of good cards.",
+   "The colorless Anomaly lands make your colors worse for a late-game bonus; most decks skip them (Gaseous Anomaly is the best of them). Starfleet Academy: never.",
+   "Five- and six-drops are crowded with merely fine creatures. Cheap plays that do something are scarcer, and the format's speed is unknown before release."
+  ],
+  "mechanics": {
+   "Beam Me Up": "Cast the spell from your graveyard by returning a creature you control to your hand, then exile it. Best with creatures that have enters-the-battlefield abilities, which you get to use again; at instant speed it also saves a creature from removal. The price is tempo: picking up your own creature hurts when you're behind or trying to race. Marooned's creature can't be beamed away.",
+   "Face a Dilemma": "Triggers whenever you choose a mode, even an obvious one; choosing several modes on one spell still counts once. Dimir's theme. It works when the modal spells are ones you'd play anyway (Command Decision, Impossible Choice, Federation Probe), not when you're adding weak ones (Test of Courage, Test of Loyalty) to feed the payoffs.",
+   "Federation": "Counts different creature types among your non-Borg creatures. Creatures with several types count for more; assimilated creatures (now Borg) and changelings count for nothing.",
+   "Strange New Worlds": "Counts lands with different names, not colors. Dual lands, Planets, surveil lands and Unexplored Territory (keep it on the battlefield) raise it; Xenobotanist fixes colors but doesn't count. Don't play off-color basics to raise the number.",
+   "Spacecraft and Station": "Tap another creature, even one with summoning sickness, at sorcery speed to add charge counters equal to its power; bigger creatures station faster. Strong when you're ahead, slow when you're behind. The best ships pay you before they're fully stationed (U.S.S. Enterprise-D, U.S.S. Discovery, U.S.S. Enterprise-A).",
+   "Assimilate": "Takes control of a creature, which becomes a Borg artifact creature with a +1/+1 counter. Only on a few mythics so far."
+  }
+ },
  "depth": {
   "W": {
    "color": "W",
    "name": "White",
    "cards": 59,
    "mono": 45,
-   "a_tier": 9,
-   "b_or_better": 24,
-   "top15_mean_z": 1.6844914093690202,
+   "a_tier": 8,
+   "b_or_better": 21,
+   "top15_mean_z": 1.6069186196326355,
    "rank": 1,
    "views": {
     "model": {
-     "score": 1.6844914093690202,
+     "score": 1.6069186196326355,
+     "rank": 1
+    },
+    "blind": {
+     "score": 1.6096686876380786,
+     "rank": 1
+    },
+    "review": {
+     "score": 1.457693955920112,
      "rank": 1
     }
    },
@@ -46,30 +80,46 @@
    "name": "Blue",
    "cards": 59,
    "mono": 45,
-   "a_tier": 4,
-   "b_or_better": 15,
-   "top15_mean_z": 1.0928808993718064,
-   "rank": 4,
+   "a_tier": 2,
+   "b_or_better": 13,
+   "top15_mean_z": 1.034659456637815,
+   "rank": 5,
    "views": {
     "model": {
-     "score": 1.0928808993718064,
+     "score": 1.034659456637815,
+     "rank": 5
+    },
+    "blind": {
+     "score": 1.2371455098764543,
+     "rank": 3
+    },
+    "review": {
+     "score": 0.9514313600486038,
      "rank": 4
     }
    },
-   "rank_spread": 0
+   "rank_spread": 2
   },
   "B": {
    "color": "B",
    "name": "Black",
    "cards": 59,
    "mono": 46,
-   "a_tier": 6,
-   "b_or_better": 24,
-   "top15_mean_z": 1.4750026007494526,
+   "a_tier": 8,
+   "b_or_better": 22,
+   "top15_mean_z": 1.445858810582974,
    "rank": 2,
    "views": {
     "model": {
-     "score": 1.4750026007494526,
+     "score": 1.445858810582974,
+     "rank": 2
+    },
+    "blind": {
+     "score": 1.3698387241907235,
+     "rank": 2
+    },
+    "review": {
+     "score": 1.4435156146096426,
      "rank": 2
     }
    },
@@ -80,17 +130,25 @@
    "name": "Red",
    "cards": 58,
    "mono": 45,
-   "a_tier": 3,
-   "b_or_better": 12,
-   "top15_mean_z": 0.9609950682848344,
-   "rank": 5,
+   "a_tier": 4,
+   "b_or_better": 17,
+   "top15_mean_z": 1.0781907046573627,
+   "rank": 4,
    "views": {
     "model": {
-     "score": 0.9609950682848344,
+     "score": 1.0781907046573627,
+     "rank": 4
+    },
+    "blind": {
+     "score": 1.1707744144299872,
+     "rank": 4
+    },
+    "review": {
+     "score": 0.7451836389412866,
      "rank": 5
     }
    },
-   "rank_spread": 0
+   "rank_spread": 1
   },
   "G": {
    "color": "G",
@@ -99,15 +157,23 @@
    "mono": 44,
    "a_tier": 5,
    "b_or_better": 19,
-   "top15_mean_z": 1.1627520686687485,
+   "top15_mean_z": 1.2313772685766418,
    "rank": 3,
    "views": {
     "model": {
-     "score": 1.1627520686687485,
+     "score": 1.2313772685766418,
+     "rank": 3
+    },
+    "blind": {
+     "score": 1.1516457116309162,
+     "rank": 5
+    },
+    "review": {
+     "score": 1.1447215073207764,
      "rank": 3
     }
    },
-   "rank_spread": 0
+   "rank_spread": 2
   }
  },
  "pulls": {
@@ -159,7 +225,7 @@
    {
     "name": "Captain Jean-Luc Picard",
     "grade": "A",
-    "z": 1.784116344689114,
+    "z": 1.8220171666027576,
     "rarity": "mythic",
     "mana_cost": "{2}{W}",
     "type_line": "Legendary Creature \u2014 Human Officer",
@@ -179,97 +245,9 @@
     "oracle_text": "Other creatures you control get +1/+1.\nWhenever you cast a creature or Spacecraft spell, create a 1/1 red Officer creature token.\nTap seven untapped Officers you control: Search your library for a Spacecraft card, put it onto the battlefield with seven charge counters on it, then shuffle."
    },
    {
-    "name": "Antagonist Incorporator",
-    "grade": "A",
-    "z": 1.7151947679658068,
-    "rarity": "rare",
-    "mana_cost": "{1}{W}",
-    "type_line": "Artifact Creature \u2014 Borg",
-    "image": "https://cards.scryfall.io/normal/front/6/3/63918e59-0c03-4d98-9216-e58ee157b7ea.jpg?1792668297",
-    "scryfall_uri": "https://scryfall.com/card/trk/3/antagonist-incorporator?utm_source=api",
-    "colors": [
-     "W"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 2,
-     "of": 5,
-     "mean_grade_error": 1.8207750269106566,
-     "within_1": 0.5107642626480086,
-     "within_2": 0.7222820236813778
-    },
-    "oracle_text": "Artifact creatures you control have \"Whenever this creature deals combat damage to a player, you may pay {1}. If you do, create a 1/1 colorless Borg artifact creature token.\""
-   },
-   {
-    "name": "Captain Benjamin Sisko",
-    "grade": "A-",
-    "z": 1.522131276854954,
-    "rarity": "rare",
-    "mana_cost": "{1}{W}",
-    "type_line": "Legendary Creature \u2014 Human Officer",
-    "image": "https://cards.scryfall.io/normal/front/5/1/51338fb2-13a3-41b8-981f-05fa35e87e2e.jpg?1793538714",
-    "scryfall_uri": "https://scryfall.com/card/trk/6/captain-benjamin-sisko?utm_source=api",
-    "colors": [
-     "W"
-    ],
-    "confidence": "medium",
-    "trust": {
-     "band": 3,
-     "of": 5,
-     "mean_grade_error": 1.8794402583423035,
-     "within_1": 0.5064585575888052,
-     "within_2": 0.7104413347685683
-    },
-    "oracle_text": "At the beginning of your end step, create a 1/1 red Officer creature token for each dilemma you've faced this turn.\n{2}{W}{U}{B}{R}{G}, {T}: Exile the top five cards of your library. You may cast any number of spells with mana value less than or equal to the number of Officers you control from among those cards without paying their mana costs."
-   },
-   {
-    "name": "Miles O'Brien, Transporter Ops",
-    "grade": "A-",
-    "z": 1.3544425257173671,
-    "rarity": "rare",
-    "mana_cost": "{2}{W}",
-    "type_line": "Legendary Creature \u2014 Human Artificer",
-    "image": "https://cards.scryfall.io/normal/front/e/4/e4f041b3-e785-45ba-9a7e-33878614d3b0.jpg?1793361164",
-    "scryfall_uri": "https://scryfall.com/card/trk/24/miles-obrien-transporter-ops?utm_source=api",
-    "colors": [
-     "W"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 2,
-     "of": 5,
-     "mean_grade_error": 1.8207750269106566,
-     "within_1": 0.5107642626480086,
-     "within_2": 0.7222820236813778
-    },
-    "oracle_text": "When Miles O'Brien enters, return up to one other target creature or artifact you control to its owner's hand.\nAt the beginning of each end step, if a permanent was returned to your hand from the battlefield this turn, draw a card."
-   },
-   {
-    "name": "Assembly Specialist",
-    "grade": "B+",
-    "z": 1.3004336562178351,
-    "rarity": "uncommon",
-    "mana_cost": "{1}{W}",
-    "type_line": "Artifact Creature \u2014 Borg",
-    "image": "https://cards.scryfall.io/normal/front/a/4/a4d339a5-198c-49bd-845e-2632476746e0.jpg?1793100612",
-    "scryfall_uri": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
-    "colors": [
-     "W"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 1,
-     "of": 5,
-     "mean_grade_error": 1.6081808396124866,
-     "within_1": 0.5667384284176534,
-     "within_2": 0.7766415500538213
-    },
-    "oracle_text": "When this creature enters, create a 1/1 colorless Borg artifact creature token."
-   },
-   {
     "name": "Deanna Troi, Psychic Counsel",
-    "grade": "B+",
-    "z": 1.249972689965822,
+    "grade": "A-",
+    "z": 1.5463344771685748,
     "rarity": "rare",
     "mana_cost": "{1}{W}",
     "type_line": "Legendary Creature \u2014 Betazoid Human Advisor",
@@ -289,26 +267,48 @@
     "oracle_text": "Other creatures you control enter with an additional +1/+1 counter on them."
    },
    {
-    "name": "Sulu, Space Swashbuckler",
-    "grade": "B+",
-    "z": 1.2338416800619703,
+    "name": "Antagonist Incorporator",
+    "grade": "A-",
+    "z": 1.4544076028560409,
     "rarity": "rare",
     "mana_cost": "{1}{W}",
-    "type_line": "Legendary Creature \u2014 Human Pilot",
-    "image": "https://cards.scryfall.io/normal/front/9/b/9b16f967-4bc5-4508-8433-b46323ce2e71.jpg?1793101366",
-    "scryfall_uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
+    "type_line": "Artifact Creature \u2014 Borg",
+    "image": "https://cards.scryfall.io/normal/front/6/3/63918e59-0c03-4d98-9216-e58ee157b7ea.jpg?1792668297",
+    "scryfall_uri": "https://scryfall.com/card/trk/3/antagonist-incorporator?utm_source=api",
     "colors": [
      "W"
     ],
     "confidence": "high",
     "trust": {
-     "band": 5,
+     "band": 2,
      "of": 5,
-     "mean_grade_error": 1.9504843918191603,
-     "within_1": 0.49730893433799783,
-     "within_2": 0.6835306781485468
+     "mean_grade_error": 1.8207750269106566,
+     "within_1": 0.5107642626480086,
+     "within_2": 0.7222820236813778
     },
-    "oracle_text": "First strike\nWhenever Sulu becomes tapped, if an Equipment or Spacecraft entered the battlefield under your control this turn, draw a card."
+    "oracle_text": "Artifact creatures you control have \"Whenever this creature deals combat damage to a player, you may pay {1}. If you do, create a 1/1 colorless Borg artifact creature token.\""
+   },
+   {
+    "name": "Miles O'Brien, Transporter Ops",
+    "grade": "B+",
+    "z": 1.3004336562178351,
+    "rarity": "rare",
+    "mana_cost": "{2}{W}",
+    "type_line": "Legendary Creature \u2014 Human Artificer",
+    "image": "https://cards.scryfall.io/normal/front/e/4/e4f041b3-e785-45ba-9a7e-33878614d3b0.jpg?1793361164",
+    "scryfall_uri": "https://scryfall.com/card/trk/24/miles-obrien-transporter-ops?utm_source=api",
+    "colors": [
+     "W"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 2,
+     "of": 5,
+     "mean_grade_error": 1.8207750269106566,
+     "within_1": 0.5107642626480086,
+     "within_2": 0.7222820236813778
+    },
+    "oracle_text": "When Miles O'Brien enters, return up to one other target creature or artifact you control to its owner's hand.\nAt the beginning of each end step, if a permanent was returned to your hand from the battlefield this turn, draw a card."
    },
    {
     "name": "Malfunctioning Holodeck",
@@ -331,6 +331,72 @@
      "within_2": 0.697524219590958
     },
     "oracle_text": "Ward {2} (Whenever this artifact becomes the target of a spell or ability an opponent controls, counter it unless that player pays {2}.)\nWhen this artifact enters, exile target nonland permanent an opponent controls until this artifact leaves the battlefield."
+   },
+   {
+    "name": "Sulu, Space Swashbuckler",
+    "grade": "B+",
+    "z": 1.1723129641292673,
+    "rarity": "rare",
+    "mana_cost": "{1}{W}",
+    "type_line": "Legendary Creature \u2014 Human Pilot",
+    "image": "https://cards.scryfall.io/normal/front/9/b/9b16f967-4bc5-4508-8433-b46323ce2e71.jpg?1793101366",
+    "scryfall_uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
+    "colors": [
+     "W"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 5,
+     "of": 5,
+     "mean_grade_error": 1.9504843918191603,
+     "within_1": 0.49730893433799783,
+     "within_2": 0.6835306781485468
+    },
+    "oracle_text": "First strike\nWhenever Sulu becomes tapped, if an Equipment or Spacecraft entered the battlefield under your control this turn, draw a card."
+   },
+   {
+    "name": "Assembly Specialist",
+    "grade": "B",
+    "z": 1.1149287570839583,
+    "rarity": "uncommon",
+    "mana_cost": "{1}{W}",
+    "type_line": "Artifact Creature \u2014 Borg",
+    "image": "https://cards.scryfall.io/normal/front/a/4/a4d339a5-198c-49bd-845e-2632476746e0.jpg?1793100612",
+    "scryfall_uri": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
+    "colors": [
+     "W"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 1,
+     "of": 5,
+     "mean_grade_error": 1.6081808396124866,
+     "within_1": 0.5667384284176534,
+     "within_2": 0.7766415500538213
+    },
+    "oracle_text": "When this creature enters, create a 1/1 colorless Borg artifact creature token."
+   },
+   {
+    "name": "Captain Benjamin Sisko",
+    "grade": "B",
+    "z": 1.0479907749838702,
+    "rarity": "rare",
+    "mana_cost": "{1}{W}",
+    "type_line": "Legendary Creature \u2014 Human Officer",
+    "image": "https://cards.scryfall.io/normal/front/5/1/51338fb2-13a3-41b8-981f-05fa35e87e2e.jpg?1793538714",
+    "scryfall_uri": "https://scryfall.com/card/trk/6/captain-benjamin-sisko?utm_source=api",
+    "colors": [
+     "W"
+    ],
+    "confidence": "medium",
+    "trust": {
+     "band": 3,
+     "of": 5,
+     "mean_grade_error": 1.8794402583423035,
+     "within_1": 0.5064585575888052,
+     "within_2": 0.7104413347685683
+    },
+    "oracle_text": "At the beginning of your end step, create a 1/1 red Officer creature token for each dilemma you've faced this turn.\n{2}{W}{U}{B}{R}{G}, {T}: Exile the top five cards of your library. You may cast any number of spells with mana value less than or equal to the number of Officers you control from among those cards without paying their mana costs."
    }
   ],
   "U": [
@@ -357,31 +423,9 @@
     "oracle_text": "Flash\nWhen Wesley Crusher enters, choose two \u2014\n\u2022 Counter target noncreature spell unless its controller pays {2}.\n\u2022 Return target creature with mana value 2 or less to its owner's hand.\n\u2022 Target creature can't be blocked this turn.\n\u2022 Target player draws two cards, then discards two cards."
    },
    {
-    "name": "Cloak and Phaser",
-    "grade": "A-",
-    "z": 1.4762344944523467,
-    "rarity": "uncommon",
-    "mana_cost": "{8}{U}",
-    "type_line": "Sorcery",
-    "image": "https://cards.scryfall.io/normal/front/2/d/2d9fb7e7-582d-41e7-be9e-98372505ea44.jpg?1793187986",
-    "scryfall_uri": "https://scryfall.com/card/trk/49/cloak-and-phaser?utm_source=api",
-    "colors": [
-     "U"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 4,
-     "of": 5,
-     "mean_grade_error": 1.919806243272336,
-     "within_1": 0.5005382131324004,
-     "within_2": 0.697524219590958
-    },
-    "oracle_text": "Strange new worlds \u2014 This spell costs {X} less to cast, where X is the number of differently named lands you control.\nCreate two 2/2 black Romulan creature tokens. Draw two cards, then discard a card."
-   },
-   {
     "name": "Mr. Spock, Science Officer",
-    "grade": "A-",
-    "z": 1.3733522801988087,
+    "grade": "B+",
+    "z": 1.283249262996782,
     "rarity": "mythic",
     "mana_cost": "{2}{U}{U}",
     "type_line": "Legendary Creature \u2014 Vulcan Human Scientist",
@@ -401,9 +445,31 @@
     "oracle_text": "If you would draw a card, draw two cards instead."
    },
    {
+    "name": "Cloak and Phaser",
+    "grade": "B+",
+    "z": 1.218025491800021,
+    "rarity": "uncommon",
+    "mana_cost": "{8}{U}",
+    "type_line": "Sorcery",
+    "image": "https://cards.scryfall.io/normal/front/2/d/2d9fb7e7-582d-41e7-be9e-98372505ea44.jpg?1793187986",
+    "scryfall_uri": "https://scryfall.com/card/trk/49/cloak-and-phaser?utm_source=api",
+    "colors": [
+     "U"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 4,
+     "of": 5,
+     "mean_grade_error": 1.919806243272336,
+     "within_1": 0.5005382131324004,
+     "within_2": 0.697524219590958
+    },
+    "oracle_text": "Strange new worlds \u2014 This spell costs {X} less to cast, where X is the number of differently named lands you control.\nCreate two 2/2 black Romulan creature tokens. Draw two cards, then discard a card."
+   },
+   {
     "name": "Jett Reno, Problem Solver",
     "grade": "B+",
-    "z": 1.266435681995933,
+    "z": 1.157608572044479,
     "rarity": "uncommon",
     "mana_cost": "{1}{U}",
     "type_line": "Legendary Creature \u2014 Human Artificer",
@@ -423,31 +489,9 @@
     "oracle_text": "Whenever Jett Reno becomes tapped, surveil 1. If her power is 4 or greater, instead draw a card.\nWhenever you face a dilemma, put a +1/+1 counter on Jett Reno. (You face a dilemma as you choose one or more modes for a spell or ability.)"
    },
    {
-    "name": "Subcommander T'Pol",
-    "grade": "B+",
-    "z": 1.202508262925448,
-    "rarity": "rare",
-    "mana_cost": "{2}{U}",
-    "type_line": "Legendary Creature \u2014 Vulcan Scientist",
-    "image": "https://cards.scryfall.io/normal/front/7/d/7d90016d-c2cb-457b-9d97-c3b9411c46e3.jpg?1793013074",
-    "scryfall_uri": "https://scryfall.com/card/trk/82/subcommander-tpol?utm_source=api",
-    "colors": [
-     "U"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 4,
-     "of": 5,
-     "mean_grade_error": 1.919806243272336,
-     "within_1": 0.5005382131324004,
-     "within_2": 0.697524219590958
-    },
-    "oracle_text": "Flash\nWhen Subcommander T'Pol enters, choose one \u2014\n\u2022 Counter target activated or triggered ability.\n\u2022 Tap up to one target artifact or creature. Put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)"
-   },
-   {
     "name": "The Caretaker",
     "grade": "B+",
-    "z": 1.157608572044479,
+    "z": 1.1431503064737354,
     "rarity": "rare",
     "mana_cost": "{5}{U}",
     "type_line": "Legendary Creature \u2014 Elemental",
@@ -469,7 +513,7 @@
    {
     "name": "Seven of Nine, Unassimilated",
     "grade": "B",
-    "z": 0.9380586200078758,
+    "z": 1.0609987347126086,
     "rarity": "mythic",
     "mana_cost": "{1}{U}",
     "type_line": "Legendary Artifact Creature \u2014 Human Officer",
@@ -489,9 +533,75 @@
     "oracle_text": "At the beginning of your first main phase, draw a card. Then discard a card unless you control five or more differently named lands.\n{6}{U}: Seven of Nine's base power and toughness become 7/9. Activate only if you control seven or more differently named lands."
    },
    {
+    "name": "Gwyndala, the Progeny",
+    "grade": "B",
+    "z": 0.9380586200078758,
+    "rarity": "rare",
+    "mana_cost": "{1}{U}",
+    "type_line": "Legendary Creature \u2014 Vau-N'Akat Advisor",
+    "image": "https://cards.scryfall.io/normal/front/a/8/a82f5db5-787e-4e4a-ab3c-4a488c6f4990.jpg?1793187993",
+    "scryfall_uri": "https://scryfall.com/card/trk/61/gwyndala-the-progeny?utm_source=api",
+    "colors": [
+     "U"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 4,
+     "of": 5,
+     "mean_grade_error": 1.919806243272336,
+     "within_1": 0.5005382131324004,
+     "within_2": 0.697524219590958
+    },
+    "oracle_text": "When Gwyndala enters, create a colorless Equipment artifact token named Neuroflux Heirloom with \"Equipped creature gets +1/+1\" and equip {2}. Attach it to Gwyndala.\n{2}: Each Equipment token you control becomes a copy of target Equipment you control until end of turn."
+   },
+   {
+    "name": "Romulan Bird-of-Prey",
+    "grade": "B",
+    "z": 0.8926888752718425,
+    "rarity": "rare",
+    "mana_cost": "{1}{U}",
+    "type_line": "Artifact \u2014 Spacecraft",
+    "image": "https://cards.scryfall.io/normal/front/6/a/6a461d90-6b7b-4777-958a-8a5d8365ad8c.jpg?1792508202",
+    "scryfall_uri": "https://scryfall.com/card/trk/77/romulan-bird-of-prey?utm_source=api",
+    "colors": [
+     "U"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 5,
+     "of": 5,
+     "mean_grade_error": 1.9504843918191603,
+     "within_1": 0.49730893433799783,
+     "within_2": 0.6835306781485468
+    },
+    "oracle_text": "Cloaking Device \u2014 As long as this Spacecraft isn't a creature, it has hexproof.\nWhenever you cast a noncreature spell, if this Spacecraft isn't a creature, put two charge counters on it.\nStation\n8+ | Flying"
+   },
+   {
+    "name": "Subcommander T'Pol",
+    "grade": "B",
+    "z": 0.8706806047302748,
+    "rarity": "rare",
+    "mana_cost": "{2}{U}",
+    "type_line": "Legendary Creature \u2014 Vulcan Scientist",
+    "image": "https://cards.scryfall.io/normal/front/7/d/7d90016d-c2cb-457b-9d97-c3b9411c46e3.jpg?1793013074",
+    "scryfall_uri": "https://scryfall.com/card/trk/82/subcommander-tpol?utm_source=api",
+    "colors": [
+     "U"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 4,
+     "of": 5,
+     "mean_grade_error": 1.919806243272336,
+     "within_1": 0.5005382131324004,
+     "within_2": 0.697524219590958
+    },
+    "oracle_text": "Flash\nWhen Subcommander T'Pol enters, choose one \u2014\n\u2022 Counter target activated or triggered ability.\n\u2022 Tap up to one target artifact or creature. Put a stun counter on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)"
+   },
+   {
     "name": "Lieutenant Commander Data",
     "grade": "B",
-    "z": 0.8598332779309718,
+    "z": 0.8384362913986565,
     "rarity": "mythic",
     "mana_cost": "{2}{U}",
     "type_line": "Legendary Artifact Creature \u2014 Android Scientist",
@@ -509,79 +619,13 @@
      "within_2": 0.697524219590958
     },
     "oracle_text": "Whenever a player casts a noncreature spell, put a +1/+1 counter on Lieutenant Commander Data.\n{1}, Remove three counters from among creatures you control: Draw a card."
-   },
-   {
-    "name": "V'Ger, the Intruder",
-    "grade": "B",
-    "z": 0.8490861916917161,
-    "rarity": "uncommon",
-    "mana_cost": "{6}{U}",
-    "type_line": "Legendary Artifact Creature \u2014 Construct",
-    "image": "https://cards.scryfall.io/normal/front/b/0/b082d454-d331-4960-8120-754f107ffa42.jpg?1785981430",
-    "scryfall_uri": "https://scryfall.com/card/trk/87/vger-the-intruder?utm_source=api",
-    "colors": [
-     "U"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 3,
-     "of": 5,
-     "mean_grade_error": 1.8794402583423035,
-     "within_1": 0.5064585575888052,
-     "within_2": 0.7104413347685683
-    },
-    "oracle_text": "Flying\nWhenever V'Ger enters or attacks, choose one \u2014\n\u2022 Look at target opponent's hand, then draw a card.\n\u2022 Creatures your opponents control get -1/-0 until your next turn."
-   },
-   {
-    "name": "Suurok-Class Science Vessel",
-    "grade": "B",
-    "z": 0.8070410085490357,
-    "rarity": "common",
-    "mana_cost": "{2}{U}",
-    "type_line": "Artifact \u2014 Spacecraft",
-    "image": "https://cards.scryfall.io/normal/front/7/6/7608943e-329e-41f9-b098-a0a94b01e6a1.jpg?1793361260",
-    "scryfall_uri": "https://scryfall.com/card/trk/83/suurok-class-science-vessel?utm_source=api",
-    "colors": [
-     "U"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 5,
-     "of": 5,
-     "mean_grade_error": 1.9504843918191603,
-     "within_1": 0.49730893433799783,
-     "within_2": 0.6835306781485468
-    },
-    "oracle_text": "When this Spacecraft enters, draw a card.\nStation (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 5+.)\n5+ | Flying"
    }
   ],
   "B": [
    {
-    "name": "The Destruction of Praxis",
-    "grade": "A",
-    "z": 2.067463754050907,
-    "rarity": "rare",
-    "mana_cost": "{3}{B}{B}",
-    "type_line": "Sorcery",
-    "image": "https://cards.scryfall.io/normal/front/3/d/3d33ac2a-73a9-4804-bf9f-c8cf4eea1c76.jpg?1793187997",
-    "scryfall_uri": "https://scryfall.com/card/trk/103/the-destruction-of-praxis?utm_source=api",
-    "colors": [
-     "B"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 5,
-     "of": 5,
-     "mean_grade_error": 1.9504843918191603,
-     "within_1": 0.49730893433799783,
-     "within_2": 0.6835306781485468
-    },
-    "oracle_text": "Strange new worlds \u2014 All creatures get -X/-X until end of turn, where X is the number of differently named lands you control. If X is 6 or more, create two 2/1 red Klingon Warrior creature tokens with haste."
-   },
-   {
     "name": "Salt Vampire",
-    "grade": "A",
-    "z": 2.008004089118491,
+    "grade": "A+",
+    "z": 2.2146264602144723,
     "rarity": "rare",
     "mana_cost": "{1}{B}",
     "type_line": "Creature \u2014 Vampire Shapeshifter",
@@ -601,9 +645,31 @@
     "oracle_text": "Lifelink\nWhen this creature enters, look at target opponent's hand. You may choose a nonland card from it. If you do, that player exiles that card, then draws a card."
    },
    {
+    "name": "The Destruction of Praxis",
+    "grade": "A",
+    "z": 2.008004089118491,
+    "rarity": "rare",
+    "mana_cost": "{3}{B}{B}",
+    "type_line": "Sorcery",
+    "image": "https://cards.scryfall.io/normal/front/3/d/3d33ac2a-73a9-4804-bf9f-c8cf4eea1c76.jpg?1793187997",
+    "scryfall_uri": "https://scryfall.com/card/trk/103/the-destruction-of-praxis?utm_source=api",
+    "colors": [
+     "B"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 5,
+     "of": 5,
+     "mean_grade_error": 1.9504843918191603,
+     "within_1": 0.49730893433799783,
+     "within_2": 0.6835306781485468
+    },
+    "oracle_text": "Strange new worlds \u2014 All creatures get -X/-X until end of turn, where X is the number of differently named lands you control. If X is 6 or more, create two 2/1 red Klingon Warrior creature tokens with haste."
+   },
+   {
     "name": "Armus, Skin of Evil",
     "grade": "A-",
-    "z": 1.6249807216131984,
+    "z": 1.571478999865478,
     "rarity": "rare",
     "mana_cost": "{5}{B}{B}",
     "type_line": "Legendary Creature \u2014 Ooze Horror",
@@ -624,8 +690,8 @@
    },
    {
     "name": "Elim Garak, Simple Tailor",
-    "grade": "B+",
-    "z": 1.3360050611545335,
+    "grade": "A-",
+    "z": 1.3927662870454445,
     "rarity": "rare",
     "mana_cost": "{2}{B}",
     "type_line": "Legendary Creature \u2014 Cardassian Rogue",
@@ -645,53 +711,9 @@
     "oracle_text": "Menace\nWhenever you face a dilemma, each opponent loses 2 life and you gain 2 life. (You face a dilemma as you choose one or more modes for a spell or ability.)"
    },
    {
-    "name": "Death Is Irrelevant",
-    "grade": "B+",
-    "z": 1.218025491800021,
-    "rarity": "mythic",
-    "mana_cost": "{6}{B}{B}",
-    "type_line": "Enchantment",
-    "image": "https://cards.scryfall.io/normal/front/4/0/408cb5dd-1a79-47a9-98ea-41f3f4502c5e.jpg?1792668404",
-    "scryfall_uri": "https://scryfall.com/card/trk/102/death-is-irrelevant?utm_source=api",
-    "colors": [
-     "B"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 2,
-     "of": 5,
-     "mean_grade_error": 1.8207750269106566,
-     "within_1": 0.5107642626480086,
-     "within_2": 0.7222820236813778
-    },
-    "oracle_text": "Artifact creatures you control have indestructible.\nAt the beginning of your end step, assimilate target creature card from a graveyard. (Put it onto the battlefield under your control with a +1/+1 counter. It's a Borg artifact creature and loses all other creature types.)"
-   },
-   {
-    "name": "In the Pale Moonlight",
-    "grade": "B+",
-    "z": 1.1149287570839583,
-    "rarity": "uncommon",
-    "mana_cost": "{3}{B}{B}",
-    "type_line": "Enchantment \u2014 Saga",
-    "image": "https://cards.scryfall.io/normal/front/4/7/47c8262c-e0c6-4c1a-b1c1-3b5fe5252a9c.jpg?1784065713",
-    "scryfall_uri": "https://scryfall.com/card/trk/117/in-the-pale-moonlight?utm_source=api",
-    "colors": [
-     "B"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 5,
-     "of": 5,
-     "mean_grade_error": 1.9504843918191603,
-     "within_1": 0.49730893433799783,
-     "within_2": 0.6835306781485468
-    },
-    "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Each opponent sacrifices a nontoken creature of their choice.\nII \u2014 Investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nIII \u2014 You may sacrifice an artifact or creature. If you do, create two 2/2 black Romulan creature tokens."
-   },
-   {
     "name": "Georgiou, Terran Emperor",
-    "grade": "B",
-    "z": 1.0875683388244402,
+    "grade": "A-",
+    "z": 1.3544425257173671,
     "rarity": "mythic",
     "mana_cost": "{4}{B}{B}",
     "type_line": "Legendary Creature \u2014 Human Rogue Noble",
@@ -711,9 +733,53 @@
     "oracle_text": "You don't lose the game for having 0 or less life.\nAt the beginning of your end step, you lose 3 life and draw a card. Then if your life total is 0 or less, create ten 1/1 red Officer creature tokens."
    },
    {
-    "name": "Overflow Submatrix",
+    "name": "In the Pale Moonlight",
+    "grade": "B",
+    "z": 1.0875683388244402,
+    "rarity": "uncommon",
+    "mana_cost": "{3}{B}{B}",
+    "type_line": "Enchantment \u2014 Saga",
+    "image": "https://cards.scryfall.io/normal/front/4/7/47c8262c-e0c6-4c1a-b1c1-3b5fe5252a9c.jpg?1784065713",
+    "scryfall_uri": "https://scryfall.com/card/trk/117/in-the-pale-moonlight?utm_source=api",
+    "colors": [
+     "B"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 5,
+     "of": 5,
+     "mean_grade_error": 1.9504843918191603,
+     "within_1": 0.49730893433799783,
+     "within_2": 0.6835306781485468
+    },
+    "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Each opponent sacrifices a nontoken creature of their choice.\nII \u2014 Investigate. (Create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")\nIII \u2014 You may sacrifice an artifact or creature. If you do, create two 2/2 black Romulan creature tokens."
+   },
+   {
+    "name": "Khan, Vengeful Heart",
     "grade": "B",
     "z": 1.0351577676318333,
+    "rarity": "mythic",
+    "mana_cost": "{2}{B}{B}",
+    "type_line": "Legendary Creature \u2014 Human Warrior",
+    "image": "https://cards.scryfall.io/normal/front/a/6/a6f47b34-02fb-41d2-978a-a6d0a47ee8ba.jpg?1792551016",
+    "scryfall_uri": "https://scryfall.com/card/trk/119/khan-vengeful-heart?utm_source=api",
+    "colors": [
+     "B"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 1,
+     "of": 5,
+     "mean_grade_error": 1.6081808396124866,
+     "within_1": 0.5667384284176534,
+     "within_2": 0.7766415500538213
+    },
+    "oracle_text": "When Khan enters, you may sacrifice another creature or artifact. If you do, draw two cards.\nYou may cast this card from exile."
+   },
+   {
+    "name": "Overflow Submatrix",
+    "grade": "B",
+    "z": 0.9976432497736085,
     "rarity": "rare",
     "mana_cost": "{2}{B}",
     "type_line": "Artifact Creature \u2014 Borg",
@@ -733,14 +799,14 @@
     "oracle_text": "Once during each of your turns, you may cast an artifact creature spell from your graveyard. If you cast a spell this way, that artifact creature enters with a finality counter on it. (If a creature with a finality counter on it would die, exile it instead.)"
    },
    {
-    "name": "Bat'leth",
+    "name": "Death Is Irrelevant",
     "grade": "B",
-    "z": 1.0224930105621597,
-    "rarity": "uncommon",
-    "mana_cost": "{2}{B}",
-    "type_line": "Artifact \u2014 Equipment",
-    "image": "https://cards.scryfall.io/normal/front/8/8/888e6e0f-43c3-4516-88ff-8a8d814478d4.jpg?1785981448",
-    "scryfall_uri": "https://scryfall.com/card/trk/94/batleth?utm_source=api",
+    "z": 0.9733947587067434,
+    "rarity": "mythic",
+    "mana_cost": "{6}{B}{B}",
+    "type_line": "Enchantment",
+    "image": "https://cards.scryfall.io/normal/front/4/0/408cb5dd-1a79-47a9-98ea-41f3f4502c5e.jpg?1792668404",
+    "scryfall_uri": "https://scryfall.com/card/trk/102/death-is-irrelevant?utm_source=api",
     "colors": [
      "B"
     ],
@@ -752,7 +818,7 @@
      "within_1": 0.5107642626480086,
      "within_2": 0.7222820236813778
     },
-    "oracle_text": "When this Equipment enters, target creature an opponent controls gets -2/-2 until end of turn.\nEquipped creature gets +2/+0.\nEquip {2} ({2}: Attach to target creature you control. Equip only as a sorcery.)"
+    "oracle_text": "Artifact creatures you control have indestructible.\nAt the beginning of your end step, assimilate target creature card from a graveyard. (Put it onto the battlefield under your control with a +1/+1 counter. It's a Borg artifact creature and loses all other creature types.)"
    },
    {
     "name": "Eject the Warp Core",
@@ -802,8 +868,8 @@
    },
    {
     "name": "Q, Stacking the Deck",
-    "grade": "A-",
-    "z": 1.5463344771685748,
+    "grade": "A",
+    "z": 1.6535730820197796,
     "rarity": "mythic",
     "mana_cost": "{2}{R}{R}",
     "type_line": "Legendary Creature \u2014 Q",
@@ -823,31 +889,9 @@
     "oracle_text": "When Q enters, shuffle your library, then exile cards from the top of your library until you exile a nonland card. That nonland card gains \"Exile a card from your hand: Create a copy of this card. You may cast the copy. Activate only during your turn and only if this card is exiled.\""
    },
    {
-    "name": "Khan, Despot by Design",
-    "grade": "B",
-    "z": 1.1289271383603408,
-    "rarity": "uncommon",
-    "mana_cost": "{4}{R}",
-    "type_line": "Legendary Creature \u2014 Human Rogue",
-    "image": "https://cards.scryfall.io/normal/front/f/d/fd283ef1-fd8c-4288-8efa-6e81c92b3415.jpg?1793013585",
-    "scryfall_uri": "https://scryfall.com/card/trk/155/khan-despot-by-design?utm_source=api",
-    "colors": [
-     "R"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 2,
-     "of": 5,
-     "mean_grade_error": 1.8207750269106566,
-     "within_1": 0.5107642626480086,
-     "within_2": 0.7222820236813778
-    },
-    "oracle_text": "Trample\nWhen Khan enters, he deals 1 damage to each opponent and each creature your opponents control."
-   },
-   {
     "name": "The Wrath of Khan",
-    "grade": "B",
-    "z": 1.0609987347126086,
+    "grade": "A-",
+    "z": 1.41271990941275,
     "rarity": "rare",
     "mana_cost": "{2}{R}",
     "type_line": "Enchantment \u2014 Saga",
@@ -865,6 +909,50 @@
      "within_2": 0.697524219590958
     },
     "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 This Saga deals 4 damage to target creature an opponent controls. At the beginning of the next combat this turn, gain control of that creature until end of turn. Untap it. It gains haste until end of turn.\nII \u2014 You may exile a card from your hand. If you do, draw a card.\nIII \u2014 Each opponent sacrifices a nontoken permanent of their choice."
+   },
+   {
+    "name": "Worf, Intelligence Contractor",
+    "grade": "B+",
+    "z": 1.2338416800619703,
+    "rarity": "rare",
+    "mana_cost": "{2}{R}",
+    "type_line": "Legendary Creature \u2014 Klingon Warrior Spy",
+    "image": "https://cards.scryfall.io/normal/front/7/d/7df6c8c1-1f85-4c5d-a4f6-9ffcdad1b12e.jpg?1792508250",
+    "scryfall_uri": "https://scryfall.com/card/trk/180/worf-intelligence-contractor?utm_source=api",
+    "colors": [
+     "R"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 4,
+     "of": 5,
+     "mean_grade_error": 1.919806243272336,
+     "within_1": 0.5005382131324004,
+     "within_2": 0.697524219590958
+    },
+    "oracle_text": "When Worf enters, for each opponent, gain control of up to one target creature that player controls with mana value 3 or less until end of turn. Untap those creatures. Until end of turn, they become Warriors in addition to their other types and gain haste."
+   },
+   {
+    "name": "Khan, Despot by Design",
+    "grade": "B",
+    "z": 1.0224930105621597,
+    "rarity": "uncommon",
+    "mana_cost": "{4}{R}",
+    "type_line": "Legendary Creature \u2014 Human Rogue",
+    "image": "https://cards.scryfall.io/normal/front/f/d/fd283ef1-fd8c-4288-8efa-6e81c92b3415.jpg?1793013585",
+    "scryfall_uri": "https://scryfall.com/card/trk/155/khan-despot-by-design?utm_source=api",
+    "colors": [
+     "R"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 2,
+     "of": 5,
+     "mean_grade_error": 1.8207750269106566,
+     "within_1": 0.5107642626480086,
+     "within_2": 0.7222820236813778
+    },
+    "oracle_text": "Trample\nWhen Khan enters, he deals 1 damage to each opponent and each creature your opponents control."
    },
    {
     "name": "D-7 Battle Cruiser",
@@ -889,9 +977,31 @@
     "oracle_text": "Station (Tap another creature you control: Put charge counters equal to its power on this Spacecraft. Station only as a sorcery. It's an artifact creature at 8+.)\n3+ | At the beginning of combat on your turn, create a 2/1 red Klingon Warrior creature token with haste. Sacrifice it at the beginning of the next end step.\n8+ | Flying"
    },
    {
+    "name": "Encounter the Unknown",
+    "grade": "B",
+    "z": 0.9497055188328382,
+    "rarity": "rare",
+    "mana_cost": "{1}{R}{R}",
+    "type_line": "Instant",
+    "image": "https://cards.scryfall.io/normal/front/9/a/9a49f66c-7017-4ddd-8787-21d68fe1bff5.jpg?1793274490",
+    "scryfall_uri": "https://scryfall.com/card/trk/148/encounter-the-unknown?utm_source=api",
+    "colors": [
+     "R"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 3,
+     "of": 5,
+     "mean_grade_error": 1.8794402583423035,
+     "within_1": 0.5064585575888052,
+     "within_2": 0.7104413347685683
+    },
+    "oracle_text": "Choose one \u2014\n\u2022 Come in Peace \u2014 Exile the top two cards of your library. Until the end of your next turn, you may play those cards.\n\u2022 Shoot to Kill \u2014 Encounter the Unknown deals 2 damage to each creature and each player."
+   },
+   {
     "name": "Khaaaaaaaaaaaannn!",
     "grade": "B",
-    "z": 0.9976432497736085,
+    "z": 0.9265375992550303,
     "rarity": "uncommon",
     "mana_cost": "{X}{R}",
     "type_line": "Instant",
@@ -911,75 +1021,9 @@
     "oracle_text": "Khaaaaaaaaaaaannn! deals twice X damage to target creature. If that creature would die this turn, exile it instead."
    },
    {
-    "name": "Worf, Intelligence Contractor",
-    "grade": "B",
-    "z": 0.985446574294309,
-    "rarity": "rare",
-    "mana_cost": "{2}{R}",
-    "type_line": "Legendary Creature \u2014 Klingon Warrior Spy",
-    "image": "https://cards.scryfall.io/normal/front/7/d/7df6c8c1-1f85-4c5d-a4f6-9ffcdad1b12e.jpg?1792508250",
-    "scryfall_uri": "https://scryfall.com/card/trk/180/worf-intelligence-contractor?utm_source=api",
-    "colors": [
-     "R"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 4,
-     "of": 5,
-     "mean_grade_error": 1.919806243272336,
-     "within_1": 0.5005382131324004,
-     "within_2": 0.697524219590958
-    },
-    "oracle_text": "When Worf enters, for each opponent, gain control of up to one target creature that player controls with mana value 3 or less until end of turn. Untap those creatures. Until end of turn, they become Warriors in addition to their other types and gain haste."
-   },
-   {
-    "name": "Transporter Malfunction",
-    "grade": "B-",
-    "z": 0.7764217611479277,
-    "rarity": "uncommon",
-    "mana_cost": "{1}{R}",
-    "type_line": "Sorcery",
-    "image": "https://cards.scryfall.io/normal/front/8/5/85b108c3-00b5-4dfb-90de-57fa483c4926.jpg?1793274273",
-    "scryfall_uri": "https://scryfall.com/card/trk/178/transporter-malfunction?utm_source=api",
-    "colors": [
-     "R"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 1,
-     "of": 5,
-     "mean_grade_error": 1.6081808396124866,
-     "within_1": 0.5667384284176534,
-     "within_2": 0.7766415500538213
-    },
-    "oracle_text": "Transporter Malfunction deals 3 damage to any target.\nBeam me up {3}{R}{R}{R} (You may cast this card from your graveyard for {3}{R}{R}{R} if you also return a creature you control to its owner's hand. Then exile this spell.)"
-   },
-   {
-    "name": "Munitions Enthusiast",
-    "grade": "B-",
-    "z": 0.6791800133805297,
-    "rarity": "uncommon",
-    "mana_cost": "{1}{R}",
-    "type_line": "Creature \u2014 Klingon Warrior",
-    "image": "https://cards.scryfall.io/normal/front/6/d/6d73bb1c-39e3-429c-b6bb-96dae2254708.jpg?1785981544",
-    "scryfall_uri": "https://scryfall.com/card/trk/158/munitions-enthusiast?utm_source=api",
-    "colors": [
-     "R"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 1,
-     "of": 5,
-     "mean_grade_error": 1.6081808396124866,
-     "within_1": 0.5667384284176534,
-     "within_2": 0.7766415500538213
-    },
-    "oracle_text": "Trample\nWhen this creature dies, it deals 1 damage to any target."
-   },
-   {
     "name": "Tasha Yar, Out of Time",
-    "grade": "C+",
-    "z": 0.4762046719178444,
+    "grade": "B",
+    "z": 0.7967517229822279,
     "rarity": "rare",
     "mana_cost": "{1}{R}",
     "type_line": "Legendary Creature \u2014 Human Officer",
@@ -997,13 +1041,35 @@
      "within_2": 0.7104413347685683
     },
     "oracle_text": "Haste\nWhen Tasha Yar dies, exile the top card of your library. Until the end of your next turn, you may play that card.\n{2}{R}, Exile this card from your graveyard: Create a token that's a copy of this card. Sacrifice it at the beginning of the next end step. Activate only as a sorcery."
+   },
+   {
+    "name": "Transporter Malfunction",
+    "grade": "B-",
+    "z": 0.7865461057876948,
+    "rarity": "uncommon",
+    "mana_cost": "{1}{R}",
+    "type_line": "Sorcery",
+    "image": "https://cards.scryfall.io/normal/front/8/5/85b108c3-00b5-4dfb-90de-57fa483c4926.jpg?1793274273",
+    "scryfall_uri": "https://scryfall.com/card/trk/178/transporter-malfunction?utm_source=api",
+    "colors": [
+     "R"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 1,
+     "of": 5,
+     "mean_grade_error": 1.6081808396124866,
+     "within_1": 0.5667384284176534,
+     "within_2": 0.7766415500538213
+    },
+    "oracle_text": "Transporter Malfunction deals 3 damage to any target.\nBeam me up {3}{R}{R}{R} (You may cast this card from your graveyard for {3}{R}{R}{R} if you also return a creature you control to its owner's hand. Then exile this spell.)"
    }
   ],
   "G": [
    {
     "name": "U.S.S. Discovery, at Black Alert",
     "grade": "A-",
-    "z": 1.4987882591005781,
+    "z": 1.5976582835775086,
     "rarity": "rare",
     "mana_cost": "{3}{G}{G}",
     "type_line": "Legendary Artifact \u2014 Spacecraft",
@@ -1023,31 +1089,31 @@
     "oracle_text": "Whenever U.S.S. Discovery enters or attacks, discover 5. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)\nStation\n6+ | Flying"
    },
    {
-    "name": "Dr. Leonard \"Bones\" McCoy",
+    "name": "Rok-Tahk, Budding Scientist",
     "grade": "A-",
-    "z": 1.4544076028560409,
-    "rarity": "rare",
-    "mana_cost": "{1}{G}{G}",
-    "type_line": "Legendary Creature \u2014 Human Doctor",
-    "image": "https://cards.scryfall.io/normal/front/d/8/d8593bf7-5248-4f4a-bf8b-9816d2f76c6b.jpg?1793187127",
-    "scryfall_uri": "https://scryfall.com/card/trk/197/dr-leonard-bones-mccoy?utm_source=api",
+    "z": 1.4987882591005781,
+    "rarity": "mythic",
+    "mana_cost": "{4}{G}{G}",
+    "type_line": "Legendary Creature \u2014 Brikar Scientist",
+    "image": "https://cards.scryfall.io/normal/front/7/8/787bd19b-586e-4451-850b-60e0857bada0.jpg?1793273846",
+    "scryfall_uri": "https://scryfall.com/card/trk/211/rok-tahk-budding-scientist?utm_source=api",
     "colors": [
      "G"
     ],
     "confidence": "high",
     "trust": {
-     "band": 3,
+     "band": 2,
      "of": 5,
-     "mean_grade_error": 1.8794402583423035,
-     "within_1": 0.5064585575888052,
-     "within_2": 0.7104413347685683
+     "mean_grade_error": 1.8207750269106566,
+     "within_1": 0.5107642626480086,
+     "within_2": 0.7222820236813778
     },
-    "oracle_text": "Flash\nWhen Dr. McCoy enters, choose one \u2014\n\u2022 Return target non-Doctor permanent card from your graveyard to your hand.\n\u2022 Choose up to one other target creature. When it dies this turn, return that card to the battlefield under its owner's control with a +1/+1 counter on it at the beginning of the next end step."
+    "oracle_text": "Creatures you control have \"{T}: Add {G}{G}.\"\nWhen Rok-Tahk enters, create Murf, a legendary 0/1 green Ooze Slug creature token with indestructible."
    },
    {
     "name": "Species 8472",
     "grade": "A-",
-    "z": 1.4332524189550542,
+    "z": 1.4762344944523467,
     "rarity": "uncommon",
     "mana_cost": "{4}{G}{G}",
     "type_line": "Creature \u2014 Insect Beast",
@@ -1067,97 +1133,9 @@
     "oracle_text": "Strange new worlds \u2014 When this creature enters, you gain life equal to the number of differently named lands you control.\nThis creature can't be blocked by artifact creatures.\nThis creature can't be the target of abilities from artifact sources your opponents control."
    },
    {
-    "name": "Holo-Engineer",
-    "grade": "A-",
-    "z": 1.41271990941275,
-    "rarity": "rare",
-    "mana_cost": "{2}{G}{G}",
-    "type_line": "Creature \u2014 Human Artificer",
-    "image": "https://cards.scryfall.io/normal/front/a/c/acfaf5f3-a4f5-418a-a29a-211b33bf18ee.jpg?1793100831",
-    "scryfall_uri": "https://scryfall.com/card/trk/201/holo-engineer?utm_source=api",
-    "colors": [
-     "G"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 5,
-     "of": 5,
-     "mean_grade_error": 1.9504843918191603,
-     "within_1": 0.49730893433799783,
-     "within_2": 0.6835306781485468
-    },
-    "oracle_text": "When this creature enters, create a 3/3 colorless Illusion artifact creature token.\nIf one or more tokens would be created under your control, that many 3/3 colorless Illusion artifact creature tokens are created instead."
-   },
-   {
-    "name": "Captain Jonathan Archer",
-    "grade": "A-",
-    "z": 1.3927662870454445,
-    "rarity": "rare",
-    "mana_cost": "{2}{G}",
-    "type_line": "Legendary Creature \u2014 Human Officer",
-    "image": "https://cards.scryfall.io/normal/front/a/4/a4518ea3-5f56-4f1d-9024-2bf06ac98786.jpg?1792508262",
-    "scryfall_uri": "https://scryfall.com/card/trk/186/captain-jonathan-archer?utm_source=api",
-    "colors": [
-     "G"
-    ],
-    "confidence": "low",
-    "trust": {
-     "band": 2,
-     "of": 5,
-     "mean_grade_error": 1.8207750269106566,
-     "within_1": 0.5107642626480086,
-     "within_2": 0.7222820236813778
-    },
-    "oracle_text": "When Captain Archer enters, create Porthos, a legendary 1/1 green Dog creature token.\nFederation \u2014 {G}, {T}: Target creature you control gets +X/+X until end of turn, where X is the number of creature types among non-Borg creatures you control. Activate only as a sorcery."
-   },
-   {
-    "name": "Hologram Stalker",
-    "grade": "B+",
-    "z": 1.283249262996782,
-    "rarity": "uncommon",
-    "mana_cost": "{4}{G}{G}",
-    "type_line": "Creature \u2014 Hirogen Warrior",
-    "image": "https://cards.scryfall.io/normal/front/6/b/6bd8a87b-ca7a-4a15-b96f-1a673ee44f3e.jpg?1792668500",
-    "scryfall_uri": "https://scryfall.com/card/trk/202/hologram-stalker?utm_source=api",
-    "colors": [
-     "G"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 3,
-     "of": 5,
-     "mean_grade_error": 1.8794402583423035,
-     "within_1": 0.5064585575888052,
-     "within_2": 0.7104413347685683
-    },
-    "oracle_text": "When this creature enters, return target permanent card from your graveyard to your hand.\nWhenever a card leaves your graveyard, create a 3/3 colorless Illusion artifact creature token. This ability triggers only once each turn."
-   },
-   {
-    "name": "Captain Pike, Fullness of Time",
-    "grade": "B+",
-    "z": 1.1431503064737354,
-    "rarity": "rare",
-    "mana_cost": "{1}{G}{G}",
-    "type_line": "Legendary Creature \u2014 Human Officer Scout",
-    "image": "https://cards.scryfall.io/normal/front/7/4/743be4c4-5c91-42bb-9942-115e903041a9.jpg?1792508262",
-    "scryfall_uri": "https://scryfall.com/card/trk/188/captain-pike-fullness-of-time?utm_source=api",
-    "colors": [
-     "G"
-    ],
-    "confidence": "high",
-    "trust": {
-     "band": 5,
-     "of": 5,
-     "mean_grade_error": 1.9504843918191603,
-     "within_1": 0.49730893433799783,
-     "within_2": 0.6835306781485468
-    },
-    "oracle_text": "Strange new worlds \u2014 Captain Pike's power and toughness are each equal to the number of differently named lands you control.\nYou may look at the top card of your library any time.\nYou may play lands from the top of your library."
-   },
-   {
     "name": "Jadzia Dax, Living Legacy",
-    "grade": "B",
-    "z": 1.0479907749838702,
+    "grade": "A-",
+    "z": 1.4332524189550542,
     "rarity": "mythic",
     "mana_cost": "{1}{G}",
     "type_line": "Legendary Creature \u2014 Trill Scientist",
@@ -1177,18 +1155,18 @@
     "oracle_text": "At the beginning of your first main phase, put a +1/+1 counter on Jadzia Dax, then add an amount of {G} equal to the number of counters on her.\nTransfer Symbiont \u2014 {2}{G}, Discard this card: Put two +1/+1 counters on target creature."
    },
    {
-    "name": "Amok Time",
-    "grade": "B",
-    "z": 0.9733947587067434,
-    "rarity": "uncommon",
+    "name": "Captain Jonathan Archer",
+    "grade": "A-",
+    "z": 1.3733522801988087,
+    "rarity": "rare",
     "mana_cost": "{2}{G}",
-    "type_line": "Enchantment \u2014 Saga",
-    "image": "https://cards.scryfall.io/normal/front/d/3/d31447b6-484f-4dda-b6af-ab068a84f896.jpg?1787205814",
-    "scryfall_uri": "https://scryfall.com/card/trk/183/amok-time?utm_source=api",
+    "type_line": "Legendary Creature \u2014 Human Officer",
+    "image": "https://cards.scryfall.io/normal/front/a/4/a4518ea3-5f56-4f1d-9024-2bf06ac98786.jpg?1792508262",
+    "scryfall_uri": "https://scryfall.com/card/trk/186/captain-jonathan-archer?utm_source=api",
     "colors": [
      "G"
     ],
-    "confidence": "high",
+    "confidence": "low",
     "trust": {
      "band": 2,
      "of": 5,
@@ -1196,12 +1174,78 @@
      "within_1": 0.5107642626480086,
      "within_2": 0.7222820236813778
     },
-    "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 Target creature you control fights up to one target creature an opponent controls.\nII \u2014 You gain 3 life.\nIII \u2014 Return target creature card from your graveyard to your hand."
+    "oracle_text": "When Captain Archer enters, create Porthos, a legendary 1/1 green Dog creature token.\nFederation \u2014 {G}, {T}: Target creature you control gets +X/+X until end of turn, where X is the number of creature types among non-Borg creatures you control. Activate only as a sorcery."
+   },
+   {
+    "name": "Dr. Leonard \"Bones\" McCoy",
+    "grade": "B+",
+    "z": 1.3360050611545335,
+    "rarity": "rare",
+    "mana_cost": "{1}{G}{G}",
+    "type_line": "Legendary Creature \u2014 Human Doctor",
+    "image": "https://cards.scryfall.io/normal/front/d/8/d8593bf7-5248-4f4a-bf8b-9816d2f76c6b.jpg?1793187127",
+    "scryfall_uri": "https://scryfall.com/card/trk/197/dr-leonard-bones-mccoy?utm_source=api",
+    "colors": [
+     "G"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 3,
+     "of": 5,
+     "mean_grade_error": 1.8794402583423035,
+     "within_1": 0.5064585575888052,
+     "within_2": 0.7104413347685683
+    },
+    "oracle_text": "Flash\nWhen Dr. McCoy enters, choose one \u2014\n\u2022 Return target non-Doctor permanent card from your graveyard to your hand.\n\u2022 Choose up to one other target creature. When it dies this turn, return that card to the battlefield under its owner's control with a +1/+1 counter on it at the beginning of the next end step."
+   },
+   {
+    "name": "Holo-Engineer",
+    "grade": "B+",
+    "z": 1.318010897303537,
+    "rarity": "rare",
+    "mana_cost": "{2}{G}{G}",
+    "type_line": "Creature \u2014 Human Artificer",
+    "image": "https://cards.scryfall.io/normal/front/a/c/acfaf5f3-a4f5-418a-a29a-211b33bf18ee.jpg?1793100831",
+    "scryfall_uri": "https://scryfall.com/card/trk/201/holo-engineer?utm_source=api",
+    "colors": [
+     "G"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 5,
+     "of": 5,
+     "mean_grade_error": 1.9504843918191603,
+     "within_1": 0.49730893433799783,
+     "within_2": 0.6835306781485468
+    },
+    "oracle_text": "When this creature enters, create a 3/3 colorless Illusion artifact creature token.\nIf one or more tokens would be created under your control, that many 3/3 colorless Illusion artifact creature tokens are created instead."
+   },
+   {
+    "name": "Hologram Stalker",
+    "grade": "B+",
+    "z": 1.202508262925448,
+    "rarity": "uncommon",
+    "mana_cost": "{4}{G}{G}",
+    "type_line": "Creature \u2014 Hirogen Warrior",
+    "image": "https://cards.scryfall.io/normal/front/6/b/6bd8a87b-ca7a-4a15-b96f-1a673ee44f3e.jpg?1792668500",
+    "scryfall_uri": "https://scryfall.com/card/trk/202/hologram-stalker?utm_source=api",
+    "colors": [
+     "G"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 3,
+     "of": 5,
+     "mean_grade_error": 1.8794402583423035,
+     "within_1": 0.5064585575888052,
+     "within_2": 0.7104413347685683
+    },
+    "oracle_text": "When this creature enters, return target permanent card from your graveyard to your hand.\nWhenever a card leaves your graveyard, create a 3/3 colorless Illusion artifact creature token. This ability triggers only once each turn."
    },
    {
     "name": "MACO Strike Team",
-    "grade": "B",
-    "z": 0.9265375992550303,
+    "grade": "B+",
+    "z": 1.1289271383603408,
     "rarity": "rare",
     "mana_cost": "{G}",
     "type_line": "Creature \u2014 Human Soldier",
@@ -1219,6 +1263,28 @@
      "within_2": 0.7222820236813778
     },
     "oracle_text": "Whenever a creature you control becomes the target of a spell or ability an opponent controls, create a tapped 1/1 red Officer creature token."
+   },
+   {
+    "name": "Captain Pike, Fullness of Time",
+    "grade": "B",
+    "z": 1.1011455083738535,
+    "rarity": "rare",
+    "mana_cost": "{1}{G}{G}",
+    "type_line": "Legendary Creature \u2014 Human Officer Scout",
+    "image": "https://cards.scryfall.io/normal/front/7/4/743be4c4-5c91-42bb-9942-115e903041a9.jpg?1792508262",
+    "scryfall_uri": "https://scryfall.com/card/trk/188/captain-pike-fullness-of-time?utm_source=api",
+    "colors": [
+     "G"
+    ],
+    "confidence": "high",
+    "trust": {
+     "band": 5,
+     "of": 5,
+     "mean_grade_error": 1.9504843918191603,
+     "within_1": 0.49730893433799783,
+     "within_2": 0.6835306781485468
+    },
+    "oracle_text": "Strange new worlds \u2014 Captain Pike's power and toughness are each equal to the number of differently named lands you control.\nYou may look at the top card of your library any time.\nYou may play lands from the top of your library."
    }
   ]
  },
@@ -1226,22 +1292,30 @@
   "WU": {
    "pair": "WU",
    "name": "Spacecraft and Artificers",
-   "hook": "",
-   "deck_mean_z": 1.3823741520841477,
+   "hook": "Station ships with creatures that weren't going to attack or block anyway. Hemmer loots while stationing; Brad Boimler, Geordi La Forge and Zefram Cochrane speed ships up. Play enough early bodies that you aren't building a ship while losing the board.",
+   "deck_mean_z": 1.3502223991571363,
    "pool_size": 108,
-   "rank": 3,
+   "rank": 5,
    "views": {
     "model": {
-     "score": 1.3823741520841477,
-     "rank": 3
+     "score": 1.3502223991571363,
+     "rank": 5
+    },
+    "blind": {
+     "score": 1.4241440922124884,
+     "rank": 2
+    },
+    "review": {
+     "score": 1.2853669773429839,
+     "rank": 5
     }
    },
-   "rank_spread": 0,
+   "rank_spread": 3,
    "gold": [
     {
      "name": "Constable Odo",
-     "grade": "B-",
-     "z": 0.6980929805718563,
+     "grade": "B",
+     "z": 0.8598332779309718,
      "rarity": "uncommon",
      "mana_cost": "{3}{W/U}{W/U}",
      "type_line": "Legendary Creature \u2014 Shapeshifter Detective",
@@ -1263,8 +1337,8 @@
     },
     {
      "name": "Hemmer, Fixing What Is Broken",
-     "grade": "C",
-     "z": 0.13845484743253844,
+     "grade": "C+",
+     "z": 0.4512828353727939,
      "rarity": "uncommon",
      "mana_cost": "{W}{U}",
      "type_line": "Legendary Creature \u2014 Aenar Artificer",
@@ -1286,8 +1360,8 @@
     },
     {
      "name": "Live Long and Prosper",
-     "grade": "F",
-     "z": -1.7151947679658062,
+     "grade": "D-",
+     "z": -1.266435681995933,
      "rarity": "rare",
      "mana_cost": "{5}{W}{U}",
      "type_line": "Sorcery",
@@ -1311,8 +1385,8 @@
    "key_cards": [
     {
      "name": "Constable Odo",
-     "grade": "B-",
-     "z": 0.6980929805718563,
+     "grade": "B",
+     "z": 0.8598332779309718,
      "rarity": "uncommon",
      "mana_cost": "{3}{W/U}{W/U}",
      "type_line": "Legendary Creature \u2014 Shapeshifter Detective",
@@ -1333,31 +1407,9 @@
      "oracle_text": "When Constable Odo enters, choose one \u2014\n\u2022 Tap target creature an opponent controls. Put two stun counters on it. (If a permanent with a stun counter would become untapped, remove one from it instead.)\n\u2022 Investigate twice. (To investigate, create a Clue token. It's an artifact with \"{2}, Sacrifice this token: Draw a card.\")"
     },
     {
-     "name": "Interstellar Effigy",
-     "grade": "C+",
-     "z": 0.3621206073607968,
-     "rarity": "common",
-     "mana_cost": "{4}{U}",
-     "type_line": "Artifact Creature \u2014 Construct",
-     "image": "https://cards.scryfall.io/normal/front/4/b/4b7d505f-2a6b-4525-87c7-19e06d49c9df.jpg?1793361241",
-     "scryfall_uri": "https://scryfall.com/card/trk/66/interstellar-effigy?utm_source=api",
-     "colors": [
-      "U"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6081808396124866,
-      "within_1": 0.5667384284176534,
-      "within_2": 0.7766415500538213
-     },
-     "oracle_text": "When this creature enters, return target creature an opponent controls to its owner's hand."
-    },
-    {
      "name": "Hemmer, Fixing What Is Broken",
-     "grade": "C",
-     "z": 0.13845484743253844,
+     "grade": "C+",
+     "z": 0.4512828353727939,
      "rarity": "uncommon",
      "mana_cost": "{W}{U}",
      "type_line": "Legendary Creature \u2014 Aenar Artificer",
@@ -1376,6 +1428,28 @@
       "within_2": 0.6835306781485468
      },
      "oracle_text": "During your turn, Spacecraft you control have hexproof. (They can't be the targets of spells or abilities your opponents control.)\nWhenever Hemmer becomes tapped, draw a card, then discard a card."
+    },
+    {
+     "name": "Interstellar Effigy",
+     "grade": "C+",
+     "z": 0.22188326053533158,
+     "rarity": "common",
+     "mana_cost": "{4}{U}",
+     "type_line": "Artifact Creature \u2014 Construct",
+     "image": "https://cards.scryfall.io/normal/front/4/b/4b7d505f-2a6b-4525-87c7-19e06d49c9df.jpg?1793361241",
+     "scryfall_uri": "https://scryfall.com/card/trk/66/interstellar-effigy?utm_source=api",
+     "colors": [
+      "U"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6081808396124866,
+      "within_1": 0.5667384284176534,
+      "within_2": 0.7766415500538213
+     },
+     "oracle_text": "When this creature enters, return target creature an opponent controls to its owner's hand."
     }
    ],
    "top": [
@@ -1448,7 +1522,7 @@
     {
      "name": "Crystalline Entity",
      "grade": "A",
-     "z": 1.8627318674216515,
+     "z": 1.9548969207358264,
      "rarity": "mythic",
      "mana_cost": "{8}",
      "type_line": "Artifact Creature \u2014 Elemental",
@@ -1468,7 +1542,7 @@
     {
      "name": "Captain Jean-Luc Picard",
      "grade": "A",
-     "z": 1.784116344689114,
+     "z": 1.8220171666027576,
      "rarity": "mythic",
      "mana_cost": "{2}{W}",
      "type_line": "Legendary Creature \u2014 Human Officer",
@@ -1488,9 +1562,31 @@
      "oracle_text": "Other creatures you control get +1/+1.\nWhenever you cast a creature or Spacecraft spell, create a 1/1 red Officer creature token.\nTap seven untapped Officers you control: Search your library for a Spacecraft card, put it onto the battlefield with seven charge counters on it, then shuffle."
     },
     {
+     "name": "Deanna Troi, Psychic Counsel",
+     "grade": "A-",
+     "z": 1.5463344771685748,
+     "rarity": "rare",
+     "mana_cost": "{1}{W}",
+     "type_line": "Legendary Creature \u2014 Betazoid Human Advisor",
+     "image": "https://cards.scryfall.io/normal/front/1/a/1a027761-84e7-4cbf-a629-ae9bd3d8467b.jpg?1793100632",
+     "scryfall_uri": "https://scryfall.com/card/trk/11/deanna-troi-psychic-counsel?utm_source=api",
+     "colors": [
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 4,
+      "of": 5,
+      "mean_grade_error": 1.919806243272336,
+      "within_1": 0.5005382131324004,
+      "within_2": 0.697524219590958
+     },
+     "oracle_text": "Other creatures you control enter with an additional +1/+1 counter on them."
+    },
+    {
      "name": "Antagonist Incorporator",
-     "grade": "A",
-     "z": 1.7151947679658068,
+     "grade": "A-",
+     "z": 1.4544076028560409,
      "rarity": "rare",
      "mana_cost": "{1}{W}",
      "type_line": "Artifact Creature \u2014 Borg",
@@ -1510,61 +1606,47 @@
      "oracle_text": "Artifact creatures you control have \"Whenever this creature deals combat damage to a player, you may pay {1}. If you do, create a 1/1 colorless Borg artifact creature token.\""
     },
     {
-     "name": "Cloak and Phaser",
-     "grade": "A-",
-     "z": 1.4762344944523467,
-     "rarity": "uncommon",
-     "mana_cost": "{8}{U}",
-     "type_line": "Sorcery",
-     "image": "https://cards.scryfall.io/normal/front/2/d/2d9fb7e7-582d-41e7-be9e-98372505ea44.jpg?1793187986",
-     "scryfall_uri": "https://scryfall.com/card/trk/49/cloak-and-phaser?utm_source=api",
+     "name": "Miles O'Brien, Transporter Ops",
+     "grade": "B+",
+     "z": 1.3004336562178351,
+     "rarity": "rare",
+     "mana_cost": "{2}{W}",
+     "type_line": "Legendary Creature \u2014 Human Artificer",
+     "image": "https://cards.scryfall.io/normal/front/e/4/e4f041b3-e785-45ba-9a7e-33878614d3b0.jpg?1793361164",
+     "scryfall_uri": "https://scryfall.com/card/trk/24/miles-obrien-transporter-ops?utm_source=api",
      "colors": [
-      "U"
+      "W"
      ],
      "confidence": "high",
      "trust": {
-      "band": 4,
+      "band": 2,
       "of": 5,
-      "mean_grade_error": 1.919806243272336,
-      "within_1": 0.5005382131324004,
-      "within_2": 0.697524219590958
+      "mean_grade_error": 1.8207750269106566,
+      "within_1": 0.5107642626480086,
+      "within_2": 0.7222820236813778
      },
-     "oracle_text": "Strange new worlds \u2014 This spell costs {X} less to cast, where X is the number of differently named lands you control.\nCreate two 2/2 black Romulan creature tokens. Draw two cards, then discard a card."
-    },
-    {
-     "name": "Mr. Spock, Science Officer",
-     "grade": "A-",
-     "z": 1.3733522801988087,
-     "rarity": "mythic",
-     "mana_cost": "{2}{U}{U}",
-     "type_line": "Legendary Creature \u2014 Vulcan Human Scientist",
-     "image": "https://cards.scryfall.io/normal/front/d/1/d19fc127-669e-4264-935a-e5991e6c0964.jpg?1792508192",
-     "scryfall_uri": "https://scryfall.com/card/trk/74/mr-spock-science-officer?utm_source=api",
-     "colors": [
-      "U"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.8794402583423035,
-      "within_1": 0.5064585575888052,
-      "within_2": 0.7104413347685683
-     },
-     "oracle_text": "If you would draw a card, draw two cards instead."
+     "oracle_text": "When Miles O'Brien enters, return up to one other target creature or artifact you control to its owner's hand.\nAt the beginning of each end step, if a permanent was returned to your hand from the battlefield this turn, draw a card."
     }
    ]
   },
   "WB": {
    "pair": "WB",
    "name": "Borg Artifact Creatures",
-   "hook": "",
-   "deck_mean_z": 1.608549138410397,
+   "hook": "Curve out with cheap artifact creatures (Assembly Specialist, Vexing Drone, Tenacious Drone) and let the Borg payoffs scale them: Locutus, Primary Unimatrix Adjunct, Hive Mind Coprocessor, Collation Trimatrix, Organic Avulsion Unit. Assault Drone and the payoffs fall flat without enough artifacts.",
+   "deck_mean_z": 1.585897676478446,
    "pool_size": 110,
    "rank": 1,
    "views": {
     "model": {
-     "score": 1.608549138410397,
+     "score": 1.585897676478446,
+     "rank": 1
+    },
+    "blind": {
+     "score": 1.5064258177234533,
+     "rank": 1
+    },
+    "review": {
+     "score": 1.5228532361601963,
      "rank": 1
     }
    },
@@ -1595,8 +1677,8 @@
     },
     {
      "name": "The City on the Edge of Forever",
-     "grade": "A+",
-     "z": 2.2146264602144723,
+     "grade": "A",
+     "z": 1.784116344689114,
      "rarity": "rare",
      "mana_cost": "{3}{W}{B}",
      "type_line": "Enchantment \u2014 Saga",
@@ -1619,7 +1701,7 @@
     {
      "name": "Locutus, the One Who Speaks",
      "grade": "A-",
-     "z": 1.5976582835775086,
+     "z": 1.522131276854954,
      "rarity": "uncommon",
      "mana_cost": "{W}{B}",
      "type_line": "Legendary Artifact Creature \u2014 Borg",
@@ -1642,7 +1724,7 @@
     {
      "name": "Zero, Incorporeal Sensate",
      "grade": "B-",
-     "z": 0.6420613752765013,
+     "z": 0.6698142781219666,
      "rarity": "uncommon",
      "mana_cost": "{1}{W/B}{W/B}",
      "type_line": "Legendary Artifact Creature \u2014 Medusan Scientist",
@@ -1667,7 +1749,7 @@
     {
      "name": "Locutus, the One Who Speaks",
      "grade": "A-",
-     "z": 1.5976582835775086,
+     "z": 1.522131276854954,
      "rarity": "uncommon",
      "mana_cost": "{W}{B}",
      "type_line": "Legendary Artifact Creature \u2014 Borg",
@@ -1690,7 +1772,7 @@
     {
      "name": "Zero, Incorporeal Sensate",
      "grade": "B-",
-     "z": 0.6420613752765013,
+     "z": 0.6698142781219666,
      "rarity": "uncommon",
      "mana_cost": "{1}{W/B}{W/B}",
      "type_line": "Legendary Artifact Creature \u2014 Medusan Scientist",
@@ -1713,7 +1795,7 @@
     {
      "name": "Vexing Drone",
      "grade": "C-",
-     "z": -0.2757525961704297,
+     "z": -0.2912850330034008,
      "rarity": "common",
      "mana_cost": "{1}{W}",
      "type_line": "Artifact Creature \u2014 Borg",
@@ -1735,7 +1817,7 @@
     {
      "name": "Assault Drone",
      "grade": "D",
-     "z": -1.0479907749838702,
+     "z": -1.0351577676318333,
      "rarity": "common",
      "mana_cost": "{3}{B}",
      "type_line": "Artifact Creature \u2014 Borg",
@@ -1824,54 +1906,9 @@
      "oracle_text": "Strange new worlds \u2014 When this creature enters, create X 1/1 red Officer creature tokens, where X is the number of differently named lands you control.\nWhenever this creature or another creature you control dies, put a +1/+1 counter on target creature you control."
     },
     {
-     "name": "The City on the Edge of Forever",
+     "name": "Salt Vampire",
      "grade": "A+",
      "z": 2.2146264602144723,
-     "rarity": "rare",
-     "mana_cost": "{3}{W}{B}",
-     "type_line": "Enchantment \u2014 Saga",
-     "image": "https://cards.scryfall.io/normal/front/a/a/aac6f64d-d39a-4994-bc70-6b477b2640f8.jpg?1787205815",
-     "scryfall_uri": "https://scryfall.com/card/trk/228/the-city-on-the-edge-of-forever?utm_source=api",
-     "colors": [
-      "B",
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 4,
-      "of": 5,
-      "mean_grade_error": 1.919806243272336,
-      "within_1": 0.5005382131324004,
-      "within_2": 0.697524219590958
-     },
-     "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 All artifacts and creatures phase out. Create a 0/1 white Human creature token with \"Permanents can't phase in.\" (Treat phased-out permanents and anything attached to them as though they don't exist.)\nII \u2014 You draw two cards and each player loses 2 life.\nIII \u2014 Sacrifice a creature token. If you do, you gain 5 life."
-    },
-    {
-     "name": "The Destruction of Praxis",
-     "grade": "A",
-     "z": 2.067463754050907,
-     "rarity": "rare",
-     "mana_cost": "{3}{B}{B}",
-     "type_line": "Sorcery",
-     "image": "https://cards.scryfall.io/normal/front/3/d/3d33ac2a-73a9-4804-bf9f-c8cf4eea1c76.jpg?1793187997",
-     "scryfall_uri": "https://scryfall.com/card/trk/103/the-destruction-of-praxis?utm_source=api",
-     "colors": [
-      "B"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 5,
-      "of": 5,
-      "mean_grade_error": 1.9504843918191603,
-      "within_1": 0.49730893433799783,
-      "within_2": 0.6835306781485468
-     },
-     "oracle_text": "Strange new worlds \u2014 All creatures get -X/-X until end of turn, where X is the number of differently named lands you control. If X is 6 or more, create two 2/1 red Klingon Warrior creature tokens with haste."
-    },
-    {
-     "name": "Salt Vampire",
-     "grade": "A",
-     "z": 2.008004089118491,
      "rarity": "rare",
      "mana_cost": "{1}{B}",
      "type_line": "Creature \u2014 Vampire Shapeshifter",
@@ -1891,9 +1928,31 @@
      "oracle_text": "Lifelink\nWhen this creature enters, look at target opponent's hand. You may choose a nonland card from it. If you do, that player exiles that card, then draws a card."
     },
     {
+     "name": "The Destruction of Praxis",
+     "grade": "A",
+     "z": 2.008004089118491,
+     "rarity": "rare",
+     "mana_cost": "{3}{B}{B}",
+     "type_line": "Sorcery",
+     "image": "https://cards.scryfall.io/normal/front/3/d/3d33ac2a-73a9-4804-bf9f-c8cf4eea1c76.jpg?1793187997",
+     "scryfall_uri": "https://scryfall.com/card/trk/103/the-destruction-of-praxis?utm_source=api",
+     "colors": [
+      "B"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 5,
+      "of": 5,
+      "mean_grade_error": 1.9504843918191603,
+      "within_1": 0.49730893433799783,
+      "within_2": 0.6835306781485468
+     },
+     "oracle_text": "Strange new worlds \u2014 All creatures get -X/-X until end of turn, where X is the number of differently named lands you control. If X is 6 or more, create two 2/1 red Klingon Warrior creature tokens with haste."
+    },
+    {
      "name": "Crystalline Entity",
      "grade": "A",
-     "z": 1.8627318674216515,
+     "z": 1.9548969207358264,
      "rarity": "mythic",
      "mana_cost": "{8}",
      "type_line": "Artifact Creature \u2014 Elemental",
@@ -1913,7 +1972,7 @@
     {
      "name": "Captain Jean-Luc Picard",
      "grade": "A",
-     "z": 1.784116344689114,
+     "z": 1.8220171666027576,
      "rarity": "mythic",
      "mana_cost": "{2}{W}",
      "type_line": "Legendary Creature \u2014 Human Officer",
@@ -1931,51 +1990,59 @@
       "within_2": 0.6835306781485468
      },
      "oracle_text": "Other creatures you control get +1/+1.\nWhenever you cast a creature or Spacecraft spell, create a 1/1 red Officer creature token.\nTap seven untapped Officers you control: Search your library for a Spacecraft card, put it onto the battlefield with seven charge counters on it, then shuffle."
+    },
+    {
+     "name": "The City on the Edge of Forever",
+     "grade": "A",
+     "z": 1.784116344689114,
+     "rarity": "rare",
+     "mana_cost": "{3}{W}{B}",
+     "type_line": "Enchantment \u2014 Saga",
+     "image": "https://cards.scryfall.io/normal/front/a/a/aac6f64d-d39a-4994-bc70-6b477b2640f8.jpg?1787205815",
+     "scryfall_uri": "https://scryfall.com/card/trk/228/the-city-on-the-edge-of-forever?utm_source=api",
+     "colors": [
+      "B",
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 4,
+      "of": 5,
+      "mean_grade_error": 1.919806243272336,
+      "within_1": 0.5005382131324004,
+      "within_2": 0.697524219590958
+     },
+     "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 All artifacts and creatures phase out. Create a 0/1 white Human creature token with \"Permanents can't phase in.\" (Treat phased-out permanents and anything attached to them as though they don't exist.)\nII \u2014 You draw two cards and each player loses 2 life.\nIII \u2014 Sacrifice a creature token. If you do, you gain 5 life."
     }
    ]
   },
   "WR": {
    "pair": "WR",
    "name": "Command 8+ Total Power",
-   "hook": "",
-   "deck_mean_z": 1.3328351006368937,
+   "hook": "The trigger checks for eight power on the battlefield when you attack, not eight power attacking, so big creatures can stay home. Go wide with tokens: Kirk, Commanding Officer, Captain Jean-Luc Picard, Hologram Janeway and La'An Noonien-Singh.",
+   "deck_mean_z": 1.353149174037115,
    "pool_size": 108,
    "rank": 4,
    "views": {
     "model": {
-     "score": 1.3328351006368937,
+     "score": 1.353149174037115,
      "rank": 4
+    },
+    "blind": {
+     "score": 1.3818419944447198,
+     "rank": 4
+    },
+    "review": {
+     "score": 1.215354330336916,
+     "rank": 7
     }
    },
-   "rank_spread": 0,
+   "rank_spread": 3,
    "gold": [
-    {
-     "name": "Kira Nerys, Firebrand",
-     "grade": "C+",
-     "z": 0.370097930802084,
-     "rarity": "rare",
-     "mana_cost": "{1}{R}{W}",
-     "type_line": "Legendary Creature \u2014 Bajoran Soldier",
-     "image": "https://cards.scryfall.io/normal/front/8/1/81ad6427-e730-47c9-8310-6d3ca4b10c82.jpg?1793013295",
-     "scryfall_uri": "https://scryfall.com/card/trk/242/kira-nerys-firebrand?utm_source=api",
-     "colors": [
-      "R",
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.8794402583423035,
-      "within_1": 0.5064585575888052,
-      "within_2": 0.7104413347685683
-     },
-     "oracle_text": "Trample\nIf a creature you control would enter while you control an attacking creature, instead it enters tapped and attacking.\nWhenever another creature you control enters, it gets +1/+1 until end of turn."
-    },
     {
      "name": "Kirk, Commanding Officer",
      "grade": "C+",
-     "z": 0.26028640680380377,
+     "z": 0.4762046719178444,
      "rarity": "uncommon",
      "mana_cost": "{1}{R}{W}",
      "type_line": "Legendary Creature \u2014 Human Officer",
@@ -1996,9 +2063,32 @@
      "oracle_text": "Whenever you attack while creatures you control have total power 8 or greater, exile the top card of your library. You may play that card this turn.\n{2}, Sacrifice Kirk: Destroy target artifact or enchantment."
     },
     {
-     "name": "Worf, Honor-Bound Warrior",
+     "name": "Kira Nerys, Firebrand",
      "grade": "C+",
-     "z": 0.21424354176809524,
+     "z": 0.45955824853388255,
+     "rarity": "rare",
+     "mana_cost": "{1}{R}{W}",
+     "type_line": "Legendary Creature \u2014 Bajoran Soldier",
+     "image": "https://cards.scryfall.io/normal/front/8/1/81ad6427-e730-47c9-8310-6d3ca4b10c82.jpg?1793013295",
+     "scryfall_uri": "https://scryfall.com/card/trk/242/kira-nerys-firebrand?utm_source=api",
+     "colors": [
+      "R",
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.8794402583423035,
+      "within_1": 0.5064585575888052,
+      "within_2": 0.7104413347685683
+     },
+     "oracle_text": "Trample\nIf a creature you control would enter while you control an attacking creature, instead it enters tapped and attacking.\nWhenever another creature you control enters, it gets +1/+1 until end of turn."
+    },
+    {
+     "name": "Worf, Honor-Bound Warrior",
+     "grade": "C",
+     "z": 0.20661630714115378,
      "rarity": "uncommon",
      "mana_cost": "{R/W}{R/W}",
      "type_line": "Legendary Creature \u2014 Klingon Warrior Officer",
@@ -2023,7 +2113,7 @@
     {
      "name": "Kirk, Commanding Officer",
      "grade": "C+",
-     "z": 0.26028640680380377,
+     "z": 0.4762046719178444,
      "rarity": "uncommon",
      "mana_cost": "{1}{R}{W}",
      "type_line": "Legendary Creature \u2014 Human Officer",
@@ -2044,31 +2134,9 @@
      "oracle_text": "Whenever you attack while creatures you control have total power 8 or greater, exile the top card of your library. You may play that card this turn.\n{2}, Sacrifice Kirk: Destroy target artifact or enchantment."
     },
     {
-     "name": "Academy Instructor",
-     "grade": "C+",
-     "z": 0.22953595176894362,
-     "rarity": "uncommon",
-     "mana_cost": "{2}{R}",
-     "type_line": "Creature \u2014 Bolian Officer",
-     "image": "https://cards.scryfall.io/normal/front/6/6/660ec8bc-dc03-4b42-84f3-091c19e2a853.jpg?1793188005",
-     "scryfall_uri": "https://scryfall.com/card/trk/137/academy-instructor?utm_source=api",
-     "colors": [
-      "R"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6081808396124866,
-      "within_1": 0.5667384284176534,
-      "within_2": 0.7766415500538213
-     },
-     "oracle_text": "This creature gets +1/+0 for each Officer token you control.\nWhenever you cast a noncreature spell, create a 1/1 red Officer creature token."
-    },
-    {
      "name": "Worf, Honor-Bound Warrior",
-     "grade": "C+",
-     "z": 0.21424354176809524,
+     "grade": "C",
+     "z": 0.20661630714115378,
      "rarity": "uncommon",
      "mana_cost": "{R/W}{R/W}",
      "type_line": "Legendary Creature \u2014 Klingon Warrior Officer",
@@ -2089,9 +2157,31 @@
      "oracle_text": "Whenever you attack while creatures you control have total power 8 or greater, double Worf's power until end of turn.\nTap two untapped artifacts and/or creatures you control: Put a +1/+1 counter on Worf. Activate only as a sorcery."
     },
     {
+     "name": "Academy Instructor",
+     "grade": "C",
+     "z": -0.04104263738711104,
+     "rarity": "uncommon",
+     "mana_cost": "{2}{R}",
+     "type_line": "Creature \u2014 Bolian Officer",
+     "image": "https://cards.scryfall.io/normal/front/6/6/660ec8bc-dc03-4b42-84f3-091c19e2a853.jpg?1793188005",
+     "scryfall_uri": "https://scryfall.com/card/trk/137/academy-instructor?utm_source=api",
+     "colors": [
+      "R"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6081808396124866,
+      "within_1": 0.5667384284176534,
+      "within_2": 0.7766415500538213
+     },
+     "oracle_text": "This creature gets +1/+0 for each Officer token you control.\nWhenever you cast a noncreature spell, create a 1/1 red Officer creature token."
+    },
+    {
      "name": "La'An Noonien-Singh, Security",
      "grade": "D",
-     "z": -0.8278806484860389,
+     "z": -0.8816313604140716,
      "rarity": "uncommon",
      "mana_cost": "{2}{R}{R}",
      "type_line": "Legendary Creature \u2014 Human Soldier",
@@ -2157,6 +2247,26 @@
      "oracle_text": "Strange new worlds \u2014 When this creature enters, create X 1/1 red Officer creature tokens, where X is the number of differently named lands you control.\nWhenever this creature or another creature you control dies, put a +1/+1 counter on target creature you control."
     },
     {
+     "name": "Crystalline Entity",
+     "grade": "A",
+     "z": 1.9548969207358264,
+     "rarity": "mythic",
+     "mana_cost": "{8}",
+     "type_line": "Artifact Creature \u2014 Elemental",
+     "image": "https://cards.scryfall.io/normal/front/c/b/cbc4ac70-0a4c-4973-a366-dd67d8901e21.jpg?1784036804",
+     "scryfall_uri": "https://scryfall.com/card/trk/261/crystalline-entity?utm_source=api",
+     "colors": [],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6081808396124866,
+      "within_1": 0.5667384284176534,
+      "within_2": 0.7766415500538213
+     },
+     "oracle_text": "Flying\nWhen this creature enters, if you cast it, destroy all nonartifact creatures."
+    },
+    {
      "name": "Captain James T. Kirk",
      "grade": "A",
      "z": 1.9067912950049624,
@@ -2179,29 +2289,9 @@
      "oracle_text": "Whenever Captain Kirk enters or attacks, choose one. If you have no cards in hand, choose one or more instead.\n\u2022 Discard a card, then draw a card.\n\u2022 Create a 1/1 red Officer creature token.\n\u2022 Creatures you control get +1/+0 until end of turn."
     },
     {
-     "name": "Crystalline Entity",
-     "grade": "A",
-     "z": 1.8627318674216515,
-     "rarity": "mythic",
-     "mana_cost": "{8}",
-     "type_line": "Artifact Creature \u2014 Elemental",
-     "image": "https://cards.scryfall.io/normal/front/c/b/cbc4ac70-0a4c-4973-a366-dd67d8901e21.jpg?1784036804",
-     "scryfall_uri": "https://scryfall.com/card/trk/261/crystalline-entity?utm_source=api",
-     "colors": [],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6081808396124866,
-      "within_1": 0.5667384284176534,
-      "within_2": 0.7766415500538213
-     },
-     "oracle_text": "Flying\nWhen this creature enters, if you cast it, destroy all nonartifact creatures."
-    },
-    {
      "name": "Captain Jean-Luc Picard",
      "grade": "A",
-     "z": 1.784116344689114,
+     "z": 1.8220171666027576,
      "rarity": "mythic",
      "mana_cost": "{2}{W}",
      "type_line": "Legendary Creature \u2014 Human Officer",
@@ -2221,31 +2311,9 @@
      "oracle_text": "Other creatures you control get +1/+1.\nWhenever you cast a creature or Spacecraft spell, create a 1/1 red Officer creature token.\nTap seven untapped Officers you control: Search your library for a Spacecraft card, put it onto the battlefield with seven charge counters on it, then shuffle."
     },
     {
-     "name": "Antagonist Incorporator",
-     "grade": "A",
-     "z": 1.7151947679658068,
-     "rarity": "rare",
-     "mana_cost": "{1}{W}",
-     "type_line": "Artifact Creature \u2014 Borg",
-     "image": "https://cards.scryfall.io/normal/front/6/3/63918e59-0c03-4d98-9216-e58ee157b7ea.jpg?1792668297",
-     "scryfall_uri": "https://scryfall.com/card/trk/3/antagonist-incorporator?utm_source=api",
-     "colors": [
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 2,
-      "of": 5,
-      "mean_grade_error": 1.8207750269106566,
-      "within_1": 0.5107642626480086,
-      "within_2": 0.7222820236813778
-     },
-     "oracle_text": "Artifact creatures you control have \"Whenever this creature deals combat damage to a player, you may pay {1}. If you do, create a 1/1 colorless Borg artifact creature token.\""
-    },
-    {
      "name": "Q, Stacking the Deck",
-     "grade": "A-",
-     "z": 1.5463344771685748,
+     "grade": "A",
+     "z": 1.6535730820197796,
      "rarity": "mythic",
      "mana_cost": "{2}{R}{R}",
      "type_line": "Legendary Creature \u2014 Q",
@@ -2265,14 +2333,36 @@
      "oracle_text": "When Q enters, shuffle your library, then exile cards from the top of your library until you exile a nonland card. That nonland card gains \"Exile a card from your hand: Create a copy of this card. You may cast the copy. Activate only during your turn and only if this card is exiled.\""
     },
     {
-     "name": "Miles O'Brien, Transporter Ops",
+     "name": "Deanna Troi, Psychic Counsel",
      "grade": "A-",
-     "z": 1.3544425257173671,
+     "z": 1.5463344771685748,
      "rarity": "rare",
-     "mana_cost": "{2}{W}",
-     "type_line": "Legendary Creature \u2014 Human Artificer",
-     "image": "https://cards.scryfall.io/normal/front/e/4/e4f041b3-e785-45ba-9a7e-33878614d3b0.jpg?1793361164",
-     "scryfall_uri": "https://scryfall.com/card/trk/24/miles-obrien-transporter-ops?utm_source=api",
+     "mana_cost": "{1}{W}",
+     "type_line": "Legendary Creature \u2014 Betazoid Human Advisor",
+     "image": "https://cards.scryfall.io/normal/front/1/a/1a027761-84e7-4cbf-a629-ae9bd3d8467b.jpg?1793100632",
+     "scryfall_uri": "https://scryfall.com/card/trk/11/deanna-troi-psychic-counsel?utm_source=api",
+     "colors": [
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 4,
+      "of": 5,
+      "mean_grade_error": 1.919806243272336,
+      "within_1": 0.5005382131324004,
+      "within_2": 0.697524219590958
+     },
+     "oracle_text": "Other creatures you control enter with an additional +1/+1 counter on them."
+    },
+    {
+     "name": "Antagonist Incorporator",
+     "grade": "A-",
+     "z": 1.4544076028560409,
+     "rarity": "rare",
+     "mana_cost": "{1}{W}",
+     "type_line": "Artifact Creature \u2014 Borg",
+     "image": "https://cards.scryfall.io/normal/front/6/3/63918e59-0c03-4d98-9216-e58ee157b7ea.jpg?1792668297",
+     "scryfall_uri": "https://scryfall.com/card/trk/3/antagonist-incorporator?utm_source=api",
      "colors": [
       "W"
      ],
@@ -2284,29 +2374,37 @@
       "within_1": 0.5107642626480086,
       "within_2": 0.7222820236813778
      },
-     "oracle_text": "When Miles O'Brien enters, return up to one other target creature or artifact you control to its owner's hand.\nAt the beginning of each end step, if a permanent was returned to your hand from the battlefield this turn, draw a card."
+     "oracle_text": "Artifact creatures you control have \"Whenever this creature deals combat damage to a player, you may pay {1}. If you do, create a 1/1 colorless Borg artifact creature token.\""
     }
    ]
   },
   "WG": {
    "pair": "WG",
    "name": "Doctors and Counters",
-   "hook": "",
-   "deck_mean_z": 1.4191241733376756,
+   "hook": "Spread +1/+1 counters and draw from them: Phlox, The Doctor, Sylvia Tilly and Dr. Joseph M'Benga (who protects the rest of the team but not himself). Holo-Engineer and Support Mission get much better with token makers.",
+   "deck_mean_z": 1.458303910512713,
    "pool_size": 106,
    "rank": 2,
    "views": {
     "model": {
-     "score": 1.4191241733376756,
+     "score": 1.458303910512713,
      "rank": 2
+    },
+    "blind": {
+     "score": 1.3837594489200566,
+     "rank": 3
+    },
+    "review": {
+     "score": 1.3809326225981335,
+     "rank": 3
     }
    },
-   "rank_spread": 0,
+   "rank_spread": 1,
    "gold": [
     {
      "name": "The Inner Light",
      "grade": "B+",
-     "z": 1.1723129641292673,
+     "z": 1.249972689965822,
      "rarity": "rare",
      "mana_cost": "{3}{G}{W}",
      "type_line": "Enchantment \u2014 Saga",
@@ -2329,7 +2427,7 @@
     {
      "name": "The Doctor, EMH",
      "grade": "D+",
-     "z": -0.6698142781219666,
+     "z": -0.44303821274377625,
      "rarity": "uncommon",
      "mana_cost": "{3}{G/W}{G/W}",
      "type_line": "Legendary Artifact Creature \u2014 Illusion Doctor",
@@ -2351,8 +2449,8 @@
     },
     {
      "name": "Phlox, Unorthodox Doctor",
-     "grade": "D",
-     "z": -0.6886057071945499,
+     "grade": "D+",
+     "z": -0.6058070959759126,
      "rarity": "uncommon",
      "mana_cost": "{2}{G}{W}",
      "type_line": "Legendary Creature \u2014 Denobulan Doctor",
@@ -2377,7 +2475,7 @@
     {
      "name": "The Doctor, EMH",
      "grade": "D+",
-     "z": -0.6698142781219666,
+     "z": -0.44303821274377625,
      "rarity": "uncommon",
      "mana_cost": "{3}{G/W}{G/W}",
      "type_line": "Legendary Artifact Creature \u2014 Illusion Doctor",
@@ -2399,8 +2497,8 @@
     },
     {
      "name": "Phlox, Unorthodox Doctor",
-     "grade": "D",
-     "z": -0.6886057071945499,
+     "grade": "D+",
+     "z": -0.6058070959759126,
      "rarity": "uncommon",
      "mana_cost": "{2}{G}{W}",
      "type_line": "Legendary Creature \u2014 Denobulan Doctor",
@@ -2423,7 +2521,7 @@
     {
      "name": "Pure Energy",
      "grade": "F",
-     "z": -2.21462646021447,
+     "z": -2.0674637540509084,
      "rarity": "common",
      "mana_cost": "{1}{W}",
      "type_line": "Sorcery",
@@ -2445,7 +2543,7 @@
     {
      "name": "Support Mission",
      "grade": "F",
-     "z": -2.6147770556013405,
+     "z": -2.21462646021447,
      "rarity": "uncommon",
      "mana_cost": "{2}{G}",
      "type_line": "Enchantment",
@@ -2513,7 +2611,7 @@
     {
      "name": "Crystalline Entity",
      "grade": "A",
-     "z": 1.8627318674216515,
+     "z": 1.9548969207358264,
      "rarity": "mythic",
      "mana_cost": "{8}",
      "type_line": "Artifact Creature \u2014 Elemental",
@@ -2533,7 +2631,7 @@
     {
      "name": "Captain Jean-Luc Picard",
      "grade": "A",
-     "z": 1.784116344689114,
+     "z": 1.8220171666027576,
      "rarity": "mythic",
      "mana_cost": "{2}{W}",
      "type_line": "Legendary Creature \u2014 Human Officer",
@@ -2553,31 +2651,9 @@
      "oracle_text": "Other creatures you control get +1/+1.\nWhenever you cast a creature or Spacecraft spell, create a 1/1 red Officer creature token.\nTap seven untapped Officers you control: Search your library for a Spacecraft card, put it onto the battlefield with seven charge counters on it, then shuffle."
     },
     {
-     "name": "Antagonist Incorporator",
-     "grade": "A",
-     "z": 1.7151947679658068,
-     "rarity": "rare",
-     "mana_cost": "{1}{W}",
-     "type_line": "Artifact Creature \u2014 Borg",
-     "image": "https://cards.scryfall.io/normal/front/6/3/63918e59-0c03-4d98-9216-e58ee157b7ea.jpg?1792668297",
-     "scryfall_uri": "https://scryfall.com/card/trk/3/antagonist-incorporator?utm_source=api",
-     "colors": [
-      "W"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 2,
-      "of": 5,
-      "mean_grade_error": 1.8207750269106566,
-      "within_1": 0.5107642626480086,
-      "within_2": 0.7222820236813778
-     },
-     "oracle_text": "Artifact creatures you control have \"Whenever this creature deals combat damage to a player, you may pay {1}. If you do, create a 1/1 colorless Borg artifact creature token.\""
-    },
-    {
      "name": "U.S.S. Discovery, at Black Alert",
      "grade": "A-",
-     "z": 1.4987882591005781,
+     "z": 1.5976582835775086,
      "rarity": "rare",
      "mana_cost": "{3}{G}{G}",
      "type_line": "Legendary Artifact \u2014 Spacecraft",
@@ -2597,31 +2673,53 @@
      "oracle_text": "Whenever U.S.S. Discovery enters or attacks, discover 5. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)\nStation\n6+ | Flying"
     },
     {
-     "name": "Dr. Leonard \"Bones\" McCoy",
+     "name": "Deanna Troi, Psychic Counsel",
      "grade": "A-",
-     "z": 1.4544076028560409,
+     "z": 1.5463344771685748,
      "rarity": "rare",
-     "mana_cost": "{1}{G}{G}",
-     "type_line": "Legendary Creature \u2014 Human Doctor",
-     "image": "https://cards.scryfall.io/normal/front/d/8/d8593bf7-5248-4f4a-bf8b-9816d2f76c6b.jpg?1793187127",
-     "scryfall_uri": "https://scryfall.com/card/trk/197/dr-leonard-bones-mccoy?utm_source=api",
+     "mana_cost": "{1}{W}",
+     "type_line": "Legendary Creature \u2014 Betazoid Human Advisor",
+     "image": "https://cards.scryfall.io/normal/front/1/a/1a027761-84e7-4cbf-a629-ae9bd3d8467b.jpg?1793100632",
+     "scryfall_uri": "https://scryfall.com/card/trk/11/deanna-troi-psychic-counsel?utm_source=api",
+     "colors": [
+      "W"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 4,
+      "of": 5,
+      "mean_grade_error": 1.919806243272336,
+      "within_1": 0.5005382131324004,
+      "within_2": 0.697524219590958
+     },
+     "oracle_text": "Other creatures you control enter with an additional +1/+1 counter on them."
+    },
+    {
+     "name": "Rok-Tahk, Budding Scientist",
+     "grade": "A-",
+     "z": 1.4987882591005781,
+     "rarity": "mythic",
+     "mana_cost": "{4}{G}{G}",
+     "type_line": "Legendary Creature \u2014 Brikar Scientist",
+     "image": "https://cards.scryfall.io/normal/front/7/8/787bd19b-586e-4451-850b-60e0857bada0.jpg?1793273846",
+     "scryfall_uri": "https://scryfall.com/card/trk/211/rok-tahk-budding-scientist?utm_source=api",
      "colors": [
       "G"
      ],
      "confidence": "high",
      "trust": {
-      "band": 3,
+      "band": 2,
       "of": 5,
-      "mean_grade_error": 1.8794402583423035,
-      "within_1": 0.5064585575888052,
-      "within_2": 0.7104413347685683
+      "mean_grade_error": 1.8207750269106566,
+      "within_1": 0.5107642626480086,
+      "within_2": 0.7222820236813778
      },
-     "oracle_text": "Flash\nWhen Dr. McCoy enters, choose one \u2014\n\u2022 Return target non-Doctor permanent card from your graveyard to your hand.\n\u2022 Choose up to one other target creature. When it dies this turn, return that card to the battlefield under its owner's control with a +1/+1 counter on it at the beginning of the next end step."
+     "oracle_text": "Creatures you control have \"{T}: Add {G}{G}.\"\nWhen Rok-Tahk enters, create Murf, a legendary 0/1 green Ooze Slug creature token with indestructible."
     },
     {
      "name": "Species 8472",
      "grade": "A-",
-     "z": 1.4332524189550542,
+     "z": 1.4762344944523467,
      "rarity": "uncommon",
      "mana_cost": "{4}{G}{G}",
      "type_line": "Creature \u2014 Insect Beast",
@@ -2645,22 +2743,30 @@
   "UB": {
    "pair": "UB",
    "name": "Dilemma Control",
-   "hook": "",
-   "deck_mean_z": 1.2700092641801994,
+   "hook": "Play modal spells you'd run anyway (Command Decision, Impossible Choice, Consider the Prime Directive, Federation Probe) and let Seven of Nine, The Caretaker, Melkotian Adjudicator or Captain Benjamin Sisko pay you for them. The common and uncommon enablers are thin, so don't draft filler for triggers.",
+   "deck_mean_z": 1.2471077252425793,
    "pool_size": 110,
-   "rank": 6,
+   "rank": 9,
    "views": {
     "model": {
-     "score": 1.2700092641801994,
-     "rank": 6
+     "score": 1.2471077252425793,
+     "rank": 9
+    },
+    "blind": {
+     "score": 1.282114526503671,
+     "rank": 7
+    },
+    "review": {
+     "score": 1.2895858317551017,
+     "rank": 4
     }
    },
-   "rank_spread": 0,
+   "rank_spread": 5,
    "gold": [
     {
      "name": "Lore, Positronic Provocateur",
      "grade": "C",
-     "z": 0.04851034025972374,
+     "z": 0.07093136452745352,
      "rarity": "uncommon",
      "mana_cost": "{1}{U/B}{U/B}",
      "type_line": "Legendary Artifact Creature \u2014 Android Rogue",
@@ -2681,32 +2787,9 @@
      "oracle_text": "When Lore enters, choose one \u2014\n\u2022 Target creature gets +1/+0 until end of turn and can't be blocked this turn.\n\u2022 Surveil 2. (Look at the top two cards of your library, then put any number of them into your graveyard and the rest on top of your library in any order.)"
     },
     {
-     "name": "Seven of Nine",
-     "grade": "C-",
-     "z": -0.3621206073607967,
-     "rarity": "uncommon",
-     "mana_cost": "{2}{U}{B}",
-     "type_line": "Legendary Artifact Creature \u2014 Human Scientist",
-     "image": "https://cards.scryfall.io/normal/front/6/2/6204cfdb-6fb4-4030-96b6-9306c8266bcf.jpg?1793538768",
-     "scryfall_uri": "https://scryfall.com/card/trk/252/seven-of-nine?utm_source=api",
-     "colors": [
-      "B",
-      "U"
-     ],
-     "confidence": "medium",
-     "trust": {
-      "band": 5,
-      "of": 5,
-      "mean_grade_error": 1.9504843918191603,
-      "within_1": 0.49730893433799783,
-      "within_2": 0.6835306781485468
-     },
-     "oracle_text": "Whenever you face a dilemma, draw a card. (You face a dilemma as you choose one or more modes for a spell or ability.)"
-    },
-    {
      "name": "Mirror Universe Intrusion",
-     "grade": "D",
-     "z": -0.7269413178116586,
+     "grade": "C",
+     "z": 0.05598074940655779,
      "rarity": "rare",
      "mana_cost": "{1}{U}{B}",
      "type_line": "Sorcery",
@@ -2725,13 +2808,36 @@
       "within_2": 0.697524219590958
      },
      "oracle_text": "Kicker {4}{U}{B} (You may pay an additional 4 as you cast this spell.)\nCreate a token that's a copy of target creature an opponent controls, except it has menace. If this spell was kicked, instead for each creature target opponent controls, create a token that's a copy of that creature, except it has menace."
+    },
+    {
+     "name": "Seven of Nine",
+     "grade": "C-",
+     "z": -0.16865066224520955,
+     "rarity": "uncommon",
+     "mana_cost": "{2}{U}{B}",
+     "type_line": "Legendary Artifact Creature \u2014 Human Scientist",
+     "image": "https://cards.scryfall.io/normal/front/6/2/6204cfdb-6fb4-4030-96b6-9306c8266bcf.jpg?1793538768",
+     "scryfall_uri": "https://scryfall.com/card/trk/252/seven-of-nine?utm_source=api",
+     "colors": [
+      "B",
+      "U"
+     ],
+     "confidence": "medium",
+     "trust": {
+      "band": 5,
+      "of": 5,
+      "mean_grade_error": 1.9504843918191603,
+      "within_1": 0.49730893433799783,
+      "within_2": 0.6835306781485468
+     },
+     "oracle_text": "Whenever you face a dilemma, draw a card. (You face a dilemma as you choose one or more modes for a spell or ability.)"
     }
    ],
    "key_cards": [
     {
      "name": "Resistance Is Futile",
      "grade": "C+",
-     "z": 0.34623426359988224,
+     "z": 0.291285033003401,
      "rarity": "uncommon",
      "mana_cost": "{1}{B}",
      "type_line": "Sorcery",
@@ -2753,7 +2859,7 @@
     {
      "name": "Consider the Prime Directive",
      "grade": "C+",
-     "z": 0.3383239893365219,
+     "z": 0.23720210932878769,
      "rarity": "common",
      "mana_cost": "{2}{U}",
      "type_line": "Instant",
@@ -2775,7 +2881,7 @@
     {
      "name": "Lore, Positronic Provocateur",
      "grade": "C",
-     "z": 0.04851034025972374,
+     "z": 0.07093136452745352,
      "rarity": "uncommon",
      "mana_cost": "{1}{U/B}{U/B}",
      "type_line": "Legendary Artifact Creature \u2014 Android Rogue",
@@ -2798,7 +2904,7 @@
     {
      "name": "Seven of Nine",
      "grade": "C-",
-     "z": -0.3621206073607967,
+     "z": -0.16865066224520955,
      "rarity": "uncommon",
      "mana_cost": "{2}{U}{B}",
      "type_line": "Legendary Artifact Creature \u2014 Human Scientist",
@@ -2820,6 +2926,28 @@
     }
    ],
    "top": [
+    {
+     "name": "Salt Vampire",
+     "grade": "A+",
+     "z": 2.2146264602144723,
+     "rarity": "rare",
+     "mana_cost": "{1}{B}",
+     "type_line": "Creature \u2014 Vampire Shapeshifter",
+     "image": "https://cards.scryfall.io/normal/front/7/8/78faba81-01a3-489f-927e-1adaa8fe4436.jpg?1784036770",
+     "scryfall_uri": "https://scryfall.com/card/trk/127/salt-vampire?utm_source=api",
+     "colors": [
+      "B"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.8794402583423035,
+      "within_1": 0.5064585575888052,
+      "within_2": 0.7104413347685683
+     },
+     "oracle_text": "Lifelink\nWhen this creature enters, look at target opponent's hand. You may choose a nonland card from it. If you do, that player exiles that card, then draws a card."
+    },
     {
      "name": "Wesley Crusher, Starfleet Cadet",
      "grade": "A",
@@ -2845,7 +2973,7 @@
     {
      "name": "The Destruction of Praxis",
      "grade": "A",
-     "z": 2.067463754050907,
+     "z": 2.008004089118491,
      "rarity": "rare",
      "mana_cost": "{3}{B}{B}",
      "type_line": "Sorcery",
@@ -2865,31 +2993,9 @@
      "oracle_text": "Strange new worlds \u2014 All creatures get -X/-X until end of turn, where X is the number of differently named lands you control. If X is 6 or more, create two 2/1 red Klingon Warrior creature tokens with haste."
     },
     {
-     "name": "Salt Vampire",
-     "grade": "A",
-     "z": 2.008004089118491,
-     "rarity": "rare",
-     "mana_cost": "{1}{B}",
-     "type_line": "Creature \u2014 Vampire Shapeshifter",
-     "image": "https://cards.scryfall.io/normal/front/7/8/78faba81-01a3-489f-927e-1adaa8fe4436.jpg?1784036770",
-     "scryfall_uri": "https://scryfall.com/card/trk/127/salt-vampire?utm_source=api",
-     "colors": [
-      "B"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.8794402583423035,
-      "within_1": 0.5064585575888052,
-      "within_2": 0.7104413347685683
-     },
-     "oracle_text": "Lifelink\nWhen this creature enters, look at target opponent's hand. You may choose a nonland card from it. If you do, that player exiles that card, then draws a card."
-    },
-    {
      "name": "Crystalline Entity",
      "grade": "A",
-     "z": 1.8627318674216515,
+     "z": 1.9548969207358264,
      "rarity": "mythic",
      "mana_cost": "{8}",
      "type_line": "Artifact Creature \u2014 Elemental",
@@ -2909,7 +3015,7 @@
     {
      "name": "Armus, Skin of Evil",
      "grade": "A-",
-     "z": 1.6249807216131984,
+     "z": 1.571478999865478,
      "rarity": "rare",
      "mana_cost": "{5}{B}{B}",
      "type_line": "Legendary Creature \u2014 Ooze Horror",
@@ -2929,53 +3035,9 @@
      "oracle_text": "Menace\nAt the beginning of your end step, target opponent discards two cards.\n{2}{B}, Discard this card: Target creature gets -4/-4 until end of turn."
     },
     {
-     "name": "Cloak and Phaser",
-     "grade": "A-",
-     "z": 1.4762344944523467,
-     "rarity": "uncommon",
-     "mana_cost": "{8}{U}",
-     "type_line": "Sorcery",
-     "image": "https://cards.scryfall.io/normal/front/2/d/2d9fb7e7-582d-41e7-be9e-98372505ea44.jpg?1793187986",
-     "scryfall_uri": "https://scryfall.com/card/trk/49/cloak-and-phaser?utm_source=api",
-     "colors": [
-      "U"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 4,
-      "of": 5,
-      "mean_grade_error": 1.919806243272336,
-      "within_1": 0.5005382131324004,
-      "within_2": 0.697524219590958
-     },
-     "oracle_text": "Strange new worlds \u2014 This spell costs {X} less to cast, where X is the number of differently named lands you control.\nCreate two 2/2 black Romulan creature tokens. Draw two cards, then discard a card."
-    },
-    {
-     "name": "Mr. Spock, Science Officer",
-     "grade": "A-",
-     "z": 1.3733522801988087,
-     "rarity": "mythic",
-     "mana_cost": "{2}{U}{U}",
-     "type_line": "Legendary Creature \u2014 Vulcan Human Scientist",
-     "image": "https://cards.scryfall.io/normal/front/d/1/d19fc127-669e-4264-935a-e5991e6c0964.jpg?1792508192",
-     "scryfall_uri": "https://scryfall.com/card/trk/74/mr-spock-science-officer?utm_source=api",
-     "colors": [
-      "U"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.8794402583423035,
-      "within_1": 0.5064585575888052,
-      "within_2": 0.7104413347685683
-     },
-     "oracle_text": "If you would draw a card, draw two cards instead."
-    },
-    {
      "name": "Elim Garak, Simple Tailor",
-     "grade": "B+",
-     "z": 1.3360050611545335,
+     "grade": "A-",
+     "z": 1.3927662870454445,
      "rarity": "rare",
      "mana_cost": "{2}{B}",
      "type_line": "Legendary Creature \u2014 Cardassian Rogue",
@@ -2993,28 +3055,80 @@
       "within_2": 0.697524219590958
      },
      "oracle_text": "Menace\nWhenever you face a dilemma, each opponent loses 2 life and you gain 2 life. (You face a dilemma as you choose one or more modes for a spell or ability.)"
+    },
+    {
+     "name": "Georgiou, Terran Emperor",
+     "grade": "A-",
+     "z": 1.3544425257173671,
+     "rarity": "mythic",
+     "mana_cost": "{4}{B}{B}",
+     "type_line": "Legendary Creature \u2014 Human Rogue Noble",
+     "image": "https://cards.scryfall.io/normal/front/a/6/a68361a3-83fa-44b5-92b5-b7905866fc99.jpg?1792753873",
+     "scryfall_uri": "https://scryfall.com/card/trk/110/georgiou-terran-emperor?utm_source=api",
+     "colors": [
+      "B"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 5,
+      "of": 5,
+      "mean_grade_error": 1.9504843918191603,
+      "within_1": 0.49730893433799783,
+      "within_2": 0.6835306781485468
+     },
+     "oracle_text": "You don't lose the game for having 0 or less life.\nAt the beginning of your end step, you lose 3 life and draw a card. Then if your life total is 0 or less, create ten 1/1 red Officer creature tokens."
+    },
+    {
+     "name": "Mr. Spock, Science Officer",
+     "grade": "B+",
+     "z": 1.283249262996782,
+     "rarity": "mythic",
+     "mana_cost": "{2}{U}{U}",
+     "type_line": "Legendary Creature \u2014 Vulcan Human Scientist",
+     "image": "https://cards.scryfall.io/normal/front/d/1/d19fc127-669e-4264-935a-e5991e6c0964.jpg?1792508192",
+     "scryfall_uri": "https://scryfall.com/card/trk/74/mr-spock-science-officer?utm_source=api",
+     "colors": [
+      "U"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.8794402583423035,
+      "within_1": 0.5064585575888052,
+      "within_2": 0.7104413347685683
+     },
+     "oracle_text": "If you would draw a card, draw two cards instead."
     }
    ]
   },
   "UR": {
    "pair": "UR",
    "name": "Scientists and Noncreatures",
-   "hook": "",
-   "deck_mean_z": 1.1849606377801003,
+   "hook": "Keep the spell count high and let the payoffs work: Academy Instructor, Spock, Always Your Friend, Lieutenant Commander Data and Tal Shiar Analyst. Cheap cantrips (Open Communications, Tea, Earl Grey, Hot) keep it moving; Anthropological Mission and Ravenous Cosmozoan belong only here.",
+   "deck_mean_z": 1.2014965897856928,
    "pool_size": 109,
-   "rank": 9,
+   "rank": 10,
    "views": {
     "model": {
-     "score": 1.1849606377801003,
-     "rank": 9
+     "score": 1.2014965897856928,
+     "rank": 10
+    },
+    "blind": {
+     "score": 1.3179300112960364,
+     "rank": 5
+    },
+    "review": {
+     "score": 1.0128689304260645,
+     "rank": 10
     }
    },
-   "rank_spread": 0,
+   "rank_spread": 5,
    "gold": [
     {
      "name": "Spock, Always Your Friend",
      "grade": "A-",
-     "z": 1.571478999865478,
+     "z": 1.6249807216131984,
      "rarity": "uncommon",
      "mana_cost": "{U}{R}",
      "type_line": "Legendary Creature \u2014 Vulcan Human Scientist",
@@ -3035,32 +3149,9 @@
      "oracle_text": "When Spock enters, look at the top four cards of your library. You may reveal a noncreature, nonland card from among them and put it into your hand. Put the rest on the bottom of your library in any order."
     },
     {
-     "name": "Year of Hell",
-     "grade": "D-",
-     "z": -1.202508262925448,
-     "rarity": "rare",
-     "mana_cost": "{1}{U}{R}",
-     "type_line": "Enchantment \u2014 Saga",
-     "image": "https://cards.scryfall.io/normal/front/4/a/4ab931e9-fb07-4da2-a0d9-acfec2ac9e19.jpg?1792753960",
-     "scryfall_uri": "https://scryfall.com/card/trk/257/year-of-hell?utm_source=api",
-     "colors": [
-      "R",
-      "U"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 5,
-      "of": 5,
-      "mean_grade_error": 1.9504843918191603,
-      "within_1": 0.49730893433799783,
-      "within_2": 0.6835306781485468
-     },
-     "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II, III \u2014 Each player draws a card. This Saga deals 2 damage to each player."
-    },
-    {
      "name": "Gray and Adira, Forever Joined",
-     "grade": "D-",
-     "z": -1.249972689965822,
+     "grade": "D",
+     "z": -0.8926888752718425,
      "rarity": "uncommon",
      "mana_cost": "{2}{U/R}{U/R}",
      "type_line": "Legendary Creature \u2014 Trill Human Officer",
@@ -3079,13 +3170,36 @@
       "within_2": 0.6835306781485468
      },
      "oracle_text": "At the beginning of combat on your turn, if you've cast a noncreature spell this turn, create a token that's a copy of target creature you control, except it isn't legendary. It gains haste until end of turn. Sacrifice it at the beginning of the next end step."
+    },
+    {
+     "name": "Year of Hell",
+     "grade": "D-",
+     "z": -1.218025491800021,
+     "rarity": "rare",
+     "mana_cost": "{1}{U}{R}",
+     "type_line": "Enchantment \u2014 Saga",
+     "image": "https://cards.scryfall.io/normal/front/4/a/4ab931e9-fb07-4da2-a0d9-acfec2ac9e19.jpg?1792753960",
+     "scryfall_uri": "https://scryfall.com/card/trk/257/year-of-hell?utm_source=api",
+     "colors": [
+      "R",
+      "U"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 5,
+      "of": 5,
+      "mean_grade_error": 1.9504843918191603,
+      "within_1": 0.49730893433799783,
+      "within_2": 0.6835306781485468
+     },
+     "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI, II, III \u2014 Each player draws a card. This Saga deals 2 damage to each player."
     }
    ],
    "key_cards": [
     {
      "name": "Spock, Always Your Friend",
      "grade": "A-",
-     "z": 1.571478999865478,
+     "z": 1.6249807216131984,
      "rarity": "uncommon",
      "mana_cost": "{U}{R}",
      "type_line": "Legendary Creature \u2014 Vulcan Human Scientist",
@@ -3108,7 +3222,7 @@
     {
      "name": "Test of Priorities",
      "grade": "C-",
-     "z": -0.19900107362162622,
+     "z": -0.23720210932878769,
      "rarity": "uncommon",
      "mana_cost": "{1}{U}",
      "type_line": "Instant",
@@ -3130,7 +3244,7 @@
     {
      "name": "Test of Identity",
      "grade": "C-",
-     "z": -0.3462342635998824,
+     "z": -0.40225006532172536,
      "rarity": "uncommon",
      "mana_cost": "{1}{R}",
      "type_line": "Instant",
@@ -3151,8 +3265,8 @@
     },
     {
      "name": "Gray and Adira, Forever Joined",
-     "grade": "D-",
-     "z": -1.249972689965822,
+     "grade": "D",
+     "z": -0.8926888752718425,
      "rarity": "uncommon",
      "mana_cost": "{2}{U/R}{U/R}",
      "type_line": "Legendary Creature \u2014 Trill Human Officer",
@@ -3197,6 +3311,26 @@
      "oracle_text": "Flash\nWhen Wesley Crusher enters, choose two \u2014\n\u2022 Counter target noncreature spell unless its controller pays {2}.\n\u2022 Return target creature with mana value 2 or less to its owner's hand.\n\u2022 Target creature can't be blocked this turn.\n\u2022 Target player draws two cards, then discards two cards."
     },
     {
+     "name": "Crystalline Entity",
+     "grade": "A",
+     "z": 1.9548969207358264,
+     "rarity": "mythic",
+     "mana_cost": "{8}",
+     "type_line": "Artifact Creature \u2014 Elemental",
+     "image": "https://cards.scryfall.io/normal/front/c/b/cbc4ac70-0a4c-4973-a366-dd67d8901e21.jpg?1784036804",
+     "scryfall_uri": "https://scryfall.com/card/trk/261/crystalline-entity?utm_source=api",
+     "colors": [],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6081808396124866,
+      "within_1": 0.5667384284176534,
+      "within_2": 0.7766415500538213
+     },
+     "oracle_text": "Flying\nWhen this creature enters, if you cast it, destroy all nonartifact creatures."
+    },
+    {
      "name": "Captain James T. Kirk",
      "grade": "A",
      "z": 1.9067912950049624,
@@ -3219,29 +3353,31 @@
      "oracle_text": "Whenever Captain Kirk enters or attacks, choose one. If you have no cards in hand, choose one or more instead.\n\u2022 Discard a card, then draw a card.\n\u2022 Create a 1/1 red Officer creature token.\n\u2022 Creatures you control get +1/+0 until end of turn."
     },
     {
-     "name": "Crystalline Entity",
+     "name": "Q, Stacking the Deck",
      "grade": "A",
-     "z": 1.8627318674216515,
+     "z": 1.6535730820197796,
      "rarity": "mythic",
-     "mana_cost": "{8}",
-     "type_line": "Artifact Creature \u2014 Elemental",
-     "image": "https://cards.scryfall.io/normal/front/c/b/cbc4ac70-0a4c-4973-a366-dd67d8901e21.jpg?1784036804",
-     "scryfall_uri": "https://scryfall.com/card/trk/261/crystalline-entity?utm_source=api",
-     "colors": [],
+     "mana_cost": "{2}{R}{R}",
+     "type_line": "Legendary Creature \u2014 Q",
+     "image": "https://cards.scryfall.io/normal/front/d/c/dcbe34db-0065-4960-92b8-3ea1d336e803.jpg?1792508237",
+     "scryfall_uri": "https://scryfall.com/card/trk/165/q-stacking-the-deck?utm_source=api",
+     "colors": [
+      "R"
+     ],
      "confidence": "high",
      "trust": {
-      "band": 1,
+      "band": 3,
       "of": 5,
-      "mean_grade_error": 1.6081808396124866,
-      "within_1": 0.5667384284176534,
-      "within_2": 0.7766415500538213
+      "mean_grade_error": 1.8794402583423035,
+      "within_1": 0.5064585575888052,
+      "within_2": 0.7104413347685683
      },
-     "oracle_text": "Flying\nWhen this creature enters, if you cast it, destroy all nonartifact creatures."
+     "oracle_text": "When Q enters, shuffle your library, then exile cards from the top of your library until you exile a nonland card. That nonland card gains \"Exile a card from your hand: Create a copy of this card. You may cast the copy. Activate only during your turn and only if this card is exiled.\""
     },
     {
      "name": "Spock, Always Your Friend",
      "grade": "A-",
-     "z": 1.571478999865478,
+     "z": 1.6249807216131984,
      "rarity": "uncommon",
      "mana_cost": "{U}{R}",
      "type_line": "Legendary Creature \u2014 Vulcan Human Scientist",
@@ -3262,38 +3398,16 @@
      "oracle_text": "When Spock enters, look at the top four cards of your library. You may reveal a noncreature, nonland card from among them and put it into your hand. Put the rest on the bottom of your library in any order."
     },
     {
-     "name": "Q, Stacking the Deck",
+     "name": "The Wrath of Khan",
      "grade": "A-",
-     "z": 1.5463344771685748,
-     "rarity": "mythic",
-     "mana_cost": "{2}{R}{R}",
-     "type_line": "Legendary Creature \u2014 Q",
-     "image": "https://cards.scryfall.io/normal/front/d/c/dcbe34db-0065-4960-92b8-3ea1d336e803.jpg?1792508237",
-     "scryfall_uri": "https://scryfall.com/card/trk/165/q-stacking-the-deck?utm_source=api",
+     "z": 1.41271990941275,
+     "rarity": "rare",
+     "mana_cost": "{2}{R}",
+     "type_line": "Enchantment \u2014 Saga",
+     "image": "https://cards.scryfall.io/normal/front/4/2/426d627e-bb88-4879-8d9f-db1babf22b15.jpg?1792510667",
+     "scryfall_uri": "https://scryfall.com/card/trk/181/the-wrath-of-khan?utm_source=api",
      "colors": [
       "R"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 3,
-      "of": 5,
-      "mean_grade_error": 1.8794402583423035,
-      "within_1": 0.5064585575888052,
-      "within_2": 0.7104413347685683
-     },
-     "oracle_text": "When Q enters, shuffle your library, then exile cards from the top of your library until you exile a nonland card. That nonland card gains \"Exile a card from your hand: Create a copy of this card. You may cast the copy. Activate only during your turn and only if this card is exiled.\""
-    },
-    {
-     "name": "Cloak and Phaser",
-     "grade": "A-",
-     "z": 1.4762344944523467,
-     "rarity": "uncommon",
-     "mana_cost": "{8}{U}",
-     "type_line": "Sorcery",
-     "image": "https://cards.scryfall.io/normal/front/2/d/2d9fb7e7-582d-41e7-be9e-98372505ea44.jpg?1793187986",
-     "scryfall_uri": "https://scryfall.com/card/trk/49/cloak-and-phaser?utm_source=api",
-     "colors": [
-      "U"
      ],
      "confidence": "high",
      "trust": {
@@ -3303,12 +3417,12 @@
       "within_1": 0.5005382131324004,
       "within_2": 0.697524219590958
      },
-     "oracle_text": "Strange new worlds \u2014 This spell costs {X} less to cast, where X is the number of differently named lands you control.\nCreate two 2/2 black Romulan creature tokens. Draw two cards, then discard a card."
+     "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 This Saga deals 4 damage to target creature an opponent controls. At the beginning of the next combat this turn, gain control of that creature until end of turn. Untap it. It gains haste until end of turn.\nII \u2014 You may exile a card from your hand. If you do, draw a card.\nIII \u2014 Each opponent sacrifices a nontoken permanent of their choice."
     },
     {
      "name": "Mr. Spock, Science Officer",
-     "grade": "A-",
-     "z": 1.3733522801988087,
+     "grade": "B+",
+     "z": 1.283249262996782,
      "rarity": "mythic",
      "mana_cost": "{2}{U}{U}",
      "type_line": "Legendary Creature \u2014 Vulcan Human Scientist",
@@ -3328,48 +3442,56 @@
      "oracle_text": "If you would draw a card, draw two cards instead."
     },
     {
-     "name": "Jett Reno, Problem Solver",
+     "name": "Worf, Intelligence Contractor",
      "grade": "B+",
-     "z": 1.266435681995933,
-     "rarity": "uncommon",
-     "mana_cost": "{1}{U}",
-     "type_line": "Legendary Creature \u2014 Human Artificer",
-     "image": "https://cards.scryfall.io/normal/front/6/d/6dc34d44-397a-4dda-a8e3-0c2ff7da110f.jpg?1793511776",
-     "scryfall_uri": "https://scryfall.com/card/trk/67/jett-reno-problem-solver?utm_source=api",
+     "z": 1.2338416800619703,
+     "rarity": "rare",
+     "mana_cost": "{2}{R}",
+     "type_line": "Legendary Creature \u2014 Klingon Warrior Spy",
+     "image": "https://cards.scryfall.io/normal/front/7/d/7df6c8c1-1f85-4c5d-a4f6-9ffcdad1b12e.jpg?1792508250",
+     "scryfall_uri": "https://scryfall.com/card/trk/180/worf-intelligence-contractor?utm_source=api",
      "colors": [
-      "U"
+      "R"
      ],
-     "confidence": "medium",
+     "confidence": "high",
      "trust": {
-      "band": 5,
+      "band": 4,
       "of": 5,
-      "mean_grade_error": 1.9504843918191603,
-      "within_1": 0.49730893433799783,
-      "within_2": 0.6835306781485468
+      "mean_grade_error": 1.919806243272336,
+      "within_1": 0.5005382131324004,
+      "within_2": 0.697524219590958
      },
-     "oracle_text": "Whenever Jett Reno becomes tapped, surveil 1. If her power is 4 or greater, instead draw a card.\nWhenever you face a dilemma, put a +1/+1 counter on Jett Reno. (You face a dilemma as you choose one or more modes for a spell or ability.)"
+     "oracle_text": "When Worf enters, for each opponent, gain control of up to one target creature that player controls with mana value 3 or less until end of turn. Untap those creatures. Until end of turn, they become Warriors in addition to their other types and gain haste."
     }
    ]
   },
   "UG": {
    "pair": "UG",
    "name": "Strange New Worlds",
-   "hook": "",
-   "deck_mean_z": 1.226258263595909,
+   "hook": "Collect differently named lands (duals, Planets, surveil lands, Unexplored Territory) and ramp with Captain Pike, Captain Kathryn Janeway and Jadzia Dax. The Traveler and Excalbian Gamemaster pay off in any version; Branching Timeline, Deep Space Scan and Cloak and Phaser only in true five-color soup. You still have to cast your spells.",
+   "deck_mean_z": 1.2505139099558717,
    "pool_size": 108,
    "rank": 8,
    "views": {
     "model": {
-     "score": 1.226258263595909,
+     "score": 1.2505139099558717,
+     "rank": 8
+    },
+    "blind": {
+     "score": 1.2965241616007308,
+     "rank": 6
+    },
+    "review": {
+     "score": 1.1677215225841742,
      "rank": 8
     }
    },
-   "rank_spread": 0,
+   "rank_spread": 2,
    "gold": [
     {
      "name": "The Traveler",
      "grade": "C",
-     "z": 0.16108835792521092,
+     "z": 0.19900107362162636,
      "rarity": "uncommon",
      "mana_cost": "{G}{U}",
      "type_line": "Legendary Creature \u2014 Scout",
@@ -3392,7 +3514,7 @@
     {
      "name": "All Good Things...",
      "grade": "C",
-     "z": 0.0037301102490883403,
+     "z": -0.0485103402597236,
      "rarity": "rare",
      "mana_cost": "{3}{G}{U}",
      "type_line": "Enchantment \u2014 Saga",
@@ -3415,7 +3537,7 @@
     {
      "name": "D'Vana Tendi, Optimistic Ensign",
      "grade": "D+",
-     "z": -0.526970195831006,
+     "z": -0.46786525410389984,
      "rarity": "uncommon",
      "mana_cost": "{1}{G/U}{G/U}",
      "type_line": "Legendary Creature \u2014 Orion Scientist",
@@ -3440,7 +3562,7 @@
     {
      "name": "The Traveler",
      "grade": "C",
-     "z": 0.16108835792521092,
+     "z": 0.19900107362162636,
      "rarity": "uncommon",
      "mana_cost": "{G}{U}",
      "type_line": "Legendary Creature \u2014 Scout",
@@ -3461,29 +3583,9 @@
      "oracle_text": "Reach, vigilance\nStrange new worlds \u2014 The Traveler's power is equal to the number of differently named lands you control."
     },
     {
-     "name": "Orion",
-     "grade": "C",
-     "z": -0.10088360610149168,
-     "rarity": "common",
-     "mana_cost": "",
-     "type_line": "Land \u2014 Planet",
-     "image": "https://cards.scryfall.io/normal/front/d/e/dec37ff4-d6e9-4b87-865b-125b17162465.jpg?1792632952",
-     "scryfall_uri": "https://scryfall.com/card/trk/288/orion?utm_source=api",
-     "colors": [],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6081808396124866,
-      "within_1": 0.5667384284176534,
-      "within_2": 0.7766415500538213
-     },
-     "oracle_text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {R} or {G}."
-    },
-    {
      "name": "Risa",
      "grade": "C",
-     "z": -0.10838477699923449,
+     "z": 0.041042637387111176,
      "rarity": "common",
      "mana_cost": "",
      "type_line": "Land \u2014 Planet",
@@ -3501,9 +3603,29 @@
      "oracle_text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {G} or {W}."
     },
     {
+     "name": "Orion",
+     "grade": "C",
+     "z": -0.018651589364040128,
+     "rarity": "common",
+     "mana_cost": "",
+     "type_line": "Land \u2014 Planet",
+     "image": "https://cards.scryfall.io/normal/front/d/e/dec37ff4-d6e9-4b87-865b-125b17162465.jpg?1792632952",
+     "scryfall_uri": "https://scryfall.com/card/trk/288/orion?utm_source=api",
+     "colors": [],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6081808396124866,
+      "within_1": 0.5667384284176534,
+      "within_2": 0.7766415500538213
+     },
+     "oracle_text": "This land enters tapped.\nWhen this land enters, you gain 1 life.\n{T}: Add {R} or {G}."
+    },
+    {
      "name": "D'Vana Tendi, Optimistic Ensign",
      "grade": "D+",
-     "z": -0.526970195831006,
+     "z": -0.46786525410389984,
      "rarity": "uncommon",
      "mana_cost": "{1}{G/U}{G/U}",
      "type_line": "Legendary Creature \u2014 Orion Scientist",
@@ -3550,7 +3672,7 @@
     {
      "name": "Crystalline Entity",
      "grade": "A",
-     "z": 1.8627318674216515,
+     "z": 1.9548969207358264,
      "rarity": "mythic",
      "mana_cost": "{8}",
      "type_line": "Artifact Creature \u2014 Elemental",
@@ -3570,7 +3692,7 @@
     {
      "name": "U.S.S. Discovery, at Black Alert",
      "grade": "A-",
-     "z": 1.4987882591005781,
+     "z": 1.5976582835775086,
      "rarity": "rare",
      "mana_cost": "{3}{G}{G}",
      "type_line": "Legendary Artifact \u2014 Spacecraft",
@@ -3590,53 +3712,31 @@
      "oracle_text": "Whenever U.S.S. Discovery enters or attacks, discover 5. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)\nStation\n6+ | Flying"
     },
     {
-     "name": "Cloak and Phaser",
+     "name": "Rok-Tahk, Budding Scientist",
      "grade": "A-",
-     "z": 1.4762344944523467,
-     "rarity": "uncommon",
-     "mana_cost": "{8}{U}",
-     "type_line": "Sorcery",
-     "image": "https://cards.scryfall.io/normal/front/2/d/2d9fb7e7-582d-41e7-be9e-98372505ea44.jpg?1793187986",
-     "scryfall_uri": "https://scryfall.com/card/trk/49/cloak-and-phaser?utm_source=api",
-     "colors": [
-      "U"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 4,
-      "of": 5,
-      "mean_grade_error": 1.919806243272336,
-      "within_1": 0.5005382131324004,
-      "within_2": 0.697524219590958
-     },
-     "oracle_text": "Strange new worlds \u2014 This spell costs {X} less to cast, where X is the number of differently named lands you control.\nCreate two 2/2 black Romulan creature tokens. Draw two cards, then discard a card."
-    },
-    {
-     "name": "Dr. Leonard \"Bones\" McCoy",
-     "grade": "A-",
-     "z": 1.4544076028560409,
-     "rarity": "rare",
-     "mana_cost": "{1}{G}{G}",
-     "type_line": "Legendary Creature \u2014 Human Doctor",
-     "image": "https://cards.scryfall.io/normal/front/d/8/d8593bf7-5248-4f4a-bf8b-9816d2f76c6b.jpg?1793187127",
-     "scryfall_uri": "https://scryfall.com/card/trk/197/dr-leonard-bones-mccoy?utm_source=api",
+     "z": 1.4987882591005781,
+     "rarity": "mythic",
+     "mana_cost": "{4}{G}{G}",
+     "type_line": "Legendary Creature \u2014 Brikar Scientist",
+     "image": "https://cards.scryfall.io/normal/front/7/8/787bd19b-586e-4451-850b-60e0857bada0.jpg?1793273846",
+     "scryfall_uri": "https://scryfall.com/card/trk/211/rok-tahk-budding-scientist?utm_source=api",
      "colors": [
       "G"
      ],
      "confidence": "high",
      "trust": {
-      "band": 3,
+      "band": 2,
       "of": 5,
-      "mean_grade_error": 1.8794402583423035,
-      "within_1": 0.5064585575888052,
-      "within_2": 0.7104413347685683
+      "mean_grade_error": 1.8207750269106566,
+      "within_1": 0.5107642626480086,
+      "within_2": 0.7222820236813778
      },
-     "oracle_text": "Flash\nWhen Dr. McCoy enters, choose one \u2014\n\u2022 Return target non-Doctor permanent card from your graveyard to your hand.\n\u2022 Choose up to one other target creature. When it dies this turn, return that card to the battlefield under its owner's control with a +1/+1 counter on it at the beginning of the next end step."
+     "oracle_text": "Creatures you control have \"{T}: Add {G}{G}.\"\nWhen Rok-Tahk enters, create Murf, a legendary 0/1 green Ooze Slug creature token with indestructible."
     },
     {
      "name": "Species 8472",
      "grade": "A-",
-     "z": 1.4332524189550542,
+     "z": 1.4762344944523467,
      "rarity": "uncommon",
      "mana_cost": "{4}{G}{G}",
      "type_line": "Creature \u2014 Insect Beast",
@@ -3656,31 +3756,31 @@
      "oracle_text": "Strange new worlds \u2014 When this creature enters, you gain life equal to the number of differently named lands you control.\nThis creature can't be blocked by artifact creatures.\nThis creature can't be the target of abilities from artifact sources your opponents control."
     },
     {
-     "name": "Holo-Engineer",
+     "name": "Jadzia Dax, Living Legacy",
      "grade": "A-",
-     "z": 1.41271990941275,
-     "rarity": "rare",
-     "mana_cost": "{2}{G}{G}",
-     "type_line": "Creature \u2014 Human Artificer",
-     "image": "https://cards.scryfall.io/normal/front/a/c/acfaf5f3-a4f5-418a-a29a-211b33bf18ee.jpg?1793100831",
-     "scryfall_uri": "https://scryfall.com/card/trk/201/holo-engineer?utm_source=api",
+     "z": 1.4332524189550542,
+     "rarity": "mythic",
+     "mana_cost": "{1}{G}",
+     "type_line": "Legendary Creature \u2014 Trill Scientist",
+     "image": "https://cards.scryfall.io/normal/front/b/d/bd342f8b-9072-487d-8a33-b1bb149f1502.jpg?1793013267",
+     "scryfall_uri": "https://scryfall.com/card/trk/204/jadzia-dax-living-legacy?utm_source=api",
      "colors": [
       "G"
      ],
      "confidence": "high",
      "trust": {
-      "band": 5,
+      "band": 4,
       "of": 5,
-      "mean_grade_error": 1.9504843918191603,
-      "within_1": 0.49730893433799783,
-      "within_2": 0.6835306781485468
+      "mean_grade_error": 1.919806243272336,
+      "within_1": 0.5005382131324004,
+      "within_2": 0.697524219590958
      },
-     "oracle_text": "When this creature enters, create a 3/3 colorless Illusion artifact creature token.\nIf one or more tokens would be created under your control, that many 3/3 colorless Illusion artifact creature tokens are created instead."
+     "oracle_text": "At the beginning of your first main phase, put a +1/+1 counter on Jadzia Dax, then add an amount of {G} equal to the number of counters on her.\nTransfer Symbiont \u2014 {2}{G}, Discard this card: Put two +1/+1 counters on target creature."
     },
     {
      "name": "Captain Jonathan Archer",
      "grade": "A-",
-     "z": 1.3927662870454445,
+     "z": 1.3733522801988087,
      "rarity": "rare",
      "mana_cost": "{2}{G}",
      "type_line": "Legendary Creature \u2014 Human Officer",
@@ -3698,28 +3798,58 @@
       "within_2": 0.7222820236813778
      },
      "oracle_text": "When Captain Archer enters, create Porthos, a legendary 1/1 green Dog creature token.\nFederation \u2014 {G}, {T}: Target creature you control gets +X/+X until end of turn, where X is the number of creature types among non-Borg creatures you control. Activate only as a sorcery."
+    },
+    {
+     "name": "Dr. Leonard \"Bones\" McCoy",
+     "grade": "B+",
+     "z": 1.3360050611545335,
+     "rarity": "rare",
+     "mana_cost": "{1}{G}{G}",
+     "type_line": "Legendary Creature \u2014 Human Doctor",
+     "image": "https://cards.scryfall.io/normal/front/d/8/d8593bf7-5248-4f4a-bf8b-9816d2f76c6b.jpg?1793187127",
+     "scryfall_uri": "https://scryfall.com/card/trk/197/dr-leonard-bones-mccoy?utm_source=api",
+     "colors": [
+      "G"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.8794402583423035,
+      "within_1": 0.5064585575888052,
+      "within_2": 0.7104413347685683
+     },
+     "oracle_text": "Flash\nWhen Dr. McCoy enters, choose one \u2014\n\u2022 Return target non-Doctor permanent card from your graveyard to your hand.\n\u2022 Choose up to one other target creature. When it dies this turn, return that card to the battlefield under its owner's control with a +1/+1 counter on it at the beginning of the next end step."
     }
    ]
   },
   "BR": {
    "pair": "BR",
    "name": "Klingons and Dies",
-   "hook": "",
-   "deck_mean_z": 1.2275323399330729,
+   "hook": "Aggressive Klingons that turn dying creatures into value: Gowron, L'Rell, The Duras Sisters and General Chang lead it, and Eject the Warp Core and Dahar Master turn tokens into removal. Starfleet Security and A Good Day to Die need a sacrifice outlet to do anything.",
+   "deck_mean_z": 1.2596384898618793,
    "pool_size": 110,
-   "rank": 7,
+   "rank": 6,
    "views": {
     "model": {
-     "score": 1.2275323399330729,
-     "rank": 7
+     "score": 1.2596384898618793,
+     "rank": 6
+    },
+    "blind": {
+     "score": 1.2271004435227926,
+     "rank": 10
+    },
+    "review": {
+     "score": 1.2390327861199604,
+     "rank": 6
     }
    },
-   "rank_spread": 0,
+   "rank_spread": 4,
    "gold": [
     {
      "name": "The Duras Sisters",
      "grade": "B",
-     "z": 0.8174164533151329,
+     "z": 0.903856630460602,
      "rarity": "uncommon",
      "mana_cost": "{B/R}{B/R}",
      "type_line": "Legendary Creature \u2014 Klingon Warrior",
@@ -3741,8 +3871,8 @@
     },
     {
      "name": "Gowron, Eager for Battle",
-     "grade": "C-",
-     "z": -0.18380470283773825,
+     "grade": "C+",
+     "z": 0.2835102646248038,
      "rarity": "rare",
      "mana_cost": "{2}{B}{R}",
      "type_line": "Legendary Creature \u2014 Klingon Warrior",
@@ -3764,8 +3894,8 @@
     },
     {
      "name": "L'Rell, Fierce Visionary",
-     "grade": "D",
-     "z": -0.8174164533151332,
+     "grade": "D+",
+     "z": -0.42663821729966467,
      "rarity": "uncommon",
      "mana_cost": "{1}{B}{R}",
      "type_line": "Legendary Creature \u2014 Klingon Warrior",
@@ -3790,7 +3920,7 @@
     {
      "name": "The Duras Sisters",
      "grade": "B",
-     "z": 0.8174164533151329,
+     "z": 0.903856630460602,
      "rarity": "uncommon",
      "mana_cost": "{B/R}{B/R}",
      "type_line": "Legendary Creature \u2014 Klingon Warrior",
@@ -3812,8 +3942,8 @@
     },
     {
      "name": "Starfleet Security",
-     "grade": "C",
-     "z": 0.0784124127331122,
+     "grade": "C-",
+     "z": -0.21424354176809507,
      "rarity": "common",
      "mana_cost": "{R}",
      "type_line": "Creature \u2014 Human Officer",
@@ -3834,8 +3964,8 @@
     },
     {
      "name": "L'Rell, Fierce Visionary",
-     "grade": "D",
-     "z": -0.8174164533151332,
+     "grade": "D+",
+     "z": -0.42663821729966467,
      "rarity": "uncommon",
      "mana_cost": "{1}{B}{R}",
      "type_line": "Legendary Creature \u2014 Klingon Warrior",
@@ -3856,31 +3986,9 @@
      "oracle_text": "At the beginning of combat on your turn, create a 2/1 red Klingon Warrior creature token with haste. Sacrifice it at the beginning of the next end step.\n{2}, Sacrifice another creature or artifact: Surveil 1. (Look at the top card of your library. You may put it into your graveyard.)"
     },
     {
-     "name": "A Good Day to Die",
-     "grade": "D-",
-     "z": -1.4544076028560409,
-     "rarity": "common",
-     "mana_cost": "{B}",
-     "type_line": "Instant",
-     "image": "https://cards.scryfall.io/normal/front/e/2/e2b350b2-0eda-4c2b-b9d6-b58ab4848545.jpg?1785981483",
-     "scryfall_uri": "https://scryfall.com/card/trk/111/a-good-day-to-die?utm_source=api",
-     "colors": [
-      "B"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6081808396124866,
-      "within_1": 0.5667384284176534,
-      "within_2": 0.7766415500538213
-     },
-     "oracle_text": "Target creature gets +2/+0 until end of turn. When that creature dies this turn, you draw a card."
-    },
-    {
      "name": "Vengeance Mission",
      "grade": "F",
-     "z": -2.0080040891184923,
+     "z": -1.784116344689114,
      "rarity": "uncommon",
      "mana_cost": "{2}{B}",
      "type_line": "Enchantment",
@@ -3898,13 +4006,57 @@
       "within_2": 0.697524219590958
      },
      "oracle_text": "Whenever a creature dies, put a quest counter on this enchantment. Target opponent loses 1 life. That player loses 2 life instead if there are seven or more quest counters on this enchantment."
+    },
+    {
+     "name": "A Good Day to Die",
+     "grade": "F",
+     "z": -2.1352806168014986,
+     "rarity": "common",
+     "mana_cost": "{B}",
+     "type_line": "Instant",
+     "image": "https://cards.scryfall.io/normal/front/e/2/e2b350b2-0eda-4c2b-b9d6-b58ab4848545.jpg?1785981483",
+     "scryfall_uri": "https://scryfall.com/card/trk/111/a-good-day-to-die?utm_source=api",
+     "colors": [
+      "B"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6081808396124866,
+      "within_1": 0.5667384284176534,
+      "within_2": 0.7766415500538213
+     },
+     "oracle_text": "Target creature gets +2/+0 until end of turn. When that creature dies this turn, you draw a card."
     }
    ],
    "top": [
     {
+     "name": "Salt Vampire",
+     "grade": "A+",
+     "z": 2.2146264602144723,
+     "rarity": "rare",
+     "mana_cost": "{1}{B}",
+     "type_line": "Creature \u2014 Vampire Shapeshifter",
+     "image": "https://cards.scryfall.io/normal/front/7/8/78faba81-01a3-489f-927e-1adaa8fe4436.jpg?1784036770",
+     "scryfall_uri": "https://scryfall.com/card/trk/127/salt-vampire?utm_source=api",
+     "colors": [
+      "B"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 3,
+      "of": 5,
+      "mean_grade_error": 1.8794402583423035,
+      "within_1": 0.5064585575888052,
+      "within_2": 0.7104413347685683
+     },
+     "oracle_text": "Lifelink\nWhen this creature enters, look at target opponent's hand. You may choose a nonland card from it. If you do, that player exiles that card, then draws a card."
+    },
+    {
      "name": "The Destruction of Praxis",
      "grade": "A",
-     "z": 2.067463754050907,
+     "z": 2.008004089118491,
      "rarity": "rare",
      "mana_cost": "{3}{B}{B}",
      "type_line": "Sorcery",
@@ -3924,26 +4076,24 @@
      "oracle_text": "Strange new worlds \u2014 All creatures get -X/-X until end of turn, where X is the number of differently named lands you control. If X is 6 or more, create two 2/1 red Klingon Warrior creature tokens with haste."
     },
     {
-     "name": "Salt Vampire",
+     "name": "Crystalline Entity",
      "grade": "A",
-     "z": 2.008004089118491,
-     "rarity": "rare",
-     "mana_cost": "{1}{B}",
-     "type_line": "Creature \u2014 Vampire Shapeshifter",
-     "image": "https://cards.scryfall.io/normal/front/7/8/78faba81-01a3-489f-927e-1adaa8fe4436.jpg?1784036770",
-     "scryfall_uri": "https://scryfall.com/card/trk/127/salt-vampire?utm_source=api",
-     "colors": [
-      "B"
-     ],
+     "z": 1.9548969207358264,
+     "rarity": "mythic",
+     "mana_cost": "{8}",
+     "type_line": "Artifact Creature \u2014 Elemental",
+     "image": "https://cards.scryfall.io/normal/front/c/b/cbc4ac70-0a4c-4973-a366-dd67d8901e21.jpg?1784036804",
+     "scryfall_uri": "https://scryfall.com/card/trk/261/crystalline-entity?utm_source=api",
+     "colors": [],
      "confidence": "high",
      "trust": {
-      "band": 3,
+      "band": 1,
       "of": 5,
-      "mean_grade_error": 1.8794402583423035,
-      "within_1": 0.5064585575888052,
-      "within_2": 0.7104413347685683
+      "mean_grade_error": 1.6081808396124866,
+      "within_1": 0.5667384284176534,
+      "within_2": 0.7766415500538213
      },
-     "oracle_text": "Lifelink\nWhen this creature enters, look at target opponent's hand. You may choose a nonland card from it. If you do, that player exiles that card, then draws a card."
+     "oracle_text": "Flying\nWhen this creature enters, if you cast it, destroy all nonartifact creatures."
     },
     {
      "name": "Captain James T. Kirk",
@@ -3968,51 +4118,9 @@
      "oracle_text": "Whenever Captain Kirk enters or attacks, choose one. If you have no cards in hand, choose one or more instead.\n\u2022 Discard a card, then draw a card.\n\u2022 Create a 1/1 red Officer creature token.\n\u2022 Creatures you control get +1/+0 until end of turn."
     },
     {
-     "name": "Crystalline Entity",
-     "grade": "A",
-     "z": 1.8627318674216515,
-     "rarity": "mythic",
-     "mana_cost": "{8}",
-     "type_line": "Artifact Creature \u2014 Elemental",
-     "image": "https://cards.scryfall.io/normal/front/c/b/cbc4ac70-0a4c-4973-a366-dd67d8901e21.jpg?1784036804",
-     "scryfall_uri": "https://scryfall.com/card/trk/261/crystalline-entity?utm_source=api",
-     "colors": [],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6081808396124866,
-      "within_1": 0.5667384284176534,
-      "within_2": 0.7766415500538213
-     },
-     "oracle_text": "Flying\nWhen this creature enters, if you cast it, destroy all nonartifact creatures."
-    },
-    {
-     "name": "Armus, Skin of Evil",
-     "grade": "A-",
-     "z": 1.6249807216131984,
-     "rarity": "rare",
-     "mana_cost": "{5}{B}{B}",
-     "type_line": "Legendary Creature \u2014 Ooze Horror",
-     "image": "https://cards.scryfall.io/normal/front/c/3/c3ba1e0d-5e3d-4fa7-9b58-5b90944b43c5.jpg?1793013559",
-     "scryfall_uri": "https://scryfall.com/card/trk/91/armus-skin-of-evil?utm_source=api",
-     "colors": [
-      "B"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 2,
-      "of": 5,
-      "mean_grade_error": 1.8207750269106566,
-      "within_1": 0.5107642626480086,
-      "within_2": 0.7222820236813778
-     },
-     "oracle_text": "Menace\nAt the beginning of your end step, target opponent discards two cards.\n{2}{B}, Discard this card: Target creature gets -4/-4 until end of turn."
-    },
-    {
      "name": "Q, Stacking the Deck",
-     "grade": "A-",
-     "z": 1.5463344771685748,
+     "grade": "A",
+     "z": 1.6535730820197796,
      "rarity": "mythic",
      "mana_cost": "{2}{R}{R}",
      "type_line": "Legendary Creature \u2014 Q",
@@ -4032,9 +4140,53 @@
      "oracle_text": "When Q enters, shuffle your library, then exile cards from the top of your library until you exile a nonland card. That nonland card gains \"Exile a card from your hand: Create a copy of this card. You may cast the copy. Activate only during your turn and only if this card is exiled.\""
     },
     {
+     "name": "Armus, Skin of Evil",
+     "grade": "A-",
+     "z": 1.571478999865478,
+     "rarity": "rare",
+     "mana_cost": "{5}{B}{B}",
+     "type_line": "Legendary Creature \u2014 Ooze Horror",
+     "image": "https://cards.scryfall.io/normal/front/c/3/c3ba1e0d-5e3d-4fa7-9b58-5b90944b43c5.jpg?1793013559",
+     "scryfall_uri": "https://scryfall.com/card/trk/91/armus-skin-of-evil?utm_source=api",
+     "colors": [
+      "B"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 2,
+      "of": 5,
+      "mean_grade_error": 1.8207750269106566,
+      "within_1": 0.5107642626480086,
+      "within_2": 0.7222820236813778
+     },
+     "oracle_text": "Menace\nAt the beginning of your end step, target opponent discards two cards.\n{2}{B}, Discard this card: Target creature gets -4/-4 until end of turn."
+    },
+    {
+     "name": "The Wrath of Khan",
+     "grade": "A-",
+     "z": 1.41271990941275,
+     "rarity": "rare",
+     "mana_cost": "{2}{R}",
+     "type_line": "Enchantment \u2014 Saga",
+     "image": "https://cards.scryfall.io/normal/front/4/2/426d627e-bb88-4879-8d9f-db1babf22b15.jpg?1792510667",
+     "scryfall_uri": "https://scryfall.com/card/trk/181/the-wrath-of-khan?utm_source=api",
+     "colors": [
+      "R"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 4,
+      "of": 5,
+      "mean_grade_error": 1.919806243272336,
+      "within_1": 0.5005382131324004,
+      "within_2": 0.697524219590958
+     },
+     "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 This Saga deals 4 damage to target creature an opponent controls. At the beginning of the next combat this turn, gain control of that creature until end of turn. Untap it. It gains haste until end of turn.\nII \u2014 You may exile a card from your hand. If you do, draw a card.\nIII \u2014 Each opponent sacrifices a nontoken permanent of their choice."
+    },
+    {
      "name": "Elim Garak, Simple Tailor",
-     "grade": "B+",
-     "z": 1.3360050611545335,
+     "grade": "A-",
+     "z": 1.3927662870454445,
      "rarity": "rare",
      "mana_cost": "{2}{B}",
      "type_line": "Legendary Creature \u2014 Cardassian Rogue",
@@ -4052,50 +4204,36 @@
       "within_2": 0.697524219590958
      },
      "oracle_text": "Menace\nWhenever you face a dilemma, each opponent loses 2 life and you gain 2 life. (You face a dilemma as you choose one or more modes for a spell or ability.)"
-    },
-    {
-     "name": "Death Is Irrelevant",
-     "grade": "B+",
-     "z": 1.218025491800021,
-     "rarity": "mythic",
-     "mana_cost": "{6}{B}{B}",
-     "type_line": "Enchantment",
-     "image": "https://cards.scryfall.io/normal/front/4/0/408cb5dd-1a79-47a9-98ea-41f3f4502c5e.jpg?1792668404",
-     "scryfall_uri": "https://scryfall.com/card/trk/102/death-is-irrelevant?utm_source=api",
-     "colors": [
-      "B"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 2,
-      "of": 5,
-      "mean_grade_error": 1.8207750269106566,
-      "within_1": 0.5107642626480086,
-      "within_2": 0.7222820236813778
-     },
-     "oracle_text": "Artifact creatures you control have indestructible.\nAt the beginning of your end step, assimilate target creature card from a graveyard. (Put it onto the battlefield under your control with a +1/+1 counter. It's a Borg artifact creature and loses all other creature types.)"
     }
    ]
   },
   "BG": {
    "pair": "BG",
    "name": "Archaeology Graveyard",
-   "hook": "",
-   "deck_mean_z": 1.3098680982198325,
+   "hook": "Fill the graveyard and reuse it: Vash, Freelance Archaeologist draws a card each turn you dig through it, and Temporal Conqueror, Hologram Stalker and Stray from History bring cards back. Beam Me Up spells make good targets to put there.",
+   "deck_mean_z": 1.359531606546554,
    "pool_size": 108,
-   "rank": 5,
+   "rank": 3,
    "views": {
     "model": {
-     "score": 1.3098680982198325,
-     "rank": 5
+     "score": 1.359531606546554,
+     "rank": 3
+    },
+    "blind": {
+     "score": 1.275187757710721,
+     "rank": 8
+    },
+    "review": {
+     "score": 1.4035430156959852,
+     "rank": 2
     }
    },
-   "rank_spread": 0,
+   "rank_spread": 6,
    "gold": [
     {
      "name": "Nog, Ambitious Cadet",
      "grade": "B+",
-     "z": 1.318010897303537,
+     "z": 1.266435681995933,
      "rarity": "rare",
      "mana_cost": "{B}{G}",
      "type_line": "Legendary Creature \u2014 Ferengi Rogue",
@@ -4116,32 +4254,9 @@
      "oracle_text": "Menace\n{1}: If Nog is a Rogue, he becomes a Ferengi Scout with base power and toughness 3/4 and gains \"Whenever Nog becomes tapped, surveil 2.\"\n{3}: If Nog is a Scout, he becomes a Ferengi Officer and gains \"You may play lands from your graveyard\" and \"You may play an additional land on each of your turns.\""
     },
     {
-     "name": "Daniels, Temporal Agent",
-     "grade": "B-",
-     "z": 0.7663763832392604,
-     "rarity": "uncommon",
-     "mana_cost": "{2}{B/G}{B/G}",
-     "type_line": "Legendary Creature \u2014 Human Advisor",
-     "image": "https://cards.scryfall.io/normal/front/b/6/b64dd792-7dc7-4d22-9776-9b9e25e1173d.jpg?1792508309",
-     "scryfall_uri": "https://scryfall.com/card/trk/232/daniels-temporal-agent?utm_source=api",
-     "colors": [
-      "B",
-      "G"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6081808396124866,
-      "within_1": 0.5667384284176534,
-      "within_2": 0.7766415500538213
-     },
-     "oracle_text": "When Daniels enters, return target creature card from your graveyard to your hand.\n{2}, Put this card from your graveyard on the bottom of your library: You gain 2 life."
-    },
-    {
      "name": "Vash, Freelance Archaeologist",
-     "grade": "C+",
-     "z": 0.4184813245212891,
+     "grade": "B-",
+     "z": 0.7465137264497481,
      "rarity": "uncommon",
      "mana_cost": "{1}{B}{G}",
      "type_line": "Legendary Creature \u2014 Human Rogue Scientist",
@@ -4160,36 +4275,36 @@
       "within_2": 0.6835306781485468
      },
      "oracle_text": "At the beginning of your upkeep, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\nWhenever a card leaves your graveyard, draw a card. This ability triggers only once each turn."
+    },
+    {
+     "name": "Daniels, Temporal Agent",
+     "grade": "C+",
+     "z": 0.37809887655693897,
+     "rarity": "uncommon",
+     "mana_cost": "{2}{B/G}{B/G}",
+     "type_line": "Legendary Creature \u2014 Human Advisor",
+     "image": "https://cards.scryfall.io/normal/front/b/6/b64dd792-7dc7-4d22-9776-9b9e25e1173d.jpg?1792508309",
+     "scryfall_uri": "https://scryfall.com/card/trk/232/daniels-temporal-agent?utm_source=api",
+     "colors": [
+      "B",
+      "G"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6081808396124866,
+      "within_1": 0.5667384284176534,
+      "within_2": 0.7766415500538213
+     },
+     "oracle_text": "When Daniels enters, return target creature card from your graveyard to your hand.\n{2}, Put this card from your graveyard on the bottom of your library: You gain 2 life."
     }
    ],
    "key_cards": [
     {
-     "name": "Daniels, Temporal Agent",
-     "grade": "B-",
-     "z": 0.7663763832392604,
-     "rarity": "uncommon",
-     "mana_cost": "{2}{B/G}{B/G}",
-     "type_line": "Legendary Creature \u2014 Human Advisor",
-     "image": "https://cards.scryfall.io/normal/front/b/6/b64dd792-7dc7-4d22-9776-9b9e25e1173d.jpg?1792508309",
-     "scryfall_uri": "https://scryfall.com/card/trk/232/daniels-temporal-agent?utm_source=api",
-     "colors": [
-      "B",
-      "G"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6081808396124866,
-      "within_1": 0.5667384284176534,
-      "within_2": 0.7766415500538213
-     },
-     "oracle_text": "When Daniels enters, return target creature card from your graveyard to your hand.\n{2}, Put this card from your graveyard on the bottom of your library: You gain 2 life."
-    },
-    {
      "name": "Vash, Freelance Archaeologist",
-     "grade": "C+",
-     "z": 0.4184813245212891,
+     "grade": "B-",
+     "z": 0.7465137264497481,
      "rarity": "uncommon",
      "mana_cost": "{1}{B}{G}",
      "type_line": "Legendary Creature \u2014 Human Rogue Scientist",
@@ -4210,9 +4325,32 @@
      "oracle_text": "At the beginning of your upkeep, surveil 1. (Look at the top card of your library. You may put it into your graveyard.)\nWhenever a card leaves your graveyard, draw a card. This ability triggers only once each turn."
     },
     {
+     "name": "Daniels, Temporal Agent",
+     "grade": "C+",
+     "z": 0.37809887655693897,
+     "rarity": "uncommon",
+     "mana_cost": "{2}{B/G}{B/G}",
+     "type_line": "Legendary Creature \u2014 Human Advisor",
+     "image": "https://cards.scryfall.io/normal/front/b/6/b64dd792-7dc7-4d22-9776-9b9e25e1173d.jpg?1792508309",
+     "scryfall_uri": "https://scryfall.com/card/trk/232/daniels-temporal-agent?utm_source=api",
+     "colors": [
+      "B",
+      "G"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6081808396124866,
+      "within_1": 0.5667384284176534,
+      "within_2": 0.7766415500538213
+     },
+     "oracle_text": "When Daniels enters, return target creature card from your graveyard to your hand.\n{2}, Put this card from your graveyard on the bottom of your library: You gain 2 life."
+    },
+    {
      "name": "Pattern Buffer Preservation",
      "grade": "C+",
-     "z": 0.22188326053533158,
+     "z": 0.24488223285543048,
      "rarity": "common",
      "mana_cost": "{1}{B}",
      "type_line": "Sorcery",
@@ -4234,31 +4372,9 @@
    ],
    "top": [
     {
-     "name": "The Destruction of Praxis",
-     "grade": "A",
-     "z": 2.067463754050907,
-     "rarity": "rare",
-     "mana_cost": "{3}{B}{B}",
-     "type_line": "Sorcery",
-     "image": "https://cards.scryfall.io/normal/front/3/d/3d33ac2a-73a9-4804-bf9f-c8cf4eea1c76.jpg?1793187997",
-     "scryfall_uri": "https://scryfall.com/card/trk/103/the-destruction-of-praxis?utm_source=api",
-     "colors": [
-      "B"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 5,
-      "of": 5,
-      "mean_grade_error": 1.9504843918191603,
-      "within_1": 0.49730893433799783,
-      "within_2": 0.6835306781485468
-     },
-     "oracle_text": "Strange new worlds \u2014 All creatures get -X/-X until end of turn, where X is the number of differently named lands you control. If X is 6 or more, create two 2/1 red Klingon Warrior creature tokens with haste."
-    },
-    {
      "name": "Salt Vampire",
-     "grade": "A",
-     "z": 2.008004089118491,
+     "grade": "A+",
+     "z": 2.2146264602144723,
      "rarity": "rare",
      "mana_cost": "{1}{B}",
      "type_line": "Creature \u2014 Vampire Shapeshifter",
@@ -4278,9 +4394,31 @@
      "oracle_text": "Lifelink\nWhen this creature enters, look at target opponent's hand. You may choose a nonland card from it. If you do, that player exiles that card, then draws a card."
     },
     {
+     "name": "The Destruction of Praxis",
+     "grade": "A",
+     "z": 2.008004089118491,
+     "rarity": "rare",
+     "mana_cost": "{3}{B}{B}",
+     "type_line": "Sorcery",
+     "image": "https://cards.scryfall.io/normal/front/3/d/3d33ac2a-73a9-4804-bf9f-c8cf4eea1c76.jpg?1793187997",
+     "scryfall_uri": "https://scryfall.com/card/trk/103/the-destruction-of-praxis?utm_source=api",
+     "colors": [
+      "B"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 5,
+      "of": 5,
+      "mean_grade_error": 1.9504843918191603,
+      "within_1": 0.49730893433799783,
+      "within_2": 0.6835306781485468
+     },
+     "oracle_text": "Strange new worlds \u2014 All creatures get -X/-X until end of turn, where X is the number of differently named lands you control. If X is 6 or more, create two 2/1 red Klingon Warrior creature tokens with haste."
+    },
+    {
      "name": "Crystalline Entity",
      "grade": "A",
-     "z": 1.8627318674216515,
+     "z": 1.9548969207358264,
      "rarity": "mythic",
      "mana_cost": "{8}",
      "type_line": "Artifact Creature \u2014 Elemental",
@@ -4298,31 +4436,9 @@
      "oracle_text": "Flying\nWhen this creature enters, if you cast it, destroy all nonartifact creatures."
     },
     {
-     "name": "Armus, Skin of Evil",
-     "grade": "A-",
-     "z": 1.6249807216131984,
-     "rarity": "rare",
-     "mana_cost": "{5}{B}{B}",
-     "type_line": "Legendary Creature \u2014 Ooze Horror",
-     "image": "https://cards.scryfall.io/normal/front/c/3/c3ba1e0d-5e3d-4fa7-9b58-5b90944b43c5.jpg?1793013559",
-     "scryfall_uri": "https://scryfall.com/card/trk/91/armus-skin-of-evil?utm_source=api",
-     "colors": [
-      "B"
-     ],
-     "confidence": "high",
-     "trust": {
-      "band": 2,
-      "of": 5,
-      "mean_grade_error": 1.8207750269106566,
-      "within_1": 0.5107642626480086,
-      "within_2": 0.7222820236813778
-     },
-     "oracle_text": "Menace\nAt the beginning of your end step, target opponent discards two cards.\n{2}{B}, Discard this card: Target creature gets -4/-4 until end of turn."
-    },
-    {
      "name": "U.S.S. Discovery, at Black Alert",
      "grade": "A-",
-     "z": 1.4987882591005781,
+     "z": 1.5976582835775086,
      "rarity": "rare",
      "mana_cost": "{3}{G}{G}",
      "type_line": "Legendary Artifact \u2014 Spacecraft",
@@ -4342,31 +4458,53 @@
      "oracle_text": "Whenever U.S.S. Discovery enters or attacks, discover 5. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)\nStation\n6+ | Flying"
     },
     {
-     "name": "Dr. Leonard \"Bones\" McCoy",
+     "name": "Armus, Skin of Evil",
      "grade": "A-",
-     "z": 1.4544076028560409,
+     "z": 1.571478999865478,
      "rarity": "rare",
-     "mana_cost": "{1}{G}{G}",
-     "type_line": "Legendary Creature \u2014 Human Doctor",
-     "image": "https://cards.scryfall.io/normal/front/d/8/d8593bf7-5248-4f4a-bf8b-9816d2f76c6b.jpg?1793187127",
-     "scryfall_uri": "https://scryfall.com/card/trk/197/dr-leonard-bones-mccoy?utm_source=api",
+     "mana_cost": "{5}{B}{B}",
+     "type_line": "Legendary Creature \u2014 Ooze Horror",
+     "image": "https://cards.scryfall.io/normal/front/c/3/c3ba1e0d-5e3d-4fa7-9b58-5b90944b43c5.jpg?1793013559",
+     "scryfall_uri": "https://scryfall.com/card/trk/91/armus-skin-of-evil?utm_source=api",
+     "colors": [
+      "B"
+     ],
+     "confidence": "high",
+     "trust": {
+      "band": 2,
+      "of": 5,
+      "mean_grade_error": 1.8207750269106566,
+      "within_1": 0.5107642626480086,
+      "within_2": 0.7222820236813778
+     },
+     "oracle_text": "Menace\nAt the beginning of your end step, target opponent discards two cards.\n{2}{B}, Discard this card: Target creature gets -4/-4 until end of turn."
+    },
+    {
+     "name": "Rok-Tahk, Budding Scientist",
+     "grade": "A-",
+     "z": 1.4987882591005781,
+     "rarity": "mythic",
+     "mana_cost": "{4}{G}{G}",
+     "type_line": "Legendary Creature \u2014 Brikar Scientist",
+     "image": "https://cards.scryfall.io/normal/front/7/8/787bd19b-586e-4451-850b-60e0857bada0.jpg?1793273846",
+     "scryfall_uri": "https://scryfall.com/card/trk/211/rok-tahk-budding-scientist?utm_source=api",
      "colors": [
       "G"
      ],
      "confidence": "high",
      "trust": {
-      "band": 3,
+      "band": 2,
       "of": 5,
-      "mean_grade_error": 1.8794402583423035,
-      "within_1": 0.5064585575888052,
-      "within_2": 0.7104413347685683
+      "mean_grade_error": 1.8207750269106566,
+      "within_1": 0.5107642626480086,
+      "within_2": 0.7222820236813778
      },
-     "oracle_text": "Flash\nWhen Dr. McCoy enters, choose one \u2014\n\u2022 Return target non-Doctor permanent card from your graveyard to your hand.\n\u2022 Choose up to one other target creature. When it dies this turn, return that card to the battlefield under its owner's control with a +1/+1 counter on it at the beginning of the next end step."
+     "oracle_text": "Creatures you control have \"{T}: Add {G}{G}.\"\nWhen Rok-Tahk enters, create Murf, a legendary 0/1 green Ooze Slug creature token with indestructible."
     },
     {
      "name": "Species 8472",
      "grade": "A-",
-     "z": 1.4332524189550542,
+     "z": 1.4762344944523467,
      "rarity": "uncommon",
      "mana_cost": "{4}{G}{G}",
      "type_line": "Creature \u2014 Insect Beast",
@@ -4386,48 +4524,56 @@
      "oracle_text": "Strange new worlds \u2014 When this creature enters, you gain life equal to the number of differently named lands you control.\nThis creature can't be blocked by artifact creatures.\nThis creature can't be the target of abilities from artifact sources your opponents control."
     },
     {
-     "name": "Holo-Engineer",
+     "name": "Jadzia Dax, Living Legacy",
      "grade": "A-",
-     "z": 1.41271990941275,
-     "rarity": "rare",
-     "mana_cost": "{2}{G}{G}",
-     "type_line": "Creature \u2014 Human Artificer",
-     "image": "https://cards.scryfall.io/normal/front/a/c/acfaf5f3-a4f5-418a-a29a-211b33bf18ee.jpg?1793100831",
-     "scryfall_uri": "https://scryfall.com/card/trk/201/holo-engineer?utm_source=api",
+     "z": 1.4332524189550542,
+     "rarity": "mythic",
+     "mana_cost": "{1}{G}",
+     "type_line": "Legendary Creature \u2014 Trill Scientist",
+     "image": "https://cards.scryfall.io/normal/front/b/d/bd342f8b-9072-487d-8a33-b1bb149f1502.jpg?1793013267",
+     "scryfall_uri": "https://scryfall.com/card/trk/204/jadzia-dax-living-legacy?utm_source=api",
      "colors": [
       "G"
      ],
      "confidence": "high",
      "trust": {
-      "band": 5,
+      "band": 4,
       "of": 5,
-      "mean_grade_error": 1.9504843918191603,
-      "within_1": 0.49730893433799783,
-      "within_2": 0.6835306781485468
+      "mean_grade_error": 1.919806243272336,
+      "within_1": 0.5005382131324004,
+      "within_2": 0.697524219590958
      },
-     "oracle_text": "When this creature enters, create a 3/3 colorless Illusion artifact creature token.\nIf one or more tokens would be created under your control, that many 3/3 colorless Illusion artifact creature tokens are created instead."
+     "oracle_text": "At the beginning of your first main phase, put a +1/+1 counter on Jadzia Dax, then add an amount of {G} equal to the number of counters on her.\nTransfer Symbiont \u2014 {2}{G}, Discard this card: Put two +1/+1 counters on target creature."
     }
    ]
   },
   "RG": {
    "pair": "RG",
    "name": "Away Team Landfall",
-   "hook": "",
-   "deck_mean_z": 1.1724750745373609,
+   "hook": "Put extra lands onto the battlefield and get paid each time: Captain Michael Burnham, Syndicate Liquidators, Xindi Surveyors and Saurian Explorer. Genesis Effect is removal plus an instant-speed landfall trigger; Will Riker gives temporary ramp and extra triggers.",
+   "deck_mean_z": 1.2575040280833165,
    "pool_size": 107,
-   "rank": 10,
+   "rank": 7,
    "views": {
     "model": {
-     "score": 1.1724750745373609,
-     "rank": 10
+     "score": 1.2575040280833165,
+     "rank": 7
+    },
+    "blind": {
+     "score": 1.2271304372673748,
+     "rank": 9
+    },
+    "review": {
+     "score": 1.0167273470178793,
+     "rank": 9
     }
    },
-   "rank_spread": 0,
+   "rank_spread": 2,
    "gold": [
     {
      "name": "Cleveland Booker, Empath",
      "grade": "B-",
-     "z": 0.5879771666559909,
+     "z": 0.6058070959759125,
      "rarity": "uncommon",
      "mana_cost": "{2}{R/G}{R/G}",
      "type_line": "Legendary Creature \u2014 Kwejian Rogue",
@@ -4450,7 +4596,7 @@
     {
      "name": "Dal R'El, Augment Orphan",
      "grade": "C",
-     "z": -0.0037301102490883403,
+     "z": 0.09338810746613974,
      "rarity": "uncommon",
      "mana_cost": "{1}{R}{G}",
      "type_line": "Legendary Creature \u2014 Human Mutant Rogue",
@@ -4472,8 +4618,8 @@
     },
     {
      "name": "Hit It!",
-     "grade": "D",
-     "z": -0.7465137264497481,
+     "grade": "D+",
+     "z": -0.434823596045777,
      "rarity": "rare",
      "mana_cost": "{1}{R}{G}",
      "type_line": "Enchantment",
@@ -4498,7 +4644,7 @@
     {
      "name": "Cleveland Booker, Empath",
      "grade": "B-",
-     "z": 0.5879771666559909,
+     "z": 0.6058070959759125,
      "rarity": "uncommon",
      "mana_cost": "{2}{R/G}{R/G}",
      "type_line": "Legendary Creature \u2014 Kwejian Rogue",
@@ -4521,7 +4667,7 @@
     {
      "name": "Jake Sisko, War Correspondent",
      "grade": "C+",
-     "z": 0.4845773404812539,
+     "z": 0.3941742696140355,
      "rarity": "uncommon",
      "mana_cost": "{1}{G}",
      "type_line": "Legendary Creature \u2014 Human Citizen",
@@ -4543,7 +4689,7 @@
     {
      "name": "Dal R'El, Augment Orphan",
      "grade": "C",
-     "z": -0.0037301102490883403,
+     "z": 0.09338810746613974,
      "rarity": "uncommon",
      "mana_cost": "{1}{R}{G}",
      "type_line": "Legendary Creature \u2014 Human Mutant Rogue",
@@ -4566,7 +4712,7 @@
     {
      "name": "Captain Michael Burnham",
      "grade": "D",
-     "z": -0.903856630460602,
+     "z": -0.8490861916917161,
      "rarity": "uncommon",
      "mana_cost": "{2}{R}",
      "type_line": "Legendary Creature \u2014 Human Officer",
@@ -4588,7 +4734,7 @@
     {
      "name": "Erica Ortegas, Plucky Pilot",
      "grade": "F",
-     "z": -1.9548969207358264,
+     "z": -2.0080040891184923,
      "rarity": "uncommon",
      "mana_cost": "{3}{R}",
      "type_line": "Legendary Creature \u2014 Human Pilot",
@@ -4609,6 +4755,26 @@
     }
    ],
    "top": [
+    {
+     "name": "Crystalline Entity",
+     "grade": "A",
+     "z": 1.9548969207358264,
+     "rarity": "mythic",
+     "mana_cost": "{8}",
+     "type_line": "Artifact Creature \u2014 Elemental",
+     "image": "https://cards.scryfall.io/normal/front/c/b/cbc4ac70-0a4c-4973-a366-dd67d8901e21.jpg?1784036804",
+     "scryfall_uri": "https://scryfall.com/card/trk/261/crystalline-entity?utm_source=api",
+     "colors": [],
+     "confidence": "high",
+     "trust": {
+      "band": 1,
+      "of": 5,
+      "mean_grade_error": 1.6081808396124866,
+      "within_1": 0.5667384284176534,
+      "within_2": 0.7766415500538213
+     },
+     "oracle_text": "Flying\nWhen this creature enters, if you cast it, destroy all nonartifact creatures."
+    },
     {
      "name": "Captain James T. Kirk",
      "grade": "A",
@@ -4632,29 +4798,9 @@
      "oracle_text": "Whenever Captain Kirk enters or attacks, choose one. If you have no cards in hand, choose one or more instead.\n\u2022 Discard a card, then draw a card.\n\u2022 Create a 1/1 red Officer creature token.\n\u2022 Creatures you control get +1/+0 until end of turn."
     },
     {
-     "name": "Crystalline Entity",
-     "grade": "A",
-     "z": 1.8627318674216515,
-     "rarity": "mythic",
-     "mana_cost": "{8}",
-     "type_line": "Artifact Creature \u2014 Elemental",
-     "image": "https://cards.scryfall.io/normal/front/c/b/cbc4ac70-0a4c-4973-a366-dd67d8901e21.jpg?1784036804",
-     "scryfall_uri": "https://scryfall.com/card/trk/261/crystalline-entity?utm_source=api",
-     "colors": [],
-     "confidence": "high",
-     "trust": {
-      "band": 1,
-      "of": 5,
-      "mean_grade_error": 1.6081808396124866,
-      "within_1": 0.5667384284176534,
-      "within_2": 0.7766415500538213
-     },
-     "oracle_text": "Flying\nWhen this creature enters, if you cast it, destroy all nonartifact creatures."
-    },
-    {
      "name": "Q, Stacking the Deck",
-     "grade": "A-",
-     "z": 1.5463344771685748,
+     "grade": "A",
+     "z": 1.6535730820197796,
      "rarity": "mythic",
      "mana_cost": "{2}{R}{R}",
      "type_line": "Legendary Creature \u2014 Q",
@@ -4676,7 +4822,7 @@
     {
      "name": "U.S.S. Discovery, at Black Alert",
      "grade": "A-",
-     "z": 1.4987882591005781,
+     "z": 1.5976582835775086,
      "rarity": "rare",
      "mana_cost": "{3}{G}{G}",
      "type_line": "Legendary Artifact \u2014 Spacecraft",
@@ -4696,31 +4842,31 @@
      "oracle_text": "Whenever U.S.S. Discovery enters or attacks, discover 5. (Exile cards from the top of your library until you exile a nonland card with mana value 5 or less. Cast it without paying its mana cost or put it into your hand. Put the rest on the bottom in a random order.)\nStation\n6+ | Flying"
     },
     {
-     "name": "Dr. Leonard \"Bones\" McCoy",
+     "name": "Rok-Tahk, Budding Scientist",
      "grade": "A-",
-     "z": 1.4544076028560409,
-     "rarity": "rare",
-     "mana_cost": "{1}{G}{G}",
-     "type_line": "Legendary Creature \u2014 Human Doctor",
-     "image": "https://cards.scryfall.io/normal/front/d/8/d8593bf7-5248-4f4a-bf8b-9816d2f76c6b.jpg?1793187127",
-     "scryfall_uri": "https://scryfall.com/card/trk/197/dr-leonard-bones-mccoy?utm_source=api",
+     "z": 1.4987882591005781,
+     "rarity": "mythic",
+     "mana_cost": "{4}{G}{G}",
+     "type_line": "Legendary Creature \u2014 Brikar Scientist",
+     "image": "https://cards.scryfall.io/normal/front/7/8/787bd19b-586e-4451-850b-60e0857bada0.jpg?1793273846",
+     "scryfall_uri": "https://scryfall.com/card/trk/211/rok-tahk-budding-scientist?utm_source=api",
      "colors": [
       "G"
      ],
      "confidence": "high",
      "trust": {
-      "band": 3,
+      "band": 2,
       "of": 5,
-      "mean_grade_error": 1.8794402583423035,
-      "within_1": 0.5064585575888052,
-      "within_2": 0.7104413347685683
+      "mean_grade_error": 1.8207750269106566,
+      "within_1": 0.5107642626480086,
+      "within_2": 0.7222820236813778
      },
-     "oracle_text": "Flash\nWhen Dr. McCoy enters, choose one \u2014\n\u2022 Return target non-Doctor permanent card from your graveyard to your hand.\n\u2022 Choose up to one other target creature. When it dies this turn, return that card to the battlefield under its owner's control with a +1/+1 counter on it at the beginning of the next end step."
+     "oracle_text": "Creatures you control have \"{T}: Add {G}{G}.\"\nWhen Rok-Tahk enters, create Murf, a legendary 0/1 green Ooze Slug creature token with indestructible."
     },
     {
      "name": "Species 8472",
      "grade": "A-",
-     "z": 1.4332524189550542,
+     "z": 1.4762344944523467,
      "rarity": "uncommon",
      "mana_cost": "{4}{G}{G}",
      "type_line": "Creature \u2014 Insect Beast",
@@ -4740,48 +4886,48 @@
      "oracle_text": "Strange new worlds \u2014 When this creature enters, you gain life equal to the number of differently named lands you control.\nThis creature can't be blocked by artifact creatures.\nThis creature can't be the target of abilities from artifact sources your opponents control."
     },
     {
-     "name": "Holo-Engineer",
+     "name": "Jadzia Dax, Living Legacy",
      "grade": "A-",
-     "z": 1.41271990941275,
-     "rarity": "rare",
-     "mana_cost": "{2}{G}{G}",
-     "type_line": "Creature \u2014 Human Artificer",
-     "image": "https://cards.scryfall.io/normal/front/a/c/acfaf5f3-a4f5-418a-a29a-211b33bf18ee.jpg?1793100831",
-     "scryfall_uri": "https://scryfall.com/card/trk/201/holo-engineer?utm_source=api",
+     "z": 1.4332524189550542,
+     "rarity": "mythic",
+     "mana_cost": "{1}{G}",
+     "type_line": "Legendary Creature \u2014 Trill Scientist",
+     "image": "https://cards.scryfall.io/normal/front/b/d/bd342f8b-9072-487d-8a33-b1bb149f1502.jpg?1793013267",
+     "scryfall_uri": "https://scryfall.com/card/trk/204/jadzia-dax-living-legacy?utm_source=api",
      "colors": [
       "G"
      ],
      "confidence": "high",
      "trust": {
-      "band": 5,
+      "band": 4,
       "of": 5,
-      "mean_grade_error": 1.9504843918191603,
-      "within_1": 0.49730893433799783,
-      "within_2": 0.6835306781485468
+      "mean_grade_error": 1.919806243272336,
+      "within_1": 0.5005382131324004,
+      "within_2": 0.697524219590958
      },
-     "oracle_text": "When this creature enters, create a 3/3 colorless Illusion artifact creature token.\nIf one or more tokens would be created under your control, that many 3/3 colorless Illusion artifact creature tokens are created instead."
+     "oracle_text": "At the beginning of your first main phase, put a +1/+1 counter on Jadzia Dax, then add an amount of {G} equal to the number of counters on her.\nTransfer Symbiont \u2014 {2}{G}, Discard this card: Put two +1/+1 counters on target creature."
     },
     {
-     "name": "Captain Jonathan Archer",
+     "name": "The Wrath of Khan",
      "grade": "A-",
-     "z": 1.3927662870454445,
+     "z": 1.41271990941275,
      "rarity": "rare",
-     "mana_cost": "{2}{G}",
-     "type_line": "Legendary Creature \u2014 Human Officer",
-     "image": "https://cards.scryfall.io/normal/front/a/4/a4518ea3-5f56-4f1d-9024-2bf06ac98786.jpg?1792508262",
-     "scryfall_uri": "https://scryfall.com/card/trk/186/captain-jonathan-archer?utm_source=api",
+     "mana_cost": "{2}{R}",
+     "type_line": "Enchantment \u2014 Saga",
+     "image": "https://cards.scryfall.io/normal/front/4/2/426d627e-bb88-4879-8d9f-db1babf22b15.jpg?1792510667",
+     "scryfall_uri": "https://scryfall.com/card/trk/181/the-wrath-of-khan?utm_source=api",
      "colors": [
-      "G"
+      "R"
      ],
-     "confidence": "low",
+     "confidence": "high",
      "trust": {
-      "band": 2,
+      "band": 4,
       "of": 5,
-      "mean_grade_error": 1.8207750269106566,
-      "within_1": 0.5107642626480086,
-      "within_2": 0.7222820236813778
+      "mean_grade_error": 1.919806243272336,
+      "within_1": 0.5005382131324004,
+      "within_2": 0.697524219590958
      },
-     "oracle_text": "When Captain Archer enters, create Porthos, a legendary 1/1 green Dog creature token.\nFederation \u2014 {G}, {T}: Target creature you control gets +X/+X until end of turn, where X is the number of creature types among non-Borg creatures you control. Activate only as a sorcery."
+     "oracle_text": "(As this Saga enters and after your draw step, add a lore counter. Sacrifice after III.)\nI \u2014 This Saga deals 4 damage to target creature an opponent controls. At the beginning of the next combat this turn, gain control of that creature until end of turn. Untap it. It gains haste until end of turn.\nII \u2014 You may exile a card from your hand. If you do, draw a card.\nIII \u2014 Each opponent sacrifices a nontoken permanent of their choice."
     }
    ]
   }
