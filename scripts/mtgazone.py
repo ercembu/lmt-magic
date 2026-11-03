@@ -10,6 +10,9 @@ each line "Card Name — rating". Comment lines starting with # are ignored.
 """
 import json, os, re, sys
 
+sys.path.insert(0, os.path.dirname(__file__))
+from expert_grades import norm
+
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 SRC = os.path.join(ROOT, "data", "reviews_mtgazone")
 OUT = os.path.join(ROOT, "data", "expert_mtgazone")
@@ -31,14 +34,16 @@ def parse_file(path):
 
 def resolve(ratings, setcode):
     cards = {c["name"] for c in json.load(open(f"{ROOT}/data/cards/{setcode}.json"))}
+    # full names before front faces before names cut at the comma, so "Seven of Nine" isn't taken by
+    # "Seven of Nine, Unassimilated"; norm() evens out curly quotes and ". . ."
     idx = {}
-    for k in cards:
-        idx.setdefault(k, k)
-        idx.setdefault(k.split(" // ")[0], k)
-        idx.setdefault(k.split(",")[0], k)
+    for alias_of in (lambda k: k, lambda k: k.split(" // ")[0], lambda k: k.split(",")[0]):
+        for k in sorted(cards):
+            idx.setdefault(alias_of(k), k)
+            idx.setdefault(norm(alias_of(k)), k)
     hit, miss = {}, []
     for n, r in ratings.items():
-        k = idx.get(n)
+        k = idx.get(n) or idx.get(norm(n))
         if k:
             hit[k] = r
         else:
