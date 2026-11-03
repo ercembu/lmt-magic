@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Reality Fracture — the ideas</title>
+<title>Limited — the ideas</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#191527">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -117,7 +117,7 @@ footer b{color:var(--text-2)}
 <div class="wrap">
 <header>
   <nav>
-    <a href="./">All 280 cards</a>
+    <a href="./">All <span data-set="cards"></span> cards</a>
     <a href="signals.html">What to commit to</a>
     <a href="reviews.html">The set review</a>
     <a href="ideas.html" aria-current="page">The ideas</a>
@@ -125,17 +125,17 @@ footer b{color:var(--text-2)}
   </nav>
   <p id="stamp" style="margin:-14px 0 16px;color:var(--text-3);font-size:12px"></p>
   <h1>The review, <em>collected by idea</em></h1>
-  <p class="lede">The ratings page gives you 280 numbers. Beside each one is a paragraph of
+  <p class="lede">The ratings page gives you <span data-set="cards"></span> numbers. Beside each one is a paragraph of
   reasoning, and that is where a reviewer says the things a number cannot — that a mechanic is
   weaker than it reads, that a card needs three others to work, that the format is slower than
-  the last one. Read card by card those observations are scattered across 280 entries.
+  the last one. Read card by card those observations are scattered across <span data-set="cards"></span> entries.
   <b>Collected by subject, they are the closest thing to a strategy article that exists for a
   set nobody has played yet.</b></p>
   <div class="score" id="score"></div>
 </header>
 
 <h2>The set's own vocabulary</h2>
-<p class="note">Reality Fracture's mechanics, how many cards carry each, the ones our model
+<p class="note"><span data-set="name"></span>'s mechanics, how many cards carry each, the ones our model
 rates highest — and what the reviewer says about the mechanic itself rather than any one card.</p>
 <div class="grid" id="mech"></div>
 

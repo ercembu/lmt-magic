@@ -1,144 +1,107 @@
 {
- "set": "FRA",
+ "set": "TRK",
  "removal": [
-  "Memory Trap",
-  "Prophesied End",
-  "Refute Destiny",
-  "Surgical Precision",
-  "Your Fate Ends Here",
-  "Countersculpt",
-  "Icy Reception",
-  "Infinite Coursework",
-  "Plan for All Outcomes",
-  "Precise Redaction",
-  "Unsummon",
-  "Break Under Pressure",
-  "Extended Absence",
-  "Last Gasp",
-  "Multiply by Zero",
-  "Silence the Echo",
-  "Solve for Disappointment",
-  "Terminal Criticism",
-  "Winter, Tormented Loner",
-  "Mabel, Bitter Recluse",
-  "Proft, Sinister Mastermind",
-  "Awaken the Inferno",
-  "Essence Burn",
-  "Fulminous Forte",
-  "No Admittance",
-  "Tether Technician",
-  "Violent Echoes",
-  "Wrath of the Bloodmane",
-  "Way of the Warlord",
-  "Budding Insurgent",
-  "Compel Brutality",
-  "Flourishing Grapple",
-  "Sureshot Sower",
-  "Yoshimaru, Scrappy Stray"
+  "Kirk, Commanding Officer"
  ],
  "archetypes": {
   "WU": {
-   "name": "Fatehold Surveil Aggro",
-   "hook": "surveil and scry to set up, then convert card selection into pressure",
+   "name": "Spacecraft and Artificers",
+   "hook": "",
    "key_cards": [
-    "Desperate Futurescribe",
-    "Fatehold Chronologist",
-    "Proft, Consulting Detective",
-    "Prudent Fateseer",
-    "Semester Foreseer",
-    "Your Fate Ends Here"
+    "Constable Odo",
+    "Hemmer, Fixing What Is Broken",
+    "Interstellar Effigy"
    ]
   },
   "UB": {
-   "name": "Theorix Graveyard Math",
-   "hook": "self-mill to seven+ cards in graveyard (threshold), then cash it in",
+   "name": "Dilemma Control",
+   "hook": "",
    "key_cards": [
-    "Paradox Shaper",
-    "Theorix Metamage",
-    "Unsummon",
-    "Void Extrapolator",
-    "Winter, Tormented Loner"
+    "Consider the Prime Directive",
+    "Lore, Positronic Provocateur",
+    "Resistance Is Futile",
+    "Seven of Nine"
    ]
   },
   "BR": {
-   "name": "Stingerquill Face Burn",
-   "hook": "noncombat damage to the opponent turns on payoffs",
+   "name": "Klingons and Dies",
+   "hook": "",
    "key_cards": [
-    "Essence Burn",
-    "Fulminous Forte",
-    "Grim Repriser",
-    "Stingerquill Charm",
-    "Stingerquill Voxmancer",
-    "Whiplash Wordsmith"
+    "A Good Day to Die",
+    "L'Rell, Fierce Visionary",
+    "Starfleet Security",
+    "The Duras Sisters",
+    "Vengeance Mission"
    ]
   },
   "RG": {
-   "name": "Konstrari Mana Ramp",
-   "hook": "Heartwood tokens ramp into oversized creatures",
+   "name": "Away Team Landfall",
+   "hook": "",
    "key_cards": [
-    "Archive Arbiter",
-    "Konstrari Improviser",
-    "Vinelasher Adept",
-    "Woodwork Prodigy"
+    "Captain Michael Burnham",
+    "Cleveland Booker, Empath",
+    "Dal R'El, Augment Orphan",
+    "Erica Ortegas, Plucky Pilot",
+    "Jake Sisko, War Correspondent"
    ]
   },
-  "GW": {
-   "name": "Vigorbloom Life Gain",
-   "hook": "gain life to grow creatures with +1/+1 counters",
+  "WG": {
+   "name": "Doctors and Counters",
+   "hook": "",
    "key_cards": [
-    "Bloombrute",
-    "Emergency Phytomedic",
-    "Graft Surgeon",
-    "Vigorbloom Vanguard"
+    "Phlox, Unorthodox Doctor",
+    "Pure Energy",
+    "Support Mission",
+    "The Doctor, EMH"
    ]
   },
   "WB": {
-   "name": "Liliana's Attrition",
-   "hook": "cheap creatures that trade, then profit from their deaths",
+   "name": "Borg Artifact Creatures",
+   "hook": "",
    "key_cards": [
-    "Campus Crier",
-    "Edgar, Ancient Bloodlord",
-    "Rank Rat",
-    "Twisted Fates"
+    "Assault Drone",
+    "Locutus, the One Who Speaks",
+    "Vexing Drone",
+    "Zero, Incorporeal Sensate"
    ]
   },
   "UR": {
-   "name": "Chandra's Prowess",
-   "hook": "noncreature spells trigger prowess-style payoffs",
+   "name": "Scientists and Noncreatures",
+   "hook": "",
    "key_cards": [
-    "Clash of Elements",
-    "No Admittance",
-    "Saheeli, Jewel of Avishkar",
-    "Unsummon"
+    "Gray and Adira, Forever Joined",
+    "Spock, Always Your Friend",
+    "Test of Identity",
+    "Test of Priorities"
    ]
   },
   "BG": {
-   "name": "Garruk's Bestiary",
-   "hook": "value creatures, deathtouch plus trample",
+   "name": "Archaeology Graveyard",
+   "hook": "",
    "key_cards": [
-    "Hapatra, the Desert Fang",
-    "Primal Witchstalker",
-    "Rewrite Regrets",
-    "Teyo, Diamondblade Mage"
+    "Daniels, Temporal Agent",
+    "Pattern Buffer Preservation",
+    "Vash, Freelance Archaeologist"
    ]
   },
-  "RW": {
-   "name": "Ajani's Army",
-   "hook": "+1/+1 counters and Cadet tokens for a fast clock",
+  "WR": {
+   "name": "Command 8+ Total Power",
+   "hook": "",
    "key_cards": [
-    "Heartstring Puller",
-    "Hexhaven Battalion",
-    "Mabel, Valley Hero",
-    "Warrior's Blades"
+    "Academy Instructor",
+    "Kirk, Commanding Officer",
+    "La'An Noonien-Singh, Security",
+    "Worf, Honor-Bound Warrior"
    ]
   },
-  "GU": {
-   "name": "Jace's Mastery",
-   "hook": "empower the Jace token and grant it extra abilities",
+  "UG": {
+   "name": "Strange New Worlds",
+   "hook": "",
    "key_cards": [
-    "Countersculpt",
-    "Kiora of Salt and Sand",
-    "Mind Meanderer"
+    "D'Vana Tendi, Optimistic Ensign",
+    "Orion",
+    "Risa",
+    "The Traveler"
    ]
   }
  }

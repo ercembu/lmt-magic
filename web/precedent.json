@@ -1,170 +1,133 @@
 {
- "empower": {
-  "desc": "Empower \u2014 puts loyalty counters on a planeswalker token, creating one if needed",
-  "n_precedent": 11,
+ "beam_me_up": {
+  "desc": "Beam me up \u2014 recast an instant/sorcery from the graveyard by bouncing your own creature",
+  "n_precedent": 152,
   "sets": {
-   "ONE": 5,
-   "EOE": 1,
-   "DFT": 1,
-   "DSK": 1,
-   "BLB": 1,
-   "BRO": 1,
-   "DMU": 1
-  },
-  "mean_z": 0.9436675715754912,
-  "examples": [
-   "Nissa, Ascended Animist",
-   "Lukka, Bound to Ruin",
-   "The Aetherspark",
-   "Jace, the Perfected Mind",
-   "Teferi, Temporal Pilgrim"
-  ]
- },
- "threshold": {
-  "desc": "Threshold \u2014 switches on at 7+ cards in your graveyard",
-  "n_precedent": 30,
-  "sets": {
-   "DSK": 20,
-   "BLB": 8,
-   "HOB": 1,
-   "TDM": 1
-  },
-  "mean_z": 0.21942668666705029,
-  "examples": [
-   "The Swarmweaver",
-   "The Rollercrusher Ride",
-   "Fear of Missing Out",
-   "Shoreline Looter",
-   "Wildfire Wickerfolk"
-  ]
- },
- "behold": {
-  "desc": "Behold \u2014 cost reduction for revealing/controlling a qualifying permanent",
-  "n_precedent": 19,
-  "sets": {
-   "ECL": 12,
-   "TDM": 6,
-   "HOB": 1
-  },
-  "mean_z": 0.45944257075027733,
-  "examples": [
-   "Champions of the Shoal",
-   "Champions of the Perfect",
-   "Silvergill Mentor",
-   "Champion of the Weird",
-   "Kinsbaile Aspirant"
-  ]
- },
- "heartwood": {
-  "desc": "Heartwood token \u2014 a token that ramps you",
-  "n_precedent": 124,
-  "sets": {
-   "BRO": 20,
-   "OTJ": 16,
-   "LCI": 14,
-   "LTR": 11,
-   "FIN": 10,
-   "HOB": 9,
-   "WOE": 8,
-   "MOM": 7,
-   "ECL": 6,
-   "DFT": 5,
-   "MSH": 4,
-   "BLB": 4,
-   "SOS": 3,
-   "TDM": 3,
+   "MID": 51,
+   "FIN": 13,
+   "VOW": 12,
+   "SOS": 11,
+   "TDM": 11,
+   "FDN": 8,
+   "MH3": 7,
+   "FRA": 6,
+   "TLA": 4,
+   "HOB": 3,
+   "OTJ": 3,
+   "MOM": 3,
+   "DFT": 2,
+   "DSK": 2,
+   "BLB": 2,
    "DMU": 2,
-   "TLA": 1,
-   "DSK": 1
+   "SNC": 2,
+   "AFR": 2,
+   "STX": 2,
+   "ECL": 1,
+   "EOE": 1,
+   "MKM": 1,
+   "LCI": 1,
+   "ONE": 1,
+   "KHM": 1
   },
-  "mean_z": -0.005477507093057269,
+  "mean_z": 0.03988580745488312,
   "examples": [
-   "Bonehoard Dracosaur",
-   "Ashling's Command",
-   "Chrome Host Seedshark",
-   "Roxanne, Starfall Savant",
-   "Magmatic Galleon"
+   "Antiquities on the Loose",
+   "Practiced Offense",
+   "Katilda, Dawnhart Martyr // Katilda's Rising Dawn",
+   "Squee, Dubious Monarch",
+   "Phlage, Titan of Fire's Fury"
   ]
  },
- "cadet": {
-  "desc": "Cadet token \u2014 2/2 bodies for going wide",
-  "n_precedent": 529,
+ "dilemma": {
+  "desc": "Face a dilemma \u2014 payoffs for choosing modes on modal spells and abilities",
+  "n_precedent": 1,
   "sets": {
-   "FIN": 38,
-   "HOB": 34,
-   "TDM": 33,
-   "LTR": 31,
-   "ONE": 31,
-   "TLA": 28,
-   "OTJ": 28,
-   "DFT": 27,
-   "SOS": 26,
-   "ECL": 26,
-   "WOE": 26,
-   "DMU": 25,
-   "MKM": 24,
-   "LCI": 24,
-   "MSH": 22,
-   "EOE": 19,
-   "MOM": 19,
-   "TMT": 18,
-   "BRO": 18,
-   "DSK": 16,
-   "BLB": 16
+   "OTJ": 1
   },
-  "mean_z": 0.5270671814638846,
+  "mean_z": -1.2341841056268463,
   "examples": [
-   "Jeskai Revelation",
-   "Bonehoard Dracosaur",
-   "Overlord of the Mistmoors",
-   "Dragonback Assault",
-   "Aclazotz, Deepest Betrayal // Temple of the Dead"
+   "Riku of Many Paths"
   ]
  },
- "prepare": {
-  "desc": "Prepare \u2014 creature that also casts a copy of its spell half",
-  "n_precedent": 44,
-  "sets": {
-   "SOS": 36,
-   "WOE": 8
-  },
-  "mean_z": -0.13157462152688212,
-  "examples": [
-   "Emeritus of Ideation // Ancestral Recall",
-   "Mosswood Dreadknight // Dread Whispers",
-   "Emeritus of Abundance // Regrowth",
-   "Jadzi, Steward of Fate // Oracle's Gift",
-   "Emeritus of Woe // Demonic Tutor"
-  ]
+ "federation": {
+  "desc": "Federation \u2014 counts creature types among your non-Borg creatures",
+  "n_precedent": 0,
+  "sets": {},
+  "mean_z": null,
+  "examples": []
  },
- "planeswalker_matters": {
-  "desc": "Planeswalker-matters \u2014 live here because Empower makes Jace tokens",
-  "n_precedent": 113,
+ "strange_new_worlds": {
+  "desc": "Strange new worlds \u2014 counts differently named lands you control (domain-like)",
+  "n_precedent": 31,
   "sets": {
-   "ONE": 18,
-   "MOM": 16,
-   "DMU": 14,
-   "BRO": 12,
-   "TDM": 8,
-   "LCI": 8,
-   "DFT": 6,
-   "SOS": 5,
-   "WOE": 5,
-   "DSK": 4,
-   "BLB": 4,
-   "MKM": 4,
-   "ECL": 3,
+   "DMU": 22,
    "EOE": 3,
-   "OTJ": 2,
-   "LTR": 1
+   "FRA": 1,
+   "SOS": 1,
+   "OTJ": 1,
+   "MOM": 1,
+   "VOW": 1,
+   "MID": 1
   },
-  "mean_z": 0.47736561952606454,
+  "mean_z": 0.3469996896770596,
   "examples": [
-   "Ureni, the Song Unending",
-   "Dragonback Assault",
-   "Nissa, Ascended Animist",
-   "Breach the Multiverse",
-   "Sheoldred // The True Scriptures"
+   "Sphinx of Clear Skies",
+   "Herd Migration",
+   "Llanowar Greenwidow",
+   "Nishoba Brawler",
+   "Drag to the Bottom"
+  ]
+ },
+ "station": {
+  "desc": "Spacecraft and station \u2014 returning from Edge of Eternities",
+  "n_precedent": 38,
+  "sets": {
+   "EOE": 38
+  },
+  "mean_z": -0.10777966393466148,
+  "examples": [
+   "Warmaker Gunship",
+   "Lumen-Class Frigate",
+   "The Seriema",
+   "Fell Gravship",
+   "Synthesizer Labship"
+  ]
+ },
+ "assimilate": {
+  "desc": "Assimilate \u2014 steal a creature (often from a graveyard) as a Borg artifact creature",
+  "n_precedent": 37,
+  "sets": {
+   "WOE": 3,
+   "ONE": 3,
+   "DMU": 3,
+   "FIN": 2,
+   "DSK": 2,
+   "OTJ": 2,
+   "MH3": 2,
+   "NEO": 2,
+   "VOW": 2,
+   "AFR": 2,
+   "STX": 2,
+   "MSH": 1,
+   "SOS": 1,
+   "ECL": 1,
+   "DFT": 1,
+   "MKM": 1,
+   "MOM": 1,
+   "BRO": 1,
+   "FDN": 1,
+   "SIR": 1,
+   "SNC": 1,
+   "MID": 1,
+   "KHM": 1
+  },
+  "mean_z": 0.1474642347483484,
+  "examples": [
+   "Virtue of Persistence // Locthwain Scorn",
+   "Mind Flayer",
+   "Portal to Phyrexia",
+   "Junji, the Midnight Sky",
+   "Vodalian Mindsinger"
   ]
  }
 }

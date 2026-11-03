@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Reality Fracture — Limited Grades</title>
+<title>Limited — Limited Grades</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#191527">
 <link rel="apple-touch-icon" href="icon-192.png">
@@ -231,15 +231,15 @@ footer p{max-width:78ch}
 
 <header>
   <nav class="topnav">
-    <a href="./" aria-current="page">All 280 cards</a>
+    <a href="./" aria-current="page">All <span data-set="cards"></span> cards</a>
     <a href="signals.html">What to commit to</a>
     <a href="reviews.html">The set review</a>
     <a href="ideas.html">The ideas</a>
   </nav>
-  <h1 class="title">Reality Fracture <em>graded before release</em></h1>
+  <h1 class="title"><span data-set="name"></span> <em>graded before release</em></h1>
   <p class="sub">Every card in the set, scored by a model that has never seen a game of
-  <b>FRA</b> — it learned what makes a limited card good from <b>31 released sets</b> and 14&nbsp;million
-  recorded games. It reads these 280 cards cold, then weighs in the published set review —
+  <b data-set="code"></b> — it learned what makes a limited card good from <b><span data-set="train_sets"></span> released sets</b> and 14&nbsp;million
+  recorded games. It reads these <span data-set="cards"></span> cards cold, then weighs in the published set review —
   the one thing it cannot work out from the card alone.</p>
 
   <div class="trust" id="trust"></div>
@@ -509,7 +509,7 @@ Promise.all([
      card's real grade 77% of the time, so that gap is the model, not noisy data. Sort your pool
      with this; don't settle arguments with it.<br><br>
      Grades are a curve within this set: roughly the same number of cards get an A here as in any
-     other set, so an A+ means "among the best cards in Reality Fracture," not "among the best cards
+     other set, so an A+ means "among the best cards in <span data-set="name"></span>," not "among the best cards
      in Magic." The model reads mana cost, body, rules text and rarity — it cannot read the room, so
      it is weakest on cards whose value comes from a mechanic that did not exist before. Those carry
      a &#9670; and an explanation. Card data from Scryfall; performance labels computed from
