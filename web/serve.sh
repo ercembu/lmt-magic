@@ -1,13 +1,8 @@
 #!/bin/bash
-# Serve the grader locally. Card data is fetched, so file:// won't work (CORS).
+# Serve the grader locally, exactly as GitHub Pages will: build docs/ (every graded set,
+# opening on $TARGET, default TRK) and serve it. file:// won't work (the data is fetched).
 cd "$(dirname "$0")/.." || exit 1
-TARGET="${TARGET:-TRK}"
-cp -f data/grades_$TARGET.json web/grades.json
-cp -f data/signals_$TARGET.json web/signals.json
-cp -f data/validation.json web/validation.json 2>/dev/null
-cp -f data/precedent_$TARGET.json web/precedent.json 2>/dev/null
-cp -f data/setinfo/$TARGET.json web/setinfo.json 2>/dev/null
-.venv/bin/python scripts/setmeta.py "$TARGET" web/set.json >/dev/null
+./scripts/build_pwa.sh "${TARGET:-TRK}" || exit 1
 PORT="${1:-8731}"
-echo "Grader running at http://localhost:$PORT/web/"
-exec python3 -m http.server "$PORT" --bind 127.0.0.1
+echo "Grader running at http://localhost:$PORT/"
+exec python3 -m http.server "$PORT" --bind 127.0.0.1 --directory docs

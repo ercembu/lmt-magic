@@ -18,10 +18,6 @@ $PY scripts/predict.py $T
 $PY scripts/signals.py $T
 $PY scripts/reviews_page.py $T || true
 $PY scripts/ideas.py $T || true
-cp -f data/grades_$T.json web/grades.json
-cp -f data/signals_$T.json web/signals.json
-cp -f data/calibration.json web/calibration.json
-cp -f data/validation.json web/validation.json
 echo "Regraded with expert ratings."
 
 # publish: rebuild the Pages site and push, so the phone can pull it

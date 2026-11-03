@@ -34,7 +34,7 @@
       if (v != null && el.textContent !== String(v)) el.textContent = v;
     });
   }
-  fetch("set.json").then(r => r.ok ? r.json() : null).then(s => {
+  fetch(LMT.D("set.json")).then(r => r.ok ? r.json() : null).then(s => {
     if (!s) return;
     SET = s;
     document.title = document.title.replace(/^[^—]*—/, `${s.name} —`);
@@ -42,6 +42,26 @@
     new MutationObserver(() => fillSet(document))
       .observe(document.body, { childList: true, subtree: true });
   }).catch(() => {});
+
+  // set picker at the start of the nav: one <select>, reloads the page on the chosen set
+  function mountPicker() {
+    const nav = document.querySelector("nav");
+    if (!nav || !window.LMT || LMT.sets.length < 2) return;
+    const sel = document.createElement("select");
+    sel.setAttribute("aria-label", "Set");
+    sel.style.cssText = "background:var(--ink-2);color:var(--text);border:1px solid var(--edge);" +
+      "border-radius:3px;padding:2px 6px;font:inherit;font-size:12.5px;cursor:pointer";
+    for (const s of LMT.sets) {
+      const o = document.createElement("option");
+      o.value = s.code; o.textContent = `${s.code} · ${s.name}`;
+      if (s.code === LMT.code) o.selected = true;
+      sel.appendChild(o);
+    }
+    sel.addEventListener("change", () => LMT.choose(sel.value));
+    nav.insertBefore(sel, nav.firstChild);
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mountPicker);
+  else mountPicker();
 
   window.FRA = {
     mountRefresh(btn, status) {
@@ -53,11 +73,11 @@
           if (navigator.serviceWorker && navigator.serviceWorker.controller) {
             navigator.serviceWorker.controller.postMessage("refresh-data");
           }
-          const files = ["grades.json", "set.json", "signals.json", "validation.json",
-                         "calibration.json", "setinfo.json", "reviewdata.json"];
+          const files = ["grades.json", "set.json", "signals.json", "setinfo.json", "reviewdata.json"]
+            .map(LMT.D).concat(["validation.json", "calibration.json", "sets.js"]);
           const got = await Promise.all(files.map(f =>
             fetch(f + "?t=" + Date.now(), { cache: "no-store" })
-              .then(r => r.ok ? r.json() : null).catch(() => null)));
+              .then(r => r.ok ? r.text() : null).catch(() => null)));
           if (!got[0]) throw new Error("no data");
           try { localStorage.setItem(STAMP, new Date().toISOString()); } catch (e) {}
           paint(status, "updated just now — reloading");

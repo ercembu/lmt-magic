@@ -1,0 +1,1 @@
+window.LMT_SETS = {"default": "TRK", "sets": [{"code": "TRK", "name": "Star Trek", "cards": 336, "train_sets": 32, "released": "2026-11-13"}, {"code": "FRA", "name": "Reality Fracture", "cards": 290, "train_sets": 31, "released": "2026-10-02"}]};

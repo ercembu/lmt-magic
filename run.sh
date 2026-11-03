@@ -32,12 +32,6 @@ echo "==> 7/7  grading $TARGET"
 $PY scripts/predict.py "$TARGET"
 
 $PY scripts/signals.py "$TARGET"
-cp -f "data/grades_$TARGET.json" web/grades.json
-cp -f "data/signals_$TARGET.json" web/signals.json
-cp -f data/validation.json web/validation.json
-cp -f "data/precedent_$TARGET.json" web/precedent.json
-cp -f data/calibration.json web/calibration.json
-cp -f "data/setinfo/$TARGET.json" web/setinfo.json 2>/dev/null || true
-$PY scripts/setmeta.py "$TARGET" web/set.json
+./scripts/build_pwa.sh "$TARGET"
 echo
-echo "Done. Run  ./web/serve.sh  and open http://localhost:8731/web/"
+echo "Done. Run  ./web/serve.sh  and open http://localhost:8731/"

@@ -112,6 +112,8 @@ footer b{color:var(--text-2)}
   .cmprow .old::before{content:"≈ ";color:var(--text-3)}
 }
 </style>
+<script src="sets.js"></script>
+<script src="lmtset.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -181,7 +183,7 @@ function chip(c){
 }
 const pip = c => `<span class="dot ${c}"></span>`;
 
-fetch('ideas.json').then(r=>r.json()).then(d=>{
+fetch(LMT.D('ideas.json')).then(r=>r.json()).then(d=>{
   const reg = o => CardPreview.registerCards(o);
   d.mechanics.forEach(m=>{ reg(m.top); reg(m.quotes); });
   d.themes.forEach(t=>reg(t.quotes));

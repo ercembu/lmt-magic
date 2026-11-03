@@ -137,6 +137,8 @@ footer p{max-width:78ch}
 .mechs dd{margin:2px 0 0;color:var(--text-2);line-height:1.5}
 .pair .hook{margin:6px 0 4px;color:var(--text-2);font-size:13.5px;line-height:1.45}
 </style>
+<script src="sets.js"></script>
+<script src="lmtset.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -230,7 +232,7 @@ function views(o,d){
     + `</span>`;
 }
 
-fetch('signals.json').then(r=>r.json()).then(d=>{
+fetch(LMT.D('signals.json')).then(r=>r.json()).then(d=>{
   // every card the page can link to, so the scryfall links resolve an image
   for(const col of d.colors) CardPreview.registerCards(d.pulls[col]);
   for(const k in d.pairs){

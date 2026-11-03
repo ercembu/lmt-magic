@@ -167,6 +167,8 @@ footer{padding:46px 0 70px;color:var(--text-3);font-size:12.5px;line-height:1.65
 footer p{max-width:78ch}
 @media (max-width:620px){ .score div{flex-basis:50%} }
 </style>
+<script src="sets.js"></script>
+<script src="lmtset.js"></script>
 </head>
 <body>
 <div class="wrap">
@@ -224,7 +226,7 @@ const LABELS={10:"Format-defining",9:"Bomb",8:"Bomb",7:"Excellent",6:"Very good"
   5:"Solid playable",4:"Playable",3:"Filler",2:"Marginal",1:"Barely",0:"Unplayable"};
 const pileOf=c=>{const k=c.colors||[];return !k.length?'C':k.length>1?'M':k[0];};
 
-fetch('reviewdata.json').then(r=>r.json()).then(d=>{
+fetch(LMT.D('reviewdata.json')).then(r=>r.json()).then(d=>{
   CardPreview.registerCards(d.cards);
   const tr=d.track_record.map(t=>t.spearman);
   const mean=tr.reduce((a,b)=>a+b,0)/tr.length;

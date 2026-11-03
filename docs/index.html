@@ -226,6 +226,8 @@ footer p{max-width:78ch}
   .pool{grid-template-columns:1fr}
 }
 </style>
+<script src="sets.js"></script>
+<script src="lmtset.js"></script>
 </head>
 <body>
 
@@ -475,9 +477,9 @@ for(const [id,key] of [['fRemoval','removal'],['fCreature','creature'],['fFlag',
 }
 
 Promise.all([
-  fetch('grades.json').then(r=>r.json()),
+  fetch(LMT.D('grades.json')).then(r=>r.json()),
   fetch('validation.json').then(r=>r.json()).catch(()=>null),
-  fetch('setinfo.json').then(r=>r.json()).catch(()=>null),
+  fetch(LMT.D('setinfo.json')).then(r=>r.json()).catch(()=>null),
 ]).then(([g,v,s])=>{
   CARDS=g; VAL=v; SETINFO=s;
 

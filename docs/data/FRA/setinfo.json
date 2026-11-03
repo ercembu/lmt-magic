@@ -1,0 +1,145 @@
+{
+ "set": "FRA",
+ "removal": [
+  "Memory Trap",
+  "Prophesied End",
+  "Refute Destiny",
+  "Surgical Precision",
+  "Your Fate Ends Here",
+  "Countersculpt",
+  "Icy Reception",
+  "Infinite Coursework",
+  "Plan for All Outcomes",
+  "Precise Redaction",
+  "Unsummon",
+  "Break Under Pressure",
+  "Extended Absence",
+  "Last Gasp",
+  "Multiply by Zero",
+  "Silence the Echo",
+  "Solve for Disappointment",
+  "Terminal Criticism",
+  "Winter, Tormented Loner",
+  "Mabel, Bitter Recluse",
+  "Proft, Sinister Mastermind",
+  "Awaken the Inferno",
+  "Essence Burn",
+  "Fulminous Forte",
+  "No Admittance",
+  "Tether Technician",
+  "Violent Echoes",
+  "Wrath of the Bloodmane",
+  "Way of the Warlord",
+  "Budding Insurgent",
+  "Compel Brutality",
+  "Flourishing Grapple",
+  "Sureshot Sower",
+  "Yoshimaru, Scrappy Stray"
+ ],
+ "archetypes": {
+  "WU": {
+   "name": "Fatehold Surveil Aggro",
+   "hook": "",
+   "key_cards": [
+    "Desperate Futurescribe",
+    "Fatehold Chronologist",
+    "Proft, Consulting Detective",
+    "Prudent Fateseer",
+    "Semester Foreseer",
+    "Your Fate Ends Here"
+   ]
+  },
+  "UB": {
+   "name": "Theorix Graveyard Math",
+   "hook": "",
+   "key_cards": [
+    "Paradox Shaper",
+    "Theorix Metamage",
+    "Unsummon",
+    "Void Extrapolator",
+    "Winter, Tormented Loner"
+   ]
+  },
+  "BR": {
+   "name": "Stingerquill Face Burn",
+   "hook": "",
+   "key_cards": [
+    "Essence Burn",
+    "Fulminous Forte",
+    "Grim Repriser",
+    "Stingerquill Charm",
+    "Stingerquill Voxmancer",
+    "Whiplash Wordsmith"
+   ]
+  },
+  "RG": {
+   "name": "Konstrari Mana Ramp",
+   "hook": "",
+   "key_cards": [
+    "Archive Arbiter",
+    "Konstrari Improviser",
+    "Vinelasher Adept",
+    "Woodwork Prodigy"
+   ]
+  },
+  "WG": {
+   "name": "Vigorbloom Life Gain",
+   "hook": "",
+   "key_cards": [
+    "Bloombrute",
+    "Emergency Phytomedic",
+    "Graft Surgeon",
+    "Vigorbloom Vanguard"
+   ]
+  },
+  "WB": {
+   "name": "Liliana's Attrition",
+   "hook": "",
+   "key_cards": [
+    "Campus Crier",
+    "Edgar, Ancient Bloodlord",
+    "Rank Rat",
+    "Twisted Fates"
+   ]
+  },
+  "UR": {
+   "name": "Chandra's Prowess",
+   "hook": "",
+   "key_cards": [
+    "Clash of Elements",
+    "No Admittance",
+    "Saheeli, Jewel of Avishkar",
+    "Unsummon"
+   ]
+  },
+  "BG": {
+   "name": "Garruk's Bestiary",
+   "hook": "",
+   "key_cards": [
+    "Hapatra, the Desert Fang",
+    "Primal Witchstalker",
+    "Rewrite Regrets",
+    "Teyo, Diamondblade Mage"
+   ]
+  },
+  "WR": {
+   "name": "Ajani's Army",
+   "hook": "",
+   "key_cards": [
+    "Heartstring Puller",
+    "Hexhaven Battalion",
+    "Mabel, Valley Hero",
+    "Warrior's Blades"
+   ]
+  },
+  "UG": {
+   "name": "Jace's Mastery",
+   "hook": "",
+   "key_cards": [
+    "Countersculpt",
+    "Kiora of Salt and Sand",
+    "Mind Meanderer"
+   ]
+  }
+ }
+}
