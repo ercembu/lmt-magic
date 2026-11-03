@@ -1,16 +1,674 @@
 {
  "set": "TRK",
- "cards": 0,
- "words": 0,
- "special_guests": [],
+ "cards": 310,
+ "words": 22596,
+ "special_guests": [
+  "Arcum Dagsson",
+  "Bristly Bill, Spine Sower",
+  "Bruvac the Grandiloquent",
+  "Captain Sisay",
+  "Decree of Pain",
+  "Drivnod, Carnage Dominus",
+  "Empress Galina",
+  "Ertai Resurrected",
+  "Flare of Fortitude",
+  "Hull Breach",
+  "Isshin, Two Heavens as One",
+  "Jhoira, Weatherlight Captain",
+  "Kenrith, the Returned King",
+  "Loot, Exuberant Explorer",
+  "Mikaeus, the Lunarch",
+  "Minamo, School at Water's Edge",
+  "Mogis, God of Slaughter",
+  "Phyrexian Tower",
+  "Prosper, Tome-Bound",
+  "Riku of Many Paths",
+  "Rishkar, Peema Renegade",
+  "Sen Triplets",
+  "Sheoldred, the Apocalypse",
+  "Shizo, Death's Storehouse",
+  "Sisay, Weatherlight Captain",
+  "Stella Lee, Wild Card",
+  "Talon Gates of Madara",
+  "Tatyova, Benthic Druid",
+  "Thada Adel, Acquisitor",
+  "Torbran, Thane of Red Fell"
+ ],
  "source": {
   "name": "Draftsim",
   "note": "ratings 0-10"
  },
  "mechanics": [
   {
+   "name": "Beam Me Up",
+   "blurb": "Cast the spell again from your graveyard by returning a creature you control to your hand. Reuses enters-the-battlefield abilities and can dodge removal, at the cost of tempo.",
+   "cards": 12,
+   "top": [
+    {
+     "name": "Transporter Malfunction",
+     "grade": "B-",
+     "uri": "https://scryfall.com/card/trk/178/transporter-malfunction?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/8/5/85b108c3-00b5-4dfb-90de-57fa483c4926.jpg?1793274273"
+    },
+    {
+     "name": "Pattern Buffer Preservation",
+     "grade": "C+",
+     "uri": "https://scryfall.com/card/trk/123/pattern-buffer-preservation?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/3/23166580-9676-4025-916b-864568c2e59d.jpg?1793361304"
+    },
+    {
+     "name": "Energize",
+     "grade": "C",
+     "uri": "https://scryfall.com/card/trk/56/energize?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/4/24e72db3-a8d9-4553-92fe-ba6e40c4f62e.jpg?1792668391"
+    },
+    {
+     "name": "Adversary by Algorithm",
+     "grade": "C",
+     "uri": "https://scryfall.com/card/trk/182/adversary-by-algorithm?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/4/1/41644f06-d08f-406c-a56a-47e1b5273982.jpg?1793013240"
+    },
+    {
+     "name": "Boarding Action",
+     "grade": "C",
+     "uri": "https://scryfall.com/card/trk/139/boarding-action?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/a/3a0d33cd-f81c-4950-81ed-9536061eca8a.jpg?1793361310"
+    },
+    {
+     "name": "Scotty, Miracle Worker",
+     "grade": "C",
+     "uri": "https://scryfall.com/card/trk/79/scotty-miracle-worker?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/4/2/42f77f9e-5e56-45ac-aa93-36353c92bca9.jpg?1793013054"
+    },
+    {
+     "name": "There's Coffee in that Nebula",
+     "grade": "C",
+     "uri": "https://scryfall.com/card/trk/40/theres-coffee-in-that-nebula?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/8/d/8dd7e0c6-84f6-4570-af93-4c64e78c2868.jpg?1792668331"
+    },
+    {
+     "name": "Open Communications",
+     "grade": "D+",
+     "uri": "https://scryfall.com/card/trk/76/open-communications?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/8/e/8eeec269-13f0-4923-9f13-e995acd73e00.jpg?1786396013"
+    }
+   ],
+   "quotes": [
+    {
+     "name": "Miles O'Brien, Transporter Ops",
+     "grade": "B+",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/24/miles-obrien-transporter-ops?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/e/4/e4f041b3-e785-45ba-9a7e-33878614d3b0.jpg?1793361164",
+     "text": "As such, it\u2019s very fitting that Miles O'Brien, Transporter Ops beams up a creature when it enters and then rewards you at the end of any turn in which you returned anything else to your hand)."
+    },
+    {
+     "name": "Spock, Always Your Friend",
+     "grade": "A-",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/253/spock-always-your-friend?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/1/b/1be731d5-8b21-4883-91c0-dd9070b1eadd.jpg?1792508391",
+     "text": "Spock is an excellent enabler for this blue/red deck and also one of the best creatures we\u2019ve seen to pair with beam me up spells."
+    },
+    {
+     "name": "Pattern Buffer Preservation",
+     "grade": "C+",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/123/pattern-buffer-preservation?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/3/23166580-9676-4025-916b-864568c2e59d.jpg?1793361304",
+     "text": "While Pattern Buffer Preservation doesn\u2019t give you as much card selection, the vastly cheaper beam me up cost means you\u2019ll get to cast both copies of it a lot more often."
+    },
+    {
+     "name": "Boarding Action",
+     "grade": "C",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/139/boarding-action?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/a/3a0d33cd-f81c-4950-81ed-9536061eca8a.jpg?1793361310",
+     "text": "Later in the game, you might even find a good spot to cast this twice with its beam me up cost and get a great attack in with your two new haste creatures ."
+    },
+    {
+     "name": "Cloistered Telepath",
+     "grade": "C",
+     "special": false,
+     "rating": 2.0,
+     "uri": "https://scryfall.com/card/trk/50/cloistered-telepath?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/5/959318c1-3f7e-4418-91ce-be529af27972.jpg?1785981391",
+     "text": "I\u2019m not quite sure where Cloistered Telepath will fit in this format, but decent triggered ability like this makes it a good option for beam me up spells."
+    },
+    {
+     "name": "Scotty, Miracle Worker",
+     "grade": "C",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/79/scotty-miracle-worker?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/4/2/42f77f9e-5e56-45ac-aa93-36353c92bca9.jpg?1793013054",
+     "text": "As soon as I heard about the beam me up mechanic, I immediately assumed Scotty\u2019s card would use it, maybe even give it to all the cards in your graveyard."
+    }
+   ]
+  },
+  {
+   "name": "Face a Dilemma",
+   "blurb": "Triggers whenever you choose a mode on a spell or ability. Dimir's theme, and the reason so many cards here say 'choose one'.",
+   "cards": 9,
+   "top": [
+    {
+     "name": "Elim Garak, Simple Tailor",
+     "grade": "A-",
+     "uri": "https://scryfall.com/card/trk/106/elim-garak-simple-tailor?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/1/1/113bd51a-dfbb-4106-adf3-e567057fcd06.jpg?1792668600"
+    },
+    {
+     "name": "Jett Reno, Problem Solver",
+     "grade": "B+",
+     "uri": "https://scryfall.com/card/trk/67/jett-reno-problem-solver?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/d/6dc34d44-397a-4dda-a8e3-0c2ff7da110f.jpg?1793511776"
+    },
+    {
+     "name": "The Caretaker",
+     "grade": "B+",
+     "uri": "https://scryfall.com/card/trk/47/the-caretaker?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/e/c/ec6a1967-78fc-4ef4-9816-6d9a9dde61fb.jpg?1793538731"
+    },
+    {
+     "name": "Captain Benjamin Sisko",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/6/captain-benjamin-sisko?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/5/1/51338fb2-13a3-41b8-981f-05fa35e87e2e.jpg?1793538714"
+    },
+    {
+     "name": "Tell Me What You See",
+     "grade": "C-",
+     "uri": "https://scryfall.com/card/trk/132/tell-me-what-you-see?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/e/3/e339c8fb-26d2-4514-aeb7-014274df0c9c.jpg?1793013584"
+    },
+    {
+     "name": "Seven of Nine",
+     "grade": "C-",
+     "uri": "https://scryfall.com/card/trk/252/seven-of-nine?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/2/6204cfdb-6fb4-4030-96b6-9306c8266bcf.jpg?1793538768"
+    },
+    {
+     "name": "Melkotian Adjudicator",
+     "grade": "D",
+     "uri": "https://scryfall.com/card/trk/73/melkotian-adjudicator?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/8/7/873c9933-7939-4376-873c-6a5b3bbc98d4.jpg?1793359395"
+    },
+    {
+     "name": "Gabriel Lorca, Mirror Menace",
+     "grade": "D-",
+     "uri": "https://scryfall.com/card/trk/108/gabriel-lorca-mirror-menace?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/9/a98d0f01-8e5e-4ff1-88e5-684b8f4c015c.jpg?1793100690"
+    }
+   ],
+   "quotes": [
+    {
+     "name": "Rogue Artificial Intelligence",
+     "grade": "C+",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/126/rogue-artificial-intelligence?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/e/d/edcce061-88c9-40bf-97f8-d0d3018e24dd.jpg?1785981516",
+     "text": "When you do play it on 6, Rogue Artificial Intelligence will have a significant impact on the board no matter which mode you choose, while also being an artifact creature for the Borg and a dilemma for blue/black."
+    },
+    {
+     "name": "Seven of Nine",
+     "grade": "C-",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/252/seven-of-nine?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/2/6204cfdb-6fb4-4030-96b6-9306c8266bcf.jpg?1793538768",
+     "text": "We know from past experiences that this is among the best kinds of payoff for a Draft archetype, and dilemmas are extremely well supported in Star Trek."
+    },
+    {
+     "name": "Jett Reno, Problem Solver",
+     "grade": "B+",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/67/jett-reno-problem-solver?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/d/6dc34d44-397a-4dda-a8e3-0c2ff7da110f.jpg?1793511776",
+     "text": "Easily one of the best characters in Star Trek: Discovery , Jett Reno, Problem Solver is quite a nifty little build-around for the dilemmas deck."
+    },
+    {
+     "name": "Obsidian Order Operative",
+     "grade": "D-",
+     "special": false,
+     "rating": 2.0,
+     "uri": "https://scryfall.com/card/trk/120/obsidian-order-operative?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/1/7/17a7b0a8-baaf-4e6a-8536-f511c796a713.jpg?1793361289",
+     "text": "I like having access to a trigger that drains my opponent with each dilemma I face, and a 2/5 makes for a fairly resilient blocker, but Obsidian Order Operative isn\u2019t exciting me like it should."
+    },
+    {
+     "name": "The Caretaker",
+     "grade": "B+",
+     "special": false,
+     "rating": 9.0,
+     "uri": "https://scryfall.com/card/trk/47/the-caretaker?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/e/c/ec6a1967-78fc-4ef4-9816-6d9a9dde61fb.jpg?1793538731",
+     "text": "Facing dilemmas seems remarkably easy to do in Star Trek , and The Caretaker has got to be the best payoff for them."
+    },
+    {
+     "name": "Tell Me What You See",
+     "grade": "C-",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/132/tell-me-what-you-see?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/e/3/e339c8fb-26d2-4514-aeb7-014274df0c9c.jpg?1793013584",
+     "text": "While Tell Me What You See uses a punisher mechanic that we don\u2019t often like, the fact that it\u2019s repeatable as long as you keep facing dilemmas makes it look very appealing."
+    }
+   ]
+  },
+  {
+   "name": "Federation",
+   "blurb": "Counts the different creature types among your non-Borg creatures: a creature with two types counts twice, a Borg counts for nothing.",
+   "cards": 6,
+   "top": [
+    {
+     "name": "Captain Jonathan Archer",
+     "grade": "A-",
+     "uri": "https://scryfall.com/card/trk/186/captain-jonathan-archer?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/4/a4518ea3-5f56-4f1d-9024-2bf06ac98786.jpg?1792508262"
+    },
+    {
+     "name": "Sarek, Federation Ambassador",
+     "grade": "C+",
+     "uri": "https://scryfall.com/card/trk/251/sarek-federation-ambassador?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/4/94ad9063-9663-49d8-b7ba-05be865bd20a.jpg?1793273885"
+    },
+    {
+     "name": "Saavik, Stoic Student",
+     "grade": "C+",
+     "uri": "https://scryfall.com/card/trk/33/saavik-stoic-student?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/7/3783c530-a2da-4dc1-811a-0a9a412c8e78.jpg?1785981363"
+    },
+    {
+     "name": "Hoshi Sato, Exolinguist",
+     "grade": "C+",
+     "uri": "https://scryfall.com/card/trk/64/hoshi-sato-exolinguist?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/4/24589f4d-c530-4f6a-b2d0-450ef70fca71.jpg?1784065562"
+    },
+    {
+     "name": "Starfleet Academy",
+     "grade": "D",
+     "uri": "https://scryfall.com/card/trk/297/starfleet-academy?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/d/2da8d3bf-4397-4844-90d6-dd888becc804.jpg?1792508542"
+    },
+    {
+     "name": "Infinite Diversity",
+     "grade": "D",
+     "uri": "https://scryfall.com/card/trk/153/infinite-diversity?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/3/33ade614-3593-4055-8ecc-2d9e4858ba19.jpg?1793273819"
+    }
+   ],
+   "quotes": [
+    {
+     "name": "Saavik, Stoic Student",
+     "grade": "C+",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/33/saavik-stoic-student?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/7/3783c530-a2da-4dc1-811a-0a9a412c8e78.jpg?1785981363",
+     "text": "It\u2019s at least two creature types to put towards its federation ability, but if that\u2019s all you have, 2 damage won\u2019t do very much when you\u2019re late enough in the game to cast a 5-drop."
+    },
+    {
+     "name": "Starfleet Academy",
+     "grade": "D",
+     "special": false,
+     "rating": 0.0,
+     "uri": "https://scryfall.com/card/trk/297/starfleet-academy?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/d/2da8d3bf-4397-4844-90d6-dd888becc804.jpg?1792508542",
+     "text": "For Starfleet Academy to net you any mana, you need to have at least seven different creature types in play."
+    },
+    {
+     "name": "Sarek, Federation Ambassador",
+     "grade": "C+",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/251/sarek-federation-ambassador?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/4/94ad9063-9663-49d8-b7ba-05be865bd20a.jpg?1793273885",
+     "text": "Sarek, Federation Ambassador simply asks you to control five or more creature types to draw a card."
+    }
+   ]
+  },
+  {
+   "name": "Strange New Worlds",
+   "blurb": "Counts the lands you control with different names, not colours. Simic's theme, and why dual lands and Planets matter more than usual.",
+   "cards": 14,
+   "top": [
+    {
+     "name": "Excalbian Gamemaster",
+     "grade": "A+",
+     "uri": "https://scryfall.com/card/trk/16/excalbian-gamemaster?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/1/31b5780c-8c5f-4836-8848-1eea1d416a93.jpg?1792753846"
+    },
+    {
+     "name": "The Destruction of Praxis",
+     "grade": "A",
+     "uri": "https://scryfall.com/card/trk/103/the-destruction-of-praxis?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/d/3d33ac2a-73a9-4804-bf9f-c8cf4eea1c76.jpg?1793187997"
+    },
+    {
+     "name": "Species 8472",
+     "grade": "A-",
+     "uri": "https://scryfall.com/card/trk/214/species-8472?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/b/3/b3d74723-4c9e-4fe7-8276-05d5f1b7ba0c.jpg?1793273864"
+    },
+    {
+     "name": "Cloak and Phaser",
+     "grade": "B+",
+     "uri": "https://scryfall.com/card/trk/49/cloak-and-phaser?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/d/2d9fb7e7-582d-41e7-be9e-98372505ea44.jpg?1793187986"
+    },
+    {
+     "name": "Captain Pike, Fullness of Time",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/188/captain-pike-fullness-of-time?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/7/4/743be4c4-5c91-42bb-9942-115e903041a9.jpg?1792508262"
+    },
+    {
+     "name": "Seven of Nine, Unassimilated",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/80/seven-of-nine-unassimilated?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/d/d/ddc517bd-27e1-4688-8941-a41c312bd782.jpg?1792508210"
+    },
+    {
+     "name": "Pah-Wraith",
+     "grade": "B-",
+     "uri": "https://scryfall.com/card/trk/160/pah-wraith?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/4/24c7e179-c016-4db8-ad8b-aa5629152b5c.jpg?1793013595"
+    },
+    {
+     "name": "The Traveler",
+     "grade": "C",
+     "uri": "https://scryfall.com/card/trk/254/the-traveler?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/1/7/171932ba-26da-48e9-b8a2-c71aafe5c6a6.jpg?1792508396"
+    }
+   ],
+   "quotes": [
+    {
+     "name": "Final Frontier",
+     "grade": "D-",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/198/final-frontier?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/4/34ea6df3-36e3-42c5-a4ed-a4cd18ec6dd0.jpg?1793013607",
+     "text": "I\u2019m very much not a fan of 3-mana Rampant Growth s, but with the strange new worlds and landfall mechanics, plus the fact that this can fetch a planet dual land , I reckon Final Frontier will be one of the better versions of this effect that we\u2019ve ever seen."
+    },
+    {
+     "name": "Captain Pike, Fullness of Time",
+     "grade": "B",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/188/captain-pike-fullness-of-time?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/7/4/743be4c4-5c91-42bb-9942-115e903041a9.jpg?1792508262",
+     "text": "He was then replaced by William Shatner in the second episode, but since those days, Pike\u2019s character has been explored in the Kelvin timeline films and two of most recent projects: Discovery and Strange New Worlds ."
+    },
+    {
+     "name": "U.S.S. Voyager, Lone Wanderer",
+     "grade": "C-",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/222/uss-voyager-lone-wanderer?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/a/aaf8a0b2-c6cb-41cb-913d-7ae1d75e555d.jpg?1793274284",
+     "text": "This is of course best suited for Landfall or Strange New Worlds decks, but it\u2019s strong enough to see play elsewhere if you need it to."
+    },
+    {
+     "name": "Shizo, Death's Storehouse",
+     "grade": "C-",
+     "special": true,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/sds/30/shizo-deaths-storehouse?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/d/f/df6930d1-2ce3-4257-a212-0e562a1b152c.jpg?1793187508",
+     "text": "Much like Minamo, Shizo, Death's Storehouse is a strict upgrade over a Swamp and an additional land name to enable the strange new worlds mechanic, so you should always play it."
+    },
+    {
+     "name": "Ensign Pavel Chekov",
+     "grade": "D-",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/57/ensign-pavel-chekov?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/4/a441c12e-1a2f-4b04-83dd-407bf6040efe.jpg?1792753698",
+     "text": "You\u2019re very likely to find one out of the cards you exile, letting Chekov act as a defensive cantrip creature that advances your gameplan in the Strange New Worlds deck."
+    },
+    {
+     "name": "Sisay, Weatherlight Captain",
+     "grade": "D-",
+     "special": true,
+     "rating": 2.0,
+     "uri": "https://scryfall.com/card/sds/4/sisay-weatherlight-captain?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/7/0/7002530b-41cf-4b2e-9ccd-4fd305364c6b.jpg?1793187362",
+     "text": "The Strange New Worlds archetype might be able to make this work, but it\u2019s a long shot at best."
+    }
+   ]
+  },
+  {
+   "name": "Spacecraft and Station",
+   "blurb": "Spacecraft are artifacts that grow as you tap other creatures to station them, adding charge counters equal to the creature's power; many become creatures.",
+   "cards": 31,
+   "top": [
+    {
+     "name": "U.S.S. Enterprise-A, Free Spirit",
+     "grade": "A+",
+     "uri": "https://scryfall.com/card/trk/43/uss-enterprise-a-free-spirit?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/9/99429015-6e5d-4ecf-aaf7-eba181bcffc7.jpg?1792508162"
+    },
+    {
+     "name": "Borg Cube",
+     "grade": "A+",
+     "uri": "https://scryfall.com/card/trk/227/borg-cube?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/e/5/e58f7310-3fd5-48d5-b6b7-a5d3e1808bbc.jpg?1792508285"
+    },
+    {
+     "name": "Captain Jean-Luc Picard",
+     "grade": "A",
+     "uri": "https://scryfall.com/card/trk/7/captain-jean-luc-picard?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/b/7/b7114271-eb05-41e2-ad96-a34f53492312.jpg?1792508148"
+    },
+    {
+     "name": "U.S.S. Discovery, at Black Alert",
+     "grade": "A-",
+     "uri": "https://scryfall.com/card/trk/221/uss-discovery-at-black-alert?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/9/69b1f87f-ff02-4945-9f07-18dab5035e2d.jpg?1792508275"
+    },
+    {
+     "name": "Sulu, Space Swashbuckler",
+     "grade": "B+",
+     "uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/b/9b16f967-4bc5-4508-8433-b46323ce2e71.jpg?1793101366"
+    },
+    {
+     "name": "D-7 Battle Cruiser",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/145/d-7-battle-cruiser?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/c/6c22998d-7bd7-433d-95b8-50f2fd8b7b7f.jpg?1792508232"
+    },
+    {
+     "name": "Romulan Bird-of-Prey",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/77/romulan-bird-of-prey?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/a/6a461d90-6b7b-4777-958a-8a5d8365ad8c.jpg?1792508202"
+    },
+    {
+     "name": "U.S.S. Cerritos, Following Up",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/272/uss-cerritos-following-up?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/7/6/76bf7521-5024-4fdc-9ea1-5e10f2647efb.jpg?1793361418"
+    }
+   ],
+   "quotes": [
+    {
+     "name": "Enterprise NX-01",
+     "grade": "C",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/58/enterprise-nx-01?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/3/8/385638fe-cafb-4541-ba37-19bc57520c48.jpg?1793100690",
+     "text": "I certainly think being a spacecraft instead of just a creature holds it back a lot, but it\u2019ll be best suited for some sort of tempo deck that can use it to get rid of a blocker and continue applying pressure to an opponent."
+    },
+    {
+     "name": "U.S.S. Enterprise-A, Free Spirit",
+     "grade": "A+",
+     "special": false,
+     "rating": 10.0,
+     "uri": "https://scryfall.com/card/trk/43/uss-enterprise-a-free-spirit?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/9/99429015-6e5d-4ecf-aaf7-eba181bcffc7.jpg?1792508162",
+     "text": "The Enterprise is one of the most recognizable spacecraft in all of pop culture, and this being one of the strongest cards in TRK is exactly what we want to see."
+    },
+    {
+     "name": "Captain Jean-Luc Picard",
+     "grade": "A",
+     "special": false,
+     "rating": 9.0,
+     "uri": "https://scryfall.com/card/trk/7/captain-jean-luc-picard?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/b/7/b7114271-eb05-41e2-ad96-a34f53492312.jpg?1792508148",
+     "text": "Picard\u2019s greatest strength as a captain was in the way he inspired and mentored his crew, so of course the card gives +1/+1 to your whole team and creates more officers whenever you cast creatures or spacecraft."
+    },
+    {
+     "name": "Sulu, Space Swashbuckler",
+     "grade": "B+",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/b/9b16f967-4bc5-4508-8433-b46323ce2e71.jpg?1793101366",
+     "text": "A 2/2 for 2 with first strike is already very annoying to deal with, but then any equipment or spacecraft you play will let Sulu draw you a free card, especially if you have a spacecraft to station."
+    },
+    {
+     "name": "Resistance Is Futile",
+     "grade": "C+",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/125/resistance-is-futile?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/8/1/81d88257-466d-4729-862f-591885b3d875.jpg?1785981518",
+     "text": "While Star Trek does have a considerable number of artifact creatures, including all of the spacecraft, Resistance Is Futile still answers a lot of creatures that need to be dealt with."
+    },
+    {
+     "name": "Brad Boimler, Eager Ensign",
+     "grade": "C-",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/5/brad-boimler-eager-ensign?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/6/a6bf1525-2212-46d0-ad4d-1dbaa2e3b3cd.jpg?1784036739",
+     "text": "A 2/2 lifelinker for 2 mana is a great start, but Boimler pulls a bit of double duty by being a great build-around for both white/blue spacecraft and white/green counters."
+    }
+   ]
+  },
+  {
+   "name": "Assimilate",
+   "blurb": "Taking an opponent's creature and turning it into a Borg artifact creature, and the Borg artifact-creature deck in white-black around it.",
+   "cards": 23,
+   "top": [
+    {
+     "name": "Borg Cube",
+     "grade": "A+",
+     "uri": "https://scryfall.com/card/trk/227/borg-cube?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/e/5/e58f7310-3fd5-48d5-b6b7-a5d3e1808bbc.jpg?1792508285"
+    },
+    {
+     "name": "Locutus, the One Who Speaks",
+     "grade": "A-",
+     "uri": "https://scryfall.com/card/trk/245/locutus-the-one-who-speaks?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/9/296f1127-14a0-42c4-9e4a-c0d929720748.jpg?1792508366"
+    },
+    {
+     "name": "Antagonist Incorporator",
+     "grade": "A-",
+     "uri": "https://scryfall.com/card/trk/3/antagonist-incorporator?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/3/63918e59-0c03-4d98-9216-e58ee157b7ea.jpg?1792668297"
+    },
+    {
+     "name": "Captain Jonathan Archer",
+     "grade": "A-",
+     "uri": "https://scryfall.com/card/trk/186/captain-jonathan-archer?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/4/a4518ea3-5f56-4f1d-9024-2bf06ac98786.jpg?1792508262"
+    },
+    {
+     "name": "Assembly Specialist",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/4/a4d339a5-198c-49bd-845e-2632476746e0.jpg?1793100612"
+    },
+    {
+     "name": "Overflow Submatrix",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/122/overflow-submatrix?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/7/e/7e5654a7-ce83-4801-8978-7294a39dbef8.jpg?1793100705"
+    },
+    {
+     "name": "Death Is Irrelevant",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/102/death-is-irrelevant?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/4/0/408cb5dd-1a79-47a9-98ea-41f3f4502c5e.jpg?1792668404"
+    },
+    {
+     "name": "Free Borg Revolutionaries",
+     "grade": "B-",
+     "uri": "https://scryfall.com/card/trk/19/free-borg-revolutionaries?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/7/6711e910-e5a8-4602-9559-de5374bffff2.jpg?1785981345"
+    }
+   ],
+   "quotes": [
+    {
+     "name": "Assembly Specialist",
+     "grade": "B",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/4/a4d339a5-198c-49bd-845e-2632476746e0.jpg?1793100612",
+     "text": "When you add in the fact that the Borg want to be a go-wide aggro deck centered around artifact creatures , Assembly Specialist looks like one of the best ways to start your curve in that deck."
+    },
+    {
+     "name": "Locutus, the One Who Speaks",
+     "grade": "A-",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/245/locutus-the-one-who-speaks?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/9/296f1127-14a0-42c4-9e4a-c0d929720748.jpg?1792508366",
+     "text": "In one of The Next Generation \u2019s best plot twists, the season three finale sees the Borg assimilate Picard into their collective, giving him new life as \u201cLocutus\u201d."
+    },
+    {
+     "name": "Rogue Artificial Intelligence",
+     "grade": "C+",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/126/rogue-artificial-intelligence?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/e/d/edcce061-88c9-40bf-97f8-d0d3018e24dd.jpg?1785981516",
+     "text": "When you do play it on 6, Rogue Artificial Intelligence will have a significant impact on the board no matter which mode you choose, while also being an artifact creature for the Borg and a dilemma for blue/black."
+    },
+    {
+     "name": "Hologram Janeway",
+     "grade": "C+",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/21/hologram-janeway?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/0/2/02d29047-a7b8-43fb-8b90-b35ba34da5f9.jpg?1793100636",
+     "text": "Those hoops don\u2019t seem too prohibitive, so I could see this being a very good card in the red/white deck where it belongs, but also with black/white Borg and artifact creatures."
+    },
+    {
+     "name": "Hive Mind Coprocessor",
+     "grade": "C-",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/115/hive-mind-coprocessor?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/a/4/a4734c59-ff41-47ac-bbb4-c8c3bf052fe6.jpg?1785981497",
+     "text": "I can definitely see this being the top-end you need for a good Borg deck, especially as the extra cards should help you to keep applying pressure in future turns."
+    },
+    {
+     "name": "Relentless Drednok",
+     "grade": "C-",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/124/relentless-drednok?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/c/e/ce538db8-373d-4554-821e-cd96e795e37a.jpg?1786005690",
+     "text": "It may not have evasion , but getting to play a Relentless Drednok on turn 1, especially in a Borg deck, is a great way to start off your mana curve."
+    }
+   ]
+  },
+  {
    "name": "Surveil",
-   "blurb": "Look at the top card, bin it or keep it. Selection that also fills a graveyard, which is why it turns up in both the white-blue aggro deck and the blue-black graveyard one.",
+   "blurb": "Look at the top cards, bin them or keep them. Selection that also feeds the graveyard decks.",
    "cards": 22,
    "top": [
     {
@@ -62,161 +720,1479 @@
      "image": "https://cards.scryfall.io/normal/front/f/e/fe6e03b5-cd96-430b-9c74-96eca0212a81.jpg?1792989779"
     }
    ],
-   "quotes": []
-  },
-  {
-   "name": "Legendary",
-   "blurb": "A third of the set. Named characters, many appearing twice in different colours, which is what makes 'every deck has a legend in it' a safe assumption here and a payoff worth building on.",
-   "cards": 130,
-   "top": [
+   "quotes": [
     {
-     "name": "U.S.S. Enterprise-A, Free Spirit",
-     "grade": "A+",
-     "uri": "https://scryfall.com/card/trk/43/uss-enterprise-a-free-spirit?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/9/9/99429015-6e5d-4ecf-aaf7-eba181bcffc7.jpg?1792508162"
+     "name": "Federation Probe",
+     "grade": "C+",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/59/federation-probe?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/f/9/f988ba84-fc78-41a2-b2f2-eebf78cee591.jpg?1785981405",
+     "text": "Say it with me: \u201cWe don\u2019t underestimate 1-drops!\u201d I\u2019m very happy to play Federation Probe on turn 1 and get a surveil along with my flying 1/1, then later in the game it can buff a creature and potentially get a better attack in."
     },
     {
-     "name": "Sheoldred, the Apocalypse",
-     "grade": "A+",
-     "uri": "https://scryfall.com/card/sds/11/sheoldred-the-apocalypse?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/c/6/c68629ff-72b3-40a2-b578-cddb6ddb4ccf.jpg?1793238904"
+     "name": "The Unicomplex",
+     "grade": "B-",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/304/the-unicomplex?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/4/c/4c881efb-d55b-45fe-9e5a-8a61aec6fbbb.jpg?1792632978",
+     "text": "They each surveil 1, which we know from past experiences is a very good thing to do for free, and the additional modes that they have are also quite interesting, especially on The Unicomplex ."
     },
     {
-     "name": "Wesley Crusher, Starfleet Cadet",
-     "grade": "A",
-     "uri": "https://scryfall.com/card/trk/89/wesley-crusher-starfleet-cadet?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/9/5/956eeb71-fd5f-4a26-aff6-77127c0ad4e7.jpg?1793274247"
+     "name": "Emergency Holographic Crew",
+     "grade": "D+",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/55/emergency-holographic-crew?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/5/3/53943948-8f24-495a-b6eb-e788fa169fcd.jpg?1793359393",
+     "text": "It seems like most of the time you\u2019d have to surveil with it, but hopefully you can wait long enough until you can get back your Suurok-Class Science Vessel or something similar."
     },
     {
-     "name": "Bristly Bill, Spine Sower",
-     "grade": "A",
-     "uri": "https://scryfall.com/card/sds/15/bristly-bill-spine-sower?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/9/8/9845bd74-326f-4506-87f9-ead7d2fa6cfa.jpg?1792507751"
+     "name": "Dominion Assault Force",
+     "grade": "D+",
+     "special": false,
+     "rating": 2.0,
+     "uri": "https://scryfall.com/card/trk/194/dominion-assault-force?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/8/28a55f63-1cbd-4362-a192-e42a06f44686.jpg?1793363014",
+     "text": "A free surveil is definitely nice to have, but not something that elevates Dominion Assault Force beyond being a simple vanilla creature."
     },
     {
-     "name": "Captain James T. Kirk",
-     "grade": "A",
-     "uri": "https://scryfall.com/card/trk/142/captain-james-t-kirk?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/4/0/40a0466d-20bb-4ed5-858d-947fb9144580.jpg?1784036779"
-    },
-    {
-     "name": "Ertai Resurrected",
-     "grade": "A",
-     "uri": "https://scryfall.com/card/sds/20/ertai-resurrected?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/5/2/528f2bfb-c09f-4bb9-a92f-6fcf23525046.jpg?1793187451"
-    },
-    {
-     "name": "Captain Jean-Luc Picard",
-     "grade": "A",
-     "uri": "https://scryfall.com/card/trk/7/captain-jean-luc-picard?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/b/7/b7114271-eb05-41e2-ad96-a34f53492312.jpg?1792508148"
-    },
-    {
-     "name": "Rishkar, Peema Renegade",
-     "grade": "A",
-     "uri": "https://scryfall.com/card/sds/14/rishkar-peema-renegade?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/1/a/1a4903bb-3df8-4852-a655-62d0757421c7.jpg?1793187411"
+     "name": "Nog, Ambitious Cadet",
+     "grade": "B+",
+     "special": false,
+     "rating": 8.0,
+     "uri": "https://scryfall.com/card/trk/249/nog-ambitious-cadet?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/b/5/b513dd60-8573-467b-9c6a-855a0ba86fca.jpg?1793101384",
+     "text": "On its own, Nog, Ambitious Cadet can attack as a 3/4 with menace on turn 3 and immediately surveil."
     }
-   ],
-   "quotes": []
+   ]
   }
  ],
  "themes": [
   {
    "name": "Format speed",
    "blurb": "How quickly games end, and whether beating down beats building up.",
-   "count": 0,
-   "quotes": []
+   "count": 57,
+   "quotes": [
+    {
+     "name": "Enterprise NX-01",
+     "grade": "C",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/58/enterprise-nx-01?utm_source=api",
+     "text": "I certainly think being a spacecraft instead of just a creature holds it back a lot, but it\u2019ll be best suited for some sort of tempo deck that can use it to get rid of a blocker and continue applying pressure to an opponent.",
+     "image": "https://cards.scryfall.io/normal/front/3/8/385638fe-cafb-4541-ba37-19bc57520c48.jpg?1793100690",
+     "strong": true
+    },
+    {
+     "name": "Assembly Specialist",
+     "grade": "B",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
+     "text": "When you add in the fact that the Borg want to be a go-wide aggro deck centered around artifact creatures , Assembly Specialist looks like one of the best ways to start your curve in that deck.",
+     "image": "https://cards.scryfall.io/normal/front/a/4/a4d339a5-198c-49bd-845e-2632476746e0.jpg?1793100612",
+     "strong": true
+    },
+    {
+     "name": "Dominion Saboteur",
+     "grade": "F",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/54/dominion-saboteur?utm_source=api",
+     "text": "No matter what, this will always be the strongest creature on the battlefield once you play it, and it\u2019ll be well worth taking early in a draft.",
+     "image": "https://cards.scryfall.io/normal/front/2/0/207c4369-220a-4eff-81dc-65872d6fc264.jpg?1785981397",
+     "strong": true
+    },
+    {
+     "name": "Pah-Wraith",
+     "grade": "B-",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/160/pah-wraith?utm_source=api",
+     "text": "The problem is that this is a 7-drop that\u2019s best suited for a low-curve aggro deck, which doesn\u2019t want 7-drops.",
+     "image": "https://cards.scryfall.io/normal/front/2/4/24c7e179-c016-4db8-ad8b-aa5629152b5c.jpg?1793013595",
+     "strong": true
+    },
+    {
+     "name": "Saurian Explorer",
+     "grade": "D+",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/213/saurian-explorer?utm_source=api",
+     "text": "Not only does Saurian Explorer attack as a 6/5 when you can trigger it, or even an 8/7 or 10/9, but its activated ability gives you a guaranteed way to trigger landfall in the late game, which I\u2019m sure the landfall decks are going to want.",
+     "image": "https://cards.scryfall.io/normal/front/1/9/197abe5e-cde2-4b29-a10f-d6b789776bfa.jpg?1785981598",
+     "strong": false
+    },
+    {
+     "name": "The Inner Light",
+     "grade": "B+",
+     "special": false,
+     "rating": 8.0,
+     "uri": "https://scryfall.com/card/trk/241/the-inner-light?utm_source=api",
+     "text": "Another of The Next Generation \u2019s greatest episodes, The Inner Light sees the Enterprise encounter a probe in deep space that forces Picard to live out a lifetime as a member of a long dead alien race.",
+     "image": "https://cards.scryfall.io/normal/front/a/f/af92a773-b237-4cd8-b50d-4f7c3b9290ed.jpg?1792753772",
+     "strong": false
+    },
+    {
+     "name": "Cleveland Booker, Empath",
+     "grade": "B-",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/229/cleveland-booker-empath?utm_source=api",
+     "text": "Cleveland Booker, Empath looks perfectly suited to any aggressive landfall deck, but the \u201ccan\u2019t block\u201d clause on these tokens likely prices it out of being included in other decks for value.",
+     "image": "https://cards.scryfall.io/normal/front/6/b/6b2e52e2-5cb9-4360-92d6-5c0d9e435d09.jpg?1792508285",
+     "strong": false
+    },
+    {
+     "name": "D-7 Battle Cruiser",
+     "grade": "B",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/145/d-7-battle-cruiser?utm_source=api",
+     "text": "These tokens can be pretty useful in the early game, and they give you a free sacrifice every turn, but once they\u2019re outclassed in combat, they\u2019re very difficult to get any advantage from.",
+     "image": "https://cards.scryfall.io/normal/front/6/c/6c22998d-7bd7-433d-95b8-50f2fd8b7b7f.jpg?1792508232",
+     "strong": false
+    },
+    {
+     "name": "Dominion Supervisor",
+     "grade": "C",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/195/dominion-supervisor?utm_source=api",
+     "text": "Dominion Supervisor is a nice card to curve into naturally, and it might be quite good in the late game when you have multiple creatures to gain trample , but it\u2019s kind of average overall.",
+     "image": "https://cards.scryfall.io/normal/front/5/f/5fa76320-24c0-4294-8ae4-fb39e171fbe6.jpg?1785981577",
+     "strong": false
+    },
+    {
+     "name": "Year of Hell",
+     "grade": "D-",
+     "special": false,
+     "rating": 0.0,
+     "uri": "https://scryfall.com/card/trk/257/year-of-hell?utm_source=api",
+     "text": "Certainly my favorite episode of Voyager , this two-parter sees Janeway and the crew navigating through the space of a hostile race with temporal manipulating weapons for an entire year.",
+     "image": "https://cards.scryfall.io/normal/front/4/a/4ab931e9-fb07-4da2-a0d9-acfec2ac9e19.jpg?1792753960",
+     "strong": false
+    },
+    {
+     "name": "Constable Odo",
+     "grade": "B",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/230/constable-odo?utm_source=api",
+     "text": "Two Clue s is the easiest way to turn Odo into card advantage, but having a nice tempo play by stunning a creature for a few turns is certainly going to come up from time to time, too.",
+     "image": "https://cards.scryfall.io/normal/front/3/d/3df582e4-3bfb-4413-9b39-898f33a5c1fd.jpg?1792508297",
+     "strong": false
+    },
+    {
+     "name": "Isshin, Two Heavens as One",
+     "grade": "F",
+     "special": true,
+     "rating": 1.0,
+     "uri": "https://scryfall.com/card/sds/19/isshin-two-heavens-as-one?utm_source=api",
+     "text": "In the context of this set, you\u2019re mostly looking at the attack triggers from cards in the red/white archetype, but splashing black in an aggressive Boros deck might not be possible.",
+     "image": "https://cards.scryfall.io/normal/front/8/a/8a4eed16-2ac2-4d99-b2bf-7182e184c3cb.jpg?1793187447",
+     "strong": false
+    },
+    {
+     "name": "Vexing Drone",
+     "grade": "C-",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/45/vexing-drone?utm_source=api",
+     "text": "Tapping an opponent\u2019s creature is a pretty nice ability to have in an aggressive deck, and Vexing Drone has the magic stats of a 2/2 for 2, meaning we\u2019d probably play it regardless.",
+     "image": "https://cards.scryfall.io/normal/front/6/f/6f4b2476-8f93-4d4e-b664-233e82fcf212.jpg?1793361221",
+     "strong": false
+    },
+    {
+     "name": "Bristly Bill, Spine Sower",
+     "grade": "A",
+     "special": true,
+     "rating": 9.0,
+     "uri": "https://scryfall.com/card/sds/15/bristly-bill-spine-sower?utm_source=api",
+     "text": "Putting a +1/+1 counter on something with every land you play is incredible, and in the late game, its activated ability is often better than using your mana to cast a new spell.",
+     "image": "https://cards.scryfall.io/normal/front/9/8/9845bd74-326f-4506-87f9-ead7d2fa6cfa.jpg?1792507751",
+     "strong": false
+    }
+   ]
   },
   {
    "name": "Removal",
    "blurb": "How much interaction the set has and what it costs.",
-   "count": 0,
-   "quotes": []
+   "count": 44,
+   "quotes": [
+    {
+     "name": "In the Pale Moonlight",
+     "grade": "B",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/117/in-the-pale-moonlight?utm_source=api",
+     "text": "One of Deep Space Nine \u2019s best episodes, In the Pale Moonlight sees Captain Sisko reflecting on the personal cost he\u2019s paid in attempting to trick the Romulan empire into joining the Federation\u2019s war against the Dominion.",
+     "image": "https://cards.scryfall.io/normal/front/4/7/47c8262c-e0c6-4c1a-b1c1-3b5fe5252a9c.jpg?1784065713",
+     "strong": true
+    },
+    {
+     "name": "Transporter Malfunction",
+     "grade": "B-",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/178/transporter-malfunction?utm_source=api",
+     "text": "This is bound to be one of the best removal spells in Star Trek , and it can even finish off a player.",
+     "image": "https://cards.scryfall.io/normal/front/8/5/85b108c3-00b5-4dfb-90de-57fa483c4926.jpg?1793274273",
+     "strong": true
+    },
+    {
+     "name": "Syndicate Liquidators",
+     "grade": "C",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/218/syndicate-liquidators?utm_source=api",
+     "text": "While Syndicate Liquidators is an obvious home for them since it has trample, it\u2019ll often be better to spread the love and put the counters elsewhere, since this will already be a prime target for your opponent\u2019s removal spells.",
+     "image": "https://cards.scryfall.io/normal/front/1/8/18bb2edd-8dee-4714-a707-6542b6ebbd53.jpg?1786005573",
+     "strong": false
+    },
+    {
+     "name": "Bat'leth",
+     "grade": "B-",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/94/batleth?utm_source=api",
+     "text": "Three mana to give -2/-2 is pretty inefficient by most standards, but the classic Klingon Bat'leth gives you quite a bit more than that, leaving behind a very relevant piece of equipment in addition to the removal.",
+     "image": "https://cards.scryfall.io/normal/front/8/8/888e6e0f-43c3-4516-88ff-8a8d814478d4.jpg?1785981448",
+     "strong": false
+    },
+    {
+     "name": "Engineered Explosives",
+     "grade": "D",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/264/engineered-explosives?utm_source=api",
+     "text": "If you have access to more than just two colors, it allows you to destroy just about anything your opponent might put in front of you, which is incredibly flexible for an otherwise colorless removal spell .",
+     "image": "https://cards.scryfall.io/normal/front/e/f/ef2d8db7-3f86-4d87-97ca-368444dc7f16.jpg?1792508441",
+     "strong": false
+    },
+    {
+     "name": "Amok Time",
+     "grade": "B",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/183/amok-time?utm_source=api",
+     "text": "This card is a fantastic retelling of that story, and if you play it right, it\u2019ll end up being a removal spell that gets a creature back from your graveyard and even gains you 3 life for good measure.",
+     "image": "https://cards.scryfall.io/normal/front/d/3/d31447b6-484f-4dda-b6af-ab068a84f896.jpg?1787205814",
+     "strong": false
+    },
+    {
+     "name": "Sulu, Space Swashbuckler",
+     "grade": "B+",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
+     "text": "A 2/2 for 2 with first strike is already very annoying to deal with, but then any equipment or spacecraft you play will let Sulu draw you a free card, especially if you have a spacecraft to station.",
+     "image": "https://cards.scryfall.io/normal/front/9/b/9b16f967-4bc5-4508-8433-b46323ce2e71.jpg?1793101366",
+     "strong": false
+    },
+    {
+     "name": "Sheoldred, the Apocalypse",
+     "grade": "A+",
+     "special": true,
+     "rating": 10.0,
+     "uri": "https://scryfall.com/card/sds/11/sheoldred-the-apocalypse?utm_source=api",
+     "text": "While it provides no card advantage whatsoever and might simply die to removal, the simple fact that it punishes your opponent for trying to find that removal is the most crippling part about it.",
+     "image": "https://cards.scryfall.io/normal/front/c/6/c68629ff-72b3-40a2-b578-cddb6ddb4ccf.jpg?1793238904",
+     "strong": false
+    },
+    {
+     "name": "Impossible Choice",
+     "grade": "D+",
+     "special": false,
+     "rating": 2.0,
+     "uri": "https://scryfall.com/card/trk/116/impossible-choice?utm_source=api",
+     "text": "I don\u2019t know the answer, but I do know that you should probably pick \u201cremain fused\u201d whenever you play this card, though neither modes of this Impossible Choice look like great options to me.",
+     "image": "https://cards.scryfall.io/normal/front/6/c/6c5a87cf-7790-4335-8497-ff793bbdcb05.jpg?1793013157",
+     "strong": false
+    },
+    {
+     "name": "Resistance Is Futile",
+     "grade": "C+",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/125/resistance-is-futile?utm_source=api",
+     "text": "While Star Trek does have a considerable number of artifact creatures, including all of the spacecraft, Resistance Is Futile still answers a lot of creatures that need to be dealt with.",
+     "image": "https://cards.scryfall.io/normal/front/8/1/81d88257-466d-4729-862f-591885b3d875.jpg?1785981518",
+     "strong": false
+    },
+    {
+     "name": "Common Goal",
+     "grade": "C+",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/190/common-goal?utm_source=api",
+     "text": "We do prefer these spells to be instants, but letting two of your creatures team up to destroy another means that Common Goal ought be a very effective removal spell in any green deck.",
+     "image": "https://cards.scryfall.io/normal/front/4/f/4fddc950-fbc5-4cf7-b694-dcd54ffccb31.jpg?1785981568",
+     "strong": false
+    },
+    {
+     "name": "Test of Identity",
+     "grade": "C-",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/177/test-of-identity?utm_source=api",
+     "text": "Some decks are going to be perfectly happy casting this as Thrill of Possibility , while Klingon decks are going to want it as a cool combat trick that you can essentially cycle.",
+     "image": "https://cards.scryfall.io/normal/front/7/e/7e1c0423-bf58-47a1-a838-c15bbf40eaba.jpg?1793359534",
+     "strong": false
+    },
+    {
+     "name": "Worf, Honor-Bound Warrior",
+     "grade": "C",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/256/worf-honor-bound-warrior?utm_source=api",
+     "text": "This Worf doesn\u2019t even need to attack to look threatening, and your opponent will likely need to deal with it at some point, which is a big compliment for a 2-drop 1/1.",
+     "image": "https://cards.scryfall.io/normal/front/b/2/b2d1955f-e834-4157-a139-9b6ec94bcd2a.jpg?1792508408",
+     "strong": false
+    },
+    {
+     "name": "Armus, Skin of Evil",
+     "grade": "A-",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/91/armus-skin-of-evil?utm_source=api",
+     "text": "I honestly prefer it as just a good 3-mana removal spell, but coming down on 7-mana and pressuring the opponent\u2019s hand can also be devastating in the right matchup.",
+     "image": "https://cards.scryfall.io/normal/front/c/3/c3ba1e0d-5e3d-4fa7-9b58-5b90944b43c5.jpg?1793013559",
+     "strong": false
+    }
+   ]
   },
   {
    "name": "Bombs and rares",
    "blurb": "Cards that decide a game if nobody deals with them.",
-   "count": 0,
-   "quotes": []
+   "count": 8,
+   "quotes": [
+    {
+     "name": "Q, Stacking the Deck",
+     "grade": "A",
+     "special": false,
+     "rating": 9.0,
+     "uri": "https://scryfall.com/card/trk/165/q-stacking-the-deck?utm_source=api",
+     "text": "Even though its ability has an element of randomness, it\u2019s still a 4/4 on the board, doesn\u2019t need to survive for its ability to remain active, and has the potential to completely take over the game.",
+     "image": "https://cards.scryfall.io/normal/front/d/c/dcbe34db-0065-4960-92b8-3ea1d336e803.jpg?1792508237",
+     "strong": false
+    },
+    {
+     "name": "Empress Galina",
+     "grade": "C+",
+     "special": true,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/sds/6/empress-galina?utm_source=api",
+     "text": "Yes, you have to untap with it and it adds almost nothing to the board by itself, but once you steal even one creature, you stand to win the game off Empress Sato\u2019s back.",
+     "image": "https://cards.scryfall.io/normal/front/9/7/9782a592-6c58-4c9b-af34-d1af28c97dac.jpg?1793187323",
+     "strong": false
+    },
+    {
+     "name": "Stella Lee, Wild Card",
+     "grade": "C",
+     "special": true,
+     "rating": 8.0,
+     "uri": "https://scryfall.com/card/sds/25/stella-lee-wild-card?utm_source=api",
+     "text": "Beam me up is especially good for helping you cast two spells in a turn, so I have no trouble believing this will be a bomb in the right deck.",
+     "image": "https://cards.scryfall.io/normal/front/5/4/54820d80-f32e-4e2f-a0e2-4db781444217.jpg?1793187478",
+     "strong": false
+    },
+    {
+     "name": "Crystalline Entity",
+     "grade": "A",
+     "special": false,
+     "rating": 8.0,
+     "uri": "https://scryfall.com/card/trk/261/crystalline-entity?utm_source=api",
+     "text": "It\u2019s worth accelerating into, and you can play it in any deck willing to do that, which makes it sound like an incredible bomb.",
+     "image": "https://cards.scryfall.io/normal/front/c/b/cbc4ac70-0a4c-4973-a366-dd67d8901e21.jpg?1784036804",
+     "strong": false
+    },
+    {
+     "name": "Pah-Wraith",
+     "grade": "B-",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/160/pah-wraith?utm_source=api",
+     "text": "It looks good, but I have a feeling it\u2019s just too expensive to be the massive bomb that I think it could be.",
+     "image": "https://cards.scryfall.io/normal/front/2/4/24c7e179-c016-4db8-ad8b-aa5629152b5c.jpg?1793013595",
+     "strong": false
+    },
+    {
+     "name": "Q, Stacking the Deck",
+     "grade": "A",
+     "special": false,
+     "rating": 9.0,
+     "uri": "https://scryfall.com/card/trk/165/q-stacking-the-deck?utm_source=api",
+     "text": "If you hit a bomb rare, a removal spell, or anything else on that level, you basically win the game.",
+     "image": "https://cards.scryfall.io/normal/front/d/c/dcbe34db-0065-4960-92b8-3ea1d336e803.jpg?1792508237",
+     "strong": false
+    },
+    {
+     "name": "Bristly Bill, Spine Sower",
+     "grade": "A",
+     "special": true,
+     "rating": 9.0,
+     "uri": "https://scryfall.com/card/sds/15/bristly-bill-spine-sower?utm_source=api",
+     "text": "It\u2019s a must-kill threat, and if you play this early enough, it takes over the game.",
+     "image": "https://cards.scryfall.io/normal/front/9/8/9845bd74-326f-4506-87f9-ead7d2fa6cfa.jpg?1792507751",
+     "strong": false
+    },
+    {
+     "name": "Mikaeus, the Lunarch",
+     "grade": "B-",
+     "special": true,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/sds/1/mikaeus-the-lunarch?utm_source=api",
+     "text": "Mikaeus, the Lunarch was an absolute bomb when it was first printed 15 years ago.",
+     "image": "https://cards.scryfall.io/normal/front/f/5/f57d8134-4ec9-40f2-8d7b-560f246215a5.jpg?1793187352",
+     "strong": false
+    }
+   ]
   },
   {
    "name": "Build-arounds",
    "blurb": "Cards that do nothing alone and a lot with help.",
-   "count": 0,
-   "quotes": []
+   "count": 44,
+   "quotes": [
+    {
+     "name": "Hologram Stalker",
+     "grade": "B+",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/202/hologram-stalker?utm_source=api",
+     "text": "I call this a payoff for black/green, but it\u2019s honestly so strong on rate that every green deck should play it, and it\u2019s likely the best green uncommon in Star Trek .",
+     "image": "https://cards.scryfall.io/normal/front/6/b/6bd8a87b-ca7a-4a15-b96f-1a673ee44f3e.jpg?1792668500",
+     "strong": true
+    },
+    {
+     "name": "Seven of Nine",
+     "grade": "C-",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/252/seven-of-nine?utm_source=api",
+     "text": "We know from past experiences that this is among the best kinds of payoff for a Draft archetype, and dilemmas are extremely well supported in Star Trek.",
+     "image": "https://cards.scryfall.io/normal/front/6/2/6204cfdb-6fb4-4030-96b6-9306c8266bcf.jpg?1793538768",
+     "strong": true
+    },
+    {
+     "name": "Jett Reno, Problem Solver",
+     "grade": "B+",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/67/jett-reno-problem-solver?utm_source=api",
+     "text": "Easily one of the best characters in Star Trek: Discovery , Jett Reno, Problem Solver is quite a nifty little build-around for the dilemmas deck.",
+     "image": "https://cards.scryfall.io/normal/front/6/d/6dc34d44-397a-4dda-a8e3-0c2ff7da110f.jpg?1793511776",
+     "strong": true
+    },
+    {
+     "name": "Spock, Always Your Friend",
+     "grade": "A-",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/253/spock-always-your-friend?utm_source=api",
+     "text": "Spock is an excellent enabler for this blue/red deck and also one of the best creatures we\u2019ve seen to pair with beam me up spells.",
+     "image": "https://cards.scryfall.io/normal/front/1/b/1be731d5-8b21-4883-91c0-dd9070b1eadd.jpg?1792508391",
+     "strong": true
+    },
+    {
+     "name": "The Caretaker",
+     "grade": "B+",
+     "special": false,
+     "rating": 9.0,
+     "uri": "https://scryfall.com/card/trk/47/the-caretaker?utm_source=api",
+     "text": "Facing dilemmas seems remarkably easy to do in Star Trek , and The Caretaker has got to be the best payoff for them.",
+     "image": "https://cards.scryfall.io/normal/front/e/c/ec6a1967-78fc-4ef4-9816-6d9a9dde61fb.jpg?1793538731",
+     "strong": true
+    },
+    {
+     "name": "Sela, Tal Shiar Paradox",
+     "grade": "C+",
+     "special": false,
+     "rating": 8.0,
+     "uri": "https://scryfall.com/card/trk/128/sela-tal-shiar-paradox?utm_source=api",
+     "text": "Even without attacking, sitting back and generating free tokens whenever something leaves your graveyard is an excellent way to spend your mana, so long as you surround it with the right support.",
+     "image": "https://cards.scryfall.io/normal/front/c/b/cb680a44-3395-4c96-a73d-af1e0b7b8a9f.jpg?1793101376",
+     "strong": false
+    },
+    {
+     "name": "Jhoira, Weatherlight Captain",
+     "grade": "C",
+     "special": true,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/sds/21/jhoira-weatherlight-captain?utm_source=api",
+     "text": "Jhoira, Weatherlight Captain is pretty good, allowing you to draw a lot of free cards if you have a deck that can support it, but being a Hill Giant in stats definitely holds it back a lot.",
+     "image": "https://cards.scryfall.io/normal/front/c/4/c452702c-4780-4f1f-aa96-38342943043c.jpg?1793187460",
+     "strong": false
+    },
+    {
+     "name": "Miles O'Brien, Transporter Ops",
+     "grade": "B+",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/24/miles-obrien-transporter-ops?utm_source=api",
+     "text": "None of the archetypes in Star Trek are specifically centered around this mechanic, but Chief O\u2019Brien is still a very good payoff for it and I\u2019m sure the card will find a home somewhere.",
+     "image": "https://cards.scryfall.io/normal/front/e/4/e4f041b3-e785-45ba-9a7e-33878614d3b0.jpg?1793361164",
+     "strong": false
+    },
+    {
+     "name": "Seven of Nine, Unassimilated",
+     "grade": "B",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/80/seven-of-nine-unassimilated?utm_source=api",
+     "text": "I don\u2019t think getting to seven different lands is that unreasonable, and five should be pretty easy in the right deck, which makes Seven quite a reasonable payoff for this archetype.",
+     "image": "https://cards.scryfall.io/normal/front/d/d/ddc517bd-27e1-4688-8941-a41c312bd782.jpg?1792508210",
+     "strong": false
+    },
+    {
+     "name": "Neelix, Moral Support",
+     "grade": "B-",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/209/neelix-moral-support?utm_source=api",
+     "text": "There\u2019s nothing wrong with Neelix, Moral Support in theory, but aside from the Food token it gives you, there aren\u2019t very many sources of lifegain to help it trigger repeatedly.",
+     "image": "https://cards.scryfall.io/normal/front/0/9/09c0daa9-9eca-4817-a427-868d1efcfa20.jpg?1793359554",
+     "strong": false
+    },
+    {
+     "name": "Brad Boimler, Eager Ensign",
+     "grade": "C-",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/5/brad-boimler-eager-ensign?utm_source=api",
+     "text": "A 2/2 lifelinker for 2 mana is a great start, but Boimler pulls a bit of double duty by being a great build-around for both white/blue spacecraft and white/green counters.",
+     "image": "https://cards.scryfall.io/normal/front/a/6/a6bf1525-2212-46d0-ad4d-1dbaa2e3b3cd.jpg?1784036739",
+     "strong": false
+    },
+    {
+     "name": "Peace in Our Time",
+     "grade": "F",
+     "special": false,
+     "rating": 0.0,
+     "uri": "https://scryfall.com/card/trk/27/peace-in-our-time?utm_source=api",
+     "text": "This is a cool build-around that might be worth building around, but the idea of letting my opponent draw cards for free doesn\u2019t really inspire me with confidence.",
+     "image": "https://cards.scryfall.io/normal/front/9/d/9dd522dd-a894-496e-9d31-68583dba7ecc.jpg?1792508151",
+     "strong": false
+    },
+    {
+     "name": "Blastoneuron",
+     "grade": "C+",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/96/blastoneuron?utm_source=api",
+     "text": "It\u2019s surely not going to trigger as often as something like Falkenrath Noble , but if you can support it properly, it might be closer to that than you\u2019d think.",
+     "image": "https://cards.scryfall.io/normal/front/c/1/c1855a4c-c7d1-407c-b134-4c43968cbdd3.jpg?1792753729",
+     "strong": false
+    },
+    {
+     "name": "Gray and Adira, Forever Joined",
+     "grade": "D",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/238/gray-and-adira-forever-joined?utm_source=api",
+     "text": "The trouble with cards like this is that while it\u2019s supposed to be a payoff for a noncreature spells deck, it requires you to have creatures to use it with.",
+     "image": "https://cards.scryfall.io/normal/front/e/e/eede6822-c8bc-4344-81a9-bc608245d5b6.jpg?1792508333",
+     "strong": false
+    }
+   ]
   },
   {
    "name": "Commons and filler",
    "blurb": "The cards that actually make up the deck.",
-   "count": 0,
-   "quotes": []
+   "count": 53,
+   "quotes": [
+    {
+     "name": "Infinite Diversity",
+     "grade": "D",
+     "special": false,
+     "rating": 0.0,
+     "uri": "https://scryfall.com/card/trk/153/infinite-diversity?utm_source=api",
+     "text": "It\u2019s pretty close to uncastable in most situations, and it requires a good spell to copy and plenty of creatures in play to fuel it, all of which add up to an unplayable mythic .",
+     "image": "https://cards.scryfall.io/normal/front/3/3/33ade614-3593-4055-8ecc-2d9e4858ba19.jpg?1793273819",
+     "strong": true
+    },
+    {
+     "name": "Hologram Stalker",
+     "grade": "B+",
+     "special": false,
+     "rating": 7.0,
+     "uri": "https://scryfall.com/card/trk/202/hologram-stalker?utm_source=api",
+     "text": "I call this a payoff for black/green, but it\u2019s honestly so strong on rate that every green deck should play it, and it\u2019s likely the best green uncommon in Star Trek .",
+     "image": "https://cards.scryfall.io/normal/front/6/b/6bd8a87b-ca7a-4a15-b96f-1a673ee44f3e.jpg?1792668500",
+     "strong": true
+    },
+    {
+     "name": "Andromedan Automatons",
+     "grade": "C+",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/2/andromedan-automatons?utm_source=api",
+     "text": "The first copy of Andromedan Automatons is basically unplayable, but once you find a second one, the first one you play draws you a spell when it enters.",
+     "image": "https://cards.scryfall.io/normal/front/f/c/fc386662-0fe3-432f-85a8-9a06e1274245.jpg?1793361152",
+     "strong": true
+    },
+    {
+     "name": "Fugitive Listener",
+     "grade": "C+",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/107/fugitive-listener?utm_source=api",
+     "text": "Fugitive Listener won\u2019t draw you a card, but having your opponent discard one is nearly always just as good, which makes this a premium black common.",
+     "image": "https://cards.scryfall.io/normal/front/b/d/bd04c738-b4e3-481e-9a68-d257524bf40e.jpg?1793361283",
+     "strong": true
+    },
+    {
+     "name": "Dominion Infiltration",
+     "grade": "D-",
+     "special": false,
+     "rating": 0.0,
+     "uri": "https://scryfall.com/card/trk/147/dominion-infiltration?utm_source=api",
+     "text": "You have no control over how good Dominion Infiltration will be when you maindeck it, which is a surefire recipe for a terrible, unplayable card.",
+     "image": "https://cards.scryfall.io/normal/front/3/8/38b7cc7c-e6f0-4460-83c0-0bcd1ab5b4cf.jpg?1793274258",
+     "strong": true
+    },
+    {
+     "name": "Starfleet Academy",
+     "grade": "D",
+     "special": false,
+     "rating": 0.0,
+     "uri": "https://scryfall.com/card/trk/297/starfleet-academy?utm_source=api",
+     "text": "This looks completely unplayable to me, and harder to enable than similar lands of the past that were also useless in Limited.",
+     "image": "https://cards.scryfall.io/normal/front/2/d/2da8d3bf-4397-4844-90d6-dd888becc804.jpg?1792508542",
+     "strong": true
+    },
+    {
+     "name": "Red Alert!",
+     "grade": "D-",
+     "special": false,
+     "rating": 1.0,
+     "uri": "https://scryfall.com/card/trk/169/red-alert!?utm_source=api",
+     "text": "Trumpet Blast is basically never playable and getting a cost reduction on the worst turn to play it isn\u2019t even an upside.",
+     "image": "https://cards.scryfall.io/normal/front/0/f/0f9b10d3-ba76-45ec-a85c-fb7b26da5561.jpg?1793274269",
+     "strong": true
+    },
+    {
+     "name": "Battle-Scarred Survivalist",
+     "grade": "D-",
+     "special": false,
+     "rating": 2.0,
+     "uri": "https://scryfall.com/card/trk/95/battle-scarred-survivalist?utm_source=api",
+     "text": "We\u2019ve seen Unruly Mob in past sets be virtually unplayable, and this feels like a watered down version of that.",
+     "image": "https://cards.scryfall.io/normal/front/c/5/c567253e-a2ee-45de-b3c6-3aeafbf8237b.jpg?1785981454",
+     "strong": true
+    },
+    {
+     "name": "Branching Timeline",
+     "grade": "F",
+     "special": false,
+     "rating": 0.0,
+     "uri": "https://scryfall.com/card/trk/185/branching-timeline?utm_source=api",
+     "text": "Branching Timeline does nothing of the sort and is entirely random, which makes it completely unplayable.",
+     "image": "https://cards.scryfall.io/normal/front/4/a/4a2231ff-677d-4041-9413-b8d683846920.jpg?1793013249",
+     "strong": true
+    },
+    {
+     "name": "Unexplored Territory",
+     "grade": "D+",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/303/unexplored-territory?utm_source=api",
+     "text": "That\u2019s not to say it\u2019s bad or unplayable, but it doesn\u2019t feel like the easy slam dunk that it could be.",
+     "image": "https://cards.scryfall.io/normal/front/c/a/ca1e60f1-11a9-4bb8-9f6e-5b652b49c517.jpg?1793361459",
+     "strong": true
+    },
+    {
+     "name": "Temporal Conqueror",
+     "grade": "B-",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/219/temporal-conqueror?utm_source=api",
+     "text": "Temporal Conqueror is definitely going to appear on my shortlist for best green common in the set.",
+     "image": "https://cards.scryfall.io/normal/front/b/0/b0bb51a7-1ae2-45d0-8be9-5454a3c8f751.jpg?1793361377",
+     "strong": true
+    },
+    {
+     "name": "Death Is Irrelevant",
+     "grade": "B",
+     "special": false,
+     "rating": 9.0,
+     "uri": "https://scryfall.com/card/trk/102/death-is-irrelevant?utm_source=api",
+     "text": "Weirdly enough, Death Is Irrelevant looks basically unplayable in Borg decks.",
+     "image": "https://cards.scryfall.io/normal/front/4/0/408cb5dd-1a79-47a9-98ea-41f3f4502c5e.jpg?1792668404",
+     "strong": true
+    },
+    {
+     "name": "Rules of Acquisition",
+     "grade": "C-",
+     "special": false,
+     "rating": 1.0,
+     "uri": "https://scryfall.com/card/trk/78/rules-of-acquisition?utm_source=api",
+     "text": "For the most part, Rules of Acquisition looks unplayable to me.",
+     "image": "https://cards.scryfall.io/normal/front/3/0/307c36ec-6fa1-4d4b-afcd-c3c83b876ee8.jpg?1793013546",
+     "strong": true
+    },
+    {
+     "name": "Gul Dukat, Colonial Prefect",
+     "grade": "C",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/113/gul-dukat-colonial-prefect?utm_source=api",
+     "text": "It might just be unplayable with the way the format shapes up.",
+     "image": "https://cards.scryfall.io/normal/front/7/a/7adc6373-1196-448f-8aee-cee7a890c724.jpg?1793359426",
+     "strong": true
+    }
+   ]
   },
   {
    "name": "Evasion and stalls",
    "blurb": "How a board that has stopped moving gets unstuck.",
-   "count": 0,
-   "quotes": []
+   "count": 25,
+   "quotes": [
+    {
+     "name": "Ravenous Cosmozoan",
+     "grade": "D-",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/167/ravenous-cosmozoan?utm_source=api",
+     "text": "Flying appears to be at a premium in this set, so a 3/3 flier will go a long way.",
+     "image": "https://cards.scryfall.io/normal/front/8/e/8eeb471b-412d-4ea1-bec0-d7dd0a557d76.jpg?1793013221",
+     "strong": true
+    },
+    {
+     "name": "Sheoldred, the Apocalypse",
+     "grade": "A+",
+     "special": true,
+     "rating": 10.0,
+     "uri": "https://scryfall.com/card/sds/11/sheoldred-the-apocalypse?utm_source=api",
+     "text": "Sheoldred is a menace and likely one of the best cards in this set.",
+     "image": "https://cards.scryfall.io/normal/front/c/6/c68629ff-72b3-40a2-b578-cddb6ddb4ccf.jpg?1793238904",
+     "strong": true
+    },
+    {
+     "name": "Federation Probe",
+     "grade": "C+",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/59/federation-probe?utm_source=api",
+     "text": "Say it with me: \u201cWe don\u2019t underestimate 1-drops!\u201d I\u2019m very happy to play Federation Probe on turn 1 and get a surveil along with my flying 1/1, then later in the game it can buff a creature and potentially get a better attack in.",
+     "image": "https://cards.scryfall.io/normal/front/f/9/f988ba84-fc78-41a2-b2f2-eebf78cee591.jpg?1785981405",
+     "strong": false
+    },
+    {
+     "name": "Syndicate Liquidators",
+     "grade": "C",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/218/syndicate-liquidators?utm_source=api",
+     "text": "While Syndicate Liquidators is an obvious home for them since it has trample, it\u2019ll often be better to spread the love and put the counters elsewhere, since this will already be a prime target for your opponent\u2019s removal spells.",
+     "image": "https://cards.scryfall.io/normal/front/1/8/18bb2edd-8dee-4714-a707-6542b6ebbd53.jpg?1786005573",
+     "strong": false
+    },
+    {
+     "name": "Dominion Supervisor",
+     "grade": "C",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/195/dominion-supervisor?utm_source=api",
+     "text": "Dominion Supervisor is a nice card to curve into naturally, and it might be quite good in the late game when you have multiple creatures to gain trample , but it\u2019s kind of average overall.",
+     "image": "https://cards.scryfall.io/normal/front/5/f/5fa76320-24c0-4294-8ae4-fb39e171fbe6.jpg?1785981577",
+     "strong": false
+    },
+    {
+     "name": "Sarcophagus, Ship of the Dead",
+     "grade": "C",
+     "special": false,
+     "rating": 6.0,
+     "uri": "https://scryfall.com/card/trk/170/sarcophagus-ship-of-the-dead?utm_source=api",
+     "text": "Ten charge counters is a lot, but between its own trigger and power boosts, that number starts to look a lot smaller, and a 4/4 flier looks incredible in this format.",
+     "image": "https://cards.scryfall.io/normal/front/b/5/b5ea32b5-aa58-4f87-ac2e-4e3b8dd4a752.jpg?1793187110",
+     "strong": false
+    },
+    {
+     "name": "Blastoneuron",
+     "grade": "C+",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/96/blastoneuron?utm_source=api",
+     "text": "Blastoneuron \u2019s enters trigger isn\u2019t the most useful thing you can do, but having a flying creature sit around and trigger over and over sounds pretty good to me.",
+     "image": "https://cards.scryfall.io/normal/front/c/1/c1855a4c-c7d1-407c-b134-4c43968cbdd3.jpg?1792753729",
+     "strong": false
+    },
+    {
+     "name": "Gabriel Lorca, Mirror Menace",
+     "grade": "D-",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/108/gabriel-lorca-mirror-menace?utm_source=api",
+     "text": "A 5/4 with menace for 5 mana isn\u2019t all that great, but the ability to keep bringing Lorca back whenever you face a dilemma certainly paints it in a new light.",
+     "image": "https://cards.scryfall.io/normal/front/a/9/a98d0f01-8e5e-4ff1-88e5-684b8f4c015c.jpg?1793100690",
+     "strong": false
+    },
+    {
+     "name": "Gabriel Lorca, Mirror Menace",
+     "grade": "D-",
+     "special": false,
+     "rating": 5.0,
+     "uri": "https://scryfall.com/card/trk/108/gabriel-lorca-mirror-menace?utm_source=api",
+     "text": "The surprising villain of Star Trek: Discovery \u2019s first season, played by the brilliant Jason Isaacs, Gabriel Lorca, Mirror Menace is a pretty annoying card.",
+     "image": "https://cards.scryfall.io/normal/front/a/9/a98d0f01-8e5e-4ff1-88e5-684b8f4c015c.jpg?1793100690",
+     "strong": false
+    },
+    {
+     "name": "Relentless Drednok",
+     "grade": "C-",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/124/relentless-drednok?utm_source=api",
+     "text": "It may not have evasion , but getting to play a Relentless Drednok on turn 1, especially in a Borg deck, is a great way to start off your mana curve.",
+     "image": "https://cards.scryfall.io/normal/front/c/e/ce538db8-373d-4554-821e-cd96e795e37a.jpg?1786005690",
+     "strong": false
+    },
+    {
+     "name": "Romulan Bird-of-Prey",
+     "grade": "B",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/77/romulan-bird-of-prey?utm_source=api",
+     "text": "Two mana for a 4/4 with flying is obviously an excellent deal, but you have to go through a few extra steps to get there with Romulan Bird-of-Prey .",
+     "image": "https://cards.scryfall.io/normal/front/6/a/6a461d90-6b7b-4777-958a-8a5d8365ad8c.jpg?1792508202",
+     "strong": false
+    },
+    {
+     "name": "Melkotian Adjudicator",
+     "grade": "D",
+     "special": false,
+     "rating": 3.0,
+     "uri": "https://scryfall.com/card/trk/73/melkotian-adjudicator?utm_source=api",
+     "text": "Flying seems especially rare in Star Trek , since many of the fliers require stationing, which makes Melkotian Adjudicator stand out even more.",
+     "image": "https://cards.scryfall.io/normal/front/8/7/873c9933-7939-4376-873c-6a5b3bbc98d4.jpg?1793359395",
+     "strong": false
+    },
+    {
+     "name": "Battle-Scarred Survivalist",
+     "grade": "D-",
+     "special": false,
+     "rating": 2.0,
+     "uri": "https://scryfall.com/card/trk/95/battle-scarred-survivalist?utm_source=api",
+     "text": "Having menace and the right support at least bumps it up a grade, but I\u2019d need to see this Klingon deck in action before I rate it any higher.",
+     "image": "https://cards.scryfall.io/normal/front/c/5/c567253e-a2ee-45de-b3c6-3aeafbf8237b.jpg?1785981454",
+     "strong": false
+    },
+    {
+     "name": "U.S.S. Cerritos, Following Up",
+     "grade": "B",
+     "special": false,
+     "rating": 4.0,
+     "uri": "https://scryfall.com/card/trk/272/uss-cerritos-following-up?utm_source=api",
+     "text": "Players were so desperate for flying creatures in Marvel Super Heroes that it actually performed fine, but I still maintain that it was awful.",
+     "image": "https://cards.scryfall.io/normal/front/7/6/76bf7521-5024-4fdc-9ea1-5e10f2647efb.jpg?1793361418",
+     "strong": false
+    }
+   ]
   }
  ],
  "synergies": {
-  "most_named": [],
+  "most_named": [
+   {
+    "name": "Final Frontier",
+    "grade": "D-",
+    "uri": "https://scryfall.com/card/trk/198/final-frontier?utm_source=api",
+    "count": 2,
+    "mentions": [
+     {
+      "from": "Genesis Device",
+      "grade": "D+",
+      "uri": "https://scryfall.com/card/trk/200/genesis-device?utm_source=api",
+      "text": "I think the main use of this is simply to ramp you like Final Frontier can."
+     },
+     {
+      "from": "Stable Wormhole",
+      "grade": "D",
+      "uri": "https://scryfall.com/card/trk/215/stable-wormhole?utm_source=api",
+      "text": "On balance, it\u2019s likely just worse than Final Frontier ."
+     }
+    ]
+   }
+  ],
   "archetypes": [
    {
     "pair": "WU",
     "name": "Spacecraft and Artificers",
     "hook": "",
     "word": "Spacecraft",
-    "count": 0,
-    "quotes": []
-   },
-   {
-    "pair": "UB",
-    "name": "Dilemma Control",
-    "hook": "",
-    "word": "Dilemma",
-    "count": 0,
-    "quotes": []
-   },
-   {
-    "pair": "BR",
-    "name": "Klingons and Dies",
-    "hook": "",
-    "word": "Klingon",
-    "count": 0,
-    "quotes": []
-   },
-   {
-    "pair": "RG",
-    "name": "Away Team Landfall",
-    "hook": "",
-    "word": "Away",
-    "count": 0,
-    "quotes": []
-   },
-   {
-    "pair": "WG",
-    "name": "Doctors and Counters",
-    "hook": "",
-    "word": "Doctor",
-    "count": 0,
-    "quotes": []
+    "count": 30,
+    "quotes": [
+     {
+      "name": "Enterprise NX-01",
+      "grade": "C",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/58/enterprise-nx-01?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/3/8/385638fe-cafb-4541-ba37-19bc57520c48.jpg?1793100690",
+      "text": "I certainly think being a spacecraft instead of just a creature holds it back a lot, but it\u2019ll be best suited for some sort of tempo deck that can use it to get rid of a blocker and continue applying pressure to an opponent."
+     },
+     {
+      "name": "Captain Jean-Luc Picard",
+      "grade": "A",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/7/captain-jean-luc-picard?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/b/7/b7114271-eb05-41e2-ad96-a34f53492312.jpg?1792508148",
+      "text": "Picard\u2019s greatest strength as a captain was in the way he inspired and mentored his crew, so of course the card gives +1/+1 to your whole team and creates more officers whenever you cast creatures or spacecraft."
+     },
+     {
+      "name": "Sulu, Space Swashbuckler",
+      "grade": "B+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/9/b/9b16f967-4bc5-4508-8433-b46323ce2e71.jpg?1793101366",
+      "text": "A 2/2 for 2 with first strike is already very annoying to deal with, but then any equipment or spacecraft you play will let Sulu draw you a free card, especially if you have a spacecraft to station."
+     },
+     {
+      "name": "Resistance Is Futile",
+      "grade": "C+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/125/resistance-is-futile?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/1/81d88257-466d-4729-862f-591885b3d875.jpg?1785981518",
+      "text": "While Star Trek does have a considerable number of artifact creatures, including all of the spacecraft, Resistance Is Futile still answers a lot of creatures that need to be dealt with."
+     },
+     {
+      "name": "Brad Boimler, Eager Ensign",
+      "grade": "C-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/5/brad-boimler-eager-ensign?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/6/a6bf1525-2212-46d0-ad4d-1dbaa2e3b3cd.jpg?1784036739",
+      "text": "A 2/2 lifelinker for 2 mana is a great start, but Boimler pulls a bit of double duty by being a great build-around for both white/blue spacecraft and white/green counters."
+     },
+     {
+      "name": "U.S.S. Enterprise-A, Free Spirit",
+      "grade": "A+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/43/uss-enterprise-a-free-spirit?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/9/9/99429015-6e5d-4ecf-aaf7-eba181bcffc7.jpg?1792508162",
+      "text": "The Enterprise is one of the most recognizable spacecraft in all of pop culture, and this being one of the strongest cards in TRK is exactly what we want to see."
+     },
+     {
+      "name": "Warp Core",
+      "grade": "D",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/274/warp-core?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/d/e/de8e2bde-b368-4d10-8409-86f5da6997f6.jpg?1793361423",
+      "text": "I\u2019m intrigued by its ability to station your spacecraft though, as doing so with any excess mana you have will take a lot of pressure away from your creatures."
+     },
+     {
+      "name": "U.S.S. Voyager, Lone Wanderer",
+      "grade": "C-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/222/uss-voyager-lone-wanderer?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/a/aaf8a0b2-c6cb-41cb-913d-7ae1d75e555d.jpg?1793274284",
+      "text": "We normally see some variants on Explosive Vegetation in sets these days, so seeing it attached to a spacecraft makes me think this one will be very strong."
+     }
+    ]
    },
    {
     "pair": "WB",
     "name": "Borg Artifact Creatures",
     "hook": "",
     "word": "Borg",
-    "count": 0,
-    "quotes": []
+    "count": 29,
+    "quotes": [
+     {
+      "name": "Rogue Artificial Intelligence",
+      "grade": "C+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/126/rogue-artificial-intelligence?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/e/d/edcce061-88c9-40bf-97f8-d0d3018e24dd.jpg?1785981516",
+      "text": "When you do play it on 6, Rogue Artificial Intelligence will have a significant impact on the board no matter which mode you choose, while also being an artifact creature for the Borg and a dilemma for blue/black."
+     },
+     {
+      "name": "Assembly Specialist",
+      "grade": "B",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/4/a4d339a5-198c-49bd-845e-2632476746e0.jpg?1793100612",
+      "text": "When you add in the fact that the Borg want to be a go-wide aggro deck centered around artifact creatures , Assembly Specialist looks like one of the best ways to start your curve in that deck."
+     },
+     {
+      "name": "Hologram Janeway",
+      "grade": "C+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/21/hologram-janeway?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/0/2/02d29047-a7b8-43fb-8b90-b35ba34da5f9.jpg?1793100636",
+      "text": "Those hoops don\u2019t seem too prohibitive, so I could see this being a very good card in the red/white deck where it belongs, but also with black/white Borg and artifact creatures."
+     },
+     {
+      "name": "Hive Mind Coprocessor",
+      "grade": "C-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/115/hive-mind-coprocessor?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/4/a4734c59-ff41-47ac-bbb4-c8c3bf052fe6.jpg?1785981497",
+      "text": "I can definitely see this being the top-end you need for a good Borg deck, especially as the extra cards should help you to keep applying pressure in future turns."
+     },
+     {
+      "name": "Locutus, the One Who Speaks",
+      "grade": "A-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/245/locutus-the-one-who-speaks?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/2/9/296f1127-14a0-42c4-9e4a-c0d929720748.jpg?1792508366",
+      "text": "In one of The Next Generation \u2019s best plot twists, the season three finale sees the Borg assimilate Picard into their collective, giving him new life as \u201cLocutus\u201d."
+     },
+     {
+      "name": "Relentless Drednok",
+      "grade": "C-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/124/relentless-drednok?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/c/e/ce538db8-373d-4554-821e-cd96e795e37a.jpg?1786005690",
+      "text": "It may not have evasion , but getting to play a Relentless Drednok on turn 1, especially in a Borg deck, is a great way to start off your mana curve."
+     },
+     {
+      "name": "Collation Trimatrix",
+      "grade": "B-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/98/collation-trimatrix?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/9/2/92c19351-0592-4269-90f4-2475d5529400.jpg?1793359423",
+      "text": "Collation Trimatrix may not be able to create any tokens , but getting to draw a card just by tapping three of your Borg is an incredible ability."
+     },
+     {
+      "name": "Conquest Mission",
+      "grade": "D",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/10/conquest-mission?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/f/9/f91755d7-6fb9-4caf-b4b4-f21ed5572d52.jpg?1792750872",
+      "text": "Knowing that the Borg power each other up just means that a black/white deck with this card will be able to get even more value out of it."
+     }
+    ]
+   },
+   {
+    "pair": "BR",
+    "name": "Klingons and Dies",
+    "hook": "",
+    "word": "Klingon",
+    "count": 20,
+    "quotes": [
+     {
+      "name": "Bat'leth",
+      "grade": "B-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/94/batleth?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/8/888e6e0f-43c3-4516-88ff-8a8d814478d4.jpg?1785981448",
+      "text": "Three mana to give -2/-2 is pretty inefficient by most standards, but the classic Klingon Bat'leth gives you quite a bit more than that, leaving behind a very relevant piece of equipment in addition to the removal."
+     },
+     {
+      "name": "Worf, Intelligence Contractor",
+      "grade": "B+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/180/worf-intelligence-contractor?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/7/d/7df6c8c1-1f85-4c5d-a4f6-9ffcdad1b12e.jpg?1792508250",
+      "text": "It naturally works very well in a Klingon deck, where you should be able to sacrifice the creature that you steal, but being limited to only stealing smaller creatures will likely hold Worf back."
+     },
+     {
+      "name": "D'Ghor Bloodletter",
+      "grade": "C+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/101/dghor-bloodletter?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/5/0/5075645d-ef69-4559-953e-c3140153bd75.jpg?1792753733",
+      "text": "D'Ghor Bloodletter , despite being a Klingon, is actually a great weapon for fighting against the Klingon decks, and the Fleshbag Marauder mode is a nice buyout for the right situation, too."
+     },
+     {
+      "name": "Holo-Engineer",
+      "grade": "B+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/201/holo-engineer?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/c/acfaf5f3-a4f5-418a-a29a-211b33bf18ee.jpg?1793100831",
+      "text": "There are a lot of different tokens in this set, such as the 1/1 Officer s, 2/1 Klingon s, and Treasure s, any of which you can choose to upgrade into 3/3s if you have this card in play."
+     },
+     {
+      "name": "Test of Identity",
+      "grade": "C-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/177/test-of-identity?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/7/e/7e1c0423-bf58-47a1-a838-c15bbf40eaba.jpg?1793359534",
+      "text": "Some decks are going to be perfectly happy casting this as Thrill of Possibility , while Klingon decks are going to want it as a cool combat trick that you can essentially cycle."
+     },
+     {
+      "name": "L'Rell, Fierce Visionary",
+      "grade": "D+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/247/lrell-fierce-visionary?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/7/b/7b06bbb9-7c6d-4889-b55a-1de77c27fd18.jpg?1792508377",
+      "text": "L'Rell, Fierce Visionary is perfect for providing you with an endless stream of Klingon tokens to sacrifice, which should then pair well with the sacrifice payoffs we\u2019ve seen."
+     },
+     {
+      "name": "D'Ghor Bloodletter",
+      "grade": "C+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/101/dghor-bloodletter?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/5/0/5075645d-ef69-4559-953e-c3140153bd75.jpg?1792753733",
+      "text": "Given how common the 2/1 Klingon tokens and the 1/1 Officer tokens are, the ability to give -1/-1 to all creatures sounds like it could be quite devastating."
+     },
+     {
+      "name": "Grand Nagus Zek",
+      "grade": "C+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/112/grand-nagus-zek?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/4/7/47488f1e-512d-4dc6-a82d-1ead24d3276a.jpg?1793013572",
+      "text": "Creating a free Treasure whenever something dies is pretty good on its own, especially in a Klingon deck where we expect our creatures to die more often."
+     }
+    ]
+   },
+   {
+    "pair": "UG",
+    "name": "Strange New Worlds",
+    "hook": "",
+    "word": "Strange",
+    "count": 16,
+    "quotes": [
+     {
+      "name": "Final Frontier",
+      "grade": "D-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/198/final-frontier?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/3/4/34ea6df3-36e3-42c5-a4ed-a4cd18ec6dd0.jpg?1793013607",
+      "text": "I\u2019m very much not a fan of 3-mana Rampant Growth s, but with the strange new worlds and landfall mechanics, plus the fact that this can fetch a planet dual land , I reckon Final Frontier will be one of the better versions of this effect that we\u2019ve ever seen."
+     },
+     {
+      "name": "Captain Pike, Fullness of Time",
+      "grade": "B",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/188/captain-pike-fullness-of-time?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/7/4/743be4c4-5c91-42bb-9942-115e903041a9.jpg?1792508262",
+      "text": "He was then replaced by William Shatner in the second episode, but since those days, Pike\u2019s character has been explored in the Kelvin timeline films and two of most recent projects: Discovery and Strange New Worlds ."
+     },
+     {
+      "name": "Shizo, Death's Storehouse",
+      "grade": "C-",
+      "special": true,
+      "uri": "https://scryfall.com/card/sds/30/shizo-deaths-storehouse?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/d/f/df6930d1-2ce3-4257-a212-0e562a1b152c.jpg?1793187508",
+      "text": "Much like Minamo, Shizo, Death's Storehouse is a strict upgrade over a Swamp and an additional land name to enable the strange new worlds mechanic, so you should always play it."
+     },
+     {
+      "name": "Ensign Pavel Chekov",
+      "grade": "D-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/57/ensign-pavel-chekov?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/4/a441c12e-1a2f-4b04-83dd-407bf6040efe.jpg?1792753698",
+      "text": "You\u2019re very likely to find one out of the cards you exile, letting Chekov act as a defensive cantrip creature that advances your gameplan in the Strange New Worlds deck."
+     },
+     {
+      "name": "Warp Speed",
+      "grade": "D+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/223/warp-speed?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/f/d/fdb5b940-9f62-47ad-8e80-5996daad0c9b.jpg?1793188026",
+      "text": "I could be wrong about this, but I think there are far better ways to enable strange new worlds in this set and this, sadly, won\u2019t be good enough."
+     },
+     {
+      "name": "Vulcan",
+      "grade": "C",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/305/vulcan?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/f/c/fc3fe0da-8d93-4f1c-9aad-c2fdc9fe34fc.jpg?1792632981",
+      "text": "These planets can do a little extra as they\u2019re searchable by some cards in TRK and provide additional names towards strange new worlds abilities."
+     },
+     {
+      "name": "Cloak and Phaser",
+      "grade": "B+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/49/cloak-and-phaser?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/2/d/2d9fb7e7-582d-41e7-be9e-98372505ea44.jpg?1793187986",
+      "text": "In a good build of strange new worlds, the thought of getting to cast this for significantly less mana doesn\u2019t seem all that unlikely either."
+     },
+     {
+      "name": "U.S.S. Voyager, Lone Wanderer",
+      "grade": "C-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/222/uss-voyager-lone-wanderer?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/a/aaf8a0b2-c6cb-41cb-913d-7ae1d75e555d.jpg?1793274284",
+      "text": "This is of course best suited for Landfall or Strange New Worlds decks, but it\u2019s strong enough to see play elsewhere if you need it to."
+     }
+    ]
+   },
+   {
+    "pair": "UB",
+    "name": "Dilemma Control",
+    "hook": "",
+    "word": "Dilemma",
+    "count": 14,
+    "quotes": [
+     {
+      "name": "Rogue Artificial Intelligence",
+      "grade": "C+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/126/rogue-artificial-intelligence?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/e/d/edcce061-88c9-40bf-97f8-d0d3018e24dd.jpg?1785981516",
+      "text": "When you do play it on 6, Rogue Artificial Intelligence will have a significant impact on the board no matter which mode you choose, while also being an artifact creature for the Borg and a dilemma for blue/black."
+     },
+     {
+      "name": "Obsidian Order Operative",
+      "grade": "D-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/120/obsidian-order-operative?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/1/7/17a7b0a8-baaf-4e6a-8536-f511c796a713.jpg?1793361289",
+      "text": "I like having access to a trigger that drains my opponent with each dilemma I face, and a 2/5 makes for a fairly resilient blocker, but Obsidian Order Operative isn\u2019t exciting me like it should."
+     },
+     {
+      "name": "Gabriel Lorca, Mirror Menace",
+      "grade": "D-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/108/gabriel-lorca-mirror-menace?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/9/a98d0f01-8e5e-4ff1-88e5-684b8f4c015c.jpg?1793100690",
+      "text": "A 5/4 with menace for 5 mana isn\u2019t all that great, but the ability to keep bringing Lorca back whenever you face a dilemma certainly paints it in a new light."
+     },
+     {
+      "name": "Lore, Positronic Provocateur",
+      "grade": "C",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/246/lore-positronic-provocateur?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/6/2/62afa55d-d4ba-48d5-9991-0f8408f9c92c.jpg?1792508378",
+      "text": "Given that Lore makes you face a dilemma, it has a clear home in your blue/black decks, but it\u2019s likely not good enough to see play in many other builds."
+     },
+     {
+      "name": "The City on the Edge of Forever",
+      "grade": "A",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/228/the-city-on-the-edge-of-forever?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/a/aac6f64d-d39a-4994-bc70-6b477b2640f8.jpg?1787205815",
+      "text": "As Kirk and Spock chase after him, they meet Edith Keeler, and from there a moral dilemma unfolds that you really have to see for yourself."
+     },
+     {
+      "name": "Elim Garak, Simple Tailor",
+      "grade": "A-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/106/elim-garak-simple-tailor?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/1/1/113bd51a-dfbb-4106-adf3-e567057fcd06.jpg?1792668600",
+      "text": "There are so many dilemmas you can face in this set that I\u2019m definitely keeping my eye on any and all dilemma payoffs."
+     },
+     {
+      "name": "Subcommander T'Pol",
+      "grade": "B",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/82/subcommander-tpol?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/7/d/7d90016d-c2cb-457b-9d97-c3b9411c46e3.jpg?1793013074",
+      "text": "The choice of one or the other is incredible too, and it even presents a dilemma, making T\u2019Pol a high pick in Draft."
+     },
+     {
+      "name": "Obsidian Order Operative",
+      "grade": "D-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/120/obsidian-order-operative?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/1/7/17a7b0a8-baaf-4e6a-8536-f511c796a713.jpg?1793361289",
+      "text": "It\u2019s a bit dull, and very cuttable, but it does at least do something that I might want in my dilemma decks."
+     }
+    ]
+   },
+   {
+    "pair": "RG",
+    "name": "Away Team Landfall",
+    "hook": "",
+    "word": "Away",
+    "count": 9,
+    "quotes": [
+     {
+      "name": "Rules of Acquisition",
+      "grade": "C-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/78/rules-of-acquisition?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/3/0/307c36ec-6fa1-4d4b-afcd-c3c83b876ee8.jpg?1793013546",
+      "text": "I think the best way to use this would be to donate something to your opponent and draw three cards, but that\u2019s still not a good exchange unless you give away something truly useless."
+     },
+     {
+      "name": "U.S.S. Reliant, From Hell's Heart",
+      "grade": "B-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/135/uss-reliant-from-hells-heart?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/4/a4c6fc55-f585-4529-b549-31d4d838c9af.jpg?1792551037",
+      "text": "Reanimating one creature right away makes it worth spending the mana to play it, even though 10 charge counters is a lot to accrue if you want to attack with it."
+     },
+     {
+      "name": "Warp Core",
+      "grade": "D",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/274/warp-core?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/d/e/de8e2bde-b368-4d10-8409-86f5da6997f6.jpg?1793361423",
+      "text": "I\u2019m intrigued by its ability to station your spacecraft though, as doing so with any excess mana you have will take a lot of pressure away from your creatures."
+     },
+     {
+      "name": "H.M.S. Bounty, Unlikely Timeship",
+      "grade": "C+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/63/hms-bounty-unlikely-timeship?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/d/7/d75f0991-39a3-474e-8c01-9b3363c41a9f.jpg?1793013750",
+      "text": "You get the upside right away by getting to tutor for one, and you might even be able to attack with it on the following turn as well as get the extra turn ."
+     },
+     {
+      "name": "Silicate Surveyor",
+      "grade": "D+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/172/silicate-surveyor?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/6/3/6359ab5d-4151-4a0c-af13-d59c1b381bb0.jpg?1786005521",
+      "text": "Silicate Surveyor really pushes that idea to its limit, since a 4/4 reach creature for 5 mana is very far away from something I\u2019d be happy to play otherwise."
+     },
+     {
+      "name": "Captain James T. Kirk",
+      "grade": "A",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/142/captain-james-t-kirk?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/4/0/40a0466d-20bb-4ed5-858d-947fb9144580.jpg?1784036779",
+      "text": "As Captain of the Enterprise , he never shied away from getting his hands dirty, and hand-to-hand brawls were common in the original series."
+     },
+     {
+      "name": "The Destruction of Praxis",
+      "grade": "A",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/103/the-destruction-of-praxis?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/3/d/3d33ac2a-73a9-4804-bf9f-c8cf4eea1c76.jpg?1793187997",
+      "text": "If you have six different lands in play, sweeping away all creatures and then creating a pair of 2/1s with haste is an absurd effect."
+     },
+     {
+      "name": "U.S.S. Excelsior, Cutting Edge",
+      "grade": "C+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/44/uss-excelsior-cutting-edge?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/d/e/de62b452-3780-4eeb-8163-f44176495615.jpg?1793100663",
+      "text": "While it will be hard to station, as long as you get to remove a creature, you don\u2019t even need to do so right away."
+     }
+    ]
+   },
+   {
+    "pair": "WG",
+    "name": "Doctors and Counters",
+    "hook": "",
+    "word": "Doctor",
+    "count": 9,
+    "quotes": [
+     {
+      "name": "The Doctor, EMH",
+      "grade": "D+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/234/the-doctor-emh?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/f/8fbad0dd-5f74-40c0-9e3e-c06be8eabb14.jpg?1792508313",
+      "text": "The Doctor can always put its counter on itself to maximize the number of counters you can get, and if it ends up putting four or more counters on board, that mana cost starts to look like a bargain."
+     },
+     {
+      "name": "The Doctor, EMH",
+      "grade": "D+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/234/the-doctor-emh?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/f/8fbad0dd-5f74-40c0-9e3e-c06be8eabb14.jpg?1792508313",
+      "text": "At the bare minimum, The Doctor, EMH represents a 3/3 and two +1/+1 counters for 5 mana, which is exactly what I\u2019d expect for that mana cost."
+     },
+     {
+      "name": "Dr. Beverly Crusher",
+      "grade": "D",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/13/dr-beverly-crusher?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/e/f/ef9c5790-d909-4271-90bd-5fa4816ddd6b.jpg?1784065540",
+      "text": "Here, this doctor is an Ajani's Pridemate that also doubles lifegain triggers, so it picks up two +1/+1 counters every time you gain life."
+     },
+     {
+      "name": "Brad Boimler, Eager Ensign",
+      "grade": "C-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/5/brad-boimler-eager-ensign?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/a/6/a6bf1525-2212-46d0-ad4d-1dbaa2e3b3cd.jpg?1784036739",
+      "text": "You can use it to quickly station a spacecraft or just get extra utility from your various doctor creatures, and both sound pretty good."
+     },
+     {
+      "name": "Phlox, Unorthodox Doctor",
+      "grade": "D+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/250/phlox-unorthodox-doctor?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/2/6/2695e76e-c27d-49fc-9ef2-d9eaff449f3d.jpg?1792508387",
+      "text": "I do love to draw some cards as a reward for doing what an archetype wants, but Phlox, Unorthodox Doctor isn\u2019t quite that simple."
+     },
+     {
+      "name": "Dr. Beverly Crusher",
+      "grade": "D",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/13/dr-beverly-crusher?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/e/f/ef9c5790-d909-4271-90bd-5fa4816ddd6b.jpg?1784065540",
+      "text": "She was more than just the ship\u2019s doctor; she was often the moral compass that Picard would turn to in his darkest moments."
+     },
+     {
+      "name": "Dr. Joseph M'Benga",
+      "grade": "D",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/196/dr-joseph-mbenga?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/c/2/c27e6865-40ba-406c-9dce-d8a7a9b8035b.jpg?1792508272",
+      "text": "Joseph M'Benga is interesting, but the main thing to note about this doctor is that it doesn\u2019t do anything by itself."
+     },
+     {
+      "name": "Dr. Leonard \"Bones\" McCoy",
+      "grade": "B+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/197/dr-leonard-bones-mccoy?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/d/8/d8593bf7-5248-4f4a-bf8b-9816d2f76c6b.jpg?1793187127",
+      "text": "Leonard \u201cBones\u201d McCoy was a brilliant doctor with a good dash of southern charm."
+     }
+    ]
+   },
+   {
+    "pair": "WR",
+    "name": "Command 8+ Total Power",
+    "hook": "",
+    "word": "Command",
+    "count": 4,
+    "quotes": [
+     {
+      "name": "Command Subadjunct",
+      "grade": "C",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/9/command-subadjunct?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/8/5/853bf74d-0b61-43df-9018-0b40b624a9d1.jpg?1792753641",
+      "text": "Even so, Command Subadjunct feels like it\u2019s only slightly better than a vanilla 2/1 for 1, which is very playable, but nothing exciting."
+     },
+     {
+      "name": "Command Decision",
+      "grade": "C-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/8/command-decision?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/9/f/9f1f789b-5c08-4a4d-b3a3-4d51ad9f1a4d.jpg?1785981318",
+      "text": "Command Decision is a decent removal spell, but one that\u2019s quite situational and might not find a target."
+     },
+     {
+      "name": "Brazen Bluff",
+      "grade": "F",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/140/brazen-bluff?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/5/b/5b306901-1bba-488b-866e-83aa162dab5a.jpg?1793274251",
+      "text": "Big bluffs like this were a quintessential part of Captain Kirk\u2019s character and style of command."
+     },
+     {
+      "name": "Kobayashi Maru Scenario",
+      "grade": "C",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/68/kobayashi-maru-scenario?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/c/7/c7fb72cc-1bc6-4774-9798-44824de46c72.jpg?1792508172",
+      "text": "The Kobayashi Maru Scenario is a test given to Starfleet cadets that have command ambitions."
+     }
+    ]
    },
    {
     "pair": "UR",
     "name": "Scientists and Noncreatures",
     "hook": "",
     "word": "Scientist",
-    "count": 0,
-    "quotes": []
+    "count": 2,
+    "quotes": [
+     {
+      "name": "Hoshi Sato, Exolinguist",
+      "grade": "C+",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/64/hoshi-sato-exolinguist?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/2/4/24589f4d-c530-4f6a-b2d0-450ef70fca71.jpg?1784065562",
+      "text": "At the bare minimum, it\u2019s a cantrip creature, assuming your opponent doesn\u2019t remove this scientist before its trigger resolves, at best it\u2019ll find you the best card in your deck while adding to the board."
+     },
+     {
+      "name": "Rok-Tahk, Budding Scientist",
+      "grade": "A-",
+      "special": false,
+      "uri": "https://scryfall.com/card/trk/211/rok-tahk-budding-scientist?utm_source=api",
+      "image": "https://cards.scryfall.io/normal/front/7/8/787bd19b-586e-4451-850b-60e0857bada0.jpg?1793273846",
+      "text": "Rok-Tahk, Budding Scientist is simply over-costed and doesn\u2019t do something that a 6-drop wants to do."
+     }
+    ]
    },
    {
     "pair": "BG",
@@ -225,28 +2201,702 @@
     "word": "Archaeology",
     "count": 0,
     "quotes": []
-   },
-   {
-    "pair": "WR",
-    "name": "Command 8+ Total Power",
-    "hook": "",
-    "word": "Command",
-    "count": 0,
-    "quotes": []
-   },
-   {
-    "pair": "UG",
-    "name": "Strange New Worlds",
-    "hook": "",
-    "word": "Strange",
-    "count": 0,
-    "quotes": []
    }
   ]
  },
- "comparisons": [],
+ "comparisons": [
+  {
+   "name": "U.S.S. Enterprise-A, Free Spirit",
+   "grade": "A+",
+   "uri": "https://scryfall.com/card/trk/43/uss-enterprise-a-free-spirit?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/9/9/99429015-6e5d-4ecf-aaf7-eba181bcffc7.jpg?1792508162",
+   "rating": 10.0,
+   "compared_to": "Baneslayer Angel",
+   "compared_uri": "https://scryfall.com/card/m21/6/baneslayer-angel?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/4/b/4bd3014b-94bb-4a9f-92cf-239a2dcc7e97.jpg?1783930746",
+   "text": "It\u2019s essentially a Baneslayer Angel that also creates three 1/1s on entering."
+  },
+  {
+   "name": "Overflow Submatrix",
+   "grade": "B",
+   "uri": "https://scryfall.com/card/trk/122/overflow-submatrix?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/7/e/7e5654a7-ce83-4801-8978-7294a39dbef8.jpg?1793100705",
+   "rating": 9.0,
+   "compared_to": "Lurrus of the Dream-Den",
+   "compared_uri": "https://scryfall.com/card/iko/226/lurrus-of-the-dream-den?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/5/a/5ad36fb2-c44e-4085-ba0d-54277841ad3a.jpg?1783931010",
+   "text": "I don\u2019t think I had a new riff on Lurrus of the Dream-Den on my bingo card for Star Trek , but it does look like that\u2019s what we have in Overflow Submatrix ."
+  },
+  {
+   "name": "Mr. Spock, Science Officer",
+   "grade": "B+",
+   "uri": "https://scryfall.com/card/trk/74/mr-spock-science-officer?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/d/1/d19fc127-669e-4264-935a-e5991e6c0964.jpg?1792508192",
+   "rating": 8.0,
+   "compared_to": "Quantum Riddler",
+   "compared_uri": "https://scryfall.com/card/eoe/72/quantum-riddler?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/1/2/120be808-ff3b-4fca-96a1-4db6b9825856.jpg?1783905977",
+   "text": "It may not prompt you to draw a card like Quantum Riddler might, but your opponent can\u2019t possibly allow Spock to live for too long since you\u2019ll be drawing two cards every turn."
+  },
+  {
+   "name": "Subcommander T'Pol",
+   "grade": "B",
+   "uri": "https://scryfall.com/card/trk/82/subcommander-tpol?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/7/d/7d90016d-c2cb-457b-9d97-c3b9411c46e3.jpg?1793013074",
+   "rating": 7.0,
+   "compared_to": "Tishana's Tidebinder",
+   "compared_uri": "https://scryfall.com/card/lci/81/tishanas-tidebinder?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/9/0/907b3d1d-8c85-4707-80b5-c4d832df9846.jpg?1783913786",
+   "text": "The real bonus here is the ability to counter an activated or triggered ability, which Tishana's Tidebinder has shown us can be quite devastating in the right scenarios."
+  },
+  {
+   "name": "Resistance Is Futile",
+   "grade": "C+",
+   "uri": "https://scryfall.com/card/trk/125/resistance-is-futile?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/8/1/81d88257-466d-4729-862f-591885b3d875.jpg?1785981518",
+   "rating": 7.0,
+   "compared_to": "Go for the Throat",
+   "compared_uri": "https://scryfall.com/card/bro/102/go-for-the-throat?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/9/4/94117b09-d852-4f2e-be8e-68ee0ee3c3d8.jpg?1783920086",
+   "text": "Unlike Go for the Throat , it has a very reasonable extra mode that you can use instead."
+  },
+  {
+   "name": "Jadzia Dax, Living Legacy",
+   "grade": "A-",
+   "uri": "https://scryfall.com/card/trk/204/jadzia-dax-living-legacy?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/b/d/bd342f8b-9072-487d-8a33-b1bb149f1502.jpg?1793013267",
+   "rating": 7.0,
+   "compared_to": "Badgermole Cub",
+   "compared_uri": "https://scryfall.com/card/tla/167/badgermole-cub?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/3/4/340c5799-4964-44dd-8c48-8f3f3aba5211.jpg?1786399172",
+   "text": "One of Deep Space Nine \u2019s main characters, Jadzia Dax, Living Legacy is doing a pretty fair impression of a Badgermole Cub ."
+  },
+  {
+   "name": "70,000 Light-Years from Home",
+   "grade": "B-",
+   "uri": "https://scryfall.com/card/trk/1/70000-light-years-from-home?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/0/2/02080f42-863a-471b-992b-67e35ef1b7b7.jpg?1786005780",
+   "rating": 6.0,
+   "compared_to": "Path to Exile",
+   "compared_uri": "https://scryfall.com/card/otp/6/path-to-exile?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/a/a/aa112736-7596-448a-be2f-0798acb3b2ee.jpg?1783911727",
+   "text": "It\u2019s basically a much weaker Path to Exile , but Path is so powerful already that that\u2019s hardly a bad thing."
+  },
+  {
+   "name": "Malfunctioning Holodeck",
+   "grade": "B+",
+   "uri": "https://scryfall.com/card/trk/22/malfunctioning-holodeck?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/0/f/0faeffee-bb07-4b9d-8cdd-e9731bbd2396.jpg?1785981349",
+   "rating": 6.0,
+   "compared_to": "Banishing Light",
+   "compared_uri": "https://scryfall.com/card/blb/1/banishing-light?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/2/5/25a06f82-ebdb-4dd6-bfe8-958018ce557c.jpg?1783910866",
+   "text": "In TNG, the Holodeck would frequently malfunction, trapping its users inside it until the problem could be resolved, so of course this is a Banishing Light variant."
+  },
+  {
+   "name": "H.M.S. Bounty, Unlikely Timeship",
+   "grade": "C+",
+   "uri": "https://scryfall.com/card/trk/63/hms-bounty-unlikely-timeship?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/d/7/d75f0991-39a3-474e-8c01-9b3363c41a9f.jpg?1793013750",
+   "rating": 6.0,
+   "compared_to": "Voyage Home",
+   "compared_uri": "https://scryfall.com/card/dft/227/voyage-home?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/4/b/4ba835da-0247-4716-9079-1b605297f6d5.jpg?1783907851",
+   "text": "In Star Trek IV: The Voyage Home , Kirk and the Enterprise crew travel back in time to rescue a pod of Humpback Whales and bring them to the 23rd century."
+  },
+  {
+   "name": "Bat'leth",
+   "grade": "B-",
+   "uri": "https://scryfall.com/card/trk/94/batleth?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/8/8/888e6e0f-43c3-4516-88ff-8a8d814478d4.jpg?1785981448",
+   "rating": 6.0,
+   "compared_to": "Crude Bent Blade",
+   "compared_uri": "https://scryfall.com/card/hob/63/crude-bent-blade?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/f/a/fa8fd3c4-bd00-485d-80b1-2b67f5786fce.jpg?1785496297",
+   "text": "We\u2019ve seen this play out twice now in the last couple of sets; Lich's Relic was one of the best cards in Reality Fracture and Crude Bent Blade was among the best commons in The Hobbit ."
+  },
+  {
+   "name": "Eject the Warp Core",
+   "grade": "B",
+   "uri": "https://scryfall.com/card/trk/105/eject-the-warp-core?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/0/4/04a479be-8093-4775-a5d9-8b0e1683bf12.jpg?1785981475",
+   "rating": 6.0,
+   "compared_to": "Vayne's Treachery",
+   "compared_uri": "https://scryfall.com/card/fin/124/vaynes-treachery?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/6/d/6de6d23b-7d42-41c1-be1c-010fe43ee586.jpg?1783906610",
+   "text": "Vayne's Treachery was among the best commons in Final Fantasy Limited with good reason."
+  },
+  {
+   "name": "Grand Nagus Zek",
+   "grade": "C+",
+   "uri": "https://scryfall.com/card/trk/112/grand-nagus-zek?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/4/7/47488f1e-512d-4dc6-a82d-1ead24d3276a.jpg?1793013572",
+   "rating": 6.0,
+   "compared_to": "Pitiless Plunderer",
+   "compared_uri": "https://scryfall.com/card/spg/5/pitiless-plunderer?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/e/8/e8da4daa-1441-4d15-b9dc-7732343b38f1.jpg?1783913622",
+   "text": "Either way, just playing it as a 3-mana Pitiless Plunderer should be good enough."
+  },
+  {
+   "name": "Spock, Always Your Friend",
+   "grade": "A-",
+   "uri": "https://scryfall.com/card/trk/253/spock-always-your-friend?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/1/b/1be731d5-8b21-4883-91c0-dd9070b1eadd.jpg?1792508391",
+   "rating": 6.0,
+   "compared_to": "Wandering Mind",
+   "compared_uri": "https://scryfall.com/card/vow/251/wandering-mind?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/4/b/4b9a1096-6313-4245-be18-1588c219b842.jpg?1783924786",
+   "text": "We\u2019ve seen a lot of creatures similar to this in the past, like Augur of Bolas or Wandering Mind ."
+  },
+  {
+   "name": "Mikaeus, the Lunarch",
+   "grade": "B-",
+   "uri": "https://scryfall.com/card/sds/1/mikaeus-the-lunarch?utm_source=api",
+   "special": true,
+   "image": "https://cards.scryfall.io/normal/front/f/5/f57d8134-4ec9-40f2-8d7b-560f246215a5.jpg?1793187352",
+   "rating": 6.0,
+   "compared_to": "Guiding Hydra",
+   "compared_uri": "https://scryfall.com/card/fra/11/guiding-hydra?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/a/5/a53eb840-039d-4c45-b701-d58cb26b1a6c.jpg?1789644816",
+   "text": "This feels a fair bit worse than Reality Fracture \u2019s Guiding Hydra , though it\u2019s still strong enough that you should always play it in a white deck."
+  },
+  {
+   "name": "Hologram Janeway",
+   "grade": "C+",
+   "uri": "https://scryfall.com/card/trk/21/hologram-janeway?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/0/2/02d29047-a7b8-43fb-8b90-b35ba34da5f9.jpg?1793100636",
+   "rating": 5.0,
+   "compared_to": "Luminarch Aspirant",
+   "compared_uri": "https://scryfall.com/card/znr/24/luminarch-aspirant?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/f/e/fe964e7e-e2c5-4263-889d-0a531eb51442.jpg?1783929413",
+   "text": "I often talk about the effect of Luminarch Aspirant and how broken it is in Limited."
+  },
+  {
+   "name": "Shields Up!",
+   "grade": "D+",
+   "uri": "https://scryfall.com/card/trk/35/shields-up!?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/0/b/0b60c9af-8ea9-491d-a4a4-226a2143e7f3.jpg?1785981369",
+   "rating": 5.0,
+   "compared_to": "Take Up the Shield",
+   "compared_uri": "https://scryfall.com/card/dmu/35/take-up-the-shield?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/8/5/851e842e-a497-4c36-90ee-8d64f806c378.jpg?1783921358",
+   "text": "Just like Take Up the Shield before it, Shields Up!"
+  },
+  {
+   "name": "Commander Raffi Musiker",
+   "grade": "C",
+   "uri": "https://scryfall.com/card/trk/100/commander-raffi-musiker?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/7/e/7e60bd56-3da1-4211-b790-320471eef242.jpg?1793013565",
+   "rating": 5.0,
+   "compared_to": "Thraben Inspector",
+   "compared_uri": "https://scryfall.com/card/sir/51/thraben-inspector?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/6/c/6c727d20-51a0-443a-9d40-6efe7b91193a.jpg?1783917691",
+   "text": "A 3-drop Thraben Inspector is pretty strong, even at the cost of 2 life."
+  },
+  {
+   "name": "Adversary by Algorithm",
+   "grade": "C",
+   "uri": "https://scryfall.com/card/trk/182/adversary-by-algorithm?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/4/1/41644f06-d08f-406c-a56a-47e1b5273982.jpg?1793013240",
+   "rating": 5.0,
+   "compared_to": "Bestial Incursion",
+   "compared_uri": "https://scryfall.com/card/fra/98/bestial-incursion?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/e/0/e0de5f66-f0df-4866-9f73-104ce50411b4.jpg?1789127248",
+   "text": "I really like that, and with how good Bestial Incursion was in Reality Fracture , I have no problem thinking this will be very good here, too."
+  },
+  {
+   "name": "Jake Sisko, War Correspondent",
+   "grade": "C+",
+   "uri": "https://scryfall.com/card/trk/205/jake-sisko-war-correspondent?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/9/e/9e47c6b6-f99b-46be-98a1-92c98416aefe.jpg?1793013276",
+   "rating": 5.0,
+   "compared_to": "Eumidian Terrabotanist",
+   "compared_uri": "https://scryfall.com/card/eoe/180/eumidian-terrabotanist?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/6/4/64fb2981-86ed-478a-89cd-c6bb078a5bc7.jpg?1783905940",
+   "text": "Eumidian Terrabotanist is already a fine card, so throw in the ability to investigate sometimes and you have a very nice card."
+  },
+  {
+   "name": "Temporal Conqueror",
+   "grade": "B-",
+   "uri": "https://scryfall.com/card/trk/219/temporal-conqueror?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/b/0/b0bb51a7-1ae2-45d0-8be9-5454a3c8f751.jpg?1793361377",
+   "rating": 5.0,
+   "compared_to": "Eccentric Farmer",
+   "compared_uri": "https://scryfall.com/card/mid/185/eccentric-farmer?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/b/5/b5339f6e-9ed7-4734-91c9-c2ed59ca1052.jpg?1783925579",
+   "text": "We\u2019ve seen this exact card in previous sets between Temporal Conqueror , Eccentric Farmer , and Ostrich-Horse , which all varied in power level."
+  },
+  {
+   "name": "Zero, Incorporeal Sensate",
+   "grade": "B-",
+   "uri": "https://scryfall.com/card/trk/258/zero-incorporeal-sensate?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/9/3/93f616fe-6906-4e5d-b9fe-b432cccdb0ec.jpg?1792508418",
+   "rating": 5.0,
+   "compared_to": "Elite Spellbinder",
+   "compared_uri": "https://scryfall.com/card/stx/17/elite-spellbinder?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/9/d/9d3a7998-ccac-45ad-a4e9-3a2cb057f63b.jpg?1783927390",
+   "text": "It\u2019s essentially an uncommon Elite Spellbinder that also works with all of your Borg payoffs, despite not being a Borg itself."
+  },
+  {
+   "name": "Talon Gates of Madara",
+   "grade": "C+",
+   "uri": "https://scryfall.com/card/sds/28/talon-gates-of-madara?utm_source=api",
+   "special": true,
+   "image": "https://cards.scryfall.io/normal/front/3/e/3e2c6447-e599-4b89-8a34-e46aa306a3f7.jpg?1793187495",
+   "rating": 5.0,
+   "compared_to": "Unknown Shores",
+   "compared_uri": "https://scryfall.com/card/thb/249/unknown-shores?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/4/9/492181e4-5825-45d4-b8a1-37f29c32a845.jpg?1783931508",
+   "text": "We\u2019re already happy playing it as Unknown Shores with upside, and sometimes it\u2019ll be really powerful when you get to use its ability at the right time."
+  },
+  {
+   "name": "Dr. Beverly Crusher",
+   "grade": "D",
+   "uri": "https://scryfall.com/card/trk/13/dr-beverly-crusher?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/e/f/ef9c5790-d909-4271-90bd-5fa4816ddd6b.jpg?1784065540",
+   "rating": 4.0,
+   "compared_to": "Ajani's Pridemate",
+   "compared_uri": "https://scryfall.com/card/fdn/135/ajanis-pridemate?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/2/2/222c1a68-e34c-4103-b1be-17d4ceaef6ce.jpg?1783909088",
+   "text": "Here, this doctor is an Ajani's Pridemate that also doubles lifegain triggers, so it picks up two +1/+1 counters every time you gain life."
+  },
+  {
+   "name": "There's Coffee in that Nebula",
+   "grade": "C",
+   "uri": "https://scryfall.com/card/trk/40/theres-coffee-in-that-nebula?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/8/d/8dd7e0c6-84f6-4570-af93-4c64e78c2868.jpg?1792668331",
+   "rating": 4.0,
+   "compared_to": "Think Twice",
+   "compared_uri": "https://scryfall.com/card/fdn/165/think-twice?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/d/8/d88faaa1-eb41-40f7-991c-5c06e1138f3d.jpg?1783909078",
+   "text": "As much as this is a meme (the episode wasn\u2019t particularly good after all), the card itself looks quite strong, essentially like a white Think Twice with a bit of card selection thrown in."
+  },
+  {
+   "name": "Cha'DIch Investigator",
+   "grade": "C",
+   "uri": "https://scryfall.com/card/trk/97/chadich-investigator?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/1/6/16281200-4660-4871-afd2-d4720e6a3197.jpg?1785981461",
+   "rating": 4.0,
+   "compared_to": "Girder Goons",
+   "compared_uri": "https://scryfall.com/card/snc/80/girder-goons?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/4/b/4bfd6449-31a1-4572-8f9c-3f6f4670dc9d.jpg?1783923130",
+   "text": "Five-drops tend to be very replaceable these days, yet Cha'DIch Investigator looks surprisingly good for a common, kind of like Girder Goons from Streets of New Capenna ."
+  },
+  {
+   "name": "Pattern Buffer Preservation",
+   "grade": "C+",
+   "uri": "https://scryfall.com/card/trk/123/pattern-buffer-preservation?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/2/3/23166580-9676-4025-916b-864568c2e59d.jpg?1793361304",
+   "rating": 4.0,
+   "compared_to": "Resentful Revelation",
+   "compared_uri": "https://scryfall.com/card/fin/114/resentful-revelation?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/9/4/945006ea-c6a1-4ee5-abb2-387c2b6d3123.jpg?1783906613",
+   "text": "This card reminds me a lot of Final Fantasy \u2019s Resentful Revelation ."
+  },
+  {
+   "name": "Horta",
+   "grade": "C",
+   "uri": "https://scryfall.com/card/trk/152/horta?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/a/b/abf44662-62ad-47fb-9cfe-6bed47133de5.jpg?1785981533",
+   "rating": 4.0,
+   "compared_to": "Colossal Dreadmaw",
+   "compared_uri": "https://scryfall.com/card/m21/176/colossal-dreadmaw?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/8/0/8059c52b-5d25-4052-b48a-e9e219a7a546.jpg?1783930678",
+   "text": "Poor old Colossal Dreadmaw , another victim of power creep in the 2020s."
+  },
+  {
+   "name": "Plasma Cascade",
+   "grade": "C-",
+   "uri": "https://scryfall.com/card/trk/164/plasma-cascade?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/3/c/3c786a2f-3de4-4b24-a3a0-15b1f2a07324.jpg?1785981557",
+   "rating": 4.0,
+   "compared_to": "Lightning Strike",
+   "compared_uri": "https://scryfall.com/card/dft/136/lightning-strike?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/3/0/30077b49-b825-4dbb-a0c7-f3992f647df0.jpg?1783907880",
+   "text": "Plasma Cascade isn\u2019t exactly Lightning Strike , but it\u2019s still a good deal for 3 mana."
+  },
+  {
+   "name": "Command Decision",
+   "grade": "C-",
+   "uri": "https://scryfall.com/card/trk/8/command-decision?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/9/f/9f1f789b-5c08-4a4d-b3a3-4d51ad9f1a4d.jpg?1785981318",
+   "rating": 3.0,
+   "compared_to": "Surgical Precision",
+   "compared_uri": "https://scryfall.com/card/fra/22/surgical-precision?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/d/3/d3acf176-ef02-4729-88c4-0f0dfbfdada4.jpg?1789385570",
+   "text": "This looks eerily similar to Surgical Precision , which we just saw in Reality Fracture ."
+  },
+  {
+   "name": "Marooned",
+   "grade": "D+",
+   "uri": "https://scryfall.com/card/trk/72/marooned?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/0/8/0820a78e-e392-423c-9d62-ddfda5cb3f03.jpg?1785981422",
+   "rating": 3.0,
+   "compared_to": "Infinite Coursework",
+   "compared_uri": "https://scryfall.com/card/fra/31/infinite-coursework?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/a/5/a5988272-faaa-463d-a0a1-a8e96b946bad.jpg?1789385916",
+   "text": "As it stands, it\u2019s a fine way to remove a creature, but it\u2019s not without significant downsides that will surely hold it back compared to cards like Infinite Coursework ."
+  },
+  {
+   "name": "Open Communications",
+   "grade": "D+",
+   "uri": "https://scryfall.com/card/trk/76/open-communications?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/8/e/8eeec269-13f0-4923-9f13-e995acd73e00.jpg?1786396013",
+   "rating": 3.0,
+   "compared_to": "Think Twice",
+   "compared_uri": "https://scryfall.com/card/fdn/165/think-twice?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/d/8/d88faaa1-eb41-40f7-991c-5c06e1138f3d.jpg?1783909078",
+   "text": "We\u2019re not typically in the habit of casting 1-mana cantrips without some good reason to do so, but Open Communications will surely act more like a Think Twice ."
+  },
+  {
+   "name": "Cantankerous Captain",
+   "grade": "D+",
+   "uri": "https://scryfall.com/card/trk/141/cantankerous-captain?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/2/c/2c053ec5-d1ea-4526-8a0d-e4dfafb8ecdf.jpg?1786005671",
+   "rating": 3.0,
+   "compared_to": "Valor Singer",
+   "compared_uri": "https://scryfall.com/card/afr/165/valor-singer?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/8/9/89bc162c-bdf1-43f7-882f-d8cee4f3f415.jpg?1783926470",
+   "text": "Cantankerous Captain brings back the design we saw on Valor Singer from Forgotten Realms and adds a pretty mediocre bonus once you have 8 power among your creatures."
+  },
+  {
+   "name": "Test of Identity",
+   "grade": "C-",
+   "uri": "https://scryfall.com/card/trk/177/test-of-identity?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/7/e/7e1c0423-bf58-47a1-a838-c15bbf40eaba.jpg?1793359534",
+   "rating": 3.0,
+   "compared_to": "Thrill of Possibility",
+   "compared_uri": "https://scryfall.com/card/dmu/148/thrill-of-possibility?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/2/5/25e5dc88-9573-4eaa-bd37-eb0dee4add03.jpg?1783921308",
+   "text": "Some decks are going to be perfectly happy casting this as Thrill of Possibility , while Klingon decks are going to want it as a cool combat trick that you can essentially cycle."
+  },
+  {
+   "name": "Cybernetic Specialist",
+   "grade": "D+",
+   "uri": "https://scryfall.com/card/trk/262/cybernetic-specialist?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/b/1/b147f16e-a2d6-4d43-9213-9a2723b0d3ef.jpg?1786005495",
+   "rating": 3.0,
+   "compared_to": "Sanitation Automaton",
+   "compared_uri": "https://scryfall.com/card/mkm/256/sanitation-automaton?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/5/2/52608ba4-c47d-44e4-b624-dee2a3a42ae2.jpg?1783912829",
+   "text": "It\u2019s a strictly better version of Sanitation Automaton from Murders at Karlov Manor , which was a huge overperformer."
+  },
+  {
+   "name": "Tricorder",
+   "grade": "D-",
+   "uri": "https://scryfall.com/card/trk/270/tricorder?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/3/c/3c872f02-80ac-49e3-a777-3526d35ad7cc.jpg?1792508457",
+   "rating": 3.0,
+   "compared_to": "Short Sword",
+   "compared_uri": "https://scryfall.com/card/m21/236/short-sword?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/9/7/973c166e-3e93-4ed5-b4c5-84dc158a8e4f.jpg?1783930656",
+   "text": "Short Sword variants crop up time and time again, and they\u2019re usually only slightly outside the realm of what\u2019s playable."
+  },
+  {
+   "name": "Unexplored Territory",
+   "grade": "D+",
+   "uri": "https://scryfall.com/card/trk/303/unexplored-territory?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/c/a/ca1e60f1-11a9-4bb8-9f6e-5b652b49c517.jpg?1793361459",
+   "rating": 3.0,
+   "compared_to": "Evolving Wilds",
+   "compared_uri": "https://scryfall.com/card/afr/256/evolving-wilds?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/7/1/71afb548-691d-4c72-b369-85f9b451c71d.jpg?1783926433",
+   "text": "While you get access to some mana on the turn you play it, on balance Unexplored Territory is simply worse than an Evolving Wilds , which we have a precedent for in how poor Shire Terrace was in The Lord of the Rings ."
+  },
+  {
+   "name": "DOT-7 Repair Squad",
+   "grade": "D-",
+   "uri": "https://scryfall.com/card/trk/12/dot-7-repair-squad?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/f/c/fca1528c-84cc-42d2-99ae-9f10f0e28743.jpg?1786005749",
+   "rating": 2.0,
+   "compared_to": "Wakandan Drone Flock",
+   "compared_uri": "https://scryfall.com/card/msh/40/wakandan-drone-flock?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/4/b/4b12dc1f-2218-4c71-aafa-ea6a26eeb0aa.jpg?1783902964",
+   "text": "That said, I thought the same about Wakandan Drone Flock , and that ended up being very good within the context of Marvel Super Heroes , so you never know."
+  },
+  {
+   "name": "Federation Resupply",
+   "grade": "D",
+   "uri": "https://scryfall.com/card/trk/18/federation-resupply?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/5/6/5626c58f-9245-437a-9844-b023320cf709.jpg?1793273787",
+   "rating": 2.0,
+   "compared_to": "Mystical Teachings",
+   "compared_uri": "https://scryfall.com/card/fdn/594/mystical-teachings?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/3/f/3f88eacf-5c7b-4a35-86f0-af3b0516d4c2.jpg?1783908933",
+   "text": "However, Federation Resupply lets you search for two things overall, kind of like a white Mystical Teachings ."
+  },
+  {
+   "name": "Battle-Scarred Survivalist",
+   "grade": "D-",
+   "uri": "https://scryfall.com/card/trk/95/battle-scarred-survivalist?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/c/5/c567253e-a2ee-45de-b3c6-3aeafbf8237b.jpg?1785981454",
+   "rating": 2.0,
+   "compared_to": "Unruly Mob",
+   "compared_uri": "https://scryfall.com/card/mid/40/unruly-mob?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/5/f/5f48622a-abf3-407f-921f-77c29d59ba8e.jpg?1783925648",
+   "text": "We\u2019ve seen Unruly Mob in past sets be virtually unplayable, and this feels like a watered down version of that."
+  },
+  {
+   "name": "Pure Energy",
+   "grade": "F",
+   "uri": "https://scryfall.com/card/trk/31/pure-energy?utm_source=api",
+   "special": false,
+   "image": "https://cards.scryfall.io/normal/front/2/1/215709a8-044f-4fdb-b3ca-bd5a394b2a0f.jpg?1793361211",
+   "rating": 1.0,
+   "compared_to": "Predictive Preparations",
+   "compared_uri": "https://scryfall.com/card/fra/16/predictive-preparations?utm_source=api",
+   "compared_image": "https://cards.scryfall.io/normal/front/5/0/50a0e5f0-3c39-4f16-9a73-eec8ef71f12e.jpg?1789556696",
+   "text": "I was a fan of Predictive Preparations in Reality Fracture , though it didn\u2019t really perform well, but I\u2019m not a fan of Pure Energy ."
+  }
+ ],
  "verdicts": {
-  "high": [],
-  "low": []
+  "high": [
+   {
+    "name": "U.S.S. Enterprise-A, Free Spirit",
+    "grade": "A+",
+    "rating": 10.0,
+    "uri": "https://scryfall.com/card/trk/43/uss-enterprise-a-free-spirit?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/9/9/99429015-6e5d-4ecf-aaf7-eba181bcffc7.jpg?1792508162",
+    "text": "The Enterprise is one of the most recognizable spacecraft in all of pop culture, and this being one of the strongest cards in TRK is exactly what we want to see.",
+    "special": false
+   },
+   {
+    "name": "Excalbian Gamemaster",
+    "grade": "A+",
+    "rating": 10.0,
+    "uri": "https://scryfall.com/card/trk/16/excalbian-gamemaster?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/3/1/31b5780c-8c5f-4836-8848-1eea1d416a93.jpg?1792753846",
+    "text": "I wouldn\u2019t be surprised if this was the best card in Star Trek Limited.",
+    "special": false
+   },
+   {
+    "name": "Sheoldred, the Apocalypse",
+    "grade": "A+",
+    "rating": 10.0,
+    "uri": "https://scryfall.com/card/sds/11/sheoldred-the-apocalypse?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/c/6/c68629ff-72b3-40a2-b578-cddb6ddb4ccf.jpg?1793238904",
+    "text": "Sheoldred is a menace and likely one of the best cards in this set.",
+    "special": true
+   },
+   {
+    "name": "The Destruction of Praxis",
+    "grade": "A",
+    "rating": 9.0,
+    "uri": "https://scryfall.com/card/trk/103/the-destruction-of-praxis?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/3/d/3d33ac2a-73a9-4804-bf9f-c8cf4eea1c76.jpg?1793187997",
+    "text": "I\u2019m still unsure as to how easy it\u2019ll be to get up to six different lands, but assuming it\u2019s regularly possible, The Destruction of Praxis has a chance at being among the best cards in Star Trek .",
+    "special": false
+   },
+   {
+    "name": "Borg Cube",
+    "grade": "A+",
+    "rating": 9.0,
+    "uri": "https://scryfall.com/card/trk/227/borg-cube?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/e/5/e58f7310-3fd5-48d5-b6b7-a5d3e1808bbc.jpg?1792508285",
+    "text": "I\u2019m hesitant to give this a flat 10/10 due to its high costs, but this looks like one of the scariest cards to play against.",
+    "special": false
+   },
+   {
+    "name": "The Caretaker",
+    "grade": "B+",
+    "rating": 9.0,
+    "uri": "https://scryfall.com/card/trk/47/the-caretaker?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/e/c/ec6a1967-78fc-4ef4-9816-6d9a9dde61fb.jpg?1793538731",
+    "text": "Facing dilemmas seems remarkably easy to do in Star Trek , and The Caretaker has got to be the best payoff for them.",
+    "special": false
+   },
+   {
+    "name": "Captain Jean-Luc Picard",
+    "grade": "A",
+    "rating": 9.0,
+    "uri": "https://scryfall.com/card/trk/7/captain-jean-luc-picard?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/b/7/b7114271-eb05-41e2-ad96-a34f53492312.jpg?1792508148",
+    "text": "Here, we have the best Captain in the whole show (fight me), Captain Jean-Luc Picard .",
+    "special": false
+   },
+   {
+    "name": "Death Is Irrelevant",
+    "grade": "B",
+    "rating": 9.0,
+    "uri": "https://scryfall.com/card/trk/102/death-is-irrelevant?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/4/0/408cb5dd-1a79-47a9-98ea-41f3f4502c5e.jpg?1792668404",
+    "text": "Weirdly enough, Death Is Irrelevant looks basically unplayable in Borg decks.",
+    "special": false
+   },
+   {
+    "name": "U.S.S. Enterprise-D, Galaxy-Class",
+    "grade": "B-",
+    "rating": 8.0,
+    "uri": "https://scryfall.com/card/trk/273/uss-enterprise-d-galaxy-class?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/0/5/057a4413-6a17-491e-bfd7-6cd427b1a442.jpg?1784078038",
+    "text": "The Enterprise-D is a phenomenal card and probably one of the strongest first picks in the entire set, given that any deck can play it.",
+    "special": false
+   },
+   {
+    "name": "The City on the Edge of Forever",
+    "grade": "A",
+    "rating": 7.0,
+    "uri": "https://scryfall.com/card/trk/228/the-city-on-the-edge-of-forever?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/a/a/aac6f64d-d39a-4994-bc70-6b477b2640f8.jpg?1787205815",
+    "text": "Widely regarded as the best episode of the original series, and I\u2019m inclined to agree, The City on the Edge of Forever sees a deranged McCoy time travel back to the 1930s and inadvertently alter the present so that Starfleet never existed.",
+    "special": false
+   },
+   {
+    "name": "Hologram Stalker",
+    "grade": "B+",
+    "rating": 7.0,
+    "uri": "https://scryfall.com/card/trk/202/hologram-stalker?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/6/b/6bd8a87b-ca7a-4a15-b96f-1a673ee44f3e.jpg?1792668500",
+    "text": "I call this a payoff for black/green, but it\u2019s honestly so strong on rate that every green deck should play it, and it\u2019s likely the best green uncommon in Star Trek .",
+    "special": false
+   },
+   {
+    "name": "Locutus, the One Who Speaks",
+    "grade": "A-",
+    "rating": 7.0,
+    "uri": "https://scryfall.com/card/trk/245/locutus-the-one-who-speaks?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/2/9/296f1127-14a0-42c4-9e4a-c0d929720748.jpg?1792508366",
+    "text": "In one of The Next Generation \u2019s best plot twists, the season three finale sees the Borg assimilate Picard into their collective, giving him new life as \u201cLocutus\u201d.",
+    "special": false
+   }
+  ],
+  "low": [
+   {
+    "name": "Infinite Diversity",
+    "grade": "D",
+    "rating": 0.0,
+    "uri": "https://scryfall.com/card/trk/153/infinite-diversity?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/3/3/33ade614-3593-4055-8ecc-2d9e4858ba19.jpg?1793273819",
+    "text": "It\u2019s pretty close to uncastable in most situations, and it requires a good spell to copy and plenty of creatures in play to fuel it, all of which add up to an unplayable mythic .",
+    "special": false
+   },
+   {
+    "name": "Dominion Infiltration",
+    "grade": "D-",
+    "rating": 0.0,
+    "uri": "https://scryfall.com/card/trk/147/dominion-infiltration?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/3/8/38b7cc7c-e6f0-4460-83c0-0bcd1ab5b4cf.jpg?1793274258",
+    "text": "You have no control over how good Dominion Infiltration will be when you maindeck it, which is a surefire recipe for a terrible, unplayable card.",
+    "special": false
+   },
+   {
+    "name": "Starfleet Academy",
+    "grade": "D",
+    "rating": 0.0,
+    "uri": "https://scryfall.com/card/trk/297/starfleet-academy?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/2/d/2da8d3bf-4397-4844-90d6-dd888becc804.jpg?1792508542",
+    "text": "This looks completely unplayable to me, and harder to enable than similar lands of the past that were also useless in Limited.",
+    "special": false
+   },
+   {
+    "name": "Branching Timeline",
+    "grade": "F",
+    "rating": 0.0,
+    "uri": "https://scryfall.com/card/trk/185/branching-timeline?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/4/a/4a2231ff-677d-4041-9413-b8d683846920.jpg?1793013249",
+    "text": "Branching Timeline does nothing of the sort and is entirely random, which makes it completely unplayable.",
+    "special": false
+   },
+   {
+    "name": "Bruvac the Grandiloquent",
+    "grade": "D-",
+    "rating": 0.0,
+    "uri": "https://scryfall.com/card/sds/8/bruvac-the-grandiloquent?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/4/2/426bd73c-67d2-4f9a-8fd9-214ccacb1d7d.jpg?1793187341",
+    "text": "Unless you really want to play Zachary Quinto as a Horned Turtle , you should never play this.",
+    "special": true
+   },
+   {
+    "name": "Rules of Acquisition",
+    "grade": "C-",
+    "rating": 1.0,
+    "uri": "https://scryfall.com/card/trk/78/rules-of-acquisition?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/3/0/307c36ec-6fa1-4d4b-afcd-c3c83b876ee8.jpg?1793013546",
+    "text": "I think the best way to use this would be to donate something to your opponent and draw three cards, but that\u2019s still not a good exchange unless you give away something truly useless.",
+    "special": false
+   },
+   {
+    "name": "Red Alert!",
+    "grade": "D-",
+    "rating": 1.0,
+    "uri": "https://scryfall.com/card/trk/169/red-alert!?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/0/f/0f9b10d3-ba76-45ec-a85c-fb7b26da5561.jpg?1793274269",
+    "text": "Trumpet Blast is basically never playable and getting a cost reduction on the worst turn to play it isn\u2019t even an upside.",
+    "special": false
+   },
+   {
+    "name": "Impossible Choice",
+    "grade": "D+",
+    "rating": 2.0,
+    "uri": "https://scryfall.com/card/trk/116/impossible-choice?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/6/c/6c5a87cf-7790-4335-8497-ff793bbdcb05.jpg?1793013157",
+    "text": "The season two episode of Voyager , \u201cTuvix\u201d, posited one of the show\u2019s best and most well-known ethical conundrums.",
+    "special": false
+   },
+   {
+    "name": "Battle-Scarred Survivalist",
+    "grade": "D-",
+    "rating": 2.0,
+    "uri": "https://scryfall.com/card/trk/95/battle-scarred-survivalist?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/c/5/c567253e-a2ee-45de-b3c6-3aeafbf8237b.jpg?1785981454",
+    "text": "We\u2019ve seen Unruly Mob in past sets be virtually unplayable, and this feels like a watered down version of that.",
+    "special": false
+   },
+   {
+    "name": "Emergency Medical Hologram",
+    "grade": "C",
+    "rating": 2.0,
+    "uri": "https://scryfall.com/card/trk/15/emergency-medical-hologram?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/d/d/dda6f965-cbdf-4dbc-b0b1-00c27e32f5f2.jpg?1786005719",
+    "text": "Putting its +1/+1 counter on itself isn\u2019t the best play you could make, as a 1/2 on the board is very weak.",
+    "special": false
+   },
+   {
+    "name": "Sisay, Weatherlight Captain",
+    "grade": "D-",
+    "rating": 2.0,
+    "uri": "https://scryfall.com/card/sds/4/sisay-weatherlight-captain?utm_source=api",
+    "image": "https://cards.scryfall.io/normal/front/7/0/7002530b-41cf-4b2e-9ccd-4fd305364c6b.jpg?1793187362",
+    "text": "The Strange New Worlds archetype might be able to make this work, but it\u2019s a long shot at best.",
+    "special": true
+   }
+  ]
  }
 }
