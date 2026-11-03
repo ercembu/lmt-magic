@@ -97,6 +97,7 @@ def build(setcode="FRA"):
     cards = json.load(open(f"{ROOT}/data/grades_{setcode}.json"))
     info = guards.load_setinfo(setcode) or {"archetypes": {}, "removal": []}
     notes = load_notes(setcode)
+    tags = load_tags(setcode)
     playable = [c for c in cards if not is_land(c) and in_pool(c)]
     alt = alt_scores(setcode, cards)
     scores = {"model": {c["name"]: c["z"] for c in cards}, **alt}
@@ -183,6 +184,15 @@ def build(setcode="FRA"):
             "key_cards": keys[:6],
             "top": best[:8],
         }
+        # Draftsim's simulator tags: which cards serve this pair, as enabler or payoff. Synergy the
+        # model can't see; their ratings are not used (see draftsim_bot.py).
+        tagged = tags.get(pair, {})
+        if tagged:
+            byname = {c["name"]: c for c in cards if in_pool(c)}
+            for role in ("Payoff", "Enabler"):
+                got = sorted((byname[n] for n in tagged.get(role, []) if n in byname), key=lambda c: -c["z"])
+                pairs[pair][role.lower() + "s"] = got
+            pairs[pair]["tag_name"] = tagged.get("name")
     ord_pairs = sorted(pairs.values(), key=lambda p: -p["deck_mean_z"])
     for i, p in enumerate(ord_pairs):
         pairs[p["pair"]]["rank"] = i + 1
@@ -211,6 +221,27 @@ def build(setcode="FRA"):
             "view_labels": VIEW_LABEL, "agreement": corr, "notes": notes}
 
 
+def load_tags(setcode):
+    """{pair: {"name": archetype, "Payoff": [card names], "Enabler": [...]}} from Draftsim's simulator
+    table (data/draftsim_bot/<SET>.json, fetched by draftsim_bot.py); {} when there is none."""
+    p = f"{ROOT}/data/draftsim_bot/{setcode}.json"
+    if not os.path.exists(p):
+        return {}
+    import draftsim_bot, expert_grades
+    look = expert_grades.name_index(setcode)
+    out = {}
+    for row in json.load(open(p)):
+        name = look(row.get("Name", "").replace("_", " "))
+        if not name:
+            continue
+        for pair, arch, role in draftsim_bot.archetypes(row):
+            key = "".join(sorted(pair, key=WUBRG.index)) if set(pair) <= set(WUBRG) else pair
+            d = out.setdefault(key, {"name": arch})
+            if name not in d.setdefault(role, []):
+                d[role].append(name)
+    return out
+
+
 def load_notes(setcode):
     """Hand-summarized advice from the set reviews (data/setnotes/<SET>.json): format tips, what each
     mechanic asks of you, and how each pair is built. Shown as helper text on the signals page."""
@@ -232,9 +263,11 @@ if __name__ == "__main__":
            "depth": res["depth"],
            "pulls": {k: [slim(c) for c in v] for k, v in res["pulls"].items()},
            "pairs": {k: {**{kk: vv for kk, vv in v.items()
-                            if kk not in ("gold", "key_cards", "top")},
+                            if kk not in ("gold", "key_cards", "top", "payoffs", "enablers")},
                          "gold": [slim(c) for c in v["gold"]],
                          "key_cards": [slim(c) for c in v["key_cards"]],
+                         "payoffs": [slim(c) for c in v.get("payoffs", [])],
+                         "enablers": [slim(c) for c in v.get("enablers", [])],
                          "top": [slim(c) for c in v["top"]]}
                      for k, v in res["pairs"].items()}}
     json.dump(out, open(f"{ROOT}/data/signals_{code}.json", "w"), indent=1)

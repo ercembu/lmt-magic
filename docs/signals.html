@@ -239,6 +239,8 @@ fetch(LMT.D('signals.json')).then(r=>r.json()).then(d=>{
     const p=d.pairs[k];
     CardPreview.registerCards(p.gold); CardPreview.registerCards(p.key_cards);
     CardPreview.registerCards(p.top);
+    if(p.payoffs) CardPreview.registerCards(p.payoffs);
+    if(p.enablers) CardPreview.registerCards(p.enablers);
   }
   const esc = t=>String(t).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
   if(d.notes && (d.notes.format||d.notes.mechanics)){
@@ -322,6 +324,10 @@ fetch(LMT.D('signals.json')).then(r=>r.json()).then(d=>{
         ${weakKeys>=Math.ceil(p.key_cards.length/2)
           ? `<p class="caveat">${weakKeys} of ${p.key_cards.length} graded C or lower —
              synergy the model can't see.</p>` : ''}`:''}
+      ${(p.payoffs&&p.payoffs.length)?`<p class="sub">Payoffs — Draftsim tags ${p.payoffs.length} for this deck</p>
+        <div class="chips">${p.payoffs.slice(0,8).map(chip).join('')}</div>`:''}
+      ${(p.enablers&&p.enablers.length)?`<p class="sub">Enablers — ${p.enablers.length} tagged; the best few</p>
+        <div class="chips">${p.enablers.slice(0,8).map(chip).join('')}</div>`:''}
     </section>`;
   }).join('');
 
