@@ -8,7 +8,7 @@ available for the set we actually want to grade.
 Draftsim publishes one review per set at /mtg-<code>-limited-set-review/ with
 each card as an image (alt = card name) followed by "Rating: N/10".
 """
-import json, os, re, subprocess, sys
+import html as html_lib, json, os, re, subprocess, sys
 import numpy as np
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
@@ -40,6 +40,12 @@ def parse(html):
     marks = []
     for m in re.finditer(r'alt="([^"]{2,80})"', html):
         marks.append(("name", m.start(), m.group(1)))
+    # each card's section heading: the only name mark for cards shown without an image (TRK's
+    # "All Good Things . . .", "Captain's Tutelage") or with an unlabelled one (alt="")
+    for m in re.finditer(r"<h3[^>]*>(.*?)</h3>", html, re.S):
+        name = re.sub(r"<[^>]+>", "", m.group(1)).strip()
+        if 2 <= len(name) <= 80:
+            marks.append(("name", m.start(), name))
     # tags may or may not sit between "Rating:" and the number, so the tag group
     # has to be optional as a whole -- "</?\w*>?" still requires the "<"
     for m in re.finditer(r"Rating:\s*(?:</?\w+[^>]*>\s*)*(\d+(?:\.\d)?)\s*/\s*10", html):
@@ -62,11 +68,28 @@ def resolve(ratings, setcode):
         return {}
     cards = {c["name"] for c in json.load(open(p))}
     idx = {}
-    for k in cards:
-        idx[k] = k
-        idx[k.split(" // ")[0]] = k
-        idx[k.split(",")[0]] = k
-    return {idx[n]: r for n, r in ratings.items() if n in idx}
+    # full names first, then front faces, then names before the comma, so an alias never takes
+    # another card's own name ("Seven of Nine, Unassimilated" is not "Seven of Nine")
+    for alias_of in (lambda k: k, lambda k: k.split(" // ")[0], lambda k: k.split(",")[0]):
+        for k in sorted(cards):
+            a = alias_of(k)
+            idx.setdefault(a, k)
+            idx.setdefault(norm(a), k)
+    out = {}
+    for n, r in ratings.items():
+        k = idx.get(n) or idx.get(norm(n))
+        if k:
+            out.setdefault(k, r)
+    return out
+
+
+def norm(name):
+    """Reviews typeset names: curly quotes and apostrophes, ". . ." for "...", HTML entities."""
+    name = html_lib.unescape(name)
+    for a, b in (("’", "'"), ("‘", "'"), ("“", '"'), ("”", '"'), ("…", "...")):
+        name = name.replace(a, b)
+    name = re.sub(r"\s*\.\s*\.\s*\.", "...", name)
+    return re.sub(r"\s+", " ", name).strip().lower()
 
 
 if __name__ == "__main__":
