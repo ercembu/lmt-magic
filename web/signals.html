@@ -130,6 +130,12 @@ footer p{max-width:78ch}
   .rung .stat,.rung .vws{grid-column:1/-1;justify-content:flex-start;text-align:left}
 }
 @media (max-width:520px){ .pulls{grid-template-columns:1fr} }
+.tips{margin:6px 0 14px;padding-left:20px;color:var(--text-2);line-height:1.5}
+.tips li{margin:4px 0}
+.mechs{margin:0 0 22px}
+.mechs dt{font-weight:600;color:var(--text);margin-top:10px}
+.mechs dd{margin:2px 0 0;color:var(--text-2);line-height:1.5}
+.pair .hook{margin:6px 0 4px;color:var(--text-2);font-size:13.5px;line-height:1.45}
 </style>
 </head>
 <body>
@@ -151,6 +157,13 @@ footer p{max-width:78ch}
   released sets and came out weak — each section says how weak, and you should read them in
   that order.</p>
 </header>
+
+<section id="learn" hidden>
+<h2>Learning the set</h2>
+<p class="note" id="learnSrc"></p>
+<ul class="tips" id="tips"></ul>
+<dl class="mechs" id="mechs"></dl>
+</section>
 
 <h2>What the model thinks of each colour</h2>
 <p class="note warnbox"><b>Tested, and it is weak.</b> Across 31 released sets this ordering
@@ -225,6 +238,15 @@ fetch('signals.json').then(r=>r.json()).then(d=>{
     CardPreview.registerCards(p.gold); CardPreview.registerCards(p.key_cards);
     CardPreview.registerCards(p.top);
   }
+  const esc = t=>String(t).replace(/[&<>"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+  if(d.notes && (d.notes.format||d.notes.mechanics)){
+    document.getElementById('learn').hidden = false;
+    document.getElementById('learnSrc').innerHTML =
+      `How to approach the format, before the model's numbers. From ${esc(d.notes.source||'the set reviews')}`;
+    document.getElementById('tips').innerHTML = (d.notes.format||[]).map(t=>`<li>${esc(t)}</li>`).join('');
+    document.getElementById('mechs').innerHTML = Object.entries(d.notes.mechanics||{})
+      .map(([k,v])=>`<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('');
+  }
   const depth = Object.values(d.depth).sort((a,b)=>a.rank-b.rank);
   const maxZ = Math.max(...depth.map(x=>x.top15_mean_z));
   const deepest = depth[0], thinnest = depth[depth.length-1];
@@ -290,6 +312,7 @@ fetch('signals.json').then(r=>r.json()).then(d=>{
       </div>
       <div class="bar"><i style="width:${width}%"></i></div>
       ${views(p,d)}
+      ${p.hook?`<p class="hook">${esc(p.hook)}</p>`:''}
       ${p.gold.length?`<p class="sub">Signposts — only castable here</p>
         <div class="chips">${p.gold.map(chip).join('')}</div>`:''}
       ${p.key_cards.length?`<p class="sub">What WotC says the deck wants</p>

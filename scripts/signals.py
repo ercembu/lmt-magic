@@ -96,6 +96,7 @@ def alt_scores(setcode, cards):
 def build(setcode="FRA"):
     cards = json.load(open(f"{ROOT}/data/grades_{setcode}.json"))
     info = guards.load_setinfo(setcode) or {"archetypes": {}, "removal": []}
+    notes = load_notes(setcode)
     playable = [c for c in cards if not is_land(c) and in_pool(c)]
     alt = alt_scores(setcode, cards)
     scores = {"model": {c["name"]: c["z"] for c in cards}, **alt}
@@ -175,7 +176,7 @@ def build(setcode="FRA"):
         pairs[pair] = {
             "pair": pair,
             "name": arch["name"] if arch else f"{COLOR_NAMES[pair[0]]}-{COLOR_NAMES[pair[1]]}",
-            "hook": arch.get("hook", "") if arch else "",
+            "hook": (arch.get("hook", "") if arch else "") or notes.get("archetypes", {}).get(pair, ""),
             "deck_mean_z": float(np.mean([c["z"] for c in best])) if best else 0.0,
             "pool_size": len(pool),
             "gold": gold[:6],
@@ -207,7 +208,14 @@ def build(setcode="FRA"):
     return {"set": setcode, "depth": depth, "pulls": pulls, "pairs": pairs,
             "colors": list(WUBRG), "color_names": COLOR_NAMES,
             "views": [v for v in VIEWS if v == "model" or v in alt],
-            "view_labels": VIEW_LABEL, "agreement": corr}
+            "view_labels": VIEW_LABEL, "agreement": corr, "notes": notes}
+
+
+def load_notes(setcode):
+    """Hand-summarized advice from the set reviews (data/setnotes/<SET>.json): format tips, what each
+    mechanic asks of you, and how each pair is built. Shown as helper text on the signals page."""
+    p = f"{ROOT}/data/setnotes/{setcode}.json"
+    return json.load(open(p)) if os.path.exists(p) else {}
 
 
 if __name__ == "__main__":
@@ -220,6 +228,7 @@ if __name__ == "__main__":
     out = {"set": code, "color_names": COLOR_NAMES, "colors": list(WUBRG),
            "views": res["views"], "view_labels": res["view_labels"],
            "agreement": res["agreement"],
+           "notes": {k: res["notes"][k] for k in ("source", "format", "mechanics") if k in res["notes"]},
            "depth": res["depth"],
            "pulls": {k: [slim(c) for c in v] for k, v in res["pulls"].items()},
            "pairs": {k: {**{kk: vv for kk, vv in v.items()

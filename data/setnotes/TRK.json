@@ -1,0 +1,33 @@
+{
+ "set": "TRK",
+ "source": "MTG Arena Zone (j2sjosh): Star Trek mechanics preview and set review, Oct-Nov 2026. Summarized; the grades on this site are the model's, not his.",
+ "format": [
+  "Take fixing early: the Planets, shocklands and surveil lands, plus the basic landcyclers (Free Borg Revolutionaries, Humpback Whales, Rogue Artificial Intelligence, Horta, Cold-Blooded Crew). The Strange New Worlds drafters want the same lands, so don't count on them wheeling.",
+  "The set is full of 1/1 Officer, Borg and Klingon tokens. X/1 creatures trade with free bodies, edicts usually hit a token (prefer the nontoken ones: In the Pale Moonlight, The Wrath of Khan), and small sweepers like Encounter the Unknown and D'Ghor Bloodletter gain value.",
+  "Those same tokens are resources: sacrifice fodder for Eject the Warp Core and Dahar Master, and bodies to station Spacecraft with.",
+  "Lots of artifact creatures (Borg, Spacecraft): removal that only hits nonartifact creatures (Resistance Is Futile) is weaker than it looks, and artifact removal (Perils of the Past) has real targets.",
+  "Synergy cards are everywhere, but judge each card by what it does without its friends. A deck of weak enablers that say \"choose one\" or carry the right creature type loses to a deck of good cards.",
+  "The colorless Anomaly lands make your colors worse for a late-game bonus; most decks skip them (Gaseous Anomaly is the best of them). Starfleet Academy: never.",
+  "Five- and six-drops are crowded with merely fine creatures. Cheap plays that do something are scarcer, and the format's speed is unknown before release."
+ ],
+ "mechanics": {
+  "Beam Me Up": "Cast the spell from your graveyard by returning a creature you control to your hand, then exile it. Best with creatures that have enters-the-battlefield abilities, which you get to use again; at instant speed it also saves a creature from removal. The price is tempo: picking up your own creature hurts when you're behind or trying to race. Marooned's creature can't be beamed away.",
+  "Face a Dilemma": "Triggers whenever you choose a mode, even an obvious one; choosing several modes on one spell still counts once. Dimir's theme. It works when the modal spells are ones you'd play anyway (Command Decision, Impossible Choice, Federation Probe), not when you're adding weak ones (Test of Courage, Test of Loyalty) to feed the payoffs.",
+  "Federation": "Counts different creature types among your non-Borg creatures. Creatures with several types count for more; assimilated creatures (now Borg) and changelings count for nothing.",
+  "Strange New Worlds": "Counts lands with different names, not colors. Dual lands, Planets, surveil lands and Unexplored Territory (keep it on the battlefield) raise it; Xenobotanist fixes colors but doesn't count. Don't play off-color basics to raise the number.",
+  "Spacecraft and Station": "Tap another creature, even one with summoning sickness, at sorcery speed to add charge counters equal to its power; bigger creatures station faster. Strong when you're ahead, slow when you're behind. The best ships pay you before they're fully stationed (U.S.S. Enterprise-D, U.S.S. Discovery, U.S.S. Enterprise-A).",
+  "Assimilate": "Takes control of a creature, which becomes a Borg artifact creature with a +1/+1 counter. Only on a few mythics so far."
+ },
+ "archetypes": {
+  "WU": "Station ships with creatures that weren't going to attack or block anyway. Hemmer loots while stationing; Brad Boimler, Geordi La Forge and Zefram Cochrane speed ships up. Play enough early bodies that you aren't building a ship while losing the board.",
+  "UB": "Play modal spells you'd run anyway (Command Decision, Impossible Choice, Consider the Prime Directive, Federation Probe) and let Seven of Nine, The Caretaker, Melkotian Adjudicator or Captain Benjamin Sisko pay you for them. The common and uncommon enablers are thin, so don't draft filler for triggers.",
+  "BR": "Aggressive Klingons that turn dying creatures into value: Gowron, L'Rell, The Duras Sisters and General Chang lead it, and Eject the Warp Core and Dahar Master turn tokens into removal. Starfleet Security and A Good Day to Die need a sacrifice outlet to do anything.",
+  "RG": "Put extra lands onto the battlefield and get paid each time: Captain Michael Burnham, Syndicate Liquidators, Xindi Surveyors and Saurian Explorer. Genesis Effect is removal plus an instant-speed landfall trigger; Will Riker gives temporary ramp and extra triggers.",
+  "WG": "Spread +1/+1 counters and draw from them: Phlox, The Doctor, Sylvia Tilly and Dr. Joseph M'Benga (who protects the rest of the team but not himself). Holo-Engineer and Support Mission get much better with token makers.",
+  "WB": "Curve out with cheap artifact creatures (Assembly Specialist, Vexing Drone, Tenacious Drone) and let the Borg payoffs scale them: Locutus, Primary Unimatrix Adjunct, Hive Mind Coprocessor, Collation Trimatrix, Organic Avulsion Unit. Assault Drone and the payoffs fall flat without enough artifacts.",
+  "UR": "Keep the spell count high and let the payoffs work: Academy Instructor, Spock, Always Your Friend, Lieutenant Commander Data and Tal Shiar Analyst. Cheap cantrips (Open Communications, Tea, Earl Grey, Hot) keep it moving; Anthropological Mission and Ravenous Cosmozoan belong only here.",
+  "BG": "Fill the graveyard and reuse it: Vash, Freelance Archaeologist draws a card each turn you dig through it, and Temporal Conqueror, Hologram Stalker and Stray from History bring cards back. Beam Me Up spells make good targets to put there.",
+  "WR": "The trigger checks for eight power on the battlefield when you attack, not eight power attacking, so big creatures can stay home. Go wide with tokens: Kirk, Commanding Officer, Captain Jean-Luc Picard, Hologram Janeway and La'An Noonien-Singh.",
+  "UG": "Collect differently named lands (duals, Planets, surveil lands, Unexplored Territory) and ramp with Captain Pike, Captain Kathryn Janeway and Jadzia Dax. The Traveler and Excalbian Gamemaster pay off in any version; Branching Timeline, Deep Space Scan and Cloak and Phaser only in true five-color soup. You still have to cast your spells."
+ }
+}
