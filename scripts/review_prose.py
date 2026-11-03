@@ -7,6 +7,9 @@ support, that a body trades up. Useful for finding what the model is blind to.
 """
 import html, json, os, re, sys
 
+sys.path.insert(0, os.path.dirname(__file__))
+import expert_grades
+
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 CACHE = os.path.join(ROOT, "data", "reviews")
 OUT = os.path.join(ROOT, "data", "prose.json")
@@ -17,15 +20,22 @@ def parse(html_text, setcode):
     parts = re.split(r"Rating:\s*(?:</?\w+[^>]*>\s*)*(\d+(?:\.\d)?)\s*/\s*10", dec)
     out = []
     for i in range(1, len(parts), 2):
-        names = re.findall(r'alt="([^"]{2,70})"', parts[i - 1])
-        if not names:
+        # the card is the last name before its rating: an image's alt text, or the section heading
+        # for cards shown without one (TRK's "All Good Things . . .") or with an empty alt
+        marks = [(m.start(), m.group(1)) for m in re.finditer(r'alt="([^"]{2,70})"', parts[i - 1])]
+        marks += [(m.start(), html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip())
+                  for m in re.finditer(r"<h3[^>]*>(.*?)</h3>", parts[i - 1], re.S)]
+        marks = [mk for mk in marks if 2 <= len(mk[1]) <= 70]
+        if not marks:
             continue
-        body = re.sub(r"(?is)<[^>]+>", " ", parts[i + 1][:1800])
+        name = max(marks)[1]
+        # the next card's heading or image block starts the next write-up; cut there
+        raw = re.split(r"<h[23][\s>]|<div class=\"card_gallery", parts[i + 1][:2500])[0]
+        body = re.sub(r"(?is)<[^>]+>", " ", raw)
         body = html.unescape(re.sub(r"\s+", " ", body)).strip()
-        # the next card's image block starts the next write-up; cut there
         body = re.split(r"\b\d{3,4}_MTG", body)[0].strip()
         if len(body) > 40:
-            out.append({"set": setcode, "name": names[-1].strip(),
+            out.append({"set": setcode, "name": name,
                         "rating": float(parts[i]), "prose": body[:900]})
     return out
 
@@ -36,7 +46,10 @@ if __name__ == "__main__":
         if not f.endswith(".html"):
             continue
         code = f[:-5]
-        recs += parse(open(os.path.join(CACHE, f), encoding="utf8", errors="replace").read(), code)
+        look = expert_grades.name_index(code)
+        for r in parse(open(os.path.join(CACHE, f), encoding="utf8", errors="replace").read(), code):
+            r["name"] = look(r["name"]) or r["name"]     # the set's spelling, so pages can look cards up
+            recs.append(r)
     json.dump(recs, open(OUT, "w"))
     sets = {r["set"] for r in recs}
     words = sum(len(r["prose"].split()) for r in recs)

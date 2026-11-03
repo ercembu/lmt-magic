@@ -63,24 +63,30 @@ def parse(html):
 
 def resolve(ratings, setcode):
     """Keep only names that are real cards in this set."""
+    look = name_index(setcode)
+    out = {}
+    for n, r in ratings.items():
+        k = look(n)
+        if k:
+            out.setdefault(k, r)
+    return out
+
+
+def name_index(setcode):
+    """name -> the set's card name, or None. Takes a review's spelling of a name: full names first,
+    then front faces, then names cut at the comma, so an alias never takes another card's own name
+    ("Seven of Nine, Unassimilated" is not "Seven of Nine"); norm() evens out the typesetting."""
     p = f"{ROOT}/data/cards/{setcode}.json"
     if not os.path.exists(p):
-        return {}
+        return lambda n: None
     cards = {c["name"] for c in json.load(open(p))}
     idx = {}
-    # full names first, then front faces, then names before the comma, so an alias never takes
-    # another card's own name ("Seven of Nine, Unassimilated" is not "Seven of Nine")
     for alias_of in (lambda k: k, lambda k: k.split(" // ")[0], lambda k: k.split(",")[0]):
         for k in sorted(cards):
             a = alias_of(k)
             idx.setdefault(a, k)
             idx.setdefault(norm(a), k)
-    out = {}
-    for n, r in ratings.items():
-        k = idx.get(n) or idx.get(norm(n))
-        if k:
-            out.setdefault(k, r)
-    return out
+    return lambda n: idx.get(n) or idx.get(norm(n))
 
 
 def norm(name):
