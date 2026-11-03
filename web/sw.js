@@ -5,7 +5,7 @@
  * so a refresh picks up new grades, falling back to cache the moment the
  * network is unavailable.
  */
-const SHELL = "fra-shell-v5";
+const SHELL = "fra-shell-v6";
 const DATA = "fra-data-v1";
 const SHELL_FILES = [
   "./", "./index.html", "./signals.html", "./reviews.html", "./ideas.html", "./cardpreview.js",
@@ -54,16 +54,15 @@ self.addEventListener("fetch", e => {
   }
 
   if (url.origin === self.location.origin) {
-    // cache-first for the app shell
+    // network-first for the pages too: cache-first kept serving old pages after a deploy (an old
+    // ideas.html looking for data that had moved). The cache is the offline fallback.
     e.respondWith((async () => {
-      const hit = await caches.match(e.request, { ignoreSearch: true });
-      if (hit) return hit;
       try {
-        const r = await fetch(e.request);
+        const r = await fetch(e.request, { cache: "no-cache" });
         if (r && r.ok) (await caches.open(SHELL)).put(e.request, r.clone());
         return r;
       } catch (err) {
-        return caches.match("./index.html");
+        return (await caches.match(e.request, { ignoreSearch: true })) || caches.match("./index.html");
       }
     })());
   }
