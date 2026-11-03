@@ -185,8 +185,8 @@ footer p{max-width:78ch}
   <p class="lede">Two published set reviews, aggregated — no model involved. <b>Draftsim</b>
   (0-10) and <b>MTG Arena Zone</b> (0-5) have both rated nearly the whole set, and where they
   overlap you get a consensus rather than one person's opinion. They agree with each other at
-  <b>0.75</b>, which is a useful thing to know before trusting either alone. Also here: the
-  <b>track record</b> — 25 past sets where we have ratings and what actually happened.</p>
+  <b id="agreeNum">—</b>, which is a useful thing to know before trusting either alone. Also here: the
+  <b>track record</b> — <span id="trackN">past</span> sets where we have ratings and what actually happened.</p>
   <div class="score" id="score"></div>
 </header>
 
@@ -229,6 +229,9 @@ const pileOf=c=>{const k=c.colors||[];return !k.length?'C':k.length>1?'M':k[0];}
 fetch(LMT.D('reviewdata.json')).then(r=>r.json()).then(d=>{
   CardPreview.registerCards(d.cards);
   const tr=d.track_record.map(t=>t.spearman);
+  if(d.second_source && d.second_source.agreement!=null)
+    document.getElementById('agreeNum').textContent=d.second_source.agreement.toFixed(2);
+  document.getElementById('trackN').textContent=d.track_record.length;
   const mean=tr.reduce((a,b)=>a+b,0)/tr.length;
   document.getElementById('score').innerHTML=`
     <div><div class="k">${d.cards.length}</div><div class="v">cards he rated${d.unrated.length?` (${d.unrated.length} not covered)`:''}</div></div>

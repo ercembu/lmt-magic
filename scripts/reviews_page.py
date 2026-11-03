@@ -14,6 +14,9 @@ import dataset, textfeat, train, predict, mtgazone
 from dataset import MIN_GAMES
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
+# where each set's MTG Arena Zone review starts (its first colour page)
+SECOND_URL = {"FRA": "https://mtgazone.com/reality-fracture-fra-limited-set-review-white/",
+              "TRK": "https://mtgazone.com/?s=star+trek+limited+set+review"}
 GI = {g: i for i, (g, _) in enumerate(predict.GRADE_THRESHOLDS)}
 
 
@@ -198,7 +201,7 @@ def build(setcode="FRA"):
             "second_source": {
                 "name": "MTG Arena Zone (j2sjosh)", "scale": "0-5",
                 "rated": len(second), "overlap": len(both), "agreement": agree,
-                "url": "https://mtgazone.com/reality-fracture-fra-limited-set-review-white/"}}
+                "url": SECOND_URL.get(setcode, "https://mtgazone.com/")}}
 
 
 if __name__ == "__main__":

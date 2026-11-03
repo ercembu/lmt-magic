@@ -19,10 +19,10 @@ from collections import Counter, defaultdict
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 
-# FRA's own vocabulary. Empower is the set's build-around: each colour has a
-# planeswalker token it puts loyalty on, and the five two-colour archetypes are
-# named for those walkers.
-MECHANICS = [
+# Each set's own vocabulary: (name, pattern, what it is[, "type" to match the type line only]).
+# FRA: Empower is the set's build-around: each colour has a planeswalker token it puts
+# loyalty on, and the five two-colour archetypes are named for those walkers.
+MECHANICS = {"FRA": [
     ("Empower", r"\bempower(?:s|ed|ing)?\b",
      "Put loyalty counters on a planeswalker token, creating it first if you "
      "don't have one. Five walkers, one per colour, and the archetypes are named "
@@ -39,7 +39,32 @@ MECHANICS = [
      "A third of the set. Named characters, many appearing twice in different "
      "colours, which is what makes 'every deck has a legend in it' a safe "
      "assumption here and a payoff worth building on.", "type"),
-]
+], "TRK": [
+    ("Beam Me Up", r"\bbeam(?:s|ed|ing)? (?:me |it |them )?up\b|\bbeam(?:ing)? back\b",
+     "Cast the spell again from your graveyard by returning a creature you control to "
+     "your hand. Reuses enters-the-battlefield abilities and can dodge removal, at the "
+     "cost of tempo."),
+    ("Face a Dilemma", r"\bdilemmas?\b",
+     "Triggers whenever you choose a mode on a spell or ability. Dimir's theme, and "
+     "the reason so many cards here say 'choose one'."),
+    ("Federation", r"\bFederation —|\bfederation (?:abilit\w+|count|synerg\w+|payoffs?|deck|cards?|bonus)\b|"
+                   r"\b(?:different|differently typed|more) creature types\b",
+     "Counts the different creature types among your non-Borg creatures: a creature "
+     "with two types counts twice, a Borg counts for nothing."),
+    ("Strange New Worlds", r"\bstrange new worlds?\b|\bdifferently named lands?\b|"
+                           r"\blands? with different names\b",
+     "Counts the lands you control with different names, not colours. Simic's theme, "
+     "and why dual lands and Planets matter more than usual."),
+    ("Spacecraft and Station", r"\bstation(?:s|ed|ing)?\b|\bspacecraft\b|\bcharge counters?\b",
+     "Spacecraft are artifacts that grow as you tap other creatures to station them, "
+     "adding charge counters equal to the creature's power; many become creatures."),
+    ("Assimilate", r"\bassimilat\w*\b|\bBorg\b",
+     "Taking an opponent's creature and turning it into a Borg artifact creature, and "
+     "the Borg artifact-creature deck in white-black around it."),
+    ("Surveil", r"\bsurveil(?:s|ed|ing)?\b",
+     "Look at the top cards, bin them or keep them. Selection that also feeds the "
+     "graveyard decks."),
+]}
 
 # Subjects the reviewer returns to. A sentence is filed under every bucket whose
 # pattern it matches, so a claim about slow removal appears under both.
@@ -116,7 +141,7 @@ def mechanics(prose, grades, setcode):
                         [f.get("oracle_text", "") for f in faces] +
                         [f.get("type_line", "") for f in faces])
     out = []
-    for entry in MECHANICS:
+    for entry in MECHANICS.get(setcode, []):
         name, pat, blurb = entry[:3]
         scope = entry[3] if len(entry) > 3 else "all"
         rx = re.compile(pat, re.I)
