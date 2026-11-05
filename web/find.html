@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kartensuche — Limited Grades</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#191527">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#191527; --ink-2:#211c33; --ink-3:#2b2442; --edge:#372e52;
+  --text:#ece8f6; --text-2:#a49cc0; --text-3:#736b8f;
+  --gA:#ff5fa8; --gB:#c77dff; --gC:#7f93cc; --gD:#6b6580; --gF:#4c4660; --warn:#e8a33d;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--ink);color:var(--text);font:15px/1.45 "IBM Plex Sans",system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased}
+main{max-width:640px;margin:0 auto;padding:20px 16px 60px}
+.topnav{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:18px;font-size:13px;align-items:center}
+.topnav a{color:var(--text-3);text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent}
+.topnav a[aria-current]{color:var(--text);border-bottom-color:var(--gA)}
+h1{font-size:22px;margin:0 0 4px}
+.sub{color:var(--text-3);font-size:13px;margin:0 0 14px}
+#q{width:100%;font:inherit;font-size:19px;padding:14px 14px;border-radius:8px;border:1px solid var(--edge);
+  background:var(--ink-2);color:var(--text);outline:none}
+#q:focus{border-color:var(--text-2)}
+#res{list-style:none;margin:12px 0 0;padding:0}
+#res li a{display:flex;gap:12px;align-items:center;padding:10px;border-radius:8px;text-decoration:none;
+  color:inherit;border:1px solid transparent}
+#res li a:hover,#res li a:focus{background:var(--ink-2);border-color:var(--edge);outline:none}
+#res img{width:54px;height:75px;object-fit:cover;border-radius:4px;background:var(--ink-3);flex:none}
+.g{font-weight:600;font-size:22px;width:38px;text-align:center;flex:none}
+.nm{min-width:0}
+.de{font-weight:500}
+.en{color:var(--text-3);font-size:13px}
+.tag{font-size:11px;color:var(--warn);margin-left:6px;white-space:nowrap}
+.empty{color:var(--text-3);padding:14px 4px}
+</style>
+<script src="sets.js"></script>
+<script src="lmtset.js"></script>
+</head>
+<body data-plain>
+<main>
+  <nav class="topnav">
+    <a href="index.html?set=TRK">Alle Karten</a>
+    <a href="find.html" aria-current="page">Kartensuche</a>
+  </nav>
+  <h1>Kartensuche · Star Trek</h1>
+  <p class="sub" id="sub">Deutschen oder englischen Namen eintippen — Tippfehler sind ok.</p>
+  <input id="q" type="search" placeholder="z. B. Borg-Kubus, Picard, Widerstand…" autocomplete="off"
+    autocapitalize="off" spellcheck="false" autofocus>
+  <ul id="res"></ul>
+</main>
+<script>
+/* The finder is for TRK only: a German card in hand -> its grade. Names come from
+   data/TRK/names_de.json (official German names: Scryfall, reprints included),
+   names_de_unofficial.json (our translations of the new cards, made before the German
+   names were out), and Scryfall live, so official names work the day they are published. */
+const SET = 'TRK';
+const D = f => `data/${SET}/${f}`;
+
+const SYN = [[/\bkapitan(in)?\b/g,'captain'], [/\bkommandant(in)?\b/g,'commander'],
+             [/\bfahnrich\b/g,'ensign'], [/\bdoktor\b/g,'doctor'], [/\bdr\b/g,'doctor']];
+function norm(s){
+  s = (s||'').toLowerCase().replace(/ä/g,'a').replace(/ö/g,'o').replace(/ü/g,'u').replace(/ß/g,'ss')
+    .normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^a-z0-9 ]+/g,' ');
+  for (const [re, to] of SYN) s = s.replace(re, to);
+  return s.replace(/\s+/g,' ').trim();
+}
+function lev(a, b){   // edit distance, small strings
+  if (Math.abs(a.length-b.length) > 3) return 9;
+  let p = Array.from({length:b.length+1}, (_,i)=>i);
+  for (let i=1;i<=a.length;i++){
+    const c=[i];
+    for (let j=1;j<=b.length;j++) c[j]=Math.min(p[j]+1, c[j-1]+1, p[j-1]+(a[i-1]===b[j-1]?0:1));
+    p=c;
+  }
+  return p[b.length];
+}
+function grams(s){ const g=new Set(); s=` ${s} `; for(let i=0;i<s.length-2;i++) g.add(s.slice(i,i+3)); return g; }
+// how well query q matches candidate name n (both normalised): 0..1
+function score(q, n){
+  if (!q || !n) return 0;
+  if (n === q) return 1;
+  if (n.startsWith(q)) return .95;
+  const nt = n.split(' '), qt = q.split(' ');
+  let tok = 0;
+  for (const t of qt){
+    let best = 0;
+    for (const w of nt){
+      if (w === t) { best = 1; break; }
+      if (w.startsWith(t) && t.length >= 2) best = Math.max(best, .85);
+      else if (t.length >= 4) {
+        const d = lev(t, w.slice(0, Math.max(t.length, Math.min(w.length, t.length+1))));
+        if (d <= (t.length >= 7 ? 2 : 1)) best = Math.max(best, .75 - .1*d);
+      }
+    }
+    tok += best;
+  }
+  tok /= qt.length;
+  const a = grams(q), b = grams(n);
+  let inter = 0; for (const g of a) if (b.has(g)) inter++;
+  const dice = 2*inter/(a.size+b.size);
+  return Math.max(tok*.9, dice);
+}
+
+const tierOf = g => (g||'F')[0];
+let CARDS = [], OFFICIAL = {}, UNOFF = {}, INDEX = [];
+
+function build(){
+  INDEX = CARDS.map(c => {
+    const names = [[c.name, 'en']];
+    if (OFFICIAL[c.name]) names.push([OFFICIAL[c.name], 'de']);
+    for (const u of (UNOFF[c.name] || [])) names.push([u, 'unoff']);
+    return {c, names: names.map(([s,k]) => ({s, k, n: norm(s)}))};
+  });
+}
+const esc = s => String(s).replace(/[&<>"]/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[ch]));
+
+function search(){
+  const q = norm(document.getElementById('q').value);
+  const el = document.getElementById('res');
+  if (!q) { el.innerHTML = ''; return; }
+  const hits = [];
+  for (const e of INDEX){
+    let best = 0;
+    for (const x of e.names) best = Math.max(best, score(q, x.n));
+    if (best >= .4) hits.push([best, e]);
+  }
+  hits.sort((a,b) => b[0]-a[0]);
+  if (!hits.length) { el.innerHTML = `<li class="empty">Nichts gefunden.</li>`; return; }
+  el.innerHTML = hits.slice(0, 12).map(([s, {c}]) => {
+    const de = OFFICIAL[c.name] || (UNOFF[c.name]||[])[0] || c.name;
+    const unoff = !OFFICIAL[c.name] && UNOFF[c.name];
+    return `<li><a href="index.html?set=${SET}&card=${encodeURIComponent(c.name)}">
+      ${c.image ? `<img src="${esc(c.image)}" alt="" loading="lazy">` : ''}
+      <span class="g" style="color:var(--g${tierOf(c.grade)})">${esc(c.grade||'?')}</span>
+      <span class="nm"><div class="de">${esc(de)}${unoff ? '<span class="tag">inoffiziell</span>' : ''}</div>
+      ${de !== c.name ? `<div class="en">${esc(c.name)}</div>` : ''}</span></a></li>`;
+  }).join('');
+}
+
+// official German names straight from Scryfall: picks them up the day they appear, no rebuild
+async function liveOfficial(){
+  const KEY = 'lmt-de-live-' + SET;
+  try { Object.assign(OFFICIAL, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch (e) {}
+  const got = {};
+  let url = 'https://api.scryfall.com/cards/search?unique=prints&q=' + encodeURIComponent(`set:${SET.toLowerCase()} lang:de`);
+  try {
+    while (url) {
+      const r = await fetch(url);
+      if (!r.ok) break;          // 404: no German prints yet
+      const d = await r.json();
+      for (const c of d.data) {
+        const faces = (c.card_faces||[]).filter(f => f.printed_name);
+        const pn = c.printed_name || faces.map(f => f.printed_name).join(' // ');
+        if (pn) got[c.name] = pn;
+      }
+      url = d.has_more ? d.next_page : null;
+    }
+  } catch (e) {}
+  if (Object.keys(got).length) {
+    Object.assign(OFFICIAL, got);
+    try { localStorage.setItem(KEY, JSON.stringify(got)); } catch (e) {}
+  }
+}
+
+Promise.all([
+  fetch(D('grades.json')).then(r => r.json()),
+  fetch(D('names_de.json')).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+  fetch(D('names_de_unofficial.json')).then(r => r.ok ? r.json() : {}).catch(() => ({})),
+]).then(([cards, off, unoff]) => {
+  CARDS = cards; UNOFF = unoff; delete UNOFF._note;
+  // names_de.json also carries the first unofficial name for the DE switch; only Scryfall's count as official here
+  for (const [en, de] of Object.entries(off)) if (!(UNOFF[en] && UNOFF[en][0] === de)) OFFICIAL[en] = de;
+  build(); search();
+  liveOfficial().then(() => { build(); search(); });
+});
+document.getElementById('q').value = new URLSearchParams(location.search).get('q') || '';
+document.getElementById('q').addEventListener('input', search);
+</script>
+<script src="pwa.js"></script>
+</body>
+</html>

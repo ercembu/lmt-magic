@@ -15,7 +15,7 @@ DEFAULT="${1:-TRK}"
 PY="${PY:-$([ -x .venv/bin/python ] && echo .venv/bin/python || echo python3)}"
 rm -rf docs && mkdir -p docs/data
 
-cp web/index.html web/signals.html web/reviews.html web/ideas.html web/pwa.js web/lmtset.js \
+cp web/index.html web/signals.html web/reviews.html web/ideas.html web/find.html web/pwa.js web/lmtset.js \
    web/cardpreview.js web/sw.js web/manifest.webmanifest web/icon-192.png web/icon-512.png docs/
 cp data/validation.json  docs/validation.json
 cp data/calibration.json docs/calibration.json
@@ -31,7 +31,16 @@ for g in data/grades_*.json; do
   cp "data/setinfo/$s.json"     "$d/setinfo.json"    2>/dev/null || true
   cp "data/reviewdata_$s.json"  "$d/reviewdata.json" 2>/dev/null || true
   cp "data/ideas_$s.json"       "$d/ideas.json"      2>/dev/null || true
-  cp "data/names_de/$s.json"    "$d/names_de.json"   2>/dev/null || true   # scripts/fetch_names_de.py
+  if [ -f "data/names_de/$s.json" ]; then   # scripts/fetch_names_de.py; before release, our translations fill the gaps
+    python3 - "data/names_de/$s.json" "data/names_de/$s.unofficial.json" "$d/names_de.json" <<'EOF'
+import json, os, sys
+off = json.load(open(sys.argv[1]))
+un = json.load(open(sys.argv[2])) if os.path.exists(sys.argv[2]) else {}
+un.pop("_note", None)
+json.dump({**{k: v[0] for k, v in un.items()}, **off}, open(sys.argv[3], "w"), ensure_ascii=False)
+EOF
+    cp "data/names_de/$s.unofficial.json" "$d/names_de_unofficial.json" 2>/dev/null || true
+  fi
   $PY scripts/setmeta.py "$s" "$d/set.json" >/dev/null
   SETS+=("$s")
 done

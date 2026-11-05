@@ -44,9 +44,16 @@
   }).catch(() => {});
 
   // set picker at the start of the nav: one <select>, reloads the page on the chosen set
+  const plain = () => document.body.hasAttribute("data-plain");   // find.html: TRK only, no picker or DE
   function mountPicker() {
     const nav = document.querySelector("nav");
-    if (!nav || !window.LMT || LMT.sets.length < 2) return;
+    if (!nav || !window.LMT || plain()) return;
+    if (LMT.code === "TRK") {   // the German card finder for the TRK prerelease
+      const a = document.createElement("a");
+      a.href = "find.html"; a.textContent = "Kartensuche (DE)";
+      nav.appendChild(a);
+    }
+    if (LMT.sets.length < 2) return;
     const sel = document.createElement("select");
     sel.setAttribute("aria-label", "Set");
     sel.style.cssText = "background:var(--ink-2);color:var(--text);border:1px solid var(--edge);" +
@@ -82,7 +89,7 @@
   }
   function mountDe() {
     const nav = document.querySelector("nav");
-    if (!nav || !window.LMT) return;
+    if (!nav || !window.LMT || plain()) return;
     const b = document.createElement("button");
     b.textContent = "DE";
     b.title = deOn ? "Showing German card names — click for English" : "Show German card names";
