@@ -31,6 +31,7 @@ for g in data/grades_*.json; do
   cp "data/setinfo/$s.json"     "$d/setinfo.json"    2>/dev/null || true
   cp "data/reviewdata_$s.json"  "$d/reviewdata.json" 2>/dev/null || true
   cp "data/ideas_$s.json"       "$d/ideas.json"      2>/dev/null || true
+  cp "data/names_de/$s.json"    "$d/names_de.json"   2>/dev/null || true   # scripts/fetch_names_de.py
   $PY scripts/setmeta.py "$s" "$d/set.json" >/dev/null
   SETS+=("$s")
 done

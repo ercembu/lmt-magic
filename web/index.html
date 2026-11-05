@@ -328,7 +328,8 @@ function matches(c){
   if(state.arch && !(c.archetypes||[]).some(a=>a.pair===state.arch)) return false;
   if(state.q){
     const q=state.q.toLowerCase();
-    if(!((c.name||'').toLowerCase().includes(q) || (c.oracle_text||'').toLowerCase().includes(q)
+    if(!((c.name||'').toLowerCase().includes(q) || ((window.LMT_DE||{})[c.name]||'').toLowerCase().includes(q)
+      || (c.oracle_text||'').toLowerCase().includes(q)
       || (c.type_line||'').toLowerCase().includes(q))) return false;
   }
   return true;

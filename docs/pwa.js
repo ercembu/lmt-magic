@@ -63,6 +63,50 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mountPicker);
   else mountPicker();
 
+  // "DE" switch: card names in German (names_de.json, from scripts/fetch_names_de.py). Only text
+  // changes -- images, links and data-card keys stay English. Cards with no German name keep theirs.
+  const DE_KEY = "lmt-names-de";
+  let deOn = false;
+  try { deOn = localStorage.getItem(DE_KEY) === "1"; } catch (e) {}
+  const deParam = new URLSearchParams(location.search).get("de");   // ?de=1 / ?de=0 in a shared link
+  if (deParam !== null) {
+    deOn = deParam === "1";
+    try { localStorage.setItem(DE_KEY, deOn ? "1" : "0"); } catch (e) {}
+  }
+  function germanize(map) {
+    const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    for (let n; (n = w.nextNode());) {
+      const t = n.nodeValue.trim(), de = t && map[t];
+      if (de && de !== t) n.nodeValue = n.nodeValue.replace(t, de);
+    }
+  }
+  function mountDe() {
+    const nav = document.querySelector("nav");
+    if (!nav || !window.LMT) return;
+    const b = document.createElement("button");
+    b.textContent = "DE";
+    b.title = deOn ? "Showing German card names — click for English" : "Show German card names";
+    b.style.cssText = "background:" + (deOn ? "var(--text-2)" : "var(--ink-2)") + ";color:" +
+      (deOn ? "var(--ink-1, #000)" : "var(--text)") + ";border:1px solid var(--edge);border-radius:3px;" +
+      "padding:2px 8px;font:inherit;font-size:12.5px;cursor:pointer;margin-left:auto";
+    b.addEventListener("click", () => {
+      try { localStorage.setItem(DE_KEY, deOn ? "0" : "1"); } catch (e) {}
+      const u = new URL(location.href);
+      u.searchParams.delete("de");
+      location.href = u.toString();
+    });
+    nav.appendChild(b);
+    if (!deOn) return;
+    fetch(LMT.D("names_de.json")).then(r => r.ok ? r.json() : {}).then(map => {
+      window.LMT_DE = map;
+      if (!Object.keys(map).length) { b.title = "No German names for this set yet"; return; }
+      germanize(map);
+      new MutationObserver(() => germanize(map)).observe(document.body, { childList: true, subtree: true });
+    }).catch(() => {});
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mountDe);
+  else mountDe();
+
   window.FRA = {
     mountRefresh(btn, status) {
       paint(status, ago(localStorage.getItem(STAMP)));

@@ -13,7 +13,7 @@ const SHELL_FILES = [
   "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"
 ];
 const DATA_FILES = ["grades.json", "set.json", "signals.json", "validation.json",
-                    "calibration.json", "setinfo.json", "reviewdata.json", "ideas.json", "sets.js"];
+                    "calibration.json", "setinfo.json", "reviewdata.json", "ideas.json", "names_de.json", "sets.js"];
 
 self.addEventListener("install", e => {
   e.waitUntil((async () => {
