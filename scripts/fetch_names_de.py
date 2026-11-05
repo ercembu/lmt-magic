@@ -1,9 +1,11 @@
-"""German card names from Scryfall for the site's "DE" switch.
+"""German card names from Scryfall for the site's "DE" switch and the card finder.
 
     fetch_names_de.py SET [SET ...]   -> data/names_de/<SET>.json  {english name: german name}
 
-Double-faced cards also map each face. A set Scryfall has no German prints of yet
-gets an empty file, and the site keeps the English names.
+The set's own German prints first; a card with none (a set not out in German yet) takes
+the name of a German print from an older set, so reprints are named. Double-faced cards
+also map each face. New cards with no German print at all are left out: the finder falls
+back on data/names_de/<SET>.unofficial.json, translations made before release.
 """
 import json, os, sys, time, urllib.error, urllib.parse, urllib.request
 
@@ -18,8 +20,18 @@ def get(url):
 
 
 def names(code):
-    out, url = {}, ("https://api.scryfall.com/cards/search?unique=prints&q="
-                    + urllib.parse.quote(f"set:{code.lower()} lang:de"))
+    out = search(f"set:{code.lower()} lang:de")
+    grades = os.path.join(os.path.dirname(__file__), "..", "data", f"grades_{code.upper()}.json")
+    missing = [c["name"] for c in json.load(open(grades))] if os.path.exists(grades) else []
+    missing = [n for n in missing if n not in out]
+    for i in range(0, len(missing), 15):   # reprints: any German print, 15 names per query
+        q = " or ".join('!"' + n.replace('"', '') + '"' for n in missing[i:i + 15])
+        out.update({k: v for k, v in search(f"lang:de ({q})").items() if k not in out})
+    return out
+
+
+def search(q):
+    out, url = {}, "https://api.scryfall.com/cards/search?unique=prints&q=" + urllib.parse.quote(q)
     while url:
         try:
             d = get(url)
