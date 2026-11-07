@@ -46,7 +46,7 @@
    "top": [
     {
      "name": "Transporter Malfunction",
-     "grade": "B-",
+     "grade": "B",
      "uri": "https://scryfall.com/card/trk/178/transporter-malfunction?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/8/5/85b108c3-00b5-4dfb-90de-57fa483c4926.jpg?1793274273"
     },
@@ -58,7 +58,7 @@
     },
     {
      "name": "Energize",
-     "grade": "C",
+     "grade": "C+",
      "uri": "https://scryfall.com/card/trk/56/energize?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/2/4/24e72db3-a8d9-4553-92fe-ba6e40c4f62e.jpg?1792668391"
     },
@@ -82,15 +82,15 @@
     },
     {
      "name": "There's Coffee in that Nebula",
-     "grade": "C",
+     "grade": "C-",
      "uri": "https://scryfall.com/card/trk/40/theres-coffee-in-that-nebula?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/8/d/8dd7e0c6-84f6-4570-af93-4c64e78c2868.jpg?1792668331"
     },
     {
-     "name": "Open Communications",
-     "grade": "D+",
-     "uri": "https://scryfall.com/card/trk/76/open-communications?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/8/e/8eeec269-13f0-4923-9f13-e995acd73e00.jpg?1786396013"
+     "name": "Marooned",
+     "grade": "C-",
+     "uri": "https://scryfall.com/card/trk/72/marooned?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/0/8/0820a78e-e392-423c-9d62-ddfda5cb3f03.jpg?1785981422"
     }
    ],
    "quotes": [
@@ -132,7 +132,7 @@
     },
     {
      "name": "Cloistered Telepath",
-     "grade": "C",
+     "grade": "C+",
      "special": false,
      "rating": 2.0,
      "uri": "https://scryfall.com/card/trk/50/cloistered-telepath?utm_source=api",
@@ -157,15 +157,15 @@
    "top": [
     {
      "name": "Elim Garak, Simple Tailor",
-     "grade": "A-",
+     "grade": "B+",
      "uri": "https://scryfall.com/card/trk/106/elim-garak-simple-tailor?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/1/1/113bd51a-dfbb-4106-adf3-e567057fcd06.jpg?1792668600"
     },
     {
-     "name": "Jett Reno, Problem Solver",
+     "name": "Captain Benjamin Sisko",
      "grade": "B+",
-     "uri": "https://scryfall.com/card/trk/67/jett-reno-problem-solver?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/6/d/6dc34d44-397a-4dda-a8e3-0c2ff7da110f.jpg?1793511776"
+     "uri": "https://scryfall.com/card/trk/6/captain-benjamin-sisko?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/5/1/51338fb2-13a3-41b8-981f-05fa35e87e2e.jpg?1793538714"
     },
     {
      "name": "The Caretaker",
@@ -174,16 +174,10 @@
      "image": "https://cards.scryfall.io/normal/front/e/c/ec6a1967-78fc-4ef4-9816-6d9a9dde61fb.jpg?1793538731"
     },
     {
-     "name": "Captain Benjamin Sisko",
-     "grade": "B",
-     "uri": "https://scryfall.com/card/trk/6/captain-benjamin-sisko?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/5/1/51338fb2-13a3-41b8-981f-05fa35e87e2e.jpg?1793538714"
-    },
-    {
-     "name": "Tell Me What You See",
-     "grade": "C-",
-     "uri": "https://scryfall.com/card/trk/132/tell-me-what-you-see?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/e/3/e339c8fb-26d2-4514-aeb7-014274df0c9c.jpg?1793013584"
+     "name": "Jett Reno, Problem Solver",
+     "grade": "B+",
+     "uri": "https://scryfall.com/card/trk/67/jett-reno-problem-solver?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/6/d/6dc34d44-397a-4dda-a8e3-0c2ff7da110f.jpg?1793511776"
     },
     {
      "name": "Seven of Nine",
@@ -192,8 +186,14 @@
      "image": "https://cards.scryfall.io/normal/front/6/2/6204cfdb-6fb4-4030-96b6-9306c8266bcf.jpg?1793538768"
     },
     {
+     "name": "Tell Me What You See",
+     "grade": "C-",
+     "uri": "https://scryfall.com/card/trk/132/tell-me-what-you-see?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/e/3/e339c8fb-26d2-4514-aeb7-014274df0c9c.jpg?1793013584"
+    },
+    {
      "name": "Melkotian Adjudicator",
-     "grade": "D",
+     "grade": "D-",
      "uri": "https://scryfall.com/card/trk/73/melkotian-adjudicator?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/8/7/873c9933-7939-4376-873c-6a5b3bbc98d4.jpg?1793359395"
     },
@@ -273,12 +273,6 @@
      "image": "https://cards.scryfall.io/normal/front/a/4/a4518ea3-5f56-4f1d-9024-2bf06ac98786.jpg?1792508262"
     },
     {
-     "name": "Sarek, Federation Ambassador",
-     "grade": "C+",
-     "uri": "https://scryfall.com/card/trk/251/sarek-federation-ambassador?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/9/4/94ad9063-9663-49d8-b7ba-05be865bd20a.jpg?1793273885"
-    },
-    {
      "name": "Saavik, Stoic Student",
      "grade": "C+",
      "uri": "https://scryfall.com/card/trk/33/saavik-stoic-student?utm_source=api",
@@ -291,6 +285,12 @@
      "image": "https://cards.scryfall.io/normal/front/2/4/24589f4d-c530-4f6a-b2d0-450ef70fca71.jpg?1784065562"
     },
     {
+     "name": "Sarek, Federation Ambassador",
+     "grade": "C",
+     "uri": "https://scryfall.com/card/trk/251/sarek-federation-ambassador?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/4/94ad9063-9663-49d8-b7ba-05be865bd20a.jpg?1793273885"
+    },
+    {
      "name": "Starfleet Academy",
      "grade": "D",
      "uri": "https://scryfall.com/card/trk/297/starfleet-academy?utm_source=api",
@@ -298,7 +298,7 @@
     },
     {
      "name": "Infinite Diversity",
-     "grade": "D",
+     "grade": "D-",
      "uri": "https://scryfall.com/card/trk/153/infinite-diversity?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/3/3/33ade614-3593-4055-8ecc-2d9e4858ba19.jpg?1793273819"
     }
@@ -324,7 +324,7 @@
     },
     {
      "name": "Sarek, Federation Ambassador",
-     "grade": "C+",
+     "grade": "C",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/trk/251/sarek-federation-ambassador?utm_source=api",
@@ -352,7 +352,7 @@
     },
     {
      "name": "Species 8472",
-     "grade": "A-",
+     "grade": "B+",
      "uri": "https://scryfall.com/card/trk/214/species-8472?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/b/3/b3d74723-4c9e-4fe7-8276-05d5f1b7ba0c.jpg?1793273864"
     },
@@ -363,16 +363,16 @@
      "image": "https://cards.scryfall.io/normal/front/2/d/2d9fb7e7-582d-41e7-be9e-98372505ea44.jpg?1793187986"
     },
     {
+     "name": "Seven of Nine, Unassimilated",
+     "grade": "B+",
+     "uri": "https://scryfall.com/card/trk/80/seven-of-nine-unassimilated?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/d/d/ddc517bd-27e1-4688-8941-a41c312bd782.jpg?1792508210"
+    },
+    {
      "name": "Captain Pike, Fullness of Time",
      "grade": "B",
      "uri": "https://scryfall.com/card/trk/188/captain-pike-fullness-of-time?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/7/4/743be4c4-5c91-42bb-9942-115e903041a9.jpg?1792508262"
-    },
-    {
-     "name": "Seven of Nine, Unassimilated",
-     "grade": "B",
-     "uri": "https://scryfall.com/card/trk/80/seven-of-nine-unassimilated?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/d/d/ddc517bd-27e1-4688-8941-a41c312bd782.jpg?1792508210"
     },
     {
      "name": "Pah-Wraith",
@@ -382,7 +382,7 @@
     },
     {
      "name": "The Traveler",
-     "grade": "C",
+     "grade": "C+",
      "uri": "https://scryfall.com/card/trk/254/the-traveler?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/1/7/171932ba-26da-48e9-b8a2-c71aafe5c6a6.jpg?1792508396"
     }
@@ -435,7 +435,7 @@
     },
     {
      "name": "Sisay, Weatherlight Captain",
-     "grade": "D-",
+     "grade": "D",
      "special": true,
      "rating": 2.0,
      "uri": "https://scryfall.com/card/sds/4/sisay-weatherlight-captain?utm_source=api",
@@ -474,16 +474,16 @@
      "image": "https://cards.scryfall.io/normal/front/6/9/69b1f87f-ff02-4945-9f07-18dab5035e2d.jpg?1792508275"
     },
     {
-     "name": "Sulu, Space Swashbuckler",
-     "grade": "B+",
-     "uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/9/b/9b16f967-4bc5-4508-8433-b46323ce2e71.jpg?1793101366"
-    },
-    {
      "name": "D-7 Battle Cruiser",
      "grade": "B",
      "uri": "https://scryfall.com/card/trk/145/d-7-battle-cruiser?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/6/c/6c22998d-7bd7-433d-95b8-50f2fd8b7b7f.jpg?1792508232"
+    },
+    {
+     "name": "Sulu, Space Swashbuckler",
+     "grade": "B",
+     "uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/b/9b16f967-4bc5-4508-8433-b46323ce2e71.jpg?1793101366"
     },
     {
      "name": "Romulan Bird-of-Prey",
@@ -492,10 +492,10 @@
      "image": "https://cards.scryfall.io/normal/front/6/a/6a461d90-6b7b-4777-958a-8a5d8365ad8c.jpg?1792508202"
     },
     {
-     "name": "U.S.S. Cerritos, Following Up",
+     "name": "70,000 Light-Years from Home",
      "grade": "B",
-     "uri": "https://scryfall.com/card/trk/272/uss-cerritos-following-up?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/7/6/76bf7521-5024-4fdc-9ea1-5e10f2647efb.jpg?1793361418"
+     "uri": "https://scryfall.com/card/trk/1/70000-light-years-from-home?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/0/2/02080f42-863a-471b-992b-67e35ef1b7b7.jpg?1786005780"
     }
    ],
    "quotes": [
@@ -528,7 +528,7 @@
     },
     {
      "name": "Sulu, Space Swashbuckler",
-     "grade": "B+",
+     "grade": "B",
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
@@ -537,7 +537,7 @@
     },
     {
      "name": "Resistance Is Futile",
-     "grade": "C+",
+     "grade": "C",
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/trk/125/resistance-is-futile?utm_source=api",
@@ -586,7 +586,7 @@
     },
     {
      "name": "Assembly Specialist",
-     "grade": "B",
+     "grade": "B+",
      "uri": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/a/4/a4d339a5-198c-49bd-845e-2632476746e0.jpg?1793100612"
     },
@@ -603,16 +603,16 @@
      "image": "https://cards.scryfall.io/normal/front/4/0/408cb5dd-1a79-47a9-98ea-41f3f4502c5e.jpg?1792668404"
     },
     {
-     "name": "Free Borg Revolutionaries",
+     "name": "Collation Trimatrix",
      "grade": "B-",
-     "uri": "https://scryfall.com/card/trk/19/free-borg-revolutionaries?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/6/7/6711e910-e5a8-4602-9559-de5374bffff2.jpg?1785981345"
+     "uri": "https://scryfall.com/card/trk/98/collation-trimatrix?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/9/2/92c19351-0592-4269-90f4-2475d5529400.jpg?1793359423"
     }
    ],
    "quotes": [
     {
      "name": "Assembly Specialist",
-     "grade": "B",
+     "grade": "B+",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
@@ -639,7 +639,7 @@
     },
     {
      "name": "Hologram Janeway",
-     "grade": "C+",
+     "grade": "C",
      "special": false,
      "rating": 5.0,
      "uri": "https://scryfall.com/card/trk/21/hologram-janeway?utm_source=api",
@@ -702,22 +702,22 @@
      "image": "https://cards.scryfall.io/normal/front/8/4/8422ee4a-9845-429d-bda8-74852168dcba.jpg?1792632965"
     },
     {
-     "name": "Federation Outpost",
-     "grade": "B",
-     "uri": "https://scryfall.com/card/trk/282/federation-outpost?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/0/2/02e368bd-ece8-4201-8d1a-4c5287d5cfee.jpg?1792632946"
-    },
-    {
-     "name": "Vash, Freelance Archaeologist",
-     "grade": "B-",
-     "uri": "https://scryfall.com/card/trk/255/vash-freelance-archaeologist?utm_source=api",
-     "image": "https://cards.scryfall.io/normal/front/d/1/d1f51765-f336-4ca2-a0f5-e42dc352c0fa.jpg?1792508403"
-    },
-    {
      "name": "Sylvia Tilly, Joy of Discovery",
      "grade": "B-",
      "uri": "https://scryfall.com/card/trk/217/sylvia-tilly-joy-of-discovery?utm_source=api",
      "image": "https://cards.scryfall.io/normal/front/f/e/fe6e03b5-cd96-430b-9c74-96eca0212a81.jpg?1792989779"
+    },
+    {
+     "name": "Federation Outpost",
+     "grade": "B-",
+     "uri": "https://scryfall.com/card/trk/282/federation-outpost?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/0/2/02e368bd-ece8-4201-8d1a-4c5287d5cfee.jpg?1792632946"
+    },
+    {
+     "name": "He's Dead, Jim",
+     "grade": "B-",
+     "uri": "https://scryfall.com/card/trk/114/hes-dead-jim?utm_source=api",
+     "image": "https://cards.scryfall.io/normal/front/2/c/2c309b0d-94b4-405e-be6c-18b407323e51.jpg?1785981492"
     }
    ],
    "quotes": [
@@ -732,7 +732,7 @@
     },
     {
      "name": "The Unicomplex",
-     "grade": "B-",
+     "grade": "C+",
      "special": false,
      "rating": 5.0,
      "uri": "https://scryfall.com/card/trk/304/the-unicomplex?utm_source=api",
@@ -787,7 +787,7 @@
     },
     {
      "name": "Assembly Specialist",
-     "grade": "B",
+     "grade": "B+",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
@@ -797,7 +797,7 @@
     },
     {
      "name": "Dominion Saboteur",
-     "grade": "F",
+     "grade": "D-",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/trk/54/dominion-saboteur?utm_source=api",
@@ -827,7 +827,7 @@
     },
     {
      "name": "The Inner Light",
-     "grade": "B+",
+     "grade": "A-",
      "special": false,
      "rating": 8.0,
      "uri": "https://scryfall.com/card/trk/241/the-inner-light?utm_source=api",
@@ -934,7 +934,7 @@
     },
     {
      "name": "Transporter Malfunction",
-     "grade": "B-",
+     "grade": "B",
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/trk/178/transporter-malfunction?utm_source=api",
@@ -944,7 +944,7 @@
     },
     {
      "name": "Syndicate Liquidators",
-     "grade": "C",
+     "grade": "C-",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/trk/218/syndicate-liquidators?utm_source=api",
@@ -984,7 +984,7 @@
     },
     {
      "name": "Sulu, Space Swashbuckler",
-     "grade": "B+",
+     "grade": "B",
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
@@ -994,7 +994,7 @@
     },
     {
      "name": "Sheoldred, the Apocalypse",
-     "grade": "A+",
+     "grade": "A",
      "special": true,
      "rating": 10.0,
      "uri": "https://scryfall.com/card/sds/11/sheoldred-the-apocalypse?utm_source=api",
@@ -1014,7 +1014,7 @@
     },
     {
      "name": "Resistance Is Futile",
-     "grade": "C+",
+     "grade": "C",
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/trk/125/resistance-is-futile?utm_source=api",
@@ -1044,7 +1044,7 @@
     },
     {
      "name": "Worf, Honor-Bound Warrior",
-     "grade": "C",
+     "grade": "C+",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/trk/256/worf-honor-bound-warrior?utm_source=api",
@@ -1054,7 +1054,7 @@
     },
     {
      "name": "Armus, Skin of Evil",
-     "grade": "A-",
+     "grade": "A",
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/trk/91/armus-skin-of-evil?utm_source=api",
@@ -1071,7 +1071,7 @@
    "quotes": [
     {
      "name": "Q, Stacking the Deck",
-     "grade": "A",
+     "grade": "A-",
      "special": false,
      "rating": 9.0,
      "uri": "https://scryfall.com/card/trk/165/q-stacking-the-deck?utm_source=api",
@@ -1121,7 +1121,7 @@
     },
     {
      "name": "Q, Stacking the Deck",
-     "grade": "A",
+     "grade": "A-",
      "special": false,
      "rating": 9.0,
      "uri": "https://scryfall.com/card/trk/165/q-stacking-the-deck?utm_source=api",
@@ -1158,7 +1158,7 @@
    "quotes": [
     {
      "name": "Hologram Stalker",
-     "grade": "B+",
+     "grade": "B",
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/trk/202/hologram-stalker?utm_source=api",
@@ -1238,7 +1238,7 @@
     },
     {
      "name": "Seven of Nine, Unassimilated",
-     "grade": "B",
+     "grade": "B+",
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/trk/80/seven-of-nine-unassimilated?utm_source=api",
@@ -1305,7 +1305,7 @@
    "quotes": [
     {
      "name": "Infinite Diversity",
-     "grade": "D",
+     "grade": "D-",
      "special": false,
      "rating": 0.0,
      "uri": "https://scryfall.com/card/trk/153/infinite-diversity?utm_source=api",
@@ -1315,7 +1315,7 @@
     },
     {
      "name": "Hologram Stalker",
-     "grade": "B+",
+     "grade": "B",
      "special": false,
      "rating": 7.0,
      "uri": "https://scryfall.com/card/trk/202/hologram-stalker?utm_source=api",
@@ -1395,7 +1395,7 @@
     },
     {
      "name": "Unexplored Territory",
-     "grade": "D+",
+     "grade": "C-",
      "special": false,
      "rating": 3.0,
      "uri": "https://scryfall.com/card/trk/303/unexplored-territory?utm_source=api",
@@ -1462,7 +1462,7 @@
     },
     {
      "name": "Sheoldred, the Apocalypse",
-     "grade": "A+",
+     "grade": "A",
      "special": true,
      "rating": 10.0,
      "uri": "https://scryfall.com/card/sds/11/sheoldred-the-apocalypse?utm_source=api",
@@ -1482,7 +1482,7 @@
     },
     {
      "name": "Syndicate Liquidators",
-     "grade": "C",
+     "grade": "C-",
      "special": false,
      "rating": 6.0,
      "uri": "https://scryfall.com/card/trk/218/syndicate-liquidators?utm_source=api",
@@ -1562,7 +1562,7 @@
     },
     {
      "name": "Melkotian Adjudicator",
-     "grade": "D",
+     "grade": "D-",
      "special": false,
      "rating": 3.0,
      "uri": "https://scryfall.com/card/trk/73/melkotian-adjudicator?utm_source=api",
@@ -1603,7 +1603,7 @@
     "mentions": [
      {
       "from": "Genesis Device",
-      "grade": "D+",
+      "grade": "D",
       "uri": "https://scryfall.com/card/trk/200/genesis-device?utm_source=api",
       "text": "I think the main use of this is simply to ramp you like Final Frontier can."
      },
@@ -1642,7 +1642,7 @@
      },
      {
       "name": "Sulu, Space Swashbuckler",
-      "grade": "B+",
+      "grade": "B",
       "special": false,
       "uri": "https://scryfall.com/card/trk/37/sulu-space-swashbuckler?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/9/b/9b16f967-4bc5-4508-8433-b46323ce2e71.jpg?1793101366",
@@ -1650,7 +1650,7 @@
      },
      {
       "name": "Resistance Is Futile",
-      "grade": "C+",
+      "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/trk/125/resistance-is-futile?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/8/1/81d88257-466d-4729-862f-591885b3d875.jpg?1785981518",
@@ -1707,7 +1707,7 @@
      },
      {
       "name": "Assembly Specialist",
-      "grade": "B",
+      "grade": "B+",
       "special": false,
       "uri": "https://scryfall.com/card/trk/4/assembly-specialist?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/a/4/a4d339a5-198c-49bd-845e-2632476746e0.jpg?1793100612",
@@ -1715,7 +1715,7 @@
      },
      {
       "name": "Hologram Janeway",
-      "grade": "C+",
+      "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/trk/21/hologram-janeway?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/0/2/02d29047-a7b8-43fb-8b90-b35ba34da5f9.jpg?1793100636",
@@ -1755,7 +1755,7 @@
      },
      {
       "name": "Conquest Mission",
-      "grade": "D",
+      "grade": "D+",
       "special": false,
       "uri": "https://scryfall.com/card/trk/10/conquest-mission?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/f/9/f91755d7-6fb9-4caf-b4b4-f21ed5572d52.jpg?1792750872",
@@ -1796,7 +1796,7 @@
      },
      {
       "name": "Holo-Engineer",
-      "grade": "B+",
+      "grade": "A-",
       "special": false,
       "uri": "https://scryfall.com/card/trk/201/holo-engineer?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/a/c/acfaf5f3-a4f5-418a-a29a-211b33bf18ee.jpg?1793100831",
@@ -1828,7 +1828,7 @@
      },
      {
       "name": "Grand Nagus Zek",
-      "grade": "C+",
+      "grade": "C",
       "special": false,
       "uri": "https://scryfall.com/card/trk/112/grand-nagus-zek?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/4/7/47488f1e-512d-4dc6-a82d-1ead24d3276a.jpg?1793013572",
@@ -1877,7 +1877,7 @@
      },
      {
       "name": "Warp Speed",
-      "grade": "D+",
+      "grade": "C-",
       "special": false,
       "uri": "https://scryfall.com/card/trk/223/warp-speed?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/f/d/fdb5b940-9f62-47ad-8e80-5996daad0c9b.jpg?1793188026",
@@ -1958,7 +1958,7 @@
      },
      {
       "name": "Elim Garak, Simple Tailor",
-      "grade": "A-",
+      "grade": "B+",
       "special": false,
       "uri": "https://scryfall.com/card/trk/106/elim-garak-simple-tailor?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/1/1/113bd51a-dfbb-4106-adf3-e567057fcd06.jpg?1792668600",
@@ -2064,7 +2064,7 @@
     "quotes": [
      {
       "name": "The Doctor, EMH",
-      "grade": "D+",
+      "grade": "C-",
       "special": false,
       "uri": "https://scryfall.com/card/trk/234/the-doctor-emh?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/8/f/8fbad0dd-5f74-40c0-9e3e-c06be8eabb14.jpg?1792508313",
@@ -2072,7 +2072,7 @@
      },
      {
       "name": "The Doctor, EMH",
-      "grade": "D+",
+      "grade": "C-",
       "special": false,
       "uri": "https://scryfall.com/card/trk/234/the-doctor-emh?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/8/f/8fbad0dd-5f74-40c0-9e3e-c06be8eabb14.jpg?1792508313",
@@ -2120,7 +2120,7 @@
      },
      {
       "name": "Dr. Leonard \"Bones\" McCoy",
-      "grade": "B+",
+      "grade": "A-",
       "special": false,
       "uri": "https://scryfall.com/card/trk/197/dr-leonard-bones-mccoy?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/d/8/d8593bf7-5248-4f4a-bf8b-9816d2f76c6b.jpg?1793187127",
@@ -2137,7 +2137,7 @@
     "quotes": [
      {
       "name": "Command Subadjunct",
-      "grade": "C",
+      "grade": "C+",
       "special": false,
       "uri": "https://scryfall.com/card/trk/9/command-subadjunct?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/8/5/853bf74d-0b61-43df-9018-0b40b624a9d1.jpg?1792753641",
@@ -2186,7 +2186,7 @@
      },
      {
       "name": "Rok-Tahk, Budding Scientist",
-      "grade": "A-",
+      "grade": "B+",
       "special": false,
       "uri": "https://scryfall.com/card/trk/211/rok-tahk-budding-scientist?utm_source=api",
       "image": "https://cards.scryfall.io/normal/front/7/8/787bd19b-586e-4451-850b-60e0857bada0.jpg?1793273846",
@@ -2231,7 +2231,7 @@
   },
   {
    "name": "Mr. Spock, Science Officer",
-   "grade": "B+",
+   "grade": "A-",
    "uri": "https://scryfall.com/card/trk/74/mr-spock-science-officer?utm_source=api",
    "special": false,
    "image": "https://cards.scryfall.io/normal/front/d/1/d19fc127-669e-4264-935a-e5991e6c0964.jpg?1792508192",
@@ -2255,7 +2255,7 @@
   },
   {
    "name": "Resistance Is Futile",
-   "grade": "C+",
+   "grade": "C",
    "uri": "https://scryfall.com/card/trk/125/resistance-is-futile?utm_source=api",
    "special": false,
    "image": "https://cards.scryfall.io/normal/front/8/1/81d88257-466d-4729-862f-591885b3d875.jpg?1785981518",
@@ -2279,7 +2279,7 @@
   },
   {
    "name": "70,000 Light-Years from Home",
-   "grade": "B-",
+   "grade": "B",
    "uri": "https://scryfall.com/card/trk/1/70000-light-years-from-home?utm_source=api",
    "special": false,
    "image": "https://cards.scryfall.io/normal/front/0/2/02080f42-863a-471b-992b-67e35ef1b7b7.jpg?1786005780",
@@ -2339,7 +2339,7 @@
   },
   {
    "name": "Grand Nagus Zek",
-   "grade": "C+",
+   "grade": "C",
    "uri": "https://scryfall.com/card/trk/112/grand-nagus-zek?utm_source=api",
    "special": false,
    "image": "https://cards.scryfall.io/normal/front/4/7/47488f1e-512d-4dc6-a82d-1ead24d3276a.jpg?1793013572",
@@ -2375,7 +2375,7 @@
   },
   {
    "name": "Hologram Janeway",
-   "grade": "C+",
+   "grade": "C",
    "uri": "https://scryfall.com/card/trk/21/hologram-janeway?utm_source=api",
    "special": false,
    "image": "https://cards.scryfall.io/normal/front/0/2/02d29047-a7b8-43fb-8b90-b35ba34da5f9.jpg?1793100636",
@@ -2387,7 +2387,7 @@
   },
   {
    "name": "Shields Up!",
-   "grade": "D+",
+   "grade": "C-",
    "uri": "https://scryfall.com/card/trk/35/shields-up!?utm_source=api",
    "special": false,
    "image": "https://cards.scryfall.io/normal/front/0/b/0b60c9af-8ea9-491d-a4a4-226a2143e7f3.jpg?1785981369",
@@ -2483,7 +2483,7 @@
   },
   {
    "name": "There's Coffee in that Nebula",
-   "grade": "C",
+   "grade": "C-",
    "uri": "https://scryfall.com/card/trk/40/theres-coffee-in-that-nebula?utm_source=api",
    "special": false,
    "image": "https://cards.scryfall.io/normal/front/8/d/8dd7e0c6-84f6-4570-af93-4c64e78c2868.jpg?1792668331",
@@ -2531,7 +2531,7 @@
   },
   {
    "name": "Plasma Cascade",
-   "grade": "C-",
+   "grade": "C",
    "uri": "https://scryfall.com/card/trk/164/plasma-cascade?utm_source=api",
    "special": false,
    "image": "https://cards.scryfall.io/normal/front/3/c/3c786a2f-3de4-4b24-a3a0-15b1f2a07324.jpg?1785981557",
@@ -2555,7 +2555,7 @@
   },
   {
    "name": "Marooned",
-   "grade": "D+",
+   "grade": "C-",
    "uri": "https://scryfall.com/card/trk/72/marooned?utm_source=api",
    "special": false,
    "image": "https://cards.scryfall.io/normal/front/0/8/0820a78e-e392-423c-9d62-ddfda5cb3f03.jpg?1785981422",
@@ -2627,7 +2627,7 @@
   },
   {
    "name": "Unexplored Territory",
-   "grade": "D+",
+   "grade": "C-",
    "uri": "https://scryfall.com/card/trk/303/unexplored-territory?utm_source=api",
    "special": false,
    "image": "https://cards.scryfall.io/normal/front/c/a/ca1e60f1-11a9-4bb8-9f6e-5b652b49c517.jpg?1793361459",
@@ -2708,7 +2708,7 @@
    },
    {
     "name": "Sheoldred, the Apocalypse",
-    "grade": "A+",
+    "grade": "A",
     "rating": 10.0,
     "uri": "https://scryfall.com/card/sds/11/sheoldred-the-apocalypse?utm_source=api",
     "image": "https://cards.scryfall.io/normal/front/c/6/c68629ff-72b3-40a2-b578-cddb6ddb4ccf.jpg?1793238904",
@@ -2780,7 +2780,7 @@
    },
    {
     "name": "Hologram Stalker",
-    "grade": "B+",
+    "grade": "B",
     "rating": 7.0,
     "uri": "https://scryfall.com/card/trk/202/hologram-stalker?utm_source=api",
     "image": "https://cards.scryfall.io/normal/front/6/b/6bd8a87b-ca7a-4a15-b96f-1a673ee44f3e.jpg?1792668500",
@@ -2800,7 +2800,7 @@
   "low": [
    {
     "name": "Infinite Diversity",
-    "grade": "D",
+    "grade": "D-",
     "rating": 0.0,
     "uri": "https://scryfall.com/card/trk/153/infinite-diversity?utm_source=api",
     "image": "https://cards.scryfall.io/normal/front/3/3/33ade614-3593-4055-8ecc-2d9e4858ba19.jpg?1793273819",
@@ -2890,7 +2890,7 @@
    },
    {
     "name": "Sisay, Weatherlight Captain",
-    "grade": "D-",
+    "grade": "D",
     "rating": 2.0,
     "uri": "https://scryfall.com/card/sds/4/sisay-weatherlight-captain?utm_source=api",
     "image": "https://cards.scryfall.io/normal/front/7/0/7002530b-41cf-4b2e-9ccd-4fd305364c6b.jpg?1793187362",
